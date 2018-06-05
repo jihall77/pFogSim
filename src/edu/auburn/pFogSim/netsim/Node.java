@@ -24,6 +24,14 @@ public class Node {
 			addLink(edge);
 		}
 	}
+	public Node() {
+		edges = new ArrayList<Link>();
+		myLocation = new Pair<Integer, Integer>(null, null);
+	}
+	public Node(int xin, int yin) {
+		edges = new ArrayList<Link>();
+		myLocation = new Pair<Integer, Integer>(xin, yin);
+	}
 	/**
 	 * tests to make sure that at least on of the endpoints for the given link is at this node
 	 * @param in
@@ -121,6 +129,20 @@ public class Node {
 		else {
 			throw new IllegalArgumentException();
 		}
+	}
+	/**
+	 * travel from this node to an adjacent node
+	 * @param dest
+	 * @return the latency to travel to the dest node<br>
+	 * -1 if the dest node is not adjacent
+	 */
+	public double traverse(Node dest) {
+		for (Link edge : edges) {
+			if (edge.getOutgoingLink(getLocation()) == dest.getLocation()) {
+				return edge.getOutgoingLat(getLocation());
+			}
+		}
+		return -1.0;
 	}
 	
 }

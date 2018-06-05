@@ -1,5 +1,5 @@
 /**
- * NetworkTopology Class for encapsulating an set of nodes and edges in a network
+ * NetworkTopology Class for encapsulating a set of nodes and edges in a network
  * @author jih0007
  */
 package edu.auburn.pFogSim.netsim;
@@ -20,6 +20,9 @@ public class NetworkTopology {
 	 * @param inLinks
 	 */
 	public NetworkTopology(List<Node> inNodes, List<Link> inLinks) {
+		links = new HashSet<Link>();
+		nodes = new HashSet<Node>();
+		coords = new HashSet<Pair<Integer, Integer>>();
 		for (Node node : inNodes) {
 			addNode(node);
 		}
@@ -91,5 +94,19 @@ public class NetworkTopology {
 		catch (NullPointerException e) {
 			return false;
 		}
+	}
+	/**
+	 * get the list of nodes
+	 * @return
+	 */
+	public HashSet<Node> getNodes() {
+		return nodes;
+	}
+	/**
+	 * get the list of links
+	 * @return
+	 */
+	public HashSet<Link> getLinks() {
+		return links;
 	}
 }

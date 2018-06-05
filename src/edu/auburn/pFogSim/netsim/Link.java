@@ -22,7 +22,7 @@ public class Link {
 	 * @param rLat
 	 * @param lLat
 	 */
-	public Link(Pair<Integer, Integer> rLink, Pair<Integer, Integer> lLink, int rLat, int lLat) {
+	public Link(Pair<Integer, Integer> rLink, Pair<Integer, Integer> lLink, double rLat, double lLat) {
 		rightCoord = rLink;
 		leftCoord = lLink;
 		rightLatency = rLat;
@@ -31,6 +31,7 @@ public class Link {
 			throw new IllegalArgumentException();
 		}
 	}
+	public Link() {}
 	/**
 	 * get the latency as moving FROM the right node TO the left node
 	 * @return the left latency
