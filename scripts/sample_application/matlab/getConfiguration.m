@@ -4,7 +4,10 @@
 %--------------------------------------------------------------
 function [ret_val] = getConfiguration(argType)
     if(argType == 1)
-        ret_val = 'D:\output\20-06-2017_00-31\default_config';
+        ret_val = 'C:\Users\USERNAME\FILE\EdgeCloudSim-master\sim_results';
+        % USERNAME = your username
+        % FILE = File or path that your EdgeCloudSim-master folder is located in
+        
     elseif(argType == 2)
         ret_val = 60 * 125; %simulation time (in seconds)
     elseif(argType == 3)
