@@ -36,12 +36,20 @@ import org.w3c.dom.NodeList;
 import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
 import edu.boun.edgecloudsim.utils.Location;
+import edu.boun.edgecloudsim.utils.SimLogger;
 import edu.boun.edgecloudsim.utils.SimUtils;
+import javafx.util.Pair;
+
+import edu.auburn.pFogSim.netsim.*;
+import edu.boun.edgecloudsim.network.MM1Queue;
 
 public class EdgeServerManager {
 	private List<Datacenter> localDatacenters;
 	private List<List<EdgeVM>> vmList;
 	private int hostIdCounter;
+	
+	private List<NodeSim> nodesForTopography = new ArrayList<NodeSim>();
+	private List<Link> linksForTopography = new ArrayList<Link>();
 
 	public EdgeServerManager() {
 		localDatacenters=new ArrayList<Datacenter>();
@@ -66,12 +74,47 @@ public class EdgeServerManager {
 			Element datacenterElement = (Element) datacenterNode;
 			localDatacenters.add(createDatacenter(i, datacenterElement));
 		}
+		
+		//Add the links here
+		doc = SimSettings.getInstance().getLinksDocument();
+		NodeList linksList = doc.getElementsByTagName("link");
+		for(int i = 0; i < linksList.getLength(); i++) {
+			
+			Node links = linksList.item(i);
+			Element linkElement = (Element) links;
+			
+			NodeList leftLinksList = linkElement.getElementsByTagName("left");
+			Node leftLinks = leftLinksList.item(0);
+			Element leftLinkss = (Element)leftLinks;
+			int x_pos1 = Integer.parseInt(leftLinkss.getElementsByTagName("x_pos").item(0).getTextContent());
+			int y_pos1 = Integer.parseInt(leftLinkss.getElementsByTagName("x_pos").item(0).getTextContent());
+			Pair<Integer, Integer> leftCoor = new Pair<Integer, Integer>(x_pos1, y_pos1);
+			//SimLogger.printLine("We found x_pos1 = " + x_pos1 + " and y_pos1 = " + y_pos1);
+			
+			NodeList rightLinksList = linkElement.getElementsByTagName("right");
+			Node rightLinks = rightLinksList.item(0);
+			Element rightLinkss = (Element)rightLinks;
+			int x_pos2 = Integer.parseInt(rightLinkss.getElementsByTagName("x_pos").item(0).getTextContent());
+			int y_pos2 = Integer.parseInt(rightLinkss.getElementsByTagName("x_pos").item(0).getTextContent());
+			Pair<Integer, Integer> rightCoor = new Pair<Integer, Integer>(x_pos2, y_pos2);
+
+			//SimLogger.printLine("We found x_pos1 = " + x_pos2 + " and y_pos1 = " + y_pos2);
+			
+			double left_lat = Double.parseDouble(linkElement.getElementsByTagName("left_latency").item(0).getTextContent());
+			double right_lat = Double.parseDouble(linkElement.getElementsByTagName("right_latency").item(0).getTextContent());
+			
+			Link newLink = new Link(rightCoor,leftCoor, right_lat, left_lat);
+			linksForTopography.add(newLink);
+		}
+		NetworkTopology networkTopology = new NetworkTopology(nodesForTopography, linksForTopography);
+		MM1Queue.getInstance().setNetworkTopology(networkTopology);
+		
 	}
 
 	public void createVmList(int brockerId){
 		int hostCounter=0;
 		int vmCounter=0;
-		
+				
 		//Create VMs for each hosts
 		Document doc = SimSettings.getInstance().getEdgeDevicesDocument();
 		NodeList datacenterList = doc.getElementsByTagName("datacenter");
@@ -91,11 +134,13 @@ public class EdgeServerManager {
 					Element vmElement = (Element) vmNode;
 
 					String vmm = vmElement.getAttribute("vmm");
+					
 					int numOfCores = Integer.parseInt(vmElement.getElementsByTagName("core").item(0).getTextContent());
 					double mips = Double.parseDouble(vmElement.getElementsByTagName("mips").item(0).getTextContent());
 					int ram = Integer.parseInt(vmElement.getElementsByTagName("ram").item(0).getTextContent());
 					long storage = Long.parseLong(vmElement.getElementsByTagName("storage").item(0).getTextContent());
 					long bandwidth = SimSettings.getInstance().getWlanBandwidth() / (hostNodeList.getLength()+vmNodeList.getLength());
+					
 					
 					//VM Parameters		
 					EdgeVM vm = new EdgeVM(vmCounter, brockerId, mips, numOfCores, ram, bandwidth, storage, vmm, new CloudletSchedulerTimeShared());
@@ -175,6 +220,8 @@ public class EdgeServerManager {
 		// 1. We need to create a list to store one or more Machines
 		List<EdgeHost> hostList = new ArrayList<EdgeHost>();
 		
+		
+		
 		Element location = (Element)datacenterElement.getElementsByTagName("location").item(0);
 		String attractiveness = location.getElementsByTagName("attractiveness").item(0).getTextContent();
 		int wlan_id = Integer.parseInt(location.getElementsByTagName("wlan_id").item(0).getTextContent());
@@ -204,6 +251,10 @@ public class EdgeServerManager {
 				peList.add(new Pe(i, new PeProvisionerSimple(mips))); // need to store Pe id and MIPS Rating
 			}
 			
+			//For NodeSim
+			NodeSim newNode = new NodeSim(x_pos, y_pos);
+			nodesForTopography.add(newNode);
+			
 			//4. Create Hosts with its id and list of PEs and add them to the list of machines
 			EdgeHost host = new EdgeHost(
 					hostIdCounter,
@@ -218,6 +269,7 @@ public class EdgeServerManager {
 			hostList.add(host);
 			hostIdCounter++;
 		}
+		
 
 		return hostList;
 	}

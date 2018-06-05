@@ -18,6 +18,7 @@ import edu.boun.edgecloudsim.utils.Location;
 public abstract class NetworkModel {
 	protected int numberOfMobileDevices;
 
+	public NetworkModel() {}
 	public NetworkModel(int _numberOfMobileDevices){
 		numberOfMobileDevices=_numberOfMobileDevices;
 	};

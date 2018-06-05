@@ -17,18 +17,32 @@ import edu.boun.edgecloudsim.core.SimSettings;
 import edu.boun.edgecloudsim.edge_server.EdgeHost;
 import edu.boun.edgecloudsim.utils.Location;
 
+import edu.auburn.pFogSim.netsim.*;
+
 public class MM1Queue extends NetworkModel {
 	private double WlanPoissonMean; //seconds
 	private double WanPoissonMean; //seconds
 	private double avgTaskInputSize; //bytes
 	private double avgTaskOutputSize; //bytes
 	private int maxNumOfClientsInPlace;
+	private NetworkTopology networkTopology;
+	private static MM1Queue instance = null;
+	
+	public MM1Queue() {
+		super();
+	}
 	
 	public MM1Queue(int _numberOfMobileDevices) {
 		super(_numberOfMobileDevices);
 	}
-
-
+	
+	public static MM1Queue getInstance() {
+		if(instance == null) {
+			instance = new MM1Queue();
+		}
+		return instance;
+	}
+	
 	@Override
 	public void initialize() {
 		WlanPoissonMean=0;
@@ -194,6 +208,14 @@ public class MM1Queue extends NetworkModel {
 				WanPoissonMean,
 				avgTaskInputSize,
 				getDeviceCount(accessPointLocation, time));
+	}
+	
+	public void setNetworkTopology(NetworkTopology _networkTopology) {
+		networkTopology = _networkTopology;
+	}
+	
+	public NetworkTopology getNetworkTopology() {
+		return networkTopology;
 	}
 
 	@Override
