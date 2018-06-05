@@ -27,7 +27,7 @@
 		<vm_utilization>5</vm_utilization>
 	</application>
 	<application name="HEAVY_COMP_APP">
-		<usage_percentage>20</usage_percentage>
+		<usage_percentage>50</usage_percentage>
 		<prob_cloud_selection>40</prob_cloud_selection>
 		<poisson_interarrival>60</poisson_interarrival>
 		<delay_sensitivity>0.15</delay_sensitivity>
