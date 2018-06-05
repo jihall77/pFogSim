@@ -9,7 +9,7 @@ import java.util.List;
 import edu.auburn.pFogSim.netsim.Link;
 import javafx.util.Pair;
 
-public class Node {
+public class NodeSim {
 	
 	private ArrayList<Link> edges;
 	private Pair<Integer, Integer> myLocation;
@@ -18,17 +18,17 @@ public class Node {
 	 * @param inputEdges
 	 * @param coord
 	 */
-	public Node (List<Link> inputEdges, Pair<Integer, Integer> coord) {
+	public NodeSim (List<Link> inputEdges, Pair<Integer, Integer> coord) {
 		myLocation = coord;
 		for (Link edge : inputEdges) {
 			addLink(edge);
 		}
 	}
-	public Node() {
+	public NodeSim() {
 		edges = new ArrayList<Link>();
 		myLocation = new Pair<Integer, Integer>(null, null);
 	}
-	public Node(int xin, int yin) {
+	public NodeSim(int xin, int yin) {
 		edges = new ArrayList<Link>();
 		myLocation = new Pair<Integer, Integer>(xin, yin);
 	}
@@ -136,7 +136,7 @@ public class Node {
 	 * @return the latency to travel to the dest node<br>
 	 * -1 if the dest node is not adjacent
 	 */
-	public double traverse(Node dest) {
+	public double traverse(NodeSim dest) {
 		for (Link edge : edges) {
 			if (edge.getOutgoingLink(getLocation()) == dest.getLocation()) {
 				return edge.getOutgoingLat(getLocation());
@@ -145,4 +145,21 @@ public class Node {
 		return -1.0;
 	}
 	
+	public boolean equals(NodeSim in) {
+		if(getLocation() != in.getLocation()) {
+			return false;
+		}
+		else if (getEdges().size() != in.getEdges().size()) {
+			return false;
+		}
+		else {
+			for (int i = 0; i < getEdges().size(); i++) {
+				if (getEdges().get(i) != in.getEdges().get(i) ) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
 }

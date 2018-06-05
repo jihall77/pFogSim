@@ -5,25 +5,25 @@
 package edu.auburn.pFogSim.netsim;
 
 import edu.auburn.pFogSim.netsim.Link;
-import edu.auburn.pFogSim.netsim.Node;
+import edu.auburn.pFogSim.netsim.NodeSim;
 import java.util.HashSet;
 import java.util.List;
 import javafx.util.Pair;
 
 public class NetworkTopology {
 	private HashSet<Link> links;
-	private HashSet<Node> nodes;
+	private HashSet<NodeSim> nodes;
 	private HashSet<Pair<Integer, Integer>> coords;
 	/**
 	 * Constructor
 	 * @param inNodes
 	 * @param inLinks
 	 */
-	public NetworkTopology(List<Node> inNodes, List<Link> inLinks) {
+	public NetworkTopology(List<NodeSim> inNodes, List<Link> inLinks) {
 		links = new HashSet<Link>();
-		nodes = new HashSet<Node>();
+		nodes = new HashSet<NodeSim>();
 		coords = new HashSet<Pair<Integer, Integer>>();
-		for (Node node : inNodes) {
+		for (NodeSim node : inNodes) {
 			addNode(node);
 		}
 		for (Link link : inLinks) {
@@ -35,7 +35,7 @@ public class NetworkTopology {
 	 * if the node is null throw an IllegalArgumentException
 	 * @param in
 	 */
-	public void addNode(Node in) {
+	public void addNode(NodeSim in) {
 		if (in == null) {
 			throw new IllegalArgumentException();
 		}
@@ -44,7 +44,7 @@ public class NetworkTopology {
 	}
 	/**
 	 * add a link<br>
-	 * link must be associated to at least one node to be added (always add nodes first!)<br>
+	 * link must be associated to 2 nodes to be added (always add nodes first!)<br>
 	 * if the link is null throw an IllegalArgumentException
 	 * @param in
 	 * @return
@@ -54,7 +54,7 @@ public class NetworkTopology {
 			throw new IllegalArgumentException();
 		}
 		int counter = 0;
-		for (Node node : nodes) {
+		for (NodeSim node : nodes) {
 			if (in.validateCoords() && node.validateLink(in)) {
 				node.addLink(in);
 				counter++;
@@ -78,7 +78,7 @@ public class NetworkTopology {
 			return false;
 		}
 		try {
-			for (Node node : nodes) {
+			for (NodeSim node : nodes) {
 				if (node.getEdges().size() == 0) {
 					return false;
 				}
@@ -99,7 +99,7 @@ public class NetworkTopology {
 	 * get the list of nodes
 	 * @return
 	 */
-	public HashSet<Node> getNodes() {
+	public HashSet<NodeSim> getNodes() {
 		return nodes;
 	}
 	/**
@@ -108,5 +108,21 @@ public class NetworkTopology {
 	 */
 	public HashSet<Link> getLinks() {
 		return links;
+	}
+	/**
+	 * cleans any bad links out of the topology
+	 * @return
+	 */
+	public boolean cleanNodes() {
+		try {
+			for (NodeSim node : nodes) {
+				while (node.removeLink(node.validateNode()));
+			}
+			
+			return validateTopology();
+		}
+		catch (Exception e) {
+			return false;
+		}
 	}
 }

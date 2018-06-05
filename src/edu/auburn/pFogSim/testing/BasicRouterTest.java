@@ -12,13 +12,13 @@ public class BasicRouterTest {
 		Pair<Integer, Integer> c4 = new Pair<Integer, Integer>(4,4);
 		Pair<Integer, Integer> c5 = new Pair<Integer, Integer>(5,5);
 		
-		Node n1 = new Node();
-		Node n2 = new Node();
-		Node n3 = new Node();
-		Node n4 = new Node();
-		Node n5 = new Node();
+		NodeSim n1 = new NodeSim();
+		NodeSim n2 = new NodeSim();
+		NodeSim n3 = new NodeSim();
+		NodeSim n4 = new NodeSim();
+		NodeSim n5 = new NodeSim();
 		
-		LinkedList<Node> path = new LinkedList<Node>();
+		LinkedList<NodeSim> path = new LinkedList<NodeSim>();
 		LinkedList<Link> edges = new LinkedList<Link>();
 		
 		n1.setLocation(c1);
@@ -31,6 +31,7 @@ public class BasicRouterTest {
 		Link l23 = new Link(c2, c3, 0.5, 0.5);
 		Link l34 = new Link(c3, c4, 0.5, 0.5);
 		Link l45 = new Link(c4, c5, 0.5, 0.5);
+		Link l56 = new Link(c5, new Pair<Integer,Integer>(6,6), 0.5, 0.5);
 		
 		n1.addLink(l12);
 		n2.addLink(l12);
@@ -40,6 +41,7 @@ public class BasicRouterTest {
 		n4.addLink(l34);
 		n4.addLink(l45);
 		n5.addLink(l45);
+		n5.addLink(l56);
 		
 		path.add(n1);
 		path.add(n2);
@@ -51,9 +53,11 @@ public class BasicRouterTest {
 		edges.add(l23);
 		edges.add(l34);
 		edges.add(l45);
+		edges.add(l56);
 		
-		NetworkTopology nTest = new NetworkTopology((List<Node>) path, (List<Link>) edges);
-		if (nTest.validateTopology()) {
+		
+		NetworkTopology nTest = new NetworkTopology((List<NodeSim>) path, (List<Link>) edges);
+		if (nTest.cleanNodes()) {
 			System.out.println("Topology Works!");
 		}
 		
