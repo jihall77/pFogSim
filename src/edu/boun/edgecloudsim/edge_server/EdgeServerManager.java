@@ -48,6 +48,8 @@ public class EdgeServerManager {
 	private List<List<EdgeVM>> vmList;
 	private int hostIdCounter;
 	
+	//CJ Added these to make the lists of all the nodes and respective links 
+	//	to pass to topology constructor
 	private List<NodeSim> nodesForTopography = new ArrayList<NodeSim>();
 	private List<Link> linksForTopography = new ArrayList<Link>();
 
@@ -75,7 +77,7 @@ public class EdgeServerManager {
 			localDatacenters.add(createDatacenter(i, datacenterElement));
 		}
 		
-		//Add the links here
+		//CJ Adding the links after the nodes, essentially the same process as with nodes
 		doc = SimSettings.getInstance().getLinksDocument();
 		NodeList linksList = doc.getElementsByTagName("link");
 		for(int i = 0; i < linksList.getLength(); i++) {
@@ -87,7 +89,7 @@ public class EdgeServerManager {
 			Node leftLinks = leftLinksList.item(0);
 			Element leftLinkss = (Element)leftLinks;
 			int x_pos1 = Integer.parseInt(leftLinkss.getElementsByTagName("x_pos").item(0).getTextContent());
-			int y_pos1 = Integer.parseInt(leftLinkss.getElementsByTagName("x_pos").item(0).getTextContent());
+			int y_pos1 = Integer.parseInt(leftLinkss.getElementsByTagName("y_pos").item(0).getTextContent());
 			Pair<Integer, Integer> leftCoor = new Pair<Integer, Integer>(x_pos1, y_pos1);
 			//SimLogger.printLine("We found x_pos1 = " + x_pos1 + " and y_pos1 = " + y_pos1);
 			
@@ -95,7 +97,7 @@ public class EdgeServerManager {
 			Node rightLinks = rightLinksList.item(0);
 			Element rightLinkss = (Element)rightLinks;
 			int x_pos2 = Integer.parseInt(rightLinkss.getElementsByTagName("x_pos").item(0).getTextContent());
-			int y_pos2 = Integer.parseInt(rightLinkss.getElementsByTagName("x_pos").item(0).getTextContent());
+			int y_pos2 = Integer.parseInt(rightLinkss.getElementsByTagName("y_pos").item(0).getTextContent());
 			Pair<Integer, Integer> rightCoor = new Pair<Integer, Integer>(x_pos2, y_pos2);
 
 			//SimLogger.printLine("We found x_pos1 = " + x_pos2 + " and y_pos1 = " + y_pos2);
@@ -107,6 +109,7 @@ public class EdgeServerManager {
 			linksForTopography.add(newLink);
 		}
 		NetworkTopology networkTopology = new NetworkTopology(nodesForTopography, linksForTopography);
+		//CJ not actually sure if this works but we can change it when we actually need to use it
 		MM1Queue.getInstance().setNetworkTopology(networkTopology);
 		
 	}
@@ -251,7 +254,7 @@ public class EdgeServerManager {
 				peList.add(new Pe(i, new PeProvisionerSimple(mips))); // need to store Pe id and MIPS Rating
 			}
 			
-			//For NodeSim
+			//Make NodeSim object with the input x/y positions and add that to the list of nodes
 			NodeSim newNode = new NodeSim(x_pos, y_pos);
 			nodesForTopography.add(newNode);
 			

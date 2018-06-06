@@ -494,7 +494,7 @@ public class SimLogger {
 				+ String.format("%.6f", processingTimeOnCloud[numOfAppTypes] / (double) completedTaskOnCloud[numOfAppTypes])
 				+ ")");
 
-		printLine("average netwrok delay: "
+		printLine("average network delay: "
 				+ String.format("%.6f", networkDelay[numOfAppTypes] / (double) completedTask[numOfAppTypes])
 				+ " seconds. (" + "LAN delay: "
 				+ String.format("%.6f", lanDelay[numOfAppTypes] / (double) completedTaskOnCloudlet[numOfAppTypes])
@@ -504,6 +504,8 @@ public class SimLogger {
 		printLine("average server utilization: " 
 				+ String.format("%.6f", totalVmLoad / (double) vmLoadList.size()) + "%");
 		
+		//Clayton changed this so it would output a value based on the average cost per time I was seeing in the XML files
+		//	this value may mean absolutely nothing so we should look into it more if we want to use it
 		printLine("average cost: $" + String.format("%.2f", 3.00 * processingTime[numOfAppTypes] / (double) completedTask[numOfAppTypes]));
 		printLine("ProcessingTime: " + processingTime);
 		printLine("CompletedTask" + completedTask);
