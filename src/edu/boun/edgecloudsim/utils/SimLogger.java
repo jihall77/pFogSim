@@ -504,7 +504,9 @@ public class SimLogger {
 		printLine("average server utilization: " 
 				+ String.format("%.6f", totalVmLoad / (double) vmLoadList.size()) + "%");
 		
-		printLine("average cost: " + cost[numOfAppTypes] / completedTask[numOfAppTypes] + "$");
+		printLine("average cost: $" + String.format("%.2f", 3.00 * processingTime[numOfAppTypes] / (double) completedTask[numOfAppTypes]));
+		printLine("ProcessingTime: " + processingTime);
+		printLine("CompletedTask" + completedTask);
 
 		// clear related collections (map list etc.)
 		taskMap.clear();

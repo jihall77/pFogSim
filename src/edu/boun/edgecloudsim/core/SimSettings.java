@@ -29,9 +29,12 @@ import org.w3c.dom.NodeList;
 
 import edu.boun.edgecloudsim.utils.SimLogger;
 
+import edu.auburn.pFogSim.netsim.*;
+
 public class SimSettings {
 	private static SimSettings instance = null;
 	private Document edgeDevicesDoc = null;
+	private Document linksDoc = null;
 	
 	//enumarations for the VM, appplication, and place.
 	//if you want to add different types on your config file,
@@ -109,7 +112,7 @@ public class SimSettings {
 	 * @param propertiesFile
 	 * @return
 	 */
-	public boolean initialize(String propertiesFile, String edgeDevicesFile, String applicationsFile){
+	public boolean initialize(String propertiesFile, String edgeDevicesFile, String applicationsFile, String linksFile){
 		boolean result = false;
 		InputStream input = null;
 		try {
@@ -172,6 +175,7 @@ public class SimSettings {
 		}
 		parseApplicatinosXML(applicationsFile);
 		parseEdgeDevicesXML(edgeDevicesFile);
+		parseLinksXML(linksFile);
 		
 		return result;
 	}
@@ -183,7 +187,9 @@ public class SimSettings {
 		return edgeDevicesDoc;
 	}
 
-
+	public Document getLinksDocument() {
+		return linksDoc;
+	}
 	/**
 	 * returns simulation time (in seconds unit) from properties file
 	 */
@@ -512,5 +518,31 @@ public class SimSettings {
 			e.printStackTrace();
 			System.exit(0);
 		}
+	}
+	public void parseLinksXML(String filePath) 
+	{
+		try {
+		File linksFile = new File(filePath);
+		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+		linksDoc = dBuilder.parse(linksFile);
+		linksDoc.getDocumentElement().normalize();
+		
+		NodeList linksList = linksDoc.getElementsByTagName("link");
+		for(int i = 0; i < linksList.getLength(); i++) {
+			//SimLogger.printLine("No issues yet...cross your fingers!");
+			
+			
+			
+		}
+		
+		}
+		catch (Exception e) {
+			SimLogger.printLine("Links XML cannot be parsed! Terminating simulation...");
+			e.printStackTrace();
+			System.exit(0);
+		}
+		SimLogger.printLine("Hey! We at least go this far without any issues!");
+		
 	}
 }

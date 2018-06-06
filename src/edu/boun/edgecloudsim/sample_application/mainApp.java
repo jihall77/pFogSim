@@ -53,7 +53,7 @@ public class mainApp {
 			SimLogger.printLine("Simulation setting file, output folder and iteration number are not provided! Using default ones...");
 			configFile = "scripts/sample_application/config/default_config.properties";
 			applicationsFile = "scripts/sample_application/config/applications.xml";
-			edgeDevicesFile = "scripts/sample_application/config/edge_devices.xml";
+			edgeDevicesFile = "scripts/sample_application/config/edge_devices_test.xml";
 			outputFolder = "sim_results/ite" + iterationNumber;
 		}
 
