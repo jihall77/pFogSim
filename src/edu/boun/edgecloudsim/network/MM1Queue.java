@@ -30,10 +30,12 @@ public class MM1Queue extends NetworkModel {
 	
 	public MM1Queue() {
 		super();
+		instance = this;
 	}
 	
 	public MM1Queue(int _numberOfMobileDevices) {
 		super(_numberOfMobileDevices);
+		instance = this;
 	}
 	
 	public static MM1Queue getInstance() {
