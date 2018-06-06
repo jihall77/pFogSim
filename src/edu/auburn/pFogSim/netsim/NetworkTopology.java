@@ -125,4 +125,32 @@ public class NetworkTopology {
 			return false;
 		}
 	}
+	/**
+	 * find the node closest to the given location, intermediate method of getting node associated with mobile device<br>
+	 * should be replaced with a call to the orchestrator once that is implemented
+	 * @param x
+	 * @param y
+	 * @return the closest node to the location
+	 */
+	public NodeSim findNode(int x, int y) {
+		NodeSim closest = null;
+		double distanceNew = Double.MAX_VALUE;
+		double distance = Double.MAX_VALUE;
+		for (NodeSim node : getNodes()) {
+			if (x == node.getLocation().getKey() && y == node.getLocation().getValue()) {
+				closest = node;
+				return closest;
+			}
+			distanceNew = Math.sqrt(Math.pow((double) (x - node.getLocation().getKey()), 2) + Math.pow((double) (y - node.getLocation().getValue()), 2));
+			if (distanceNew < distance) {
+				distance = distanceNew;
+				closest = node;
+			}
+		}
+		return closest;
+	}
+	
+	public NodeSim findNode(Pair<Integer, Integer> loc) {
+		return findNode(loc.getKey(), loc.getValue());
+	}
 }
