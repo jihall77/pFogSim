@@ -31,15 +31,17 @@ public class mainApp {
 	public static void main(String[] args) {
 		//disable console output of cloudsim library
 		Log.disable();
-		
 		//enable console output and file output of this application
 		SimLogger.enablePrintLog();
+		
+		
 		
 		int iterationNumber = 1;
 		String configFile = "";
 		String outputFolder = "";
 		String edgeDevicesFile = "";
 		String applicationsFile = "";
+		String linksFile = "scripts/sample_application/config/links_test.xml";
 		if (args.length == 5){
 			configFile = args[0];
 			edgeDevicesFile = args[1];
@@ -57,7 +59,7 @@ public class mainApp {
 
 		//load settings from configuration file
 		SimSettings SS = SimSettings.getInstance();
-		if(SS.initialize(configFile, edgeDevicesFile, applicationsFile) == false){
+		if(SS.initialize(configFile, edgeDevicesFile, applicationsFile, linksFile) == false){
 			SimLogger.printLine("cannot initialize simulation settings!");
 			System.exit(0);
 		}
@@ -66,6 +68,7 @@ public class mainApp {
 			SimLogger.enableFileLog();
 			SimUtils.cleanOutputFolder(outputFolder);
 		}
+
 		
 		DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		Date SimulationStartDate = Calendar.getInstance().getTime();
