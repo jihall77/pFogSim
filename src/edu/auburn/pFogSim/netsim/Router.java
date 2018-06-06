@@ -1,3 +1,8 @@
+/**
+ * Router Class for finding a path from one node to another on a given network model
+ * @author jih0007
+ */
+
 package edu.auburn.pFogSim.netsim;
 
 import edu.auburn.pFogSim.netsim.NodeSim;
@@ -12,7 +17,13 @@ import java.util.Comparator;
 import java.util.Set;
 
 public class Router {
-	
+	/**
+	 * return a path from the src to destination as a linked list
+	 * @param network
+	 * @param src
+	 * @param dest
+	 * @return
+	 */
 	public static LinkedList<NodeSim> findPath(NetworkTopology network, NodeSim src, NodeSim dest ) {
 		LinkedList<NodeSim> travelQueue;
 		Dijkstra router = Router.getAPathFinder();
@@ -21,12 +32,18 @@ public class Router {
 		return travelQueue;
 		//return router.getLatency(dest);
 	}
-	
+	/**
+	 * get a Dijkstra object to run the pathfinding
+	 * @return
+	 */
 	public static Dijkstra getAPathFinder() {
 		Router rout = new Router();
 		return rout.getDijkstra();
 	}
-	
+	/**
+	 * get a dijkstra object
+	 * @return
+	 */
 	public Dijkstra getDijkstra() {
 		return new Dijkstra();
 	}
@@ -62,7 +79,11 @@ public class Router {
 		//return router.getLatency(dest);
 	}
 	*/
-	
+	/**
+	 * implementation of Dijkstra's algorithm
+	 * @author jih0007
+	 *
+	 */
 	private class Dijkstra {
 		HashMap<Pair<NodeSim, Pair<Double, NodeSim>>, ArrayList<Pair<Double, NodeSim>>> verts;
 		HashMap<NodeSim, Pair<NodeSim, Pair<Double, NodeSim>>> getMap;
@@ -70,6 +91,9 @@ public class Router {
 		PriorityQueue<Pair<NodeSim, Pair<Double, NodeSim>>> queue;
 		HashSet<Pair<NodeSim, Pair<Double, NodeSim>>> completed;
 		NodeSim src;
+		/**
+		 * constructor
+		 */
 		public Dijkstra() {
 			verts = new HashMap<Pair<NodeSim, Pair<Double, NodeSim>>, ArrayList<Pair<Double, NodeSim>>>();
 			getMap = new HashMap<NodeSim, Pair<NodeSim, Pair<Double, NodeSim>>>();
@@ -77,7 +101,11 @@ public class Router {
 			queue = new PriorityQueue<Pair<NodeSim, Pair<Double, NodeSim>>>(25, new dijkstrasComparator());
 			completed = new HashSet<Pair<NodeSim, Pair<Double, NodeSim>>>();
 		}
-		
+		/**
+		 * initialize graph
+		 * @param nodes
+		 * @param source
+		 */
 		private void initialize (Set<NodeSim> nodes, NodeSim source) {
 			ArrayList<Pair<Double, NodeSim>> edges;
 			for (NodeSim node : nodes) {
@@ -102,7 +130,12 @@ public class Router {
 				getMap.put(node, new Pair<NodeSim, Pair<Double, NodeSim>>(node, new Pair<Double, NodeSim>(Double.MAX_VALUE, null)));
 			}
 		}
-		
+		/**
+		 * perform relaxation operation of Dijkstra's algorithm
+		 * @param u
+		 * @param v
+		 * @param w
+		 */
 		private void relax(Pair<NodeSim, Pair<Double, NodeSim>> u, Pair<NodeSim, Pair<Double, NodeSim>> v, Double w) {
 			Pair<NodeSim, Pair<Double, NodeSim>> temp;
 			if (v == null) {
@@ -118,7 +151,11 @@ public class Router {
 				verts.remove(v);
 			}
 		}
-		
+		/**
+		 * run Dijkstra's algorithm
+		 * @param nodes
+		 * @param source
+		 */
 		public void runDijkstra(Set<NodeSim> nodes, NodeSim source) {
 			initialize(nodes, source);
 			Pair<NodeSim, Pair<Double, NodeSim>> u;
@@ -141,7 +178,7 @@ public class Router {
 				}
 			}
 		}
-		
+		/*Depricated
 		public double getLatency(NodeSim dest) {
 			for (Pair<NodeSim, Pair<Double, NodeSim>> node : completed) {
 				if (node.getKey().equals(dest)) {
@@ -149,8 +186,12 @@ public class Router {
 				}
 			}
 			return -1;
-		}
-		
+		}*/
+		/**
+		 * get the actual path in the form of a linked list
+		 * @param dest
+		 * @return
+		 */
 		public LinkedList<NodeSim> getPath(NodeSim dest) {
 			LinkedList<NodeSim> reversed = new LinkedList<NodeSim>();
 			LinkedList<NodeSim> result = new LinkedList<NodeSim>();
@@ -177,7 +218,11 @@ public class Router {
 		}
 		
 	}
-	
+	/**
+	 * comparator to use a min-queue
+	 * @author jih0007
+	 *
+	 */
 	private class dijkstrasComparator implements Comparator<Pair<NodeSim, Pair<Double, NodeSim>>> {
 		public int compare(Pair<NodeSim, Pair<Double, NodeSim>> x, Pair<NodeSim, Pair<Double, NodeSim>> y) {
 			return (int)((x.getValue().getKey() - y.getValue().getKey()) * 1000);
