@@ -109,6 +109,11 @@ public class EdgeServerManager {
 			linksForTopography.add(newLink);
 		}
 		NetworkTopology networkTopology = new NetworkTopology(nodesForTopography, linksForTopography);
+		if(!networkTopology.cleanNodes())
+		{
+			SimLogger.printLine("Topology is not valid");
+			System.exit(0);
+		}
 		//CJ not actually sure if this works but we can change it when we actually need to use it
 		MM1Queue.getInstance().setNetworkTopology(networkTopology);
 		
@@ -117,7 +122,9 @@ public class EdgeServerManager {
 	public void createVmList(int brockerId){
 		int hostCounter=0;
 		int vmCounter=0;
-				
+		
+		//SimLogger.printLine("createVmList reached");
+		
 		//Create VMs for each hosts
 		Document doc = SimSettings.getInstance().getEdgeDevicesDocument();
 		NodeList datacenterList = doc.getElementsByTagName("datacenter");

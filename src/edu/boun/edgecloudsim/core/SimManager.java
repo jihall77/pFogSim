@@ -93,8 +93,9 @@ public class SimManager extends SimEntity {
 		//Start Edge Servers & Generate VMs
 		edgeServerManager.startDatacenters();
 		edgeServerManager.createVmList(mobileDeviceManager.getId());
-		
+		//SimLogger.printLine("Before CloudSim.startSimulation()");
 		CloudSim.startSimulation();
+		//SimLogger.printLine("After CloudSim.startSimulation()");
 	}
 	
 	public ScenarioFactory getScenarioFactory(){
@@ -140,7 +141,7 @@ public class SimManager extends SimEntity {
 		schedule(getId(), SimSettings.getInstance().getVmLoadLogInterval(), GET_LOAD_LOG);
 		schedule(getId(), SimSettings.getInstance().getSimulationTime(), STOP_SIMULATION);
 		
-		SimLogger.printLine("Done.");
+		SimLogger.printLine("Done.---");
 	}
 
 	@Override
@@ -148,6 +149,7 @@ public class SimManager extends SimEntity {
 		synchronized(this){
 			switch (ev.getTag()) {
 			case CREATE_TASK:
+				//SimLogger.printLine("CREATE_TASK reached");
 				try {
 					EdgeTask edgeTask = (EdgeTask) ev.getData();
 					mobileDeviceManager.submitTask(edgeTask);						
@@ -157,11 +159,13 @@ public class SimManager extends SimEntity {
 				}
 				break;
 			case CHECK_ALL_VM:
+				//SimLogger.printLine("CHECK_ALL_VM reached");
 				int totalNumOfVm = SimSettings.getInstance().getNumOfEdgeVMs();
 				if(VmAllocationPolicy_Custom.getCreatedVmNum() != totalNumOfVm){
 					SimLogger.printLine("All VMs cannot be created! Terminating simulation...");
 					System.exit(0);
 				}
+				//else SimLogger.printLine("All VMs could be created!");
 				break;
 			case GET_LOAD_LOG:
 				SimLogger.getInstance().addVmUtilizationLog(CloudSim.clock(),edgeServerManager.getAvgUtilization());
