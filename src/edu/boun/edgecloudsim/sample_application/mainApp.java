@@ -38,7 +38,7 @@ public class mainApp {
 		 * trying to output the test files we want
 		 * 
 		 */
-		try{
+		/*try{
 		    PrintWriter node = new PrintWriter("large_node_test.xml", "UTF-8");
 		    PrintWriter links = new PrintWriter("large_links_test.xml", "UTF-8");
 		    node.println("<?xml version=\"1.0\"?>");
@@ -86,7 +86,7 @@ public class mainApp {
 		    		"	</datacenter>");
 		    
 		    int level;
-		    for(int i = 0; i < 5; i++)
+		    for(int i = 0; i < 4; i++)
 		    {
 		    	level = 1;
 		    	int x = (int) (Math.random()* 250);
@@ -138,15 +138,15 @@ public class mainApp {
 			    		"			<y_pos>" + y + "</y_pos>\n" + 
 			    		"		</left>\n" + 
 			    		"		<right>\n" + 
-			    		"			<x_pos>0</x_pos>\n" + 
-			    		"			<y_pos>0</y_pos>\n" + 
+			    		"			<x_pos>125</x_pos>\n" + 
+			    		"			<y_pos>125</y_pos>\n" + 
 			    		"		</right>\n" + 
 			    		"		<left_latency>0.5</left_latency>\n" + 
 			    		"		<right_latency>0.5</right_latency>\n" + 
 			    		"	</link>");
 			    //Add the sub nodes for this
 			    counter++;
-			    for(int j = 0; j < 5; j++)
+			    for(int j = 0; j < 3; j++)
 			    {
 			    	level = 2;
 			    	int x2 = (int) (Math.random()* 250);
@@ -262,7 +262,7 @@ public class mainApp {
 					    		"	</link>");
 			    		//Add the sub nodes
 			    		counter++;
-			    		for(int z = 0; z < 4; z++)
+			    		for(int z = 0; z < 3; z++)
 			    		{
 			    			level = 4;
 					    	int x4 = (int) (Math.random()* 250);
@@ -320,7 +320,7 @@ public class mainApp {
 						    		"	</link>");
 						    //Add subnodes
 					    	counter++;
-					    	for(int v = 0; v < 4; v++)
+					    	for(int v = 0; v < 3; v++)
 				    		{
 				    			level = 5;
 						    	int x5 = (int) (Math.random()* 250);
@@ -336,7 +336,7 @@ public class mainApp {
 							    		"			<x_pos>" + x5 + "</x_pos>\n" + 
 							    		"			<y_pos>" + y5 + "</y_pos>\n" + 
 							    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
-							    		"			<level>" + level + "</level>" +
+							    		"			<level>" + level + "</level>\n" +
 							    		"			<attractiveness>3</attractiveness>\n" + 
 							    		"		</location>");
 							    node.println("<hosts>\n" + 
@@ -393,7 +393,7 @@ public class mainApp {
 		    node.close();
 		} catch (Exception e) {
 		   System.out.println("Failure has occurred");
-		}
+		}*/
 		
 		
 		
@@ -472,13 +472,13 @@ public class mainApp {
 				
 						// Initialize the CloudSim library
 						CloudSim.init(num_user, calendar, trace_flag, 0.01);
-						
+						SimLogger.printLine("CloudSim.init reached");
 						// Generate EdgeCloudsim Scenario Factory
 						ScenarioFactory sampleFactory = new SampleScenarioFactory(j,SS.getSimulationTime(), orchestratorPolicy, simScenario);
-						
+						SimLogger.printLine("ScenarioFactory reached");
 						// Generate EdgeCloudSim Simulation Manager
 						SimManager manager = new SimManager(sampleFactory, j, simScenario);
-						
+						SimLogger.printLine("SimManager reached");
 						// Start simulation
 						manager.startSimulation();
 					}
