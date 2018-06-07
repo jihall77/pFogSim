@@ -70,7 +70,7 @@ public class MM1Queue extends NetworkModel {
 				numOfTaskType++;
 			}
 		}
-		networkTopology.cleanNodes();
+		//networkTopology.cleanNodes();
 		WlanPoissonMean = WlanPoissonMean/numOfTaskType;
 		avgTaskInputSize = avgTaskInputSize/numOfTaskType;
 		avgTaskOutputSize = avgTaskOutputSize/numOfTaskType;
