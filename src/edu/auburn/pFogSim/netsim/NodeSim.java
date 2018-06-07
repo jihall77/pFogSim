@@ -7,6 +7,7 @@ package edu.auburn.pFogSim.netsim;
 import java.util.ArrayList;
 import java.util.List;
 import edu.auburn.pFogSim.netsim.Link;
+import edu.auburn.pFogSim.Exceptions.BadLinkException;
 import edu.boun.edgecloudsim.utils.SimLogger;
 import javafx.util.Pair;
 
@@ -114,7 +115,7 @@ public class NodeSim {
 	 * add a link to this node<br>
 	 * if the link is already on this node do nothing<br>
 	 * if there exists a link on this node with the same exact endpoints but different latencies throw IllegalArgumentException<br>
-	 * if the link is invalid for this node throw IllegalArgumentException
+	 * if the link is invalid for this node throw BadLinkException
 	 * @param in
 	 */
 	public void addLink(Link in) {
@@ -131,7 +132,7 @@ public class NodeSim {
 			edges.add(in);
 		}
 		else {
-			throw new IllegalArgumentException();
+			throw new BadLinkException();
 		}
 	}
 	/**

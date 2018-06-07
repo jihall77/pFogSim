@@ -22,6 +22,7 @@ import edu.boun.edgecloudsim.utils.Location;
 
 public class EdgeHost extends Host {
 	private Location location;
+	private int level;//puddle level
 	
 	public EdgeHost(int id, RamProvisioner ramProvisioner,
 			BwProvisioner bwProvisioner, long storage,
@@ -36,5 +37,13 @@ public class EdgeHost extends Host {
 	
 	public Location getLocation(){
 		return location;
+	}
+	
+	public int getLevel() {
+		return level;
+	}
+	
+	public void setLevel(int _level) {
+		level = _level;
 	}
 }

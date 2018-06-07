@@ -114,8 +114,6 @@ public class EdgeServerManager {
 			SimLogger.printLine("Topology is not valid");
 			System.exit(0);
 		}
-		//CJ not actually sure if this works but we can change it when we actually need to use it
-		//MM1Queue.getInstance().setNetworkTopology(networkTopology);
 		//JIH lets see if this works
 		((MM1Queue) SimManager.getInstance().getNetworkModel()).setNetworkTopology(networkTopology);
 		
@@ -239,6 +237,7 @@ public class EdgeServerManager {
 		int wlan_id = Integer.parseInt(location.getElementsByTagName("wlan_id").item(0).getTextContent());
 		int x_pos = Integer.parseInt(location.getElementsByTagName("x_pos").item(0).getTextContent());
 		int y_pos = Integer.parseInt(location.getElementsByTagName("y_pos").item(0).getTextContent());
+		int level =Integer.parseInt(location.getElementsByTagName("level").item(0).getTextContent());
 		SimSettings.PLACE_TYPES placeType = SimUtils.stringToPlace(attractiveness);
 
 		NodeList hostNodeList = datacenterElement.getElementsByTagName("host");
@@ -278,6 +277,7 @@ public class EdgeServerManager {
 				);
 			
 			host.setPlace(new Location(placeType, wlan_id, x_pos, y_pos));
+			host.setLevel(level);
 			hostList.add(host);
 			hostIdCounter++;
 		}
