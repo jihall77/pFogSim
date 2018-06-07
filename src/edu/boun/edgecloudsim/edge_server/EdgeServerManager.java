@@ -115,7 +115,9 @@ public class EdgeServerManager {
 			System.exit(0);
 		}
 		//CJ not actually sure if this works but we can change it when we actually need to use it
-		MM1Queue.getInstance().setNetworkTopology(networkTopology);
+		//MM1Queue.getInstance().setNetworkTopology(networkTopology);
+		//JIH lets see if this works
+		((MM1Queue) SimManager.getInstance().getNetworkModel()).setNetworkTopology(networkTopology);
 		
 	}
 
