@@ -71,7 +71,10 @@ public class MM1Queue extends NetworkModel {
 				numOfTaskType++;
 			}
 		}
+<<<<<<< HEAD
 		//SimLogger.printLine("cleanNodes called");
+=======
+>>>>>>> branch 'master' of https://github.com/jihall77/pFogSim.git
 		//networkTopology.cleanNodes();
 		WlanPoissonMean = WlanPoissonMean/numOfTaskType;
 		avgTaskInputSize = avgTaskInputSize/numOfTaskType;
