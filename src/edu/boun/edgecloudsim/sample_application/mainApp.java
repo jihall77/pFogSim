@@ -24,7 +24,8 @@ import edu.boun.edgecloudsim.utils.SimLogger;
 import edu.boun.edgecloudsim.utils.SimUtils;
 
 import java.io.PrintWriter;
-import java.io.File;
+
+import edu.auburn.pFogSim.clustering.FogHierCluster;
 
 public class mainApp {
 	
@@ -38,7 +39,7 @@ public class mainApp {
 		 * trying to output the test files we want
 		 * 
 		 */
-		try{
+		/*try{
 		    PrintWriter node = new PrintWriter("large_node_test.xml", "UTF-8");
 		    PrintWriter links = new PrintWriter("large_links_test.xml", "UTF-8");
 		    node.println("<?xml version=\"1.0\"?>");
@@ -393,7 +394,14 @@ public class mainApp {
 		    node.close();
 		} catch (Exception e) {
 		   System.out.println("Files were not able to be made");
-		}
+		}*/
+		
+		
+		/*
+		 * Try to get FogHierClust.java to run
+		 * 
+		 */
+		FogHierCluster clusterObject = new FogHierCluster();
 		
 		
 		

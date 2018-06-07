@@ -8,6 +8,7 @@ package edu.auburn.pFogSim.netsim;
 
 import javafx.util.Pair;
 
+
 public class Link {
 
 	private Pair<Integer, Integer> leftCoord;
