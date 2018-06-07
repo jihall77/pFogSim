@@ -16,7 +16,8 @@ import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
 import edu.boun.edgecloudsim.edge_server.EdgeHost;
 import edu.boun.edgecloudsim.utils.Location;
-
+import javafx.util.Pair;
+import java.util.LinkedList;
 import edu.auburn.pFogSim.netsim.*;
 
 public class MM1Queue extends NetworkModel {
@@ -30,12 +31,10 @@ public class MM1Queue extends NetworkModel {
 	
 	public MM1Queue() {
 		super();
-		instance = this;
 	}
 	
 	public MM1Queue(int _numberOfMobileDevices) {
 		super(_numberOfMobileDevices);
-		instance = this;
 	}
 	
 	public static MM1Queue getInstance() {
@@ -71,7 +70,7 @@ public class MM1Queue extends NetworkModel {
 				numOfTaskType++;
 			}
 		}
-		
+		networkTopology.cleanNodes();
 		WlanPoissonMean = WlanPoissonMean/numOfTaskType;
 		avgTaskInputSize = avgTaskInputSize/numOfTaskType;
 		avgTaskOutputSize = avgTaskOutputSize/numOfTaskType;
@@ -84,7 +83,33 @@ public class MM1Queue extends NetworkModel {
 	public double getUploadDelay(int sourceDeviceId, int destDeviceId, double dataSize) {
 		double delay = 0;
 		Location accessPointLocation = SimManager.getInstance().getMobilityModel().getLocation(sourceDeviceId,CloudSim.clock());
-
+		Location destPointLocation = SimManager.getInstance().getMobilityModel().getLocation(sourceDeviceId,CloudSim.clock());
+		Pair<Integer, Integer> source;
+		Pair<Integer, Integer> destination;
+		NodeSim src;
+		NodeSim dest;
+		NodeSim current;
+		NodeSim nextHop;
+		LinkedList<NodeSim> path;
+		source = new Pair<Integer, Integer>(accessPointLocation.getXPos(), accessPointLocation.getYPos());
+		destination = new Pair<Integer, Integer>(destPointLocation.getXPos(), destPointLocation.getYPos());
+		
+		src = networkTopology.findNode(source);
+		dest = networkTopology.findNode(destination);
+		path = Router.findPath(networkTopology, src, dest);
+		delay += getWlanUploadDelay(accessPointLocation, CloudSim.clock());
+		while (!path.isEmpty()) {
+			current = path.poll();
+			nextHop = path.peek();
+			accessPointLocation = new Location(null, 0, current.getLocation().getKey(), current.getLocation().getValue());//we only care about the x-y position, the other details are irrelevant here
+			delay += getWlanUploadDelay(accessPointLocation, CloudSim.clock());
+			if (nextHop == null) {
+				break;
+			}
+			delay += current.traverse(nextHop);
+		}
+		
+		/*
 		//mobile device to cloud server
 		if(destDeviceId == SimSettings.CLOUD_DATACENTER_ID){
 			double wlanDelay = getWlanUploadDelay(accessPointLocation, CloudSim.clock());
@@ -101,7 +126,7 @@ public class MM1Queue extends NetworkModel {
 		else if (destDeviceId == SimSettings.GENERIC_EDGE_DEVICE_ID) {
 			delay = getWlanUploadDelay(accessPointLocation, CloudSim.clock());
 		}
-		
+		*/
 		return delay;
 	}
 
@@ -110,6 +135,7 @@ public class MM1Queue extends NetworkModel {
     */
 	@Override
 	public double getDownloadDelay(int sourceDeviceId, int destDeviceId, double dataSize) {
+		/*
 		//Special Case -> edge orchestrator to edge device
 		if(sourceDeviceId == SimSettings.EDGE_ORCHESTRATOR_ID &&
 				destDeviceId == SimSettings.GENERIC_EDGE_DEVICE_ID){
@@ -141,8 +167,8 @@ public class MM1Queue extends NetworkModel {
 			if(host.getLocation().getServingWlanId() != accessPointLocation.getServingWlanId())
 				delay += (SimSettings.getInstance().getInternalLanDelay() * 2);
 		}
-		
-		return delay;
+		*/
+		return getUploadDelay(destDeviceId, sourceDeviceId, dataSize);
 	}
 	
 	public int getMaxNumOfClientsInPlace(){
