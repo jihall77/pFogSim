@@ -7,6 +7,7 @@ package edu.auburn.pFogSim.netsim;
 import java.util.ArrayList;
 import java.util.List;
 import edu.auburn.pFogSim.netsim.Link;
+import edu.boun.edgecloudsim.utils.SimLogger;
 import javafx.util.Pair;
 
 public class NodeSim {
@@ -85,6 +86,7 @@ public class NodeSim {
 				return edges.get(i);
 			}
 		}
+		//SimLogger.printLine("returned null");
 		return null;
 	}
 	/**
@@ -96,11 +98,13 @@ public class NodeSim {
 	 */
 	public boolean removeLink(Link victim) {
 		if (victim == null) {
+			//SimLogger.printLine("removeLink return false");
 			return false;
 		}
 		for (Link edge : edges) {
 			if (edge.equals(victim)) {
 				edges.remove(victim);
+				//SimLogger.printLine("removeLink return true");
 				return true;
 			}
 		}

@@ -16,6 +16,7 @@ import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
 import edu.boun.edgecloudsim.edge_server.EdgeHost;
 import edu.boun.edgecloudsim.utils.Location;
+import edu.boun.edgecloudsim.utils.SimLogger;
 import javafx.util.Pair;
 import java.util.LinkedList;
 import edu.auburn.pFogSim.netsim.*;
@@ -70,7 +71,8 @@ public class MM1Queue extends NetworkModel {
 				numOfTaskType++;
 			}
 		}
-		networkTopology.cleanNodes();
+		//SimLogger.printLine("cleanNodes called");
+		//networkTopology.cleanNodes();
 		WlanPoissonMean = WlanPoissonMean/numOfTaskType;
 		avgTaskInputSize = avgTaskInputSize/numOfTaskType;
 		avgTaskOutputSize = avgTaskOutputSize/numOfTaskType;

@@ -141,7 +141,7 @@ public class SimManager extends SimEntity {
 		schedule(getId(), SimSettings.getInstance().getVmLoadLogInterval(), GET_LOAD_LOG);
 		schedule(getId(), SimSettings.getInstance().getSimulationTime(), STOP_SIMULATION);
 		
-		SimLogger.printLine("Done.---");
+		SimLogger.printLine("Done.");
 	}
 
 	@Override

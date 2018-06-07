@@ -38,7 +38,7 @@ public class mainApp {
 		 * trying to output the test files we want
 		 * 
 		 */
-		/*try{
+		try{
 		    PrintWriter node = new PrintWriter("large_node_test.xml", "UTF-8");
 		    PrintWriter links = new PrintWriter("large_links_test.xml", "UTF-8");
 		    node.println("<?xml version=\"1.0\"?>");
@@ -392,8 +392,8 @@ public class mainApp {
 		    links.close();
 		    node.close();
 		} catch (Exception e) {
-		   System.out.println("Failure has occurred");
-		}*/
+		   System.out.println("Files were not able to be made");
+		}
 		
 		
 		
