@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.lang.Math.*;
 import javafx.util.Pair;
+import java.util.HashMap;
+
 import edu.auburn.pFogSim.netsim.*;
 import edu.boun.edgecloudsim.utils.SimLogger;
 
@@ -35,26 +37,44 @@ public class FogCluster {
 		Pair<Integer, Integer> location = null;
 		int x = -1, y = -1, level = -1;
 		
-		Iterator<NodeSim> iter = nodes.iterator();
-		while(iter.hasNext()) 
+		HashMap<Integer, ArrayList<Pair<Integer, Integer>>> levelMap = new HashMap<Integer, ArrayList<Pair<Integer, Integer>>>();
+		//Pair<Integer, ArrayList<Pair<Integer, Integer>>> levelMap = new Pair<Integer, ArrayList<Pair<Integer, Integer>>>(null, null);
+		
+		
+		for(NodeSim node : nodes) 
 		{
-			NodeSim node = iter.next();
 			location = node.getLocation();
 			if(location != null) 
 			{   
-				System.out.println(location);
+				//System.out.println(location);
 				x = location.getKey();
 				y = location.getValue();
 				level = node.getLevel();
 				
-				System.out.println(String.format("\tx = %d\n\ty = %d\n\tlevel = %d", x, y, level));
-				
+				//System.out.println(String.format("\tx = %d\n\ty = %d\n\tlevel = %d", x, y, level));
+				//Sort out all of the nodes by their levels
+				ArrayList<Pair<Integer, Integer>> arr = levelMap.get(level);
+				if(arr == null) {
+					arr = new ArrayList<Pair<Integer, Integer>>();
+				}
+				arr.add(new Pair<Integer, Integer>(x, y));
+				levelMap.put(level, arr);
 			}
-			
 		}
-		
-		
-		SimLogger.printLine("stdInput reached");
+		//int sum = 0;
+		for(int the_level = 0; the_level < 8; the_level++)
+		{
+			if (levelMap.get(the_level) != null) {
+				//System.out.println(String.format("There are %d nodes in level %d", levelMap.get(the_level).size(), the_level));
+				//sum += levelMap.get(the_level).size();
+				for(Pair<Integer, Integer> pair : levelMap.get(the_level))
+				{
+					//System.out.println(String.format("\n\tLevel = %d\n\tx = %d\n\ty = %d", the_level, pair.getKey(), pair.getValue()));
+				}
+			}
+		}
+		//System.out.println("Total number of nodes = " + sum);
+		//SimLogger.printLine("stdInput reached");
 		
 	}
 	
