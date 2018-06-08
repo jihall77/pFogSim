@@ -11,6 +11,7 @@ public class FogHierCluster {
 	public FogHierCluster(ArrayList<NodeSim> nodes) {
 		//CJ Adding FogCluster method stdInput()
 		FogCluster fc0 = new FogCluster(nodes);
+		//makeClusters();
 	}
 	
 	private static void makeClusters() {
@@ -30,7 +31,7 @@ public class FogHierCluster {
 		for (int i=0; i<clusterNumber1; i++){
 			//System.out.println("ClusterId  ClusterSize: "+i+"   "+clusterSet1[i].length);
 		}		
-
+		System.out.println("ClusterSet1 = " + clusterSet1[0][0][1]);
 		int clusterNumber2 = 41;
 		String fileName2 = new String("C:\\Users\\cpj0009\\git\\pFogSim\\src\\edu\\auburn\\pFogSim\\kmcluster\\LocData-L2-200");
 		FogCluster fc2 = new FogCluster(fileName2, clusterNumber2);
@@ -38,7 +39,7 @@ public class FogHierCluster {
 		for (int i=0; i<clusterNumber2; i++){
 			//System.out.println("ClusterId  ClusterSize: "+i+"   "+clusterSet2[i].length);
 		}		
-	
+		//System.out.println("ClusterSet2 = " + clusterSet2);
 		int clusterNumber3 = 20;
 		String fileName3 = new String("C:\\Users\\cpj0009\\git\\pFogSim\\src\\edu\\auburn\\pFogSim\\kmcluster\\LocData-L3-50");
 		FogCluster fc3 = new FogCluster(fileName3, clusterNumber3);
@@ -46,7 +47,7 @@ public class FogHierCluster {
 		for (int i=0; i<clusterNumber3; i++){
 			//System.out.println("ClusterId  ClusterSize: "+i+"   "+clusterSet3[i].length);
 		}		
-		
+		//System.out.println("ClusterSet3 = " + clusterSet3);
 		int clusterNumber4 = 3;
 		String fileName4 = new String("C:\\Users\\cpj0009\\git\\pFogSim\\src\\edu\\auburn\\pFogSim\\kmcluster\\LocData-L4-10");
 		FogCluster fc4 = new FogCluster(fileName4, clusterNumber4);
@@ -54,7 +55,7 @@ public class FogHierCluster {
 		for (int i=0; i<clusterNumber4; i++){
 			//System.out.println("ClusterId  ClusterSize: "+i+"   "+clusterSet4[i].length);
 		}
-
+		//System.out.println("ClusterSet4 = " + clusterSet4);
 		
 		//Now, for each set of clusters in adjacent layers, repeat the following:
 		//Say clusters in layer-3 & layer-4
@@ -110,9 +111,9 @@ public class FogHierCluster {
 		}// end for cLower
 		
 		//Print Parent/Child relationships
-		//System.out.println("ChildCluster"+"   "+"ParentCluster");
+		System.out.println("ChildCluster"+"   "+"ParentCluster");
 		for (int cLower=0; cLower<clusterNumber3; cLower++){
-			//System.out.println("         "+cLower+"   "+"         "+parentCluster[cLower]);
+			System.out.println("         "+cLower+"   "+"         "+parentCluster[cLower]);
 		}// end for cLower-Print
 
 		
@@ -171,9 +172,9 @@ public class FogHierCluster {
 		}// end for cLower
 		
 		//Print Parent/Child relationships
-		//System.out.println("ChildCluster"+"   "+"ParentCluster");
+		System.out.println("ChildCluster"+"   "+"ParentCluster");
 		for (int cLower=0; cLower<clusterNumber2; cLower++){
-			//System.out.println("         "+cLower+"   "+"         "+parentCluster[cLower]);
+			System.out.println("         "+cLower+"   "+"         "+parentCluster[cLower]);
 		}// end for cLower-Print
 		
 
@@ -233,9 +234,9 @@ public class FogHierCluster {
 		}// end for cLower
 		
 		//Print Parent/Child relationships
-		//System.out.println("ChildCluster"+"   "+"ParentCluster");
+		System.out.println("ChildCluster"+"   "+"ParentCluster");
 		for (int cLower=0; cLower<clusterNumber1; cLower++){
-			//System.out.println("         "+cLower+"   "+"         "+parentCluster[cLower]);
+			System.out.println("         "+cLower+"   "+"         "+parentCluster[cLower]);
 		}// end for cLower-Print
 		
 

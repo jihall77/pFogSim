@@ -62,7 +62,7 @@ public class FogCluster {
 			}
 		}
 		//int sum = 0;
-		for(int the_level = 0; the_level < 8; the_level++)
+		/*for(int the_level = 0; the_level < 8; the_level++)
 		{
 			if (levelMap.get(the_level) != null) {
 				//System.out.println(String.format("There are %d nodes in level %d", levelMap.get(the_level).size(), the_level));
@@ -72,9 +72,91 @@ public class FogCluster {
 					//System.out.println(String.format("\n\tLevel = %d\n\tx = %d\n\ty = %d", the_level, pair.getKey(), pair.getValue()));
 				}
 			}
-		}
+		}*/
 		//System.out.println("Total number of nodes = " + sum);
 		//SimLogger.printLine("stdInput reached");
+	
+		
+		//CJ Clustering technique is implemented here
+
+		int[] parentCluster;
+		double clusterMaxDistance = 0 ;
+		double minDistance = Double.MAX_VALUE;
+		int parent = 0;
+		double distance = 0;
+		
+		
+		//Now, for each set of clusters in adjacent layers, repeat the following:
+		//Say clusters in layer-3 & layer-4
+		for(int leveliter = 0; leveliter < 8; leveliter++)
+		{
+			if(levelMap.get(leveliter) != null && levelMap.get(leveliter + 1) != null)
+			{
+				int clusterNumber3 = levelMap.get(leveliter).size();
+				int clusterNumber4 = levelMap.get(leveliter + 1).size();
+				parentCluster = new int[clusterNumber3];
+				
+				//For each cluster in lower layer, do the following
+				for (int cLower=0; cLower<clusterNumber3; cLower++){
+					minDistance = Double.MAX_VALUE;
+					parent = 0;
+					
+					//For each cluster in upper layer, do the following
+					for(int cUpper=0; cUpper<clusterNumber4; cUpper++){
+						
+						clusterMaxDistance = 0;
+						//Calculate the ('max' for CompleteLink) distance between cluster from lower layer 'cLower'
+						//and cluster from higher layer 'cUpper'
+						// i.e. find the distance between each point of 'cLower' cluster 
+						// and each point of 'cUpper' cluster
+						// Note the maximum distance
+						
+						//From each point of 'cLower' cluster
+						for (int cLoweri=0; cLoweri<levelMap.get(leveliter).size(); cLoweri++){
+							// Get point coordinates
+							//int x1 = clusterSet3[cLower][cLoweri][0];
+							int x1 = levelMap.get(leveliter).get(cLower).getKey();
+							int y1 = levelMap.get(leveliter).get(cLower).getValue();
+							
+							//To each point of 'cUpper' cluster
+							for (int cUpperj=0; cUpperj<levelMap.get(leveliter + 1).size(); cUpperj++){
+								// Get point coordinates
+								int x2 = levelMap.get(leveliter + 1).get(cUpper).getKey();
+								int y2 = levelMap.get(leveliter + 1).get(cUpper).getValue();
+														
+								//find the distance
+								distance = Math.sqrt(((x2-x1)*(x2-x1)) + ((y2-y1)*(y2-y1)));
+								//System.out.println(distance);
+								
+								// Save the maximum distance
+								if (distance > clusterMaxDistance){
+									clusterMaxDistance = distance;
+								}
+								
+							}// end for cUpperj
+						}// end for cLoweri
+		
+						//If this is the closer upper layer cluster, then this is a better parent cluster
+						if (clusterMaxDistance < minDistance){
+							minDistance = clusterMaxDistance;
+							parentCluster[cLower] = cUpper; 
+						}
+						
+					}// end for cUpper
+				}// end for cLower
+				
+				//Print Parent/Child relationships
+				//System.out.println("ChildCluster"+"   "+"ParentCluster");
+				for (int cLower=0; cLower<clusterNumber3; cLower++){
+					//System.out.println("         "+cLower+"   "+"         "+parentCluster[cLower]);
+				}// end for cLower-Print
+			}
+		}
+		
+		
+		
+		
+		
 		
 	}
 	
