@@ -401,7 +401,6 @@ public class mainApp {
 		 * Try to get FogHierClust.java to run
 		 * 
 		 */
-		FogHierCluster clusterObject = new FogHierCluster();
 		
 		
 		
@@ -409,7 +408,7 @@ public class mainApp {
 		//enable console output and file output of this application
 		SimLogger.enablePrintLog();
 		
-		
+
 		//CJ added linksFile to supply the link xml file, had to adjust all constructors that
 		//	use these file to seamlessly use it
 		int iterationNumber = 1;

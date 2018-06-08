@@ -39,7 +39,7 @@ import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
 import edu.boun.edgecloudsim.utils.SimUtils;
 import javafx.util.Pair;
-
+import edu.auburn.pFogSim.clustering.*;
 import edu.auburn.pFogSim.netsim.*;
 import edu.boun.edgecloudsim.network.MM1Queue;
 
@@ -108,6 +108,9 @@ public class EdgeServerManager {
 			Link newLink = new Link(rightCoor,leftCoor, right_lat, left_lat);
 			linksForTopography.add(newLink);
 		}
+		//This line that comes next needs to be apologized for, it's horrific and I'm sorry
+		//	-CJ
+		FogHierCluster clusterObject = new FogHierCluster((ArrayList<NodeSim>)nodesForTopography);
 		NetworkTopology networkTopology = new NetworkTopology(nodesForTopography, linksForTopography);
 		if(!networkTopology.cleanNodes())
 		{
@@ -263,8 +266,9 @@ public class EdgeServerManager {
 			}
 			
 			//Make NodeSim object with the input x/y positions and add that to the list of nodes
-			NodeSim newNode = new NodeSim(x_pos, y_pos);
+			NodeSim newNode = new NodeSim(x_pos, y_pos, level);
 			nodesForTopography.add(newNode);
+			
 			
 			//4. Create Hosts with its id and list of PEs and add them to the list of machines
 			EdgeHost host = new EdgeHost(

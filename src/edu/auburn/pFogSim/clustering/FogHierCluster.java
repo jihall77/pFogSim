@@ -2,10 +2,15 @@ package edu.auburn.pFogSim.clustering;
 
 import edu.boun.edgecloudsim.utils.*;
 
+import java.util.ArrayList;
+
+import edu.auburn.pFogSim.netsim.*;
+
 public class FogHierCluster {
 
-	public FogHierCluster() {
-		makeClusters();
+	public FogHierCluster(ArrayList<NodeSim> nodes) {
+		//CJ Adding FogCluster method stdInput()
+		FogCluster fc0 = new FogCluster(nodes);
 	}
 	
 	private static void makeClusters() {
@@ -15,12 +20,15 @@ public class FogHierCluster {
 		int parent = 0;
 		int[] parentCluster;
 		
+		//System.out.println("makeClusters reached");
+		
+		
 		int clusterNumber1 = 100;
 		String fileName1 = new String("C:\\Users\\cpj0009\\git\\pFogSim\\src\\edu\\auburn\\pFogSim\\kmcluster\\LocData-L1-500");
 		FogCluster fc1 = new FogCluster(fileName1, clusterNumber1);
 		Integer[][][] clusterSet1 = fc1.getCluster(); 
 		for (int i=0; i<clusterNumber1; i++){
-			System.out.println("ClusterId  ClusterSize: "+i+"   "+clusterSet1[i].length);
+			//System.out.println("ClusterId  ClusterSize: "+i+"   "+clusterSet1[i].length);
 		}		
 
 		int clusterNumber2 = 41;
@@ -28,7 +36,7 @@ public class FogHierCluster {
 		FogCluster fc2 = new FogCluster(fileName2, clusterNumber2);
 		Integer[][][] clusterSet2 = fc2.getCluster();
 		for (int i=0; i<clusterNumber2; i++){
-			System.out.println("ClusterId  ClusterSize: "+i+"   "+clusterSet2[i].length);
+			//System.out.println("ClusterId  ClusterSize: "+i+"   "+clusterSet2[i].length);
 		}		
 	
 		int clusterNumber3 = 20;
@@ -36,7 +44,7 @@ public class FogHierCluster {
 		FogCluster fc3 = new FogCluster(fileName3, clusterNumber3);
 		Integer[][][] clusterSet3 = fc3.getCluster();
 		for (int i=0; i<clusterNumber3; i++){
-			System.out.println("ClusterId  ClusterSize: "+i+"   "+clusterSet3[i].length);
+			//System.out.println("ClusterId  ClusterSize: "+i+"   "+clusterSet3[i].length);
 		}		
 		
 		int clusterNumber4 = 3;
@@ -44,7 +52,7 @@ public class FogHierCluster {
 		FogCluster fc4 = new FogCluster(fileName4, clusterNumber4);
 		Integer[][][] clusterSet4 = fc4.getCluster();
 		for (int i=0; i<clusterNumber4; i++){
-			System.out.println("ClusterId  ClusterSize: "+i+"   "+clusterSet4[i].length);
+			//System.out.println("ClusterId  ClusterSize: "+i+"   "+clusterSet4[i].length);
 		}
 
 		
@@ -82,7 +90,7 @@ public class FogHierCluster {
 												
 						//find the distance
 						distance = Math.sqrt(((x2-x1)*(x2-x1)) + ((y2-y1)*(y2-y1)));
-						//System.out.println(distance);
+						////System.out.println(distance);
 						
 						// Save the maximum distance
 						if (distance > clusterMaxDistance){
@@ -102,9 +110,9 @@ public class FogHierCluster {
 		}// end for cLower
 		
 		//Print Parent/Child relationships
-		System.out.println("ChildCluster"+"   "+"ParentCluster");
+		//System.out.println("ChildCluster"+"   "+"ParentCluster");
 		for (int cLower=0; cLower<clusterNumber3; cLower++){
-			System.out.println("         "+cLower+"   "+"         "+parentCluster[cLower]);
+			//System.out.println("         "+cLower+"   "+"         "+parentCluster[cLower]);
 		}// end for cLower-Print
 
 		
@@ -143,7 +151,7 @@ public class FogHierCluster {
 												
 						//find the distance
 						distance = Math.sqrt(((x2-x1)*(x2-x1)) + ((y2-y1)*(y2-y1)));
-						//System.out.println(distance);
+						////System.out.println(distance);
 						
 						// Save the maximum distance
 						if (distance > clusterMaxDistance){
@@ -163,9 +171,9 @@ public class FogHierCluster {
 		}// end for cLower
 		
 		//Print Parent/Child relationships
-		System.out.println("ChildCluster"+"   "+"ParentCluster");
+		//System.out.println("ChildCluster"+"   "+"ParentCluster");
 		for (int cLower=0; cLower<clusterNumber2; cLower++){
-			System.out.println("         "+cLower+"   "+"         "+parentCluster[cLower]);
+			//System.out.println("         "+cLower+"   "+"         "+parentCluster[cLower]);
 		}// end for cLower-Print
 		
 
@@ -205,7 +213,7 @@ public class FogHierCluster {
 												
 						//find the distance
 						distance = Math.sqrt(((x2-x1)*(x2-x1)) + ((y2-y1)*(y2-y1)));
-						//System.out.println(distance);
+						////System.out.println(distance);
 						
 						// Save the maximum distance
 						if (distance > clusterMaxDistance){
@@ -225,9 +233,9 @@ public class FogHierCluster {
 		}// end for cLower
 		
 		//Print Parent/Child relationships
-		System.out.println("ChildCluster"+"   "+"ParentCluster");
+		//System.out.println("ChildCluster"+"   "+"ParentCluster");
 		for (int cLower=0; cLower<clusterNumber1; cLower++){
-			System.out.println("         "+cLower+"   "+"         "+parentCluster[cLower]);
+			//System.out.println("         "+cLower+"   "+"         "+parentCluster[cLower]);
 		}// end for cLower-Print
 		
 

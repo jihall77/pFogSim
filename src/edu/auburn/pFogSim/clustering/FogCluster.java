@@ -2,7 +2,11 @@ package edu.auburn.pFogSim.clustering;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.lang.Math.*;
+import javafx.util.Pair;
+import edu.auburn.pFogSim.netsim.*;
+import edu.boun.edgecloudsim.utils.SimLogger;
 
 public class FogCluster {
 	private String[] lines = null;
@@ -19,6 +23,42 @@ public class FogCluster {
 	} // end getCluster
 
 
+	/*
+	 * Method - stdInput from EdgeServerManager
+	 * 
+	 */
+	public void stdInput(ArrayList<NodeSim> nodes) 
+	{
+		//Passed args : ArrayList<NodeSim> nodes
+		//We need the data and the total number of nodes in this cluster
+		
+		Pair<Integer, Integer> location = null;
+		int x = -1, y = -1, level = -1;
+		
+		Iterator<NodeSim> iter = nodes.iterator();
+		while(iter.hasNext()) 
+		{
+			NodeSim node = iter.next();
+			location = node.getLocation();
+			if(location != null) 
+			{   
+				System.out.println(location);
+				x = location.getKey();
+				y = location.getValue();
+				level = node.getLevel();
+				
+				System.out.println(String.format("\tx = %d\n\ty = %d\n\tlevel = %d", x, y, level));
+				
+			}
+			
+		}
+		
+		
+		SimLogger.printLine("stdInput reached");
+		
+	}
+	
+	
 	/**
 	 *  Method - csvInput
 	 * 
@@ -40,7 +80,7 @@ public class FogCluster {
 				point[0] = Integer.parseInt(pointString[0].trim());
 				point[1] = Integer.parseInt(pointString[1].trim());
 				
-				System.out.println(point[0]+","+point[1]);
+				//System.out.println(point[0]+","+point[1]);
 				points.add(point);
 				
 			}// end while
@@ -77,7 +117,7 @@ public class FogCluster {
 		// declare an nxn array of double type
 		
 		int n = points.length;
-		System.out.println("Number of points: "+n);
+		//System.out.println("Number of points: "+n);
 		
 		proximityMatrix = new double[n][n];
 		
@@ -93,7 +133,7 @@ public class FogCluster {
 				
 				//Calculate distance
 				distance = Math.sqrt(((x2-x1)*(x2-x1)) + ((y2-y1)*(y2-y1)));
-				System.out.println(distance);
+				//System.out.println(distance);
 				
 				//Update entry in proximityMatrix
 				proximityMatrix[i][j] = distance;
@@ -109,19 +149,19 @@ public class FogCluster {
 		
 		//HierarchicalClustering hc = new HierarchicalClustering(new SingleLinkage(proximityMatrix));
 		HierarchicalClustering hc = new HierarchicalClustering(new CompleteLinkage(proximityMatrix));
-		System.out.println("clusterNumber is: "+clusterNumber);
+		//System.out.println("clusterNumber is: "+clusterNumber);
 		int[] membership = hc.partition(clusterNumber);
 		int[] clusterSize = new int[clusterNumber];
-		System.out.println("membership[] length: "+membership.length);
+		//System.out.println("membership[] length: "+membership.length);
 		for (int i=0; i< membership.length; i++){
 			clusterSize[membership[i]]++;
-			System.out.println("i membership[i] clusterSize: "+i+"   "+membership[i]+"   "+clusterSize[membership[i]]);
+			//System.out.println("i membership[i] clusterSize: "+i+"   "+membership[i]+"   "+clusterSize[membership[i]]);
 		} 
 		
 		cluster = new Integer[clusterNumber][][];
-		System.out.println("clusterNumber is: "+clusterNumber);
+		//System.out.println("clusterNumber is: "+clusterNumber);
 		for (int k=0; k<clusterNumber; k++){
-			System.out.println("k clusterSize[k]: "+k+"   "+clusterSize[k]);
+			//System.out.println("k clusterSize[k]: "+k+"   "+clusterSize[k]);
 			cluster[k] = new Integer[clusterSize[k]][2];
 			
 			for (int i=0,j=0; i<points.length; i++){
@@ -131,9 +171,9 @@ public class FogCluster {
 			}// end for i,j
 			
 			// These are classified as a cluster; print these separately. 
-			System.out.println("\n\n Cluster Number: " + k +"\n");
+			//System.out.println("\n\n Cluster Number: " + k +"\n");
 			for (int i=0; i<clusterSize[k]; i++){
-				System.out.println(cluster[k][i][0]+" , "+cluster[k][i][1]);
+				//System.out.println(cluster[k][i][0]+" , "+cluster[k][i][1]);
 			}// end for i
 			
 		}// end for k
@@ -149,9 +189,9 @@ public class FogCluster {
 			}// end for i,j
 			
 			// These are classified as a cluster; print these separately. 
-			System.out.println("\n\n Cluster Number: " + k +"\n");
+			//System.out.println("\n\n Cluster Number: " + k +"\n");
 			for (int i=0; i<clusterSize[k]; i++){
-				System.out.println(cluster[i][0]+" , "+cluster[i][1]);
+				//System.out.println(cluster[i][0]+" , "+cluster[i][1]);
 			}// end for i
 			
 		}// end for k
@@ -180,12 +220,19 @@ public class FogCluster {
 	 */
 	public FogCluster(String fn, int cNum) {
 		super();
+		//SimLogger.printLine("String and int constructor FogCluster() reached");
 		setClusterNumber(cNum);
 		csvInput(fn);
 		calcProximity();
 		learn();		
 		
 	}// end Constructor FogHierCluster()
+	
+	public FogCluster(ArrayList<NodeSim> nodes) {
+		super();
+		//SimLogger.printLine("Blank constructor FogCluster() reached");
+		stdInput(nodes);
+	}
 
 
 	public static void main(String[] args) {

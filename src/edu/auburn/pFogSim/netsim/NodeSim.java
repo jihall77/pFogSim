@@ -15,6 +15,7 @@ public class NodeSim {
 	
 	private ArrayList<Link> edges;
 	private Pair<Integer, Integer> myLocation;
+	private int level;
 	/**
 	 * Constructor
 	 * @param inputEdges
@@ -33,6 +34,12 @@ public class NodeSim {
 	public NodeSim(int xin, int yin) {
 		edges = new ArrayList<Link>();
 		myLocation = new Pair<Integer, Integer>(xin, yin);
+	}
+	
+	public NodeSim(int xin, int yin, int level) {
+		edges = new ArrayList<Link>();
+		myLocation = new Pair<Integer, Integer>(xin, yin);
+		this.level = level;
 	}
 	/**
 	 * tests to make sure that at least on of the endpoints for the given link is at this node
@@ -165,6 +172,14 @@ public class NodeSim {
 			}
 		}
 		return true;
+	}
+	
+	public void setLevel(int _level) {
+		this.level = _level;
+	}
+	
+	public int getLevel() {
+		return this.level;
 	}
 
 }
