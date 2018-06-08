@@ -51,6 +51,9 @@ public class SimSettings {
 	//predifined IDs for edge devices
 	public static int EDGE_ORCHESTRATOR_ID = 2000;
 	public static int GENERIC_EDGE_DEVICE_ID = EDGE_ORCHESTRATOR_ID + 1;
+	
+	//generic ID for mobile device
+	public static int MOBILE_DEVICE_ID = 3000;
 
 	//delimiter for output file.
 	public static String DELIMITER = ";";

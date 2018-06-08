@@ -140,11 +140,14 @@ public class NetworkTopology {
 	 * @param y
 	 * @return the closest node to the location
 	 */
-	public NodeSim findNode(int x, int y) {
+	public NodeSim findNode(int x, int y, boolean wifi) {
 		NodeSim closest = null;
 		double distanceNew = Double.MAX_VALUE;
 		double distance = Double.MAX_VALUE;
 		for (NodeSim node : getNodes()) {
+			if (wifi && !node.isWifiAcc()) {
+				continue;
+			}
 			if (x == node.getLocation().getKey() && y == node.getLocation().getValue()) {
 				closest = node;
 				return closest;
@@ -158,7 +161,7 @@ public class NetworkTopology {
 		return closest;
 	}
 	
-	public NodeSim findNode(Pair<Integer, Integer> loc) {
-		return findNode(loc.getKey(), loc.getValue());
+	public NodeSim findNode(Pair<Integer, Integer> loc, boolean wifi) {
+		return findNode(loc.getKey(), loc.getValue(), wifi);
 	}
 }

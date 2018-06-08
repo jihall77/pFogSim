@@ -96,8 +96,18 @@ public class MM1Queue extends NetworkModel {
 		source = new Pair<Integer, Integer>(accessPointLocation.getXPos(), accessPointLocation.getYPos());
 		destination = new Pair<Integer, Integer>(destPointLocation.getXPos(), destPointLocation.getYPos());
 		
-		src = networkTopology.findNode(source);
-		dest = networkTopology.findNode(destination);
+		if(sourceDeviceId == SimSettings.MOBILE_DEVICE_ID) {
+			src = networkTopology.findNode(source, true);
+		}
+		else {
+			src = networkTopology.findNode(source, false);
+		}
+		if(destDeviceId == SimSettings.MOBILE_DEVICE_ID) {
+			dest = networkTopology.findNode(source, true);
+		}
+		else {
+			dest = networkTopology.findNode(source, false);
+		}
 		path = Router.findPath(networkTopology, src, dest);
 		delay += getWlanUploadDelay(accessPointLocation, CloudSim.clock());
 		while (!path.isEmpty()) {

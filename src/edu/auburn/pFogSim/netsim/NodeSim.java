@@ -16,6 +16,7 @@ public class NodeSim {
 	private ArrayList<Link> edges;
 	private Pair<Integer, Integer> myLocation;
 	private int level;
+	private boolean wifiAccess;
 	/**
 	 * Constructor
 	 * @param inputEdges
@@ -180,6 +181,14 @@ public class NodeSim {
 	
 	public int getLevel() {
 		return this.level;
+	}
+	
+	public boolean isWifiAcc() {
+		return wifiAccess;
+	}
+	
+	public void setWifi(boolean wifi) {
+		wifiAccess = wifi;
 	}
 
 }
