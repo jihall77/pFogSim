@@ -5,6 +5,9 @@ import edu.auburn.pFogSim.Exceptions.*;
 import java.util.ArrayList;
 import java.util.List;
 import edu.boun.edgecloudsim.edge_server.EdgeHost;
+import javafx.util.Pair;
+import edu.auburn.pFogSim.Radix.DistRadix;
+import java.util.LinkedList;
 /**
  * @author Jacob I Hall and Clayton Johnson
  * puddle class for separating nodes into logical hierarchies
@@ -166,6 +169,14 @@ public class Puddle {
 	public int getLevel() {
 		return level;
 	}
-	
-	
+	/**
+	 * get the list nodes sorted by distance from the reference point
+	 * @param ref
+	 * @return
+	 */
+	public LinkedList<EdgeHost> getClosestNodes(Pair<Integer, Integer> ref) {
+		DistRadix rad = new DistRadix(members, ref);
+		LinkedList<EdgeHost> nodes = rad.sortPuddleNodes();
+		return nodes;
+	}
 }

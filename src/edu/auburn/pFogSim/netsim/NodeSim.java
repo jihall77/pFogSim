@@ -157,7 +157,11 @@ public class NodeSim {
 		}
 		return -1.0;
 	}
-	
+	/**
+	 * tests nodes for equality based on location and links
+	 * @param in
+	 * @return
+	 */
 	public boolean equals(NodeSim in) {
 		if(getLocation() != in.getLocation()) {
 			return false;
@@ -174,19 +178,31 @@ public class NodeSim {
 		}
 		return true;
 	}
-	
+	/**
+	 * set the puddle level
+	 * @param _level
+	 */
 	public void setLevel(int _level) {
 		this.level = _level;
 	}
-	
+	/**
+	 * get the puddle level
+	 * @return
+	 */
 	public int getLevel() {
 		return this.level;
 	}
-	
+	/**
+	 * is this node a designated wifi access point
+	 * @return
+	 */
 	public boolean isWifiAcc() {
 		return wifiAccess;
 	}
-	
+	/**
+	 * set whether this node is a wifi access point
+	 * @param wifi
+	 */
 	public void setWifi(boolean wifi) {
 		wifiAccess = wifi;
 	}
