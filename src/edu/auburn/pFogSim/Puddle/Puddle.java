@@ -18,8 +18,16 @@ public class Puddle {
 	
 	private EdgeHost head;//head itself is not contained in the members list of a puddle
 	private ArrayList<EdgeHost> members;
-	private EdgeHost up;
-	private ArrayList<EdgeHost> down;
+	private Puddle up;
+	private ArrayList<Puddle> down;
+	private int availRam;
+	private double availMIPS;
+	private int availPES;
+	private int maxRam;
+	private double maxMIPS;
+	private int maxPES;
+	private int level;
+
 	
 	public Puddle() {
 		
@@ -28,7 +36,7 @@ public class Puddle {
 	 * get the puddle head of the parent puddle
 	 * @return
 	 */
-	public EdgeHost getParent() {
+	public Puddle getParent() {
 		return up;
 	}
 	/**
@@ -42,7 +50,7 @@ public class Puddle {
 	 * get the heads of the children puddles
 	 * @return
 	 */
-	public ArrayList<EdgeHost> getChildren() {
+	public ArrayList<Puddle> getChildren() {
 		return down;
 	}
 	/**
@@ -92,8 +100,8 @@ public class Puddle {
 	public void setMembers(List<EdgeHost> _members) {
 		members = new ArrayList<EdgeHost>();
 		for (EdgeHost child : _members) {
-			if (child.getLevel() == head.getLevel()) {
-				down.add(child);
+			if (child.getLevel() == getLevel()) {
+				members.add(child);
 			}
 			else {
 				throw new BadPuddleParentageException();
@@ -104,10 +112,10 @@ public class Puddle {
 	 * set the children of the puddle, all children must be exactly on layer outwards 
 	 * @param _down
 	 */
-	public void setDown(List<EdgeHost> _down) {
-		down = new ArrayList<EdgeHost>();
-		for (EdgeHost child : _down) {
-			if (child.getLevel() == head.getLevel() + 1) {
+	public void setDown(List<Puddle> _down) {
+		down = new ArrayList<Puddle>();
+		for (Puddle child : _down) {
+			if (child.getLevel() == getLevel() + 1) {
 				down.add(child);
 			}
 			else {
@@ -119,10 +127,45 @@ public class Puddle {
 	 * set the parent of the puddle. parent must be exactly one layer inwards
 	 * @param _up
 	 */
-	public void setUp(EdgeHost _up) {
+	public void setUp(Puddle _up) {
 		up = _up;
-		if (up.getLevel() != head.getLevel() - 1) {
+		if (up.getLevel() != getLevel() - 1) {
 			throw new BadPuddleParentageException();
 		}
 	}
+	/**
+	 * update the total number of available resources in this puddle<br>
+	 * as well as the max resources available on a single instance
+	 */
+	public void updateResources() {
+		availRam = 0;
+		availMIPS = 0;
+		availPES = 0;
+		maxRam = 0;
+		maxMIPS = 0;
+		maxPES = 0;
+		for (EdgeHost node : members) {
+			availRam += node.getRam();
+			availMIPS += node.getAvailableMips();
+			availPES += node.getNumberOfFreePes();
+			if (node.getRam() > maxRam) {
+				maxRam = node.getRam();
+			}
+			if (node.getAvailableMips() > maxMIPS) {
+				maxMIPS = node.getAvailableMips();
+			}
+			if (node.getNumberOfFreePes() > maxPES) {
+				maxPES = node.getNumberOfFreePes();
+			}
+		}
+	}
+	/**
+	 * get the layer that this puddle belongs to
+	 * @return
+	 */
+	public int getLevel() {
+		return level;
+	}
+	
+	
 }
