@@ -21,7 +21,7 @@ public class DistRadix {
 	private ArrayList<Integer> distances;
 	private int[] arrgs;
 	/**
-	 * constuctor
+	 * constructor
 	 * @param in
 	 * @param reference
 	 */

@@ -4,10 +4,16 @@ package edu.auburn.pFogSim.Puddle;
 import edu.auburn.pFogSim.Exceptions.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import edu.boun.edgecloudsim.edge_client.CpuUtilizationModel_Custom;
+import edu.boun.edgecloudsim.edge_client.Task;
 import edu.boun.edgecloudsim.edge_server.EdgeHost;
+import edu.boun.edgecloudsim.edge_server.EdgeVM;
 import javafx.util.Pair;
 import edu.auburn.pFogSim.Radix.DistRadix;
 import java.util.LinkedList;
+import org.cloudbus.cloudsim.Vm;
+import org.cloudbus.cloudsim.core.CloudSim;
 /**
  * @author Jacob I Hall and Clayton Johnson
  * puddle class for separating nodes into logical hierarchies
@@ -29,6 +35,8 @@ public class Puddle {
 	private int maxRam;
 	private double maxMIPS;
 	private int maxPES;
+	private double totalCapacity;
+	private double maxCapacity;
 	private int level;
 
 	
@@ -118,7 +126,7 @@ public class Puddle {
 	public void setDown(List<Puddle> _down) {
 		down = new ArrayList<Puddle>();
 		for (Puddle child : _down) {
-			if (child.getLevel() == getLevel() + 1) {
+			if (child.getLevel() == getLevel() - 1) {
 				down.add(child);
 			}
 			else {
@@ -132,7 +140,7 @@ public class Puddle {
 	 */
 	public void setUp(Puddle _up) {
 		up = _up;
-		if (up.getLevel() != getLevel() - 1) {
+		if (up.getLevel() != getLevel() + 1) {
 			throw new BadPuddleParentageException();
 		}
 	}
@@ -159,6 +167,31 @@ public class Puddle {
 			}
 			if (node.getNumberOfFreePes() > maxPES) {
 				maxPES = node.getNumberOfFreePes();
+			}
+		}
+	}
+	/**
+	 * return whether this puddle can handle the input task
+	 * @param app
+	 * @return
+	 */
+	public boolean canHandle(Task app) {
+		double appCapacity = ((CpuUtilizationModel_Custom)app.getUtilizationModelCpu()).predictUtilization(((EdgeVM)head.getVmList().get(0)).getVmType());
+		if (appCapacity > totalCapacity || appCapacity > maxCapacity) {
+			return false;
+		}
+		return true;
+	}
+	
+	public void updateCapacity() {
+		double tempCap = 0;
+		totalCapacity = 0;
+		maxCapacity = 0;
+		for (EdgeHost node : members) {
+			tempCap = node.getVmList().get(0).getCloudletScheduler().getTotalUtilizationOfCpu(CloudSim.clock());
+			totalCapacity += tempCap;
+			if (maxCapacity < tempCap) {
+				maxCapacity = tempCap;
 			}
 		}
 	}

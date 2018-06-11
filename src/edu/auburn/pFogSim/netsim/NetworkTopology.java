@@ -7,7 +7,8 @@ package edu.auburn.pFogSim.netsim;
 import edu.auburn.pFogSim.netsim.Link;
 import edu.auburn.pFogSim.netsim.NodeSim;
 import edu.boun.edgecloudsim.utils.SimLogger;
-
+import edu.auburn.pFogSim.Puddle.Puddle;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import javafx.util.Pair;
@@ -16,6 +17,7 @@ public class NetworkTopology {
 	private HashSet<Link> links;
 	private HashSet<NodeSim> nodes;
 	private HashSet<Pair<Integer, Integer>> coords;
+	private ArrayList<Puddle> pond;
 	/**
 	 * Constructor
 	 * @param inNodes
@@ -135,9 +137,9 @@ public class NetworkTopology {
 	}
 	/**
 	 * find the node closest to the given location, intermediate method of getting node associated with mobile device<br>
-	 * should be replaced with a call to the orchestrator once that is implemented
 	 * @param x
 	 * @param y
+	 * @param wifi
 	 * @return the closest node to the location
 	 */
 	public NodeSim findNode(int x, int y, boolean wifi) {
@@ -160,8 +162,22 @@ public class NetworkTopology {
 		}
 		return closest;
 	}
-	
+	/**
+	 * find the node closest to the given location, intermediate method of getting node associated with mobile device<br>
+	 * @param loc
+	 * @param wifi
+	 * @return the closest node to the location
+	 */
 	public NodeSim findNode(Pair<Integer, Integer> loc, boolean wifi) {
 		return findNode(loc.getKey(), loc.getValue(), wifi);
+	}
+	
+	public void setPuddles(List<Puddle> puddles) {
+		pond = new ArrayList<Puddle>();
+		pond.addAll(puddles);
+	}
+	
+	public List<Puddle> getPuddles() {
+		return (List<Puddle>) pond;
 	}
 }
