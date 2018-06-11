@@ -171,12 +171,18 @@ public class NetworkTopology {
 	public NodeSim findNode(Pair<Integer, Integer> loc, boolean wifi) {
 		return findNode(loc.getKey(), loc.getValue(), wifi);
 	}
-	
+	/**
+	 * set the list of puddles on the topology
+	 * @param puddles
+	 */
 	public void setPuddles(List<Puddle> puddles) {
 		pond = new ArrayList<Puddle>();
 		pond.addAll(puddles);
 	}
-	
+	/**
+	 * get the list of puddles for the topology
+	 * @return
+	 */
 	public List<Puddle> getPuddles() {
 		return (List<Puddle>) pond;
 	}
