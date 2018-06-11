@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import edu.auburn.pFogSim.netsim.Link;
 import edu.auburn.pFogSim.Exceptions.BadLinkException;
-import edu.boun.edgecloudsim.utils.SimLogger;
 import javafx.util.Pair;
 
 public class NodeSim {

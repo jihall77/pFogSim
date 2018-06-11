@@ -2,13 +2,10 @@ package edu.auburn.pFogSim.clustering;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.lang.Math.*;
 import javafx.util.Pair;
 import java.util.HashMap;
 
 import edu.auburn.pFogSim.netsim.NodeSim;
-import edu.boun.edgecloudsim.utils.SimLogger;
 
 public class FogCluster {
 	private String[] lines = null;
@@ -147,18 +144,12 @@ public class FogCluster {
 				
 				//Print Parent/Child relationships
 				//System.out.println("ChildCluster"+"   "+"ParentCluster");
-				for (int cLower=0; cLower<clusterNumber3; cLower++){
+				//for (int cLower=0; cLower<clusterNumber3; cLower++){
 					//System.out.println("         "+cLower+"   "+"         "+parentCluster[cLower]);
 				}// end for cLower-Print
 			}
 		}
 		
-		
-		
-		
-		
-		
-	}
 	
 	
 	/**

@@ -23,10 +23,6 @@ import edu.boun.edgecloudsim.core.SimSettings;
 import edu.boun.edgecloudsim.utils.SimLogger;
 import edu.boun.edgecloudsim.utils.SimUtils;
 
-import java.io.PrintWriter;
-
-import edu.auburn.pFogSim.clustering.FogHierCluster;
-
 public class mainApp {
 	
 	/**

@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
 import java.util.Map.Entry;
-import java.util.HashSet;
 
 import org.apache.commons.math3.distribution.ExponentialDistribution;
 import org.w3c.dom.Document;
@@ -24,14 +23,11 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
-import edu.boun.edgecloudsim.network.MM1Queue;
 import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
 import edu.boun.edgecloudsim.utils.SimUtils;
 
-import edu.auburn.pFogSim.netsim.*;
 
 public class NomadicMobility extends MobilityModel {
 	private List<TreeMap<Double, Location>> treeMapArray;
