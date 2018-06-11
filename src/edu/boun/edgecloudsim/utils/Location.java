@@ -23,6 +23,12 @@ public class Location {
 		yPos = _yPos;
 	}
 	
+	public Location(int _servingWlanId, int _xPos, int _yPos) {
+		servingWlanId = _servingWlanId;
+		xPos = _xPos;
+		yPos = _yPos;
+	}
+	
 	@Override
 	public boolean equals(Object other){
 		boolean result = false;

@@ -266,7 +266,7 @@ public class EdgeServerManager {
 			}
 			
 			//Make NodeSim object with the input x/y positions and add that to the list of nodes
-			NodeSim newNode = new NodeSim(x_pos, y_pos, level);
+			NodeSim newNode = new NodeSim(x_pos, y_pos, level, wlan_id);
 			nodesForTopography.add(newNode);
 			
 			

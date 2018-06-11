@@ -7,7 +7,7 @@ import java.lang.Math.*;
 import javafx.util.Pair;
 import java.util.HashMap;
 
-import edu.auburn.pFogSim.netsim.*;
+import edu.auburn.pFogSim.netsim.NodeSim;
 import edu.boun.edgecloudsim.utils.SimLogger;
 
 public class FogCluster {

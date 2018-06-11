@@ -17,6 +17,7 @@ public class NodeSim {
 	private Pair<Integer, Integer> myLocation;
 	private int level;
 	private boolean wifiAccess;
+	private int wlan_id;
 	/**
 	 * Constructor
 	 * @param inputEdges
@@ -37,7 +38,8 @@ public class NodeSim {
 		myLocation = new Pair<Integer, Integer>(xin, yin);
 	}
 	
-	public NodeSim(int xin, int yin, int level) {
+	public NodeSim(int xin, int yin, int level, int id) {
+		wlan_id = id;
 		edges = new ArrayList<Link>();
 		myLocation = new Pair<Integer, Integer>(xin, yin);
 		this.level = level;
@@ -207,4 +209,13 @@ public class NodeSim {
 		wifiAccess = wifi;
 	}
 
+	public void setWlanId(int id)
+	{
+		this.wlan_id = id;
+	}
+	
+	public int getWlanId()
+	{
+		return this.wlan_id;
+	}
 }

@@ -76,6 +76,7 @@ public class SimManager extends SimEntity {
 		//Create Client Manager
 		mobileDeviceManager = new MobileDeviceManager();
 		
+		
 		instance = this;
 	}
 	
@@ -93,9 +94,8 @@ public class SimManager extends SimEntity {
 		//Start Edge Servers & Generate VMs
 		edgeServerManager.startDatacenters();
 		edgeServerManager.createVmList(mobileDeviceManager.getId());
-		//SimLogger.printLine("Before CloudSim.startSimulation()");
+
 		CloudSim.startSimulation();
-		//SimLogger.printLine("After CloudSim.startSimulation()");
 	}
 	
 	public ScenarioFactory getScenarioFactory(){
