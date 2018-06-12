@@ -120,10 +120,10 @@ public class FogHierCluster {
 				}// end for cLower
 				
 				//Print Parent/Child relationships
-				System.out.println("ChildCluster"+"   "+"ParentCluster");
-				for (int cLower=0; cLower<clusterNumber3; cLower++){
-					System.out.println("         "+cLower+"   "+"         "+parentCluster[cLower]);
-				}// end for cLower-Print
+				//System.out.println("ChildCluster"+"   "+"ParentCluster");
+				//for (int cLower=0; cLower<clusterNumber3; cLower++){
+					//System.out.println("         "+cLower+"   "+"         "+parentCluster[cLower]);
+				//}// end for cLower-Print
 		}
 
 	}

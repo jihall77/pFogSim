@@ -137,16 +137,16 @@ public class FogCluster {
 		
 		//HierarchicalClustering hc = new HierarchicalClustering(new SingleLinkage(proximityMatrix));
 		HierarchicalClustering hc = new HierarchicalClustering(new CompleteLinkage(proximityMatrix));
-		SimLogger.printLine("clusterNumber is: "+clusterNumber);
+		//SimLogger.printLine("clusterNumber is: "+clusterNumber);
 		int[] membership = hc.partition(clusterNumber);
-		SimLogger.printLine("Membership : " + membership);
+		//SimLogger.printLine("Membership : " + membership);
 		int[] clusterSize = new int[clusterNumber];
-		SimLogger.printLine("ClusterSize : " + clusterSize);
+		//SimLogger.printLine("ClusterSize : " + clusterSize);
 		//System.out.println("membership[] length: "+membership.length);
-		SimLogger.printLine("membership.length : " + membership.length);
+		//SimLogger.printLine("membership.length : " + membership.length);
 		for (int i=0; i< membership.length; i++){
 			clusterSize[membership[i]]++;
-			SimLogger.printLine("i membership[i] clusterSize: "+i+"   "+membership[i]+"   "+clusterSize[membership[i]]);
+			//SimLogger.printLine("i membership[i] clusterSize: "+i+"   "+membership[i]+"   "+clusterSize[membership[i]]);
 		} 
 		
 		cluster = new Integer[clusterNumber][][];
@@ -222,7 +222,7 @@ public class FogCluster {
 	public FogCluster(ArrayList<Pair<Integer, Integer>> levelList) {
 		super();
 		//SimLogger.printLine("Blank constructor FogCluster() reached");
-		SimLogger.printLine("LevelList size = " + levelList.size());
+		//SimLogger.printLine("LevelList size = " + levelList.size());
 		if(levelList.size() < 4)
 			setClusterNumber(levelList.size());
 		else
