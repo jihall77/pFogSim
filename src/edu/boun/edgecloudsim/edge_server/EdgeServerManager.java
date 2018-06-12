@@ -108,9 +108,22 @@ public class EdgeServerManager {
 			Link newLink = new Link(rightCoor,leftCoor, right_lat, left_lat);
 			linksForTopography.add(newLink);
 		}
-		//This line that comes next needs to be apologized for, it's horrific and I'm sorry
-		//	-CJ
+		SimLogger.printLine("Making Cluster Object...");
 		FogHierCluster clusterObject = new FogHierCluster((ArrayList<NodeSim>)nodesForTopography);
+		/*Integer[][][] test = clusterObject.getCluster();
+		for(int a = 0; a < test.length; a++)
+		{
+			SimLogger.printLine(test[a].toString());
+			for(int b = 0; b < test[a].length; b++)
+			{
+				SimLogger.printLine("\t" + test[a][b]);
+				for(int c = 0; c < test[a][b].length; c++)
+				{
+					SimLogger.printLine("\t\t" + test[a][b][c]);
+				}
+			}
+		}
+		SimLogger.printLine("Done.");*/
 		NetworkTopology networkTopology = new NetworkTopology(nodesForTopography, linksForTopography);
 		if(!networkTopology.cleanNodes())
 		{

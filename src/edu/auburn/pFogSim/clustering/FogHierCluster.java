@@ -1,20 +1,135 @@
 package edu.auburn.pFogSim.clustering;
 
 import edu.boun.edgecloudsim.utils.*;
+import javafx.util.Pair;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import edu.auburn.pFogSim.netsim.*;
 
 public class FogHierCluster {
-
+	private ArrayList<FogCluster> clusterList = new ArrayList<FogCluster>();
+	
+	
 	public FogHierCluster(ArrayList<NodeSim> nodes) {
-		//CJ Adding FogCluster method stdInput()
-		FogCluster fc0 = new FogCluster(nodes);
-		//makeClusters();
+		
+		HashMap<Integer, ArrayList<Pair<Integer, Integer>>> levelMap = new HashMap<Integer, ArrayList<Pair<Integer, Integer>>>();
+		int level = 1000, x_pos = -1, y_pos = -1;
+		ArrayList<Pair<Integer, Integer>> tempList;
+		for(int r = 0; r < 20; r++)
+			levelMap.put(r, new ArrayList<Pair<Integer, Integer>>());
+		//Add all nodes to levelMap based on their level values
+		for(NodeSim node : nodes)
+		{
+			level = node.getLevel();
+			x_pos = node.getLocation().getKey();
+			y_pos = node.getLocation().getValue();
+			Pair<Integer, Integer> pair = new Pair<Integer, Integer>(x_pos, y_pos);
+			levelMap.get(level).add(pair);
+			
+			/*if(levelMap.size() != 0)
+			{
+				
+			}*/
+			//else
+			//{
+				//levelMap.put(level, new ArrayList<Pair<Integer, Integer>>());
+				//Pair<Integer, Integer> pair = new Pair<Integer, Integer>(x_pos, y_pos);
+				//levelMap.get(level).add(pair);
+			//}
+		}
+		
+		//Add all clusters we are making out of each layer to the clusterList
+		for(int leveliter = 0; leveliter < levelMap.size(); leveliter++)
+		{
+			FogCluster fc = new FogCluster(levelMap.get(leveliter));
+			clusterList.add(fc);
+		}
+		
+		//Make the clusters
+		makeClusters();
 	}
 	
-	private static void makeClusters() {
+	private void makeClusters() 
+	{
+		//Now, for each set of clusters in adjacent layers, repeat the following:
+				//Say clusters in layer-3 & layer-4
+		double distance = 0;
+		double clusterMaxDistance = 0 ;
+		double minDistance = Double.MAX_VALUE;
+		int parent = 0;
+		int[] parentCluster;
+		int j;
+		for(int i = clusterList.size() - 1; i > 0; i--)
+		{
+				j = i - 1;
+				int clusterNumber3 = clusterList.get(j).getCluster().length;
+				int clusterNumber4 = clusterList.get(i).getCluster().length;
+				
+				Integer[][][] clusterSet3 = clusterList.get(j).getCluster();
+				Integer[][][] clusterSet4 = clusterList.get(i).getCluster();
+				parentCluster = new int[clusterNumber3];
+				
+				//For each cluster in lower layer, do the following
+				for (int cLower=0; cLower<clusterNumber3; cLower++){
+					minDistance = Double.MAX_VALUE;
+					parent = 0;
+					
+					//For each cluster in upper layer, do the following
+					for(int cUpper=0; cUpper<clusterNumber4; cUpper++){
+						
+						clusterMaxDistance = 0;
+						//Calculate the ('max' for CompleteLink) distance between cluster from lower layer 'cLower'
+						//and cluster from higher layer 'cUpper'
+						// i.e. find the distance between each point of 'cLower' cluster 
+						// and each point of 'cUpper' cluster
+						// Note the maximum distance
+						
+						//From each point of 'cLower' cluster
+						for (int cLoweri=0; cLoweri<clusterSet3[cLower].length; cLoweri++){
+							// Get point coordinates
+							int x1 = clusterSet3[cLower][cLoweri][0];
+							int y1 = clusterSet3[cLower][cLoweri][1];
+							
+							//To each point of 'cUpper' cluster
+							for (int cUpperj=0; cUpperj<clusterSet4[cUpper].length; cUpperj++){
+								// Get point coordinates
+								int x2 = clusterSet4[cUpper][cUpperj][0];
+								int y2 = clusterSet4[cUpper][cUpperj][1];
+														
+								//find the distance
+								distance = Math.sqrt(((x2-x1)*(x2-x1)) + ((y2-y1)*(y2-y1)));
+								////System.out.println(distance);
+								
+								// Save the maximum distance
+								if (distance > clusterMaxDistance){
+									clusterMaxDistance = distance;
+								}
+								
+							}// end for cUpperj
+						}// end for cLoweri
+
+						//If this is the closer upper layer cluster, then this is a better parent cluster
+						if (clusterMaxDistance < minDistance){
+							minDistance = clusterMaxDistance;
+							parentCluster[cLower] = cUpper; 
+						}
+						
+					}// end for cUpper
+				}// end for cLower
+				
+				//Print Parent/Child relationships
+				System.out.println("ChildCluster"+"   "+"ParentCluster");
+				for (int cLower=0; cLower<clusterNumber3; cLower++){
+					System.out.println("         "+cLower+"   "+"         "+parentCluster[cLower]);
+				}// end for cLower-Print
+		}
+
+	}
+	
+	
+/*	private static void makeClusters() {
 		double distance = 0;
 		double clusterMaxDistance = 0 ;
 		double minDistance = Double.MAX_VALUE;
@@ -244,7 +359,7 @@ public class FogHierCluster {
 		SimLogger.printLine("No issues so far...");
 		
 	}// End main
-
+*/
 	
 }// end class FogHierCluster
 

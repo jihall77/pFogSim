@@ -100,9 +100,6 @@ public class NomadicMobility extends MobilityModel {
 				int wlan_id = treeMapArray.get(i).lastEntry().getValue().getServingWlanId();
 				//Make random numbers to make the vectors
 				//Make negatives by subtracting 0.5
-				  
-				if(x_pos > MAX_WIDTH) right = right * -1;
-				if(y_pos > MAX_HEIGHT) up = up * -1;
 				
 				//Calculate which wlan_id you get
 				
@@ -127,23 +124,41 @@ public class NomadicMobility extends MobilityModel {
 						wlan_id = node.getWlanId();
 					}
 				}*/
-				
-				int nodeX, nodeY;
-				double distance;
-				for(int z = 0; z < datacenterList.getLength(); z++)
+				double distance = 1000;
+				for(int a = 0; a < datacenterList.getLength(); a++)
 				{
-					Node datacenterNode = datacenterList.item(z);
+					Node datacenterNode = datacenterList.item(a);
 					Element datacenterElement = (Element) datacenterNode;
-					Element location = (Element)datacenterElement.getElementsByTagName("location").item(0);		
-					//int wlan_id = Integer.parseInt(location.getElementsByTagName("wlan_id").item(0).getTextContent());
-					nodeX = Integer.parseInt(location.getElementsByTagName("x_pos").item(0).getTextContent());
-					nodeY = Integer.parseInt(location.getElementsByTagName("y_pos").item(0).getTextContent());
-
-					distance = Math.sqrt(Math.pow(x_pos - nodeX, 2) + Math.pow(y_pos - nodeY, 2));
-					if(minDistance > distance) 
+					Element location = (Element)datacenterElement.getElementsByTagName("location").item(0);
+					if(Integer.parseInt(location.getElementsByTagName("wlan_id").item(0).getTextContent()) == wlan_id)
 					{
-						minDistance = distance;
-						wlan_id = Integer.parseInt(location.getElementsByTagName("wlan_id").item(0).getTextContent());
+						int nodeX = Integer.parseInt(location.getElementsByTagName("x_pos").item(0).getTextContent());
+						int nodeY = Integer.parseInt(location.getElementsByTagName("y_pos").item(0).getTextContent());
+						distance = Math.sqrt(Math.pow(x_pos - nodeX + right, 2) + Math.pow(y_pos - nodeY + up, 2));
+						break;
+					}
+				}
+				
+				
+				if(distance > 10)
+				{
+				int nodeX, nodeY;
+				
+				for(int z = 0; z < datacenterList.getLength(); z++)
+					{
+						Node datacenterNode = datacenterList.item(z);
+						Element datacenterElement = (Element) datacenterNode;
+						Element location = (Element)datacenterElement.getElementsByTagName("location").item(0);		
+						//int wlan_id = Integer.parseInt(location.getElementsByTagName("wlan_id").item(0).getTextContent());
+						nodeX = Integer.parseInt(location.getElementsByTagName("x_pos").item(0).getTextContent());
+						nodeY = Integer.parseInt(location.getElementsByTagName("y_pos").item(0).getTextContent());
+	
+						distance = Math.sqrt(Math.pow(x_pos - nodeX, 2) + Math.pow(y_pos - nodeY, 2));
+						if(minDistance > distance) 
+						{
+							minDistance = distance;
+							wlan_id = Integer.parseInt(location.getElementsByTagName("wlan_id").item(0).getTextContent());
+						}
 					}
 				}
 				treeMap.put(treeMap.lastKey() + 0.5, new Location(wlan_id, x_pos + right, y_pos + up));

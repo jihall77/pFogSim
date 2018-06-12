@@ -7,6 +7,8 @@ import java.util.HashMap;
 
 import edu.auburn.pFogSim.netsim.NodeSim;
 
+import edu.boun.edgecloudsim.utils.*;
+
 public class FogCluster {
 	private String[] lines = null;
 	private Integer points[][] = null;
@@ -26,129 +28,22 @@ public class FogCluster {
 	 * Method - stdInput from EdgeServerManager
 	 * 
 	 */
-	public void stdInput(ArrayList<NodeSim> nodes) 
+	public void stdInput(ArrayList<Pair<Integer, Integer>> levelList) 
 	{
-		//Passed args : ArrayList<NodeSim> nodes
-		//We need the data and the total number of nodes in this cluster
 		
-		Pair<Integer, Integer> location = null;
-		int x = -1, y = -1, level = -1;
+		java.util.List points = new ArrayList();
 		
-		HashMap<Integer, ArrayList<Pair<Integer, Integer>>> levelMap = new HashMap<Integer, ArrayList<Pair<Integer, Integer>>>();
-		//Pair<Integer, ArrayList<Pair<Integer, Integer>>> levelMap = new Pair<Integer, ArrayList<Pair<Integer, Integer>>>(null, null);
-		
-		
-		for(NodeSim node : nodes) 
+		for(Pair<Integer, Integer> pair : levelList)
 		{
-			location = node.getLocation();
-			if(location != null) 
-			{   
-				//System.out.println(location);
-				x = location.getKey();
-				y = location.getValue();
-				level = node.getLevel();
-				
-				//System.out.println(String.format("\tx = %d\n\ty = %d\n\tlevel = %d", x, y, level));
-				//Sort out all of the nodes by their levels
-				ArrayList<Pair<Integer, Integer>> arr = levelMap.get(level);
-				if(arr == null) {
-					arr = new ArrayList<Pair<Integer, Integer>>();
-				}
-				arr.add(new Pair<Integer, Integer>(x, y));
-				levelMap.put(level, arr);
-			}
+			Integer[] point = new Integer[2];
+			point[0] = pair.getKey();
+			point[1] = pair.getValue();
+			
+			points.add(point);
 		}
-		//int sum = 0;
-		/*for(int the_level = 0; the_level < 8; the_level++)
-		{
-			if (levelMap.get(the_level) != null) {
-				//System.out.println(String.format("There are %d nodes in level %d", levelMap.get(the_level).size(), the_level));
-				//sum += levelMap.get(the_level).size();
-				for(Pair<Integer, Integer> pair : levelMap.get(the_level))
-				{
-					//System.out.println(String.format("\n\tLevel = %d\n\tx = %d\n\ty = %d", the_level, pair.getKey(), pair.getValue()));
-				}
-			}
-		}*/
-		//System.out.println("Total number of nodes = " + sum);
-		//SimLogger.printLine("stdInput reached");
-	
+		this.points = (Integer[][])points.toArray(new Integer[points.size()][]);
 		
-		//CJ Clustering technique is implemented here
-
-		int[] parentCluster;
-		double clusterMaxDistance = 0 ;
-		double minDistance = Double.MAX_VALUE;
-		int parent = 0;
-		double distance = 0;
-		
-		
-		//Now, for each set of clusters in adjacent layers, repeat the following:
-		//Say clusters in layer-3 & layer-4
-		for(int leveliter = 0; leveliter < 8; leveliter++)
-		{
-			if(levelMap.get(leveliter) != null && levelMap.get(leveliter + 1) != null)
-			{
-				int clusterNumber3 = levelMap.get(leveliter).size();
-				int clusterNumber4 = levelMap.get(leveliter + 1).size();
-				parentCluster = new int[clusterNumber3];
-				
-				//For each cluster in lower layer, do the following
-				for (int cLower=0; cLower<clusterNumber3; cLower++){
-					minDistance = Double.MAX_VALUE;
-					parent = 0;
-					
-					//For each cluster in upper layer, do the following
-					for(int cUpper=0; cUpper<clusterNumber4; cUpper++){
-						
-						clusterMaxDistance = 0;
-						//Calculate the ('max' for CompleteLink) distance between cluster from lower layer 'cLower'
-						//and cluster from higher layer 'cUpper'
-						// i.e. find the distance between each point of 'cLower' cluster 
-						// and each point of 'cUpper' cluster
-						// Note the maximum distance
-						
-						//From each point of 'cLower' cluster
-						for (int cLoweri=0; cLoweri<levelMap.get(leveliter).size(); cLoweri++){
-							// Get point coordinates
-							//int x1 = clusterSet3[cLower][cLoweri][0];
-							int x1 = levelMap.get(leveliter).get(cLower).getKey();
-							int y1 = levelMap.get(leveliter).get(cLower).getValue();
-							
-							//To each point of 'cUpper' cluster
-							for (int cUpperj=0; cUpperj<levelMap.get(leveliter + 1).size(); cUpperj++){
-								// Get point coordinates
-								int x2 = levelMap.get(leveliter + 1).get(cUpper).getKey();
-								int y2 = levelMap.get(leveliter + 1).get(cUpper).getValue();
-														
-								//find the distance
-								distance = Math.sqrt(((x2-x1)*(x2-x1)) + ((y2-y1)*(y2-y1)));
-								//System.out.println(distance);
-								
-								// Save the maximum distance
-								if (distance > clusterMaxDistance){
-									clusterMaxDistance = distance;
-								}
-								
-							}// end for cUpperj
-						}// end for cLoweri
-		
-						//If this is the closer upper layer cluster, then this is a better parent cluster
-						if (clusterMaxDistance < minDistance){
-							minDistance = clusterMaxDistance;
-							parentCluster[cLower] = cUpper; 
-						}
-						
-					}// end for cUpper
-				}// end for cLower
-				
-				//Print Parent/Child relationships
-				//System.out.println("ChildCluster"+"   "+"ParentCluster");
-				//for (int cLower=0; cLower<clusterNumber3; cLower++){
-					//System.out.println("         "+cLower+"   "+"         "+parentCluster[cLower]);
-				}// end for cLower-Print
-			}
-		}
+	}
 		
 	
 	
@@ -173,7 +68,7 @@ public class FogCluster {
 				point[0] = Integer.parseInt(pointString[0].trim());
 				point[1] = Integer.parseInt(pointString[1].trim());
 				
-				//System.out.println(point[0]+","+point[1]);
+				System.out.println(point[0].getClass()+","+point[1]);
 				points.add(point);
 				
 			}// end while
@@ -242,13 +137,16 @@ public class FogCluster {
 		
 		//HierarchicalClustering hc = new HierarchicalClustering(new SingleLinkage(proximityMatrix));
 		HierarchicalClustering hc = new HierarchicalClustering(new CompleteLinkage(proximityMatrix));
-		//System.out.println("clusterNumber is: "+clusterNumber);
+		SimLogger.printLine("clusterNumber is: "+clusterNumber);
 		int[] membership = hc.partition(clusterNumber);
+		SimLogger.printLine("Membership : " + membership);
 		int[] clusterSize = new int[clusterNumber];
+		SimLogger.printLine("ClusterSize : " + clusterSize);
 		//System.out.println("membership[] length: "+membership.length);
+		SimLogger.printLine("membership.length : " + membership.length);
 		for (int i=0; i< membership.length; i++){
 			clusterSize[membership[i]]++;
-			//System.out.println("i membership[i] clusterSize: "+i+"   "+membership[i]+"   "+clusterSize[membership[i]]);
+			SimLogger.printLine("i membership[i] clusterSize: "+i+"   "+membership[i]+"   "+clusterSize[membership[i]]);
 		} 
 		
 		cluster = new Integer[clusterNumber][][];
@@ -321,10 +219,18 @@ public class FogCluster {
 		
 	}// end Constructor FogHierCluster()
 	
-	public FogCluster(ArrayList<NodeSim> nodes) {
+	public FogCluster(ArrayList<Pair<Integer, Integer>> levelList) {
 		super();
 		//SimLogger.printLine("Blank constructor FogCluster() reached");
-		stdInput(nodes);
+		SimLogger.printLine("LevelList size = " + levelList.size());
+		if(levelList.size() < 4)
+			setClusterNumber(levelList.size());
+		else
+			setClusterNumber(levelList.size() / 4);
+		stdInput(levelList);
+		calcProximity();
+		if(levelList.size() > 0)
+			learn();
 	}
 
 

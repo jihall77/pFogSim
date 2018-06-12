@@ -97,9 +97,9 @@ public class IntHeapSelect {
      * tracked. Also, i must be less than the number of previous assimilated.
      */
     public int get(int i) {
-        if (i > Math.min(k, n) - 1) {
+       /* if (i > Math.min(k, n) - 1) {
             throw new IllegalArgumentException("HeapSelect i is greater than the number of data received so far.");
-        }
+        }*/
 
         if (i == k-1) {
             return heap[0];
