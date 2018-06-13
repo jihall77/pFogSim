@@ -22,17 +22,23 @@ public class Task extends Cloudlet {
 	private Location submittedLocation;
 	private int mobileDeviceId;
 	private int hostIndex;
+	public boolean wifi; //added by pFogSim for asking whether a task requires a wifi access point
+    public boolean sens; //added by pFogSim to say whether a device is a sensor
+    public boolean act;  //added by pFogSim to say whether a device is an actuator
 
 	public Task(int _mobileDeviceId, int cloudletId, long cloudletLength, int pesNumber,
 			long cloudletFileSize, long cloudletOutputSize,
 			UtilizationModel utilizationModelCpu,
 			UtilizationModel utilizationModelRam,
-			UtilizationModel utilizationModelBw) {
+			UtilizationModel utilizationModelBw, boolean _wifi, boolean _sens, boolean _act) {
 		super(cloudletId, cloudletLength, pesNumber, cloudletFileSize,
 				cloudletOutputSize, utilizationModelCpu, utilizationModelRam,
 				utilizationModelBw);
 		
 		mobileDeviceId = _mobileDeviceId;
+		wifi = _wifi;
+    	sens =  _sens;
+    	act = _act;
 	}
 
 	

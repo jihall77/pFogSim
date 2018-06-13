@@ -39,6 +39,7 @@ import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
 import edu.boun.edgecloudsim.utils.SimUtils;
 import javafx.util.Pair;
+import edu.auburn.pFogSim.Puddle.Puddle;
 import edu.auburn.pFogSim.clustering.*;
 import edu.auburn.pFogSim.netsim.*;
 import edu.boun.edgecloudsim.network.MM1Queue;
@@ -46,7 +47,9 @@ import edu.boun.edgecloudsim.network.MM1Queue;
 public class EdgeServerManager {
 	private List<Datacenter> localDatacenters;
 	private List<List<EdgeVM>> vmList;
+	private List<EdgeHost> hostList;
 	private int hostIdCounter;
+	private NetworkTopology networkTopology;
 	
 	//CJ Added these to make the lists of all the nodes and respective links 
 	//	to pass to topology constructor
@@ -124,7 +127,7 @@ public class EdgeServerManager {
 			}
 		}
 		SimLogger.printLine("Done.");*/
-		NetworkTopology networkTopology = new NetworkTopology(nodesForTopography, linksForTopography);
+		networkTopology = new NetworkTopology(nodesForTopography, linksForTopography);
 		if(!networkTopology.cleanNodes())
 		{
 			SimLogger.printLine("Topology is not valid");
@@ -217,7 +220,7 @@ public class EdgeServerManager {
 		double costPerMem = Double.parseDouble(datacenterElement.getElementsByTagName("costPerMem").item(0).getTextContent());
 		double costPerStorage = Double.parseDouble(datacenterElement.getElementsByTagName("costPerStorage").item(0).getTextContent());
 		
-		List<EdgeHost> hostList=createHosts(datacenterElement);
+		hostList = createHosts(datacenterElement);
 		
 		String name = "Datacenter_" + Integer.toString(index);
 		double time_zone = 3.0;         // time zone this resource located
@@ -302,5 +305,70 @@ public class EdgeServerManager {
 		
 
 		return hostList;
+	}
+	
+	private ArrayList<Puddle> makePuddles(FogHierCluster clusters) {
+		EdgeHost host;
+		int x;
+		int y;
+		Puddle puddle;
+		FogCluster cluster;
+		ArrayList<EdgeHost> hosts;
+		double staticLatency = Double.MAX_VALUE;
+		Puddle[][] puds = new Puddle[clusters.getClusters().size()][];
+		for (int k = 0; k < clusters.getClusters().size(); k++) {
+			cluster = clusters.getClusters().get(k);
+			puds[k] =  new Puddle[cluster.getCluster().length];
+			for (int i = 0; i < cluster.getCluster().length; i++) {
+				puddle = new Puddle();
+				puddle.setLevel(k);
+				hosts = new ArrayList<EdgeHost>();
+				for (int j = 0; j < cluster.getCluster()[i].length; j++) {
+					x = cluster.getCluster()[i][j][0];
+					y = cluster.getCluster()[i][j][1];
+					host = findHostByLoc(x, y);
+					hosts.add(host);
+				}
+				puddle.setMembers(hosts);
+				puddle.chooseNewHead();
+				puddle.updateResources();
+				puddle.updateCapacity();
+				puds[k][i] = puddle;
+			}
+		}
+		double temp;
+		int level = 1;
+		int index = 0;
+		for (int k = 0; k < puds.length - 1; k++) {
+			for (int i = 0; i < puds[k].length; i++) {
+				for (int j = 0; j < puds[k+1].length; j++) {
+					temp = Router.findRoute(networkTopology, networkTopology.findNode(puds[k][i].getHead().getLocation().getXPos(),
+							puds[k][i].getHead().getLocation().getYPos(), false), networkTopology.findNode(puds[k+1][j].getHead().getLocation().getXPos(),
+							puds[k+1][j].getHead().getLocation().getYPos(), false));
+					if (temp < staticLatency) {
+						staticLatency = temp;
+						level = k;
+						index = j;
+					}
+				}
+				puds[k][i].setUp(puds[level][index]);
+			}
+		}
+		ArrayList<Puddle> results = new ArrayList<Puddle>();
+		for (int k = 0; k < puds.length; k++) {
+			for (int i = 0; i < puds[k].length; i++) {
+				results.add(puds[k][i]);
+			}
+		}
+		return results;
+	}
+	
+	private EdgeHost findHostByLoc(int x, int y) {
+		for (EdgeHost node : hostList) {
+			if (node.getLocation().getXPos() == x && node.getLocation().getYPos() == y) {
+				return node;
+			}
+		}
+		return null;
 	}
 }

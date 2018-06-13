@@ -31,7 +31,7 @@ public class FogCluster {
 	public void stdInput(ArrayList<Pair<Integer, Integer>> levelList) 
 	{
 		
-		java.util.List points = new ArrayList();
+		ArrayList<Integer[]> _points = new ArrayList<Integer[]>();
 		
 		for(Pair<Integer, Integer> pair : levelList)
 		{
@@ -39,9 +39,9 @@ public class FogCluster {
 			point[0] = pair.getKey();
 			point[1] = pair.getValue();
 			
-			points.add(point);
+			_points.add(point);
 		}
-		this.points = (Integer[][])points.toArray(new Integer[points.size()][]);
+		this.points = (Integer[][])_points.toArray(new Integer[_points.size()][]);
 		
 	}
 		
@@ -151,11 +151,11 @@ public class FogCluster {
 		
 		cluster = new Integer[clusterNumber][][];
 		//System.out.println("clusterNumber is: "+clusterNumber);
-		for (int k=0; k<clusterNumber; k++){
+		for (int k = 0; k < clusterNumber; k++){
 			//System.out.println("k clusterSize[k]: "+k+"   "+clusterSize[k]);
 			cluster[k] = new Integer[clusterSize[k]][2];
 			
-			for (int i=0,j=0; i<points.length; i++){
+			for (int i = 0, j = 0; i < points.length; i++){
 				if (membership[i] == k){
 					cluster[k][j++] = points[i];
 				}// end if				

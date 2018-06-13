@@ -82,7 +82,7 @@ public class MM1Queue extends NetworkModel {
     * source device is always mobile device in our simulation scenarios!
     */
 	@Override
-	public double getUploadDelay(int sourceDeviceId, int destDeviceId, double dataSize) {
+	public double getUploadDelay(int sourceDeviceId, int destDeviceId, double dataSize, boolean wifiSrc, boolean wifiDest) {
 		double delay = 0;
 		Location accessPointLocation = SimManager.getInstance().getMobilityModel().getLocation(sourceDeviceId,CloudSim.clock());
 		Location destPointLocation = SimManager.getInstance().getMobilityModel().getLocation(sourceDeviceId,CloudSim.clock());
@@ -96,13 +96,13 @@ public class MM1Queue extends NetworkModel {
 		source = new Pair<Integer, Integer>(accessPointLocation.getXPos(), accessPointLocation.getYPos());
 		destination = new Pair<Integer, Integer>(destPointLocation.getXPos(), destPointLocation.getYPos());
 		
-		if(sourceDeviceId == SimSettings.MOBILE_DEVICE_ID) {
+		if(wifiSrc) {
 			src = networkTopology.findNode(source, true);
 		}
 		else {
 			src = networkTopology.findNode(source, false);
 		}
-		if(destDeviceId == SimSettings.MOBILE_DEVICE_ID) {
+		if(wifiDest) {
 			dest = networkTopology.findNode(source, true);
 		}
 		else {
@@ -146,7 +146,7 @@ public class MM1Queue extends NetworkModel {
     * destination device is always mobile device in our simulation scenarios!
     */
 	@Override
-	public double getDownloadDelay(int sourceDeviceId, int destDeviceId, double dataSize) {
+	public double getDownloadDelay(int sourceDeviceId, int destDeviceId, double dataSize, boolean wifiSrc, boolean wifiDest) {
 		/*
 		//Special Case -> edge orchestrator to edge device
 		if(sourceDeviceId == SimSettings.EDGE_ORCHESTRATOR_ID &&
@@ -180,7 +180,7 @@ public class MM1Queue extends NetworkModel {
 				delay += (SimSettings.getInstance().getInternalLanDelay() * 2);
 		}
 		*/
-		return getUploadDelay(destDeviceId, sourceDeviceId, dataSize);
+		return getUploadDelay(sourceDeviceId, destDeviceId, dataSize, wifiSrc, wifiDest);//getUploadDelay has been made bi-directional
 	}
 	
 	public int getMaxNumOfClientsInPlace(){

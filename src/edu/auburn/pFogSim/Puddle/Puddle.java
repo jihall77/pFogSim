@@ -9,6 +9,7 @@ import edu.boun.edgecloudsim.edge_client.CpuUtilizationModel_Custom;
 import edu.boun.edgecloudsim.edge_client.Task;
 import edu.boun.edgecloudsim.edge_server.EdgeHost;
 import edu.boun.edgecloudsim.edge_server.EdgeVM;
+import edu.boun.edgecloudsim.utils.Location;
 import javafx.util.Pair;
 import edu.auburn.pFogSim.Radix.DistRadix;
 import java.util.LinkedList;
@@ -76,7 +77,11 @@ public class Puddle {
 	 */
 	public void chooseNewHead() {
 		EdgeHost newHead = head;
-		
+		if (head == null) {
+			head = members.get(0);
+			members.remove(head);
+			return;
+		}
 		for (int i = 0; newHead.equals(head) && i < members.size(); i++) {
 			newHead = members.get(i);
 		}
@@ -134,15 +139,20 @@ public class Puddle {
 			}
 		}
 	}
+	
+	public void addDown(Puddle puddle) {
+		down.add(puddle);
+	}
 	/**
 	 * set the parent of the puddle. parent must be exactly one layer inwards
 	 * @param _up
 	 */
 	public void setUp(Puddle _up) {
-		up = _up;
 		if (up.getLevel() != getLevel() + 1) {
 			throw new BadPuddleParentageException();
 		}
+		up = _up;
+		up.addDown(this);
 	}
 	/**
 	 * update the total number of available resources in this puddle<br>
@@ -211,5 +221,17 @@ public class Puddle {
 		DistRadix rad = new DistRadix(members, ref);
 		LinkedList<EdgeHost> nodes = rad.sortPuddleNodes();
 		return nodes;
+	}
+	/**
+	 * get the list nodes sorted by distance from the reference point
+	 * @param ref
+	 * @return
+	 */
+	public LinkedList<EdgeHost> getClosestNodes(Location ref) {
+		return getClosestNodes(new Pair<Integer, Integer>(ref.getXPos(), ref.getYPos()));
+	}
+	
+	public void setLevel(int lvl) {
+		level = lvl;
 	}
 }

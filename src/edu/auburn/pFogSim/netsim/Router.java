@@ -70,15 +70,15 @@ public class Router {
 	}
 	*/
 	
-	/*used for early testing only, we want the router to just provide the path not calculate latency
-	public double findRoute(NetworkTopology network, NodeSim src, NodeSim dest ) {
-		Dijkstra router = new Dijkstra();
+	//used for early testing only, we want the router to just provide the path not calculate latency
+	public static double findRoute(NetworkTopology network, NodeSim src, NodeSim dest ) {
+		Dijkstra router = getAPathFinder();
 		router.runDijkstra((Set<NodeSim>) network.getNodes(), src);
-		travelQueue = router.getPath(dest);
-		return getLatency();
+		//travelQueue = router.getPath(dest);
+		return router.getLatency(dest);
 		//return router.getLatency(dest);
 	}
-	*/
+	
 	/**
 	 * implementation of Dijkstra's algorithm
 	 * @author jih0007
@@ -178,7 +178,7 @@ public class Router {
 				}
 			}
 		}
-		/*Depricated
+		
 		public double getLatency(NodeSim dest) {
 			for (Pair<NodeSim, Pair<Double, NodeSim>> node : completed) {
 				if (node.getKey().equals(dest)) {
@@ -186,7 +186,7 @@ public class Router {
 				}
 			}
 			return -1;
-		}*/
+		}
 		/**
 		 * get the actual path in the form of a linked list
 		 * @param dest
