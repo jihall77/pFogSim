@@ -61,7 +61,7 @@ public class FogHierCluster {
 		int parent = 0;
 		int[] parentCluster;
 		int j;
-		for(int i = clusterList.size() - 1; i > 0; i--)
+		for(int i = clusterList.size() - 2; i > 0; i--)
 		{
 				j = i - 1;
 				int clusterNumber3 = clusterList.get(j).getCluster().length;
@@ -91,6 +91,7 @@ public class FogHierCluster {
 							// Get point coordinates
 							int x1 = clusterSet3[cLower][cLoweri][0];
 							int y1 = clusterSet3[cLower][cLoweri][1];
+							
 							
 							//To each point of 'cUpper' cluster
 							for (int cUpperj=0; cUpperj<clusterSet4[cUpper].length; cUpperj++){

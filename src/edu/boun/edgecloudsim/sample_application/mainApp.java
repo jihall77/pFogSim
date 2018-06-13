@@ -9,6 +9,7 @@
 
 package edu.boun.edgecloudsim.sample_application;
 
+import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -57,6 +58,7 @@ public class mainApp {
 		    		"			<level>0</level>" +
 		    		"			<wlan_id>0</wlan_id>\n" + 
 		    		"			<attractiveness>1</attractiveness>\n" + 
+		    		"			<wap>false</wap>\n" + 
 		    		"		</location>");
 		    node.println("<hosts>\n" + 
 		    		"			<host>\n" + 
@@ -103,6 +105,7 @@ public class mainApp {
 			    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 			    		"			<level>" + level + "</level>" +
 			    		"			<attractiveness>1</attractiveness>\n" + 
+			    		"			<wap>true</wap>\n" + 
 			    		"		</location>");
 			    node.println("<hosts>\n" + 
 			    		"			<host>\n" + 
@@ -161,6 +164,7 @@ public class mainApp {
 				    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 				    		"			<level>" + level + "</level>" +
 				    		"			<attractiveness>1</attractiveness>\n" + 
+				    		"			<wap>false</wap>\n" + 
 				    		"		</location>");
 				    node.println("<hosts>\n" + 
 				    		"			<host>\n" + 
@@ -219,6 +223,7 @@ public class mainApp {
 					    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 					    		"			<level>" + level + "</level>" +
 					    		"			<attractiveness>1</attractiveness>\n" + 
+					    		"			<wap>false</wap>\n" + 
 					    		"		</location>");
 					    node.println("<hosts>\n" + 
 					    		"			<host>\n" + 
@@ -277,6 +282,7 @@ public class mainApp {
 						    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 						    		"			<level>" + level + "</level>" +
 						    		"			<attractiveness>1</attractiveness>\n" + 
+						    		"			<wap>false</wap>\n" + 
 						    		"		</location>");
 						    node.println("<hosts>\n" + 
 						    		"			<host>\n" + 
@@ -335,6 +341,7 @@ public class mainApp {
 							    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 							    		"			<level>" + level + "</level>\n" +
 							    		"			<attractiveness>3</attractiveness>\n" + 
+							    		"			<wap>false</wap>\n" + 
 							    		"		</location>");
 							    node.println("<hosts>\n" + 
 							    		"			<host>\n" + 

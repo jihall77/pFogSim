@@ -37,11 +37,12 @@ public class NodeSim {
 		myLocation = new Pair<Integer, Integer>(xin, yin);
 	}
 	
-	public NodeSim(int xin, int yin, int level, int id) {
+	public NodeSim(int xin, int yin, int level, int id, boolean isAccessPoint) {
 		wlan_id = id;
 		edges = new ArrayList<Link>();
 		myLocation = new Pair<Integer, Integer>(xin, yin);
 		this.level = level;
+		this.wifiAccess = isAccessPoint;
 	}
 	/**
 	 * tests to make sure that at least on of the endpoints for the given link is at this node
