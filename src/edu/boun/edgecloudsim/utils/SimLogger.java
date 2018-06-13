@@ -113,6 +113,10 @@ public class SimLogger {
 	public void downloaded(int taskId, double taskEndTime) {
 		taskMap.get(taskId).taskDownloaded(taskEndTime);
 	}
+	
+	public void downloaded(int taskId, double taskEndTime, double cost) {
+		taskMap.get(taskId).taskDownloaded(taskEndTime, cost);
+	}
 
 	public void rejectedDueToVMCapacity(int taskId, double taskRejectTime) {
 		taskMap.get(taskId).taskRejectedDueToVMCapacity(taskRejectTime);
@@ -133,7 +137,7 @@ public class SimLogger {
 	public void addVmUtilizationLog(double time, double load) {
 		vmLoadList.add(new VmLoadLogItem(time, load));
 	}
-
+	
 	public void simStopped() throws IOException {
 		int numOfAppTypes = SimSettings.getInstance().getTaskLookUpTable().length;
 
@@ -252,6 +256,7 @@ public class SimLogger {
 			}
 
 			if (value.getStatus() == SimLogger.TASK_STATUS.COMLETED) {
+				//value.se
 				cost[value.getTaskType()] += value.getCost();
 				serviceTime[value.getTaskType()] += value.getServiceTime();
 				networkDelay[value.getTaskType()] += value.getNetworkDelay();
@@ -550,7 +555,8 @@ class LogItem {
 	private double bwCost;
 	private double cpuCost;
 	private boolean isInWarmUpPeriod;
-
+	private double taskCost = 0;
+	
 	LogItem(double _taskStartTime, int _taskType, int _taskLenght, int _taskInputType, int _taskOutputSize) {
 		taskStartTime = _taskStartTime;
 		taskType = _taskType;
@@ -588,6 +594,12 @@ class LogItem {
 		taskEndTime = _taskEndTime;
 		status = SimLogger.TASK_STATUS.COMLETED;
 	}
+	
+	public void taskDownloaded(double _taskEndTime, double cost) {
+		taskEndTime = _taskEndTime;
+		taskCost = cost;
+		status = SimLogger.TASK_STATUS.COMLETED;
+	}
 
 	public void taskRejectedDueToVMCapacity(double _taskRejectTime) {
 		taskEndTime = _taskRejectTime;
@@ -620,7 +632,8 @@ class LogItem {
 	}
 
 	public double getCost() {
-		return bwCost + cpuCost;
+		//return bwCost + cpuCost;
+		return taskCost;
 	}
 
 	public double getNetworkDelay() {
