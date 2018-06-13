@@ -164,5 +164,20 @@ public class NomadicMobility extends MobilityModel {
 	    
 		return e.getValue();
 	}
+	public int getWlanId(int deviceId, double time) 
+	{
+		int wlan_id = -1;
+		
+		if(time >= 0 && deviceId >= 0)
+		{	
+			TreeMap<Double, Location> treeMap = treeMapArray.get(deviceId);
+			
+			Entry<Double, Location> e = treeMap.floorEntry(time);
+			
+			wlan_id = e.getValue().getServingWlanId();
+		}
+		else throw new IllegalArgumentException();
+		return wlan_id;
+	}
 
 }
