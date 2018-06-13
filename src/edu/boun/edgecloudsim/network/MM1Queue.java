@@ -86,6 +86,14 @@ public class MM1Queue extends NetworkModel {
 		double delay = 0;
 		Location accessPointLocation = null;
 		Location destPointLocation = null;
+		/*changed by pFogSim--
+		 * ok... so this looks really stupid, but its not... mostly
+		 * unfortunately mobile devices and host devices use the same range of id's
+		 * and this is far too deep to go through the process of separating them
+		 * as such, anytime that a host device is sent into this method it is multiplied by -1
+		 * this will cause and index out of bounds exception when searching for a mobile location
+		 * when you get such exception, flip the sign of the id and search it as a host
+		 */
 		try {
 			accessPointLocation = SimManager.getInstance().getMobilityModel().getLocation(sourceDeviceId,CloudSim.clock());
 		}

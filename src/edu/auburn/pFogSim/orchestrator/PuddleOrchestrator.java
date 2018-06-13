@@ -24,7 +24,11 @@ import org.cloudbus.cloudsim.core.CloudSim;
  */
 public class PuddleOrchestrator extends EdgeOrchestrator {
 
-	
+	/**
+	 * constructor
+	 * @param _policy
+	 * @param _simScenario
+	 */
 	public PuddleOrchestrator(String _policy, String _simScenario) {
 		super(_policy, _simScenario);
 	}
@@ -41,12 +45,18 @@ public class PuddleOrchestrator extends EdgeOrchestrator {
 	public int getDeviceToOffload(Task task) {
 		return getHost(task).getId();
 	}
-
+	/**
+	 * get the VM to place the task on
+	 */
 	@Override
 	public EdgeVM getVmToOffload(Task task) {
 		return ((EdgeVM) getHost(task).getVmList().get(0));
 	}
-	
+	/**
+	 * get the closest level 0 puddle as a staring point
+	 * @param task
+	 * @return
+	 */
 	private Puddle getNearest0Pud(Task task) {
 		NetworkTopology network = ((MM1Queue) SimManager.getInstance().getNetworkModel()).getNetworkTopology();
 		Puddle puddle = null;
@@ -55,12 +65,12 @@ public class PuddleOrchestrator extends EdgeOrchestrator {
 		double distance = Double.MAX_VALUE;
 		double newDist;
 		ArrayList<Puddle> pud0s = new ArrayList<Puddle>();
-		for (Puddle pud : network.getPuddles()) {
+		for (Puddle pud : network.getPuddles()) {//search throught the list of puddles and pull out all the layer 0 ones
 			if (pud.getLevel() == 0) {
 				pud0s.add(pud);
 			}
 		}
-		for (Puddle pud : pud0s) {
+		for (Puddle pud : pud0s) {//choose the puddle whose head has the least distance to the task
 			host = pud.getClosestNodes(loc).getFirst();
 			newDist = Math.sqrt((Math.pow(loc.getXPos() - host.getLocation().getXPos(), 2) + Math.pow(loc.getYPos() - host.getLocation().getYPos(), 2)));
 			if(newDist < distance) {
@@ -70,38 +80,47 @@ public class PuddleOrchestrator extends EdgeOrchestrator {
 		}
 		return puddle;
 	}
-	
+	/**
+	 * is the host capable of servicing the task
+	 * @param host
+	 * @param task
+	 * @return
+	 */
 	private boolean goodHost(EdgeHost host, Task task) {
 		double hostCap = 100.0 - host.getVmList().get(0).getCloudletScheduler().getTotalUtilizationOfCpu(CloudSim.clock());
 		double taskCap = ((CpuUtilizationModel_Custom)task.getUtilizationModelCpu()).predictUtilization(((EdgeVM)host.getVmList().get(0)).getVmType());
 		return hostCap >= taskCap;
 	}
-	
+	/**
+	 * find a proper host to place the task
+	 * @param task
+	 * @return
+	 */
 	private EdgeHost getHost(Task task) {
-		Puddle puddle = getNearest0Pud(task);
+		Puddle puddle = getNearest0Pud(task);//start with the closest level0 puddle
 		ArrayList<Puddle> puds = new ArrayList<Puddle>();
 		ArrayList<EdgeHost> hosts = new ArrayList<EdgeHost>();
 		LinkedList<EdgeHost> candidates;
 		EdgeHost host;
 		DistRadix radix;
-		while(!puddle.canHandle(task)) {
+		while(!puddle.canHandle(task)) {//if that puddle can't handle the task ask its parent until you find the lowest puddle that can handle the task
 			puddle = puddle.getParent();
 			if (puddle == null) {
 				throw new IllegalArgumentException();
 			}
 		}
 		while(puddle != null) {
-			puds.add(puddle);
+			puds.add(puddle);//collect the line of puddles from all layers capable of handling the task
 			puddle = puddle.getParent();
 		}
 		for (Puddle pud : puds) {
-			hosts.addAll(pud.getMembers());
+			hosts.addAll(pud.getMembers());//get all of the nodes from those puddles
 		}
 		radix = new DistRadix(hosts, new Pair<Integer, Integer>(task.getSubmittedLocation().getXPos(), task.getSubmittedLocation().getYPos()));
-		candidates = radix.sortPuddleNodes();
+		candidates = radix.sortPuddleNodes();//sort those nodes by distance
 		host = candidates.poll();
 		while(!goodHost(host, task)) {
-			host = candidates.poll();
+			host = candidates.poll();//find the closest node capable of handling the task
 		}
 		return host;
 	}

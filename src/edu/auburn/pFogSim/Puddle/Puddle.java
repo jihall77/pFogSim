@@ -16,7 +16,7 @@ import java.util.LinkedList;
 import org.cloudbus.cloudsim.Vm;
 import org.cloudbus.cloudsim.core.CloudSim;
 /**
- * @author Jacob I Hall and Clayton Johnson
+ * @author Jacob I Hall
  * puddle class for separating nodes into logical hierarchies
  */
 public class Puddle {
@@ -80,7 +80,7 @@ public class Puddle {
 		EdgeHost newHead = head;
 		if (head == null) {
 			head = members.get(0);
-			//members.remove(head);
+			//members.remove(head); //this causes bad juju, don't do it
 			return;
 		}
 		for (int i = 0; newHead.equals(head) && i < members.size(); i++) {
@@ -92,7 +92,7 @@ public class Puddle {
 		}
 		members.add(head);
 		head = newHead;
-		//members.remove(head);
+		//members.remove(head); //see above
 	}
 	/**
 	 * set the puddle head, the head should be a current member of the puddle<br>
@@ -121,6 +121,7 @@ public class Puddle {
 			}
 			else {
 				//throw new BadPuddleParentageException("Child: " + child.getLevel() + ", member: " + getLevel());
+				//don't throw the exception, just skip the node...
 			}
 		}
 	}
@@ -139,12 +140,15 @@ public class Puddle {
 			}
 		}
 	}
-	
+	/**
+	 * add a puddle to the children of this puddle
+	 * @param puddle
+	 */
 	public void addDown(Puddle puddle) {
 		down.add(puddle);
 	}
 	/**
-	 * set the parent of the puddle. parent must be exactly one layer inwards
+	 * link this puddle with its parent. parent must be exactly one layer inwards<br>
 	 * @param _up
 	 */
 	public void setUp(Puddle _up) {
@@ -158,7 +162,7 @@ public class Puddle {
 	 * update the total number of available resources in this puddle<br>
 	 * as well as the max resources available on a single instance
 	 */
-	public void updateResources() {
+	public void updateResources() {//we don't really use this-- use updateCapacity() instead
 		availRam = 0;
 		availMIPS = 0;
 		availPES = 0;
@@ -193,7 +197,9 @@ public class Puddle {
 		}
 		return true;
 	}
-	
+	/**
+	 * update the total capacity and max single instance capacity for this puddle
+	 */
 	public void updateCapacity() {
 		double tempCap = 0;
 		totalCapacity = 0;
@@ -231,7 +237,10 @@ public class Puddle {
 	public LinkedList<EdgeHost> getClosestNodes(Location ref) {
 		return getClosestNodes(new Pair<Integer, Integer>(ref.getXPos(), ref.getYPos()));
 	}
-	
+	/**
+	 * set the level of this puddle
+	 * @param lvl
+	 */
 	public void setLevel(int lvl) {
 		level = lvl;
 	}
