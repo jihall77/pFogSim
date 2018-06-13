@@ -39,7 +39,12 @@ public class FogHierCluster {
 				//levelMap.get(level).add(pair);
 			//}
 		}
-		
+		int length = levelMap.size();
+		for (int i = 0; i < length; i++) {
+			if(levelMap.get(i).size() == 0) {
+				levelMap.remove(i);
+			}
+		}
 		//Add all clusters we are making out of each layer to the clusterList
 		for(int leveliter = 0; leveliter < levelMap.size(); leveliter++)
 		{

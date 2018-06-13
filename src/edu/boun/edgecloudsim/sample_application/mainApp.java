@@ -36,7 +36,8 @@ public class mainApp {
 		 * trying to output the test files we want
 		 * 
 		 */
-		/*try{
+		
+		try{
 		    PrintWriter node = new PrintWriter("large_node_test.xml", "UTF-8");
 		    PrintWriter links = new PrintWriter("large_links_test.xml", "UTF-8");
 		    node.println("<?xml version=\"1.0\"?>");
@@ -55,7 +56,7 @@ public class mainApp {
 		    node.println("<location>\n" + 
 		    		"			<x_pos>125</x_pos>\n" + 
 		    		"			<y_pos>125</y_pos>\n" + 
-		    		"			<level>0</level>" +
+		    		"			<level>5</level>" +
 		    		"			<wlan_id>0</wlan_id>\n" + 
 		    		"			<attractiveness>1</attractiveness>\n" + 
 		    		"			<wap>false</wap>\n" + 
@@ -87,7 +88,7 @@ public class mainApp {
 		    int level;
 		    for(int i = 0; i < 4; i++)
 		    {
-		    	level = 1;
+		    	level = 4;
 		    	int x = (int) (Math.random()* 250);
 		    	int y = (int) (Math.random()* 250);
 
@@ -148,7 +149,7 @@ public class mainApp {
 			    counter++;
 			    for(int j = 0; j < 3; j++)
 			    {
-			    	level = 2;
+			    	level = 3;
 			    	int x2 = (int) (Math.random()* 250);
 			    	int y2 = (int) (Math.random()* 250);
 
@@ -207,7 +208,7 @@ public class mainApp {
 			    	counter++;
 			    	for(int k = 0; k < 2; k++)
 			    	{
-			    		level = 3;
+			    		level = 2;
 				    	int x3 = (int) (Math.random()* 250);
 				    	int y3 = (int) (Math.random()* 250);
 
@@ -266,7 +267,7 @@ public class mainApp {
 			    		counter++;
 			    		for(int z = 0; z < 3; z++)
 			    		{
-			    			level = 4;
+			    			level =1;
 					    	int x4 = (int) (Math.random()* 250);
 					    	int y4 = (int) (Math.random()* 250);
 
@@ -325,7 +326,7 @@ public class mainApp {
 					    	counter++;
 					    	for(int v = 0; v < 3; v++)
 				    		{
-				    			level = 5;
+				    			level = 0;
 						    	int x5 = (int) (Math.random()* 250);
 						    	int y5 = (int) (Math.random()* 250);
 
@@ -341,7 +342,7 @@ public class mainApp {
 							    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 							    		"			<level>" + level + "</level>\n" +
 							    		"			<attractiveness>3</attractiveness>\n" + 
-							    		"			<wap>false</wap>\n" + 
+							    		"			<wap>true</wap>\n" + 
 							    		"		</location>");
 							    node.println("<hosts>\n" + 
 							    		"			<host>\n" + 
@@ -397,7 +398,7 @@ public class mainApp {
 		    node.close();
 		} catch (Exception e) {
 		   System.out.println("Files were not able to be made");
-		}*/
+		}
 		
 		
 		/*

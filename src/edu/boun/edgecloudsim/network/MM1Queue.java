@@ -84,15 +84,29 @@ public class MM1Queue extends NetworkModel {
 	@Override
 	public double getUploadDelay(int sourceDeviceId, int destDeviceId, double dataSize, boolean wifiSrc, boolean wifiDest) {
 		double delay = 0;
-		Location accessPointLocation = SimManager.getInstance().getMobilityModel().getLocation(sourceDeviceId,CloudSim.clock());
-		Location destPointLocation = SimManager.getInstance().getMobilityModel().getLocation(sourceDeviceId,CloudSim.clock());
+		Location accessPointLocation = null;
+		Location destPointLocation = null;
+		try {
+			accessPointLocation = SimManager.getInstance().getMobilityModel().getLocation(sourceDeviceId,CloudSim.clock());
+		}
+		catch (IndexOutOfBoundsException e) {
+			sourceDeviceId *= -1;
+			accessPointLocation = SimManager.getInstance().getLocalServerManager().findHostById(sourceDeviceId).getLocation();
+		}
+		try {
+			destPointLocation = SimManager.getInstance().getMobilityModel().getLocation(destDeviceId,CloudSim.clock());
+		}
+		catch (IndexOutOfBoundsException e) {
+			destDeviceId *= -1;
+			destPointLocation = SimManager.getInstance().getLocalServerManager().findHostById(destDeviceId).getLocation();
+		}
 		Pair<Integer, Integer> source;
 		Pair<Integer, Integer> destination;
 		NodeSim src;
 		NodeSim dest;
 		NodeSim current;
 		NodeSim nextHop;
-		LinkedList<NodeSim> path;
+		LinkedList<NodeSim> path = null;
 		source = new Pair<Integer, Integer>(accessPointLocation.getXPos(), accessPointLocation.getYPos());
 		destination = new Pair<Integer, Integer>(destPointLocation.getXPos(), destPointLocation.getYPos());
 		
@@ -103,12 +117,12 @@ public class MM1Queue extends NetworkModel {
 			src = networkTopology.findNode(source, false);
 		}
 		if(wifiDest) {
-			dest = networkTopology.findNode(source, true);
+			dest = networkTopology.findNode(destination, true);
 		}
 		else {
-			dest = networkTopology.findNode(source, false);
+			dest = networkTopology.findNode(destination, false);
 		}
-		path = Router.findPath(networkTopology, src, dest);
+	    path = Router.findPath(networkTopology, src, dest);
 		delay += getWlanUploadDelay(accessPointLocation, CloudSim.clock());
 		while (!path.isEmpty()) {
 			current = path.poll();

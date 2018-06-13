@@ -26,6 +26,11 @@ public class DistRadix {
 	 * @param reference
 	 */
 	public DistRadix(List<EdgeHost> in, Pair<Integer, Integer> reference) {
+		input = new ArrayList<EdgeHost>();
+		coordMap = new HashMap<Pair<Integer, Integer>, EdgeHost>();
+		distMap = new HashMap<Double, Pair<Integer, Integer>>();
+		coords = new ArrayList<Pair<Integer, Integer>>();
+		distances = new ArrayList<Integer>();
 		for (EdgeHost node : in) {
 			input.add(node);
 		}

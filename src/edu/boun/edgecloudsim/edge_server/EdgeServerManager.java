@@ -135,6 +135,7 @@ public class EdgeServerManager {
 		}
 		//JIH lets see if this works
 		((MM1Queue) SimManager.getInstance().getNetworkModel()).setNetworkTopology(networkTopology);
+		networkTopology.setPuddles(makePuddles(clusterObject));
 		
 	}
 
@@ -332,7 +333,7 @@ public class EdgeServerManager {
 				puddle.setMembers(hosts);
 				puddle.chooseNewHead();
 				puddle.updateResources();
-				puddle.updateCapacity();
+				//puddle.updateCapacity();
 				puds[k][i] = puddle;
 			}
 		}
@@ -347,11 +348,12 @@ public class EdgeServerManager {
 							puds[k+1][j].getHead().getLocation().getYPos(), false));
 					if (temp < staticLatency) {
 						staticLatency = temp;
-						level = k;
+						level = k + 1;
 						index = j;
 					}
 				}
 				puds[k][i].setUp(puds[level][index]);
+				staticLatency = Double.MAX_VALUE;
 			}
 		}
 		ArrayList<Puddle> results = new ArrayList<Puddle>();
@@ -364,9 +366,18 @@ public class EdgeServerManager {
 	}
 	
 	private EdgeHost findHostByLoc(int x, int y) {
-		for (EdgeHost node : hostList) {
-			if (node.getLocation().getXPos() == x && node.getLocation().getYPos() == y) {
-				return node;
+		for (Datacenter node : SimManager.getInstance().getLocalServerManager().getDatacenterList()) {
+			if (((EdgeHost) node.getHostList().get(0)).getLocation().getXPos() == x && ((EdgeHost) node.getHostList().get(0)).getLocation().getYPos() == y) {
+				return ((EdgeHost) node.getHostList().get(0));
+			}
+		}
+		return null;
+	}
+	
+	public EdgeHost findHostById(int id) {
+		for (Datacenter node : SimManager.getInstance().getLocalServerManager().getDatacenterList()) {
+			if (node.getHostList().get(0).getId() == id) {
+				return ((EdgeHost) node.getHostList().get(0));
 			}
 		}
 		return null;

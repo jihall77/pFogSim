@@ -6,4 +6,8 @@ package edu.auburn.pFogSim.Exceptions;
  */
 public class BadPuddleParentageException extends RuntimeException {
 
+	public BadPuddleParentageException(String string) {
+		super(string);
+	}
+
 }

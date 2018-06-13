@@ -72,7 +72,7 @@ public class PuddleOrchestrator extends EdgeOrchestrator {
 	}
 	
 	private boolean goodHost(EdgeHost host, Task task) {
-		double hostCap = host.getVmList().get(0).getCloudletScheduler().getTotalUtilizationOfCpu(CloudSim.clock());
+		double hostCap = 100.0 - host.getVmList().get(0).getCloudletScheduler().getTotalUtilizationOfCpu(CloudSim.clock());
 		double taskCap = ((CpuUtilizationModel_Custom)task.getUtilizationModelCpu()).predictUtilization(((EdgeVM)host.getVmList().get(0)).getVmType());
 		return hostCap >= taskCap;
 	}

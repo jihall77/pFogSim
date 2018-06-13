@@ -42,7 +42,8 @@ public class Puddle {
 
 	
 	public Puddle() {
-		
+		members = new ArrayList<EdgeHost>();
+		down = new ArrayList<Puddle>();
 	}
 	/**
 	 * get the puddle head of the parent puddle
@@ -79,7 +80,7 @@ public class Puddle {
 		EdgeHost newHead = head;
 		if (head == null) {
 			head = members.get(0);
-			members.remove(head);
+			//members.remove(head);
 			return;
 		}
 		for (int i = 0; newHead.equals(head) && i < members.size(); i++) {
@@ -91,18 +92,17 @@ public class Puddle {
 		}
 		members.add(head);
 		head = newHead;
-		members.remove(head);
+		//members.remove(head);
 	}
 	/**
 	 * set the puddle head, the head should be a current member of the puddle<br>
-	 * after being made the head, the host will be removed from the member list<br>
 	 * if the input host is not a member of the puddle throw an IllegalArgumentException
 	 * @param _head
 	 */
 	public void setHead(EdgeHost _head) {
 		if (members.contains(_head)) {
 			head = _head;
-			members.remove(head);
+			//members.remove(head);
 		}
 		else {
 			throw new IllegalArgumentException();
@@ -120,7 +120,7 @@ public class Puddle {
 				members.add(child);
 			}
 			else {
-				throw new BadPuddleParentageException();
+				//throw new BadPuddleParentageException("Child: " + child.getLevel() + ", member: " + getLevel());
 			}
 		}
 	}
@@ -135,7 +135,7 @@ public class Puddle {
 				down.add(child);
 			}
 			else {
-				throw new BadPuddleParentageException();
+				throw new BadPuddleParentageException("Child: " + child.getLevel() + ", Parent: " + getLevel());
 			}
 		}
 	}
@@ -148,8 +148,8 @@ public class Puddle {
 	 * @param _up
 	 */
 	public void setUp(Puddle _up) {
-		if (up.getLevel() != getLevel() + 1) {
-			throw new BadPuddleParentageException();
+		if (_up.getLevel() != getLevel() + 1) {
+			throw new BadPuddleParentageException("Child: " + getLevel() + ", Parent: " + _up.getLevel());
 		}
 		up = _up;
 		up.addDown(this);
@@ -186,6 +186,7 @@ public class Puddle {
 	 * @return
 	 */
 	public boolean canHandle(Task app) {
+		updateCapacity();
 		double appCapacity = ((CpuUtilizationModel_Custom)app.getUtilizationModelCpu()).predictUtilization(((EdgeVM)head.getVmList().get(0)).getVmType());
 		if (appCapacity > totalCapacity || appCapacity > maxCapacity) {
 			return false;
@@ -198,7 +199,7 @@ public class Puddle {
 		totalCapacity = 0;
 		maxCapacity = 0;
 		for (EdgeHost node : members) {
-			tempCap = node.getVmList().get(0).getCloudletScheduler().getTotalUtilizationOfCpu(CloudSim.clock());
+			tempCap = 100.0 - node.getVmList().get(0).getCloudletScheduler().getTotalUtilizationOfCpu(CloudSim.clock());
 			totalCapacity += tempCap;
 			if (maxCapacity < tempCap) {
 				maxCapacity = tempCap;

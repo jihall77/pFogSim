@@ -72,7 +72,7 @@ public class MobileDeviceManager extends DatacenterBroker {
 		if(task.getSubmittedLocation().equals(currentLocation))
 		{
 			//SimLogger.printLine(CloudSim.clock() + ": " + getName() + ": Cloudlet " + task.getCloudletId() + " received");
-			double WlanDelay = networkModel.getDownloadDelay(task.getAssociatedHostId(), task.getMobileDeviceId(), task.getCloudletOutputSize(), false, task.wifi);
+			double WlanDelay = networkModel.getDownloadDelay(task.getAssociatedHostId() * -1, task.getMobileDeviceId(), task.getCloudletOutputSize(), false, task.wifi);
 			if(WlanDelay > 0)
 			{
 				networkModel.downloadStarted(currentLocation, SimSettings.GENERIC_EDGE_DEVICE_ID);
@@ -252,7 +252,7 @@ public class MobileDeviceManager extends DatacenterBroker {
 		
 		if(nextHopId == SimSettings.CLOUD_DATACENTER_ID){
 			
-			double WanDelay = networkModel.getUploadDelay(task.getMobileDeviceId(), nextHopId, task.getCloudletFileSize(), task.wifi, false);
+			double WanDelay = networkModel.getUploadDelay(task.getMobileDeviceId(), nextHopId * -1, task.getCloudletFileSize(), task.wifi, false);
 			
 			if(WanDelay>0){
 				networkModel.uploadStarted(currentLocation, nextHopId);
@@ -283,8 +283,8 @@ public class MobileDeviceManager extends DatacenterBroker {
 //						SimSettings.VM_TYPES.EDGE_VM.ordinal());
 //			}
 //		}
-		else if(nextHopId == SimSettings.GENERIC_EDGE_DEVICE_ID) {
-			double WlanDelay = networkModel.getUploadDelay(task.getMobileDeviceId(), nextHopId, task.getCloudletFileSize(), task.wifi, false);
+		else /*(nextHopId == SimSettings.GENERIC_EDGE_DEVICE_ID)*/ {
+			double WlanDelay = networkModel.getUploadDelay(task.getMobileDeviceId(), nextHopId * -1, task.getCloudletFileSize(), task.wifi, false);
 			
 			if(WlanDelay > 0){
 				networkModel.uploadStarted(currentLocation, nextHopId);
@@ -298,10 +298,10 @@ public class MobileDeviceManager extends DatacenterBroker {
 						SimSettings.VM_TYPES.EDGE_VM.ordinal());
 			}
 		}
-		else {
+		/*else {
 			SimLogger.printLine("Unknown nextHopId! Terminating simulation...");
 			System.exit(0);
-		}
+		}*/
 	}
 	
 	public Task createTask(EdgeTask edgeTask){
