@@ -31,12 +31,12 @@ public abstract class NetworkModel {
     /**
     * calculates the upload delay from source to destination device
     */
-	public abstract double getUploadDelay(int sourceDeviceId, int destDeviceId, double dataSize);
+	public abstract double getUploadDelay(int sourceDeviceId, int destDeviceId, double dataSize, boolean wifiSrc, boolean wifiDest);
 	
     /**
     * calculates the download delay from source to destination device
     */
-	public abstract double getDownloadDelay(int sourceDeviceId, int destDeviceId, double dataSize);
+	public abstract double getDownloadDelay(int sourceDeviceId, int destDeviceId, double dataSize, boolean wifiSrc, boolean wifiDest);
 	
     /**
     * Mobile device manager should inform network manager about the network operation

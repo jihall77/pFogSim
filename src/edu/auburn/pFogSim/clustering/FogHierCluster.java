@@ -128,6 +128,9 @@ public class FogHierCluster {
 
 	}
 	
+	public ArrayList<FogCluster> getClusters() {
+		return clusterList;
+	}
 	
 /*	private static void makeClusters() {
 		double distance = 0;

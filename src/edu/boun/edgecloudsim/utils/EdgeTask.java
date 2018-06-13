@@ -21,8 +21,12 @@ public class EdgeTask {
     public long length, inputFileSize, outputFileSize;
     public int pesNumber;
     public int mobileDeviceId;
+    public boolean wifi; //added by pFogSim for asking whether a task requires a wifi access point
+    public boolean sens; //added by pFogSim to say whether a device is a sensor
+    public boolean act;  //added by pFogSim to say whether a device is an actuator
     
-    public EdgeTask(int _mobileDeviceId, APP_TYPES _taskType, double _startTime, ExponentialDistribution[][] expRngList) {
+    public EdgeTask(int _mobileDeviceId, APP_TYPES _taskType, double _startTime, ExponentialDistribution[][] expRngList, 
+    				boolean _wifi, boolean _sens, boolean _act) {
     	mobileDeviceId=_mobileDeviceId;
     	startTime=_startTime;
     	taskType=_taskType;
@@ -32,5 +36,9 @@ public class EdgeTask {
     	length = (long)expRngList[_taskType.ordinal()][2].sample();
     	
     	pesNumber = (int)SimSettings.getInstance().getTaskLookUpTable()[_taskType.ordinal()][8];
+    	
+    	wifi = _wifi;
+    	sens =  _sens;
+    	act = _act;
 	}
 }

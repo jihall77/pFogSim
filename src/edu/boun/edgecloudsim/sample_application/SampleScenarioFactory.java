@@ -16,6 +16,7 @@ import org.cloudbus.cloudsim.Host;
 import org.cloudbus.cloudsim.UtilizationModel;
 import org.cloudbus.cloudsim.VmAllocationPolicy;
 
+import edu.auburn.pFogSim.orchestrator.PuddleOrchestrator;
 import edu.boun.edgecloudsim.core.ScenarioFactory;
 import edu.boun.edgecloudsim.core.SimSettings.APP_TYPES;
 import edu.boun.edgecloudsim.edge_orchestrator.BasicEdgeOrchestrator;
@@ -52,7 +53,7 @@ public class SampleScenarioFactory implements ScenarioFactory {
 
 	@Override
 	public EdgeOrchestrator getEdgeOrchestrator() {
-		return new BasicEdgeOrchestrator(orchestratorPolicy, simScenario);
+		return new PuddleOrchestrator(orchestratorPolicy, simScenario);
 	}
 
 	@Override

@@ -86,7 +86,11 @@ public class IdleActiveLoadGenerator extends LoadGeneratorModel{
 					continue;
 				}
 				
-				taskList.add(new EdgeTask(i,randomTaskType, virtualTime, expRngList));
+				boolean sens = (SimUtils.getRandomDoubleNumber(0, 100) < 67);
+				boolean act = (!sens || SimUtils.getRandomDoubleNumber(0, 100) < 50);
+				boolean wifi = (sens && act);
+				
+				taskList.add(new EdgeTask(i, randomTaskType, virtualTime, expRngList, wifi, sens, act));
 			}
 		}
 	}

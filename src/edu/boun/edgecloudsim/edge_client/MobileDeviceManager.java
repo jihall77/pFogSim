@@ -23,9 +23,11 @@ import org.cloudbus.cloudsim.core.CloudSim;
 import org.cloudbus.cloudsim.core.CloudSimTags;
 import org.cloudbus.cloudsim.core.SimEvent;
 
+import edu.auburn.pFogSim.netsim.NodeSim;
 import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
 import edu.boun.edgecloudsim.edge_server.EdgeVM;
+import edu.boun.edgecloudsim.network.MM1Queue;
 import edu.boun.edgecloudsim.network.NetworkModel;
 import edu.boun.edgecloudsim.utils.EdgeTask;
 import edu.boun.edgecloudsim.utils.Location;
@@ -70,7 +72,7 @@ public class MobileDeviceManager extends DatacenterBroker {
 		if(task.getSubmittedLocation().equals(currentLocation))
 		{
 			//SimLogger.printLine(CloudSim.clock() + ": " + getName() + ": Cloudlet " + task.getCloudletId() + " received");
-			double WlanDelay = networkModel.getDownloadDelay(task.getAssociatedHostId(), task.getMobileDeviceId(), task.getCloudletOutputSize());
+			double WlanDelay = networkModel.getDownloadDelay(task.getAssociatedHostId(), task.getMobileDeviceId(), task.getCloudletOutputSize(), false, task.wifi);
 			if(WlanDelay > 0)
 			{
 				networkModel.downloadStarted(currentLocation, SimSettings.GENERIC_EDGE_DEVICE_ID);
@@ -127,7 +129,7 @@ public class MobileDeviceManager extends DatacenterBroker {
 				Task task = (Task) ev.getData();
 
 				//SimLogger.printLine(CloudSim.clock() + ": " + getName() + ": Cloudlet " + task.getCloudletId() + " received");
-				double WanDelay = networkModel.getDownloadDelay(SimSettings.CLOUD_DATACENTER_ID, task.getMobileDeviceId(), task.getCloudletOutputSize());
+				double WanDelay = networkModel.getDownloadDelay(SimSettings.CLOUD_DATACENTER_ID, task.getMobileDeviceId(), task.getCloudletOutputSize(), false, task.wifi);
 				if(WanDelay > 0)
 				{
 					Location currentLocation = SimManager.getInstance().getMobilityModel().getLocation(task.getMobileDeviceId(),CloudSim.clock()+WanDelay);
@@ -249,7 +251,8 @@ public class MobileDeviceManager extends DatacenterBroker {
 		int nextHopId = SimManager.getInstance().getEdgeOrchestrator().getDeviceToOffload(task);
 		
 		if(nextHopId == SimSettings.CLOUD_DATACENTER_ID){
-			double WanDelay = networkModel.getUploadDelay(task.getMobileDeviceId(), nextHopId, task.getCloudletFileSize());
+			
+			double WanDelay = networkModel.getUploadDelay(task.getMobileDeviceId(), nextHopId, task.getCloudletFileSize(), task.wifi, false);
 			
 			if(WanDelay>0){
 				networkModel.uploadStarted(currentLocation, nextHopId);
@@ -281,7 +284,7 @@ public class MobileDeviceManager extends DatacenterBroker {
 //			}
 //		}
 		else if(nextHopId == SimSettings.GENERIC_EDGE_DEVICE_ID) {
-			double WlanDelay = networkModel.getUploadDelay(task.getMobileDeviceId(), nextHopId, task.getCloudletFileSize());
+			double WlanDelay = networkModel.getUploadDelay(task.getMobileDeviceId(), nextHopId, task.getCloudletFileSize(), task.wifi, false);
 			
 			if(WlanDelay > 0){
 				networkModel.uploadStarted(currentLocation, nextHopId);
@@ -308,7 +311,7 @@ public class MobileDeviceManager extends DatacenterBroker {
 		Task task = new Task(edgeTask.mobileDeviceId, ++taskIdCounter,
 				edgeTask.length, edgeTask.pesNumber,
 				edgeTask.inputFileSize, edgeTask.outputFileSize,
-				utilizationModelCPU, utilizationModel, utilizationModel);
+				utilizationModelCPU, utilizationModel, utilizationModel, edgeTask.wifi, edgeTask.sens, edgeTask.act);
 		
 		//set the owner of this task
 		task.setUserId(this.getId());
