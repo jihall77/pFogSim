@@ -254,6 +254,7 @@ public class EdgeServerManager {
 		int x_pos = Integer.parseInt(location.getElementsByTagName("x_pos").item(0).getTextContent());
 		int y_pos = Integer.parseInt(location.getElementsByTagName("y_pos").item(0).getTextContent());
 		int level =Integer.parseInt(location.getElementsByTagName("level").item(0).getTextContent());
+		boolean wap = Boolean.parseBoolean(location.getElementsByTagName("wap").item(0).getTextContent());
 		SimSettings.PLACE_TYPES placeType = SimUtils.stringToPlace(attractiveness);
 
 		NodeList hostNodeList = datacenterElement.getElementsByTagName("host");
@@ -279,7 +280,7 @@ public class EdgeServerManager {
 			}
 			
 			//Make NodeSim object with the input x/y positions and add that to the list of nodes
-			NodeSim newNode = new NodeSim(x_pos, y_pos, level, wlan_id);
+			NodeSim newNode = new NodeSim(x_pos, y_pos, level, wlan_id, wap);
 			nodesForTopography.add(newNode);
 			
 			

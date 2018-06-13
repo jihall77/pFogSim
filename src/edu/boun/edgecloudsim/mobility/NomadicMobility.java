@@ -89,23 +89,20 @@ public class NomadicMobility extends MobilityModel {
 		
 		for(int i=0; i<numberOfMobileDevices; i++) {
 			TreeMap<Double, Location> treeMap = treeMapArray.get(i);
+			//Make random numbers to make the vectors
 			int up = (int) (5 * Math.random() - 0.5);
 			int right = (int) (5 * Math.random() - 0.5);
 
 			while(treeMap.lastKey() < SimSettings.getInstance().getSimulationTime()) {		
 				
 				
-				int x_pos = treeMapArray.get(i).lastEntry().getValue().getXPos();
-				int y_pos = treeMapArray.get(i).lastEntry().getValue().getYPos();				
-				int wlan_id = treeMapArray.get(i).lastEntry().getValue().getServingWlanId();
-				//Make random numbers to make the vectors
-				//Make negatives by subtracting 0.5
+				int x_pos = treeMap.lastEntry().getValue().getXPos();
+				int y_pos = treeMap.lastEntry().getValue().getYPos();				
+				int wlan_id = treeMap.lastEntry().getValue().getServingWlanId();
+				
 				
 				//Calculate which wlan_id you get
-				
-				//treeMap.put(treeMap.lastKey() + 0.5, new Location(wlan_id, x_pos + right, y_pos + up));
-				
-				//Make random numbers to make the vectors
+
 				//Make negatives by subtracting 0.5
 				  
 				if(x_pos > this.MAX_WIDTH) right = right * -1;
@@ -139,7 +136,7 @@ public class NomadicMobility extends MobilityModel {
 					}
 				}
 				
-				
+				//If the previous node is further 10 or more away, change nodes
 				if(distance > 10)
 				{
 				int nodeX, nodeY;
