@@ -189,8 +189,10 @@ public class MobileDeviceManager extends DatacenterBroker {
 					networkModel.downloadFinished(task.getSubmittedLocation(), SimSettings.CLOUD_DATACENTER_ID);
 				else
 					networkModel.downloadFinished(task.getSubmittedLocation(), SimSettings.GENERIC_EDGE_DEVICE_ID);
+				//Find edgedevice + get cost
+				double cost = task.getActualCPUTime() * task.getCostPerSec();
 				//SimLogger.printLine(CloudSim.clock() + ": " + getName() + ": Cloudlet " + cloudlet.getCloudletId() + " is received");
-				SimLogger.getInstance().downloaded(task.getCloudletId(), CloudSim.clock());
+				SimLogger.getInstance().downloaded(task.getCloudletId(), CloudSim.clock(), cost);
 				break;
 			}
 			default:
