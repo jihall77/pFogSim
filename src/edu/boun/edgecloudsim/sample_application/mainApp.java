@@ -9,6 +9,7 @@
 
 package edu.boun.edgecloudsim.sample_application;
 
+import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -50,14 +51,14 @@ public class mainApp {
 		    node.println("<costPerBw>0.1</costPerBw>\n" + 
 		    		"		<costPerSec>3.0</costPerSec>\n" + 
 		    		"		<costPerMem>0.05</costPerMem>\n" + 
-		    		"		<costPerStorage>0.1</costPerStorage>\n" + 
-							    		"		<wap>false</wap>\n");
+		    		"		<costPerStorage>0.1</costPerStorage>");
 		    node.println("<location>\n" + 
 		    		"			<x_pos>125</x_pos>\n" + 
 		    		"			<y_pos>125</y_pos>\n" + 
 		    		"			<level>0</level>" +
 		    		"			<wlan_id>0</wlan_id>\n" + 
 		    		"			<attractiveness>1</attractiveness>\n" + 
+		    		"			<wap>false</wap>\n" + 
 		    		"		</location>");
 		    node.println("<hosts>\n" + 
 		    		"			<host>\n" + 
@@ -97,14 +98,14 @@ public class mainApp {
 			    node.println("<costPerBw>0.1</costPerBw>\n" + 
 			    		"		<costPerSec>3.0</costPerSec>\n" + 
 			    		"		<costPerMem>0.05</costPerMem>\n" + 
-			    		"		<costPerStorage>0.1</costPerStorage>\n" + 
-							    		"		<wap>false</wap>\n");
+			    		"		<costPerStorage>0.1</costPerStorage>");
 			    node.println("<location>\n" + 
 			    		"			<x_pos>" + x + "</x_pos>\n" + 
 			    		"			<y_pos>" + y + "</y_pos>\n" + 
 			    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 			    		"			<level>" + level + "</level>" +
 			    		"			<attractiveness>1</attractiveness>\n" + 
+			    		"			<wap>true</wap>\n" + 
 			    		"		</location>");
 			    node.println("<hosts>\n" + 
 			    		"			<host>\n" + 
@@ -156,14 +157,14 @@ public class mainApp {
 				    node.println("<costPerBw>0.1</costPerBw>\n" + 
 				    		"		<costPerSec>3.0</costPerSec>\n" + 
 				    		"		<costPerMem>0.05</costPerMem>\n" + 
-				    		"		<costPerStorage>0.1</costPerStorage>\n" + 
-							    		"		<wap>false</wap>\n");
+				    		"		<costPerStorage>0.1</costPerStorage>");
 				    node.println("<location>\n" + 
 				    		"			<x_pos>" + x2 + "</x_pos>\n" + 
 				    		"			<y_pos>" + y2 + "</y_pos>\n" + 
 				    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 				    		"			<level>" + level + "</level>" +
 				    		"			<attractiveness>1</attractiveness>\n" + 
+				    		"			<wap>false</wap>\n" + 
 				    		"		</location>");
 				    node.println("<hosts>\n" + 
 				    		"			<host>\n" + 
@@ -215,14 +216,14 @@ public class mainApp {
 					    node.println("<costPerBw>0.1</costPerBw>\n" + 
 					    		"		<costPerSec>3.0</costPerSec>\n" + 
 					    		"		<costPerMem>0.05</costPerMem>\n" + 
-					    		"		<costPerStorage>0.1</costPerStorage>\n" + 
-							    		"		<wap>false</wap>\n");
+					    		"		<costPerStorage>0.1</costPerStorage>");
 					    node.println("<location>\n" + 
 					    		"			<x_pos>" + x3 + "</x_pos>\n" + 
 					    		"			<y_pos>" + y3 + "</y_pos>\n" + 
 					    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 					    		"			<level>" + level + "</level>" +
 					    		"			<attractiveness>1</attractiveness>\n" + 
+					    		"			<wap>false</wap>\n" + 
 					    		"		</location>");
 					    node.println("<hosts>\n" + 
 					    		"			<host>\n" + 
@@ -274,14 +275,14 @@ public class mainApp {
 						    node.println("<costPerBw>0.1</costPerBw>\n" + 
 						    		"		<costPerSec>3.0</costPerSec>\n" + 
 						    		"		<costPerMem>0.05</costPerMem>\n" + 
-						    		"		<costPerStorage>0.1</costPerStorage>\n" + 
-							    		"		<wap>false</wap>\n");
+						    		"		<costPerStorage>0.1</costPerStorage>");
 						    node.println("<location>\n" + 
 						    		"			<x_pos>" + x4 + "</x_pos>\n" + 
 						    		"			<y_pos>" + y4 + "</y_pos>\n" + 
 						    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 						    		"			<level>" + level + "</level>" +
 						    		"			<attractiveness>1</attractiveness>\n" + 
+						    		"			<wap>false</wap>\n" + 
 						    		"		</location>");
 						    node.println("<hosts>\n" + 
 						    		"			<host>\n" + 
@@ -333,14 +334,14 @@ public class mainApp {
 							    node.println("<costPerBw>0.1</costPerBw>\n" + 
 							    		"		<costPerSec>3.0</costPerSec>\n" + 
 							    		"		<costPerMem>0.05</costPerMem>\n" + 
-							    		"		<costPerStorage>0.1</costPerStorage>\n" + 
-							    		"		<wap>true</wap>\n");
+							    		"		<costPerStorage>0.1</costPerStorage>");
 							    node.println("<location>\n" + 
 							    		"			<x_pos>" + x5 + "</x_pos>\n" + 
 							    		"			<y_pos>" + y5 + "</y_pos>\n" + 
 							    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 							    		"			<level>" + level + "</level>\n" +
 							    		"			<attractiveness>3</attractiveness>\n" + 
+							    		"			<wap>false</wap>\n" + 
 							    		"		</location>");
 							    node.println("<hosts>\n" + 
 							    		"			<host>\n" + 
