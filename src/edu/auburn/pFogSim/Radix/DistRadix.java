@@ -90,8 +90,8 @@ public class DistRadix {
 	 */
 	private void countSort(int arr[], int n, int exp)
     {
-        int output[] = new int[n];
-        int i;
+        int output[] = new int[n];//i don't have time to explain counting sort to you
+        int i;					  //this is a private class fam... let it be
         int count[] = new int[10];
         Arrays.fill(count, 0);
  

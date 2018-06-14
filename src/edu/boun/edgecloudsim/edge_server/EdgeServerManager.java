@@ -307,7 +307,12 @@ public class EdgeServerManager {
 
 		return hostList;
 	}
-	
+	/**
+	 * interpret the clusters into puddles<br>
+	 * added by pFogSim
+	 * @param clusters
+	 * @return
+	 */
 	private ArrayList<Puddle> makePuddles(FogHierCluster clusters) {
 		EdgeHost host;
 		int x;
@@ -316,15 +321,15 @@ public class EdgeServerManager {
 		FogCluster cluster;
 		ArrayList<EdgeHost> hosts;
 		double staticLatency = Double.MAX_VALUE;
-		Puddle[][] puds = new Puddle[clusters.getClusters().size()][];
-		for (int k = 0; k < clusters.getClusters().size(); k++) {
-			cluster = clusters.getClusters().get(k);
-			puds[k] =  new Puddle[cluster.getCluster().length];
-			for (int i = 0; i < cluster.getCluster().length; i++) {
+		Puddle[][] puds = new Puddle[clusters.getClusters().size()][];//2D array: 1stD is the level, 2ndD is the puddles in that layer
+		for (int k = 0; k < clusters.getClusters().size(); k++) {//for each layer in the system
+			cluster = clusters.getClusters().get(k);//extract the layer
+			puds[k] =  new Puddle[cluster.getCluster().length];//set the list of puddles for that layer
+			for (int i = 0; i < cluster.getCluster().length; i++) {//for each puddle in the layer
 				puddle = new Puddle();
 				puddle.setLevel(k);
 				hosts = new ArrayList<EdgeHost>();
-				for (int j = 0; j < cluster.getCluster()[i].length; j++) {
+				for (int j = 0; j < cluster.getCluster()[i].length; j++) {//for each host in the puddle
 					x = cluster.getCluster()[i][j][0];
 					y = cluster.getCluster()[i][j][1];
 					host = findHostByLoc(x, y);
@@ -337,34 +342,50 @@ public class EdgeServerManager {
 				puds[k][i] = puddle;
 			}
 		}
+		//now we need to set the proper parent-child releationships
 		double temp;
 		int level = 1;
 		int index = 0;
-		for (int k = 0; k < puds.length - 1; k++) {
-			for (int i = 0; i < puds[k].length; i++) {
-				for (int j = 0; j < puds[k+1].length; j++) {
+		for (int k = 0; k < puds.length - 1; k++) {//for each layer
+			for (int i = 0; i < puds[k].length; i++) {//for each puddle in the layer
+				for (int j = 0; j < puds[k+1].length; j++) {//search the next layer up for the closest puddle (by latency)
 					temp = Router.findRoute(networkTopology, networkTopology.findNode(puds[k][i].getHead().getLocation().getXPos(),
 							puds[k][i].getHead().getLocation().getYPos(), false), networkTopology.findNode(puds[k+1][j].getHead().getLocation().getXPos(),
 							puds[k+1][j].getHead().getLocation().getYPos(), false));
+					/*if you are trying to debug this line shit has gone horribly horribly wrong...
+					 *that being said, lets figure out what's going on...
+					 *
+					 *we need temp to be the static latency between this puddle head and the one we are testing for parentage
+					 *to that effect we have Router.findRoute(NetworkTopology network, NodeSim src, NodeSim, dest)
+					 *we have the NetworkTopology readily available (YAY!) the others not so much :(
+					 *we need to convert the heads of the puddles into NodeSims, easiest way to do that is by location
+					 *we can thus take the locations of the puddle heads and find their corresponding NodeSim objects 
+					 */
 					if (temp < staticLatency) {
 						staticLatency = temp;
 						level = k + 1;
 						index = j;
 					}
 				}
-				puds[k][i].setUp(puds[level][index]);
-				staticLatency = Double.MAX_VALUE;
+				puds[k][i].setUp(puds[level][index]);//assign parentage
+				staticLatency = Double.MAX_VALUE;//reset this for the next run
 			}
 		}
 		ArrayList<Puddle> results = new ArrayList<Puddle>();
 		for (int k = 0; k < puds.length; k++) {
 			for (int i = 0; i < puds[k].length; i++) {
-				results.add(puds[k][i]);
+				results.add(puds[k][i]);//convert the 2D array to list
 			}
 		}
 		return results;
 	}
-	
+	/**
+	 * find a given host by location<br>
+	 * added by pFogSim
+	 * @param x
+	 * @param y
+	 * @return
+	 */
 	private EdgeHost findHostByLoc(int x, int y) {
 		for (Datacenter node : SimManager.getInstance().getLocalServerManager().getDatacenterList()) {
 			if (((EdgeHost) node.getHostList().get(0)).getLocation().getXPos() == x && ((EdgeHost) node.getHostList().get(0)).getLocation().getYPos() == y) {
@@ -373,7 +394,12 @@ public class EdgeServerManager {
 		}
 		return null;
 	}
-	
+	/**
+	 * find a given host by id<br>
+	 * added by pFogSim
+	 * @param id
+	 * @return
+	 */
 	public EdgeHost findHostById(int id) {
 		for (Datacenter node : SimManager.getInstance().getLocalServerManager().getDatacenterList()) {
 			if (node.getHostList().get(0).getId() == id) {
