@@ -33,8 +33,8 @@ import edu.boun.edgecloudsim.utils.SimUtils;
 
 public class NomadicMobility extends MobilityModel {
 	private List<TreeMap<Double, Location>> treeMapArray;
-	private int MAX_WIDTH = 250;
-	private int MAX_HEIGHT = 250;
+	private int MAX_WIDTH = 1000;
+	private int MAX_HEIGHT = 1000;
 	
 	public NomadicMobility(int _numberOfMobileDevices, double _simulationTime) {
 		super(_numberOfMobileDevices, _simulationTime);
@@ -130,7 +130,6 @@ public class NomadicMobility extends MobilityModel {
 				if(distance > 10)
 				{
 				int nodeX, nodeY;
-				boolean isWAP;
 				
 				for(int z = 0; z < accessPoints.size(); z++)
 					{						

@@ -182,13 +182,16 @@ public class SimManager extends SimEntity {
 				schedule(getId(), SimSettings.getInstance().getVmLoadLogInterval(), GET_LOAD_LOG);
 				break;
 			case PRINT_PROGRESS:
+				double time = CloudSim.clock();
 				for(int q = 0; q < mobilityModel.getSize(); q++)
 				{
-					if(wapIdList[q] != mobilityModel.getWlanId(q, SimSettings.getInstance().getSimulationTime()))
+					if(wapIdList[q] != mobilityModel.getWlanId(q, time))
 					{
 						SimLogger.printLine("transfer of task needed!");
-						wapIdList[q] = mobilityModel.getWlanId(q, SimSettings.getInstance().getSimulationTime());
+						wapIdList[q] = mobilityModel.getWlanId(q, time);
 					}
+					else
+						SimLogger.printLine("No transfer necessary!");
 				}
 				
 				int progress = (int)((CloudSim.clock()*100)/SimSettings.getInstance().getSimulationTime());
