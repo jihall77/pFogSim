@@ -143,7 +143,7 @@ public class NomadicMobility extends MobilityModel {
 						}
 					}
 				}
-				treeMap.put(treeMap.lastKey() + 0.5, new Location(wlan_id, x_pos + right, y_pos + up));		
+				treeMap.put(treeMap.lastKey() + 18.0, new Location(wlan_id, x_pos + right, y_pos + up));		
 			}
 		}
 	}

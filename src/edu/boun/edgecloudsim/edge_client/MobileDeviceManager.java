@@ -32,6 +32,7 @@ import edu.boun.edgecloudsim.network.NetworkModel;
 import edu.boun.edgecloudsim.utils.EdgeTask;
 import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
+import javafx.util.Pair;
 
 
 public class MobileDeviceManager extends DatacenterBroker {
@@ -133,7 +134,9 @@ public class MobileDeviceManager extends DatacenterBroker {
 				if(WanDelay > 0)
 				{
 					Location currentLocation = SimManager.getInstance().getMobilityModel().getLocation(task.getMobileDeviceId(),CloudSim.clock()+WanDelay);
-					if(task.getSubmittedLocation().equals(currentLocation))
+					Pair<Integer, Integer> currWifiloc = ((MM1Queue) SimManager.getInstance().getNetworkModel()).getNetworkTopology().findNode(currentLocation.getXPos(), currentLocation.getYPos(), true).getLocation();
+					Pair<Integer, Integer> actualLoc = ((MM1Queue) SimManager.getInstance().getNetworkModel()).getNetworkTopology().findNode(task.getSubmittedLocation().getXPos(), task.getSubmittedLocation().getYPos(), true).getLocation();
+					if(actualLoc.equals(currWifiloc))
 					{
 						networkModel.downloadStarted(task.getSubmittedLocation(), SimSettings.CLOUD_DATACENTER_ID);
 						schedule(getId(), WanDelay, RESPONSE_RECEIVED_BY_MOBILE_DEVICE, task);
