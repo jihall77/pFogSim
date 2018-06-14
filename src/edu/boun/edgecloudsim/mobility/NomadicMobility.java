@@ -143,7 +143,8 @@ public class NomadicMobility extends MobilityModel {
 						}
 					}
 				}
-				treeMap.put(treeMap.lastKey() + 18.0, new Location(wlan_id, x_pos + right, y_pos + up));		
+				treeMap.put(treeMap.lastKey() + 50.0, new Location(wlan_id, x_pos + right, y_pos + up));		
+				
 			}
 		}
 	}
@@ -186,7 +187,7 @@ public class NomadicMobility extends MobilityModel {
 		if(deviceId >= 0)
 		{	
 			TreeMap<Double, Location> treeMap = treeMapArray.get(deviceId);
-			
+			//SimLogger.printLine("treeMap length = " + treeMap.size());
 			Entry<Double, Location> e = treeMap.floorEntry(20.0);
 			
 			wlan_id = e.getValue().getServingWlanId();

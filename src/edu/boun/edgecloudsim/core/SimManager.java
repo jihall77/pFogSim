@@ -194,8 +194,9 @@ public class SimManager extends SimEntity {
 						wapIdList[q] = mobilityModel.getWlanId(q, time);
 						if (mobileDeviceManager.getCloudletList().size() > q) {
 							Task task = (Task) mobileDeviceManager.getCloudletList().get(q);
-							mobileDeviceManager.migrateTask(task);
 							task.setSubmittedLocation(mobilityModel.getLocation(q, time));
+							mobileDeviceManager.migrateTask(task);
+							SimLogger.printLine("Task migrated...");
 						}
 						
 					}
