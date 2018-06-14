@@ -153,7 +153,7 @@ public class NodeSim {
 	 */
 	public double traverse(NodeSim dest) {
 		for (Link edge : edges) {
-			if (edge.getOutgoingLink(getLocation()) == dest.getLocation()) {
+			if (edge.getOutgoingLink(getLocation()).equals(dest.getLocation())) {
 				return edge.getOutgoingLat(getLocation());
 			}
 		}

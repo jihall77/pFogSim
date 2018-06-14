@@ -140,6 +140,9 @@ public class MM1Queue extends NetworkModel {
 			if (nextHop == null) {
 				break;
 			}
+			if (current.traverse(nextHop) < 0) {
+				SimLogger.printLine("not adjacent");
+			}
 			delay += current.traverse(nextHop);
 		}
 		
@@ -236,7 +239,6 @@ public class MM1Queue extends NetworkModel {
 		double result = (double)1 / (mu-lamda*(double)deviceCount);
 		
 		result += propogationDelay;
-		
 		return (result > 5) ? -1 : result;
 	}
 	
