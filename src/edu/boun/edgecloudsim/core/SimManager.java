@@ -36,6 +36,7 @@ public class SimManager extends SimEntity {
 	private static final int PRINT_PROGRESS = 3;
 	private static final int STOP_SIMULATION = 4;
 	
+	private int[] wapIdList = new int [1000];
 	private int numOfMobileDevice;
 	private NetworkModel networkModel;
 	private MobilityModel mobilityModel;
@@ -128,13 +129,21 @@ public class SimManager extends SimEntity {
 	
 	@Override
 	public void startEntity() {
+		
 		for(int i=0; i<edgeServerManager.getDatacenterList().size(); i++)
 			mobileDeviceManager.submitVmList(edgeServerManager.getVmList(i));
 		
 		//Creation of tasks are scheduled here!
 		for(int i=0; i< loadGeneratorModel.getTaskList().size(); i++)
+		{
 			schedule(getId(), loadGeneratorModel.getTaskList().get(i).startTime, CREATE_TASK, loadGeneratorModel.getTaskList().get(i));
-		
+		}
+		SimLogger.printLine("" + mobilityModel.getSize());
+		for(int i = 0; i < mobilityModel.getSize(); i++)
+		{
+			SimLogger.printLine("" + i);
+			wapIdList[i] = mobilityModel.getWlanId(i);
+		}
 		//Periodic event loops starts from here!
 		schedule(getId(), 5, CHECK_ALL_VM);
 		schedule(getId(), SimSettings.getInstance().getSimulationTime()/100, PRINT_PROGRESS);
@@ -160,6 +169,7 @@ public class SimManager extends SimEntity {
 				break;
 			case CHECK_ALL_VM:
 				//SimLogger.printLine("CHECK_ALL_VM reached");
+				
 				int totalNumOfVm = SimSettings.getInstance().getNumOfEdgeVMs();
 				if(VmAllocationPolicy_Custom.getCreatedVmNum() != totalNumOfVm){
 					SimLogger.printLine("All VMs cannot be created! Terminating simulation...");
@@ -172,6 +182,15 @@ public class SimManager extends SimEntity {
 				schedule(getId(), SimSettings.getInstance().getVmLoadLogInterval(), GET_LOAD_LOG);
 				break;
 			case PRINT_PROGRESS:
+				for(int q = 0; q < mobilityModel.getSize(); q++)
+				{
+					if(wapIdList[q] != mobilityModel.getWlanId(q, SimSettings.getInstance().getSimulationTime()))
+					{
+						SimLogger.printLine("transfer of task needed!");
+						wapIdList[q] = mobilityModel.getWlanId(q, SimSettings.getInstance().getSimulationTime());
+					}
+				}
+				
 				int progress = (int)((CloudSim.clock()*100)/SimSettings.getInstance().getSimulationTime());
 				if(progress % 10 == 0)
 					SimLogger.print(Integer.toString(progress));
