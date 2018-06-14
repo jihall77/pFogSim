@@ -325,4 +325,11 @@ public class MobileDeviceManager extends DatacenterBroker {
 		clearDatacenters();
 		finishExecution();
 	}
+	
+	public void migrateTask(Task task) {
+		EdgeVM vm = SimManager.getInstance().getEdgeOrchestrator().getVmToOffload(task);
+		task.setAssociatedHostId(vm.getHost().getId());
+		bindCloudletToVm(task.getCloudletId(),vm.getId());
+		schedule(getVmsToDatacentersMap().get(task.getVmId()), 0, CloudSimTags.CLOUDLET_SUBMIT, task);
+	}
 }

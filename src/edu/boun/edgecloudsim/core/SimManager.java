@@ -16,13 +16,16 @@ import java.io.IOException;
 
 import org.cloudbus.cloudsim.Log;
 import org.cloudbus.cloudsim.core.CloudSim;
+import org.cloudbus.cloudsim.core.CloudSimTags;
 import org.cloudbus.cloudsim.core.SimEntity;
 import org.cloudbus.cloudsim.core.SimEvent;
 
 import edu.boun.edgecloudsim.edge_orchestrator.EdgeOrchestrator;
 import edu.boun.edgecloudsim.edge_server.EdgeServerManager;
+import edu.boun.edgecloudsim.edge_server.EdgeVM;
 import edu.boun.edgecloudsim.edge_server.VmAllocationPolicy_Custom;
 import edu.boun.edgecloudsim.edge_client.MobileDeviceManager;
+import edu.boun.edgecloudsim.edge_client.Task;
 import edu.boun.edgecloudsim.mobility.MobilityModel;
 import edu.boun.edgecloudsim.task_generator.LoadGeneratorModel;
 import edu.boun.edgecloudsim.network.NetworkModel;
@@ -141,7 +144,7 @@ public class SimManager extends SimEntity {
 		SimLogger.printLine("" + mobilityModel.getSize());
 		for(int i = 0; i < mobilityModel.getSize(); i++)
 		{
-			SimLogger.printLine("" + i);
+			//SimLogger.printLine("" + i);
 			wapIdList[i] = mobilityModel.getWlanId(i);
 		}
 		//Periodic event loops starts from here!
@@ -187,11 +190,17 @@ public class SimManager extends SimEntity {
 				{
 					if(wapIdList[q] != mobilityModel.getWlanId(q, time))
 					{
-						SimLogger.printLine("transfer of task needed!");
+						//SimLogger.printLine("transfer of task needed!");
 						wapIdList[q] = mobilityModel.getWlanId(q, time);
+						if (mobileDeviceManager.getCloudletList().size() > q) {
+							Task task = (Task) mobileDeviceManager.getCloudletList().get(q);
+							mobileDeviceManager.migrateTask(task);
+							task.setSubmittedLocation(mobilityModel.getLocation(q, time));
+						}
+						
 					}
-					else
-						SimLogger.printLine("No transfer necessary!");
+					//else
+						//SimLogger.printLine("No transfer necessary!");
 				}
 				
 				int progress = (int)((CloudSim.clock()*100)/SimSettings.getInstance().getSimulationTime());
