@@ -4,7 +4,7 @@
 %--------------------------------------------------------------
 function [ret_val] = getConfiguration(argType)
     if(argType == 1)
-        ret_val = 'C:\Users\USERNAME\FILE\EdgeCloudSim-master\sim_results';
+        ret_val = 'C:\Users\USERNAME\FILE\pFogSim-master\sim_results';
         % USERNAME = your username
         % FILE = File or path that your EdgeCloudSim-master folder is located in
         
