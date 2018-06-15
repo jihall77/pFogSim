@@ -196,6 +196,7 @@ public class SimManager extends SimEntity {
 							Task task = (Task) mobileDeviceManager.getCloudletList().get(q);
 							mobileDeviceManager.migrateTask(task);
 							task.setSubmittedLocation(mobilityModel.getLocation(q, time));
+							//SimLogger.printLine("MIGRATION!!!!!!!!!!!!!!!!!!");
 						}
 						
 					}

@@ -6,6 +6,8 @@
 package edu.auburn.pFogSim.netsim;
 
 import edu.auburn.pFogSim.netsim.NodeSim;
+import edu.boun.edgecloudsim.utils.SimLogger;
+
 import java.util.LinkedList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -17,6 +19,11 @@ import java.util.Comparator;
 import java.util.Set;
 
 public class Router {
+	HashMap<String, LinkedList<NodeSim>> database;
+	
+	public Router() {
+		database = new HashMap<String, LinkedList<NodeSim>>();
+	}
 	/**
 	 * return a path from the src to destination as a linked list
 	 * @param network
@@ -24,11 +31,26 @@ public class Router {
 	 * @param dest
 	 * @return
 	 */
-	public static LinkedList<NodeSim> findPath(NetworkTopology network, NodeSim src, NodeSim dest ) {
+	public LinkedList<NodeSim> findPath(NetworkTopology network, NodeSim src, NodeSim dest ) {
 		LinkedList<NodeSim> travelQueue;
+		LinkedList<NodeSim> path;
+		String route;
+		route = src.toString() + "->" + dest.toString();
+		if(database.containsKey(route)) {
+			SimLogger.printLine("Found Faster Path");
+			return database.get(route);
+		}
 		Dijkstra router = Router.getAPathFinder();
 		router.runDijkstra((Set<NodeSim>) network.getNodes(), src);
 		travelQueue = router.getPath(dest);
+		path = travelQueue;
+		database.put(route, path);
+		path.pollLast();
+		while(!path.isEmpty()) {
+			route = src.toString() + "->" + path.peekLast().toString();
+			database.put(route, path);
+			path.pollLast();
+		}
 		return travelQueue;
 		//return router.getLatency(dest);
 	}

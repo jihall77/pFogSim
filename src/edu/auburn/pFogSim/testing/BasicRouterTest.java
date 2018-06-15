@@ -90,7 +90,7 @@ public class BasicRouterTest {
 		
 		Router router = new Router();
 		
-		System.out.println(getLatency(Router.findPath(nTest, n7, n1)));
+		System.out.println(getLatency(new Router().findPath(nTest, n7, n1)));
 	}
 	/**
 	 * the thing that walks over the path returned from the router and calculates the latency

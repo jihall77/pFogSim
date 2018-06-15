@@ -342,7 +342,7 @@ public class EdgeServerManager {
 				puds[k][i] = puddle;
 			}
 		}
-		//now we need to set the proper parent-child releationships
+		//now we need to set the proper parent-child relationships
 		double temp;
 		int level = 1;
 		int index = 0;

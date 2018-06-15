@@ -218,4 +218,8 @@ public class NodeSim {
 	{
 		return this.wlan_id;
 	}
+	
+	public String toString() {
+		return getLocation().getKey() + ", " + getLocation().getValue();
+	}
 }

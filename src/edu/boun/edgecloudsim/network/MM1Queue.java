@@ -29,6 +29,7 @@ public class MM1Queue extends NetworkModel {
 	private int maxNumOfClientsInPlace;
 	private NetworkTopology networkTopology;
 	private static MM1Queue instance = null;
+	private Router router;
 	
 	public MM1Queue() {
 		super();
@@ -76,6 +77,7 @@ public class MM1Queue extends NetworkModel {
 		WlanPoissonMean = WlanPoissonMean/numOfTaskType;
 		avgTaskInputSize = avgTaskInputSize/numOfTaskType;
 		avgTaskOutputSize = avgTaskOutputSize/numOfTaskType;
+		router = new Router();
 	}
 
     /**
@@ -130,7 +132,7 @@ public class MM1Queue extends NetworkModel {
 		else {
 			dest = networkTopology.findNode(destination, false);
 		}
-	    path = Router.findPath(networkTopology, src, dest);
+	    path = router.findPath(networkTopology, src, dest);
 		delay += getWlanUploadDelay(accessPointLocation, CloudSim.clock());
 		while (!path.isEmpty()) {
 			current = path.poll();
