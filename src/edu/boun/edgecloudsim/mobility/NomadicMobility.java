@@ -62,7 +62,6 @@ public class NomadicMobility extends MobilityModel {
 		
 		//Go through datacenterlist and pick out just the wireless access points
 		ArrayList<Pair<Integer, Pair<Integer, Integer>>> accessPoints = new ArrayList<Pair<Integer, Pair<Integer, Integer>>>();
-		
 		for(int i = 0; i < datacenterList.getLength(); i++)
 		{
 			Node datacenterNode = datacenterList.item(i);
@@ -143,7 +142,10 @@ public class NomadicMobility extends MobilityModel {
 						}
 					}
 				}
-				treeMap.put(treeMap.lastKey() + 18.0, new Location(wlan_id, x_pos + right, y_pos + up));		
+				//This first argument kind of dictates the speed at which the device moves, higher it is, slower the devices are
+				//	smaller value in there, the more it updates
+				treeMap.put(treeMap.lastKey() + 50.0, new Location(wlan_id, x_pos + right, y_pos + up));		
+				
 			}
 		}
 	}
@@ -181,12 +183,13 @@ public class NomadicMobility extends MobilityModel {
 	
 	public int getWlanId(int deviceId) 
 	{
+		//Gets device id at time 20.0, lower number won't work
 		int wlan_id = -1;
 		
 		if(deviceId >= 0)
 		{	
 			TreeMap<Double, Location> treeMap = treeMapArray.get(deviceId);
-			
+
 			Entry<Double, Location> e = treeMap.floorEntry(20.0);
 			
 			wlan_id = e.getValue().getServingWlanId();

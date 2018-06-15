@@ -94,7 +94,6 @@ public class EdgeServerManager {
 			int x_pos1 = Integer.parseInt(leftLinkss.getElementsByTagName("x_pos").item(0).getTextContent());
 			int y_pos1 = Integer.parseInt(leftLinkss.getElementsByTagName("y_pos").item(0).getTextContent());
 			Pair<Integer, Integer> leftCoor = new Pair<Integer, Integer>(x_pos1, y_pos1);
-			//SimLogger.printLine("We found x_pos1 = " + x_pos1 + " and y_pos1 = " + y_pos1);
 			
 			NodeList rightLinksList = linkElement.getElementsByTagName("right");
 			Node rightLinks = rightLinksList.item(0);
@@ -102,8 +101,6 @@ public class EdgeServerManager {
 			int x_pos2 = Integer.parseInt(rightLinkss.getElementsByTagName("x_pos").item(0).getTextContent());
 			int y_pos2 = Integer.parseInt(rightLinkss.getElementsByTagName("y_pos").item(0).getTextContent());
 			Pair<Integer, Integer> rightCoor = new Pair<Integer, Integer>(x_pos2, y_pos2);
-
-			//SimLogger.printLine("We found x_pos1 = " + x_pos2 + " and y_pos1 = " + y_pos2);
 			
 			double left_lat = Double.parseDouble(linkElement.getElementsByTagName("left_latency").item(0).getTextContent());
 			double right_lat = Double.parseDouble(linkElement.getElementsByTagName("right_latency").item(0).getTextContent());
@@ -111,29 +108,16 @@ public class EdgeServerManager {
 			Link newLink = new Link(rightCoor,leftCoor, right_lat, left_lat);
 			linksForTopography.add(newLink);
 		}
-		SimLogger.printLine("Making Cluster Object...");
+		SimLogger.print("\n\tMaking Cluster Object...");
 		FogHierCluster clusterObject = new FogHierCluster((ArrayList<NodeSim>)nodesForTopography);
-		/*Integer[][][] test = clusterObject.getCluster();
-		for(int a = 0; a < test.length; a++)
-		{
-			SimLogger.printLine(test[a].toString());
-			for(int b = 0; b < test[a].length; b++)
-			{
-				SimLogger.printLine("\t" + test[a][b]);
-				for(int c = 0; c < test[a][b].length; c++)
-				{
-					SimLogger.printLine("\t\t" + test[a][b][c]);
-				}
-			}
-		}
-		SimLogger.printLine("Done.");*/
+		SimLogger.printLine("Done,");
 		networkTopology = new NetworkTopology(nodesForTopography, linksForTopography);
 		if(!networkTopology.cleanNodes())
 		{
 			SimLogger.printLine("Topology is not valid");
 			System.exit(0);
 		}
-		//JIH lets see if this works
+		//Sets network topology and uses it to make the Puddle Objects
 		((MM1Queue) SimManager.getInstance().getNetworkModel()).setNetworkTopology(networkTopology);
 		networkTopology.setPuddles(makePuddles(clusterObject));
 		

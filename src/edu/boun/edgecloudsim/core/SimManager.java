@@ -39,7 +39,8 @@ public class SimManager extends SimEntity {
 	private static final int PRINT_PROGRESS = 3;
 	private static final int STOP_SIMULATION = 4;
 	
-	private int[] wapIdList = new int [1000];
+	//List of ids for wireless access points devices are connected to, max devices rn is 1000
+	private int[] wapIdList = new int [2100];
 	private int numOfMobileDevice;
 	private NetworkModel networkModel;
 	private MobilityModel mobilityModel;
@@ -141,12 +142,13 @@ public class SimManager extends SimEntity {
 		{
 			schedule(getId(), loadGeneratorModel.getTaskList().get(i).startTime, CREATE_TASK, loadGeneratorModel.getTaskList().get(i));
 		}
-		SimLogger.printLine("" + mobilityModel.getSize());
+		
+		//Get all of the initial wireless access points ids for all the mobile devices
 		for(int i = 0; i < mobilityModel.getSize(); i++)
 		{
-			//SimLogger.printLine("" + i);
 			wapIdList[i] = mobilityModel.getWlanId(i);
 		}
+		
 		//Periodic event loops starts from here!
 		schedule(getId(), 5, CHECK_ALL_VM);
 		schedule(getId(), SimSettings.getInstance().getSimulationTime()/100, PRINT_PROGRESS);
@@ -172,7 +174,6 @@ public class SimManager extends SimEntity {
 				break;
 			case CHECK_ALL_VM:
 				//SimLogger.printLine("CHECK_ALL_VM reached");
-				
 				int totalNumOfVm = SimSettings.getInstance().getNumOfEdgeVMs();
 				if(VmAllocationPolicy_Custom.getCreatedVmNum() != totalNumOfVm){
 					SimLogger.printLine("All VMs cannot be created! Terminating simulation...");
@@ -185,25 +186,24 @@ public class SimManager extends SimEntity {
 				schedule(getId(), SimSettings.getInstance().getVmLoadLogInterval(), GET_LOAD_LOG);
 				break;
 			case PRINT_PROGRESS:
+				//Goes through all devices and checks to see if WAP ids have changed
+				//	Currently checks devices every 12 seconds in simulation (which runs for 20mins {Duration: 0.333.. hrs})
 				double time = CloudSim.clock();
 				for(int q = 0; q < mobilityModel.getSize(); q++)
 				{
+					//If the id has changed, update the value in our list and move the cloudlet to a more appropriate VM
 					if(wapIdList[q] != mobilityModel.getWlanId(q, time))
 					{
-						//SimLogger.printLine("transfer of task needed!");
 						wapIdList[q] = mobilityModel.getWlanId(q, time);
 						if (mobileDeviceManager.getCloudletList().size() > q) {
 							Task task = (Task) mobileDeviceManager.getCloudletList().get(q);
-							mobileDeviceManager.migrateTask(task);
 							task.setSubmittedLocation(mobilityModel.getLocation(q, time));
 							//SimLogger.printLine("MIGRATION!!!!!!!!!!!!!!!!!!");
+							mobileDeviceManager.migrateTask(task);
 						}
-						
 					}
-					//else
-						//SimLogger.printLine("No transfer necessary!");
 				}
-				
+				//Prints progress
 				int progress = (int)((CloudSim.clock()*100)/SimSettings.getInstance().getSimulationTime());
 				if(progress % 10 == 0)
 					SimLogger.print(Integer.toString(progress));
