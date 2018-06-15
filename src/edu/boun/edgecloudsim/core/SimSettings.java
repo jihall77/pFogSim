@@ -452,6 +452,7 @@ public class SimSettings {
 			    taskLookUpTable[appType.ordinal()][8] = required_core; //required # of core
 			    taskLookUpTable[appType.ordinal()][9] = vm_utilization; //vm utilization [0-100]
 			    taskLookUpTable[appType.ordinal()][10] = delay_sensitivity; //delay_sensitivity [0-1]
+			    
 			}
 	
 		} catch (Exception e) {
