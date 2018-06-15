@@ -79,28 +79,28 @@ public class NetworkTopology {
 	 */
 	public boolean validateTopology() {
 		if (nodes == null || links == null) {
-			//SimLogger.printLine("false 1");
+			SimLogger.printLine("false 1");
 			return false;
 		}
 		try {
 			for (NodeSim node : nodes) {
 				if (node.getEdges().size() == 0) {
 					
-					//SimLogger.printLine("false 2");
+					SimLogger.printLine("false 2");
 					return false;
 				}
 			}
 			for (Link link : links) {
 				if (!coords.contains(link.getRightLink()) || !coords.contains(link.getLeftLink()) 
 						|| !link.validateCoords() || !link.validateLat()) {
-					//SimLogger.printLine("false 3");
+					SimLogger.printLine("false 3");
 					return false;
 				}
 			}
 			return true;
 		}
 		catch (NullPointerException e) {
-			//SimLogger.printLine("false 4");
+			SimLogger.printLine("false 4");
 			return false;
 		}
 	}
@@ -131,7 +131,7 @@ public class NetworkTopology {
 			return validateTopology();
 		}
 		catch (Exception e) {
-			//SimLogger.printLine("false 5");
+			SimLogger.printLine("false 5");
 			return false;
 		}
 	}
