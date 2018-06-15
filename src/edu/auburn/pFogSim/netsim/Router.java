@@ -37,7 +37,7 @@ public class Router {
 		String route;
 		route = src.toString() + "->" + dest.toString();
 		if(database.containsKey(route)) {
-			SimLogger.printLine("Found Faster Path");
+			//SimLogger.printLine("Found Faster Path");
 			return database.get(route);
 		}
 		Dijkstra router = Router.getAPathFinder();
