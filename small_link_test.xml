@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<links>
+	<link>
+		<name>LCF</name>
+		<left>
+			<x_pos>10</x_pos>
+			<y_pos>15</y_pos>
+		</left>
+		<right>
+			<x_pos>60</x_pos>
+			<y_pos>15</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+	<link>
+		<name>LFE</name>
+		<left>
+			<x_pos>60</x_pos>
+			<y_pos>15</y_pos>
+		</left>
+		<right>
+			<x_pos>110</x_pos>
+			<y_pos>15</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+</links>
