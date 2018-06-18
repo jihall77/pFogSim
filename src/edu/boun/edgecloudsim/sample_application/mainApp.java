@@ -54,8 +54,8 @@ public class mainApp {
 		    		"		<costPerMem>0.05</costPerMem>\n" + 
 		    		"		<costPerStorage>0.1</costPerStorage>");
 		    node.println("<location>\n" + 
-		    		"			<x_pos>500</x_pos>\n" + 
-		    		"			<y_pos>500</y_pos>\n" + 
+		    		"			<x_pos>1</x_pos>\n" + 
+		    		"			<y_pos>1</y_pos>\n" + 
 		    		"			<level>5</level>" +
 		    		"			<wlan_id>0</wlan_id>\n" + 
 		    		"			<attractiveness>1</attractiveness>\n" + 
@@ -139,8 +139,8 @@ public class mainApp {
 			    		"			<y_pos>" + y + "</y_pos>\n" + 
 			    		"		</left>\n" + 
 			    		"		<right>\n" + 
-			    		"			<x_pos>500</x_pos>\n" + 
-			    		"			<y_pos>500</y_pos>\n" + 
+			    		"			<x_pos>1</x_pos>\n" + 
+			    		"			<y_pos>1</y_pos>\n" + 
 			    		"		</right>\n" + 
 			    		"		<left_latency>0.5</left_latency>\n" + 
 			    		"		<right_latency>0.5</right_latency>\n" + 

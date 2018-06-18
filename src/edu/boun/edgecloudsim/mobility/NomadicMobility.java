@@ -93,7 +93,7 @@ public class NomadicMobility extends MobilityModel {
 			//start locating user from 10th seconds
 			treeMapArray.get(i).put((double)10, new Location(wlan_id, x_pos, y_pos));
 		}
-		
+
 		for(int i=0; i<numberOfMobileDevices; i++) {
 			TreeMap<Double, Location> treeMap = treeMapArray.get(i);
 			//Make random numbers to make the vectors
@@ -144,8 +144,8 @@ public class NomadicMobility extends MobilityModel {
 				}
 				//This first argument kind of dictates the speed at which the device moves, higher it is, slower the devices are
 				//	smaller value in there, the more it updates
+				//As it is now, allows devices to change wlan_ids around 600 times in an hour
 				treeMap.put(treeMap.lastKey() + 50.0, new Location(wlan_id, x_pos + right, y_pos + up));		
-				
 			}
 		}
 	}

@@ -120,7 +120,6 @@ public class EdgeServerManager {
 		//Sets network topology and uses it to make the Puddle Objects
 		((MM1Queue) SimManager.getInstance().getNetworkModel()).setNetworkTopology(networkTopology);
 		networkTopology.setPuddles(makePuddles(clusterObject));
-		
 	}
 
 	public void createVmList(int brockerId){

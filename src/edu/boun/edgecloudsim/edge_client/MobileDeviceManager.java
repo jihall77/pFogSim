@@ -34,6 +34,8 @@ import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
 import javafx.util.Pair;
 
+import edu.auburn.pFogSim.netsim.NetworkTopology;
+
 
 public class MobileDeviceManager extends DatacenterBroker {
 	private static final int BASE = 100000; //start from base in order not to conflict cloudsim tag!
@@ -101,7 +103,6 @@ public class MobileDeviceManager extends DatacenterBroker {
 		}
 		
 		NetworkModel networkModel = SimManager.getInstance().getNetworkModel();
-		
 		switch (ev.getTag()) {
 			case REQUEST_RECEIVED_BY_CLOUD:
 			{
@@ -219,7 +220,9 @@ public class MobileDeviceManager extends DatacenterBroker {
 			
 			//SimLogger.printLine(CloudSim.clock() + ": Cloudlet#" + task.getCloudletId() + " is submitted to VM#" + task.getVmId());
 			schedule(getVmsToDatacentersMap().get(task.getVmId()), delay, CloudSimTags.CLOUDLET_SUBMIT, task);
-			
+			for(NodeSim node : ((MM1Queue)SimManager.getInstance().getNetworkModel()).getNetworkTopology().getNodes()) 
+				if(selectedVM.getId() == node.getWlanId()) 
+					SimLogger.getInstance().addCloudletToLevel(node.getLevel());
 			SimLogger.getInstance().uploaded(task.getCloudletId(),
 					selectedVM.getHost().getDatacenter().getId(),
 					selectedVM.getHost().getId(),
