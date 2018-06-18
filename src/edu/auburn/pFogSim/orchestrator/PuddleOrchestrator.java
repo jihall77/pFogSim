@@ -16,6 +16,7 @@ import edu.auburn.pFogSim.Radix.DistRadix;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+import org.cloudbus.cloudsim.CloudletSchedulerTimeShared;
 import org.cloudbus.cloudsim.core.CloudSim;
 /**
  * implementation of Edge Orchestrator for using puddles
@@ -65,7 +66,7 @@ public class PuddleOrchestrator extends EdgeOrchestrator {
 		double distance = Double.MAX_VALUE;
 		double newDist;
 		ArrayList<Puddle> pud0s = new ArrayList<Puddle>();
-		for (Puddle pud : network.getPuddles()) {//search throught the list of puddles and pull out all the layer 0 ones
+		for (Puddle pud : network.getPuddles()) {//search through the list of puddles and pull out all the layer 0 ones
 			if (pud.getLevel() == 0) {
 				pud0s.add(pud);
 			}
@@ -87,8 +88,9 @@ public class PuddleOrchestrator extends EdgeOrchestrator {
 	 * @return
 	 */
 	private boolean goodHost(EdgeHost host, Task task) {
-		double hostCap = 100.0 - host.getVmList().get(0).getCloudletScheduler().getTotalUtilizationOfCpu(CloudSim.clock());
-		double taskCap = ((CpuUtilizationModel_Custom)task.getUtilizationModelCpu()).predictUtilization(((EdgeVM)host.getVmList().get(0)).getVmType());
+		EdgeVM vm = new EdgeVM(host.getVmList().size(), task.getUserId(), host.getAvailableMips(), host.getNumberOfFreePes(), host.getRamProvisioner().getAvailableRam(), host.getBw(), task.getCloudletFileSize(), "", new CloudletSchedulerTimeShared());
+		double hostCap = 100.0 - vm.getCloudletScheduler().getTotalUtilizationOfCpu(CloudSim.clock());
+		double taskCap = ((CpuUtilizationModel_Custom)task.getUtilizationModelCpu()).predictUtilization(vm.getVmType());
 		return hostCap >= taskCap;
 	}
 	/**
@@ -98,18 +100,29 @@ public class PuddleOrchestrator extends EdgeOrchestrator {
 	 */
 	private EdgeHost getHost(Task task) {
 		Puddle puddle = getNearest0Pud(task);//start with the closest level0 puddle
+		Puddle nextBestPuddle = null;
 		ArrayList<Puddle> puds = new ArrayList<Puddle>();
 		ArrayList<EdgeHost> hosts = new ArrayList<EdgeHost>();
 		LinkedList<EdgeHost> candidates;
 		EdgeHost host;
 		DistRadix radix;
-		while(!puddle.canHandle(task)) {//if that puddle can't handle the task ask its parent until you find the lowest puddle that can handle the task
+		while(!puddle.canHandle(task)) {//if that puddle can't handle the task ask try to find an alternate, then find the lowest level that can handle the task
+			nextBestPuddle = nextBest(task, puddle.getLevel());
+			if (nextBestPuddle != null) {
+				break;
+			}
 			puddle = puddle.getParent();
 			if (puddle == null) {
 				throw new IllegalArgumentException();
 			}
 		}
 		while(puddle != null) {
+			if (nextBestPuddle != null) {//if we had to use an alternate puddle, use it and lose it
+				puds.add(nextBestPuddle);
+				nextBestPuddle = null;
+				puddle = puddle.getParent();
+				continue;
+			}
 			puds.add(puddle);//collect the line of puddles from all layers capable of handling the task
 			puddle = puddle.getParent();
 		}
@@ -123,6 +136,35 @@ public class PuddleOrchestrator extends EdgeOrchestrator {
 			host = candidates.poll();//find the closest node capable of handling the task
 		}
 		return host;
+	}
+	/**
+	 * find an alternate puddle of a given level
+	 * @param task
+	 * @param level
+	 * @return
+	 */
+	private Puddle nextBest(Task task, int level) {
+		NetworkTopology network = ((MM1Queue) SimManager.getInstance().getNetworkModel()).getNetworkTopology();
+		Puddle puddle = null;
+		EdgeHost host;
+		Location loc = task.getSubmittedLocation();
+		double distance = Double.MAX_VALUE;
+		double newDist;
+		ArrayList<Puddle> pudis = new ArrayList<Puddle>();
+		for (Puddle pud : network.getPuddles()) {//search through the list of puddles and pull out all the layer i ones
+			if (pud.getLevel() == level) {
+				pudis.add(pud);
+			}
+		}
+		for (Puddle pud : pudis) {//choose the puddle whose head has the least distance to the task and can handle it
+			host = pud.getClosestNodes(loc).getFirst();
+			newDist = Math.sqrt((Math.pow(loc.getXPos() - host.getLocation().getXPos(), 2) + Math.pow(loc.getYPos() - host.getLocation().getYPos(), 2)));
+			if(newDist < distance && pud.canHandle(task)) {
+				distance = newDist;
+				puddle = pud;
+			}
+		}
+		return puddle;
 	}
 
 }

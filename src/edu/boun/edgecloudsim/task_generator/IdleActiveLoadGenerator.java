@@ -88,7 +88,7 @@ public class IdleActiveLoadGenerator extends LoadGeneratorModel{
 				
 				boolean sens = (SimUtils.getRandomDoubleNumber(0, 100) < 67);
 				boolean act = (!sens || SimUtils.getRandomDoubleNumber(0, 100) < 50);
-				boolean wifi = (sens && act);//trying to separate sensors, actuator, and mobile devices
+				boolean wifi = true;
 				
 				taskList.add(new EdgeTask(i, randomTaskType, virtualTime, expRngList, wifi, sens, act));
 			}
