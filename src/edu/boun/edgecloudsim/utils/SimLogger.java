@@ -513,13 +513,13 @@ public class SimLogger {
 		printLine("average server utilization: " 
 				+ String.format("%.6f", totalVmLoad / (double) vmLoadList.size()) + "%");
 		printLine("Cloudlets Per Level");
-		for(int i = 0; i < 8; i++) printLine(String.format("\tLevel %d:\t%d", i, levelCloudletCount[i]));
+		for(int i = 0; i < 6; i++) printLine(String.format("\tLevel %d:\t%d", i, levelCloudletCount[i]));
 		
 		//Clayton changed this so it would output a value based on the average cost per time I was seeing in the XML files
 		//	this value may mean absolutely nothing so we should look into it more if we want to use it
 		printLine("average cost: $" + String.format("%.2f", processingTime[numOfAppTypes] / (double) completedTask[numOfAppTypes]));
 		printLine("ProcessingTime: " + processingTime[numOfAppTypes]);
-		printLine("CompletedTask" + completedTask[numOfAppTypes]);
+		printLine("CompletedTask: " + completedTask[numOfAppTypes]);
 
 		// clear related collections (map list etc.)
 		taskMap.clear();

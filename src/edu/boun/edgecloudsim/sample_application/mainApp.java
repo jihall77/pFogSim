@@ -30,8 +30,8 @@ public class mainApp {
 	 * Creates main() to run this example
 	 */
 	public static void main(String[] args) {
-		//disable console output of cloudsim library
-		/*
+		/*disable console output of cloudsim library
+		 *
 		 * @author CJ
 		 * trying to output the test files we want
 		 * 
