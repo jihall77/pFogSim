@@ -37,7 +37,7 @@ public class mainApp {
 		 * 
 		 */
 		
-		/*try{
+		try{
 		    PrintWriter node = new PrintWriter("large_node_test.xml", "UTF-8");
 		    PrintWriter links = new PrintWriter("large_links_test.xml", "UTF-8");
 		    node.println("<?xml version=\"1.0\"?>");
@@ -60,6 +60,7 @@ public class mainApp {
 		    		"			<wlan_id>0</wlan_id>\n" + 
 		    		"			<attractiveness>1</attractiveness>\n" + 
 		    		"			<wap>false</wap>\n" + 
+		    		"			<moving>false</moving>\n" + 
 		    		"		</location>");
 		    node.println("<hosts>\n" + 
 		    		"			<host>\n" + 
@@ -107,6 +108,7 @@ public class mainApp {
 			    		"			<level>" + level + "</level>" +
 			    		"			<attractiveness>1</attractiveness>\n" + 
 			    		"			<wap>true</wap>\n" + 
+		    			"			<moving>false</moving>\n" +
 			    		"		</location>");
 			    node.println("<hosts>\n" + 
 			    		"			<host>\n" + 
@@ -166,6 +168,7 @@ public class mainApp {
 				    		"			<level>" + level + "</level>" +
 				    		"			<attractiveness>1</attractiveness>\n" + 
 				    		"			<wap>false</wap>\n" + 
+		    				"			<moving>false</moving>\n" + 
 				    		"		</location>");
 				    node.println("<hosts>\n" + 
 				    		"			<host>\n" + 
@@ -224,7 +227,8 @@ public class mainApp {
 					    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 					    		"			<level>" + level + "</level>" +
 					    		"			<attractiveness>1</attractiveness>\n" + 
-					    		"			<wap>false</wap>\n" + 
+					    		"			<wap>false</wap>\n" +  
+		    					"			<moving>false</moving>\n" + 
 					    		"		</location>");
 					    node.println("<hosts>\n" + 
 					    		"			<host>\n" + 
@@ -283,7 +287,8 @@ public class mainApp {
 						    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 						    		"			<level>" + level + "</level>" +
 						    		"			<attractiveness>1</attractiveness>\n" + 
-						    		"			<wap>false</wap>\n" + 
+						    		"			<wap>false</wap>\n" +  
+		    						"			<moving>false</moving>\n" + 
 						    		"		</location>");
 						    node.println("<hosts>\n" + 
 						    		"			<host>\n" + 
@@ -342,7 +347,8 @@ public class mainApp {
 							    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 							    		"			<level>" + level + "</level>\n" +
 							    		"			<attractiveness>3</attractiveness>\n" + 
-							    		"			<wap>true</wap>\n" + 
+							    		"			<wap>true</wap>\n" +  
+		    							"			<moving>false</moving>\n" + 
 							    		"		</location>");
 							    node.println("<hosts>\n" + 
 							    		"			<host>\n" + 
@@ -398,7 +404,7 @@ public class mainApp {
 		    node.close();
 		} catch (Exception e) {
 		   System.out.println("Files were not able to be made");
-		}*/
+		}
 		
 		
 		/*

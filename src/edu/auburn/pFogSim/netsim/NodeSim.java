@@ -16,6 +16,8 @@ public class NodeSim {
 	private Pair<Integer, Integer> myLocation;
 	private int level;
 	private boolean wifiAccess;
+	private boolean moving;
+	Pair<Integer, Integer> vector;
 	private int wlan_id;
 	/**
 	 * Constructor
@@ -44,6 +46,32 @@ public class NodeSim {
 		this.level = level;
 		this.wifiAccess = isAccessPoint;
 	}
+	
+	public NodeSim(int xin, int yin, int level, int id, boolean isAccessPoint, boolean isMoving) {
+		wlan_id = id;
+		edges = new ArrayList<Link>();
+		myLocation = new Pair<Integer, Integer>(xin, yin);
+		this.level = level;
+		this.wifiAccess = isAccessPoint;
+		if(isMoving == true)
+			throw new IllegalArgumentException("Please use the correct NodeSim constructor for a moving object. This one assumes the FOG Device is stationary");
+		this.moving = isMoving;
+		this.vector = new Pair<Integer, Integer>(0,0);
+	}
+	
+	public NodeSim(int xin, int yin, int level, int id, boolean isAccessPoint, boolean isMoving, Pair<Integer, Integer> _vector) {
+		wlan_id = id;
+		edges = new ArrayList<Link>();
+		myLocation = new Pair<Integer, Integer>(xin, yin);
+		this.level = level;
+		this.wifiAccess = isAccessPoint;
+		//There is a way better way of doing this construction but I will return to fix it later
+		if(isMoving == false)
+			throw new IllegalArgumentException("Please use the correct NodeSim constructor for a moving object. This one assumes the FOG Device is moving and needs the vector.");
+		this.moving = isMoving;
+		this.vector = _vector;
+	}
+	
 	/**
 	 * tests to make sure that at least on of the endpoints for the given link is at this node
 	 * @param in
@@ -200,6 +228,20 @@ public class NodeSim {
 	 */
 	public boolean isWifiAcc() {
 		return wifiAccess;
+	}
+	
+	public boolean isMoving() {
+		return moving;
+	}
+	
+	public void setVector(Pair<Integer, Integer> _vector)
+	{
+		this.vector = _vector;
+	}
+	
+	public Pair<Integer, Integer> getVector() 
+	{
+		return this.vector;
 	}
 	/**
 	 * set whether this node is a wifi access point

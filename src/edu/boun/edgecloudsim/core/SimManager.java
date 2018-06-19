@@ -13,7 +13,10 @@
 package edu.boun.edgecloudsim.core;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
 
+import org.cloudbus.cloudsim.Datacenter;
 import org.cloudbus.cloudsim.Log;
 import org.cloudbus.cloudsim.core.CloudSim;
 import org.cloudbus.cloudsim.core.CloudSimTags;
@@ -21,16 +24,26 @@ import org.cloudbus.cloudsim.core.SimEntity;
 import org.cloudbus.cloudsim.core.SimEvent;
 
 import edu.boun.edgecloudsim.edge_orchestrator.EdgeOrchestrator;
+import edu.boun.edgecloudsim.edge_server.EdgeHost;
 import edu.boun.edgecloudsim.edge_server.EdgeServerManager;
 import edu.boun.edgecloudsim.edge_server.EdgeVM;
 import edu.boun.edgecloudsim.edge_server.VmAllocationPolicy_Custom;
+import edu.auburn.pFogSim.Puddle.Puddle;
+import edu.auburn.pFogSim.clustering.FogCluster;
+import edu.auburn.pFogSim.clustering.FogHierCluster;
+import edu.auburn.pFogSim.netsim.Link;
+import edu.auburn.pFogSim.netsim.NetworkTopology;
+import edu.auburn.pFogSim.netsim.NodeSim;
+import edu.auburn.pFogSim.netsim.Router;
 import edu.boun.edgecloudsim.edge_client.MobileDeviceManager;
 import edu.boun.edgecloudsim.edge_client.Task;
 import edu.boun.edgecloudsim.mobility.MobilityModel;
 import edu.boun.edgecloudsim.task_generator.LoadGeneratorModel;
+import edu.boun.edgecloudsim.network.MM1Queue;
 import edu.boun.edgecloudsim.network.NetworkModel;
 import edu.boun.edgecloudsim.utils.EdgeTask;
 import edu.boun.edgecloudsim.utils.SimLogger;
+import javafx.util.Pair;
 
 public class SimManager extends SimEntity {
 	private static final int CREATE_TASK = 0;
@@ -49,6 +62,7 @@ public class SimManager extends SimEntity {
 	private EdgeServerManager edgeServerManager;
 	private LoadGeneratorModel loadGeneratorModel;
 	private MobileDeviceManager mobileDeviceManager;
+	private NetworkTopology networkTopology;
 	
 	private static SimManager instance = null;
 	
@@ -186,6 +200,55 @@ public class SimManager extends SimEntity {
 				schedule(getId(), SimSettings.getInstance().getVmLoadLogInterval(), GET_LOAD_LOG);
 				break;
 			case PRINT_PROGRESS:
+				//Updates the positions of FOG Devices if necessary
+				HashSet<Link> links = ((MM1Queue)SimManager.getInstance().getNetworkModel()).getNetworkTopology().getLinks();
+				HashSet<NodeSim> nodes = ((MM1Queue)SimManager.getInstance().getNetworkModel()).getNetworkTopology().getNodes();
+				
+				ArrayList<Link> newLinks = new ArrayList<Link>();
+				ArrayList<NodeSim> newNodes = new ArrayList<NodeSim>();
+				for(NodeSim node : nodes)
+				{
+					if(node.isMoving())
+					{
+					//Update positions
+						Pair<Integer, Integer> currentLoc = node.getLocation();
+						//Change links
+						for(Link link : links)
+						{
+							if(link.getLeftLink() == currentLoc)
+							{
+								//Sets that location to what it will be in a bit
+								link.setLeftLink(new Pair<Integer, Integer>(currentLoc.getKey() + node.getVector().getKey(), currentLoc.getValue() + node.getVector().getValue()));
+							}
+							else if(link.getRightLink() == currentLoc)
+							{
+								//Sets that location to what it will be in a bit
+								link.setRightLink(new Pair<Integer, Integer>(currentLoc.getKey() + node.getVector().getKey(), currentLoc.getValue() + node.getVector().getValue()));
+
+							}
+							
+						}
+						//Change nodes
+						node.setLocation(new Pair<Integer, Integer>(node.getLocation().getKey() + currentLoc.getKey(), node.getLocation().getValue() + currentLoc.getValue()));
+					}
+					newNodes.add(node);
+				}
+				for(Link link : links)
+				{
+					newLinks.add(link);
+				}
+				//Rerun clustering and puddles
+				FogHierCluster clusterObject = new FogHierCluster(newNodes);
+				networkTopology = new NetworkTopology(newNodes, newLinks);
+				if(!networkTopology.cleanNodes())
+				{
+					SimLogger.printLine("Topology is not valid");
+					System.exit(0);
+				}
+				//Sets network topology and uses it to make the Puddle Objects
+				((MM1Queue) SimManager.getInstance().getNetworkModel()).setNetworkTopology(networkTopology);
+				networkTopology.setPuddles(EdgeServerManager.getInstance().makePuddles(clusterObject));
+				
 				//Goes through all devices and checks to see if WAP ids have changed
 				//	Currently checks devices every 12 seconds in simulation (which runs for 20mins {Duration: 0.333.. hrs})
 				double time = CloudSim.clock();
@@ -228,7 +291,7 @@ public class SimManager extends SimEntity {
 			}
 		}
 	}
-
+	
 	@Override
 	public void shutdownEntity() {
 		edgeServerManager.terminateDatacenters();

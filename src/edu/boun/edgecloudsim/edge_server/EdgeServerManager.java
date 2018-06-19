@@ -50,6 +50,7 @@ public class EdgeServerManager {
 	private List<EdgeHost> hostList;
 	private int hostIdCounter;
 	private NetworkTopology networkTopology;
+	private static EdgeServerManager instance = null;
 	
 	//CJ Added these to make the lists of all the nodes and respective links 
 	//	to pass to topology constructor
@@ -60,6 +61,12 @@ public class EdgeServerManager {
 		localDatacenters=new ArrayList<Datacenter>();
 		vmList = new ArrayList<List<EdgeVM>>();
 		hostIdCounter = 0;
+		instance = this;
+	}
+	
+	public static EdgeServerManager getInstance()
+	{
+		return instance;
 	}
 
 	public List<EdgeVM> getVmList(int hostId){
@@ -242,6 +249,13 @@ public class EdgeServerManager {
 		int y_pos = Integer.parseInt(location.getElementsByTagName("y_pos").item(0).getTextContent());
 		int level =Integer.parseInt(location.getElementsByTagName("level").item(0).getTextContent());
 		boolean wap = Boolean.parseBoolean(location.getElementsByTagName("wap").item(0).getTextContent());
+		boolean moving = Boolean.parseBoolean(location.getElementsByTagName("moving").item(0).getTextContent());
+		int dx = 0, dy = 0;
+		if(moving)
+		{
+			dx = Integer.parseInt(location.getElementsByTagName("dx").item(0).getTextContent());
+			dy = Integer.parseInt(location.getElementsByTagName("dy").item(0).getTextContent());
+		}
 		SimSettings.PLACE_TYPES placeType = SimUtils.stringToPlace(attractiveness);
 
 		NodeList hostNodeList = datacenterElement.getElementsByTagName("host");
@@ -253,7 +267,7 @@ public class EdgeServerManager {
 			double mips = Double.parseDouble(hostElement.getElementsByTagName("mips").item(0).getTextContent());
 			int ram = Integer.parseInt(hostElement.getElementsByTagName("ram").item(0).getTextContent());
 			long storage = Long.parseLong(hostElement.getElementsByTagName("storage").item(0).getTextContent());
-			long bandwidth = SimSettings.getInstance().getWlanBandwidth() / hostNodeList.getLength();
+			long bandwidth = (long) SimSettings.getInstance().getWlanBandwidth() / hostNodeList.getLength();
 			
 			// 2. A Machine contains one or more PEs or CPUs/Cores. Therefore, should
 			//    create a list to store these PEs before creating
@@ -267,7 +281,15 @@ public class EdgeServerManager {
 			}
 			
 			//Make NodeSim object with the input x/y positions and add that to the list of nodes
-			NodeSim newNode = new NodeSim(x_pos, y_pos, level, wlan_id, wap);
+			NodeSim newNode;
+			if(moving)
+			{
+				newNode = new NodeSim(x_pos, y_pos, level, wlan_id, wap, moving, new Pair<Integer, Integer>(dx, dy));
+			}
+			else 
+			{
+				newNode = new NodeSim(x_pos, y_pos, level, wlan_id, wap);
+			}
 			nodesForTopography.add(newNode);
 			
 			
@@ -296,7 +318,7 @@ public class EdgeServerManager {
 	 * @param clusters
 	 * @return
 	 */
-	private ArrayList<Puddle> makePuddles(FogHierCluster clusters) {
+	public ArrayList<Puddle> makePuddles(FogHierCluster clusters) {
 		EdgeHost host;
 		int x;
 		int y;
@@ -369,14 +391,14 @@ public class EdgeServerManager {
 	 * @param y
 	 * @return
 	 */
-	private EdgeHost findHostByLoc(int x, int y) {
+	public EdgeHost findHostByLoc(int x, int y) {
 		for (Datacenter node : SimManager.getInstance().getLocalServerManager().getDatacenterList()) {
 			if (((EdgeHost) node.getHostList().get(0)).getLocation().getXPos() == x && ((EdgeHost) node.getHostList().get(0)).getLocation().getYPos() == y) {
 				return ((EdgeHost) node.getHostList().get(0));
 			}
 		}
 		return null;
-	}
+	} 
 	/**
 	 * find a given host by id<br>
 	 * added by pFogSim

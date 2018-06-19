@@ -220,6 +220,8 @@ public class MobileDeviceManager extends DatacenterBroker {
 			
 			//SimLogger.printLine(CloudSim.clock() + ": Cloudlet#" + task.getCloudletId() + " is submitted to VM#" + task.getVmId());
 			schedule(getVmsToDatacentersMap().get(task.getVmId()), delay, CloudSimTags.CLOUDLET_SUBMIT, task);
+			
+			//Goes through the list of nodes on the network and adds to the task counter for that level
 			for(NodeSim node : ((MM1Queue)SimManager.getInstance().getNetworkModel()).getNetworkTopology().getNodes()) 
 				if(selectedVM.getId() == node.getWlanId()) 
 					SimLogger.getInstance().addCloudletToLevel(node.getLevel());
