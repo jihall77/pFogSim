@@ -26,6 +26,7 @@ import org.cloudbus.cloudsim.core.SimEvent;
 import edu.auburn.pFogSim.netsim.NodeSim;
 import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
+import edu.boun.edgecloudsim.edge_server.EdgeHost;
 import edu.boun.edgecloudsim.edge_server.EdgeVM;
 import edu.boun.edgecloudsim.network.MM1Queue;
 import edu.boun.edgecloudsim.network.NetworkModel;
@@ -211,6 +212,10 @@ public class MobileDeviceManager extends DatacenterBroker {
 		EdgeVM selectedVM = SimManager.getInstance().getEdgeOrchestrator().getVmToOffload(task);
 		
 		if(selectedVM != null){
+			
+			/*if (((EdgeHost) selectedVM.getHost()).getLevel() == 4) {
+				SimLogger.printLine("we are on lvl 4");
+			}*/
 			//save related host id
 			task.setAssociatedHostId(selectedVM.getHost().getId());
 			
@@ -220,12 +225,13 @@ public class MobileDeviceManager extends DatacenterBroker {
 			
 			//SimLogger.printLine(CloudSim.clock() + ": Cloudlet#" + task.getCloudletId() + " is submitted to VM#" + task.getVmId());
 			schedule(getVmsToDatacentersMap().get(task.getVmId()), delay, CloudSimTags.CLOUDLET_SUBMIT, task);
-			
+			SimLogger.getInstance().addCloudletToLevel(((EdgeHost) selectedVM.getHost()).getLevel());
 			//Goes through the list of nodes on the network and adds to the task counter for that level
 			for(NodeSim node : ((MM1Queue)SimManager.getInstance().getNetworkModel()).getNetworkTopology().getNodes()) 
-				if(selectedVM.getId() == node.getWlanId()) 
+				/*if(selectedVM.getId() == node.getWlanId()) {
 					SimLogger.getInstance().addCloudletToLevel(node.getLevel());
-			SimLogger.getInstance().uploaded(task.getCloudletId(),
+				}*/
+				SimLogger.getInstance().uploaded(task.getCloudletId(),
 					selectedVM.getHost().getDatacenter().getId(),
 					selectedVM.getHost().getId(),
 					selectedVM.getId(),
