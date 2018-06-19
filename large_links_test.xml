@@ -3,8 +3,8 @@
 <link>
 		<name>L0_0</name>
 		<left>
-			<x_pos>175</x_pos>
-			<y_pos>115</y_pos>
+			<x_pos>227</x_pos>
+			<y_pos>194</y_pos>
 		</left>
 		<right>
 			<x_pos>1</x_pos>
@@ -16,1624 +16,12 @@
 <link>
 		<name>L0_0</name>
 		<left>
-			<x_pos>65</x_pos>
-			<y_pos>824</y_pos>
-		</left>
-		<right>
-			<x_pos>175</x_pos>
-			<y_pos>115</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>60</x_pos>
-			<y_pos>251</y_pos>
-		</left>
-		<right>
-			<x_pos>65</x_pos>
-			<y_pos>824</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>403</x_pos>
-			<y_pos>339</y_pos>
-		</left>
-		<right>
-			<x_pos>60</x_pos>
-			<y_pos>251</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>644</x_pos>
-			<y_pos>546</y_pos>
-		</left>
-		<right>
-			<x_pos>403</x_pos>
-			<y_pos>339</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>590</x_pos>
-			<y_pos>569</y_pos>
-		</left>
-		<right>
-			<x_pos>403</x_pos>
-			<y_pos>339</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>892</x_pos>
-			<y_pos>677</y_pos>
-		</left>
-		<right>
-			<x_pos>403</x_pos>
-			<y_pos>339</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>24</x_pos>
-			<y_pos>659</y_pos>
-		</left>
-		<right>
-			<x_pos>60</x_pos>
-			<y_pos>251</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>550</x_pos>
-			<y_pos>873</y_pos>
-		</left>
-		<right>
-			<x_pos>24</x_pos>
-			<y_pos>659</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>832</x_pos>
-			<y_pos>380</y_pos>
-		</left>
-		<right>
-			<x_pos>24</x_pos>
-			<y_pos>659</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>712</x_pos>
-			<y_pos>430</y_pos>
-		</left>
-		<right>
-			<x_pos>24</x_pos>
-			<y_pos>659</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>912</x_pos>
-			<y_pos>383</y_pos>
-		</left>
-		<right>
-			<x_pos>60</x_pos>
-			<y_pos>251</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>445</x_pos>
-			<y_pos>925</y_pos>
-		</left>
-		<right>
-			<x_pos>912</x_pos>
-			<y_pos>383</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>288</x_pos>
-			<y_pos>353</y_pos>
-		</left>
-		<right>
-			<x_pos>912</x_pos>
-			<y_pos>383</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_2</name>
-		<left>
-			<x_pos>337</x_pos>
-			<y_pos>559</y_pos>
-		</left>
-		<right>
-			<x_pos>912</x_pos>
-			<y_pos>383</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>783</x_pos>
-			<y_pos>831</y_pos>
-		</left>
-		<right>
-			<x_pos>65</x_pos>
-			<y_pos>824</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>742</x_pos>
-			<y_pos>717</y_pos>
-		</left>
-		<right>
-			<x_pos>783</x_pos>
-			<y_pos>831</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>269</x_pos>
-			<y_pos>353</y_pos>
-		</left>
-		<right>
-			<x_pos>742</x_pos>
-			<y_pos>717</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>833</x_pos>
-			<y_pos>890</y_pos>
-		</left>
-		<right>
-			<x_pos>742</x_pos>
-			<y_pos>717</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>451</x_pos>
-			<y_pos>137</y_pos>
-		</left>
-		<right>
-			<x_pos>742</x_pos>
-			<y_pos>717</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>848</x_pos>
-			<y_pos>419</y_pos>
-		</left>
-		<right>
-			<x_pos>783</x_pos>
-			<y_pos>831</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>208</x_pos>
-			<y_pos>734</y_pos>
-		</left>
-		<right>
-			<x_pos>848</x_pos>
-			<y_pos>419</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>60</x_pos>
-			<y_pos>887</y_pos>
-		</left>
-		<right>
-			<x_pos>848</x_pos>
-			<y_pos>419</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>17</x_pos>
-			<y_pos>974</y_pos>
-		</left>
-		<right>
-			<x_pos>848</x_pos>
-			<y_pos>419</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>78</x_pos>
-			<y_pos>599</y_pos>
-		</left>
-		<right>
-			<x_pos>783</x_pos>
-			<y_pos>831</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>869</x_pos>
-			<y_pos>21</y_pos>
-		</left>
-		<right>
-			<x_pos>78</x_pos>
-			<y_pos>599</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>52</x_pos>
-			<y_pos>304</y_pos>
-		</left>
-		<right>
-			<x_pos>78</x_pos>
-			<y_pos>599</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_2</name>
-		<left>
-			<x_pos>399</x_pos>
-			<y_pos>568</y_pos>
-		</left>
-		<right>
-			<x_pos>78</x_pos>
-			<y_pos>599</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>245</x_pos>
-			<y_pos>211</y_pos>
-		</left>
-		<right>
-			<x_pos>175</x_pos>
-			<y_pos>115</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>646</x_pos>
-			<y_pos>28</y_pos>
-		</left>
-		<right>
-			<x_pos>245</x_pos>
-			<y_pos>211</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>213</x_pos>
-			<y_pos>374</y_pos>
-		</left>
-		<right>
-			<x_pos>646</x_pos>
-			<y_pos>28</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>997</x_pos>
-			<y_pos>84</y_pos>
-		</left>
-		<right>
-			<x_pos>213</x_pos>
-			<y_pos>374</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>528</x_pos>
-			<y_pos>753</y_pos>
-		</left>
-		<right>
-			<x_pos>213</x_pos>
-			<y_pos>374</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>357</x_pos>
-			<y_pos>100</y_pos>
-		</left>
-		<right>
-			<x_pos>213</x_pos>
-			<y_pos>374</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>580</x_pos>
-			<y_pos>579</y_pos>
-		</left>
-		<right>
-			<x_pos>646</x_pos>
-			<y_pos>28</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>548</x_pos>
-			<y_pos>722</y_pos>
-		</left>
-		<right>
-			<x_pos>580</x_pos>
-			<y_pos>579</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>495</x_pos>
-			<y_pos>205</y_pos>
-		</left>
-		<right>
-			<x_pos>580</x_pos>
-			<y_pos>579</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>238</x_pos>
-			<y_pos>451</y_pos>
-		</left>
-		<right>
-			<x_pos>580</x_pos>
-			<y_pos>579</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>627</x_pos>
-			<y_pos>244</y_pos>
-		</left>
-		<right>
-			<x_pos>646</x_pos>
-			<y_pos>28</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>477</x_pos>
-			<y_pos>97</y_pos>
-		</left>
-		<right>
-			<x_pos>627</x_pos>
-			<y_pos>244</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>380</x_pos>
-			<y_pos>671</y_pos>
-		</left>
-		<right>
-			<x_pos>627</x_pos>
-			<y_pos>244</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_2</name>
-		<left>
-			<x_pos>32</x_pos>
-			<y_pos>801</y_pos>
-		</left>
-		<right>
-			<x_pos>627</x_pos>
-			<y_pos>244</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>362</x_pos>
-			<y_pos>502</y_pos>
-		</left>
-		<right>
-			<x_pos>245</x_pos>
-			<y_pos>211</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>280</x_pos>
-			<y_pos>743</y_pos>
-		</left>
-		<right>
-			<x_pos>362</x_pos>
-			<y_pos>502</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>988</x_pos>
-			<y_pos>845</y_pos>
-		</left>
-		<right>
-			<x_pos>280</x_pos>
-			<y_pos>743</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>374</x_pos>
-			<y_pos>759</y_pos>
-		</left>
-		<right>
-			<x_pos>280</x_pos>
-			<y_pos>743</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>691</x_pos>
-			<y_pos>371</y_pos>
-		</left>
-		<right>
-			<x_pos>280</x_pos>
-			<y_pos>743</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>758</x_pos>
-			<y_pos>812</y_pos>
-		</left>
-		<right>
-			<x_pos>362</x_pos>
-			<y_pos>502</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>838</x_pos>
-			<y_pos>722</y_pos>
-		</left>
-		<right>
-			<x_pos>758</x_pos>
-			<y_pos>812</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>881</x_pos>
-			<y_pos>683</y_pos>
-		</left>
-		<right>
-			<x_pos>758</x_pos>
-			<y_pos>812</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>305</x_pos>
-			<y_pos>994</y_pos>
-		</left>
-		<right>
-			<x_pos>758</x_pos>
-			<y_pos>812</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>138</x_pos>
-			<y_pos>317</y_pos>
-		</left>
-		<right>
-			<x_pos>362</x_pos>
-			<y_pos>502</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>407</x_pos>
-			<y_pos>165</y_pos>
-		</left>
-		<right>
-			<x_pos>138</x_pos>
-			<y_pos>317</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>635</x_pos>
-			<y_pos>942</y_pos>
-		</left>
-		<right>
-			<x_pos>138</x_pos>
-			<y_pos>317</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_2</name>
-		<left>
-			<x_pos>558</x_pos>
-			<y_pos>278</y_pos>
-		</left>
-		<right>
-			<x_pos>138</x_pos>
-			<y_pos>317</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>393</x_pos>
-			<y_pos>484</y_pos>
-		</left>
-		<right>
-			<x_pos>175</x_pos>
-			<y_pos>115</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>583</x_pos>
-			<y_pos>259</y_pos>
-		</left>
-		<right>
-			<x_pos>393</x_pos>
-			<y_pos>484</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>970</x_pos>
-			<y_pos>814</y_pos>
-		</left>
-		<right>
-			<x_pos>583</x_pos>
-			<y_pos>259</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>93</x_pos>
-			<y_pos>482</y_pos>
-		</left>
-		<right>
-			<x_pos>970</x_pos>
-			<y_pos>814</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>299</x_pos>
-			<y_pos>49</y_pos>
-		</left>
-		<right>
-			<x_pos>970</x_pos>
-			<y_pos>814</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>705</x_pos>
-			<y_pos>571</y_pos>
-		</left>
-		<right>
-			<x_pos>970</x_pos>
-			<y_pos>814</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>755</x_pos>
-			<y_pos>466</y_pos>
-		</left>
-		<right>
-			<x_pos>583</x_pos>
-			<y_pos>259</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>189</x_pos>
-			<y_pos>501</y_pos>
-		</left>
-		<right>
-			<x_pos>755</x_pos>
-			<y_pos>466</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>45</x_pos>
-			<y_pos>599</y_pos>
-		</left>
-		<right>
-			<x_pos>755</x_pos>
-			<y_pos>466</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>785</x_pos>
-			<y_pos>716</y_pos>
-		</left>
-		<right>
-			<x_pos>755</x_pos>
-			<y_pos>466</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>589</x_pos>
-			<y_pos>722</y_pos>
-		</left>
-		<right>
-			<x_pos>583</x_pos>
-			<y_pos>259</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>79</x_pos>
-			<y_pos>881</y_pos>
-		</left>
-		<right>
-			<x_pos>589</x_pos>
-			<y_pos>722</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>432</x_pos>
-			<y_pos>256</y_pos>
-		</left>
-		<right>
-			<x_pos>589</x_pos>
-			<y_pos>722</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_2</name>
-		<left>
-			<x_pos>786</x_pos>
-			<y_pos>879</y_pos>
-		</left>
-		<right>
-			<x_pos>589</x_pos>
-			<y_pos>722</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>589</x_pos>
-			<y_pos>574</y_pos>
-		</left>
-		<right>
-			<x_pos>393</x_pos>
-			<y_pos>484</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>723</x_pos>
-			<y_pos>820</y_pos>
-		</left>
-		<right>
-			<x_pos>589</x_pos>
-			<y_pos>574</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>976</x_pos>
-			<y_pos>323</y_pos>
-		</left>
-		<right>
-			<x_pos>723</x_pos>
-			<y_pos>820</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>75</x_pos>
-			<y_pos>187</y_pos>
-		</left>
-		<right>
-			<x_pos>723</x_pos>
-			<y_pos>820</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>685</x_pos>
-			<y_pos>657</y_pos>
-		</left>
-		<right>
-			<x_pos>723</x_pos>
-			<y_pos>820</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>767</x_pos>
-			<y_pos>691</y_pos>
-		</left>
-		<right>
-			<x_pos>589</x_pos>
-			<y_pos>574</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>454</x_pos>
-			<y_pos>694</y_pos>
-		</left>
-		<right>
-			<x_pos>767</x_pos>
-			<y_pos>691</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>393</x_pos>
-			<y_pos>69</y_pos>
-		</left>
-		<right>
-			<x_pos>767</x_pos>
-			<y_pos>691</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>618</x_pos>
-			<y_pos>124</y_pos>
-		</left>
-		<right>
-			<x_pos>767</x_pos>
-			<y_pos>691</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>689</x_pos>
-			<y_pos>843</y_pos>
-		</left>
-		<right>
-			<x_pos>589</x_pos>
-			<y_pos>574</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>696</x_pos>
-			<y_pos>126</y_pos>
-		</left>
-		<right>
-			<x_pos>689</x_pos>
-			<y_pos>843</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>979</x_pos>
-			<y_pos>3</y_pos>
-		</left>
-		<right>
-			<x_pos>689</x_pos>
-			<y_pos>843</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_2</name>
-		<left>
-			<x_pos>47</x_pos>
-			<y_pos>649</y_pos>
-		</left>
-		<right>
-			<x_pos>689</x_pos>
-			<y_pos>843</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>91</x_pos>
-			<y_pos>176</y_pos>
-		</left>
-		<right>
-			<x_pos>1</x_pos>
-			<y_pos>1</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>685</x_pos>
-			<y_pos>705</y_pos>
-		</left>
-		<right>
-			<x_pos>91</x_pos>
-			<y_pos>176</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>700</x_pos>
-			<y_pos>297</y_pos>
-		</left>
-		<right>
-			<x_pos>685</x_pos>
-			<y_pos>705</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>457</x_pos>
-			<y_pos>494</y_pos>
-		</left>
-		<right>
-			<x_pos>700</x_pos>
-			<y_pos>297</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>535</x_pos>
-			<y_pos>464</y_pos>
-		</left>
-		<right>
-			<x_pos>457</x_pos>
-			<y_pos>494</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>246</x_pos>
-			<y_pos>79</y_pos>
-		</left>
-		<right>
-			<x_pos>457</x_pos>
-			<y_pos>494</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>297</x_pos>
-			<y_pos>792</y_pos>
-		</left>
-		<right>
-			<x_pos>457</x_pos>
-			<y_pos>494</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>776</x_pos>
-			<y_pos>868</y_pos>
-		</left>
-		<right>
-			<x_pos>700</x_pos>
-			<y_pos>297</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>929</x_pos>
-			<y_pos>834</y_pos>
-		</left>
-		<right>
-			<x_pos>776</x_pos>
-			<y_pos>868</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>893</x_pos>
-			<y_pos>297</y_pos>
-		</left>
-		<right>
-			<x_pos>776</x_pos>
-			<y_pos>868</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>119</x_pos>
-			<y_pos>634</y_pos>
-		</left>
-		<right>
-			<x_pos>776</x_pos>
-			<y_pos>868</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>897</x_pos>
-			<y_pos>21</y_pos>
-		</left>
-		<right>
-			<x_pos>700</x_pos>
-			<y_pos>297</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>6</x_pos>
-			<y_pos>682</y_pos>
-		</left>
-		<right>
-			<x_pos>897</x_pos>
-			<y_pos>21</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>627</x_pos>
-			<y_pos>335</y_pos>
-		</left>
-		<right>
-			<x_pos>897</x_pos>
-			<y_pos>21</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_2</name>
-		<left>
-			<x_pos>952</x_pos>
-			<y_pos>521</y_pos>
-		</left>
-		<right>
-			<x_pos>897</x_pos>
-			<y_pos>21</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>512</x_pos>
-			<y_pos>782</y_pos>
-		</left>
-		<right>
-			<x_pos>685</x_pos>
-			<y_pos>705</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>587</x_pos>
-			<y_pos>542</y_pos>
-		</left>
-		<right>
-			<x_pos>512</x_pos>
-			<y_pos>782</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>731</x_pos>
-			<y_pos>640</y_pos>
-		</left>
-		<right>
-			<x_pos>587</x_pos>
-			<y_pos>542</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>807</x_pos>
-			<y_pos>44</y_pos>
-		</left>
-		<right>
-			<x_pos>587</x_pos>
-			<y_pos>542</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>952</x_pos>
-			<y_pos>506</y_pos>
-		</left>
-		<right>
-			<x_pos>587</x_pos>
-			<y_pos>542</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>837</x_pos>
-			<y_pos>275</y_pos>
-		</left>
-		<right>
-			<x_pos>512</x_pos>
-			<y_pos>782</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>877</x_pos>
-			<y_pos>275</y_pos>
-		</left>
-		<right>
-			<x_pos>837</x_pos>
-			<y_pos>275</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>787</x_pos>
-			<y_pos>42</y_pos>
-		</left>
-		<right>
-			<x_pos>837</x_pos>
-			<y_pos>275</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>939</x_pos>
-			<y_pos>622</y_pos>
-		</left>
-		<right>
-			<x_pos>837</x_pos>
-			<y_pos>275</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>345</x_pos>
-			<y_pos>396</y_pos>
-		</left>
-		<right>
-			<x_pos>512</x_pos>
-			<y_pos>782</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>76</x_pos>
-			<y_pos>495</y_pos>
-		</left>
-		<right>
-			<x_pos>345</x_pos>
-			<y_pos>396</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>382</x_pos>
-			<y_pos>104</y_pos>
-		</left>
-		<right>
-			<x_pos>345</x_pos>
-			<y_pos>396</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_2</name>
-		<left>
-			<x_pos>441</x_pos>
-			<y_pos>260</y_pos>
-		</left>
-		<right>
-			<x_pos>345</x_pos>
-			<y_pos>396</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>295</x_pos>
-			<y_pos>849</y_pos>
-		</left>
-		<right>
-			<x_pos>91</x_pos>
-			<y_pos>176</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>291</x_pos>
-			<y_pos>839</y_pos>
-		</left>
-		<right>
-			<x_pos>295</x_pos>
-			<y_pos>849</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>824</x_pos>
-			<y_pos>610</y_pos>
-		</left>
-		<right>
-			<x_pos>291</x_pos>
-			<y_pos>839</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>53</x_pos>
-			<y_pos>640</y_pos>
-		</left>
-		<right>
-			<x_pos>824</x_pos>
-			<y_pos>610</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>967</x_pos>
-			<y_pos>228</y_pos>
-		</left>
-		<right>
-			<x_pos>824</x_pos>
-			<y_pos>610</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>754</x_pos>
-			<y_pos>68</y_pos>
-		</left>
-		<right>
-			<x_pos>824</x_pos>
-			<y_pos>610</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>346</x_pos>
-			<y_pos>963</y_pos>
-		</left>
-		<right>
-			<x_pos>291</x_pos>
-			<y_pos>839</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>574</x_pos>
-			<y_pos>203</y_pos>
-		</left>
-		<right>
-			<x_pos>346</x_pos>
-			<y_pos>963</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>39</x_pos>
-			<y_pos>742</y_pos>
-		</left>
-		<right>
-			<x_pos>346</x_pos>
-			<y_pos>963</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>285</x_pos>
-			<y_pos>528</y_pos>
-		</left>
-		<right>
-			<x_pos>346</x_pos>
-			<y_pos>963</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>477</x_pos>
-			<y_pos>900</y_pos>
-		</left>
-		<right>
-			<x_pos>291</x_pos>
-			<y_pos>839</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
 			<x_pos>709</x_pos>
-			<y_pos>672</y_pos>
+			<y_pos>8</y_pos>
 		</left>
 		<right>
-			<x_pos>477</x_pos>
-			<y_pos>900</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>454</x_pos>
-			<y_pos>411</y_pos>
-		</left>
-		<right>
-			<x_pos>477</x_pos>
-			<y_pos>900</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_2</name>
-		<left>
-			<x_pos>170</x_pos>
-			<y_pos>784</y_pos>
-		</left>
-		<right>
-			<x_pos>477</x_pos>
-			<y_pos>900</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>716</x_pos>
-			<y_pos>33</y_pos>
-		</left>
-		<right>
-			<x_pos>295</x_pos>
-			<y_pos>849</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>73</x_pos>
-			<y_pos>516</y_pos>
-		</left>
-		<right>
-			<x_pos>716</x_pos>
-			<y_pos>33</y_pos>
+			<x_pos>227</x_pos>
+			<y_pos>194</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -1641,350 +29,12 @@
 <link>
 		<name>L0_0</name>
 		<left>
-			<x_pos>820</x_pos>
-			<y_pos>296</y_pos>
-		</left>
-		<right>
-			<x_pos>73</x_pos>
-			<y_pos>516</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>402</x_pos>
-			<y_pos>583</y_pos>
-		</left>
-		<right>
-			<x_pos>73</x_pos>
-			<y_pos>516</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>223</x_pos>
-			<y_pos>7</y_pos>
-		</left>
-		<right>
-			<x_pos>73</x_pos>
-			<y_pos>516</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>924</x_pos>
-			<y_pos>507</y_pos>
-		</left>
-		<right>
-			<x_pos>716</x_pos>
-			<y_pos>33</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>589</x_pos>
-			<y_pos>750</y_pos>
-		</left>
-		<right>
-			<x_pos>924</x_pos>
-			<y_pos>507</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>320</x_pos>
-			<y_pos>499</y_pos>
-		</left>
-		<right>
-			<x_pos>924</x_pos>
-			<y_pos>507</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>361</x_pos>
-			<y_pos>926</y_pos>
-		</left>
-		<right>
-			<x_pos>924</x_pos>
-			<y_pos>507</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>297</x_pos>
-			<y_pos>344</y_pos>
-		</left>
-		<right>
-			<x_pos>716</x_pos>
-			<y_pos>33</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>509</x_pos>
-			<y_pos>990</y_pos>
-		</left>
-		<right>
-			<x_pos>297</x_pos>
-			<y_pos>344</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>969</x_pos>
-			<y_pos>837</y_pos>
-		</left>
-		<right>
-			<x_pos>297</x_pos>
-			<y_pos>344</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_2</name>
-		<left>
-			<x_pos>232</x_pos>
-			<y_pos>937</y_pos>
-		</left>
-		<right>
-			<x_pos>297</x_pos>
-			<y_pos>344</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>463</x_pos>
-			<y_pos>542</y_pos>
-		</left>
-		<right>
-			<x_pos>91</x_pos>
-			<y_pos>176</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>71</x_pos>
-			<y_pos>483</y_pos>
-		</left>
-		<right>
-			<x_pos>463</x_pos>
-			<y_pos>542</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>709</x_pos>
-			<y_pos>621</y_pos>
-		</left>
-		<right>
-			<x_pos>71</x_pos>
-			<y_pos>483</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>546</x_pos>
-			<y_pos>121</y_pos>
+			<x_pos>708</x_pos>
+			<y_pos>62</y_pos>
 		</left>
 		<right>
 			<x_pos>709</x_pos>
-			<y_pos>621</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>899</x_pos>
-			<y_pos>43</y_pos>
-		</left>
-		<right>
-			<x_pos>709</x_pos>
-			<y_pos>621</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>960</x_pos>
-			<y_pos>936</y_pos>
-		</left>
-		<right>
-			<x_pos>709</x_pos>
-			<y_pos>621</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>894</x_pos>
-			<y_pos>752</y_pos>
-		</left>
-		<right>
-			<x_pos>71</x_pos>
-			<y_pos>483</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>451</x_pos>
-			<y_pos>83</y_pos>
-		</left>
-		<right>
-			<x_pos>894</x_pos>
-			<y_pos>752</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>185</x_pos>
-			<y_pos>256</y_pos>
-		</left>
-		<right>
-			<x_pos>894</x_pos>
-			<y_pos>752</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>730</x_pos>
-			<y_pos>897</y_pos>
-		</left>
-		<right>
-			<x_pos>894</x_pos>
-			<y_pos>752</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>656</x_pos>
-			<y_pos>674</y_pos>
-		</left>
-		<right>
-			<x_pos>71</x_pos>
-			<y_pos>483</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>184</x_pos>
-			<y_pos>881</y_pos>
-		</left>
-		<right>
-			<x_pos>656</x_pos>
-			<y_pos>674</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>500</x_pos>
-			<y_pos>488</y_pos>
-		</left>
-		<right>
-			<x_pos>656</x_pos>
-			<y_pos>674</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_2</name>
-		<left>
-			<x_pos>204</x_pos>
-			<y_pos>240</y_pos>
-		</left>
-		<right>
-			<x_pos>656</x_pos>
-			<y_pos>674</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>106</x_pos>
-			<y_pos>118</y_pos>
-		</left>
-		<right>
-			<x_pos>463</x_pos>
-			<y_pos>542</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>649</x_pos>
-			<y_pos>196</y_pos>
-		</left>
-		<right>
-			<x_pos>106</x_pos>
-			<y_pos>118</y_pos>
+			<y_pos>8</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -1992,168 +42,12 @@
 <link>
 		<name>L0_0</name>
 		<left>
-			<x_pos>663</x_pos>
-			<y_pos>968</y_pos>
+			<x_pos>572</x_pos>
+			<y_pos>0</y_pos>
 		</left>
 		<right>
-			<x_pos>649</x_pos>
-			<y_pos>196</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>329</x_pos>
-			<y_pos>57</y_pos>
-		</left>
-		<right>
-			<x_pos>649</x_pos>
-			<y_pos>196</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>495</x_pos>
-			<y_pos>772</y_pos>
-		</left>
-		<right>
-			<x_pos>649</x_pos>
-			<y_pos>196</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>295</x_pos>
-			<y_pos>891</y_pos>
-		</left>
-		<right>
-			<x_pos>106</x_pos>
-			<y_pos>118</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>871</x_pos>
-			<y_pos>923</y_pos>
-		</left>
-		<right>
-			<x_pos>295</x_pos>
-			<y_pos>891</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>476</x_pos>
-			<y_pos>723</y_pos>
-		</left>
-		<right>
-			<x_pos>295</x_pos>
-			<y_pos>891</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>143</x_pos>
-			<y_pos>940</y_pos>
-		</left>
-		<right>
-			<x_pos>295</x_pos>
-			<y_pos>891</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>910</x_pos>
-			<y_pos>335</y_pos>
-		</left>
-		<right>
-			<x_pos>106</x_pos>
-			<y_pos>118</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>574</x_pos>
-			<y_pos>410</y_pos>
-		</left>
-		<right>
-			<x_pos>910</x_pos>
-			<y_pos>335</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>434</x_pos>
-			<y_pos>150</y_pos>
-		</left>
-		<right>
-			<x_pos>910</x_pos>
-			<y_pos>335</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_2</name>
-		<left>
-			<x_pos>175</x_pos>
-			<y_pos>535</y_pos>
-		</left>
-		<right>
-			<x_pos>910</x_pos>
-			<y_pos>335</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>42</x_pos>
-			<y_pos>38</y_pos>
-		</left>
-		<right>
-			<x_pos>1</x_pos>
-			<y_pos>1</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>156</x_pos>
-			<y_pos>869</y_pos>
-		</left>
-		<right>
-			<x_pos>42</x_pos>
-			<y_pos>38</y_pos>
+			<x_pos>708</x_pos>
+			<y_pos>62</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -2161,38 +55,12 @@
 <link>
 		<name>L0_0</name>
 		<left>
-			<x_pos>568</x_pos>
-			<y_pos>511</y_pos>
+			<x_pos>582</x_pos>
+			<y_pos>385</y_pos>
 		</left>
 		<right>
-			<x_pos>156</x_pos>
-			<y_pos>869</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>384</x_pos>
-			<y_pos>991</y_pos>
-		</left>
-		<right>
-			<x_pos>568</x_pos>
-			<y_pos>511</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>97</x_pos>
-			<y_pos>310</y_pos>
-		</left>
-		<right>
-			<x_pos>384</x_pos>
-			<y_pos>991</y_pos>
+			<x_pos>572</x_pos>
+			<y_pos>0</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -2200,12 +68,12 @@
 <link>
 		<name>L1_0</name>
 		<left>
-			<x_pos>355</x_pos>
-			<y_pos>591</y_pos>
+			<x_pos>718</x_pos>
+			<y_pos>863</y_pos>
 		</left>
 		<right>
-			<x_pos>384</x_pos>
-			<y_pos>991</y_pos>
+			<x_pos>572</x_pos>
+			<y_pos>0</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -2213,337 +81,12 @@
 <link>
 		<name>L2_0</name>
 		<left>
-			<x_pos>887</x_pos>
-			<y_pos>938</y_pos>
-		</left>
-		<right>
-			<x_pos>384</x_pos>
-			<y_pos>991</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>749</x_pos>
-			<y_pos>912</y_pos>
-		</left>
-		<right>
-			<x_pos>568</x_pos>
-			<y_pos>511</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>744</x_pos>
-			<y_pos>613</y_pos>
-		</left>
-		<right>
-			<x_pos>749</x_pos>
-			<y_pos>912</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>592</x_pos>
-			<y_pos>575</y_pos>
-		</left>
-		<right>
-			<x_pos>749</x_pos>
-			<y_pos>912</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>23</x_pos>
-			<y_pos>982</y_pos>
-		</left>
-		<right>
-			<x_pos>749</x_pos>
-			<y_pos>912</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>426</x_pos>
-			<y_pos>552</y_pos>
-		</left>
-		<right>
-			<x_pos>568</x_pos>
-			<y_pos>511</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>761</x_pos>
-			<y_pos>118</y_pos>
-		</left>
-		<right>
-			<x_pos>426</x_pos>
-			<y_pos>552</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>632</x_pos>
-			<y_pos>465</y_pos>
-		</left>
-		<right>
-			<x_pos>426</x_pos>
-			<y_pos>552</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_2</name>
-		<left>
-			<x_pos>337</x_pos>
-			<y_pos>831</y_pos>
-		</left>
-		<right>
-			<x_pos>426</x_pos>
-			<y_pos>552</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>258</x_pos>
-			<y_pos>450</y_pos>
-		</left>
-		<right>
-			<x_pos>156</x_pos>
-			<y_pos>869</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>675</x_pos>
-			<y_pos>7</y_pos>
-		</left>
-		<right>
-			<x_pos>258</x_pos>
-			<y_pos>450</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>265</x_pos>
-			<y_pos>530</y_pos>
-		</left>
-		<right>
-			<x_pos>675</x_pos>
-			<y_pos>7</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>657</x_pos>
-			<y_pos>582</y_pos>
-		</left>
-		<right>
-			<x_pos>675</x_pos>
-			<y_pos>7</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>101</x_pos>
-			<y_pos>815</y_pos>
-		</left>
-		<right>
-			<x_pos>675</x_pos>
-			<y_pos>7</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>13</x_pos>
-			<y_pos>860</y_pos>
-		</left>
-		<right>
-			<x_pos>258</x_pos>
-			<y_pos>450</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>916</x_pos>
+			<x_pos>829</x_pos>
 			<y_pos>901</y_pos>
 		</left>
 		<right>
-			<x_pos>13</x_pos>
-			<y_pos>860</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>377</x_pos>
-			<y_pos>65</y_pos>
-		</left>
-		<right>
-			<x_pos>13</x_pos>
-			<y_pos>860</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>517</x_pos>
-			<y_pos>472</y_pos>
-		</left>
-		<right>
-			<x_pos>13</x_pos>
-			<y_pos>860</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>631</x_pos>
-			<y_pos>481</y_pos>
-		</left>
-		<right>
-			<x_pos>258</x_pos>
-			<y_pos>450</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>377</x_pos>
-			<y_pos>511</y_pos>
-		</left>
-		<right>
-			<x_pos>631</x_pos>
-			<y_pos>481</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>912</x_pos>
-			<y_pos>999</y_pos>
-		</left>
-		<right>
-			<x_pos>631</x_pos>
-			<y_pos>481</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_2</name>
-		<left>
-			<x_pos>644</x_pos>
-			<y_pos>472</y_pos>
-		</left>
-		<right>
-			<x_pos>631</x_pos>
-			<y_pos>481</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>852</x_pos>
-			<y_pos>645</y_pos>
-		</left>
-		<right>
-			<x_pos>42</x_pos>
-			<y_pos>38</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>71</x_pos>
-			<y_pos>452</y_pos>
-		</left>
-		<right>
-			<x_pos>852</x_pos>
-			<y_pos>645</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>742</x_pos>
-			<y_pos>499</y_pos>
-		</left>
-		<right>
-			<x_pos>71</x_pos>
-			<y_pos>452</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>281</x_pos>
-			<y_pos>688</y_pos>
-		</left>
-		<right>
-			<x_pos>742</x_pos>
-			<y_pos>499</y_pos>
+			<x_pos>572</x_pos>
+			<y_pos>0</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -2551,38 +94,12 @@
 <link>
 		<name>L1_0</name>
 		<left>
-			<x_pos>286</x_pos>
-			<y_pos>425</y_pos>
+			<x_pos>148</x_pos>
+			<y_pos>608</y_pos>
 		</left>
 		<right>
-			<x_pos>742</x_pos>
-			<y_pos>499</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>537</x_pos>
-			<y_pos>700</y_pos>
-		</left>
-		<right>
-			<x_pos>742</x_pos>
-			<y_pos>499</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>539</x_pos>
-			<y_pos>202</y_pos>
-		</left>
-		<right>
-			<x_pos>71</x_pos>
-			<y_pos>452</y_pos>
+			<x_pos>708</x_pos>
+			<y_pos>62</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -2590,181 +107,12 @@
 <link>
 		<name>L0_1</name>
 		<left>
-			<x_pos>500</x_pos>
-			<y_pos>975</y_pos>
+			<x_pos>214</x_pos>
+			<y_pos>687</y_pos>
 		</left>
 		<right>
-			<x_pos>539</x_pos>
-			<y_pos>202</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>446</x_pos>
-			<y_pos>994</y_pos>
-		</left>
-		<right>
-			<x_pos>539</x_pos>
-			<y_pos>202</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>50</x_pos>
-			<y_pos>426</y_pos>
-		</left>
-		<right>
-			<x_pos>539</x_pos>
-			<y_pos>202</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>105</x_pos>
-			<y_pos>527</y_pos>
-		</left>
-		<right>
-			<x_pos>71</x_pos>
-			<y_pos>452</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>323</x_pos>
-			<y_pos>736</y_pos>
-		</left>
-		<right>
-			<x_pos>105</x_pos>
-			<y_pos>527</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>515</x_pos>
-			<y_pos>44</y_pos>
-		</left>
-		<right>
-			<x_pos>105</x_pos>
-			<y_pos>527</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_2</name>
-		<left>
-			<x_pos>566</x_pos>
-			<y_pos>336</y_pos>
-		</left>
-		<right>
-			<x_pos>105</x_pos>
-			<y_pos>527</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>122</x_pos>
-			<y_pos>847</y_pos>
-		</left>
-		<right>
-			<x_pos>852</x_pos>
-			<y_pos>645</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>281</x_pos>
-			<y_pos>971</y_pos>
-		</left>
-		<right>
-			<x_pos>122</x_pos>
-			<y_pos>847</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>881</x_pos>
-			<y_pos>216</y_pos>
-		</left>
-		<right>
-			<x_pos>281</x_pos>
-			<y_pos>971</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>399</x_pos>
-			<y_pos>757</y_pos>
-		</left>
-		<right>
-			<x_pos>281</x_pos>
-			<y_pos>971</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>944</x_pos>
-			<y_pos>593</y_pos>
-		</left>
-		<right>
-			<x_pos>281</x_pos>
-			<y_pos>971</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>891</x_pos>
-			<y_pos>139</y_pos>
-		</left>
-		<right>
-			<x_pos>122</x_pos>
-			<y_pos>847</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>308</x_pos>
-			<y_pos>184</y_pos>
-		</left>
-		<right>
-			<x_pos>891</x_pos>
-			<y_pos>139</y_pos>
+			<x_pos>148</x_pos>
+			<y_pos>608</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -2773,11 +121,11 @@
 		<name>L1_1</name>
 		<left>
 			<x_pos>328</x_pos>
-			<y_pos>426</y_pos>
+			<y_pos>761</y_pos>
 		</left>
 		<right>
-			<x_pos>891</x_pos>
-			<y_pos>139</y_pos>
+			<x_pos>148</x_pos>
+			<y_pos>608</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -2785,129 +133,12 @@
 <link>
 		<name>L2_1</name>
 		<left>
-			<x_pos>923</x_pos>
-			<y_pos>542</y_pos>
+			<x_pos>398</x_pos>
+			<y_pos>399</y_pos>
 		</left>
 		<right>
-			<x_pos>891</x_pos>
-			<y_pos>139</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>362</x_pos>
-			<y_pos>418</y_pos>
-		</left>
-		<right>
-			<x_pos>122</x_pos>
-			<y_pos>847</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>851</x_pos>
-			<y_pos>289</y_pos>
-		</left>
-		<right>
-			<x_pos>362</x_pos>
-			<y_pos>418</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>35</x_pos>
-			<y_pos>178</y_pos>
-		</left>
-		<right>
-			<x_pos>362</x_pos>
-			<y_pos>418</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_2</name>
-		<left>
-			<x_pos>0</x_pos>
-			<y_pos>835</y_pos>
-		</left>
-		<right>
-			<x_pos>362</x_pos>
-			<y_pos>418</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_2</name>
-		<left>
-			<x_pos>72</x_pos>
-			<y_pos>195</y_pos>
-		</left>
-		<right>
-			<x_pos>42</x_pos>
-			<y_pos>38</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>878</x_pos>
-			<y_pos>877</y_pos>
-		</left>
-		<right>
-			<x_pos>72</x_pos>
-			<y_pos>195</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>77</x_pos>
-			<y_pos>7</y_pos>
-		</left>
-		<right>
-			<x_pos>878</x_pos>
-			<y_pos>877</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>566</x_pos>
-			<y_pos>475</y_pos>
-		</left>
-		<right>
-			<x_pos>77</x_pos>
-			<y_pos>7</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>626</x_pos>
-			<y_pos>869</y_pos>
-		</left>
-		<right>
-			<x_pos>77</x_pos>
-			<y_pos>7</y_pos>
+			<x_pos>148</x_pos>
+			<y_pos>608</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -2915,77 +146,12 @@
 <link>
 		<name>L2_0</name>
 		<left>
-			<x_pos>819</x_pos>
-			<y_pos>714</y_pos>
+			<x_pos>556</x_pos>
+			<y_pos>46</y_pos>
 		</left>
 		<right>
-			<x_pos>77</x_pos>
-			<y_pos>7</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>790</x_pos>
-			<y_pos>192</y_pos>
-		</left>
-		<right>
-			<x_pos>878</x_pos>
-			<y_pos>877</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>807</x_pos>
-			<y_pos>328</y_pos>
-		</left>
-		<right>
-			<x_pos>790</x_pos>
-			<y_pos>192</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>539</x_pos>
-			<y_pos>291</y_pos>
-		</left>
-		<right>
-			<x_pos>790</x_pos>
-			<y_pos>192</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>490</x_pos>
-			<y_pos>143</y_pos>
-		</left>
-		<right>
-			<x_pos>790</x_pos>
-			<y_pos>192</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>824</x_pos>
-			<y_pos>453</y_pos>
-		</left>
-		<right>
-			<x_pos>878</x_pos>
-			<y_pos>877</y_pos>
+			<x_pos>708</x_pos>
+			<y_pos>62</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -2993,12 +159,12 @@
 <link>
 		<name>L0_2</name>
 		<left>
-			<x_pos>50</x_pos>
-			<y_pos>908</y_pos>
+			<x_pos>113</x_pos>
+			<y_pos>290</y_pos>
 		</left>
 		<right>
-			<x_pos>824</x_pos>
-			<y_pos>453</y_pos>
+			<x_pos>556</x_pos>
+			<y_pos>46</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -3006,12 +172,12 @@
 <link>
 		<name>L1_2</name>
 		<left>
-			<x_pos>849</x_pos>
-			<y_pos>439</y_pos>
+			<x_pos>494</x_pos>
+			<y_pos>725</y_pos>
 		</left>
 		<right>
-			<x_pos>824</x_pos>
-			<y_pos>453</y_pos>
+			<x_pos>556</x_pos>
+			<y_pos>46</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -3019,51 +185,12 @@
 <link>
 		<name>L2_2</name>
 		<left>
-			<x_pos>129</x_pos>
-			<y_pos>869</y_pos>
+			<x_pos>120</x_pos>
+			<y_pos>356</y_pos>
 		</left>
 		<right>
-			<x_pos>824</x_pos>
-			<y_pos>453</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>222</x_pos>
-			<y_pos>345</y_pos>
-		</left>
-		<right>
-			<x_pos>72</x_pos>
-			<y_pos>195</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>816</x_pos>
-			<y_pos>447</y_pos>
-		</left>
-		<right>
-			<x_pos>222</x_pos>
-			<y_pos>345</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>203</x_pos>
-			<y_pos>141</y_pos>
-		</left>
-		<right>
-			<x_pos>816</x_pos>
-			<y_pos>447</y_pos>
+			<x_pos>556</x_pos>
+			<y_pos>46</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -3071,38 +198,12 @@
 <link>
 		<name>L1_0</name>
 		<left>
-			<x_pos>483</x_pos>
-			<y_pos>513</y_pos>
+			<x_pos>27</x_pos>
+			<y_pos>623</y_pos>
 		</left>
 		<right>
-			<x_pos>816</x_pos>
-			<y_pos>447</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>222</x_pos>
-			<y_pos>338</y_pos>
-		</left>
-		<right>
-			<x_pos>816</x_pos>
-			<y_pos>447</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>598</x_pos>
-			<y_pos>35</y_pos>
-		</left>
-		<right>
-			<x_pos>222</x_pos>
-			<y_pos>345</y_pos>
+			<x_pos>709</x_pos>
+			<y_pos>8</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -3110,12 +211,51 @@
 <link>
 		<name>L0_1</name>
 		<left>
-			<x_pos>234</x_pos>
-			<y_pos>944</y_pos>
+			<x_pos>266</x_pos>
+			<y_pos>736</y_pos>
 		</left>
 		<right>
-			<x_pos>598</x_pos>
-			<y_pos>35</y_pos>
+			<x_pos>27</x_pos>
+			<y_pos>623</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>58</x_pos>
+			<y_pos>953</y_pos>
+		</left>
+		<right>
+			<x_pos>266</x_pos>
+			<y_pos>736</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>764</x_pos>
+			<y_pos>525</y_pos>
+		</left>
+		<right>
+			<x_pos>266</x_pos>
+			<y_pos>736</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>250</x_pos>
+			<y_pos>406</y_pos>
+		</left>
+		<right>
+			<x_pos>266</x_pos>
+			<y_pos>736</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -3123,12 +263,38 @@
 <link>
 		<name>L1_1</name>
 		<left>
-			<x_pos>575</x_pos>
-			<y_pos>342</y_pos>
+			<x_pos>146</x_pos>
+			<y_pos>105</y_pos>
 		</left>
 		<right>
-			<x_pos>598</x_pos>
-			<y_pos>35</y_pos>
+			<x_pos>27</x_pos>
+			<y_pos>623</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>249</x_pos>
+			<y_pos>625</y_pos>
+		</left>
+		<right>
+			<x_pos>146</x_pos>
+			<y_pos>105</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>221</x_pos>
+			<y_pos>688</y_pos>
+		</left>
+		<right>
+			<x_pos>146</x_pos>
+			<y_pos>105</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -3136,38 +302,740 @@
 <link>
 		<name>L2_1</name>
 		<left>
-			<x_pos>206</x_pos>
-			<y_pos>303</y_pos>
+			<x_pos>396</x_pos>
+			<y_pos>98</y_pos>
 		</left>
 		<right>
-			<x_pos>598</x_pos>
-			<y_pos>35</y_pos>
+			<x_pos>146</x_pos>
+			<y_pos>105</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
 	</link>
 <link>
 		<name>L2_1</name>
+		<left>
+			<x_pos>755</x_pos>
+			<y_pos>270</y_pos>
+		</left>
+		<right>
+			<x_pos>27</x_pos>
+			<y_pos>623</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>485</x_pos>
+			<y_pos>708</y_pos>
+		</left>
+		<right>
+			<x_pos>755</x_pos>
+			<y_pos>270</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>542</x_pos>
+			<y_pos>347</y_pos>
+		</left>
+		<right>
+			<x_pos>755</x_pos>
+			<y_pos>270</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_2</name>
+		<left>
+			<x_pos>720</x_pos>
+			<y_pos>665</y_pos>
+		</left>
+		<right>
+			<x_pos>755</x_pos>
+			<y_pos>270</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>963</x_pos>
+			<y_pos>802</y_pos>
+		</left>
+		<right>
+			<x_pos>227</x_pos>
+			<y_pos>194</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>579</x_pos>
+			<y_pos>317</y_pos>
+		</left>
+		<right>
+			<x_pos>963</x_pos>
+			<y_pos>802</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>161</x_pos>
+			<y_pos>129</y_pos>
+		</left>
+		<right>
+			<x_pos>579</x_pos>
+			<y_pos>317</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>978</x_pos>
+			<y_pos>367</y_pos>
+		</left>
+		<right>
+			<x_pos>161</x_pos>
+			<y_pos>129</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>461</x_pos>
+			<y_pos>715</y_pos>
+		</left>
+		<right>
+			<x_pos>161</x_pos>
+			<y_pos>129</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>748</x_pos>
+			<y_pos>391</y_pos>
+		</left>
+		<right>
+			<x_pos>161</x_pos>
+			<y_pos>129</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>720</x_pos>
+			<y_pos>263</y_pos>
+		</left>
+		<right>
+			<x_pos>579</x_pos>
+			<y_pos>317</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>174</x_pos>
+			<y_pos>99</y_pos>
+		</left>
+		<right>
+			<x_pos>720</x_pos>
+			<y_pos>263</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>894</x_pos>
+			<y_pos>562</y_pos>
+		</left>
+		<right>
+			<x_pos>720</x_pos>
+			<y_pos>263</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>39</x_pos>
+			<y_pos>746</y_pos>
+		</left>
+		<right>
+			<x_pos>720</x_pos>
+			<y_pos>263</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>211</x_pos>
+			<y_pos>706</y_pos>
+		</left>
+		<right>
+			<x_pos>579</x_pos>
+			<y_pos>317</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>394</x_pos>
+			<y_pos>212</y_pos>
+		</left>
+		<right>
+			<x_pos>211</x_pos>
+			<y_pos>706</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>993</x_pos>
+			<y_pos>568</y_pos>
+		</left>
+		<right>
+			<x_pos>211</x_pos>
+			<y_pos>706</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_2</name>
+		<left>
+			<x_pos>63</x_pos>
+			<y_pos>762</y_pos>
+		</left>
+		<right>
+			<x_pos>211</x_pos>
+			<y_pos>706</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>363</x_pos>
+			<y_pos>789</y_pos>
+		</left>
+		<right>
+			<x_pos>963</x_pos>
+			<y_pos>802</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>714</x_pos>
+			<y_pos>214</y_pos>
+		</left>
+		<right>
+			<x_pos>363</x_pos>
+			<y_pos>789</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>763</x_pos>
+			<y_pos>804</y_pos>
+		</left>
+		<right>
+			<x_pos>714</x_pos>
+			<y_pos>214</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>157</x_pos>
+			<y_pos>266</y_pos>
+		</left>
+		<right>
+			<x_pos>714</x_pos>
+			<y_pos>214</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>469</x_pos>
+			<y_pos>463</y_pos>
+		</left>
+		<right>
+			<x_pos>714</x_pos>
+			<y_pos>214</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>462</x_pos>
+			<y_pos>24</y_pos>
+		</left>
+		<right>
+			<x_pos>363</x_pos>
+			<y_pos>789</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>61</x_pos>
+			<y_pos>595</y_pos>
+		</left>
+		<right>
+			<x_pos>462</x_pos>
+			<y_pos>24</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>353</x_pos>
+			<y_pos>376</y_pos>
+		</left>
+		<right>
+			<x_pos>462</x_pos>
+			<y_pos>24</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>97</x_pos>
+			<y_pos>498</y_pos>
+		</left>
+		<right>
+			<x_pos>462</x_pos>
+			<y_pos>24</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>312</x_pos>
+			<y_pos>671</y_pos>
+		</left>
+		<right>
+			<x_pos>363</x_pos>
+			<y_pos>789</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>111</x_pos>
+			<y_pos>663</y_pos>
+		</left>
+		<right>
+			<x_pos>312</x_pos>
+			<y_pos>671</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>795</x_pos>
+			<y_pos>355</y_pos>
+		</left>
+		<right>
+			<x_pos>312</x_pos>
+			<y_pos>671</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_2</name>
+		<left>
+			<x_pos>369</x_pos>
+			<y_pos>245</y_pos>
+		</left>
+		<right>
+			<x_pos>312</x_pos>
+			<y_pos>671</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>977</x_pos>
+			<y_pos>612</y_pos>
+		</left>
+		<right>
+			<x_pos>227</x_pos>
+			<y_pos>194</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>785</x_pos>
+			<y_pos>706</y_pos>
+		</left>
+		<right>
+			<x_pos>977</x_pos>
+			<y_pos>612</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>464</x_pos>
+			<y_pos>747</y_pos>
+		</left>
+		<right>
+			<x_pos>785</x_pos>
+			<y_pos>706</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>757</x_pos>
+			<y_pos>778</y_pos>
+		</left>
+		<right>
+			<x_pos>464</x_pos>
+			<y_pos>747</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>510</x_pos>
+			<y_pos>82</y_pos>
+		</left>
+		<right>
+			<x_pos>464</x_pos>
+			<y_pos>747</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>712</x_pos>
+			<y_pos>398</y_pos>
+		</left>
+		<right>
+			<x_pos>464</x_pos>
+			<y_pos>747</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>357</x_pos>
+			<y_pos>344</y_pos>
+		</left>
+		<right>
+			<x_pos>785</x_pos>
+			<y_pos>706</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
 		<left>
 			<x_pos>587</x_pos>
-			<y_pos>843</y_pos>
+			<y_pos>553</y_pos>
 		</left>
 		<right>
-			<x_pos>222</x_pos>
-			<y_pos>345</y_pos>
+			<x_pos>357</x_pos>
+			<y_pos>344</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>454</x_pos>
+			<y_pos>120</y_pos>
+		</left>
+		<right>
+			<x_pos>357</x_pos>
+			<y_pos>344</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>535</x_pos>
+			<y_pos>29</y_pos>
+		</left>
+		<right>
+			<x_pos>357</x_pos>
+			<y_pos>344</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>488</x_pos>
+			<y_pos>757</y_pos>
+		</left>
+		<right>
+			<x_pos>785</x_pos>
+			<y_pos>706</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
 	</link>
 <link>
 		<name>L0_2</name>
+		<left>
+			<x_pos>686</x_pos>
+			<y_pos>901</y_pos>
+		</left>
+		<right>
+			<x_pos>488</x_pos>
+			<y_pos>757</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>347</x_pos>
+			<y_pos>197</y_pos>
+		</left>
+		<right>
+			<x_pos>488</x_pos>
+			<y_pos>757</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_2</name>
+		<left>
+			<x_pos>872</x_pos>
+			<y_pos>252</y_pos>
+		</left>
+		<right>
+			<x_pos>488</x_pos>
+			<y_pos>757</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>346</x_pos>
+			<y_pos>639</y_pos>
+		</left>
+		<right>
+			<x_pos>977</x_pos>
+			<y_pos>612</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>867</x_pos>
+			<y_pos>964</y_pos>
+		</left>
+		<right>
+			<x_pos>346</x_pos>
+			<y_pos>639</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>353</x_pos>
+			<y_pos>594</y_pos>
+		</left>
+		<right>
+			<x_pos>867</x_pos>
+			<y_pos>964</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>813</x_pos>
+			<y_pos>676</y_pos>
+		</left>
+		<right>
+			<x_pos>867</x_pos>
+			<y_pos>964</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>683</x_pos>
+			<y_pos>826</y_pos>
+		</left>
+		<right>
+			<x_pos>867</x_pos>
+			<y_pos>964</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>202</x_pos>
+			<y_pos>923</y_pos>
+		</left>
+		<right>
+			<x_pos>346</x_pos>
+			<y_pos>639</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>996</x_pos>
+			<y_pos>954</y_pos>
+		</left>
+		<right>
+			<x_pos>202</x_pos>
+			<y_pos>923</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>7</x_pos>
+			<y_pos>250</y_pos>
+		</left>
+		<right>
+			<x_pos>202</x_pos>
+			<y_pos>923</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>767</x_pos>
+			<y_pos>956</y_pos>
+		</left>
+		<right>
+			<x_pos>202</x_pos>
+			<y_pos>923</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
 		<left>
 			<x_pos>253</x_pos>
-			<y_pos>452</y_pos>
+			<y_pos>613</y_pos>
 		</left>
 		<right>
-			<x_pos>587</x_pos>
-			<y_pos>843</y_pos>
+			<x_pos>346</x_pos>
+			<y_pos>639</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>274</x_pos>
+			<y_pos>657</y_pos>
+		</left>
+		<right>
+			<x_pos>253</x_pos>
+			<y_pos>613</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -3175,12 +1043,12 @@
 <link>
 		<name>L1_2</name>
 		<left>
-			<x_pos>10</x_pos>
-			<y_pos>801</y_pos>
+			<x_pos>661</x_pos>
+			<y_pos>697</y_pos>
 		</left>
 		<right>
-			<x_pos>587</x_pos>
-			<y_pos>843</y_pos>
+			<x_pos>253</x_pos>
+			<y_pos>613</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -3188,12 +1056,2144 @@
 <link>
 		<name>L2_2</name>
 		<left>
-			<x_pos>476</x_pos>
-			<y_pos>350</y_pos>
+			<x_pos>481</x_pos>
+			<y_pos>329</y_pos>
 		</left>
 		<right>
-			<x_pos>587</x_pos>
-			<y_pos>843</y_pos>
+			<x_pos>253</x_pos>
+			<y_pos>613</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>182</x_pos>
+			<y_pos>219</y_pos>
+		</left>
+		<right>
+			<x_pos>1</x_pos>
+			<y_pos>1</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>639</x_pos>
+			<y_pos>924</y_pos>
+		</left>
+		<right>
+			<x_pos>182</x_pos>
+			<y_pos>219</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>15</x_pos>
+			<y_pos>433</y_pos>
+		</left>
+		<right>
+			<x_pos>639</x_pos>
+			<y_pos>924</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>880</x_pos>
+			<y_pos>56</y_pos>
+		</left>
+		<right>
+			<x_pos>15</x_pos>
+			<y_pos>433</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>231</x_pos>
+			<y_pos>248</y_pos>
+		</left>
+		<right>
+			<x_pos>880</x_pos>
+			<y_pos>56</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>619</x_pos>
+			<y_pos>831</y_pos>
+		</left>
+		<right>
+			<x_pos>880</x_pos>
+			<y_pos>56</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>114</x_pos>
+			<y_pos>726</y_pos>
+		</left>
+		<right>
+			<x_pos>880</x_pos>
+			<y_pos>56</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>109</x_pos>
+			<y_pos>775</y_pos>
+		</left>
+		<right>
+			<x_pos>15</x_pos>
+			<y_pos>433</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>68</x_pos>
+			<y_pos>810</y_pos>
+		</left>
+		<right>
+			<x_pos>109</x_pos>
+			<y_pos>775</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>54</x_pos>
+			<y_pos>620</y_pos>
+		</left>
+		<right>
+			<x_pos>109</x_pos>
+			<y_pos>775</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>931</x_pos>
+			<y_pos>42</y_pos>
+		</left>
+		<right>
+			<x_pos>109</x_pos>
+			<y_pos>775</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>795</x_pos>
+			<y_pos>480</y_pos>
+		</left>
+		<right>
+			<x_pos>15</x_pos>
+			<y_pos>433</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>280</x_pos>
+			<y_pos>347</y_pos>
+		</left>
+		<right>
+			<x_pos>795</x_pos>
+			<y_pos>480</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>236</x_pos>
+			<y_pos>978</y_pos>
+		</left>
+		<right>
+			<x_pos>795</x_pos>
+			<y_pos>480</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_2</name>
+		<left>
+			<x_pos>181</x_pos>
+			<y_pos>820</y_pos>
+		</left>
+		<right>
+			<x_pos>795</x_pos>
+			<y_pos>480</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>294</x_pos>
+			<y_pos>231</y_pos>
+		</left>
+		<right>
+			<x_pos>639</x_pos>
+			<y_pos>924</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>360</x_pos>
+			<y_pos>109</y_pos>
+		</left>
+		<right>
+			<x_pos>294</x_pos>
+			<y_pos>231</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>426</x_pos>
+			<y_pos>198</y_pos>
+		</left>
+		<right>
+			<x_pos>360</x_pos>
+			<y_pos>109</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>360</x_pos>
+			<y_pos>137</y_pos>
+		</left>
+		<right>
+			<x_pos>360</x_pos>
+			<y_pos>109</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>426</x_pos>
+			<y_pos>797</y_pos>
+		</left>
+		<right>
+			<x_pos>360</x_pos>
+			<y_pos>109</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>339</x_pos>
+			<y_pos>804</y_pos>
+		</left>
+		<right>
+			<x_pos>294</x_pos>
+			<y_pos>231</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>527</x_pos>
+			<y_pos>370</y_pos>
+		</left>
+		<right>
+			<x_pos>339</x_pos>
+			<y_pos>804</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>863</x_pos>
+			<y_pos>989</y_pos>
+		</left>
+		<right>
+			<x_pos>339</x_pos>
+			<y_pos>804</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>574</x_pos>
+			<y_pos>508</y_pos>
+		</left>
+		<right>
+			<x_pos>339</x_pos>
+			<y_pos>804</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>180</x_pos>
+			<y_pos>665</y_pos>
+		</left>
+		<right>
+			<x_pos>294</x_pos>
+			<y_pos>231</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>889</x_pos>
+			<y_pos>27</y_pos>
+		</left>
+		<right>
+			<x_pos>180</x_pos>
+			<y_pos>665</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>206</x_pos>
+			<y_pos>163</y_pos>
+		</left>
+		<right>
+			<x_pos>180</x_pos>
+			<y_pos>665</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_2</name>
+		<left>
+			<x_pos>278</x_pos>
+			<y_pos>849</y_pos>
+		</left>
+		<right>
+			<x_pos>180</x_pos>
+			<y_pos>665</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>677</x_pos>
+			<y_pos>680</y_pos>
+		</left>
+		<right>
+			<x_pos>182</x_pos>
+			<y_pos>219</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>535</x_pos>
+			<y_pos>891</y_pos>
+		</left>
+		<right>
+			<x_pos>677</x_pos>
+			<y_pos>680</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>709</x_pos>
+			<y_pos>917</y_pos>
+		</left>
+		<right>
+			<x_pos>535</x_pos>
+			<y_pos>891</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>700</x_pos>
+			<y_pos>595</y_pos>
+		</left>
+		<right>
+			<x_pos>709</x_pos>
+			<y_pos>917</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>302</x_pos>
+			<y_pos>343</y_pos>
+		</left>
+		<right>
+			<x_pos>709</x_pos>
+			<y_pos>917</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>277</x_pos>
+			<y_pos>644</y_pos>
+		</left>
+		<right>
+			<x_pos>709</x_pos>
+			<y_pos>917</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>176</x_pos>
+			<y_pos>949</y_pos>
+		</left>
+		<right>
+			<x_pos>535</x_pos>
+			<y_pos>891</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>593</x_pos>
+			<y_pos>501</y_pos>
+		</left>
+		<right>
+			<x_pos>176</x_pos>
+			<y_pos>949</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>677</x_pos>
+			<y_pos>519</y_pos>
+		</left>
+		<right>
+			<x_pos>176</x_pos>
+			<y_pos>949</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>501</x_pos>
+			<y_pos>869</y_pos>
+		</left>
+		<right>
+			<x_pos>176</x_pos>
+			<y_pos>949</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>404</x_pos>
+			<y_pos>371</y_pos>
+		</left>
+		<right>
+			<x_pos>535</x_pos>
+			<y_pos>891</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>646</x_pos>
+			<y_pos>851</y_pos>
+		</left>
+		<right>
+			<x_pos>404</x_pos>
+			<y_pos>371</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>633</x_pos>
+			<y_pos>268</y_pos>
+		</left>
+		<right>
+			<x_pos>404</x_pos>
+			<y_pos>371</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_2</name>
+		<left>
+			<x_pos>610</x_pos>
+			<y_pos>586</y_pos>
+		</left>
+		<right>
+			<x_pos>404</x_pos>
+			<y_pos>371</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>580</x_pos>
+			<y_pos>659</y_pos>
+		</left>
+		<right>
+			<x_pos>677</x_pos>
+			<y_pos>680</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>341</x_pos>
+			<y_pos>394</y_pos>
+		</left>
+		<right>
+			<x_pos>580</x_pos>
+			<y_pos>659</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>30</x_pos>
+			<y_pos>734</y_pos>
+		</left>
+		<right>
+			<x_pos>341</x_pos>
+			<y_pos>394</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>392</x_pos>
+			<y_pos>31</y_pos>
+		</left>
+		<right>
+			<x_pos>341</x_pos>
+			<y_pos>394</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>891</x_pos>
+			<y_pos>811</y_pos>
+		</left>
+		<right>
+			<x_pos>341</x_pos>
+			<y_pos>394</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>702</x_pos>
+			<y_pos>448</y_pos>
+		</left>
+		<right>
+			<x_pos>580</x_pos>
+			<y_pos>659</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>791</x_pos>
+			<y_pos>434</y_pos>
+		</left>
+		<right>
+			<x_pos>702</x_pos>
+			<y_pos>448</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>797</x_pos>
+			<y_pos>599</y_pos>
+		</left>
+		<right>
+			<x_pos>702</x_pos>
+			<y_pos>448</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>904</x_pos>
+			<y_pos>176</y_pos>
+		</left>
+		<right>
+			<x_pos>702</x_pos>
+			<y_pos>448</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>553</x_pos>
+			<y_pos>210</y_pos>
+		</left>
+		<right>
+			<x_pos>580</x_pos>
+			<y_pos>659</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>837</x_pos>
+			<y_pos>558</y_pos>
+		</left>
+		<right>
+			<x_pos>553</x_pos>
+			<y_pos>210</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>905</x_pos>
+			<y_pos>95</y_pos>
+		</left>
+		<right>
+			<x_pos>553</x_pos>
+			<y_pos>210</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_2</name>
+		<left>
+			<x_pos>534</x_pos>
+			<y_pos>680</y_pos>
+		</left>
+		<right>
+			<x_pos>553</x_pos>
+			<y_pos>210</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>180</x_pos>
+			<y_pos>568</y_pos>
+		</left>
+		<right>
+			<x_pos>182</x_pos>
+			<y_pos>219</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>857</x_pos>
+			<y_pos>120</y_pos>
+		</left>
+		<right>
+			<x_pos>180</x_pos>
+			<y_pos>568</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>59</x_pos>
+			<y_pos>729</y_pos>
+		</left>
+		<right>
+			<x_pos>857</x_pos>
+			<y_pos>120</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>678</x_pos>
+			<y_pos>428</y_pos>
+		</left>
+		<right>
+			<x_pos>59</x_pos>
+			<y_pos>729</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>511</x_pos>
+			<y_pos>927</y_pos>
+		</left>
+		<right>
+			<x_pos>59</x_pos>
+			<y_pos>729</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>123</x_pos>
+			<y_pos>58</y_pos>
+		</left>
+		<right>
+			<x_pos>59</x_pos>
+			<y_pos>729</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>442</x_pos>
+			<y_pos>483</y_pos>
+		</left>
+		<right>
+			<x_pos>857</x_pos>
+			<y_pos>120</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>809</x_pos>
+			<y_pos>892</y_pos>
+		</left>
+		<right>
+			<x_pos>442</x_pos>
+			<y_pos>483</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>207</x_pos>
+			<y_pos>858</y_pos>
+		</left>
+		<right>
+			<x_pos>442</x_pos>
+			<y_pos>483</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>775</x_pos>
+			<y_pos>632</y_pos>
+		</left>
+		<right>
+			<x_pos>442</x_pos>
+			<y_pos>483</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>583</x_pos>
+			<y_pos>790</y_pos>
+		</left>
+		<right>
+			<x_pos>857</x_pos>
+			<y_pos>120</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>124</x_pos>
+			<y_pos>166</y_pos>
+		</left>
+		<right>
+			<x_pos>583</x_pos>
+			<y_pos>790</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>278</x_pos>
+			<y_pos>589</y_pos>
+		</left>
+		<right>
+			<x_pos>583</x_pos>
+			<y_pos>790</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_2</name>
+		<left>
+			<x_pos>265</x_pos>
+			<y_pos>721</y_pos>
+		</left>
+		<right>
+			<x_pos>583</x_pos>
+			<y_pos>790</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>558</x_pos>
+			<y_pos>667</y_pos>
+		</left>
+		<right>
+			<x_pos>180</x_pos>
+			<y_pos>568</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>35</x_pos>
+			<y_pos>13</y_pos>
+		</left>
+		<right>
+			<x_pos>558</x_pos>
+			<y_pos>667</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>118</x_pos>
+			<y_pos>632</y_pos>
+		</left>
+		<right>
+			<x_pos>35</x_pos>
+			<y_pos>13</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>925</x_pos>
+			<y_pos>856</y_pos>
+		</left>
+		<right>
+			<x_pos>35</x_pos>
+			<y_pos>13</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>888</x_pos>
+			<y_pos>713</y_pos>
+		</left>
+		<right>
+			<x_pos>35</x_pos>
+			<y_pos>13</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>92</x_pos>
+			<y_pos>666</y_pos>
+		</left>
+		<right>
+			<x_pos>558</x_pos>
+			<y_pos>667</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>77</x_pos>
+			<y_pos>77</y_pos>
+		</left>
+		<right>
+			<x_pos>92</x_pos>
+			<y_pos>666</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>819</x_pos>
+			<y_pos>102</y_pos>
+		</left>
+		<right>
+			<x_pos>92</x_pos>
+			<y_pos>666</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>380</x_pos>
+			<y_pos>645</y_pos>
+		</left>
+		<right>
+			<x_pos>92</x_pos>
+			<y_pos>666</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>638</x_pos>
+			<y_pos>624</y_pos>
+		</left>
+		<right>
+			<x_pos>558</x_pos>
+			<y_pos>667</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>951</x_pos>
+			<y_pos>335</y_pos>
+		</left>
+		<right>
+			<x_pos>638</x_pos>
+			<y_pos>624</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>346</x_pos>
+			<y_pos>125</y_pos>
+		</left>
+		<right>
+			<x_pos>638</x_pos>
+			<y_pos>624</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_2</name>
+		<left>
+			<x_pos>425</x_pos>
+			<y_pos>268</y_pos>
+		</left>
+		<right>
+			<x_pos>638</x_pos>
+			<y_pos>624</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>194</x_pos>
+			<y_pos>221</y_pos>
+		</left>
+		<right>
+			<x_pos>1</x_pos>
+			<y_pos>1</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>23</x_pos>
+			<y_pos>381</y_pos>
+		</left>
+		<right>
+			<x_pos>194</x_pos>
+			<y_pos>221</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>270</x_pos>
+			<y_pos>42</y_pos>
+		</left>
+		<right>
+			<x_pos>23</x_pos>
+			<y_pos>381</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>501</x_pos>
+			<y_pos>45</y_pos>
+		</left>
+		<right>
+			<x_pos>270</x_pos>
+			<y_pos>42</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>453</x_pos>
+			<y_pos>388</y_pos>
+		</left>
+		<right>
+			<x_pos>501</x_pos>
+			<y_pos>45</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>532</x_pos>
+			<y_pos>754</y_pos>
+		</left>
+		<right>
+			<x_pos>501</x_pos>
+			<y_pos>45</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>124</x_pos>
+			<y_pos>911</y_pos>
+		</left>
+		<right>
+			<x_pos>501</x_pos>
+			<y_pos>45</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>889</x_pos>
+			<y_pos>676</y_pos>
+		</left>
+		<right>
+			<x_pos>270</x_pos>
+			<y_pos>42</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>728</x_pos>
+			<y_pos>563</y_pos>
+		</left>
+		<right>
+			<x_pos>889</x_pos>
+			<y_pos>676</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>695</x_pos>
+			<y_pos>880</y_pos>
+		</left>
+		<right>
+			<x_pos>889</x_pos>
+			<y_pos>676</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>182</x_pos>
+			<y_pos>947</y_pos>
+		</left>
+		<right>
+			<x_pos>889</x_pos>
+			<y_pos>676</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>848</x_pos>
+			<y_pos>352</y_pos>
+		</left>
+		<right>
+			<x_pos>270</x_pos>
+			<y_pos>42</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>556</x_pos>
+			<y_pos>301</y_pos>
+		</left>
+		<right>
+			<x_pos>848</x_pos>
+			<y_pos>352</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>667</x_pos>
+			<y_pos>484</y_pos>
+		</left>
+		<right>
+			<x_pos>848</x_pos>
+			<y_pos>352</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_2</name>
+		<left>
+			<x_pos>436</x_pos>
+			<y_pos>824</y_pos>
+		</left>
+		<right>
+			<x_pos>848</x_pos>
+			<y_pos>352</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>762</x_pos>
+			<y_pos>586</y_pos>
+		</left>
+		<right>
+			<x_pos>23</x_pos>
+			<y_pos>381</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>634</x_pos>
+			<y_pos>740</y_pos>
+		</left>
+		<right>
+			<x_pos>762</x_pos>
+			<y_pos>586</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>63</x_pos>
+			<y_pos>124</y_pos>
+		</left>
+		<right>
+			<x_pos>634</x_pos>
+			<y_pos>740</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>267</x_pos>
+			<y_pos>643</y_pos>
+		</left>
+		<right>
+			<x_pos>634</x_pos>
+			<y_pos>740</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>14</x_pos>
+			<y_pos>778</y_pos>
+		</left>
+		<right>
+			<x_pos>634</x_pos>
+			<y_pos>740</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>136</x_pos>
+			<y_pos>632</y_pos>
+		</left>
+		<right>
+			<x_pos>762</x_pos>
+			<y_pos>586</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>925</x_pos>
+			<y_pos>152</y_pos>
+		</left>
+		<right>
+			<x_pos>136</x_pos>
+			<y_pos>632</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>762</x_pos>
+			<y_pos>435</y_pos>
+		</left>
+		<right>
+			<x_pos>136</x_pos>
+			<y_pos>632</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>574</x_pos>
+			<y_pos>943</y_pos>
+		</left>
+		<right>
+			<x_pos>136</x_pos>
+			<y_pos>632</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>402</x_pos>
+			<y_pos>250</y_pos>
+		</left>
+		<right>
+			<x_pos>762</x_pos>
+			<y_pos>586</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>256</x_pos>
+			<y_pos>616</y_pos>
+		</left>
+		<right>
+			<x_pos>402</x_pos>
+			<y_pos>250</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>855</x_pos>
+			<y_pos>283</y_pos>
+		</left>
+		<right>
+			<x_pos>402</x_pos>
+			<y_pos>250</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_2</name>
+		<left>
+			<x_pos>578</x_pos>
+			<y_pos>241</y_pos>
+		</left>
+		<right>
+			<x_pos>402</x_pos>
+			<y_pos>250</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>899</x_pos>
+			<y_pos>61</y_pos>
+		</left>
+		<right>
+			<x_pos>194</x_pos>
+			<y_pos>221</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>515</x_pos>
+			<y_pos>895</y_pos>
+		</left>
+		<right>
+			<x_pos>899</x_pos>
+			<y_pos>61</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>747</x_pos>
+			<y_pos>410</y_pos>
+		</left>
+		<right>
+			<x_pos>515</x_pos>
+			<y_pos>895</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>387</x_pos>
+			<y_pos>228</y_pos>
+		</left>
+		<right>
+			<x_pos>747</x_pos>
+			<y_pos>410</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>15</x_pos>
+			<y_pos>634</y_pos>
+		</left>
+		<right>
+			<x_pos>747</x_pos>
+			<y_pos>410</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>681</x_pos>
+			<y_pos>109</y_pos>
+		</left>
+		<right>
+			<x_pos>747</x_pos>
+			<y_pos>410</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>282</x_pos>
+			<y_pos>837</y_pos>
+		</left>
+		<right>
+			<x_pos>515</x_pos>
+			<y_pos>895</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>882</x_pos>
+			<y_pos>994</y_pos>
+		</left>
+		<right>
+			<x_pos>282</x_pos>
+			<y_pos>837</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>510</x_pos>
+			<y_pos>507</y_pos>
+		</left>
+		<right>
+			<x_pos>282</x_pos>
+			<y_pos>837</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>777</x_pos>
+			<y_pos>582</y_pos>
+		</left>
+		<right>
+			<x_pos>282</x_pos>
+			<y_pos>837</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>234</x_pos>
+			<y_pos>461</y_pos>
+		</left>
+		<right>
+			<x_pos>515</x_pos>
+			<y_pos>895</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>4</x_pos>
+			<y_pos>581</y_pos>
+		</left>
+		<right>
+			<x_pos>234</x_pos>
+			<y_pos>461</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>681</x_pos>
+			<y_pos>996</y_pos>
+		</left>
+		<right>
+			<x_pos>234</x_pos>
+			<y_pos>461</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_2</name>
+		<left>
+			<x_pos>990</x_pos>
+			<y_pos>893</y_pos>
+		</left>
+		<right>
+			<x_pos>234</x_pos>
+			<y_pos>461</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>685</x_pos>
+			<y_pos>634</y_pos>
+		</left>
+		<right>
+			<x_pos>899</x_pos>
+			<y_pos>61</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>788</x_pos>
+			<y_pos>367</y_pos>
+		</left>
+		<right>
+			<x_pos>685</x_pos>
+			<y_pos>634</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>568</x_pos>
+			<y_pos>142</y_pos>
+		</left>
+		<right>
+			<x_pos>788</x_pos>
+			<y_pos>367</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>748</x_pos>
+			<y_pos>304</y_pos>
+		</left>
+		<right>
+			<x_pos>788</x_pos>
+			<y_pos>367</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>946</x_pos>
+			<y_pos>618</y_pos>
+		</left>
+		<right>
+			<x_pos>788</x_pos>
+			<y_pos>367</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>398</x_pos>
+			<y_pos>297</y_pos>
+		</left>
+		<right>
+			<x_pos>685</x_pos>
+			<y_pos>634</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>760</x_pos>
+			<y_pos>308</y_pos>
+		</left>
+		<right>
+			<x_pos>398</x_pos>
+			<y_pos>297</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>396</x_pos>
+			<y_pos>596</y_pos>
+		</left>
+		<right>
+			<x_pos>398</x_pos>
+			<y_pos>297</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>703</x_pos>
+			<y_pos>480</y_pos>
+		</left>
+		<right>
+			<x_pos>398</x_pos>
+			<y_pos>297</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>911</x_pos>
+			<y_pos>145</y_pos>
+		</left>
+		<right>
+			<x_pos>685</x_pos>
+			<y_pos>634</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>616</x_pos>
+			<y_pos>103</y_pos>
+		</left>
+		<right>
+			<x_pos>911</x_pos>
+			<y_pos>145</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>346</x_pos>
+			<y_pos>606</y_pos>
+		</left>
+		<right>
+			<x_pos>911</x_pos>
+			<y_pos>145</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_2</name>
+		<left>
+			<x_pos>337</x_pos>
+			<y_pos>312</y_pos>
+		</left>
+		<right>
+			<x_pos>911</x_pos>
+			<y_pos>145</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_2</name>
+		<left>
+			<x_pos>866</x_pos>
+			<y_pos>206</y_pos>
+		</left>
+		<right>
+			<x_pos>194</x_pos>
+			<y_pos>221</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>981</x_pos>
+			<y_pos>651</y_pos>
+		</left>
+		<right>
+			<x_pos>866</x_pos>
+			<y_pos>206</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>830</x_pos>
+			<y_pos>986</y_pos>
+		</left>
+		<right>
+			<x_pos>981</x_pos>
+			<y_pos>651</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>599</x_pos>
+			<y_pos>838</y_pos>
+		</left>
+		<right>
+			<x_pos>830</x_pos>
+			<y_pos>986</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>817</x_pos>
+			<y_pos>76</y_pos>
+		</left>
+		<right>
+			<x_pos>830</x_pos>
+			<y_pos>986</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>689</x_pos>
+			<y_pos>391</y_pos>
+		</left>
+		<right>
+			<x_pos>830</x_pos>
+			<y_pos>986</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>637</x_pos>
+			<y_pos>983</y_pos>
+		</left>
+		<right>
+			<x_pos>981</x_pos>
+			<y_pos>651</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>99</x_pos>
+			<y_pos>780</y_pos>
+		</left>
+		<right>
+			<x_pos>637</x_pos>
+			<y_pos>983</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>404</x_pos>
+			<y_pos>435</y_pos>
+		</left>
+		<right>
+			<x_pos>637</x_pos>
+			<y_pos>983</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>446</x_pos>
+			<y_pos>900</y_pos>
+		</left>
+		<right>
+			<x_pos>637</x_pos>
+			<y_pos>983</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>456</x_pos>
+			<y_pos>272</y_pos>
+		</left>
+		<right>
+			<x_pos>981</x_pos>
+			<y_pos>651</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>279</x_pos>
+			<y_pos>573</y_pos>
+		</left>
+		<right>
+			<x_pos>456</x_pos>
+			<y_pos>272</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>697</x_pos>
+			<y_pos>0</y_pos>
+		</left>
+		<right>
+			<x_pos>456</x_pos>
+			<y_pos>272</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_2</name>
+		<left>
+			<x_pos>891</x_pos>
+			<y_pos>464</y_pos>
+		</left>
+		<right>
+			<x_pos>456</x_pos>
+			<y_pos>272</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>711</x_pos>
+			<y_pos>120</y_pos>
+		</left>
+		<right>
+			<x_pos>866</x_pos>
+			<y_pos>206</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>831</x_pos>
+			<y_pos>276</y_pos>
+		</left>
+		<right>
+			<x_pos>711</x_pos>
+			<y_pos>120</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>805</x_pos>
+			<y_pos>38</y_pos>
+		</left>
+		<right>
+			<x_pos>831</x_pos>
+			<y_pos>276</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>911</x_pos>
+			<y_pos>348</y_pos>
+		</left>
+		<right>
+			<x_pos>831</x_pos>
+			<y_pos>276</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>22</x_pos>
+			<y_pos>421</y_pos>
+		</left>
+		<right>
+			<x_pos>831</x_pos>
+			<y_pos>276</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>732</x_pos>
+			<y_pos>772</y_pos>
+		</left>
+		<right>
+			<x_pos>711</x_pos>
+			<y_pos>120</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>19</x_pos>
+			<y_pos>120</y_pos>
+		</left>
+		<right>
+			<x_pos>732</x_pos>
+			<y_pos>772</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>517</x_pos>
+			<y_pos>20</y_pos>
+		</left>
+		<right>
+			<x_pos>732</x_pos>
+			<y_pos>772</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>647</x_pos>
+			<y_pos>394</y_pos>
+		</left>
+		<right>
+			<x_pos>732</x_pos>
+			<y_pos>772</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>364</x_pos>
+			<y_pos>615</y_pos>
+		</left>
+		<right>
+			<x_pos>711</x_pos>
+			<y_pos>120</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>981</x_pos>
+			<y_pos>15</y_pos>
+		</left>
+		<right>
+			<x_pos>364</x_pos>
+			<y_pos>615</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>861</x_pos>
+			<y_pos>772</y_pos>
+		</left>
+		<right>
+			<x_pos>364</x_pos>
+			<y_pos>615</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_2</name>
+		<left>
+			<x_pos>569</x_pos>
+			<y_pos>965</y_pos>
+		</left>
+		<right>
+			<x_pos>364</x_pos>
+			<y_pos>615</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -3201,8 +3201,8 @@
 <link>
 		<name>L3_0</name>
 		<left>
-			<x_pos>208</x_pos>
-			<y_pos>174</y_pos>
+			<x_pos>93</x_pos>
+			<y_pos>29</y_pos>
 		</left>
 		<right>
 			<x_pos>1</x_pos>
@@ -3214,207 +3214,12 @@
 <link>
 		<name>L0_3</name>
 		<left>
-			<x_pos>588</x_pos>
-			<y_pos>717</y_pos>
+			<x_pos>641</x_pos>
+			<y_pos>887</y_pos>
 		</left>
 		<right>
-			<x_pos>208</x_pos>
-			<y_pos>174</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>928</x_pos>
-			<y_pos>762</y_pos>
-		</left>
-		<right>
-			<x_pos>588</x_pos>
-			<y_pos>717</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>781</x_pos>
-			<y_pos>228</y_pos>
-		</left>
-		<right>
-			<x_pos>928</x_pos>
-			<y_pos>762</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>579</x_pos>
-			<y_pos>531</y_pos>
-		</left>
-		<right>
-			<x_pos>781</x_pos>
-			<y_pos>228</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
 			<x_pos>93</x_pos>
-			<y_pos>516</y_pos>
-		</left>
-		<right>
-			<x_pos>781</x_pos>
-			<y_pos>228</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>979</x_pos>
-			<y_pos>615</y_pos>
-		</left>
-		<right>
-			<x_pos>781</x_pos>
-			<y_pos>228</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>764</x_pos>
-			<y_pos>752</y_pos>
-		</left>
-		<right>
-			<x_pos>928</x_pos>
-			<y_pos>762</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>783</x_pos>
-			<y_pos>470</y_pos>
-		</left>
-		<right>
-			<x_pos>764</x_pos>
-			<y_pos>752</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>644</x_pos>
-			<y_pos>597</y_pos>
-		</left>
-		<right>
-			<x_pos>764</x_pos>
-			<y_pos>752</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>920</x_pos>
-			<y_pos>610</y_pos>
-		</left>
-		<right>
-			<x_pos>764</x_pos>
-			<y_pos>752</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>774</x_pos>
-			<y_pos>949</y_pos>
-		</left>
-		<right>
-			<x_pos>928</x_pos>
-			<y_pos>762</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>8</x_pos>
-			<y_pos>592</y_pos>
-		</left>
-		<right>
-			<x_pos>774</x_pos>
-			<y_pos>949</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>671</x_pos>
-			<y_pos>224</y_pos>
-		</left>
-		<right>
-			<x_pos>774</x_pos>
-			<y_pos>949</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_2</name>
-		<left>
-			<x_pos>704</x_pos>
-			<y_pos>95</y_pos>
-		</left>
-		<right>
-			<x_pos>774</x_pos>
-			<y_pos>949</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>686</x_pos>
-			<y_pos>896</y_pos>
-		</left>
-		<right>
-			<x_pos>588</x_pos>
-			<y_pos>717</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>236</x_pos>
-			<y_pos>606</y_pos>
-		</left>
-		<right>
-			<x_pos>686</x_pos>
-			<y_pos>896</y_pos>
+			<y_pos>29</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -3422,12 +3227,38 @@
 <link>
 		<name>L0_0</name>
 		<left>
-			<x_pos>22</x_pos>
-			<y_pos>601</y_pos>
+			<x_pos>199</x_pos>
+			<y_pos>475</y_pos>
 		</left>
 		<right>
-			<x_pos>236</x_pos>
-			<y_pos>606</y_pos>
+			<x_pos>641</x_pos>
+			<y_pos>887</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>77</x_pos>
+			<y_pos>127</y_pos>
+		</left>
+		<right>
+			<x_pos>199</x_pos>
+			<y_pos>475</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>253</x_pos>
+			<y_pos>514</y_pos>
+		</left>
+		<right>
+			<x_pos>77</x_pos>
+			<y_pos>127</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -3435,12 +3266,12 @@
 <link>
 		<name>L1_0</name>
 		<left>
-			<x_pos>182</x_pos>
-			<y_pos>523</y_pos>
+			<x_pos>3</x_pos>
+			<y_pos>205</y_pos>
 		</left>
 		<right>
-			<x_pos>236</x_pos>
-			<y_pos>606</y_pos>
+			<x_pos>77</x_pos>
+			<y_pos>127</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -3448,25 +3279,25 @@
 <link>
 		<name>L2_0</name>
 		<left>
-			<x_pos>695</x_pos>
-			<y_pos>442</y_pos>
+			<x_pos>866</x_pos>
+			<y_pos>443</y_pos>
 		</left>
 		<right>
-			<x_pos>236</x_pos>
-			<y_pos>606</y_pos>
+			<x_pos>77</x_pos>
+			<y_pos>127</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
 	</link>
 <link>
-		<name>L1_1</name>
+		<name>L1_0</name>
 		<left>
-			<x_pos>293</x_pos>
-			<y_pos>989</y_pos>
+			<x_pos>982</x_pos>
+			<y_pos>819</y_pos>
 		</left>
 		<right>
-			<x_pos>686</x_pos>
-			<y_pos>896</y_pos>
+			<x_pos>199</x_pos>
+			<y_pos>475</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -3474,12 +3305,12 @@
 <link>
 		<name>L0_1</name>
 		<left>
-			<x_pos>709</x_pos>
-			<y_pos>13</y_pos>
+			<x_pos>801</x_pos>
+			<y_pos>333</y_pos>
 		</left>
 		<right>
-			<x_pos>293</x_pos>
-			<y_pos>989</y_pos>
+			<x_pos>982</x_pos>
+			<y_pos>819</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -3487,12 +3318,12 @@
 <link>
 		<name>L1_1</name>
 		<left>
-			<x_pos>761</x_pos>
-			<y_pos>405</y_pos>
+			<x_pos>908</x_pos>
+			<y_pos>26</y_pos>
 		</left>
 		<right>
-			<x_pos>293</x_pos>
-			<y_pos>989</y_pos>
+			<x_pos>982</x_pos>
+			<y_pos>819</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -3500,25 +3331,25 @@
 <link>
 		<name>L2_1</name>
 		<left>
-			<x_pos>225</x_pos>
-			<y_pos>288</y_pos>
+			<x_pos>595</x_pos>
+			<y_pos>623</y_pos>
 		</left>
 		<right>
-			<x_pos>293</x_pos>
-			<y_pos>989</y_pos>
+			<x_pos>982</x_pos>
+			<y_pos>819</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
 	</link>
 <link>
-		<name>L2_1</name>
+		<name>L2_0</name>
 		<left>
-			<x_pos>902</x_pos>
-			<y_pos>345</y_pos>
+			<x_pos>854</x_pos>
+			<y_pos>90</y_pos>
 		</left>
 		<right>
-			<x_pos>686</x_pos>
-			<y_pos>896</y_pos>
+			<x_pos>199</x_pos>
+			<y_pos>475</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -3526,12 +3357,12 @@
 <link>
 		<name>L0_2</name>
 		<left>
-			<x_pos>345</x_pos>
-			<y_pos>761</y_pos>
+			<x_pos>924</x_pos>
+			<y_pos>268</y_pos>
 		</left>
 		<right>
-			<x_pos>902</x_pos>
-			<y_pos>345</y_pos>
+			<x_pos>854</x_pos>
+			<y_pos>90</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -3539,12 +3370,12 @@
 <link>
 		<name>L1_2</name>
 		<left>
-			<x_pos>649</x_pos>
-			<y_pos>580</y_pos>
+			<x_pos>371</x_pos>
+			<y_pos>562</y_pos>
 		</left>
 		<right>
-			<x_pos>902</x_pos>
-			<y_pos>345</y_pos>
+			<x_pos>854</x_pos>
+			<y_pos>90</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -3552,12 +3383,181 @@
 <link>
 		<name>L2_2</name>
 		<left>
-			<x_pos>399</x_pos>
-			<y_pos>109</y_pos>
+			<x_pos>722</x_pos>
+			<y_pos>576</y_pos>
 		</left>
 		<right>
-			<x_pos>902</x_pos>
-			<y_pos>345</y_pos>
+			<x_pos>854</x_pos>
+			<y_pos>90</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>890</x_pos>
+			<y_pos>605</y_pos>
+		</left>
+		<right>
+			<x_pos>641</x_pos>
+			<y_pos>887</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>462</x_pos>
+			<y_pos>207</y_pos>
+		</left>
+		<right>
+			<x_pos>890</x_pos>
+			<y_pos>605</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>214</x_pos>
+			<y_pos>186</y_pos>
+		</left>
+		<right>
+			<x_pos>462</x_pos>
+			<y_pos>207</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>113</x_pos>
+			<y_pos>998</y_pos>
+		</left>
+		<right>
+			<x_pos>462</x_pos>
+			<y_pos>207</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>313</x_pos>
+			<y_pos>764</y_pos>
+		</left>
+		<right>
+			<x_pos>462</x_pos>
+			<y_pos>207</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>982</x_pos>
+			<y_pos>227</y_pos>
+		</left>
+		<right>
+			<x_pos>890</x_pos>
+			<y_pos>605</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>3</x_pos>
+			<y_pos>302</y_pos>
+		</left>
+		<right>
+			<x_pos>982</x_pos>
+			<y_pos>227</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>875</x_pos>
+			<y_pos>717</y_pos>
+		</left>
+		<right>
+			<x_pos>982</x_pos>
+			<y_pos>227</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>413</x_pos>
+			<y_pos>974</y_pos>
+		</left>
+		<right>
+			<x_pos>982</x_pos>
+			<y_pos>227</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>729</x_pos>
+			<y_pos>662</y_pos>
+		</left>
+		<right>
+			<x_pos>890</x_pos>
+			<y_pos>605</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>544</x_pos>
+			<y_pos>715</y_pos>
+		</left>
+		<right>
+			<x_pos>729</x_pos>
+			<y_pos>662</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>161</x_pos>
+			<y_pos>423</y_pos>
+		</left>
+		<right>
+			<x_pos>729</x_pos>
+			<y_pos>662</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_2</name>
+		<left>
+			<x_pos>625</x_pos>
+			<y_pos>857</y_pos>
+		</left>
+		<right>
+			<x_pos>729</x_pos>
+			<y_pos>662</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -3565,12 +3565,12 @@
 <link>
 		<name>L1_3</name>
 		<left>
-			<x_pos>587</x_pos>
-			<y_pos>995</y_pos>
+			<x_pos>180</x_pos>
+			<y_pos>601</y_pos>
 		</left>
 		<right>
-			<x_pos>208</x_pos>
-			<y_pos>174</y_pos>
+			<x_pos>93</x_pos>
+			<y_pos>29</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -3578,12 +3578,12 @@
 <link>
 		<name>L0_1</name>
 		<left>
-			<x_pos>317</x_pos>
-			<y_pos>228</y_pos>
+			<x_pos>442</x_pos>
+			<y_pos>439</y_pos>
 		</left>
 		<right>
-			<x_pos>587</x_pos>
-			<y_pos>995</y_pos>
+			<x_pos>180</x_pos>
+			<y_pos>601</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -3591,532 +3591,12 @@
 <link>
 		<name>L0_0</name>
 		<left>
-			<x_pos>550</x_pos>
-			<y_pos>452</y_pos>
+			<x_pos>640</x_pos>
+			<y_pos>580</y_pos>
 		</left>
 		<right>
-			<x_pos>317</x_pos>
-			<y_pos>228</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>737</x_pos>
-			<y_pos>704</y_pos>
-		</left>
-		<right>
-			<x_pos>550</x_pos>
-			<y_pos>452</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>926</x_pos>
-			<y_pos>88</y_pos>
-		</left>
-		<right>
-			<x_pos>550</x_pos>
-			<y_pos>452</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>991</x_pos>
-			<y_pos>647</y_pos>
-		</left>
-		<right>
-			<x_pos>550</x_pos>
-			<y_pos>452</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>906</x_pos>
-			<y_pos>90</y_pos>
-		</left>
-		<right>
-			<x_pos>317</x_pos>
-			<y_pos>228</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>14</x_pos>
-			<y_pos>352</y_pos>
-		</left>
-		<right>
-			<x_pos>906</x_pos>
-			<y_pos>90</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>884</x_pos>
-			<y_pos>732</y_pos>
-		</left>
-		<right>
-			<x_pos>906</x_pos>
-			<y_pos>90</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>513</x_pos>
-			<y_pos>422</y_pos>
-		</left>
-		<right>
-			<x_pos>906</x_pos>
-			<y_pos>90</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>70</x_pos>
-			<y_pos>344</y_pos>
-		</left>
-		<right>
-			<x_pos>317</x_pos>
-			<y_pos>228</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>448</x_pos>
-			<y_pos>855</y_pos>
-		</left>
-		<right>
-			<x_pos>70</x_pos>
-			<y_pos>344</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>221</x_pos>
-			<y_pos>930</y_pos>
-		</left>
-		<right>
-			<x_pos>70</x_pos>
-			<y_pos>344</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_2</name>
-		<left>
-			<x_pos>992</x_pos>
-			<y_pos>61</y_pos>
-		</left>
-		<right>
-			<x_pos>70</x_pos>
-			<y_pos>344</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>7</x_pos>
-			<y_pos>350</y_pos>
-		</left>
-		<right>
-			<x_pos>587</x_pos>
-			<y_pos>995</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>646</x_pos>
-			<y_pos>956</y_pos>
-		</left>
-		<right>
-			<x_pos>7</x_pos>
-			<y_pos>350</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>210</x_pos>
-			<y_pos>329</y_pos>
-		</left>
-		<right>
-			<x_pos>646</x_pos>
-			<y_pos>956</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>128</x_pos>
-			<y_pos>73</y_pos>
-		</left>
-		<right>
-			<x_pos>646</x_pos>
-			<y_pos>956</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>396</x_pos>
-			<y_pos>93</y_pos>
-		</left>
-		<right>
-			<x_pos>646</x_pos>
-			<y_pos>956</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>983</x_pos>
-			<y_pos>105</y_pos>
-		</left>
-		<right>
-			<x_pos>7</x_pos>
-			<y_pos>350</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>146</x_pos>
-			<y_pos>62</y_pos>
-		</left>
-		<right>
-			<x_pos>983</x_pos>
-			<y_pos>105</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>579</x_pos>
-			<y_pos>404</y_pos>
-		</left>
-		<right>
-			<x_pos>983</x_pos>
-			<y_pos>105</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>240</x_pos>
-			<y_pos>905</y_pos>
-		</left>
-		<right>
-			<x_pos>983</x_pos>
-			<y_pos>105</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>346</x_pos>
-			<y_pos>766</y_pos>
-		</left>
-		<right>
-			<x_pos>7</x_pos>
-			<y_pos>350</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>402</x_pos>
-			<y_pos>191</y_pos>
-		</left>
-		<right>
-			<x_pos>346</x_pos>
-			<y_pos>766</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>614</x_pos>
-			<y_pos>231</y_pos>
-		</left>
-		<right>
-			<x_pos>346</x_pos>
-			<y_pos>766</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_2</name>
-		<left>
-			<x_pos>359</x_pos>
-			<y_pos>51</y_pos>
-		</left>
-		<right>
-			<x_pos>346</x_pos>
-			<y_pos>766</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_3</name>
-		<left>
-			<x_pos>405</x_pos>
-			<y_pos>737</y_pos>
-		</left>
-		<right>
-			<x_pos>208</x_pos>
-			<y_pos>174</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>1</x_pos>
-			<y_pos>532</y_pos>
-		</left>
-		<right>
-			<x_pos>405</x_pos>
-			<y_pos>737</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>869</x_pos>
-			<y_pos>226</y_pos>
-		</left>
-		<right>
-			<x_pos>1</x_pos>
-			<y_pos>532</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_0</name>
-		<left>
-			<x_pos>355</x_pos>
-			<y_pos>793</y_pos>
-		</left>
-		<right>
-			<x_pos>869</x_pos>
-			<y_pos>226</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>853</x_pos>
-			<y_pos>172</y_pos>
-		</left>
-		<right>
-			<x_pos>869</x_pos>
-			<y_pos>226</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>956</x_pos>
-			<y_pos>876</y_pos>
-		</left>
-		<right>
-			<x_pos>869</x_pos>
-			<y_pos>226</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_0</name>
-		<left>
-			<x_pos>237</x_pos>
-			<y_pos>588</y_pos>
-		</left>
-		<right>
-			<x_pos>1</x_pos>
-			<y_pos>532</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>944</x_pos>
-			<y_pos>584</y_pos>
-		</left>
-		<right>
-			<x_pos>237</x_pos>
-			<y_pos>588</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_1</name>
-		<left>
-			<x_pos>280</x_pos>
-			<y_pos>276</y_pos>
-		</left>
-		<right>
-			<x_pos>237</x_pos>
-			<y_pos>588</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_1</name>
-		<left>
-			<x_pos>863</x_pos>
-			<y_pos>871</y_pos>
-		</left>
-		<right>
-			<x_pos>237</x_pos>
-			<y_pos>588</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_0</name>
-		<left>
-			<x_pos>201</x_pos>
-			<y_pos>447</y_pos>
-		</left>
-		<right>
-			<x_pos>1</x_pos>
-			<y_pos>532</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_2</name>
-		<left>
-			<x_pos>744</x_pos>
-			<y_pos>274</y_pos>
-		</left>
-		<right>
-			<x_pos>201</x_pos>
-			<y_pos>447</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>605</x_pos>
-			<y_pos>882</y_pos>
-		</left>
-		<right>
-			<x_pos>201</x_pos>
-			<y_pos>447</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L2_2</name>
-		<left>
-			<x_pos>474</x_pos>
-			<y_pos>96</y_pos>
-		</left>
-		<right>
-			<x_pos>201</x_pos>
-			<y_pos>447</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L1_2</name>
-		<left>
-			<x_pos>173</x_pos>
-			<y_pos>474</y_pos>
-		</left>
-		<right>
-			<x_pos>405</x_pos>
-			<y_pos>737</y_pos>
-		</right>
-		<left_latency>0.5</left_latency>
-		<right_latency>0.5</right_latency>
-	</link>
-<link>
-		<name>L0_1</name>
-		<left>
-			<x_pos>888</x_pos>
-			<y_pos>487</y_pos>
-		</left>
-		<right>
-			<x_pos>173</x_pos>
-			<y_pos>474</y_pos>
+			<x_pos>442</x_pos>
+			<y_pos>439</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -4125,11 +3605,11 @@
 		<name>L0_0</name>
 		<left>
 			<x_pos>257</x_pos>
-			<y_pos>351</y_pos>
+			<y_pos>437</y_pos>
 		</left>
 		<right>
-			<x_pos>888</x_pos>
-			<y_pos>487</y_pos>
+			<x_pos>640</x_pos>
+			<y_pos>580</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -4137,12 +3617,12 @@
 <link>
 		<name>L1_0</name>
 		<left>
-			<x_pos>258</x_pos>
-			<y_pos>82</y_pos>
+			<x_pos>887</x_pos>
+			<y_pos>401</y_pos>
 		</left>
 		<right>
-			<x_pos>888</x_pos>
-			<y_pos>487</y_pos>
+			<x_pos>640</x_pos>
+			<y_pos>580</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -4150,25 +3630,25 @@
 <link>
 		<name>L2_0</name>
 		<left>
-			<x_pos>610</x_pos>
-			<y_pos>753</y_pos>
+			<x_pos>477</x_pos>
+			<y_pos>74</y_pos>
 		</left>
 		<right>
-			<x_pos>888</x_pos>
-			<y_pos>487</y_pos>
+			<x_pos>640</x_pos>
+			<y_pos>580</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
 	</link>
 <link>
-		<name>L1_1</name>
+		<name>L1_0</name>
 		<left>
-			<x_pos>85</x_pos>
-			<y_pos>552</y_pos>
+			<x_pos>449</x_pos>
+			<y_pos>251</y_pos>
 		</left>
 		<right>
-			<x_pos>173</x_pos>
-			<y_pos>474</y_pos>
+			<x_pos>442</x_pos>
+			<y_pos>439</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -4176,12 +3656,12 @@
 <link>
 		<name>L0_1</name>
 		<left>
-			<x_pos>512</x_pos>
-			<y_pos>515</y_pos>
+			<x_pos>759</x_pos>
+			<y_pos>572</y_pos>
 		</left>
 		<right>
-			<x_pos>85</x_pos>
-			<y_pos>552</y_pos>
+			<x_pos>449</x_pos>
+			<y_pos>251</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -4189,12 +3669,12 @@
 <link>
 		<name>L1_1</name>
 		<left>
-			<x_pos>174</x_pos>
-			<y_pos>318</y_pos>
+			<x_pos>550</x_pos>
+			<y_pos>72</y_pos>
 		</left>
 		<right>
-			<x_pos>85</x_pos>
-			<y_pos>552</y_pos>
+			<x_pos>449</x_pos>
+			<y_pos>251</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -4202,25 +3682,25 @@
 <link>
 		<name>L2_1</name>
 		<left>
-			<x_pos>994</x_pos>
-			<y_pos>285</y_pos>
+			<x_pos>796</x_pos>
+			<y_pos>192</y_pos>
 		</left>
 		<right>
-			<x_pos>85</x_pos>
-			<y_pos>552</y_pos>
+			<x_pos>449</x_pos>
+			<y_pos>251</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
 	</link>
 <link>
-		<name>L2_1</name>
+		<name>L2_0</name>
 		<left>
-			<x_pos>982</x_pos>
-			<y_pos>637</y_pos>
+			<x_pos>692</x_pos>
+			<y_pos>817</y_pos>
 		</left>
 		<right>
-			<x_pos>173</x_pos>
-			<y_pos>474</y_pos>
+			<x_pos>442</x_pos>
+			<y_pos>439</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -4228,12 +3708,12 @@
 <link>
 		<name>L0_2</name>
 		<left>
-			<x_pos>672</x_pos>
-			<y_pos>621</y_pos>
+			<x_pos>658</x_pos>
+			<y_pos>196</y_pos>
 		</left>
 		<right>
-			<x_pos>982</x_pos>
-			<y_pos>637</y_pos>
+			<x_pos>692</x_pos>
+			<y_pos>817</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -4241,12 +3721,12 @@
 <link>
 		<name>L1_2</name>
 		<left>
-			<x_pos>151</x_pos>
-			<y_pos>490</y_pos>
+			<x_pos>527</x_pos>
+			<y_pos>625</y_pos>
 		</left>
 		<right>
-			<x_pos>982</x_pos>
-			<y_pos>637</y_pos>
+			<x_pos>692</x_pos>
+			<y_pos>817</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
@@ -4254,12 +3734,532 @@
 <link>
 		<name>L2_2</name>
 		<left>
-			<x_pos>949</x_pos>
-			<y_pos>670</y_pos>
+			<x_pos>178</x_pos>
+			<y_pos>368</y_pos>
 		</left>
 		<right>
-			<x_pos>982</x_pos>
-			<y_pos>637</y_pos>
+			<x_pos>692</x_pos>
+			<y_pos>817</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>805</x_pos>
+			<y_pos>793</y_pos>
+		</left>
+		<right>
+			<x_pos>180</x_pos>
+			<y_pos>601</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>534</x_pos>
+			<y_pos>124</y_pos>
+		</left>
+		<right>
+			<x_pos>805</x_pos>
+			<y_pos>793</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>189</x_pos>
+			<y_pos>732</y_pos>
+		</left>
+		<right>
+			<x_pos>534</x_pos>
+			<y_pos>124</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>888</x_pos>
+			<y_pos>777</y_pos>
+		</left>
+		<right>
+			<x_pos>534</x_pos>
+			<y_pos>124</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>349</x_pos>
+			<y_pos>236</y_pos>
+		</left>
+		<right>
+			<x_pos>534</x_pos>
+			<y_pos>124</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>673</x_pos>
+			<y_pos>482</y_pos>
+		</left>
+		<right>
+			<x_pos>805</x_pos>
+			<y_pos>793</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>856</x_pos>
+			<y_pos>306</y_pos>
+		</left>
+		<right>
+			<x_pos>673</x_pos>
+			<y_pos>482</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>846</x_pos>
+			<y_pos>517</y_pos>
+		</left>
+		<right>
+			<x_pos>673</x_pos>
+			<y_pos>482</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>47</x_pos>
+			<y_pos>446</y_pos>
+		</left>
+		<right>
+			<x_pos>673</x_pos>
+			<y_pos>482</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>270</x_pos>
+			<y_pos>24</y_pos>
+		</left>
+		<right>
+			<x_pos>805</x_pos>
+			<y_pos>793</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>209</x_pos>
+			<y_pos>827</y_pos>
+		</left>
+		<right>
+			<x_pos>270</x_pos>
+			<y_pos>24</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>144</x_pos>
+			<y_pos>69</y_pos>
+		</left>
+		<right>
+			<x_pos>270</x_pos>
+			<y_pos>24</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_2</name>
+		<left>
+			<x_pos>142</x_pos>
+			<y_pos>955</y_pos>
+		</left>
+		<right>
+			<x_pos>270</x_pos>
+			<y_pos>24</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_3</name>
+		<left>
+			<x_pos>315</x_pos>
+			<y_pos>895</y_pos>
+		</left>
+		<right>
+			<x_pos>93</x_pos>
+			<y_pos>29</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>412</x_pos>
+			<y_pos>536</y_pos>
+		</left>
+		<right>
+			<x_pos>315</x_pos>
+			<y_pos>895</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>145</x_pos>
+			<y_pos>546</y_pos>
+		</left>
+		<right>
+			<x_pos>412</x_pos>
+			<y_pos>536</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>375</x_pos>
+			<y_pos>6</y_pos>
+		</left>
+		<right>
+			<x_pos>145</x_pos>
+			<y_pos>546</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>539</x_pos>
+			<y_pos>603</y_pos>
+		</left>
+		<right>
+			<x_pos>145</x_pos>
+			<y_pos>546</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>349</x_pos>
+			<y_pos>826</y_pos>
+		</left>
+		<right>
+			<x_pos>145</x_pos>
+			<y_pos>546</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>685</x_pos>
+			<y_pos>654</y_pos>
+		</left>
+		<right>
+			<x_pos>412</x_pos>
+			<y_pos>536</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>167</x_pos>
+			<y_pos>4</y_pos>
+		</left>
+		<right>
+			<x_pos>685</x_pos>
+			<y_pos>654</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>44</x_pos>
+			<y_pos>250</y_pos>
+		</left>
+		<right>
+			<x_pos>685</x_pos>
+			<y_pos>654</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>694</x_pos>
+			<y_pos>438</y_pos>
+		</left>
+		<right>
+			<x_pos>685</x_pos>
+			<y_pos>654</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>107</x_pos>
+			<y_pos>513</y_pos>
+		</left>
+		<right>
+			<x_pos>412</x_pos>
+			<y_pos>536</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>806</x_pos>
+			<y_pos>671</y_pos>
+		</left>
+		<right>
+			<x_pos>107</x_pos>
+			<y_pos>513</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>512</x_pos>
+			<y_pos>299</y_pos>
+		</left>
+		<right>
+			<x_pos>107</x_pos>
+			<y_pos>513</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_2</name>
+		<left>
+			<x_pos>741</x_pos>
+			<y_pos>304</y_pos>
+		</left>
+		<right>
+			<x_pos>107</x_pos>
+			<y_pos>513</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>161</x_pos>
+			<y_pos>754</y_pos>
+		</left>
+		<right>
+			<x_pos>315</x_pos>
+			<y_pos>895</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>719</x_pos>
+			<y_pos>857</y_pos>
+		</left>
+		<right>
+			<x_pos>161</x_pos>
+			<y_pos>754</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_0</name>
+		<left>
+			<x_pos>96</x_pos>
+			<y_pos>421</y_pos>
+		</left>
+		<right>
+			<x_pos>719</x_pos>
+			<y_pos>857</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_0</name>
+		<left>
+			<x_pos>193</x_pos>
+			<y_pos>140</y_pos>
+		</left>
+		<right>
+			<x_pos>719</x_pos>
+			<y_pos>857</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_0</name>
+		<left>
+			<x_pos>1</x_pos>
+			<y_pos>558</y_pos>
+		</left>
+		<right>
+			<x_pos>719</x_pos>
+			<y_pos>857</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>138</x_pos>
+			<y_pos>246</y_pos>
+		</left>
+		<right>
+			<x_pos>161</x_pos>
+			<y_pos>754</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_1</name>
+		<left>
+			<x_pos>403</x_pos>
+			<y_pos>193</y_pos>
+		</left>
+		<right>
+			<x_pos>138</x_pos>
+			<y_pos>246</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_1</name>
+		<left>
+			<x_pos>342</x_pos>
+			<y_pos>135</y_pos>
+		</left>
+		<right>
+			<x_pos>138</x_pos>
+			<y_pos>246</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>793</x_pos>
+			<y_pos>529</y_pos>
+		</left>
+		<right>
+			<x_pos>138</x_pos>
+			<y_pos>246</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_1</name>
+		<left>
+			<x_pos>721</x_pos>
+			<y_pos>421</y_pos>
+		</left>
+		<right>
+			<x_pos>161</x_pos>
+			<y_pos>754</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L0_2</name>
+		<left>
+			<x_pos>166</x_pos>
+			<y_pos>699</y_pos>
+		</left>
+		<right>
+			<x_pos>721</x_pos>
+			<y_pos>421</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L1_2</name>
+		<left>
+			<x_pos>344</x_pos>
+			<y_pos>325</y_pos>
+		</left>
+		<right>
+			<x_pos>721</x_pos>
+			<y_pos>421</y_pos>
+		</right>
+		<left_latency>0.5</left_latency>
+		<right_latency>0.5</right_latency>
+	</link>
+<link>
+		<name>L2_2</name>
+		<left>
+			<x_pos>685</x_pos>
+			<y_pos>586</y_pos>
+		</left>
+		<right>
+			<x_pos>721</x_pos>
+			<y_pos>421</y_pos>
 		</right>
 		<left_latency>0.5</left_latency>
 		<right_latency>0.5</right_latency>
