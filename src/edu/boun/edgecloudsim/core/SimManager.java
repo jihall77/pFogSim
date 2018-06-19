@@ -52,6 +52,9 @@ public class SimManager extends SimEntity {
 	private static final int PRINT_PROGRESS = 3;
 	private static final int STOP_SIMULATION = 4;
 	
+	private static final int MAX_WIDTH = 1000;
+	private static final int MAX_HEIGHT = 1000;
+	
 	//List of ids for wireless access points devices are connected to, max devices rn is 1000
 	private int[] wapIdList = new int [2100];
 	private int numOfMobileDevice;
@@ -212,6 +215,9 @@ public class SimManager extends SimEntity {
 					{
 					//Update positions
 						Pair<Integer, Integer> currentLoc = node.getLocation();
+						if(currentLoc.getKey() + node.getVector().getKey() > MAX_WIDTH) node.setVector(new Pair<Integer, Integer>(node.getVector().getKey() * -1, node.getVector().getValue()));
+						if(currentLoc.getValue() + node.getVector().getValue() > MAX_WIDTH) node.setVector(new Pair<Integer, Integer>(node.getVector().getKey(), node.getVector().getValue() * -1));
+
 						//Change links
 						for(Link link : links)
 						{
