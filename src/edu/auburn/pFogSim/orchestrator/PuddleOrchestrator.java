@@ -9,6 +9,7 @@ import edu.boun.edgecloudsim.edge_server.EdgeVM;
 import edu.auburn.pFogSim.netsim.NetworkTopology;
 import edu.boun.edgecloudsim.network.MM1Queue;
 import edu.boun.edgecloudsim.utils.Location;
+import edu.boun.edgecloudsim.utils.SimLogger;
 import javafx.util.Pair;
 import edu.auburn.pFogSim.Puddle.Puddle;
 import edu.auburn.pFogSim.Radix.DistRadix;
@@ -88,9 +89,8 @@ public class PuddleOrchestrator extends EdgeOrchestrator {
 	 * @return
 	 */
 	private boolean goodHost(EdgeHost host, Task task) {
-		EdgeVM vm = new EdgeVM(host.getVmList().size(), task.getUserId(), host.getAvailableMips(), host.getNumberOfFreePes(), host.getRamProvisioner().getAvailableRam(), host.getBw(), task.getCloudletFileSize(), "", new CloudletSchedulerTimeShared());
-		double hostCap = 100.0 - vm.getCloudletScheduler().getTotalUtilizationOfCpu(CloudSim.clock());
-		double taskCap = ((CpuUtilizationModel_Custom)task.getUtilizationModelCpu()).predictUtilization(vm.getVmType());
+		double hostCap = 100.0 - host.getVmList().get(0).getCloudletScheduler().getTotalUtilizationOfCpu(CloudSim.clock());
+		double taskCap = ((CpuUtilizationModel_Custom)task.getUtilizationModelCpu()).predictUtilization(((EdgeVM) host.getVmList().get(0)).getVmType());
 		return hostCap >= taskCap;
 	}
 	/**
@@ -135,7 +135,11 @@ public class PuddleOrchestrator extends EdgeOrchestrator {
 		while(!goodHost(host, task)) {
 			host = candidates.poll();//find the closest node capable of handling the task
 		}
+		/*if (host.getLevel() == 4) {
+			SimLogger.printLine("lvl 4 assigned");
+		}*/
 		return host;
+		
 	}
 	/**
 	 * find an alternate puddle of a given level

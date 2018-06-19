@@ -138,7 +138,7 @@ public class MM1Queue extends NetworkModel {
 			current = path.poll();
 			nextHop = path.peek();
 			accessPointLocation = new Location(null, 0, current.getLocation().getKey(), current.getLocation().getValue());//we only care about the x-y position, the other details are irrelevant here
-			delay += getWlanUploadDelay(accessPointLocation, CloudSim.clock());
+			delay += getWlanUploadDelay(accessPointLocation, CloudSim.clock() + delay);
 			if (nextHop == null) {
 				break;
 			}
