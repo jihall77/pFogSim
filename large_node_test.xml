@@ -7,8 +7,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>500</x_pos>
-			<y_pos>500</y_pos>
+			<x_pos>1</x_pos>
+			<y_pos>1</y_pos>
 			<level>5</level>			<wlan_id>0</wlan_id>
 			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -43,8 +43,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>128</x_pos>
-			<y_pos>29</y_pos>
+			<x_pos>223</x_pos>
+			<y_pos>243</y_pos>
 			<wlan_id>1</wlan_id>
 			<level>4</level>			<attractiveness>1</attractiveness>
 			<wap>true</wap>
@@ -79,8 +79,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>605</x_pos>
-			<y_pos>406</y_pos>
+			<x_pos>755</x_pos>
+			<y_pos>973</y_pos>
 			<wlan_id>2</wlan_id>
 			<level>3</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -115,8 +115,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>228</x_pos>
-			<y_pos>635</y_pos>
+			<x_pos>645</x_pos>
+			<y_pos>642</y_pos>
 			<wlan_id>3</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -151,8 +151,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>245</x_pos>
-			<y_pos>479</y_pos>
+			<x_pos>648</x_pos>
+			<y_pos>494</y_pos>
 			<wlan_id>4</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -187,8 +187,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>24</x_pos>
-			<y_pos>56</y_pos>
+			<x_pos>109</x_pos>
+			<y_pos>30</y_pos>
 			<wlan_id>5</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -224,8 +224,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>760</x_pos>
-			<y_pos>803</y_pos>
+			<x_pos>376</x_pos>
+			<y_pos>981</y_pos>
 			<wlan_id>6</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -261,8 +261,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>885</x_pos>
-			<y_pos>269</y_pos>
+			<x_pos>383</x_pos>
+			<y_pos>849</y_pos>
 			<wlan_id>7</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -298,8 +298,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>546</x_pos>
-			<y_pos>969</y_pos>
+			<x_pos>74</x_pos>
+			<y_pos>362</y_pos>
 			<wlan_id>8</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -334,8 +334,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>787</x_pos>
-			<y_pos>197</y_pos>
+			<x_pos>858</x_pos>
+			<y_pos>855</y_pos>
 			<wlan_id>9</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -371,8 +371,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>379</x_pos>
-			<y_pos>789</y_pos>
+			<x_pos>786</x_pos>
+			<y_pos>302</y_pos>
 			<wlan_id>10</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -408,8 +408,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>599</x_pos>
-			<y_pos>711</y_pos>
+			<x_pos>312</x_pos>
+			<y_pos>180</y_pos>
 			<wlan_id>11</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -445,8 +445,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>477</x_pos>
-			<y_pos>110</y_pos>
+			<x_pos>546</x_pos>
+			<y_pos>543</y_pos>
 			<wlan_id>12</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -481,8 +481,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>791</x_pos>
-			<y_pos>984</y_pos>
+			<x_pos>182</x_pos>
+			<y_pos>112</y_pos>
 			<wlan_id>13</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -518,8 +518,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>800</x_pos>
-			<y_pos>924</y_pos>
+			<x_pos>26</x_pos>
+			<y_pos>483</y_pos>
 			<wlan_id>14</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -555,8 +555,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>221</x_pos>
-			<y_pos>673</y_pos>
+			<x_pos>527</x_pos>
+			<y_pos>36</y_pos>
 			<wlan_id>15</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -592,8 +592,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>340</x_pos>
-			<y_pos>504</y_pos>
+			<x_pos>505</x_pos>
+			<y_pos>145</y_pos>
 			<wlan_id>16</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -628,8 +628,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>397</x_pos>
-			<y_pos>277</y_pos>
+			<x_pos>231</x_pos>
+			<y_pos>81</y_pos>
 			<wlan_id>17</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -664,8 +664,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>245</x_pos>
-			<y_pos>357</y_pos>
+			<x_pos>191</x_pos>
+			<y_pos>511</y_pos>
 			<wlan_id>18</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -701,8 +701,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>901</x_pos>
-			<y_pos>349</y_pos>
+			<x_pos>824</x_pos>
+			<y_pos>958</y_pos>
 			<wlan_id>19</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -738,8 +738,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>342</x_pos>
-			<y_pos>715</y_pos>
+			<x_pos>541</x_pos>
+			<y_pos>471</y_pos>
 			<wlan_id>20</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -775,8 +775,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>120</x_pos>
-			<y_pos>66</y_pos>
+			<x_pos>867</x_pos>
+			<y_pos>411</y_pos>
 			<wlan_id>21</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -811,8 +811,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>69</x_pos>
-			<y_pos>138</y_pos>
+			<x_pos>48</x_pos>
+			<y_pos>491</y_pos>
 			<wlan_id>22</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -848,8 +848,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>28</x_pos>
-			<y_pos>782</y_pos>
+			<x_pos>239</x_pos>
+			<y_pos>694</y_pos>
 			<wlan_id>23</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -885,8 +885,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>848</x_pos>
-			<y_pos>563</y_pos>
+			<x_pos>146</x_pos>
+			<y_pos>458</y_pos>
 			<wlan_id>24</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -922,8 +922,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>537</x_pos>
-			<y_pos>810</y_pos>
+			<x_pos>827</x_pos>
+			<y_pos>469</y_pos>
 			<wlan_id>25</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -958,8 +958,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>669</x_pos>
-			<y_pos>777</y_pos>
+			<x_pos>256</x_pos>
+			<y_pos>79</y_pos>
 			<wlan_id>26</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -995,8 +995,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>833</x_pos>
-			<y_pos>663</y_pos>
+			<x_pos>37</x_pos>
+			<y_pos>591</y_pos>
 			<wlan_id>27</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -1032,8 +1032,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>11</x_pos>
-			<y_pos>883</y_pos>
+			<x_pos>760</x_pos>
+			<y_pos>622</y_pos>
 			<wlan_id>28</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -1069,8 +1069,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>219</x_pos>
-			<y_pos>342</y_pos>
+			<x_pos>285</x_pos>
+			<y_pos>296</y_pos>
 			<wlan_id>29</wlan_id>
 			<level>3</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -1105,8 +1105,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>279</x_pos>
-			<y_pos>787</y_pos>
+			<x_pos>618</x_pos>
+			<y_pos>752</y_pos>
 			<wlan_id>30</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -1141,8 +1141,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>180</x_pos>
-			<y_pos>136</y_pos>
+			<x_pos>119</x_pos>
+			<y_pos>421</y_pos>
 			<wlan_id>31</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -1177,8 +1177,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>588</x_pos>
-			<y_pos>107</y_pos>
+			<x_pos>647</x_pos>
+			<y_pos>726</y_pos>
 			<wlan_id>32</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -1214,8 +1214,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>820</x_pos>
-			<y_pos>514</y_pos>
+			<x_pos>904</x_pos>
+			<y_pos>411</y_pos>
 			<wlan_id>33</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -1251,8 +1251,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>91</x_pos>
-			<y_pos>216</y_pos>
+			<x_pos>20</x_pos>
+			<y_pos>213</y_pos>
 			<wlan_id>34</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -1288,8 +1288,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>309</x_pos>
-			<y_pos>391</y_pos>
+			<x_pos>64</x_pos>
+			<y_pos>44</y_pos>
 			<wlan_id>35</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -1324,8 +1324,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>42</x_pos>
-			<y_pos>294</y_pos>
+			<x_pos>365</x_pos>
+			<y_pos>575</y_pos>
 			<wlan_id>36</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -1361,8 +1361,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>732</x_pos>
-			<y_pos>4</y_pos>
+			<x_pos>738</x_pos>
+			<y_pos>982</y_pos>
 			<wlan_id>37</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -1398,8 +1398,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>416</x_pos>
-			<y_pos>386</y_pos>
+			<x_pos>958</x_pos>
+			<y_pos>519</y_pos>
 			<wlan_id>38</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -1435,8 +1435,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>554</x_pos>
-			<y_pos>103</y_pos>
+			<x_pos>290</x_pos>
+			<y_pos>517</y_pos>
 			<wlan_id>39</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -1471,8 +1471,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>258</x_pos>
-			<y_pos>457</y_pos>
+			<x_pos>900</x_pos>
+			<y_pos>667</y_pos>
 			<wlan_id>40</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -1508,8 +1508,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>935</x_pos>
-			<y_pos>968</y_pos>
+			<x_pos>580</x_pos>
+			<y_pos>98</y_pos>
 			<wlan_id>41</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -1545,8 +1545,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>848</x_pos>
-			<y_pos>340</y_pos>
+			<x_pos>833</x_pos>
+			<y_pos>725</y_pos>
 			<wlan_id>42</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -1582,8 +1582,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>308</x_pos>
-			<y_pos>23</y_pos>
+			<x_pos>41</x_pos>
+			<y_pos>545</y_pos>
 			<wlan_id>43</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -1618,8 +1618,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>448</x_pos>
-			<y_pos>312</y_pos>
+			<x_pos>716</x_pos>
+			<y_pos>611</y_pos>
 			<wlan_id>44</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -1654,8 +1654,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>948</x_pos>
-			<y_pos>449</y_pos>
+			<x_pos>592</x_pos>
+			<y_pos>173</y_pos>
 			<wlan_id>45</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -1691,8 +1691,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>621</x_pos>
-			<y_pos>731</y_pos>
+			<x_pos>399</x_pos>
+			<y_pos>133</y_pos>
 			<wlan_id>46</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -1728,8 +1728,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>746</x_pos>
-			<y_pos>259</y_pos>
+			<x_pos>192</x_pos>
+			<y_pos>387</y_pos>
 			<wlan_id>47</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -1765,8 +1765,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>86</x_pos>
-			<y_pos>808</y_pos>
+			<x_pos>272</x_pos>
+			<y_pos>525</y_pos>
 			<wlan_id>48</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -1801,8 +1801,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>29</x_pos>
-			<y_pos>739</y_pos>
+			<x_pos>327</x_pos>
+			<y_pos>708</y_pos>
 			<wlan_id>49</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -1838,8 +1838,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>641</x_pos>
-			<y_pos>141</y_pos>
+			<x_pos>44</x_pos>
+			<y_pos>446</y_pos>
 			<wlan_id>50</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -1875,8 +1875,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>90</x_pos>
-			<y_pos>63</y_pos>
+			<x_pos>78</x_pos>
+			<y_pos>605</y_pos>
 			<wlan_id>51</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -1912,8 +1912,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>950</x_pos>
-			<y_pos>43</y_pos>
+			<x_pos>796</x_pos>
+			<y_pos>840</y_pos>
 			<wlan_id>52</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -1948,8 +1948,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>997</x_pos>
-			<y_pos>98</y_pos>
+			<x_pos>487</x_pos>
+			<y_pos>933</y_pos>
 			<wlan_id>53</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -1985,8 +1985,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>874</x_pos>
-			<y_pos>75</y_pos>
+			<x_pos>812</x_pos>
+			<y_pos>396</y_pos>
 			<wlan_id>54</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -2022,8 +2022,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>412</x_pos>
-			<y_pos>162</y_pos>
+			<x_pos>825</x_pos>
+			<y_pos>289</y_pos>
 			<wlan_id>55</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -2059,8 +2059,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>604</x_pos>
-			<y_pos>449</y_pos>
+			<x_pos>335</x_pos>
+			<y_pos>212</y_pos>
 			<wlan_id>56</wlan_id>
 			<level>3</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -2095,8 +2095,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>347</x_pos>
-			<y_pos>522</y_pos>
+			<x_pos>14</x_pos>
+			<y_pos>76</y_pos>
 			<wlan_id>57</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -2131,8 +2131,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>62</x_pos>
-			<y_pos>103</y_pos>
+			<x_pos>309</x_pos>
+			<y_pos>675</y_pos>
 			<wlan_id>58</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -2167,8 +2167,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>276</x_pos>
-			<y_pos>942</y_pos>
+			<x_pos>911</x_pos>
+			<y_pos>624</y_pos>
 			<wlan_id>59</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -2204,8 +2204,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>901</x_pos>
-			<y_pos>341</y_pos>
+			<x_pos>382</x_pos>
+			<y_pos>482</y_pos>
 			<wlan_id>60</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -2241,8 +2241,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>535</x_pos>
-			<y_pos>481</y_pos>
+			<x_pos>359</x_pos>
+			<y_pos>270</y_pos>
 			<wlan_id>61</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -2278,8 +2278,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>978</x_pos>
-			<y_pos>904</y_pos>
+			<x_pos>929</x_pos>
+			<y_pos>218</y_pos>
 			<wlan_id>62</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -2314,8 +2314,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>710</x_pos>
-			<y_pos>29</y_pos>
+			<x_pos>925</x_pos>
+			<y_pos>937</y_pos>
 			<wlan_id>63</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -2351,8 +2351,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>345</x_pos>
-			<y_pos>194</y_pos>
+			<x_pos>608</x_pos>
+			<y_pos>864</y_pos>
 			<wlan_id>64</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -2388,8 +2388,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>587</x_pos>
-			<y_pos>796</y_pos>
+			<x_pos>32</x_pos>
+			<y_pos>334</y_pos>
 			<wlan_id>65</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -2425,8 +2425,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>659</x_pos>
-			<y_pos>194</y_pos>
+			<x_pos>38</x_pos>
+			<y_pos>164</y_pos>
 			<wlan_id>66</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -2461,8 +2461,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>291</x_pos>
-			<y_pos>74</y_pos>
+			<x_pos>739</x_pos>
+			<y_pos>607</y_pos>
 			<wlan_id>67</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -2498,8 +2498,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>385</x_pos>
-			<y_pos>282</y_pos>
+			<x_pos>479</x_pos>
+			<y_pos>819</y_pos>
 			<wlan_id>68</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -2535,8 +2535,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>419</x_pos>
-			<y_pos>96</y_pos>
+			<x_pos>778</x_pos>
+			<y_pos>956</y_pos>
 			<wlan_id>69</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -2572,8 +2572,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>346</x_pos>
-			<y_pos>776</y_pos>
+			<x_pos>38</x_pos>
+			<y_pos>61</y_pos>
 			<wlan_id>70</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -2608,8 +2608,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>366</x_pos>
-			<y_pos>792</y_pos>
+			<x_pos>588</x_pos>
+			<y_pos>448</y_pos>
 			<wlan_id>71</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -2644,8 +2644,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>975</x_pos>
-			<y_pos>511</y_pos>
+			<x_pos>803</x_pos>
+			<y_pos>297</y_pos>
 			<wlan_id>72</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -2681,8 +2681,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>515</x_pos>
-			<y_pos>509</y_pos>
+			<x_pos>976</x_pos>
+			<y_pos>18</y_pos>
 			<wlan_id>73</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -2718,8 +2718,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>68</x_pos>
-			<y_pos>196</y_pos>
+			<x_pos>468</x_pos>
+			<y_pos>132</y_pos>
 			<wlan_id>74</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -2755,8 +2755,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>665</x_pos>
-			<y_pos>552</y_pos>
+			<x_pos>750</x_pos>
+			<y_pos>471</y_pos>
 			<wlan_id>75</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -2791,8 +2791,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>995</x_pos>
-			<y_pos>587</y_pos>
+			<x_pos>493</x_pos>
+			<y_pos>291</y_pos>
 			<wlan_id>76</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -2828,8 +2828,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>867</x_pos>
-			<y_pos>537</y_pos>
+			<x_pos>107</x_pos>
+			<y_pos>60</y_pos>
 			<wlan_id>77</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -2865,8 +2865,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>89</x_pos>
-			<y_pos>757</y_pos>
+			<x_pos>553</x_pos>
+			<y_pos>659</y_pos>
 			<wlan_id>78</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -2902,8 +2902,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>845</x_pos>
-			<y_pos>69</y_pos>
+			<x_pos>831</x_pos>
+			<y_pos>131</y_pos>
 			<wlan_id>79</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -2938,8 +2938,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>341</x_pos>
-			<y_pos>865</y_pos>
+			<x_pos>65</x_pos>
+			<y_pos>888</y_pos>
 			<wlan_id>80</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -2975,8 +2975,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>302</x_pos>
-			<y_pos>271</y_pos>
+			<x_pos>396</x_pos>
+			<y_pos>159</y_pos>
 			<wlan_id>81</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -3012,8 +3012,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>678</x_pos>
-			<y_pos>860</y_pos>
+			<x_pos>861</x_pos>
+			<y_pos>821</y_pos>
 			<wlan_id>82</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -3049,8 +3049,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>176</x_pos>
-			<y_pos>0</y_pos>
+			<x_pos>211</x_pos>
+			<y_pos>112</y_pos>
 			<wlan_id>83</wlan_id>
 			<level>4</level>			<attractiveness>1</attractiveness>
 			<wap>true</wap>
@@ -3085,8 +3085,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>787</x_pos>
-			<y_pos>502</y_pos>
+			<x_pos>678</x_pos>
+			<y_pos>271</y_pos>
 			<wlan_id>84</wlan_id>
 			<level>3</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -3121,8 +3121,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>610</x_pos>
-			<y_pos>387</y_pos>
+			<x_pos>968</x_pos>
+			<y_pos>703</y_pos>
 			<wlan_id>85</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -3157,8 +3157,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>895</x_pos>
-			<y_pos>930</y_pos>
+			<x_pos>973</x_pos>
+			<y_pos>529</y_pos>
 			<wlan_id>86</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -3193,8 +3193,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>141</x_pos>
-			<y_pos>507</y_pos>
+			<x_pos>598</x_pos>
+			<y_pos>636</y_pos>
 			<wlan_id>87</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -3230,8 +3230,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>947</x_pos>
-			<y_pos>768</y_pos>
+			<x_pos>730</x_pos>
+			<y_pos>353</y_pos>
 			<wlan_id>88</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -3267,8 +3267,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>108</x_pos>
-			<y_pos>580</y_pos>
+			<x_pos>116</x_pos>
+			<y_pos>834</y_pos>
 			<wlan_id>89</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -3304,8 +3304,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>363</x_pos>
-			<y_pos>398</y_pos>
+			<x_pos>336</x_pos>
+			<y_pos>89</y_pos>
 			<wlan_id>90</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -3340,8 +3340,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>33</x_pos>
-			<y_pos>56</y_pos>
+			<x_pos>54</x_pos>
+			<y_pos>96</y_pos>
 			<wlan_id>91</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -3377,8 +3377,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>905</x_pos>
-			<y_pos>640</y_pos>
+			<x_pos>318</x_pos>
+			<y_pos>986</y_pos>
 			<wlan_id>92</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -3414,8 +3414,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>530</x_pos>
-			<y_pos>387</y_pos>
+			<x_pos>536</x_pos>
+			<y_pos>545</y_pos>
 			<wlan_id>93</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -3451,8 +3451,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>227</x_pos>
-			<y_pos>491</y_pos>
+			<x_pos>705</x_pos>
+			<y_pos>763</y_pos>
 			<wlan_id>94</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -3487,8 +3487,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>678</x_pos>
-			<y_pos>41</y_pos>
+			<x_pos>705</x_pos>
+			<y_pos>940</y_pos>
 			<wlan_id>95</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -3524,8 +3524,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>364</x_pos>
-			<y_pos>31</y_pos>
+			<x_pos>73</x_pos>
+			<y_pos>943</y_pos>
 			<wlan_id>96</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -3561,8 +3561,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>403</x_pos>
-			<y_pos>552</y_pos>
+			<x_pos>617</x_pos>
+			<y_pos>702</y_pos>
 			<wlan_id>97</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -3598,8 +3598,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>755</x_pos>
-			<y_pos>807</y_pos>
+			<x_pos>827</x_pos>
+			<y_pos>527</y_pos>
 			<wlan_id>98</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -3634,8 +3634,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>461</x_pos>
-			<y_pos>6</y_pos>
+			<x_pos>128</x_pos>
+			<y_pos>387</y_pos>
 			<wlan_id>99</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -3670,8 +3670,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>385</x_pos>
-			<y_pos>276</y_pos>
+			<x_pos>175</x_pos>
+			<y_pos>103</y_pos>
 			<wlan_id>100</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -3707,8 +3707,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>284</x_pos>
-			<y_pos>371</y_pos>
+			<x_pos>142</x_pos>
+			<y_pos>484</y_pos>
 			<wlan_id>101</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -3744,8 +3744,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>301</x_pos>
-			<y_pos>924</y_pos>
+			<x_pos>286</x_pos>
+			<y_pos>609</y_pos>
 			<wlan_id>102</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -3781,8 +3781,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>821</x_pos>
-			<y_pos>529</y_pos>
+			<x_pos>224</x_pos>
+			<y_pos>684</y_pos>
 			<wlan_id>103</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -3817,8 +3817,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>52</x_pos>
-			<y_pos>730</y_pos>
+			<x_pos>572</x_pos>
+			<y_pos>545</y_pos>
 			<wlan_id>104</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -3854,8 +3854,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>522</x_pos>
-			<y_pos>687</y_pos>
+			<x_pos>989</x_pos>
+			<y_pos>0</y_pos>
 			<wlan_id>105</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -3891,8 +3891,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>568</x_pos>
-			<y_pos>521</y_pos>
+			<x_pos>671</x_pos>
+			<y_pos>621</y_pos>
 			<wlan_id>106</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -3928,8 +3928,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>774</x_pos>
-			<y_pos>66</y_pos>
+			<x_pos>849</x_pos>
+			<y_pos>419</y_pos>
 			<wlan_id>107</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -3964,8 +3964,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>638</x_pos>
-			<y_pos>601</y_pos>
+			<x_pos>688</x_pos>
+			<y_pos>476</y_pos>
 			<wlan_id>108</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -4001,8 +4001,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>422</x_pos>
-			<y_pos>469</y_pos>
+			<x_pos>693</x_pos>
+			<y_pos>85</y_pos>
 			<wlan_id>109</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -4038,8 +4038,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>386</x_pos>
-			<y_pos>759</y_pos>
+			<x_pos>463</x_pos>
+			<y_pos>335</y_pos>
 			<wlan_id>110</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -4075,8 +4075,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>509</x_pos>
-			<y_pos>299</y_pos>
+			<x_pos>818</x_pos>
+			<y_pos>362</y_pos>
 			<wlan_id>111</wlan_id>
 			<level>3</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -4111,8 +4111,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>119</x_pos>
-			<y_pos>373</y_pos>
+			<x_pos>167</x_pos>
+			<y_pos>199</y_pos>
 			<wlan_id>112</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -4147,8 +4147,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>967</x_pos>
-			<y_pos>139</y_pos>
+			<x_pos>946</x_pos>
+			<y_pos>524</y_pos>
 			<wlan_id>113</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -4183,8 +4183,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>477</x_pos>
-			<y_pos>900</y_pos>
+			<x_pos>323</x_pos>
+			<y_pos>449</y_pos>
 			<wlan_id>114</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -4220,8 +4220,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>835</x_pos>
-			<y_pos>803</y_pos>
+			<x_pos>505</x_pos>
+			<y_pos>206</y_pos>
 			<wlan_id>115</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -4257,8 +4257,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>101</x_pos>
-			<y_pos>433</y_pos>
+			<x_pos>421</x_pos>
+			<y_pos>552</y_pos>
 			<wlan_id>116</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -4294,8 +4294,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>489</x_pos>
-			<y_pos>84</y_pos>
+			<x_pos>410</x_pos>
+			<y_pos>226</y_pos>
 			<wlan_id>117</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -4330,8 +4330,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>885</x_pos>
-			<y_pos>413</y_pos>
+			<x_pos>667</x_pos>
+			<y_pos>878</y_pos>
 			<wlan_id>118</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -4367,8 +4367,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>490</x_pos>
-			<y_pos>71</y_pos>
+			<x_pos>502</x_pos>
+			<y_pos>848</y_pos>
 			<wlan_id>119</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -4404,8 +4404,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>502</x_pos>
-			<y_pos>776</y_pos>
+			<x_pos>30</x_pos>
+			<y_pos>519</y_pos>
 			<wlan_id>120</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -4441,8 +4441,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>935</x_pos>
-			<y_pos>18</y_pos>
+			<x_pos>410</x_pos>
+			<y_pos>72</y_pos>
 			<wlan_id>121</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -4477,8 +4477,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>50</x_pos>
-			<y_pos>47</y_pos>
+			<x_pos>706</x_pos>
+			<y_pos>408</y_pos>
 			<wlan_id>122</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -4514,8 +4514,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>580</x_pos>
-			<y_pos>201</y_pos>
+			<x_pos>74</x_pos>
+			<y_pos>72</y_pos>
 			<wlan_id>123</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -4551,8 +4551,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>572</x_pos>
-			<y_pos>882</y_pos>
+			<x_pos>273</x_pos>
+			<y_pos>939</y_pos>
 			<wlan_id>124</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -4588,8 +4588,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>616</x_pos>
-			<y_pos>134</y_pos>
+			<x_pos>383</x_pos>
+			<y_pos>474</y_pos>
 			<wlan_id>125</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -4624,8 +4624,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>729</x_pos>
-			<y_pos>612</y_pos>
+			<x_pos>356</x_pos>
+			<y_pos>776</y_pos>
 			<wlan_id>126</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -4660,8 +4660,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>681</x_pos>
-			<y_pos>794</y_pos>
+			<x_pos>364</x_pos>
+			<y_pos>781</y_pos>
 			<wlan_id>127</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -4697,8 +4697,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>73</x_pos>
-			<y_pos>149</y_pos>
+			<x_pos>330</x_pos>
+			<y_pos>528</y_pos>
 			<wlan_id>128</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -4734,8 +4734,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>596</x_pos>
-			<y_pos>204</y_pos>
+			<x_pos>160</x_pos>
+			<y_pos>868</y_pos>
 			<wlan_id>129</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -4771,8 +4771,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>217</x_pos>
-			<y_pos>461</y_pos>
+			<x_pos>678</x_pos>
+			<y_pos>479</y_pos>
 			<wlan_id>130</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -4807,8 +4807,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>358</x_pos>
-			<y_pos>873</y_pos>
+			<x_pos>593</x_pos>
+			<y_pos>144</y_pos>
 			<wlan_id>131</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -4844,8 +4844,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>715</x_pos>
-			<y_pos>477</y_pos>
+			<x_pos>934</x_pos>
+			<y_pos>630</y_pos>
 			<wlan_id>132</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -4881,8 +4881,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>101</x_pos>
-			<y_pos>68</y_pos>
+			<x_pos>440</x_pos>
+			<y_pos>675</y_pos>
 			<wlan_id>133</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -4918,8 +4918,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>571</x_pos>
-			<y_pos>897</y_pos>
+			<x_pos>748</x_pos>
+			<y_pos>894</y_pos>
 			<wlan_id>134</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -4954,8 +4954,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>130</x_pos>
-			<y_pos>860</y_pos>
+			<x_pos>708</x_pos>
+			<y_pos>291</y_pos>
 			<wlan_id>135</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -4991,8 +4991,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>169</x_pos>
-			<y_pos>883</y_pos>
+			<x_pos>511</x_pos>
+			<y_pos>404</y_pos>
 			<wlan_id>136</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -5028,8 +5028,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>604</x_pos>
-			<y_pos>182</y_pos>
+			<x_pos>50</x_pos>
+			<y_pos>453</y_pos>
 			<wlan_id>137</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -5065,8 +5065,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>810</x_pos>
-			<y_pos>17</y_pos>
+			<x_pos>142</x_pos>
+			<y_pos>525</y_pos>
 			<wlan_id>138</wlan_id>
 			<level>3</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -5101,8 +5101,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>148</x_pos>
-			<y_pos>920</y_pos>
+			<x_pos>215</x_pos>
+			<y_pos>441</y_pos>
 			<wlan_id>139</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -5137,8 +5137,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>242</x_pos>
-			<y_pos>245</y_pos>
+			<x_pos>100</x_pos>
+			<y_pos>390</y_pos>
 			<wlan_id>140</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -5173,8 +5173,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>476</x_pos>
-			<y_pos>147</y_pos>
+			<x_pos>837</x_pos>
+			<y_pos>273</y_pos>
 			<wlan_id>141</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -5210,8 +5210,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>275</x_pos>
-			<y_pos>707</y_pos>
+			<x_pos>419</x_pos>
+			<y_pos>424</y_pos>
 			<wlan_id>142</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -5247,8 +5247,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>102</x_pos>
-			<y_pos>224</y_pos>
+			<x_pos>157</x_pos>
+			<y_pos>576</y_pos>
 			<wlan_id>143</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -5284,8 +5284,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>53</x_pos>
-			<y_pos>549</y_pos>
+			<x_pos>571</x_pos>
+			<y_pos>630</y_pos>
 			<wlan_id>144</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -5320,8 +5320,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>345</x_pos>
-			<y_pos>400</y_pos>
+			<x_pos>291</x_pos>
+			<y_pos>551</y_pos>
 			<wlan_id>145</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -5357,8 +5357,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>635</x_pos>
-			<y_pos>785</y_pos>
+			<x_pos>277</x_pos>
+			<y_pos>131</y_pos>
 			<wlan_id>146</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -5394,8 +5394,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>133</x_pos>
-			<y_pos>928</y_pos>
+			<x_pos>468</x_pos>
+			<y_pos>62</y_pos>
 			<wlan_id>147</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -5431,8 +5431,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>276</x_pos>
-			<y_pos>251</y_pos>
+			<x_pos>945</x_pos>
+			<y_pos>806</y_pos>
 			<wlan_id>148</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -5467,8 +5467,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>563</x_pos>
-			<y_pos>496</y_pos>
+			<x_pos>255</x_pos>
+			<y_pos>850</y_pos>
 			<wlan_id>149</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -5504,8 +5504,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>211</x_pos>
-			<y_pos>548</y_pos>
+			<x_pos>292</x_pos>
+			<y_pos>675</y_pos>
 			<wlan_id>150</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -5541,8 +5541,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>768</x_pos>
-			<y_pos>917</y_pos>
+			<x_pos>180</x_pos>
+			<y_pos>824</y_pos>
 			<wlan_id>151</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -5578,8 +5578,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>799</x_pos>
-			<y_pos>606</y_pos>
+			<x_pos>840</x_pos>
+			<y_pos>64</y_pos>
 			<wlan_id>152</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -5614,8 +5614,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>424</x_pos>
-			<y_pos>642</y_pos>
+			<x_pos>298</x_pos>
+			<y_pos>408</y_pos>
 			<wlan_id>153</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -5650,8 +5650,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>608</x_pos>
-			<y_pos>172</y_pos>
+			<x_pos>395</x_pos>
+			<y_pos>469</y_pos>
 			<wlan_id>154</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -5687,8 +5687,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>137</x_pos>
-			<y_pos>618</y_pos>
+			<x_pos>191</x_pos>
+			<y_pos>969</y_pos>
 			<wlan_id>155</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -5724,8 +5724,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>377</x_pos>
-			<y_pos>96</y_pos>
+			<x_pos>334</x_pos>
+			<y_pos>490</y_pos>
 			<wlan_id>156</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -5761,8 +5761,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>20</x_pos>
-			<y_pos>429</y_pos>
+			<x_pos>626</x_pos>
+			<y_pos>387</y_pos>
 			<wlan_id>157</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -5797,8 +5797,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>845</x_pos>
-			<y_pos>748</y_pos>
+			<x_pos>499</x_pos>
+			<y_pos>151</y_pos>
 			<wlan_id>158</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -5834,8 +5834,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>15</x_pos>
-			<y_pos>443</y_pos>
+			<x_pos>577</x_pos>
+			<y_pos>983</y_pos>
 			<wlan_id>159</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -5871,8 +5871,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>98</x_pos>
-			<y_pos>305</y_pos>
+			<x_pos>770</x_pos>
+			<y_pos>408</y_pos>
 			<wlan_id>160</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -5908,8 +5908,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>895</x_pos>
-			<y_pos>922</y_pos>
+			<x_pos>606</x_pos>
+			<y_pos>105</y_pos>
 			<wlan_id>161</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -5944,8 +5944,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>436</x_pos>
-			<y_pos>904</y_pos>
+			<x_pos>936</x_pos>
+			<y_pos>705</y_pos>
 			<wlan_id>162</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -5981,8 +5981,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>427</x_pos>
-			<y_pos>632</y_pos>
+			<x_pos>673</x_pos>
+			<y_pos>871</y_pos>
 			<wlan_id>163</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -6018,8 +6018,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>762</x_pos>
-			<y_pos>863</y_pos>
+			<x_pos>305</x_pos>
+			<y_pos>951</y_pos>
 			<wlan_id>164</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -6055,8 +6055,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>218</x_pos>
-			<y_pos>134</y_pos>
+			<x_pos>66</x_pos>
+			<y_pos>187</y_pos>
 			<wlan_id>165</wlan_id>
 			<level>4</level>			<attractiveness>1</attractiveness>
 			<wap>true</wap>
@@ -6091,8 +6091,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>142</x_pos>
-			<y_pos>282</y_pos>
+			<x_pos>620</x_pos>
+			<y_pos>409</y_pos>
 			<wlan_id>166</wlan_id>
 			<level>3</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -6127,8 +6127,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>867</x_pos>
-			<y_pos>587</y_pos>
+			<x_pos>389</x_pos>
+			<y_pos>885</y_pos>
 			<wlan_id>167</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -6163,8 +6163,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>495</x_pos>
-			<y_pos>314</y_pos>
+			<x_pos>222</x_pos>
+			<y_pos>598</y_pos>
 			<wlan_id>168</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -6199,8 +6199,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>722</x_pos>
-			<y_pos>399</y_pos>
+			<x_pos>354</x_pos>
+			<y_pos>336</y_pos>
 			<wlan_id>169</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -6236,8 +6236,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>346</x_pos>
-			<y_pos>334</y_pos>
+			<x_pos>84</x_pos>
+			<y_pos>442</y_pos>
 			<wlan_id>170</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -6273,8 +6273,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>377</x_pos>
-			<y_pos>967</y_pos>
+			<x_pos>482</x_pos>
+			<y_pos>703</y_pos>
 			<wlan_id>171</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -6310,8 +6310,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>183</x_pos>
-			<y_pos>33</y_pos>
+			<x_pos>297</x_pos>
+			<y_pos>616</y_pos>
 			<wlan_id>172</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -6346,8 +6346,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>536</x_pos>
-			<y_pos>58</y_pos>
+			<x_pos>826</x_pos>
+			<y_pos>896</y_pos>
 			<wlan_id>173</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -6383,8 +6383,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>252</x_pos>
-			<y_pos>193</y_pos>
+			<x_pos>810</x_pos>
+			<y_pos>207</y_pos>
 			<wlan_id>174</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -6420,8 +6420,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>17</x_pos>
-			<y_pos>106</y_pos>
+			<x_pos>765</x_pos>
+			<y_pos>204</y_pos>
 			<wlan_id>175</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -6457,8 +6457,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>553</x_pos>
-			<y_pos>541</y_pos>
+			<x_pos>760</x_pos>
+			<y_pos>594</y_pos>
 			<wlan_id>176</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -6493,8 +6493,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>983</x_pos>
-			<y_pos>812</y_pos>
+			<x_pos>831</x_pos>
+			<y_pos>171</y_pos>
 			<wlan_id>177</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -6530,8 +6530,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>374</x_pos>
-			<y_pos>592</y_pos>
+			<x_pos>515</x_pos>
+			<y_pos>692</y_pos>
 			<wlan_id>178</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -6567,8 +6567,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>497</x_pos>
-			<y_pos>559</y_pos>
+			<x_pos>475</x_pos>
+			<y_pos>202</y_pos>
 			<wlan_id>179</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -6604,8 +6604,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>993</x_pos>
-			<y_pos>848</y_pos>
+			<x_pos>630</x_pos>
+			<y_pos>522</y_pos>
 			<wlan_id>180</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -6640,8 +6640,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>822</x_pos>
-			<y_pos>992</y_pos>
+			<x_pos>566</x_pos>
+			<y_pos>303</y_pos>
 			<wlan_id>181</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -6676,8 +6676,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>14</x_pos>
-			<y_pos>85</y_pos>
+			<x_pos>292</x_pos>
+			<y_pos>431</y_pos>
 			<wlan_id>182</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -6713,8 +6713,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>977</x_pos>
-			<y_pos>817</y_pos>
+			<x_pos>259</x_pos>
+			<y_pos>779</y_pos>
 			<wlan_id>183</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -6750,8 +6750,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>434</x_pos>
-			<y_pos>668</y_pos>
+			<x_pos>452</x_pos>
+			<y_pos>91</y_pos>
 			<wlan_id>184</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -6787,8 +6787,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>313</x_pos>
-			<y_pos>930</y_pos>
+			<x_pos>589</x_pos>
+			<y_pos>279</y_pos>
 			<wlan_id>185</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -6823,8 +6823,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>694</x_pos>
-			<y_pos>49</y_pos>
+			<x_pos>776</x_pos>
+			<y_pos>887</y_pos>
 			<wlan_id>186</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -6860,8 +6860,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>324</x_pos>
-			<y_pos>501</y_pos>
+			<x_pos>518</x_pos>
+			<y_pos>88</y_pos>
 			<wlan_id>187</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -6897,8 +6897,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>881</x_pos>
-			<y_pos>637</y_pos>
+			<x_pos>745</x_pos>
+			<y_pos>166</y_pos>
 			<wlan_id>188</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -6934,8 +6934,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>442</x_pos>
-			<y_pos>515</y_pos>
+			<x_pos>434</x_pos>
+			<y_pos>128</y_pos>
 			<wlan_id>189</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -6970,8 +6970,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>746</x_pos>
-			<y_pos>203</y_pos>
+			<x_pos>740</x_pos>
+			<y_pos>315</y_pos>
 			<wlan_id>190</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -7007,8 +7007,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>333</x_pos>
-			<y_pos>581</y_pos>
+			<x_pos>73</x_pos>
+			<y_pos>768</y_pos>
 			<wlan_id>191</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -7044,8 +7044,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>419</x_pos>
-			<y_pos>887</y_pos>
+			<x_pos>667</x_pos>
+			<y_pos>627</y_pos>
 			<wlan_id>192</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -7081,8 +7081,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>79</x_pos>
-			<y_pos>525</y_pos>
+			<x_pos>629</x_pos>
+			<y_pos>137</y_pos>
 			<wlan_id>193</wlan_id>
 			<level>3</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -7117,8 +7117,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>508</x_pos>
-			<y_pos>636</y_pos>
+			<x_pos>787</x_pos>
+			<y_pos>429</y_pos>
 			<wlan_id>194</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -7153,8 +7153,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>677</x_pos>
-			<y_pos>416</y_pos>
+			<x_pos>376</x_pos>
+			<y_pos>330</y_pos>
 			<wlan_id>195</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -7189,8 +7189,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>788</x_pos>
-			<y_pos>593</y_pos>
+			<x_pos>697</x_pos>
+			<y_pos>5</y_pos>
 			<wlan_id>196</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -7226,8 +7226,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>487</x_pos>
-			<y_pos>146</y_pos>
+			<x_pos>471</x_pos>
+			<y_pos>576</y_pos>
 			<wlan_id>197</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -7263,8 +7263,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>850</x_pos>
-			<y_pos>591</y_pos>
+			<x_pos>36</x_pos>
+			<y_pos>438</y_pos>
 			<wlan_id>198</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -7300,8 +7300,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>625</x_pos>
-			<y_pos>681</y_pos>
+			<x_pos>740</x_pos>
+			<y_pos>162</y_pos>
 			<wlan_id>199</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -7336,8 +7336,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>843</x_pos>
-			<y_pos>353</y_pos>
+			<x_pos>381</x_pos>
+			<y_pos>615</y_pos>
 			<wlan_id>200</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -7373,8 +7373,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>802</x_pos>
-			<y_pos>368</y_pos>
+			<x_pos>143</x_pos>
+			<y_pos>696</y_pos>
 			<wlan_id>201</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -7410,8 +7410,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>975</x_pos>
-			<y_pos>473</y_pos>
+			<x_pos>979</x_pos>
+			<y_pos>266</y_pos>
 			<wlan_id>202</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -7447,8 +7447,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>774</x_pos>
-			<y_pos>464</y_pos>
+			<x_pos>312</x_pos>
+			<y_pos>21</y_pos>
 			<wlan_id>203</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -7483,8 +7483,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>494</x_pos>
-			<y_pos>516</y_pos>
+			<x_pos>395</x_pos>
+			<y_pos>130</y_pos>
 			<wlan_id>204</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -7520,8 +7520,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>406</x_pos>
-			<y_pos>181</y_pos>
+			<x_pos>30</x_pos>
+			<y_pos>999</y_pos>
 			<wlan_id>205</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -7557,8 +7557,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>703</x_pos>
-			<y_pos>838</y_pos>
+			<x_pos>905</x_pos>
+			<y_pos>15</y_pos>
 			<wlan_id>206</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -7594,8 +7594,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>331</x_pos>
-			<y_pos>96</y_pos>
+			<x_pos>754</x_pos>
+			<y_pos>141</y_pos>
 			<wlan_id>207</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -7630,8 +7630,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>957</x_pos>
-			<y_pos>830</y_pos>
+			<x_pos>492</x_pos>
+			<y_pos>775</y_pos>
 			<wlan_id>208</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -7666,8 +7666,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>311</x_pos>
-			<y_pos>735</y_pos>
+			<x_pos>330</x_pos>
+			<y_pos>33</y_pos>
 			<wlan_id>209</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -7703,8 +7703,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>704</x_pos>
-			<y_pos>345</y_pos>
+			<x_pos>557</x_pos>
+			<y_pos>11</y_pos>
 			<wlan_id>210</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -7740,8 +7740,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>712</x_pos>
-			<y_pos>506</y_pos>
+			<x_pos>868</x_pos>
+			<y_pos>345</y_pos>
 			<wlan_id>211</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -7777,8 +7777,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>383</x_pos>
-			<y_pos>2</y_pos>
+			<x_pos>102</x_pos>
+			<y_pos>595</y_pos>
 			<wlan_id>212</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -7813,8 +7813,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>967</x_pos>
-			<y_pos>908</y_pos>
+			<x_pos>307</x_pos>
+			<y_pos>221</y_pos>
 			<wlan_id>213</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -7850,8 +7850,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>366</x_pos>
-			<y_pos>902</y_pos>
+			<x_pos>933</x_pos>
+			<y_pos>963</y_pos>
 			<wlan_id>214</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -7887,8 +7887,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>467</x_pos>
-			<y_pos>164</y_pos>
+			<x_pos>629</x_pos>
+			<y_pos>777</y_pos>
 			<wlan_id>215</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -7924,8 +7924,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>222</x_pos>
-			<y_pos>59</y_pos>
+			<x_pos>624</x_pos>
+			<y_pos>481</y_pos>
 			<wlan_id>216</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -7960,8 +7960,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>135</x_pos>
-			<y_pos>942</y_pos>
+			<x_pos>779</x_pos>
+			<y_pos>472</y_pos>
 			<wlan_id>217</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -7997,8 +7997,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>288</x_pos>
-			<y_pos>507</y_pos>
+			<x_pos>389</x_pos>
+			<y_pos>93</y_pos>
 			<wlan_id>218</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -8034,8 +8034,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>815</x_pos>
-			<y_pos>898</y_pos>
+			<x_pos>342</x_pos>
+			<y_pos>144</y_pos>
 			<wlan_id>219</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -8071,8 +8071,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>883</x_pos>
-			<y_pos>600</y_pos>
+			<x_pos>692</x_pos>
+			<y_pos>900</y_pos>
 			<wlan_id>220</wlan_id>
 			<level>3</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -8107,8 +8107,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>707</x_pos>
-			<y_pos>83</y_pos>
+			<x_pos>697</x_pos>
+			<y_pos>580</y_pos>
 			<wlan_id>221</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -8143,8 +8143,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>572</x_pos>
-			<y_pos>514</y_pos>
+			<x_pos>457</x_pos>
+			<y_pos>261</y_pos>
 			<wlan_id>222</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -8179,8 +8179,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>299</x_pos>
-			<y_pos>146</y_pos>
+			<x_pos>914</x_pos>
+			<y_pos>588</y_pos>
 			<wlan_id>223</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -8216,8 +8216,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>526</x_pos>
-			<y_pos>321</y_pos>
+			<x_pos>954</x_pos>
+			<y_pos>516</y_pos>
 			<wlan_id>224</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -8253,8 +8253,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>640</x_pos>
-			<y_pos>394</y_pos>
+			<x_pos>908</x_pos>
+			<y_pos>671</y_pos>
 			<wlan_id>225</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -8290,8 +8290,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>392</x_pos>
-			<y_pos>313</y_pos>
+			<x_pos>31</x_pos>
+			<y_pos>443</y_pos>
 			<wlan_id>226</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -8326,8 +8326,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>337</x_pos>
-			<y_pos>443</y_pos>
+			<x_pos>449</x_pos>
+			<y_pos>578</y_pos>
 			<wlan_id>227</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -8363,8 +8363,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>84</x_pos>
-			<y_pos>416</y_pos>
+			<x_pos>151</x_pos>
+			<y_pos>144</y_pos>
 			<wlan_id>228</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -8400,8 +8400,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>373</x_pos>
-			<y_pos>176</y_pos>
+			<x_pos>453</x_pos>
+			<y_pos>190</y_pos>
 			<wlan_id>229</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -8437,8 +8437,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>539</x_pos>
-			<y_pos>669</y_pos>
+			<x_pos>843</x_pos>
+			<y_pos>91</y_pos>
 			<wlan_id>230</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -8473,8 +8473,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>676</x_pos>
-			<y_pos>183</y_pos>
+			<x_pos>639</x_pos>
+			<y_pos>437</y_pos>
 			<wlan_id>231</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -8510,8 +8510,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>821</x_pos>
-			<y_pos>715</y_pos>
+			<x_pos>525</x_pos>
+			<y_pos>738</y_pos>
 			<wlan_id>232</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -8547,8 +8547,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>397</x_pos>
-			<y_pos>656</y_pos>
+			<x_pos>986</x_pos>
+			<y_pos>192</y_pos>
 			<wlan_id>233</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -8584,8 +8584,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>895</x_pos>
-			<y_pos>190</y_pos>
+			<x_pos>376</x_pos>
+			<y_pos>218</y_pos>
 			<wlan_id>234</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -8620,8 +8620,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>38</x_pos>
-			<y_pos>980</y_pos>
+			<x_pos>685</x_pos>
+			<y_pos>393</y_pos>
 			<wlan_id>235</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -8656,8 +8656,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>30</x_pos>
-			<y_pos>684</y_pos>
+			<x_pos>842</x_pos>
+			<y_pos>333</y_pos>
 			<wlan_id>236</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -8693,8 +8693,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>849</x_pos>
-			<y_pos>892</y_pos>
+			<x_pos>181</x_pos>
+			<y_pos>936</y_pos>
 			<wlan_id>237</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -8730,8 +8730,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>62</x_pos>
-			<y_pos>696</y_pos>
+			<x_pos>635</x_pos>
+			<y_pos>263</y_pos>
 			<wlan_id>238</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -8767,8 +8767,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>461</x_pos>
-			<y_pos>145</y_pos>
+			<x_pos>707</x_pos>
+			<y_pos>280</y_pos>
 			<wlan_id>239</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -8803,8 +8803,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>693</x_pos>
-			<y_pos>636</y_pos>
+			<x_pos>575</x_pos>
+			<y_pos>158</y_pos>
 			<wlan_id>240</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -8840,8 +8840,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>293</x_pos>
-			<y_pos>43</y_pos>
+			<x_pos>206</x_pos>
+			<y_pos>36</y_pos>
 			<wlan_id>241</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -8877,8 +8877,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>574</x_pos>
-			<y_pos>433</y_pos>
+			<x_pos>432</x_pos>
+			<y_pos>53</y_pos>
 			<wlan_id>242</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -8914,8 +8914,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>113</x_pos>
-			<y_pos>118</y_pos>
+			<x_pos>873</x_pos>
+			<y_pos>271</y_pos>
 			<wlan_id>243</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -8950,8 +8950,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>185</x_pos>
-			<y_pos>783</y_pos>
+			<x_pos>16</x_pos>
+			<y_pos>345</y_pos>
 			<wlan_id>244</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -8987,8 +8987,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>70</x_pos>
-			<y_pos>456</y_pos>
+			<x_pos>629</x_pos>
+			<y_pos>680</y_pos>
 			<wlan_id>245</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -9024,8 +9024,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>423</x_pos>
-			<y_pos>412</y_pos>
+			<x_pos>89</x_pos>
+			<y_pos>430</y_pos>
 			<wlan_id>246</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -9061,8 +9061,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>148</x_pos>
-			<y_pos>218</y_pos>
+			<x_pos>181</x_pos>
+			<y_pos>65</y_pos>
 			<wlan_id>247</wlan_id>
 			<level>4</level>			<attractiveness>1</attractiveness>
 			<wap>true</wap>
@@ -9097,8 +9097,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>357</x_pos>
-			<y_pos>968</y_pos>
+			<x_pos>365</x_pos>
+			<y_pos>926</y_pos>
 			<wlan_id>248</wlan_id>
 			<level>3</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -9133,8 +9133,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>873</x_pos>
-			<y_pos>228</y_pos>
+			<x_pos>333</x_pos>
+			<y_pos>654</y_pos>
 			<wlan_id>249</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -9169,8 +9169,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>848</x_pos>
-			<y_pos>335</y_pos>
+			<x_pos>733</x_pos>
+			<y_pos>358</y_pos>
 			<wlan_id>250</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -9205,8 +9205,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>995</x_pos>
-			<y_pos>619</y_pos>
+			<x_pos>404</x_pos>
+			<y_pos>797</y_pos>
 			<wlan_id>251</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -9242,8 +9242,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>579</x_pos>
-			<y_pos>221</y_pos>
+			<x_pos>81</x_pos>
+			<y_pos>66</y_pos>
 			<wlan_id>252</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -9279,8 +9279,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>427</x_pos>
-			<y_pos>171</y_pos>
+			<x_pos>310</x_pos>
+			<y_pos>199</y_pos>
 			<wlan_id>253</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -9316,8 +9316,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>588</x_pos>
-			<y_pos>854</y_pos>
+			<x_pos>578</x_pos>
+			<y_pos>582</y_pos>
 			<wlan_id>254</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -9352,8 +9352,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>248</x_pos>
-			<y_pos>329</y_pos>
+			<x_pos>778</x_pos>
+			<y_pos>658</y_pos>
 			<wlan_id>255</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -9389,8 +9389,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>573</x_pos>
-			<y_pos>476</y_pos>
+			<x_pos>13</x_pos>
+			<y_pos>723</y_pos>
 			<wlan_id>256</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -9426,8 +9426,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>433</x_pos>
-			<y_pos>371</y_pos>
+			<x_pos>415</x_pos>
+			<y_pos>929</y_pos>
 			<wlan_id>257</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -9463,8 +9463,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>69</x_pos>
-			<y_pos>155</y_pos>
+			<x_pos>870</x_pos>
+			<y_pos>143</y_pos>
 			<wlan_id>258</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -9499,8 +9499,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>510</x_pos>
-			<y_pos>919</y_pos>
+			<x_pos>667</x_pos>
+			<y_pos>502</y_pos>
 			<wlan_id>259</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -9536,8 +9536,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>125</x_pos>
-			<y_pos>73</y_pos>
+			<x_pos>127</x_pos>
+			<y_pos>170</y_pos>
 			<wlan_id>260</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -9573,8 +9573,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>160</x_pos>
-			<y_pos>741</y_pos>
+			<x_pos>434</x_pos>
+			<y_pos>340</y_pos>
 			<wlan_id>261</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -9610,8 +9610,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>217</x_pos>
-			<y_pos>99</y_pos>
+			<x_pos>386</x_pos>
+			<y_pos>331</y_pos>
 			<wlan_id>262</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -9646,8 +9646,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>622</x_pos>
-			<y_pos>113</y_pos>
+			<x_pos>649</x_pos>
+			<y_pos>165</y_pos>
 			<wlan_id>263</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -9682,8 +9682,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>994</x_pos>
-			<y_pos>914</y_pos>
+			<x_pos>829</x_pos>
+			<y_pos>75</y_pos>
 			<wlan_id>264</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -9719,8 +9719,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>338</x_pos>
-			<y_pos>270</y_pos>
+			<x_pos>65</x_pos>
+			<y_pos>634</y_pos>
 			<wlan_id>265</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -9756,8 +9756,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>866</x_pos>
-			<y_pos>411</y_pos>
+			<x_pos>666</x_pos>
+			<y_pos>880</y_pos>
 			<wlan_id>266</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -9793,8 +9793,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>906</x_pos>
-			<y_pos>296</y_pos>
+			<x_pos>176</x_pos>
+			<y_pos>525</y_pos>
 			<wlan_id>267</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -9829,8 +9829,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>618</x_pos>
-			<y_pos>371</y_pos>
+			<x_pos>200</x_pos>
+			<y_pos>78</y_pos>
 			<wlan_id>268</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -9866,8 +9866,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>239</x_pos>
-			<y_pos>871</y_pos>
+			<x_pos>656</x_pos>
+			<y_pos>899</y_pos>
 			<wlan_id>269</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -9903,8 +9903,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>964</x_pos>
-			<y_pos>660</y_pos>
+			<x_pos>373</x_pos>
+			<y_pos>476</y_pos>
 			<wlan_id>270</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -9940,8 +9940,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>821</x_pos>
-			<y_pos>908</y_pos>
+			<x_pos>966</x_pos>
+			<y_pos>41</y_pos>
 			<wlan_id>271</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -9976,8 +9976,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>433</x_pos>
-			<y_pos>329</y_pos>
+			<x_pos>656</x_pos>
+			<y_pos>64</y_pos>
 			<wlan_id>272</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -10013,8 +10013,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>90</x_pos>
-			<y_pos>25</y_pos>
+			<x_pos>802</x_pos>
+			<y_pos>858</y_pos>
 			<wlan_id>273</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -10050,8 +10050,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>31</x_pos>
-			<y_pos>7</y_pos>
+			<x_pos>460</x_pos>
+			<y_pos>900</y_pos>
 			<wlan_id>274</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -10087,8 +10087,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>238</x_pos>
-			<y_pos>188</y_pos>
+			<x_pos>883</x_pos>
+			<y_pos>356</y_pos>
 			<wlan_id>275</wlan_id>
 			<level>3</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -10123,8 +10123,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>901</x_pos>
-			<y_pos>956</y_pos>
+			<x_pos>831</x_pos>
+			<y_pos>560</y_pos>
 			<wlan_id>276</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -10159,8 +10159,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>229</x_pos>
-			<y_pos>628</y_pos>
+			<x_pos>143</x_pos>
+			<y_pos>726</y_pos>
 			<wlan_id>277</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -10195,8 +10195,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>584</x_pos>
-			<y_pos>969</y_pos>
+			<x_pos>23</x_pos>
+			<y_pos>358</y_pos>
 			<wlan_id>278</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -10232,8 +10232,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>372</x_pos>
-			<y_pos>297</y_pos>
+			<x_pos>807</x_pos>
+			<y_pos>587</y_pos>
 			<wlan_id>279</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -10269,8 +10269,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>563</x_pos>
-			<y_pos>82</y_pos>
+			<x_pos>714</x_pos>
+			<y_pos>958</y_pos>
 			<wlan_id>280</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -10306,8 +10306,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>620</x_pos>
-			<y_pos>728</y_pos>
+			<x_pos>965</x_pos>
+			<y_pos>907</y_pos>
 			<wlan_id>281</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -10342,8 +10342,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>470</x_pos>
-			<y_pos>690</y_pos>
+			<x_pos>39</x_pos>
+			<y_pos>830</y_pos>
 			<wlan_id>282</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -10379,8 +10379,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>619</x_pos>
-			<y_pos>148</y_pos>
+			<x_pos>183</x_pos>
+			<y_pos>185</y_pos>
 			<wlan_id>283</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -10416,8 +10416,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>717</x_pos>
-			<y_pos>287</y_pos>
+			<x_pos>321</x_pos>
+			<y_pos>506</y_pos>
 			<wlan_id>284</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -10453,8 +10453,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>652</x_pos>
-			<y_pos>78</y_pos>
+			<x_pos>453</x_pos>
+			<y_pos>545</y_pos>
 			<wlan_id>285</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -10489,8 +10489,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>341</x_pos>
-			<y_pos>440</y_pos>
+			<x_pos>366</x_pos>
+			<y_pos>496</y_pos>
 			<wlan_id>286</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -10526,8 +10526,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>838</x_pos>
-			<y_pos>475</y_pos>
+			<x_pos>241</x_pos>
+			<y_pos>486</y_pos>
 			<wlan_id>287</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -10563,8 +10563,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>537</x_pos>
-			<y_pos>71</y_pos>
+			<x_pos>450</x_pos>
+			<y_pos>247</y_pos>
 			<wlan_id>288</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -10600,8 +10600,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>336</x_pos>
-			<y_pos>669</y_pos>
+			<x_pos>688</x_pos>
+			<y_pos>179</y_pos>
 			<wlan_id>289</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -10636,8 +10636,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>693</x_pos>
-			<y_pos>349</y_pos>
+			<x_pos>687</x_pos>
+			<y_pos>555</y_pos>
 			<wlan_id>290</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -10672,8 +10672,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>833</x_pos>
-			<y_pos>946</y_pos>
+			<x_pos>112</x_pos>
+			<y_pos>348</y_pos>
 			<wlan_id>291</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -10709,8 +10709,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>728</x_pos>
-			<y_pos>708</y_pos>
+			<x_pos>282</x_pos>
+			<y_pos>361</y_pos>
 			<wlan_id>292</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -10746,8 +10746,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>329</x_pos>
-			<y_pos>689</y_pos>
+			<x_pos>739</x_pos>
+			<y_pos>5</y_pos>
 			<wlan_id>293</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -10783,8 +10783,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>214</x_pos>
-			<y_pos>610</y_pos>
+			<x_pos>290</x_pos>
+			<y_pos>8</y_pos>
 			<wlan_id>294</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -10819,8 +10819,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>56</x_pos>
-			<y_pos>372</y_pos>
+			<x_pos>299</x_pos>
+			<y_pos>481</y_pos>
 			<wlan_id>295</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -10856,8 +10856,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>38</x_pos>
-			<y_pos>662</y_pos>
+			<x_pos>891</x_pos>
+			<y_pos>591</y_pos>
 			<wlan_id>296</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -10893,8 +10893,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>394</x_pos>
-			<y_pos>563</y_pos>
+			<x_pos>449</x_pos>
+			<y_pos>508</y_pos>
 			<wlan_id>297</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -10930,8 +10930,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>361</x_pos>
-			<y_pos>629</y_pos>
+			<x_pos>866</x_pos>
+			<y_pos>222</y_pos>
 			<wlan_id>298</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -10966,8 +10966,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>814</x_pos>
-			<y_pos>318</y_pos>
+			<x_pos>238</x_pos>
+			<y_pos>369</y_pos>
 			<wlan_id>299</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -11003,8 +11003,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>216</x_pos>
-			<y_pos>666</y_pos>
+			<x_pos>922</x_pos>
+			<y_pos>706</y_pos>
 			<wlan_id>300</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -11040,8 +11040,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>216</x_pos>
-			<y_pos>9</y_pos>
+			<x_pos>759</x_pos>
+			<y_pos>450</y_pos>
 			<wlan_id>301</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -11077,8 +11077,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>404</x_pos>
-			<y_pos>871</y_pos>
+			<x_pos>716</x_pos>
+			<y_pos>326</y_pos>
 			<wlan_id>302</wlan_id>
 			<level>3</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -11113,8 +11113,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>479</x_pos>
-			<y_pos>652</y_pos>
+			<x_pos>908</x_pos>
+			<y_pos>902</y_pos>
 			<wlan_id>303</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -11149,8 +11149,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>249</x_pos>
-			<y_pos>828</y_pos>
+			<x_pos>995</x_pos>
+			<y_pos>176</y_pos>
 			<wlan_id>304</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -11185,8 +11185,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>713</x_pos>
-			<y_pos>294</y_pos>
+			<x_pos>675</x_pos>
+			<y_pos>487</y_pos>
 			<wlan_id>305</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -11222,8 +11222,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>378</x_pos>
-			<y_pos>392</y_pos>
+			<x_pos>30</x_pos>
+			<y_pos>783</y_pos>
 			<wlan_id>306</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -11259,8 +11259,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>486</x_pos>
-			<y_pos>854</y_pos>
+			<x_pos>738</x_pos>
+			<y_pos>99</y_pos>
 			<wlan_id>307</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -11296,8 +11296,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>953</x_pos>
-			<y_pos>392</y_pos>
+			<x_pos>597</x_pos>
+			<y_pos>516</y_pos>
 			<wlan_id>308</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -11332,8 +11332,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>224</x_pos>
-			<y_pos>101</y_pos>
+			<x_pos>210</x_pos>
+			<y_pos>909</y_pos>
 			<wlan_id>309</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -11369,8 +11369,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>646</x_pos>
-			<y_pos>278</y_pos>
+			<x_pos>164</x_pos>
+			<y_pos>679</y_pos>
 			<wlan_id>310</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -11406,8 +11406,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>136</x_pos>
-			<y_pos>115</y_pos>
+			<x_pos>247</x_pos>
+			<y_pos>548</y_pos>
 			<wlan_id>311</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -11443,8 +11443,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>256</x_pos>
-			<y_pos>992</y_pos>
+			<x_pos>519</x_pos>
+			<y_pos>984</y_pos>
 			<wlan_id>312</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -11479,8 +11479,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>235</x_pos>
-			<y_pos>685</y_pos>
+			<x_pos>922</x_pos>
+			<y_pos>255</y_pos>
 			<wlan_id>313</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -11516,8 +11516,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>45</x_pos>
-			<y_pos>506</y_pos>
+			<x_pos>57</x_pos>
+			<y_pos>562</y_pos>
 			<wlan_id>314</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -11553,8 +11553,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>465</x_pos>
-			<y_pos>539</y_pos>
+			<x_pos>174</x_pos>
+			<y_pos>455</y_pos>
 			<wlan_id>315</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -11590,8 +11590,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>756</x_pos>
-			<y_pos>538</y_pos>
+			<x_pos>108</x_pos>
+			<y_pos>567</y_pos>
 			<wlan_id>316</wlan_id>
 			<level>2</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -11626,8 +11626,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>529</x_pos>
-			<y_pos>262</y_pos>
+			<x_pos>873</x_pos>
+			<y_pos>814</y_pos>
 			<wlan_id>317</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -11662,8 +11662,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>813</x_pos>
-			<y_pos>937</y_pos>
+			<x_pos>198</x_pos>
+			<y_pos>882</y_pos>
 			<wlan_id>318</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -11699,8 +11699,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>710</x_pos>
-			<y_pos>997</y_pos>
+			<x_pos>53</x_pos>
+			<y_pos>406</y_pos>
 			<wlan_id>319</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -11736,8 +11736,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>375</x_pos>
-			<y_pos>80</y_pos>
+			<x_pos>877</x_pos>
+			<y_pos>467</y_pos>
 			<wlan_id>320</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -11773,8 +11773,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>908</x_pos>
-			<y_pos>778</y_pos>
+			<x_pos>121</x_pos>
+			<y_pos>262</y_pos>
 			<wlan_id>321</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -11809,8 +11809,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>751</x_pos>
-			<y_pos>458</y_pos>
+			<x_pos>825</x_pos>
+			<y_pos>368</y_pos>
 			<wlan_id>322</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -11846,8 +11846,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>130</x_pos>
-			<y_pos>430</y_pos>
+			<x_pos>452</x_pos>
+			<y_pos>254</y_pos>
 			<wlan_id>323</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -11883,8 +11883,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>210</x_pos>
-			<y_pos>270</y_pos>
+			<x_pos>253</x_pos>
+			<y_pos>503</y_pos>
 			<wlan_id>324</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -11920,8 +11920,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>873</x_pos>
-			<y_pos>507</y_pos>
+			<x_pos>83</x_pos>
+			<y_pos>937</y_pos>
 			<wlan_id>325</wlan_id>
 			<level>1</level>			<attractiveness>1</attractiveness>
 			<wap>false</wap>
@@ -11956,8 +11956,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>333</x_pos>
-			<y_pos>481</y_pos>
+			<x_pos>237</x_pos>
+			<y_pos>891</y_pos>
 			<wlan_id>326</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -11993,8 +11993,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>217</x_pos>
-			<y_pos>656</y_pos>
+			<x_pos>369</x_pos>
+			<y_pos>725</y_pos>
 			<wlan_id>327</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
@@ -12030,8 +12030,8 @@
 		<costPerMem>0.05</costPerMem>
 		<costPerStorage>0.1</costPerStorage>
 <location>
-			<x_pos>896</x_pos>
-			<y_pos>282</y_pos>
+			<x_pos>508</x_pos>
+			<y_pos>140</y_pos>
 			<wlan_id>328</wlan_id>
 			<level>0</level>
 			<attractiveness>3</attractiveness>
