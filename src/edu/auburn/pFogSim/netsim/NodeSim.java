@@ -17,7 +17,7 @@ public class NodeSim {
 	private int level;
 	private boolean wifiAccess;
 	private boolean moving;
-	Pair<Integer, Integer> vector;
+	private Pair<Integer, Integer> vector;
 	private int wlan_id;
 	/**
 	 * Constructor
@@ -229,16 +229,25 @@ public class NodeSim {
 	public boolean isWifiAcc() {
 		return wifiAccess;
 	}
-	
+	/**
+	 * is this a mobile fog device
+	 * @return
+	 */
 	public boolean isMoving() {
 		return moving;
 	}
-	
+	/**
+	 * set the motion vector for this device, if it is mobile
+	 * @param _vector
+	 */
 	public void setVector(Pair<Integer, Integer> _vector)
 	{
 		this.vector = _vector;
 	}
-	
+	/**
+	 * get the motion vector for this device, if it is mobile
+	 * @return
+	 */
 	public Pair<Integer, Integer> getVector() 
 	{
 		return this.vector;
@@ -250,17 +259,25 @@ public class NodeSim {
 	public void setWifi(boolean wifi) {
 		wifiAccess = wifi;
 	}
-
+	/**
+	 * set the wlanid associated with this node
+	 * @param id
+	 */
 	public void setWlanId(int id)
 	{
 		this.wlan_id = id;
 	}
-	
+	/**
+	 * get the wlanid associated with this node
+	 * @return
+	 */
 	public int getWlanId()
 	{
 		return this.wlan_id;
 	}
-	
+	/**
+	 * toString() for node returns the x and y coordinate of the node as a string of the form "x, y"
+	 */
 	public String toString() {
 		return getLocation().getKey() + ", " + getLocation().getValue();
 	}

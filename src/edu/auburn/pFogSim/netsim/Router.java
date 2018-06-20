@@ -19,7 +19,7 @@ import java.util.Comparator;
 import java.util.Set;
 
 public class Router {
-	HashMap<String, LinkedList<NodeSim>> database;
+	private HashMap<String, LinkedList<NodeSim>> database;
 	
 	public Router() {
 		database = new HashMap<String, LinkedList<NodeSim>>();
@@ -107,12 +107,12 @@ public class Router {
 	 *
 	 */
 	private class Dijkstra {
-		HashMap<Pair<NodeSim, Pair<Double, NodeSim>>, ArrayList<Pair<Double, NodeSim>>> verts;
-		HashMap<NodeSim, Pair<NodeSim, Pair<Double, NodeSim>>> getMap;
-		HashMap<Pair<Integer, Integer>, NodeSim> index;
-		PriorityQueue<Pair<NodeSim, Pair<Double, NodeSim>>> queue;
-		HashSet<Pair<NodeSim, Pair<Double, NodeSim>>> completed;
-		NodeSim src;
+		private HashMap<Pair<NodeSim, Pair<Double, NodeSim>>, ArrayList<Pair<Double, NodeSim>>> verts;
+		private HashMap<NodeSim, Pair<NodeSim, Pair<Double, NodeSim>>> getMap;
+		private HashMap<Pair<Integer, Integer>, NodeSim> index;
+		private PriorityQueue<Pair<NodeSim, Pair<Double, NodeSim>>> queue;
+		private HashSet<Pair<NodeSim, Pair<Double, NodeSim>>> completed;
+		private NodeSim src;
 		/**
 		 * constructor
 		 */
