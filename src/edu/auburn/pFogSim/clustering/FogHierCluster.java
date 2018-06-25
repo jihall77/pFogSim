@@ -14,20 +14,21 @@ public class FogHierCluster {
 	
 	public FogHierCluster(ArrayList<NodeSim> nodes) {
 		
-		HashMap<Integer, ArrayList<Pair<Integer, Integer>>> levelMap = new HashMap<Integer, ArrayList<Pair<Integer, Integer>>>();
-		int level = 1000, x_pos = -1, y_pos = -1;
-		ArrayList<Pair<Integer, Integer>> tempList;
+		HashMap<Integer, ArrayList<Pair<Double, Double>>> levelMap = new HashMap<Integer, ArrayList<Pair<Double, Double>>>();
+		int level = 1000;
+		double x_pos = -1.0, y_pos = -1.0;
+		ArrayList<Pair<Double, Double>> tempList;
 		for(int r = 0; r < 20; r++)
-			levelMap.put(r, new ArrayList<Pair<Integer, Integer>>());
+			levelMap.put(r, new ArrayList<Pair<Double, Double>>());
 		//Add all nodes to levelMap based on their level values
 		for(NodeSim node : nodes)
 		{
 			level = node.getLevel();
 			x_pos = node.getLocation().getKey();
 			y_pos = node.getLocation().getValue();
-			Pair<Integer, Integer> pair = new Pair<Integer, Integer>(x_pos, y_pos);
+			Pair<Double, Double> pair = new Pair<Double, Double>(x_pos, y_pos);
 			levelMap.get(level).add(pair);
-			
+			SimLogger.printLine("node added!");
 			/*if(levelMap.size() != 0)
 			{
 				
@@ -40,14 +41,19 @@ public class FogHierCluster {
 			//}
 		}
 		int length = levelMap.size();
-		for (int i = 0; i < length; i++) {
+		SimLogger.printLine("Length = " + length);
+		int removed = 0;
+		for (int i = 1; i < length; i++) {
 			if(levelMap.get(i).size() == 0) {
 				levelMap.remove(i);
+				removed++;
 			}
 		}
+		SimLogger.printLine("Removed = " + removed);
 		//Add all clusters we are making out of each layer to the clusterList
-		for(int leveliter = 0; leveliter < levelMap.size(); leveliter++)
+		for(int leveliter = 1; leveliter < levelMap.size(); leveliter++)
 		{
+			SimLogger.printLine("Size = " + levelMap.get(leveliter));
 			FogCluster fc = new FogCluster(levelMap.get(leveliter));
 			clusterList.add(fc);
 		}
@@ -72,8 +78,8 @@ public class FogHierCluster {
 				int clusterNumber3 = clusterList.get(j).getCluster().length;
 				int clusterNumber4 = clusterList.get(i).getCluster().length;
 				
-				Integer[][][] clusterSet3 = clusterList.get(j).getCluster();
-				Integer[][][] clusterSet4 = clusterList.get(i).getCluster();
+				Double[][][] clusterSet3 = clusterList.get(j).getCluster();
+				Double[][][] clusterSet4 = clusterList.get(i).getCluster();
 				parentCluster = new int[clusterNumber3];
 				
 				//For each cluster in lower layer, do the following
@@ -94,15 +100,15 @@ public class FogHierCluster {
 						//From each point of 'cLower' cluster
 						for (int cLoweri=0; cLoweri<clusterSet3[cLower].length; cLoweri++){
 							// Get point coordinates
-							int x1 = clusterSet3[cLower][cLoweri][0];
-							int y1 = clusterSet3[cLower][cLoweri][1];
+							double x1 = clusterSet3[cLower][cLoweri][0];
+							double y1 = clusterSet3[cLower][cLoweri][1];
 							
 							
 							//To each point of 'cUpper' cluster
 							for (int cUpperj=0; cUpperj<clusterSet4[cUpper].length; cUpperj++){
 								// Get point coordinates
-								int x2 = clusterSet4[cUpper][cUpperj][0];
-								int y2 = clusterSet4[cUpper][cUpperj][1];
+								double x2 = clusterSet4[cUpper][cUpperj][0];
+								double y2 = clusterSet4[cUpper][cUpperj][1];
 														
 								//find the distance
 								distance = Math.sqrt(((x2-x1)*(x2-x1)) + ((y2-y1)*(y2-y1)));

@@ -14,35 +14,38 @@ import edu.boun.edgecloudsim.edge_server.EdgeHost;
 public class DistRadix {
 	
 	private ArrayList<EdgeHost> input;
-	private HashMap<Pair<Integer, Integer>, EdgeHost> coordMap;
-	private HashMap<Double, Pair<Integer, Integer>> distMap;
-	private Pair<Integer, Integer> ref;
-	private ArrayList<Pair<Integer, Integer>> coords;
+	private HashMap<Pair<Double, Double>, EdgeHost> coordMap;
+	private HashMap<Double, Pair<Double, Double>> distMap;
+	private Pair<Double, Double> ref;
+	private ArrayList<Pair<Double, Double>> coords;
 	private ArrayList<Integer> distances;
 	private int[] arrgs;
 	/**
 	 * constructor
 	 * @param in
-	 * @param reference
+	 * @param pair
 	 */
-	public DistRadix(List<EdgeHost> in, Pair<Integer, Integer> reference) {
+	public DistRadix(List<EdgeHost> in, Pair<Double, Double> pair) {
 		input = new ArrayList<EdgeHost>();
-		coordMap = new HashMap<Pair<Integer, Integer>, EdgeHost>();
-		distMap = new HashMap<Double, Pair<Integer, Integer>>();
-		coords = new ArrayList<Pair<Integer, Integer>>();
+		coordMap = new HashMap<Pair<Double, Double>, EdgeHost>();
+		distMap = new HashMap<Double, Pair<Double, Double>>();
+		coords = new ArrayList<Pair<Double, Double>>();
 		distances = new ArrayList<Integer>();
 		for (EdgeHost node : in) {
 			input.add(node);
 		}
-		ref = reference;
+		ref = pair;
+	}
+	public DistRadix(ArrayList<EdgeHost> members, Pair<Double, Double> pair) {
+		// TODO Auto-generated constructor stub
 	}
 	/**
 	 * map coords to nodes
 	 */
 	private void buildCoords() {
 		for(EdgeHost node : input) {
-			coordMap.put(new Pair<Integer, Integer>(node.getLocation().getXPos(), node.getLocation().getYPos()), node);
-			coords.add(new Pair<Integer, Integer>(node.getLocation().getXPos(), node.getLocation().getYPos()));
+			coordMap.put(new Pair<Double, Double>(node.getLocation().getXPos(), node.getLocation().getYPos()), node);
+			coords.add(new Pair<Double, Double>(node.getLocation().getXPos(), node.getLocation().getYPos()));
 		}
 	}
 	/**
@@ -50,7 +53,7 @@ public class DistRadix {
 	 */
 	private void buildDist() {
 		double dist = 0;
-		for (Pair<Integer, Integer> loc : coords) {
+		for (Pair<Double, Double> loc : coords) {
 			dist = Math.sqrt((Math.pow(ref.getKey() - loc.getKey(), 2) + Math.pow(ref.getValue() - loc.getValue(), 2)));
 			dist = Math.floor(dist);
 			while(distMap.keySet().contains(dist)) {
@@ -128,7 +131,7 @@ public class DistRadix {
 	private LinkedList<EdgeHost> getList() {
 		LinkedList<EdgeHost> output = new LinkedList<EdgeHost>();
 		double dist = 0.0;
-		Pair<Integer, Integer> loc;
+		Pair<Double, Double> loc;
 		EdgeHost node;
 		for (int i = 0; i < arrgs.length; i++) {
 			dist = arrgs[i]/1000;

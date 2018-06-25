@@ -42,6 +42,7 @@ import edu.boun.edgecloudsim.task_generator.LoadGeneratorModel;
 import edu.boun.edgecloudsim.network.MM1Queue;
 import edu.boun.edgecloudsim.network.NetworkModel;
 import edu.boun.edgecloudsim.utils.EdgeTask;
+import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
 import javafx.util.Pair;
 
@@ -193,6 +194,8 @@ public class SimManager extends SimEntity {
 				//SimLogger.printLine("CHECK_ALL_VM reached");
 				int totalNumOfVm = SimSettings.getInstance().getNumOfEdgeVMs();
 				if(VmAllocationPolicy_Custom.getCreatedVmNum() != totalNumOfVm){
+					SimLogger.printLine("Total # of Vms : " + totalNumOfVm);
+					SimLogger.printLine("Vms Made : " + VmAllocationPolicy_Custom.getCreatedVmNum());
 					SimLogger.printLine("All VMs cannot be created! Terminating simulation...");
 					System.exit(0);
 				}
@@ -203,40 +206,60 @@ public class SimManager extends SimEntity {
 				schedule(getId(), SimSettings.getInstance().getVmLoadLogInterval(), GET_LOAD_LOG);
 				break;
 			case PRINT_PROGRESS:
+				//SimLogger.printLine("PrintProgress reached");
 				//Updates the positions of FOG Devices if necessary
 				HashSet<Link> links = ((MM1Queue)SimManager.getInstance().getNetworkModel()).getNetworkTopology().getLinks();
 				HashSet<NodeSim> nodes = ((MM1Queue)SimManager.getInstance().getNetworkModel()).getNetworkTopology().getNodes();
 				
 				ArrayList<Link> newLinks = new ArrayList<Link>();
 				ArrayList<NodeSim> newNodes = new ArrayList<NodeSim>();
+				ArrayList<EdgeHost> movingNodes = new ArrayList<EdgeHost>();
+				EdgeHost moving = null;
 				for(NodeSim node : nodes)
 				{
 					if(node.isMoving())
 					{
 					//Update positions
-						Pair<Integer, Integer> currentLoc = node.getLocation();
-						if(currentLoc.getKey() + node.getVector().getKey() > MAX_WIDTH) node.setVector(new Pair<Integer, Integer>(node.getVector().getKey() * -1, node.getVector().getValue()));
-						if(currentLoc.getValue() + node.getVector().getValue() > MAX_WIDTH) node.setVector(new Pair<Integer, Integer>(node.getVector().getKey(), node.getVector().getValue() * -1));
+						Pair<Double, Double> currentLoc = node.getLocation();
+						if(currentLoc.getKey() + node.getVector().getKey() > MAX_WIDTH) node.setVector(new Pair<Double, Double>(node.getVector().getKey() * -1, node.getVector().getValue()));
+						if(currentLoc.getValue() + node.getVector().getValue() > MAX_HEIGHT) node.setVector(new Pair<Double, Double>(node.getVector().getKey(), node.getVector().getValue() * -1));
 
 						//Change links
 						for(Link link : links)
 						{
-							if(link.getLeftLink() == currentLoc)
+							if(link.getLeftLink().equals(currentLoc))
 							{
 								//Sets that location to what it will be in a bit
-								link.setLeftLink(new Pair<Integer, Integer>(currentLoc.getKey() + node.getVector().getKey(), currentLoc.getValue() + node.getVector().getValue()));
+								link.setLeftLink(new Pair<Double, Double>(currentLoc.getKey() + node.getVector().getKey(), currentLoc.getValue() + node.getVector().getValue()));
+								//SimLogger.printLine("Left Link changed");
 							}
-							else if(link.getRightLink() == currentLoc)
+							else if(link.getRightLink().equals(currentLoc))
 							{
 								//Sets that location to what it will be in a bit
-								link.setRightLink(new Pair<Integer, Integer>(currentLoc.getKey() + node.getVector().getKey(), currentLoc.getValue() + node.getVector().getValue()));
-
+								link.setRightLink(new Pair<Double, Double>(currentLoc.getKey() + node.getVector().getKey(), currentLoc.getValue() + node.getVector().getValue()));
+								//SimLogger.printLine("Right Link changed");
 							}
 							
 						}
 						//Change nodes
-						node.setLocation(new Pair<Integer, Integer>(node.getLocation().getKey() + currentLoc.getKey(), node.getLocation().getValue() + currentLoc.getValue()));
+						moving = EdgeServerManager.getInstance().findHostByLoc(node.getLocation().getKey(), node.getLocation().getValue());
+						node.setLocation(new Pair<Double, Double>(currentLoc.getKey() + node.getVector().getKey(), currentLoc.getValue() + node.getVector().getValue()));
+						moving.setPlace(new Location(node.getWlanId(), node.getLocation().getKey(), node.getLocation().getValue()));
+						movingNodes.add(moving);
+						/*if(node.getWlanId() == 300) {
+							SimLogger.printLine(node.toString());
+							for (Link link : node.getEdges()) {
+								SimLogger.print(link.getLeftLink().getKey() + ", " + link.getLeftLink().getValue() + " ");
+								SimLogger.printLine(link.getRightLink().getKey() + ", " + link.getRightLink().getValue());
+							}
+						}*/
+						/*int x1 = node.getLocation().getKey();
+						int x2 = moving.getLocation().getXPos();
+						int y1 = node.getLocation().getValue();
+						int y2 = moving.getLocation().getYPos();*/
+						//SimLogger.printLine("Node location updated");
 					}
+
 					newNodes.add(node);
 				}
 				for(Link link : links)
@@ -251,9 +274,10 @@ public class SimManager extends SimEntity {
 					SimLogger.printLine("Topology is not valid");
 					System.exit(0);
 				}
+				edgeServerManager.setHosts(movingNodes);
 				//Sets network topology and uses it to make the Puddle Objects
 				((MM1Queue) SimManager.getInstance().getNetworkModel()).setNetworkTopology(networkTopology);
-				networkTopology.setPuddles(EdgeServerManager.getInstance().makePuddles(clusterObject));
+				networkTopology.setPuddles(edgeServerManager.makePuddles(clusterObject));
 				
 				//Goes through all devices and checks to see if WAP ids have changed
 				//	Currently checks devices every 12 seconds in simulation (which runs for 20mins {Duration: 0.333.. hrs})

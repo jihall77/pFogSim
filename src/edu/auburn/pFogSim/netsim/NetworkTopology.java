@@ -16,7 +16,7 @@ import javafx.util.Pair;
 public class NetworkTopology {
 	private HashSet<Link> links;
 	private HashSet<NodeSim> nodes;
-	private HashSet<Pair<Integer, Integer>> coords;
+	private HashSet<Pair<Double, Double>> coords;
 	private ArrayList<Puddle> pond;
 	/**
 	 * Constructor
@@ -26,7 +26,7 @@ public class NetworkTopology {
 	public NetworkTopology(List<NodeSim> inNodes, List<Link> inLinks) {
 		links = new HashSet<Link>();
 		nodes = new HashSet<NodeSim>();
-		coords = new HashSet<Pair<Integer, Integer>>();
+		coords = new HashSet<Pair<Double, Double>>();
 		for (NodeSim node : inNodes) {
 			addNode(node);
 		}
@@ -85,8 +85,10 @@ public class NetworkTopology {
 		try {
 			for (NodeSim node : nodes) {
 				if (node.getEdges().size() == 0) {
-					
+				    SimLogger.printLine("WlanId = " + node.getWlanId());	
 					SimLogger.printLine("false 2");
+					SimLogger.printLine(node.toString());
+					SimLogger.printLine(node.getVector().getKey() + ", " + node.getVector().getValue());
 					return false;
 				}
 			}
@@ -126,7 +128,9 @@ public class NetworkTopology {
 		try {
 			//SimLogger.printLine("for loop reached");
 			for (NodeSim node : nodes) {
-				while (node.removeLink(node.validateNode()));
+				while (node.removeLink(node.validateNode())) {
+					//SimLogger.printLine(node.toString());
+				}
 			}
 			return validateTopology();
 		}
@@ -137,12 +141,12 @@ public class NetworkTopology {
 	}
 	/**
 	 * find the node closest to the given location, intermediate method of getting node associated with mobile device<br>
-	 * @param x
-	 * @param y
+	 * @param d
+	 * @param e
 	 * @param wifi
 	 * @return the closest node to the location
 	 */
-	public NodeSim findNode(int x, int y, boolean wifi) {
+	public NodeSim findNode(double d, double e, boolean wifi) {
 		NodeSim closest = null;
 		double distanceNew = Double.MAX_VALUE;
 		double distance = Double.MAX_VALUE;
@@ -150,11 +154,11 @@ public class NetworkTopology {
 			if (wifi && !node.isWifiAcc()) {
 				continue;
 			}
-			if (x == node.getLocation().getKey() && y == node.getLocation().getValue()) {
+			if (d == node.getLocation().getKey() && e == node.getLocation().getValue()) {
 				closest = node;
 				return closest;
 			}
-			distanceNew = Math.sqrt(Math.pow((double) (x - node.getLocation().getKey()), 2) + Math.pow((double) (y - node.getLocation().getValue()), 2));
+			distanceNew = Math.sqrt(Math.pow((double) (d - node.getLocation().getKey()), 2) + Math.pow((double) (e - node.getLocation().getValue()), 2));
 			if (distanceNew < distance) {
 				distance = distanceNew;
 				closest = node;

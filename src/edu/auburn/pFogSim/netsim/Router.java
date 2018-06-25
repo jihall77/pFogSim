@@ -109,7 +109,7 @@ public class Router {
 	private class Dijkstra {
 		private HashMap<Pair<NodeSim, Pair<Double, NodeSim>>, ArrayList<Pair<Double, NodeSim>>> verts;
 		private HashMap<NodeSim, Pair<NodeSim, Pair<Double, NodeSim>>> getMap;
-		private HashMap<Pair<Integer, Integer>, NodeSim> index;
+		private HashMap<Pair<Double, Double>, NodeSim> index;
 		private PriorityQueue<Pair<NodeSim, Pair<Double, NodeSim>>> queue;
 		private HashSet<Pair<NodeSim, Pair<Double, NodeSim>>> completed;
 		private NodeSim src;
@@ -119,7 +119,7 @@ public class Router {
 		public Dijkstra() {
 			verts = new HashMap<Pair<NodeSim, Pair<Double, NodeSim>>, ArrayList<Pair<Double, NodeSim>>>();
 			getMap = new HashMap<NodeSim, Pair<NodeSim, Pair<Double, NodeSim>>>();
-			index = new HashMap<Pair<Integer, Integer>, NodeSim>();
+			index = new HashMap<Pair<Double, Double>, NodeSim>();
 			queue = new PriorityQueue<Pair<NodeSim, Pair<Double, NodeSim>>>(25, new dijkstrasComparator());
 			completed = new HashSet<Pair<NodeSim, Pair<Double, NodeSim>>>();
 		}

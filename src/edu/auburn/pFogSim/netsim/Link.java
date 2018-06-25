@@ -11,8 +11,8 @@ import javafx.util.Pair;
 
 public class Link {
 
-	private Pair<Integer, Integer> leftCoord;
-	private Pair<Integer, Integer> rightCoord;
+	private Pair<Double, Double> leftCoord;
+	private Pair<Double, Double> rightCoord;
 	private double leftLatency;
 	private double rightLatency;
 	/**
@@ -23,7 +23,7 @@ public class Link {
 	 * @param rLat
 	 * @param lLat
 	 */
-	public Link(Pair<Integer, Integer> rLink, Pair<Integer, Integer> lLink, double rLat, double lLat) {
+	public Link(Pair<Double, Double> rLink, Pair<Double, Double> lLink, double rLat, double lLat) {
 		rightCoord = rLink;
 		leftCoord = lLink;
 		rightLatency = rLat;
@@ -51,14 +51,14 @@ public class Link {
 	 * get the coords of the right node associated with this link
 	 * @return right link
 	 */
-	public Pair<Integer, Integer> getRightLink() {
+	public Pair<Double, Double> getRightLink() {
 		return rightCoord;
 	}
 	/**
 	 * get the coords of the left node associated with this link
 	 * @return left link
 	 */
-	public Pair<Integer, Integer> getLeftLink() {
+	public Pair<Double, Double> getLeftLink() {
 		return leftCoord;
 	}
 	/**
@@ -67,7 +67,7 @@ public class Link {
 	 * @param in the src coord
 	 * @return the destination coord
 	 */
-	public Pair<Integer, Integer> getOutgoingLink(Pair<Integer, Integer> in) {
+	public Pair<Double, Double> getOutgoingLink(Pair<Double, Double> in) {
 		if (in.equals(leftCoord)) {
 			return rightCoord;
 		}
@@ -84,7 +84,7 @@ public class Link {
 	 * @param in the src coord
 	 * @return latency to the destination coord
 	 */
-	public double getOutgoingLat(Pair<Integer, Integer> in) {
+	public double getOutgoingLat(Pair<Double, Double> in) {
 		if (in.equals(leftCoord)) {
 			return rightLatency;
 		}
@@ -114,14 +114,14 @@ public class Link {
 	 * @param xin
 	 * @param yin
 	 */
-	public void setLeftLink(int xin, int yin) {
-		leftCoord = new Pair<Integer, Integer>(xin, yin);
+	public void setLeftLink(double xin, double yin) {
+		leftCoord = new Pair<Double, Double>(xin, yin);
 	}
 	/**
 	 * designate the left link coord
 	 * @param in
 	 */
-	public void setLeftLink(Pair<Integer, Integer> in) {
+	public void setLeftLink(Pair<Double, Double> in) {
 		leftCoord = in;
 	}
 	/**
@@ -129,14 +129,14 @@ public class Link {
 	 * @param xin
 	 * @param yin
 	 */
-	public void setRightLink(int xin, int yin) {
-		rightCoord = new Pair<Integer, Integer>(xin, yin);
+	public void setRightLink(double xin, double yin) {
+		rightCoord = new Pair<Double, Double>(xin, yin);
 	}
 	/**
 	 * designate the right link coord
 	 * @param in
 	 */
-	public void setRightLink(Pair<Integer, Integer> in) {
+	public void setRightLink(Pair<Double, Double> in) {
 		rightCoord = in;
 	}
 	/**

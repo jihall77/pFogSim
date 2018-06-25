@@ -115,13 +115,16 @@ public class Puddle {
 	 */
 	public void setMembers(List<EdgeHost> _members) {
 		members = new ArrayList<EdgeHost>();
-		for (EdgeHost child : _members) {
-			if (child.getLevel() == getLevel()) {
-				members.add(child);
-			}
-			else {
-				//throw new BadPuddleParentageException("Child: " + child.getLevel() + ", member: " + getLevel());
-				//don't throw the exception, just skip the node...
+		if(_members.size() > 0)
+		{
+			for (EdgeHost child : _members) {
+				if (child.getLevel() == getLevel()) {
+					members.add(child);
+				}
+				else {
+					//throw new BadPuddleParentageException("Child: " + child.getLevel() + ", member: " + getLevel());
+					//don't throw the exception, just skip the node...
+				}
 			}
 		}
 	}
@@ -221,11 +224,11 @@ public class Puddle {
 	}
 	/**
 	 * get the list nodes sorted by distance from the reference point
-	 * @param ref
+	 * @param pair
 	 * @return
 	 */
-	public LinkedList<EdgeHost> getClosestNodes(Pair<Integer, Integer> ref) {
-		DistRadix rad = new DistRadix(members, ref);
+	public LinkedList<EdgeHost> getClosestNodes(Pair<Double, Double> pair) {
+		DistRadix rad = new DistRadix(members, pair);
 		LinkedList<EdgeHost> nodes = rad.sortPuddleNodes();
 		return nodes;
 	}
@@ -235,7 +238,7 @@ public class Puddle {
 	 * @return
 	 */
 	public LinkedList<EdgeHost> getClosestNodes(Location ref) {
-		return getClosestNodes(new Pair<Integer, Integer>(ref.getXPos(), ref.getYPos()));
+		return getClosestNodes(new Pair<Double, Double>(ref.getXPos(), ref.getYPos()));
 	}
 	/**
 	 * set the level of this puddle

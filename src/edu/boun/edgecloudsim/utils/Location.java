@@ -12,18 +12,18 @@ package edu.boun.edgecloudsim.utils;
 import edu.boun.edgecloudsim.core.SimSettings;
 
 public class Location {
-	private int xPos;
-	private int yPos;
+	private double xPos;
+	private double yPos;
 	private int servingWlanId;
 	SimSettings.PLACE_TYPES placeType;
-	public Location(SimSettings.PLACE_TYPES _placeType, int _servingWlanId, int _xPos, int _yPos){
+	public Location(SimSettings.PLACE_TYPES _placeType, int _servingWlanId, double _xPos, double _yPos){
 		servingWlanId = _servingWlanId;
 		placeType=_placeType;
 		xPos = _xPos;
 		yPos = _yPos;
 	}
 	
-	public Location(int _servingWlanId, int _xPos, int _yPos) {
+	public Location(int _servingWlanId, double _xPos, double _yPos) {
 		servingWlanId = _servingWlanId;
 		xPos = _xPos;
 		yPos = _yPos;
@@ -51,11 +51,11 @@ public class Location {
 		return placeType;
 	}
 	
-	public int getXPos(){
+	public double getXPos(){
 		return xPos;
 	}
 	
-	public int getYPos(){
+	public double getYPos(){
 		return yPos;
 	}
 }

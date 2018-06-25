@@ -71,7 +71,7 @@ public class NomadicMobility extends MobilityModel {
 				//The pairs' value = Pair<Boolean, Pair<Integer, Integer>>
 					//Where the Boolean is whether the node is moving or not and the second pair describes the vector at which it moves
 					// 	with dx as the key and dy as the value
-		ArrayList<Pair<Pair<Integer, Pair<Integer, Integer>>, Pair<Boolean, Pair<Integer, Integer>>>> accessPoints = new ArrayList<Pair<Pair<Integer, Pair<Integer, Integer>>, Pair<Boolean, Pair<Integer, Integer>>>>();
+		ArrayList<Pair<Pair<Integer, Pair<Double, Double>>, Pair<Boolean, Pair<Double, Double>>>> accessPoints = new ArrayList<Pair<Pair<Integer, Pair<Double, Double>>, Pair<Boolean, Pair<Double, Double>>>>();
 		for(int i = 0; i < datacenterList.getLength(); i++)
 		{
 			Node datacenterNode = datacenterList.item(i);
@@ -81,22 +81,22 @@ public class NomadicMobility extends MobilityModel {
 			if(wap)
 			{
 				int wlan_id = Integer.parseInt(location.getElementsByTagName("wlan_id").item(0).getTextContent());
-				int x_pos = Integer.parseInt(location.getElementsByTagName("x_pos").item(0).getTextContent());
-				int y_pos = Integer.parseInt(location.getElementsByTagName("y_pos").item(0).getTextContent());
+				double x_pos = Double.parseDouble(location.getElementsByTagName("x_pos").item(0).getTextContent());
+				double y_pos = Double.parseDouble(location.getElementsByTagName("y_pos").item(0).getTextContent());
 				boolean moving = Boolean.parseBoolean(location.getElementsByTagName("moving").item(0).getTextContent());
-				int dx=0, dy=0;
+				double dx=0.0, dy=0.0;
 				if(moving)
 				{
 					dx = Integer.parseInt(location.getElementsByTagName("dx").item(0).getTextContent());
 					dy = Integer.parseInt(location.getElementsByTagName("dy").item(0).getTextContent());
 				}
-				Pair<Integer, Integer> loc = new Pair<Integer, Integer>(x_pos, y_pos);
-				Pair<Integer, Pair<Integer, Integer>> key = new Pair<Integer, Pair<Integer, Integer>>(wlan_id, loc);
+				Pair<Double, Double> loc = new Pair<Double, Double>(x_pos, y_pos);
+				Pair<Integer, Pair<Double, Double>> key = new Pair<Integer, Pair<Double, Double>>(wlan_id, loc);
 				
-				Pair<Integer, Integer> vector = new Pair<Integer, Integer>(dx, dy);
-				Pair<Boolean, Pair<Integer, Integer>> value = new Pair<Boolean, Pair<Integer, Integer>>(moving, vector);
+				Pair<Double, Double> vector = new Pair<Double, Double>(dx, dy);
+				Pair<Boolean, Pair<Double, Double>> value = new Pair<Boolean, Pair<Double, Double>>(moving, vector);
 				
-				Pair<Pair<Integer, Pair<Integer, Integer>>, Pair<Boolean, Pair<Integer, Integer>>> info = new Pair<Pair<Integer, Pair<Integer, Integer>>, Pair<Boolean, Pair<Integer, Integer>>>(key, value);
+				Pair<Pair<Integer, Pair<Double, Double>>, Pair<Boolean, Pair<Double, Double>>> info = new Pair<Pair<Integer, Pair<Double, Double>>, Pair<Boolean, Pair<Double, Double>>>(key, value);
 				
 				accessPoints.add(info);
 			}
@@ -110,8 +110,8 @@ public class NomadicMobility extends MobilityModel {
 			//Picks a random wireless access point to start at
 			int randDatacenterId = SimUtils.getRandomNumber(0, accessPoints.size()-1);
 			int wlan_id = accessPoints.get(randDatacenterId).getKey().getKey();
-			int x_pos = accessPoints.get(randDatacenterId).getKey().getValue().getKey();
-			int y_pos = accessPoints.get(randDatacenterId).getKey().getValue().getValue();
+			double x_pos = accessPoints.get(randDatacenterId).getKey().getValue().getKey();
+			double y_pos = accessPoints.get(randDatacenterId).getKey().getValue().getValue();
 			
 			//start locating user from 10th seconds
 			treeMapArray.get(i).put((double)10, new Location(wlan_id, x_pos, y_pos));
@@ -120,18 +120,18 @@ public class NomadicMobility extends MobilityModel {
 		for(int i=0; i<numberOfMobileDevices; i++) {
 			TreeMap<Double, Location> treeMap = treeMapArray.get(i);
 			//Make random numbers to make the vectors
-			int up = (int) (5 * (Math.random() - 0.5));
-			int right = (int) (5 * (Math.random() - 0.5));
+			double up = (int) (5 * (Math.random() - 0.5));
+			double right = (int) (5 * (Math.random() - 0.5));
 
 			while(treeMap.lastKey() < SimSettings.getInstance().getSimulationTime()) {		
 				
 				
-				int x_pos = treeMap.lastEntry().getValue().getXPos();
-				int y_pos = treeMap.lastEntry().getValue().getYPos();				
+				double x_pos = treeMap.lastEntry().getValue().getXPos();
+				double y_pos = treeMap.lastEntry().getValue().getYPos();				
 				int wlan_id = treeMap.lastEntry().getValue().getServingWlanId();
 				  
-				if(x_pos > this.MAX_WIDTH) right = right * -1;
-				if(y_pos > this.MAX_HEIGHT) up = up * -1;
+				if(x_pos + right > this.MAX_WIDTH) right = right * -1;
+				if(y_pos + up > this.MAX_HEIGHT) up = up * -1;
 				double minDistance = this.MAX_HEIGHT * this.MAX_WIDTH;
 
 				//Calculate which wlan_id you get
@@ -141,12 +141,12 @@ public class NomadicMobility extends MobilityModel {
 				{	
 					if(accessPoints.get(a).getKey().getKey() == wlan_id)
 					{
-						int nodeX = accessPoints.get(a).getKey().getValue().getKey();
-						int nodeY = accessPoints.get(a).getKey().getValue().getValue();
+						double nodeX = accessPoints.get(a).getKey().getValue().getKey();
+						double nodeY = accessPoints.get(a).getKey().getValue().getValue();
 						if(accessPoints.get(a).getValue().getKey())
 						{
-							int dx = accessPoints.get(a).getValue().getValue().getKey();
-							int dy = accessPoints.get(a).getValue().getValue().getValue();
+							double dx = accessPoints.get(a).getValue().getValue().getKey();
+							double dy = accessPoints.get(a).getValue().getValue().getValue();
 							
 							//Ensure they don't go past the borders of the simulation space
 							if(nodeX + dx > this.MAX_WIDTH) dx = dx * -1;
@@ -164,7 +164,7 @@ public class NomadicMobility extends MobilityModel {
 				//If the previous node is going to be further than 10 or more away, change nodes
 				if(distance > 10)
 				{
-				int nodeX, nodeY;
+				double nodeX, nodeY;
 				
 				for(int z = 0; z < accessPoints.size(); z++)
 					{						
@@ -173,8 +173,8 @@ public class NomadicMobility extends MobilityModel {
 						
 						if(accessPoints.get(z).getValue().getKey())
 						{
-							int dx = accessPoints.get(z).getValue().getValue().getKey();
-							int dy = accessPoints.get(z).getValue().getValue().getValue();
+							double dx = accessPoints.get(z).getValue().getValue().getKey();
+							double dy = accessPoints.get(z).getValue().getValue().getValue();
 							
 							//Ensure they don't go past the borders of the simulation space
 							if(nodeX + dx > this.MAX_WIDTH) dx = dx * -1;

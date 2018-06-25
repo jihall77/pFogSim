@@ -136,8 +136,8 @@ public class MobileDeviceManager extends DatacenterBroker {
 				if(WanDelay > 0)
 				{
 					Location currentLocation = SimManager.getInstance().getMobilityModel().getLocation(task.getMobileDeviceId(),CloudSim.clock()+WanDelay);
-					Pair<Integer, Integer> currWifiloc = ((MM1Queue) SimManager.getInstance().getNetworkModel()).getNetworkTopology().findNode(currentLocation.getXPos(), currentLocation.getYPos(), true).getLocation();
-					Pair<Integer, Integer> actualLoc = ((MM1Queue) SimManager.getInstance().getNetworkModel()).getNetworkTopology().findNode(task.getSubmittedLocation().getXPos(), task.getSubmittedLocation().getYPos(), true).getLocation();
+					Pair<Double, Double> currWifiloc = ((MM1Queue) SimManager.getInstance().getNetworkModel()).getNetworkTopology().findNode(currentLocation.getXPos(), currentLocation.getYPos(), true).getLocation();
+					Pair<Double, Double> actualLoc = ((MM1Queue) SimManager.getInstance().getNetworkModel()).getNetworkTopology().findNode(task.getSubmittedLocation().getXPos(), task.getSubmittedLocation().getYPos(), true).getLocation();
 					if(actualLoc.equals(currWifiloc))
 					{
 						networkModel.downloadStarted(task.getSubmittedLocation(), SimSettings.CLOUD_DATACENTER_ID);

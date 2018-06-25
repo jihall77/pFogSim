@@ -11,15 +11,15 @@ import edu.boun.edgecloudsim.utils.*;
 
 public class FogCluster {
 	private String[] lines = null;
-	private Integer points[][] = null;
+	private Double[][] points = null;
 	private double[][] proximityMatrix = null;
 	private int clusterNumber;// = 20; // Defines number of clusters to generate.
-	private Integer[][][] cluster = new Integer[clusterNumber][][];
+	private Double[][][] cluster = new Double[clusterNumber][][];
 	
 	/**
 	 * @return the cluster
 	 */
-	public Integer[][][] getCluster() {
+	public Double[][][] getCluster() {
 		return cluster;
 	} // end getCluster
 
@@ -28,20 +28,20 @@ public class FogCluster {
 	 * Method - stdInput from EdgeServerManager
 	 * 
 	 */
-	public void stdInput(ArrayList<Pair<Integer, Integer>> levelList) 
+	public void stdInput(ArrayList<Pair<Double, Double>> arrayList) 
 	{
 		
-		ArrayList<Integer[]> _points = new ArrayList<Integer[]>();
+		ArrayList<Double[]> _points = new ArrayList<Double[]>();
 		
-		for(Pair<Integer, Integer> pair : levelList)
+		for(Pair<Double, Double> pair : arrayList)
 		{
-			Integer[] point = new Integer[2];
+			Double[] point = new Double[2];
 			point[0] = pair.getKey();
 			point[1] = pair.getValue();
 			
 			_points.add(point);
 		}
-		this.points = (Integer[][])_points.toArray(new Integer[_points.size()][]);
+		this.points = (Double[][])_points.toArray(new Double[_points.size()][]);
 		
 	}
 		
@@ -73,7 +73,7 @@ public class FogCluster {
 				
 			}// end while
 
-			this.points = (Integer[][])points.toArray(new Integer[points.size()][]);
+			this.points = (Double[][])points.toArray(new Integer[points.size()][]);
 			
 			reader.close();
 		} catch (Exception e){
@@ -98,7 +98,7 @@ public class FogCluster {
 	 */
 	void calcProximity(){
 		
-		int x1=0, y1=0, x2=0, y2=0;
+		double x1=0.0, y1=0.0, x2=0.0, y2=0.0;
 		double distance;
 		
 		// assume n data points ; n = size
@@ -149,11 +149,11 @@ public class FogCluster {
 			//SimLogger.printLine("i membership[i] clusterSize: "+i+"   "+membership[i]+"   "+clusterSize[membership[i]]);
 		} 
 		
-		cluster = new Integer[clusterNumber][][];
+		cluster = new Double[clusterNumber][][];
 		//System.out.println("clusterNumber is: "+clusterNumber);
 		for (int k = 0; k < clusterNumber; k++){
 			//System.out.println("k clusterSize[k]: "+k+"   "+clusterSize[k]);
-			cluster[k] = new Integer[clusterSize[k]][2];
+			cluster[k] = new Double[clusterSize[k]][2];
 			
 			for (int i = 0, j = 0; i < points.length; i++){
 				if (membership[i] == k){
@@ -219,17 +219,17 @@ public class FogCluster {
 		
 	}// end Constructor FogHierCluster()
 	
-	public FogCluster(ArrayList<Pair<Integer, Integer>> levelList) {
+	public FogCluster(ArrayList<Pair<Double, Double>> arrayList) {
 		super();
 		//SimLogger.printLine("Blank constructor FogCluster() reached");
 		//SimLogger.printLine("LevelList size = " + levelList.size());
-		if(levelList.size() < 4)
-			setClusterNumber(levelList.size());
+		if(arrayList.size() < 4)
+			setClusterNumber(arrayList.size());
 		else
-			setClusterNumber(levelList.size() / 4);
-		stdInput(levelList);
+			setClusterNumber(arrayList.size() / 4);
+		stdInput(arrayList);
 		calcProximity();
-		if(levelList.size() > 0)
+		if(arrayList.size() > 0)
 			learn();
 	}
 

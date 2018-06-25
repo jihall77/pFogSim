@@ -37,7 +37,7 @@ public class mainApp {
 		 * 
 		 */
 		
-		/*try{
+		try{
 		    PrintWriter node = new PrintWriter("large_node_test.xml", "UTF-8");
 		    PrintWriter links = new PrintWriter("large_links_test.xml", "UTF-8");
 		    node.println("<?xml version=\"1.0\"?>");
@@ -54,9 +54,9 @@ public class mainApp {
 		    		"		<costPerMem>0.05</costPerMem>\n" + 
 		    		"		<costPerStorage>0.1</costPerStorage>");
 		    node.println("<location>\n" + 
-		    		"			<x_pos>1</x_pos>\n" + 
-		    		"			<y_pos>1</y_pos>\n" + 
-		    		"			<level>5</level>" +
+		    		"			<x_pos>1.0</x_pos>\n" + 
+		    		"			<y_pos>1.0</y_pos>\n" + 
+		    		"			<level>6</level>" +
 		    		"			<wlan_id>0</wlan_id>\n" + 
 		    		"			<attractiveness>1</attractiveness>\n" + 
 		    		"			<wap>false</wap>\n" + 
@@ -64,22 +64,16 @@ public class mainApp {
 		    		"		</location>");
 		    node.println("<hosts>\n" + 
 		    		"			<host>\n" + 
-		    		"				<core>8</core>\n" + 
-		    		"				<mips>4000</mips>\n" + 
-		    		"				<ram>8000</ram>\n" + 
-		    		"				<storage>200000</storage>\n" + 
+		    		"				<core>32</core>\n" + 
+		    		"				<mips>500000</mips>\n" + 
+		    		"				<ram>40000</ram>\n" + 
+		    		"				<storage>100000</storage>\n" + 
 		    		"				<VMs>\n" + 
 		    		"					<VM vmm=\"Xen\">\n" + 
-		    		"						<core>2</core>\n" + 
-		    		"						<mips>1000</mips>\n" + 
-		    		"						<ram>2000</ram>\n" + 
-		    		"						<storage>50000</storage>\n" + 
-		    		"					</VM>\n" + 
-		    		"					<VM vmm=\"Xen\">\n" + 
-		    		"						<core>2</core>\n" + 
-		    		"						<mips>1000</mips>\n" + 
-		    		"						<ram>2000</ram>\n" + 
-		    		"						<storage>50000</storage>\n" + 
+		    		"						<core>16</core>\n" + 
+		    		"						<mips>50000</mips>\n" + 
+		    		"						<ram>4000</ram>\n" + 
+		    		"						<storage>10000</storage>\n" + 
 		    		"					</VM>\n" + 
 		    		"				</VMs>\n" + 
 		    		"			</host>\n" + 
@@ -89,9 +83,9 @@ public class mainApp {
 		    int level;
 		    for(int i = 0; i < 4; i++)
 		    {
-		    	level = 4;
-		    	int x = (int) (Math.random()* 250);
-		    	int y = (int) (Math.random()* 250);
+		    	level = 5;
+		    	double x = Math.random()* 1000;
+		    	double y = Math.random()* 1000;
 
 		    	//Generate random x and y
 		    	
@@ -112,21 +106,15 @@ public class mainApp {
 			    		"		</location>");
 			    node.println("<hosts>\n" + 
 			    		"			<host>\n" + 
-			    		"				<core>8</core>\n" + 
-			    		"				<mips>4000</mips>\n" + 
-			    		"				<ram>8000</ram>\n" + 
-			    		"				<storage>200000</storage>\n" + 
+			    		"				<core>16</core>\n" + 
+			    		"				<mips>100000</mips>\n" + 
+			    		"				<ram>200000</ram>\n" + 
+			    		"				<storage>500000</storage>\n" + 
 			    		"				<VMs>\n" + 
 			    		"					<VM vmm=\"Xen\">\n" + 
-			    		"						<core>2</core>\n" + 
-			    		"						<mips>1000</mips>\n" + 
-			    		"						<ram>2000</ram>\n" + 
-			    		"						<storage>50000</storage>\n" + 
-			    		"					</VM>\n" + 
-			    		"					<VM vmm=\"Xen\">\n" + 
-			    		"						<core>2</core>\n" + 
-			    		"						<mips>1000</mips>\n" + 
-			    		"						<ram>2000</ram>\n" + 
+			    		"						<core>8</core>\n" + 
+			    		"						<mips>10000</mips>\n" + 
+			    		"						<ram>20000</ram>\n" + 
 			    		"						<storage>50000</storage>\n" + 
 			    		"					</VM>\n" + 
 			    		"				</VMs>\n" + 
@@ -141,8 +129,8 @@ public class mainApp {
 			    		"			<y_pos>" + y + "</y_pos>\n" + 
 			    		"		</left>\n" + 
 			    		"		<right>\n" + 
-			    		"			<x_pos>1</x_pos>\n" + 
-			    		"			<y_pos>1</y_pos>\n" + 
+			    		"			<x_pos>1.0</x_pos>\n" + 
+			    		"			<y_pos>1.0</y_pos>\n" + 
 			    		"		</right>\n" + 
 			    		"		<left_latency>0.5</left_latency>\n" + 
 			    		"		<right_latency>0.5</right_latency>\n" + 
@@ -151,9 +139,9 @@ public class mainApp {
 			    counter++;
 			    for(int j = 0; j < 3; j++)
 			    {
-			    	level = 3;
-			    	int x2 = (int) (Math.random()* 1000);
-			    	int y2 = (int) (Math.random()* 1000);
+			    	level = 4;
+			    	double x2 = Math.random()* 1000;
+			    	double y2 = Math.random()* 1000;
 
 			    	//Add node
 			    	node.println("<datacenter arch=\"x86\" os=\"Linux\" vmm=\"Xen\">\n");
@@ -173,21 +161,15 @@ public class mainApp {
 				    node.println("<hosts>\n" + 
 				    		"			<host>\n" + 
 				    		"				<core>8</core>\n" + 
-				    		"				<mips>4000</mips>\n" + 
-				    		"				<ram>8000</ram>\n" + 
-				    		"				<storage>200000</storage>\n" + 
+				    		"				<mips>40000</mips>\n" + 
+				    		"				<ram>400000</ram>\n" + 
+				    		"				<storage>2000000</storage>\n" + 
 				    		"				<VMs>\n" + 
 				    		"					<VM vmm=\"Xen\">\n" + 
-				    		"						<core>2</core>\n" + 
-				    		"						<mips>1000</mips>\n" + 
-				    		"						<ram>2000</ram>\n" + 
-				    		"						<storage>50000</storage>\n" + 
-				    		"					</VM>\n" + 
-				    		"					<VM vmm=\"Xen\">\n" + 
-				    		"						<core>2</core>\n" + 
-				    		"						<mips>1000</mips>\n" + 
-				    		"						<ram>2000</ram>\n" + 
-				    		"						<storage>50000</storage>\n" + 
+				    		"						<core>4</core>\n" + 
+				    		"						<mips>40000</mips>\n" + 
+				    		"						<ram>40000</ram>\n" + 
+				    		"						<storage>200000</storage>\n" + 
 				    		"					</VM>\n" + 
 				    		"				</VMs>\n" + 
 				    		"			</host>\n" + 
@@ -211,9 +193,9 @@ public class mainApp {
 			    	counter++;
 			    	for(int k = 0; k < 2; k++)
 			    	{
-			    		level = 2;
-				    	int x3 = (int) (Math.random()* 1000);
-				    	int y3 = (int) (Math.random()* 1000);
+			    		level = 3;
+				    	double x3 = Math.random()* 1000;
+				    	double y3 = Math.random()* 1000;
 
 			    		//Add node
 				    	node.println("<datacenter arch=\"x86\" os=\"Linux\" vmm=\"Xen\">\n");
@@ -232,22 +214,16 @@ public class mainApp {
 					    		"		</location>");
 					    node.println("<hosts>\n" + 
 					    		"			<host>\n" + 
-					    		"				<core>8</core>\n" + 
-					    		"				<mips>4000</mips>\n" + 
-					    		"				<ram>8000</ram>\n" + 
+					    		"				<core>2</core>\n" + 
+					    		"				<mips>5000</mips>\n" + 
+					    		"				<ram>20000</ram>\n" + 
 					    		"				<storage>200000</storage>\n" + 
 					    		"				<VMs>\n" + 
 					    		"					<VM vmm=\"Xen\">\n" + 
 					    		"						<core>2</core>\n" + 
-					    		"						<mips>1000</mips>\n" + 
-					    		"						<ram>2000</ram>\n" + 
-					    		"						<storage>50000</storage>\n" + 
-					    		"					</VM>\n" + 
-					    		"					<VM vmm=\"Xen\">\n" + 
-					    		"						<core>2</core>\n" + 
-					    		"						<mips>1000</mips>\n" + 
-					    		"						<ram>2000</ram>\n" + 
-					    		"						<storage>50000</storage>\n" + 
+					    		"						<mips>5000</mips>\n" + 
+					    		"						<ram>20000</ram>\n" + 
+					    		"						<storage>20000</storage>\n" + 
 					    		"					</VM>\n" + 
 					    		"				</VMs>\n" + 
 					    		"			</host>\n" + 
@@ -271,9 +247,9 @@ public class mainApp {
 			    		counter++;
 			    		for(int z = 0; z < 3; z++)
 			    		{
-			    			level =1;
-					    	int x4 = (int) (Math.random()* 1000);
-					    	int y4 = (int) (Math.random()* 1000);
+			    			level =2;
+					    	double x4 = Math.random()* 1000;
+					    	double y4 = Math.random()* 1000;
 
 			    			//Add node 
 					    	node.println("<datacenter arch=\"x86\" os=\"Linux\" vmm=\"Xen\">\n");
@@ -292,22 +268,16 @@ public class mainApp {
 						    		"		</location>");
 						    node.println("<hosts>\n" + 
 						    		"			<host>\n" + 
-						    		"				<core>8</core>\n" + 
-						    		"				<mips>4000</mips>\n" + 
-						    		"				<ram>8000</ram>\n" + 
-						    		"				<storage>200000</storage>\n" + 
+						    		"				<core>2</core>\n" + 
+						    		"				<mips>1000</mips>\n" + 
+						    		"				<ram>2000</ram>\n" + 
+						    		"				<storage>2000</storage>\n" + 
 						    		"				<VMs>\n" + 
 						    		"					<VM vmm=\"Xen\">\n" + 
 						    		"						<core>2</core>\n" + 
 						    		"						<mips>1000</mips>\n" + 
 						    		"						<ram>2000</ram>\n" + 
-						    		"						<storage>50000</storage>\n" + 
-						    		"					</VM>\n" + 
-						    		"					<VM vmm=\"Xen\">\n" + 
-						    		"						<core>2</core>\n" + 
-						    		"						<mips>1000</mips>\n" + 
-						    		"						<ram>2000</ram>\n" + 
-						    		"						<storage>50000</storage>\n" + 
+						    		"						<storage>2000</storage>\n" + 
 						    		"					</VM>\n" + 
 						    		"				</VMs>\n" + 
 						    		"			</host>\n" + 
@@ -331,9 +301,9 @@ public class mainApp {
 					    	counter++;
 					    	for(int v = 0; v < 3; v++)
 				    		{
-				    			level = 0;
-						    	int x5 = (int) (Math.random()* 1000);
-						    	int y5 = (int) (Math.random()* 1000);
+				    			level = 1;
+						    	double x5 = Math.random()* 1000;
+						    	double y5 = Math.random()* 1000;
 
 				    			//Add node 
 						    	node.println("<datacenter arch=\"x86\" os=\"Linux\" vmm=\"Xen\">\n");
@@ -348,28 +318,22 @@ public class mainApp {
 							    		"			<level>" + level + "</level>\n" +
 							    		"			<attractiveness>3</attractiveness>\n" + 
 							    		"			<wap>true</wap>\n" +  
-		    							"			<moving>false</moving>\n" + 
+		    							"			<moving>true</moving>\n" + 
 		    							"			<dx>1</dx>\n" + 
 		    							"			<dy>1</dy>\n" + 
 							    		"		</location>");
 							    node.println("<hosts>\n" + 
 							    		"			<host>\n" + 
-							    		"				<core>8</core>\n" + 
-							    		"				<mips>4000</mips>\n" + 
-							    		"				<ram>8000</ram>\n" + 
-							    		"				<storage>200000</storage>\n" + 
+							    		"				<core>1</core>\n" + 
+							    		"				<mips>100</mips>\n" + 
+							    		"				<ram>256</ram>\n" + 
+							    		"				<storage>512</storage>\n" + 
 							    		"				<VMs>\n" + 
 							    		"					<VM vmm=\"Xen\">\n" + 
-							    		"						<core>2</core>\n" + 
-							    		"						<mips>1000</mips>\n" + 
-							    		"						<ram>2000</ram>\n" + 
-							    		"						<storage>50000</storage>\n" + 
-							    		"					</VM>\n" + 
-							    		"					<VM vmm=\"Xen\">\n" + 
-							    		"						<core>2</core>\n" + 
-							    		"						<mips>1000</mips>\n" + 
-							    		"						<ram>2000</ram>\n" + 
-							    		"						<storage>50000</storage>\n" + 
+							    		"						<core>1</core>\n" + 
+							    		"						<mips>100</mips>\n" + 
+							    		"						<ram>256</ram>\n" + 
+							    		"						<storage>512</storage>\n" + 
 							    		"					</VM>\n" + 
 							    		"				</VMs>\n" + 
 							    		"			</host>\n" + 
@@ -406,7 +370,7 @@ public class mainApp {
 		    node.close();
 		} catch (Exception e) {
 		   System.out.println("Files were not able to be made");
-		}*/
+		}
 		
 		
 		/*

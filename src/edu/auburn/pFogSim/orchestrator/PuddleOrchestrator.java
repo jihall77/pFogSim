@@ -129,7 +129,7 @@ public class PuddleOrchestrator extends EdgeOrchestrator {
 		for (Puddle pud : puds) {
 			hosts.addAll(pud.getMembers());//get all of the nodes from those puddles
 		}
-		radix = new DistRadix(hosts, new Pair<Integer, Integer>(task.getSubmittedLocation().getXPos(), task.getSubmittedLocation().getYPos()));
+		radix = new DistRadix(hosts, new Pair<Double, Double>(task.getSubmittedLocation().getXPos(), task.getSubmittedLocation().getYPos()));
 		candidates = radix.sortPuddleNodes();//sort those nodes by distance
 		host = candidates.poll();
 		while(!goodHost(host, task)) {
