@@ -73,8 +73,8 @@ public class MobileDeviceManager extends DatacenterBroker {
 		Task task = (Task) ev.getData();
 
 		Location currentLocation = SimManager.getInstance().getMobilityModel().getLocation(task.getMobileDeviceId(),CloudSim.clock());
-		if(task.getSubmittedLocation().equals(currentLocation))
-		{
+		//if(task.getSubmittedLocation().equals(currentLocation))
+		//{
 			//SimLogger.printLine(CloudSim.clock() + ": " + getName() + ": Cloudlet " + task.getCloudletId() + " received");
 			double WlanDelay = networkModel.getDownloadDelay(task.getAssociatedHostId() * -1, task.getMobileDeviceId(), task.getCloudletOutputSize(), false, task.wifi);
 			if(WlanDelay > 0)
@@ -87,13 +87,14 @@ public class MobileDeviceManager extends DatacenterBroker {
 			{
 				SimLogger.getInstance().failedDueToBandwidth(task.getCloudletId(), CloudSim.clock());
 			}
-		}
+		/*}
 		else
 		{
 			//SimLogger.printLine("task cannot be finished due to mobility of user!");
 			//SimLogger.printLine("device: " +task.getMobileDeviceId()+" - submitted " + task.getSubmissionTime() + " @ " + task.getSubmittedLocation().getXPos() + " handled " + CloudSim.clock() + " @ " + currentLocation.getXPos());
 			SimLogger.getInstance().failedDueToMobility(task.getCloudletId(), CloudSim.clock());
-		}
+			SimLogger.printLine("?");
+		}*/
 	}
 	
 	protected void processOtherEvent(SimEvent ev) {
@@ -149,6 +150,7 @@ public class MobileDeviceManager extends DatacenterBroker {
 						//SimLogger.printLine("task cannot be finished due to mobility of user!");
 						//SimLogger.printLine("device: " +task.getMobileDeviceId()+" - submitted " + task.getSubmissionTime() + " @ " + task.getSubmittedLocation().getXPos() + " handled " + CloudSim.clock() + " @ " + currentLocation.getXPos());
 						SimLogger.getInstance().failedDueToMobility(task.getCloudletId(), CloudSim.clock());
+						SimLogger.printLine("!");
 					}
 				}
 				else
