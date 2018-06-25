@@ -331,7 +331,7 @@ public class EdgeServerManager {
 			puds[k] =  new Puddle[cluster.getCluster().length];//set the list of puddles for that layer
 			for (int i = 0; i < cluster.getCluster().length; i++) {//for each puddle in the layer
 				puddle = new Puddle();
-				puddle.setLevel(k);
+				puddle.setLevel(k + 1);
 				hosts = new ArrayList<EdgeHost>();
 				for (int j = 0; j < cluster.getCluster()[i].length; j++) {//for each host in the puddle
 					x = cluster.getCluster()[i][j][0];

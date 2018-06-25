@@ -110,15 +110,15 @@ public class MM1Queue extends NetworkModel {
 			destDeviceId *= -1;
 			destPointLocation = SimManager.getInstance().getLocalServerManager().findHostById(destDeviceId).getLocation();
 		}
-		Pair<Integer, Integer> source;
-		Pair<Integer, Integer> destination;
+		Pair<Double, Double> source;
+		Pair<Double, Double> destination;
 		NodeSim src;
 		NodeSim dest;
 		NodeSim current;
 		NodeSim nextHop;
 		LinkedList<NodeSim> path = null;
-		source = new Pair<Integer, Integer>(accessPointLocation.getXPos(), accessPointLocation.getYPos());
-		destination = new Pair<Integer, Integer>(destPointLocation.getXPos(), destPointLocation.getYPos());
+		source = new Pair<Double, Double>(accessPointLocation.getXPos(), accessPointLocation.getYPos());
+		destination = new Pair<Double, Double>(destPointLocation.getXPos(), destPointLocation.getYPos());
 		
 		if(wifiSrc) {
 			src = networkTopology.findNode(source, true);

@@ -68,7 +68,7 @@ public class PuddleOrchestrator extends EdgeOrchestrator {
 		double newDist;
 		ArrayList<Puddle> pud0s = new ArrayList<Puddle>();
 		for (Puddle pud : network.getPuddles()) {//search through the list of puddles and pull out all the layer 0 ones
-			if (pud.getLevel() == 0) {
+			if (pud.getLevel() == 1) {
 				pud0s.add(pud);
 			}
 		}

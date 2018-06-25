@@ -172,7 +172,7 @@ public class NetworkTopology {
 	 * @param wifi
 	 * @return the closest node to the location
 	 */
-	public NodeSim findNode(Pair<Integer, Integer> loc, boolean wifi) {
+	public NodeSim findNode(Pair<Double, Double> loc, boolean wifi) {
 		return findNode(loc.getKey(), loc.getValue(), wifi);
 	}
 	/**

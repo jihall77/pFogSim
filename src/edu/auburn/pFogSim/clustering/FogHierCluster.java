@@ -28,7 +28,7 @@ public class FogHierCluster {
 			y_pos = node.getLocation().getValue();
 			Pair<Double, Double> pair = new Pair<Double, Double>(x_pos, y_pos);
 			levelMap.get(level).add(pair);
-			SimLogger.printLine("node added!");
+			//SimLogger.printLine("node added!");
 			/*if(levelMap.size() != 0)
 			{
 				
@@ -41,7 +41,7 @@ public class FogHierCluster {
 			//}
 		}
 		int length = levelMap.size();
-		SimLogger.printLine("Length = " + length);
+		//SimLogger.printLine("Length = " + length);
 		int removed = 0;
 		for (int i = 1; i < length; i++) {
 			if(levelMap.get(i).size() == 0) {
@@ -49,11 +49,11 @@ public class FogHierCluster {
 				removed++;
 			}
 		}
-		SimLogger.printLine("Removed = " + removed);
+		//SimLogger.printLine("Removed = " + removed);
 		//Add all clusters we are making out of each layer to the clusterList
 		for(int leveliter = 1; leveliter < levelMap.size(); leveliter++)
 		{
-			SimLogger.printLine("Size = " + levelMap.get(leveliter));
+			//SimLogger.printLine("Size = " + levelMap.get(leveliter));
 			FogCluster fc = new FogCluster(levelMap.get(leveliter));
 			clusterList.add(fc);
 		}

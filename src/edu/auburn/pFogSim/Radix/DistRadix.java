@@ -36,9 +36,6 @@ public class DistRadix {
 		}
 		ref = pair;
 	}
-	public DistRadix(ArrayList<EdgeHost> members, Pair<Double, Double> pair) {
-		// TODO Auto-generated constructor stub
-	}
 	/**
 	 * map coords to nodes
 	 */
