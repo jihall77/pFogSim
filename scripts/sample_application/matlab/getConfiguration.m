@@ -4,7 +4,7 @@
 %--------------------------------------------------------------
 function [ret_val] = getConfiguration(argType)
     if(argType == 1)
-        ret_val = 'C:\Users\USERNAME\FILE\pFogSim-master\sim_results';
+        ret_val = 'C:\Users\jbm0085\Desktop\pFogSim-master\sim_results';
         % USERNAME = your username
         % FILE = File or path that your EdgeCloudSim-master folder is located in
         
@@ -15,9 +15,9 @@ function [ret_val] = getConfiguration(argType)
     elseif(argType == 4)
         ret_val = 1; %x tick interval for number of mobile devices
     elseif(argType == 5)
-        ret_val = {'SINGLE_TIER','TWO_TIER'};
+        ret_val = {'TWO_TIER_WITH_EO','TWO_TIER_WITH_EO'};
     elseif(argType == 6)
-        ret_val = {'1-tier','2-tier'};
+        ret_val = {'Puddle'};
     elseif(argType == 7)
         ret_val=[350 60 450 450]; %position of figure
     elseif(argType == 8)
@@ -27,15 +27,15 @@ function [ret_val] = getConfiguration(argType)
     elseif(argType == 10)
         ret_val = 100; %min number of mobile device
     elseif(argType == 11)
-        ret_val = 100; %step size of mobile device count
+        ret_val = 400; %step size of mobile device count
     elseif(argType == 12)
-        ret_val =1000; %max number of mobile device
+        ret_val =2100; %max number of mobile device
     elseif(argType == 19)
         ret_val = 1; %return 1 if you want to plot errors
     elseif(argType == 20)
         ret_val=1; %return 1 if graph is plotted colerful
     elseif(argType == 21)
-        ret_val=[0.55 0 0]; %color of first line
+        ret_val=[0 0.15 0.6]; %color of first line
     elseif(argType == 22)
         ret_val=[0 0.15 0.6]; %color of second line
     elseif(argType == 23)
