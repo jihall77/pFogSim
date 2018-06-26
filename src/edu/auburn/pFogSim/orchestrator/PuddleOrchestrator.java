@@ -7,7 +7,7 @@ import edu.boun.edgecloudsim.edge_orchestrator.EdgeOrchestrator;
 import edu.boun.edgecloudsim.edge_server.EdgeHost;
 import edu.boun.edgecloudsim.edge_server.EdgeVM;
 import edu.auburn.pFogSim.netsim.NetworkTopology;
-import edu.boun.edgecloudsim.network.MM1Queue;
+import edu.auburn.pFogSim.netsim.ESBModel;
 import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
 import javafx.util.Pair;
@@ -60,7 +60,7 @@ public class PuddleOrchestrator extends EdgeOrchestrator {
 	 * @return
 	 */
 	private Puddle getNearest0Pud(Task task) {
-		NetworkTopology network = ((MM1Queue) SimManager.getInstance().getNetworkModel()).getNetworkTopology();
+		NetworkTopology network = ((ESBModel) SimManager.getInstance().getNetworkModel()).getNetworkTopology();
 		Puddle puddle = null;
 		EdgeHost host;
 		Location loc = task.getSubmittedLocation();
@@ -155,7 +155,7 @@ public class PuddleOrchestrator extends EdgeOrchestrator {
 	 * @return
 	 */
 	private Puddle nextBest(Task task, int level) {
-		NetworkTopology network = ((MM1Queue) SimManager.getInstance().getNetworkModel()).getNetworkTopology();
+		NetworkTopology network = ((ESBModel) SimManager.getInstance().getNetworkModel()).getNetworkTopology();
 		Puddle puddle = null;
 		EdgeHost host;
 		Location loc = task.getSubmittedLocation();

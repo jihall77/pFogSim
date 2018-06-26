@@ -43,7 +43,6 @@ import javafx.util.Pair;
 import edu.auburn.pFogSim.Puddle.Puddle;
 import edu.auburn.pFogSim.clustering.*;
 import edu.auburn.pFogSim.netsim.*;
-import edu.boun.edgecloudsim.network.MM1Queue;
 
 public class EdgeServerManager {
 	private List<Datacenter> localDatacenters;
@@ -126,7 +125,7 @@ public class EdgeServerManager {
 			System.exit(0);
 		}
 		//Sets network topology and uses it to make the Puddle Objects
-		((MM1Queue) SimManager.getInstance().getNetworkModel()).setNetworkTopology(networkTopology);
+		((ESBModel) SimManager.getInstance().getNetworkModel()).setNetworkTopology(networkTopology);
 		networkTopology.setPuddles(makePuddles(clusterObject));
 		
 		//LinesComponent networkTopologyDrawing = new LinesComponent();

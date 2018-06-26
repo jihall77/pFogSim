@@ -35,11 +35,11 @@ import edu.auburn.pFogSim.netsim.Link;
 import edu.auburn.pFogSim.netsim.NetworkTopology;
 import edu.auburn.pFogSim.netsim.NodeSim;
 import edu.auburn.pFogSim.netsim.Router;
+import edu.auburn.pFogSim.netsim.ESBModel;
 import edu.boun.edgecloudsim.edge_client.MobileDeviceManager;
 import edu.boun.edgecloudsim.edge_client.Task;
 import edu.boun.edgecloudsim.mobility.MobilityModel;
 import edu.boun.edgecloudsim.task_generator.LoadGeneratorModel;
-import edu.boun.edgecloudsim.network.MM1Queue;
 import edu.boun.edgecloudsim.network.NetworkModel;
 import edu.boun.edgecloudsim.utils.EdgeTask;
 import edu.boun.edgecloudsim.utils.Location;
@@ -208,8 +208,8 @@ public class SimManager extends SimEntity {
 			case PRINT_PROGRESS:
 				//SimLogger.printLine("PrintProgress reached");
 				//Updates the positions of FOG Devices if necessary
-				HashSet<Link> links = ((MM1Queue)SimManager.getInstance().getNetworkModel()).getNetworkTopology().getLinks();
-				HashSet<NodeSim> nodes = ((MM1Queue)SimManager.getInstance().getNetworkModel()).getNetworkTopology().getNodes();
+				HashSet<Link> links = ((ESBModel)SimManager.getInstance().getNetworkModel()).getNetworkTopology().getLinks();
+				HashSet<NodeSim> nodes = ((ESBModel)SimManager.getInstance().getNetworkModel()).getNetworkTopology().getNodes();
 				
 				ArrayList<Link> newLinks = new ArrayList<Link>();
 				ArrayList<NodeSim> newNodes = new ArrayList<NodeSim>();
@@ -276,7 +276,7 @@ public class SimManager extends SimEntity {
 				}
 				edgeServerManager.setHosts(movingNodes);
 				//Sets network topology and uses it to make the Puddle Objects
-				((MM1Queue) SimManager.getInstance().getNetworkModel()).setNetworkTopology(networkTopology);
+				((ESBModel) SimManager.getInstance().getNetworkModel()).setNetworkTopology(networkTopology);
 				networkTopology.setPuddles(edgeServerManager.makePuddles(clusterObject));
 				
 				//Goes through all devices and checks to see if WAP ids have changed

@@ -22,6 +22,7 @@ public class Task extends Cloudlet {
 	private Location submittedLocation;
 	private int mobileDeviceId;
 	private int hostIndex;
+	private double maxDelay;
 	public boolean wifi; //added by pFogSim for asking whether a task requires a wifi access point
     public boolean sens; //added by pFogSim to say whether a device is a sensor
     public boolean act;  //added by pFogSim to say whether a device is an actuator
@@ -39,6 +40,7 @@ public class Task extends Cloudlet {
 		wifi = _wifi;
     	sens =  _sens;
     	act = _act;
+    	maxDelay = 0.020; 
 	}
 
 	
@@ -68,5 +70,9 @@ public class Task extends Cloudlet {
 
 	public SimSettings.APP_TYPES getTaskType(){
 		return type;
+	}
+	
+	public double getMaxDelay() {
+		return maxDelay;
 	}
 }

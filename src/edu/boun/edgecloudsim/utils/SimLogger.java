@@ -27,7 +27,6 @@ import java.util.stream.IntStream;
 import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
 import edu.boun.edgecloudsim.edge_server.EdgeHost;
-import edu.boun.edgecloudsim.network.MM1Queue;
 import edu.boun.edgecloudsim.utils.*;
 import edu.auburn.pFogSim.Puddle.Puddle;
 import edu.auburn.pFogSim.netsim.*;

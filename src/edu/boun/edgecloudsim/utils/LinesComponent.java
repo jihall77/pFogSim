@@ -22,7 +22,6 @@ import edu.auburn.pFogSim.Puddle.Puddle;
 import edu.auburn.pFogSim.netsim.*;
 import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.edge_server.EdgeHost;
-import edu.boun.edgecloudsim.network.MM1Queue;
 import edu.boun.edgecloudsim.network.NetworkModel;
 
 //This is testing for a visualization of NetworkTopology
@@ -71,7 +70,7 @@ public class LinesComponent extends JComponent{
 
 	    g2d.setColor(Color.red);
 	    
-	    NetworkTopology networkTopology = ((MM1Queue) SimManager.getInstance().getNetworkModel()).getNetworkTopology();
+	    NetworkTopology networkTopology = ((ESBModel) SimManager.getInstance().getNetworkModel()).getNetworkTopology();
 	  /*  for(Link link : networkTopology.getLinks())
 	    {
 	    	x1 = link.getLeftLink().getKey();

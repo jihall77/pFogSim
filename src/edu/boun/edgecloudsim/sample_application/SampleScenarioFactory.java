@@ -27,7 +27,7 @@ import edu.boun.edgecloudsim.mobility.MobilityModel;
 import edu.boun.edgecloudsim.mobility.NomadicMobility;
 import edu.boun.edgecloudsim.task_generator.IdleActiveLoadGenerator;
 import edu.boun.edgecloudsim.task_generator.LoadGeneratorModel;
-import edu.boun.edgecloudsim.network.MM1Queue;
+import edu.auburn.pFogSim.netsim.ESBModel;
 import edu.boun.edgecloudsim.network.NetworkModel;
 
 public class SampleScenarioFactory implements ScenarioFactory {
@@ -63,7 +63,7 @@ public class SampleScenarioFactory implements ScenarioFactory {
 
 	@Override
 	public NetworkModel getNetworkModel() {
-		return new MM1Queue(numOfMobileDevice);
+		return new ESBModel(numOfMobileDevice);
 	}
 
 	@Override

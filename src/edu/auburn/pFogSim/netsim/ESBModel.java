@@ -8,40 +8,41 @@
  * Copyright (c) 2017, Bogazici University, Istanbul, Turkey
  */
 
-package edu.boun.edgecloudsim.network;
+package edu.auburn.pFogSim.netsim;
 
 import org.cloudbus.cloudsim.core.CloudSim;
 
 import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
 import edu.boun.edgecloudsim.edge_server.EdgeHost;
+import edu.boun.edgecloudsim.network.NetworkModel;
 import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
 import javafx.util.Pair;
 import java.util.LinkedList;
 import edu.auburn.pFogSim.netsim.*;
 
-public class MM1Queue extends NetworkModel {
+public class ESBModel extends NetworkModel {
 	private double WlanPoissonMean; //seconds
 	private double WanPoissonMean; //seconds
 	private double avgTaskInputSize; //bytes
 	private double avgTaskOutputSize; //bytes
 	private int maxNumOfClientsInPlace;
 	private NetworkTopology networkTopology;
-	private static MM1Queue instance = null;
+	private static ESBModel instance = null;
 	private Router router;
 	
-	public MM1Queue() {
+	public ESBModel() {
 		super();
 	}
 	
-	public MM1Queue(int _numberOfMobileDevices) {
+	public ESBModel(int _numberOfMobileDevices) {
 		super(_numberOfMobileDevices);
 	}
 	
-	public static MM1Queue getInstance() {
+	public static ESBModel getInstance() {
 		if(instance == null) {
-			instance = new MM1Queue();
+			instance = new ESBModel();
 		}
 		return instance;
 	}

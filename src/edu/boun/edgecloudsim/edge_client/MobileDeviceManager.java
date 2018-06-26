@@ -23,12 +23,11 @@ import org.cloudbus.cloudsim.core.CloudSim;
 import org.cloudbus.cloudsim.core.CloudSimTags;
 import org.cloudbus.cloudsim.core.SimEvent;
 
-import edu.auburn.pFogSim.netsim.NodeSim;
+import edu.auburn.pFogSim.netsim.*;
 import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
 import edu.boun.edgecloudsim.edge_server.EdgeHost;
 import edu.boun.edgecloudsim.edge_server.EdgeVM;
-import edu.boun.edgecloudsim.network.MM1Queue;
 import edu.boun.edgecloudsim.network.NetworkModel;
 import edu.boun.edgecloudsim.utils.EdgeTask;
 import edu.boun.edgecloudsim.utils.Location;
@@ -137,8 +136,8 @@ public class MobileDeviceManager extends DatacenterBroker {
 				if(WanDelay >= 0 && WanDelay <= task.getMaxDelay())
 				{
 					Location currentLocation = SimManager.getInstance().getMobilityModel().getLocation(task.getMobileDeviceId(),CloudSim.clock()+WanDelay);
-					int currWifiloc = ((MM1Queue) SimManager.getInstance().getNetworkModel()).getNetworkTopology().findNode(currentLocation.getXPos(), currentLocation.getYPos(), true).getWlanId();
-					int actualLoc = ((MM1Queue) SimManager.getInstance().getNetworkModel()).getNetworkTopology().findNode(task.getSubmittedLocation().getXPos(), task.getSubmittedLocation().getYPos(), true).getWlanId();
+					int currWifiloc = ((ESBModel) SimManager.getInstance().getNetworkModel()).getNetworkTopology().findNode(currentLocation.getXPos(), currentLocation.getYPos(), true).getWlanId();
+					int actualLoc = ((ESBModel) SimManager.getInstance().getNetworkModel()).getNetworkTopology().findNode(task.getSubmittedLocation().getXPos(), task.getSubmittedLocation().getYPos(), true).getWlanId();
 					if(actualLoc  == currWifiloc)
 					{
 						networkModel.downloadStarted(task.getSubmittedLocation(), SimSettings.CLOUD_DATACENTER_ID);
