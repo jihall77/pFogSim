@@ -1,11 +1,6 @@
 /*
- * Title:        EdgeCloudSim - M/M/1 Queue model implementation
- * 
- * Description: 
- * MM1Queue implements M/M/1 Queue model for WLAN and WAN communication
- * 
- * Licence:      GPL - http://www.gnu.org/copyleft/gpl.html
- * Copyright (c) 2017, Bogazici University, Istanbul, Turkey
+ * Equal Share Bandwidth Model
+ * Considers that each device receives an equal share of a location's available bandwidth
  */
 
 package edu.auburn.pFogSim.netsim;
