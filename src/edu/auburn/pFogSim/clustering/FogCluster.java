@@ -18,6 +18,8 @@ public class FogCluster {
 	private int clusterNumber;// = 20; // Defines number of clusters to generate.
 	private Double[][][] cluster = new Double[clusterNumber][][];
 	
+	private ArrayList<PowerDiagram> voronoiDiagramList = new ArrayList<PowerDiagram>();
+	
 	/**
 	 * @return the cluster
 	 */
@@ -222,6 +224,7 @@ public class FogCluster {
 	}// end Constructor FogHierCluster()
 	
 	public FogCluster(ArrayList<Pair<Double, Double>> arrayList) {
+		//arrayList is a list of all the Locations on the map a device exists
 		super();
 		//SimLogger.printLine("Blank constructor FogCluster() reached");
 		//SimLogger.printLine("LevelList size = " + levelList.size());
@@ -234,7 +237,11 @@ public class FogCluster {
 		if(arrayList.size() > 0)
 			learn();
 		
-		PowerDiagram voronoi = new PowerDiagram();
+		//Make the voronoi diagram for that level and add it to the list
+		//PowerDiagram voronoi = new PowerDiagram(arrayList);
+		
+		voronoiDiagramList.add(PowerDiagram.makeVoronoiDiagram(arrayList));
+		
 	}
 
 

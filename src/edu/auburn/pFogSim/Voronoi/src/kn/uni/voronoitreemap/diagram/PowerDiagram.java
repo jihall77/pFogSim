@@ -73,11 +73,6 @@ public class PowerDiagram {
 		setSites(sites);
 		setClipPoly(clipPoly);
 	}
-	
-	public PowerDiagram(ArrayList<Pair<Double, Double>> arrayList)
-	{
-		theMainFunction(arrayList);
-	}
 
 	/*
 	 * (non-Javadoc)
@@ -318,7 +313,7 @@ public class PowerDiagram {
 //		}
 	}
 
-	public static void theMainFunction(ArrayList<Pair<Double, Double>> arrayList) {
+	public static PowerDiagram makeVoronoiDiagram(ArrayList<Pair<Double, Double>> arrayList) {
 		/*
 		PowerDiagram diagram = new PowerDiagram();
 
@@ -359,6 +354,10 @@ public class PowerDiagram {
 			Site site=sites.array[i];
 			PolygonSimple polygon=site.getPolygon();
 		}*/
+		PowerDiagram diagram = new PowerDiagram();
+		
+		
+		return diagram;
 	}
 
 	public void showDiagram() {
