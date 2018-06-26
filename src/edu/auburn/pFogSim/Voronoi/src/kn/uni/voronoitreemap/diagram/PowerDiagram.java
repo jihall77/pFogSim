@@ -10,7 +10,7 @@
  * This work is based on the publication below, please cite on usage, e.g.,  when publishing an article.
  * Arlind Nocaj, Ulrik Brandes, "Computing Voronoi Treemaps: Faster, Simpler, and Resolution-independent", Computer Graphics Forum, vol. 31, no. 3, June 2012, pp. 855-864
  ******************************************************************************/
-package kn.uni.voronoitreemap.diagram;
+package edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.diagram;
 
 
 import java.awt.Color;
@@ -21,15 +21,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import kn.uni.voronoitreemap.convexHull.HEdge;
-import kn.uni.voronoitreemap.convexHull.JConvexHull;
-import kn.uni.voronoitreemap.convexHull.JFace;
-import kn.uni.voronoitreemap.convexHull.JVertex;
-import kn.uni.voronoitreemap.datastructure.OpenList;
-import kn.uni.voronoitreemap.debuge.ImageFrame;
-import kn.uni.voronoitreemap.j2d.Point2D;
-import kn.uni.voronoitreemap.j2d.PolygonSimple;
-import kn.uni.voronoitreemap.j2d.Site;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.convexHull.HEdge;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.convexHull.JConvexHull;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.convexHull.JFace;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.convexHull.JVertex;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.datastructure.OpenList;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.debuge.ImageFrame;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d.Point2D;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d.PolygonSimple;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d.Site;
+import javafx.util.Pair;
 
 
 
@@ -73,9 +74,9 @@ public class PowerDiagram {
 		setClipPoly(clipPoly);
 	}
 	
-	public PowerDiagram(OpenList sites)
+	public PowerDiagram(ArrayList<Pair<Double, Double>> arrayList)
 	{
-		theMainFunction(sites);
+		theMainFunction(arrayList);
 	}
 
 	/*
@@ -317,8 +318,8 @@ public class PowerDiagram {
 //		}
 	}
 
-	public static void theMainFunction(ArrayList<Site> incomingSites) {
-		
+	public static void theMainFunction(ArrayList<Pair<Double, Double>> arrayList) {
+		/*
 		PowerDiagram diagram = new PowerDiagram();
 
 		// normal list based on an array
@@ -357,7 +358,7 @@ public class PowerDiagram {
 		for (int i=0;i<sites.size;i++){
 			Site site=sites.array[i];
 			PolygonSimple polygon=site.getPolygon();
-		}
+		}*/
 	}
 
 	public void showDiagram() {

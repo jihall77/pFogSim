@@ -10,15 +10,15 @@
  * This work is based on the publication below, please cite on usage, e.g.,  when publishing an article.
  * Arlind Nocaj, Ulrik Brandes, "Computing Voronoi Treemaps: Faster, Simpler, and Resolution-independent", Computer Graphics Forum, vol. 31, no. 3, June 2012, pp. 855-864
  ******************************************************************************/
-package kn.uni.voronoitreemap.j2d;
+package edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 
-import kn.uni.voronoitreemap.convexHull.JVertex;
-import kn.uni.voronoitreemap.debuge.Colors;
-import kn.uni.voronoitreemap.extension.VoroCellObject;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.convexHull.JVertex;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.debuge.Colors;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.extension.VoroCellObject;
 
 
 /**

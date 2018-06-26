@@ -10,7 +10,7 @@
  * This work is based on the publication below, please cite on usage, e.g.,  when publishing an article.
  * Arlind Nocaj, Ulrik Brandes, "Computing Voronoi Treemaps: Faster, Simpler, and Resolution-independent", Computer Graphics Forum, vol. 31, no. 3, June 2012, pp. 855-864
  ******************************************************************************/
-package kn.uni.voronoitreemap.gui;
+package edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.gui;
 
 
 import java.awt.BorderLayout;
@@ -30,11 +30,11 @@ import java.util.HashSet;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import kn.uni.voronoitreemap.datastructure.OpenList;
-import kn.uni.voronoitreemap.diagram.PowerDiagram;
-import kn.uni.voronoitreemap.j2d.Point2D;
-import kn.uni.voronoitreemap.j2d.PolygonSimple;
-import kn.uni.voronoitreemap.j2d.Site;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.datastructure.OpenList;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.diagram.PowerDiagram;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d.Point2D;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d.PolygonSimple;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d.Site;
 
 
 

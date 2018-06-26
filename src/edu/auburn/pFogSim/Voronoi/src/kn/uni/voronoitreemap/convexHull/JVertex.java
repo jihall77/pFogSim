@@ -10,8 +10,8 @@
  * This work is based on the publication below, please cite on usage, e.g.,  when publishing an article.
  * Arlind Nocaj, Ulrik Brandes, "Computing Voronoi Treemaps: Faster, Simpler, and Resolution-independent", Computer Graphics Forum, vol. 31, no. 3, June 2012, pp. 855-864
  ******************************************************************************/
-package kn.uni.voronoitreemap.convexHull;
-import kn.uni.voronoitreemap.j3d.Point3d;
+package edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.convexHull;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j3d.Point3d;
 
 /**
  * 3-dimensional Point with some extra fields for ConvexHull computation.

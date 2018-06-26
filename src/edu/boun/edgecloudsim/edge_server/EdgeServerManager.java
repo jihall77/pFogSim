@@ -35,6 +35,7 @@ import org.w3c.dom.NodeList;
 
 import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
+import edu.boun.edgecloudsim.utils.LinesComponent;
 import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
 import edu.boun.edgecloudsim.utils.SimUtils;
@@ -127,6 +128,14 @@ public class EdgeServerManager {
 		//Sets network topology and uses it to make the Puddle Objects
 		((MM1Queue) SimManager.getInstance().getNetworkModel()).setNetworkTopology(networkTopology);
 		networkTopology.setPuddles(makePuddles(clusterObject));
+		
+		//LinesComponent networkTopologyDrawing = new LinesComponent();
+		//networkTopologyDrawing.drawNetworkTopology(1);		
+		//networkTopologyDrawing.drawNetworkTopology(2);
+		//networkTopologyDrawing.drawNetworkTopology(3);
+		//networkTopologyDrawing.drawNetworkTopology(4);
+		//networkTopologyDrawing.drawNetworkTopology(5);
+
 	}
 
 	public void createVmList(int brockerId){

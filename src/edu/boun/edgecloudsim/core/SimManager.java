@@ -53,8 +53,8 @@ public class SimManager extends SimEntity {
 	private static final int PRINT_PROGRESS = 3;
 	private static final int STOP_SIMULATION = 4;
 	
-	private static final int MAX_WIDTH = 1000;
-	private static final int MAX_HEIGHT = 1000;
+	public static final int MAX_WIDTH = 1000;
+	public static final int MAX_HEIGHT = 1000;
 	
 	//List of ids for wireless access points devices are connected to, max devices rn is 1000
 	private int[] wapIdList = new int [2100];

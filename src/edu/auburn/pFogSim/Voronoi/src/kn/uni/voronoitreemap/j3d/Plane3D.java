@@ -10,10 +10,10 @@
  * This work is based on the publication below, please cite on usage, e.g.,  when publishing an article.
  * Arlind Nocaj, Ulrik Brandes, "Computing Voronoi Treemaps: Faster, Simpler, and Resolution-independent", Computer Graphics Forum, vol. 31, no. 3, June 2012, pp. 855-864
  ******************************************************************************/
-package kn.uni.voronoitreemap.j3d;
+package edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j3d;
 
-import kn.uni.voronoitreemap.convexHull.JFace;
-import kn.uni.voronoitreemap.j2d.Point2D;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.convexHull.JFace;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d.Point2D;
 
 
 public class Plane3D {

@@ -26,6 +26,13 @@ import java.util.stream.IntStream;
 
 import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
+import edu.boun.edgecloudsim.edge_server.EdgeHost;
+import edu.boun.edgecloudsim.network.MM1Queue;
+import edu.boun.edgecloudsim.utils.*;
+import edu.auburn.pFogSim.Puddle.Puddle;
+import edu.auburn.pFogSim.netsim.*;
+
+
 
 public class SimLogger {
 	public static enum TASK_STATUS {
@@ -513,7 +520,7 @@ public class SimLogger {
 		printLine("average server utilization: " 
 				+ String.format("%.6f", totalVmLoad / (double) vmLoadList.size()) + "%");
 		printLine("Cloudlets Per Level");
-		for(int i = 0; i < 6; i++) printLine(String.format("\tLevel %d:\t%d", i, levelCloudletCount[i]));
+		for(int i = 0; i < 7; i++) printLine(String.format("\tLevel %d:\t%d", i, levelCloudletCount[i]));
 		
 		//Clayton changed this so it would output a value based on the average cost per time I was seeing in the XML files
 		//	this value may mean absolutely nothing so we should look into it more if we want to use it
@@ -521,10 +528,12 @@ public class SimLogger {
 		printLine("ProcessingTime: " + processingTime[numOfAppTypes]);
 		printLine("CompletedTask: " + completedTask[numOfAppTypes]);
 
+		
 		// clear related collections (map list etc.)
 		taskMap.clear();
 		vmLoadList.clear();
 	}
+	
 }
 
 class VmLoadLogItem {
@@ -683,4 +692,7 @@ class LogItem {
 			result += "0"; // default failure reason
 		return result;
 	}
+
+
+
 }

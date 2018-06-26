@@ -25,6 +25,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
 import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
@@ -33,8 +34,8 @@ import edu.boun.edgecloudsim.utils.SimUtils;
 
 public class NomadicMobility extends MobilityModel {
 	private List<TreeMap<Double, Location>> treeMapArray;
-	private int MAX_WIDTH = 1000;
-	private int MAX_HEIGHT = 1000;
+	private int MAX_WIDTH;
+	private int MAX_HEIGHT;
 	
 	public NomadicMobility(int _numberOfMobileDevices, double _simulationTime) {
 		super(_numberOfMobileDevices, _simulationTime);
@@ -43,6 +44,8 @@ public class NomadicMobility extends MobilityModel {
 	
 	@Override
 	public void initialize() {
+		this.MAX_HEIGHT = SimManager.MAX_HEIGHT;
+		this.MAX_WIDTH = SimManager.MAX_WIDTH;
 		treeMapArray = new ArrayList<TreeMap<Double, Location>>();
 		
 		ExponentialDistribution[] expRngList = new ExponentialDistribution[SimSettings.getInstance().getNumOfEdgeDatacenters()];
@@ -120,8 +123,8 @@ public class NomadicMobility extends MobilityModel {
 		for(int i=0; i<numberOfMobileDevices; i++) {
 			TreeMap<Double, Location> treeMap = treeMapArray.get(i);
 			//Make random numbers to make the vectors
-			double up = (int) (5 * (Math.random() - 0.5));
-			double right = (int) (5 * (Math.random() - 0.5));
+			double up = 5 * (Math.random() - 0.5);
+			double right = 5 * (Math.random() - 0.5);
 
 			while(treeMap.lastKey() < SimSettings.getInstance().getSimulationTime()) {		
 				
@@ -130,8 +133,8 @@ public class NomadicMobility extends MobilityModel {
 				double y_pos = treeMap.lastEntry().getValue().getYPos();				
 				int wlan_id = treeMap.lastEntry().getValue().getServingWlanId();
 				  
-				if(x_pos + right > this.MAX_WIDTH) right = right * -1;
-				if(y_pos + up > this.MAX_HEIGHT) up = up * -1;
+				if(x_pos + right > this.MAX_WIDTH / 2.0) right = right * -1;
+				if(y_pos + up > this.MAX_HEIGHT / 2.0) up = up * -1;
 				double minDistance = this.MAX_HEIGHT * this.MAX_WIDTH;
 
 				//Calculate which wlan_id you get
@@ -149,8 +152,8 @@ public class NomadicMobility extends MobilityModel {
 							double dy = accessPoints.get(a).getValue().getValue().getValue();
 							
 							//Ensure they don't go past the borders of the simulation space
-							if(nodeX + dx > this.MAX_WIDTH) dx = dx * -1;
-							if(nodeY + dy > this.MAX_HEIGHT) dy = dy * -1;
+							if(Math.abs(nodeX + dx) > this.MAX_WIDTH / 2.0) dx = dx * -1;
+							if(Math.abs(nodeY + dy) > this.MAX_HEIGHT / 2.0) dy = dy * -1;
 							//Add the vector values to their respective components
 							nodeX += dx * treeMap.size();
 							nodeY += dy * treeMap.size();
@@ -161,7 +164,7 @@ public class NomadicMobility extends MobilityModel {
 					}
 				}
 				
-				//If the previous node is going to be further than 10 or more away, change nodes
+				//If the previous node is going to be further than 10 or more away, find the next closest
 				if(distance > 10)
 				{
 				double nodeX, nodeY;

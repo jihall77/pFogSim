@@ -9,6 +9,8 @@ import edu.auburn.pFogSim.netsim.NodeSim;
 
 import edu.boun.edgecloudsim.utils.*;
 
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.diagram.*;
+
 public class FogCluster {
 	private String[] lines = null;
 	private Double[][] points = null;
@@ -231,6 +233,8 @@ public class FogCluster {
 		calcProximity();
 		if(arrayList.size() > 0)
 			learn();
+		
+		PowerDiagram voronoi = new PowerDiagram();
 	}
 
 

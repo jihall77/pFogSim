@@ -10,7 +10,7 @@
  * This work is based on the publication below, please cite on usage, e.g.,  when publishing an article.
  * Arlind Nocaj, Ulrik Brandes, "Computing Voronoi Treemaps: Faster, Simpler, and Resolution-independent", Computer Graphics Forum, vol. 31, no. 3, June 2012, pp. 855-864
  ******************************************************************************/
-package kn.uni.voronoitreemap.gui;
+package edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.gui;
 
 
 import java.awt.Graphics;
@@ -21,7 +21,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.Random;
 
-import kn.uni.voronoitreemap.j2d.Site;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d.Site;
 
 /**
  * Representing a site with the polygon.
@@ -146,7 +146,7 @@ private static Random rand=new Random();
 		}
 	@Override
 		public boolean contains(int x, int y) {
-			double distance = new kn.uni.voronoitreemap.j2d.Point2D(x+this.getLocation().x, y+this.getLocation().y).distance(site.getX(), site.getY());
+			double distance = new edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d.Point2D(x+this.getLocation().x, y+this.getLocation().y).distance(site.getX(), site.getY());
 			if (distance<10){
 				return true;
 			}

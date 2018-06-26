@@ -1,0 +1,6 @@
+bin
+.metadata
+*~
+/bin
+/target/
+/.settings

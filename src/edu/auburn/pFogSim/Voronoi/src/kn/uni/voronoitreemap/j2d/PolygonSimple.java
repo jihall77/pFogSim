@@ -10,7 +10,7 @@
  * This work is based on the publication below, please cite on usage, e.g.,  when publishing an article.
  * Arlind Nocaj, Ulrik Brandes, "Computing Voronoi Treemaps: Faster, Simpler, and Resolution-independent", Computer Graphics Forum, vol. 31, no. 3, June 2012, pp. 855-864
  ******************************************************************************/
-package kn.uni.voronoitreemap.j2d;
+package edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d;
 
 
 import java.awt.Rectangle;
@@ -22,10 +22,10 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Random;
 
-import kn.uni.voronoitreemap.convexClip.ConvexClip;
-import kn.uni.voronoitreemap.convexClip.cVertex;
-import kn.uni.voronoitreemap.convexClip.cVertexList;
-import kn.uni.voronoitreemap.helper.Geometry;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.convexClip.ConvexClip;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.convexClip.cVertex;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.convexClip.cVertexList;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.helper.Geometry;
 
 
 /**

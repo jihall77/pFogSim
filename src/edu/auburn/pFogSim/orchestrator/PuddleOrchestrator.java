@@ -111,10 +111,17 @@ public class PuddleOrchestrator extends EdgeOrchestrator {
 			if (nextBestPuddle != null) {
 				break;
 			}
-			puddle = puddle.getParent();
-			if (puddle == null) {
-				throw new IllegalArgumentException();
+			if(puddle.getParent() == null)
+			{
+				return puddle.getHead();
+				//throw new IllegalArgumentException();
 			}
+			puddle = puddle.getParent();
+			/*if (puddle == null) {
+				//Assign to cloud instead
+				
+				throw new IllegalArgumentException();
+			}*/
 		}
 		while(puddle != null) {
 			if (nextBestPuddle != null) {//if we had to use an alternate puddle, use it and lose it
