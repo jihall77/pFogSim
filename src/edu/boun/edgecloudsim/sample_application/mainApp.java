@@ -318,7 +318,7 @@ public class mainApp {
 							    		"			<level>" + level + "</level>\n" +
 							    		"			<attractiveness>3</attractiveness>\n" + 
 							    		"			<wap>true</wap>\n" +  
-		    							"			<moving>false</moving>\n" + 
+		    							"			<moving>true</moving>\n" + 
 		    							"			<dx>1</dx>\n" + 
 		    							"			<dy>1</dy>\n" + 
 							    		"		</location>");

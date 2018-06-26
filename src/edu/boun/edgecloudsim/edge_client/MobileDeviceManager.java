@@ -77,7 +77,7 @@ public class MobileDeviceManager extends DatacenterBroker {
 		//{
 			//SimLogger.printLine(CloudSim.clock() + ": " + getName() + ": Cloudlet " + task.getCloudletId() + " received");
 			double WlanDelay = networkModel.getDownloadDelay(task.getAssociatedHostId() * -1, task.getMobileDeviceId(), task.getCloudletOutputSize(), false, task.wifi);
-			if(WlanDelay > 0)
+			if(WlanDelay > 0 && WlanDelay <= task.getMaxDelay())
 			{
 				networkModel.downloadStarted(currentLocation, SimSettings.GENERIC_EDGE_DEVICE_ID);
 				schedule(getId(), WlanDelay, RESPONSE_RECEIVED_BY_MOBILE_DEVICE, task);
@@ -134,7 +134,7 @@ public class MobileDeviceManager extends DatacenterBroker {
 
 				//SimLogger.printLine(CloudSim.clock() + ": " + getName() + ": Cloudlet " + task.getCloudletId() + " received");
 				double WanDelay = networkModel.getDownloadDelay(SimSettings.CLOUD_DATACENTER_ID, task.getMobileDeviceId(), task.getCloudletOutputSize(), false, task.wifi);
-				if(WanDelay > 0)
+				if(WanDelay > 0 && WanDelay <= task.getMaxDelay())
 				{
 					Location currentLocation = SimManager.getInstance().getMobilityModel().getLocation(task.getMobileDeviceId(),CloudSim.clock()+WanDelay);
 					int currWifiloc = ((MM1Queue) SimManager.getInstance().getNetworkModel()).getNetworkTopology().findNode(currentLocation.getXPos(), currentLocation.getYPos(), true).getWlanId();
