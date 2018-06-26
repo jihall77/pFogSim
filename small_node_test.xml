@@ -12,6 +12,7 @@
 			<level>2</level>
 			<attractiveness>1</attractiveness>
 			<wap>false</wap>
+			<moving>false</moving>
 		</location>
 		<hosts>
 			<host>
@@ -42,6 +43,7 @@
 			<level>1</level>
 			<attractiveness>1</attractiveness>
 			<wap>false</wap>
+			<moving>false</moving>
 		</location>
 		<hosts>
 			<host>
@@ -72,6 +74,7 @@
 			<level>0</level>
 			<attractiveness>1</attractiveness>
 			<wap>true</wap>
+			<moving>false</moving>
 		</location>
 		<hosts>
 			<host>
