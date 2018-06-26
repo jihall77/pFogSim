@@ -35,6 +35,9 @@ public class Router {
 		LinkedList<NodeSim> travelQueue;
 		LinkedList<NodeSim> path;
 		String route;
+		if (src.equals(dest)) {
+			return new LinkedList<NodeSim>();
+		}
 		route = src.toString() + "->" + dest.toString();
 		if(database.containsKey(route)) {
 			//SimLogger.printLine("Found Faster Path");

@@ -134,6 +134,7 @@ public class MM1Queue extends NetworkModel {
 		}
 	    path = router.findPath(networkTopology, src, dest);
 		delay += getWlanUploadDelay(accessPointLocation, CloudSim.clock());
+		//SimLogger.printLine("Number of hops: " + path.size());
 		while (!path.isEmpty()) {
 			current = path.poll();
 			nextHop = path.peek();
@@ -236,12 +237,13 @@ public class MM1Queue extends NetworkModel {
 		avgTaskSize = avgTaskSize * (double)1000; //convert from KB to Byte
 		
 		Bps = bandwidth * (double)1000 / (double)8; //convert from Kbps to Byte per seconds
-                lamda = ((double)1/(double)PoissonMean); //task per seconds
-		mu = Bps / avgTaskSize ; //task per seconds
-		double result = (double)1 / (mu-lamda*(double)deviceCount);
+        //lamda = ((double)1/(double)PoissonMean); //task per seconds
+		//mu = Bps / avgTaskSize ; //task per seconds
+		double result = (avgTaskSize * deviceCount) / Bps;
 		
 		result += propogationDelay;
-		return (result > 5) ? -1 : result;
+		//SimLogger.printLine("Delay: " + result);
+		return result;
 	}
 	
 	private double getWlanDownloadDelay(Location accessPointLocation, double time) {
