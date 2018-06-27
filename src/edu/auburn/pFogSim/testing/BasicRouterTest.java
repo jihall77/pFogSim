@@ -30,7 +30,7 @@ public class BasicRouterTest {
 		LinkedList<NodeSim> path = new LinkedList<NodeSim>();
 		LinkedList<Link> edges = new LinkedList<Link>();
 		//place the nodes on the coords
-		n1.setLocation(c1);
+		/*n1.setLocation(c1);
 		n2.setLocation(c2);
 		n3.setLocation(c3);
 		n4.setLocation(c4);
@@ -47,7 +47,7 @@ public class BasicRouterTest {
 		Link l57 = new Link(c5, c7, 0.5, 0.5);
 		Link l47 = new Link(c4, c7, 0.5, 1.5);
 		//hook up the nodes and links
-		n1.addLink(l12);
+*/		/*n1.addLink(l12);
 		n2.addLink(l12);
 		n2.addLink(l23);
 		n3.addLink(l23);
@@ -81,7 +81,7 @@ public class BasicRouterTest {
 		edges.add(l57);
 		edges.add(l47);
 		
-		
+		*/
 		//call tests!
 		NetworkTopology nTest = new NetworkTopology((List<NodeSim>) path, (List<Link>) edges);
 		if (nTest.cleanNodes()) {

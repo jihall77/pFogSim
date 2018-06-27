@@ -15,7 +15,7 @@ package edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d;
 import java.awt.Color;
 import java.awt.Graphics2D;
 
-import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.debuge.Colors;
+//import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.debuge.Colors;
 
 /**
  * Extended Version of a site, which has relative Positions

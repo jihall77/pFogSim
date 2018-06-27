@@ -9,7 +9,7 @@ import edu.boun.edgecloudsim.edge_server.EdgeVM;
 import edu.auburn.pFogSim.netsim.NetworkTopology;
 import edu.auburn.pFogSim.netsim.ESBModel;
 import edu.boun.edgecloudsim.utils.Location;
-import edu.boun.edgecloudsim.utils.SimLogger;
+//import edu.boun.edgecloudsim.utils.SimLogger;
 import javafx.util.Pair;
 import edu.auburn.pFogSim.Puddle.Puddle;
 import edu.auburn.pFogSim.Radix.DistRadix;
@@ -17,7 +17,7 @@ import edu.auburn.pFogSim.Radix.DistRadix;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-import org.cloudbus.cloudsim.CloudletSchedulerTimeShared;
+//import org.cloudbus.cloudsim.CloudletSchedulerTimeShared;
 import org.cloudbus.cloudsim.core.CloudSim;
 /**
  * implementation of Edge Orchestrator for using puddles
@@ -136,7 +136,7 @@ public class PuddleOrchestrator extends EdgeOrchestrator {
 		for (Puddle pud : puds) {
 			hosts.addAll(pud.getMembers());//get all of the nodes from those puddles
 		}
-		radix = new DistRadix(hosts, new Pair<Double, Double>(task.getSubmittedLocation().getXPos(), task.getSubmittedLocation().getYPos()));
+		radix = new DistRadix(hosts, new Location(task.getSubmittedLocation().getXPos(), task.getSubmittedLocation().getYPos()));
 		candidates = radix.sortPuddleNodes();//sort those nodes by distance
 		host = candidates.poll();
 		while(!goodHost(host, task)) {

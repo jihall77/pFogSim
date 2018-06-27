@@ -30,6 +30,7 @@ import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.debuge.ImageFrame;
 import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d.Point2D;
 import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d.PolygonSimple;
 import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d.Site;
+import edu.boun.edgecloudsim.utils.Location;
 import javafx.util.Pair;
 
 
@@ -82,6 +83,11 @@ public class PowerDiagram {
 	public void setSites(OpenList sites) {
 		this.sites = sites;
 		hull = null;
+	}
+	
+	public OpenList getSites()
+	{
+		return this.sites;
 	}
 
 	public void setClipPoly(PolygonSimple polygon) {
@@ -313,14 +319,13 @@ public class PowerDiagram {
 //		}
 	}
 
-	public static PowerDiagram makeVoronoiDiagram(ArrayList<Pair<Double, Double>> arrayList) {
-		/*
+	public static PowerDiagram makeVoronoiDiagram(ArrayList<Location> arrayList) {
+		
 		PowerDiagram diagram = new PowerDiagram();
 
 		// normal list based on an array
 		OpenList sites = new OpenList();
-
-		Random rand = new Random(100);
+		
 		// create a root polygon which limits the voronoi diagram.
 		// here it is just a rectangle.
 
@@ -332,13 +337,19 @@ public class PowerDiagram {
 		rootPolygon.add(width, height);
 		rootPolygon.add(0, height);
 		
-		// create 100 points (sites) and set random positions in the rectangle defined above.
+		/*// create 100 points (sites) and set random positions in the rectangle defined above.
 		for (int i = 0; i < 100; i++) {
 			Site site = new Site(rand.nextInt(width), rand.nextInt(width));
 			// we could also set a different weighting to some sites
 			// site.setWeight(30)
 			sites.add(site);
+		}*/
+		for(Location loc : arrayList)
+		{
+			Site site = new Site(loc.getXPos(), loc.getYPos());
+			sites.add(site);
 		}
+		
 		
 		// set the list of points (sites), necessary for the power diagram
 		diagram.setSites(sites);
@@ -347,14 +358,14 @@ public class PowerDiagram {
 		
 		// do the computation
 		diagram.computeDiagram();
-		
+		//diagram.showDiagram();
+		/*
 		// for each site we can no get the resulting polygon of its cell. 
 		// note that the cell can also be empty, in this case there is no polygon for the corresponding site.
 		for (int i=0;i<sites.size;i++){
 			Site site=sites.array[i];
 			PolygonSimple polygon=site.getPolygon();
 		}*/
-		PowerDiagram diagram = new PowerDiagram();
 		
 		
 		return diagram;

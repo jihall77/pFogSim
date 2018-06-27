@@ -16,7 +16,7 @@
 package edu.boun.edgecloudsim.edge_client;
 
 import org.cloudbus.cloudsim.DatacenterBroker;
-import org.cloudbus.cloudsim.Cloudlet;
+//import org.cloudbus.cloudsim.Cloudlet;
 import org.cloudbus.cloudsim.UtilizationModel;
 import org.cloudbus.cloudsim.UtilizationModelFull;
 import org.cloudbus.cloudsim.core.CloudSim;
@@ -32,9 +32,9 @@ import edu.boun.edgecloudsim.network.NetworkModel;
 import edu.boun.edgecloudsim.utils.EdgeTask;
 import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
-import javafx.util.Pair;
+//import javafx.util.Pair;
 
-import edu.auburn.pFogSim.netsim.NetworkTopology;
+//import edu.auburn.pFogSim.netsim.NetworkTopology;
 
 
 public class MobileDeviceManager extends DatacenterBroker {

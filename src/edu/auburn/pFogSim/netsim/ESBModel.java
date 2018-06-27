@@ -9,13 +9,12 @@ import org.cloudbus.cloudsim.core.CloudSim;
 
 import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
-import edu.boun.edgecloudsim.edge_server.EdgeHost;
+//import edu.boun.edgecloudsim.edge_server.EdgeHost;
 import edu.boun.edgecloudsim.network.NetworkModel;
 import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
-import javafx.util.Pair;
 import java.util.LinkedList;
-import edu.auburn.pFogSim.netsim.*;
+//import edu.auburn.pFogSim.netsim.*;
 
 public class ESBModel extends NetworkModel {
 	private double WlanPoissonMean; //seconds
@@ -106,15 +105,15 @@ public class ESBModel extends NetworkModel {
 			destDeviceId *= -1;
 			destPointLocation = SimManager.getInstance().getLocalServerManager().findHostById(destDeviceId).getLocation();
 		}
-		Pair<Double, Double> source;
-		Pair<Double, Double> destination;
+		Location source;
+		Location destination;
 		NodeSim src;
 		NodeSim dest;
 		NodeSim current;
 		NodeSim nextHop;
 		LinkedList<NodeSim> path = null;
-		source = new Pair<Double, Double>(accessPointLocation.getXPos(), accessPointLocation.getYPos());
-		destination = new Pair<Double, Double>(destPointLocation.getXPos(), destPointLocation.getYPos());
+		source = new Location(accessPointLocation.getXPos(), accessPointLocation.getYPos());
+		destination = new Location(destPointLocation.getXPos(), destPointLocation.getYPos());
 		
 		if(wifiSrc) {
 			src = networkTopology.findNode(source, true);
@@ -134,7 +133,7 @@ public class ESBModel extends NetworkModel {
 		while (!path.isEmpty()) {
 			current = path.poll();
 			nextHop = path.peek();
-			accessPointLocation = new Location(null, 0, current.getLocation().getKey(), current.getLocation().getValue());//we only care about the x-y position, the other details are irrelevant here
+			accessPointLocation = new Location(null, 0, current.getLocation().getXPos(), current.getLocation().getYPos());//we only care about the x-y position, the other details are irrelevant here
 			delay += getWlanUploadDelay(accessPointLocation, CloudSim.clock() + delay);
 			if (nextHop == null) {
 				break;

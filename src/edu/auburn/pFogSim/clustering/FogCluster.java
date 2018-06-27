@@ -1,14 +1,14 @@
 package edu.auburn.pFogSim.clustering;
 
-import java.io.*;
+//import java.io.*;
 import java.util.ArrayList;
 import javafx.util.Pair;
-import java.util.HashMap;
+//import java.util.HashMap;
 
-import edu.auburn.pFogSim.netsim.NodeSim;
-
-import edu.boun.edgecloudsim.utils.*;
-
+//import edu.auburn.pFogSim.netsim.NodeSim;
+import edu.boun.edgecloudsim.core.SimManager;
+//import edu.boun.edgecloudsim.utils.*;
+import edu.boun.edgecloudsim.utils.Location;
 import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.diagram.*;
 
 public class FogCluster {
@@ -17,8 +17,6 @@ public class FogCluster {
 	private double[][] proximityMatrix = null;
 	private int clusterNumber;// = 20; // Defines number of clusters to generate.
 	private Double[][][] cluster = new Double[clusterNumber][][];
-	
-	private ArrayList<PowerDiagram> voronoiDiagramList = new ArrayList<PowerDiagram>();
 	
 	/**
 	 * @return the cluster
@@ -32,16 +30,16 @@ public class FogCluster {
 	 * Method - stdInput from EdgeServerManager
 	 * 
 	 */
-	public void stdInput(ArrayList<Pair<Double, Double>> arrayList) 
+	public void stdInput(ArrayList<Location> arrayList) 
 	{
 		
 		ArrayList<Double[]> _points = new ArrayList<Double[]>();
 		
-		for(Pair<Double, Double> pair : arrayList)
+		for(Location pair : arrayList)
 		{
 			Double[] point = new Double[2];
-			point[0] = pair.getKey();
-			point[1] = pair.getValue();
+			point[0] = pair.getXPos();
+			point[1] = pair.getYPos();
 			
 			_points.add(point);
 		}
@@ -55,7 +53,7 @@ public class FogCluster {
 	 *  Method - csvInput
 	 * 
 	 */
-	public void csvInput(String fn){
+	/*public void csvInput(String fn){
 		try
 		{
 			java.util.List lines = new ArrayList(); 
@@ -85,7 +83,7 @@ public class FogCluster {
 		}
 		
 	}//end csvInput()
-	
+*/	
 	
 	/**
 	 * @param clusterNumber the clusterNumber to set
@@ -217,13 +215,13 @@ public class FogCluster {
 		super();
 		//SimLogger.printLine("String and int constructor FogCluster() reached");
 		setClusterNumber(cNum);
-		csvInput(fn);
+		//csvInput(fn);
 		calcProximity();
 		learn();		
 		
 	}// end Constructor FogHierCluster()
 	
-	public FogCluster(ArrayList<Pair<Double, Double>> arrayList) {
+	public FogCluster(ArrayList<Location> arrayList) {
 		//arrayList is a list of all the Locations on the map a device exists
 		super();
 		//SimLogger.printLine("Blank constructor FogCluster() reached");
@@ -240,7 +238,7 @@ public class FogCluster {
 		//Make the voronoi diagram for that level and add it to the list
 		//PowerDiagram voronoi = new PowerDiagram(arrayList);
 		
-		voronoiDiagramList.add(PowerDiagram.makeVoronoiDiagram(arrayList));
+		SimManager.getInstance().addToVoronoiDiagramList(PowerDiagram.makeVoronoiDiagram(arrayList));
 		
 	}
 

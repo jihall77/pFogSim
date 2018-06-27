@@ -6,6 +6,7 @@ package edu.auburn.pFogSim.netsim;
 
 import edu.auburn.pFogSim.netsim.Link;
 import edu.auburn.pFogSim.netsim.NodeSim;
+import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
 import edu.auburn.pFogSim.Puddle.Puddle;
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ import javafx.util.Pair;
 public class NetworkTopology {
 	private HashSet<Link> links;
 	private HashSet<NodeSim> nodes;
-	private HashSet<Pair<Double, Double>> coords;
+	private HashSet<Location> coords;
 	private ArrayList<Puddle> pond;
 	/**
 	 * Constructor
@@ -26,7 +27,7 @@ public class NetworkTopology {
 	public NetworkTopology(List<NodeSim> inNodes, List<Link> inLinks) {
 		links = new HashSet<Link>();
 		nodes = new HashSet<NodeSim>();
-		coords = new HashSet<Pair<Double, Double>>();
+		coords = new HashSet<Location>();
 		for (NodeSim node : inNodes) {
 			addNode(node);
 		}
@@ -88,7 +89,7 @@ public class NetworkTopology {
 				    SimLogger.printLine("WlanId = " + node.getWlanId());	
 					SimLogger.printLine("false 2");
 					SimLogger.printLine(node.toString());
-					SimLogger.printLine(node.getVector().getKey() + ", " + node.getVector().getValue());
+					SimLogger.printLine(node.getVector().getXPos() + ", " + node.getVector().getYPos());
 					return false;
 				}
 			}
@@ -154,11 +155,11 @@ public class NetworkTopology {
 			if (wifi && !node.isWifiAcc()) {
 				continue;
 			}
-			if (d == node.getLocation().getKey() && e == node.getLocation().getValue()) {
+			if (d == node.getLocation().getXPos() && e == node.getLocation().getYPos()) {
 				closest = node;
 				return closest;
 			}
-			distanceNew = Math.sqrt(Math.pow((double) (d - node.getLocation().getKey()), 2) + Math.pow((double) (e - node.getLocation().getValue()), 2));
+			distanceNew = Math.sqrt(Math.pow((double) (d - node.getLocation().getXPos()), 2) + Math.pow((double) (e - node.getLocation().getYPos()), 2));
 			if (distanceNew < distance) {
 				distance = distanceNew;
 				closest = node;
@@ -172,8 +173,8 @@ public class NetworkTopology {
 	 * @param wifi
 	 * @return the closest node to the location
 	 */
-	public NodeSim findNode(Pair<Double, Double> loc, boolean wifi) {
-		return findNode(loc.getKey(), loc.getValue(), wifi);
+	public NodeSim findNode(Location loc, boolean wifi) {
+		return findNode(loc.getXPos(), loc.getYPos(), wifi);
 	}
 	/**
 	 * set the list of puddles on the topology

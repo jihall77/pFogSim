@@ -2,27 +2,27 @@
 package edu.boun.edgecloudsim.utils;
 
 
-import java.awt.BorderLayout;
+//import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
+//import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+//import java.awt.event.ActionEvent;
+//import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Random;
+//import java.util.LinkedList;
+//import java.util.Random;
 
-import javax.swing.JButton;
+//import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
+//import javax.swing.JPanel;
 
 import edu.auburn.pFogSim.Puddle.Puddle;
 import edu.auburn.pFogSim.netsim.*;
 import edu.boun.edgecloudsim.core.SimManager;
-import edu.boun.edgecloudsim.edge_server.EdgeHost;
-import edu.boun.edgecloudsim.network.NetworkModel;
+//import edu.boun.edgecloudsim.edge_server.EdgeHost;
+//import edu.boun.edgecloudsim.network.NetworkModel;
 
 //This is testing for a visualization of NetworkTopology
 public class LinesComponent extends JComponent{

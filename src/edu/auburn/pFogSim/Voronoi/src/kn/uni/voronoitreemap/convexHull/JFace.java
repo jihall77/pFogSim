@@ -16,7 +16,7 @@ package edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.convexHull;
 
 import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d.Point2D;
 import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j3d.Plane3D;
-import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j3d.Point3d;
+//import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j3d.Point3d;
 
 /**
  * Facet class connected over double-connected edge list. Contains incident vertices and edges.

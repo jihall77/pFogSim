@@ -29,7 +29,7 @@ import org.w3c.dom.NodeList;
 
 import edu.boun.edgecloudsim.utils.SimLogger;
 
-import edu.auburn.pFogSim.netsim.*;
+//import edu.auburn.pFogSim.netsim.*;
 
 public class SimSettings {
 	private static SimSettings instance = null;

@@ -16,25 +16,26 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-import org.cloudbus.cloudsim.Datacenter;
+//import org.cloudbus.cloudsim.Datacenter;
 import org.cloudbus.cloudsim.Log;
 import org.cloudbus.cloudsim.core.CloudSim;
-import org.cloudbus.cloudsim.core.CloudSimTags;
+//import org.cloudbus.cloudsim.core.CloudSimTags;
 import org.cloudbus.cloudsim.core.SimEntity;
 import org.cloudbus.cloudsim.core.SimEvent;
 
 import edu.boun.edgecloudsim.edge_orchestrator.EdgeOrchestrator;
 import edu.boun.edgecloudsim.edge_server.EdgeHost;
 import edu.boun.edgecloudsim.edge_server.EdgeServerManager;
-import edu.boun.edgecloudsim.edge_server.EdgeVM;
+//import edu.boun.edgecloudsim.edge_server.EdgeVM;
 import edu.boun.edgecloudsim.edge_server.VmAllocationPolicy_Custom;
-import edu.auburn.pFogSim.Puddle.Puddle;
-import edu.auburn.pFogSim.clustering.FogCluster;
+//import edu.auburn.pFogSim.Puddle.Puddle;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.diagram.PowerDiagram;
+//import edu.auburn.pFogSim.clustering.FogCluster;
 import edu.auburn.pFogSim.clustering.FogHierCluster;
 import edu.auburn.pFogSim.netsim.Link;
 import edu.auburn.pFogSim.netsim.NetworkTopology;
 import edu.auburn.pFogSim.netsim.NodeSim;
-import edu.auburn.pFogSim.netsim.Router;
+//import edu.auburn.pFogSim.netsim.Router;
 import edu.auburn.pFogSim.netsim.ESBModel;
 import edu.boun.edgecloudsim.edge_client.MobileDeviceManager;
 import edu.boun.edgecloudsim.edge_client.Task;
@@ -57,7 +58,6 @@ public class SimManager extends SimEntity {
 	public static final int MAX_HEIGHT = 1000;
 	
 	//List of ids for wireless access points devices are connected to, max devices rn is 1000
-	private int[] wapIdList = new int [2100];
 	private int numOfMobileDevice;
 	private NetworkModel networkModel;
 	private MobilityModel mobilityModel;
@@ -67,7 +67,9 @@ public class SimManager extends SimEntity {
 	private LoadGeneratorModel loadGeneratorModel;
 	private MobileDeviceManager mobileDeviceManager;
 	private NetworkTopology networkTopology;
-	
+	private ArrayList<PowerDiagram> voronoiDiagramList = new ArrayList<PowerDiagram>();
+	private int[] wapIdList = new int [numOfMobileDevice];
+
 	private static SimManager instance = null;
 	
 	public SimManager(ScenarioFactory _scenarioFactory, int _numOfMobileDevice, String _simScenario) throws Exception {
@@ -80,11 +82,7 @@ public class SimManager extends SimEntity {
 		loadGeneratorModel.initializeModel();
 		SimLogger.printLine("Done, ");
 		
-		SimLogger.print("Creating device locations...");
-		mobilityModel = scenarioFactory.getMobilityModel();
-		mobilityModel.initialize();
-		SimLogger.printLine("Done.");
-
+		
 		//Generate network model
 		networkModel = scenarioFactory.getNetworkModel();
 		networkModel.initialize();
@@ -118,7 +116,25 @@ public class SimManager extends SimEntity {
 		edgeServerManager.startDatacenters();
 		edgeServerManager.createVmList(mobileDeviceManager.getId());
 
+		SimLogger.print("Creating device locations...");
+		mobilityModel = scenarioFactory.getMobilityModel();
+		mobilityModel.initialize();
+		SimLogger.printLine("Done.");
+
+		
 		CloudSim.startSimulation();
+	}
+	
+	public void addToVoronoiDiagramList(PowerDiagram diagram)
+	{
+		this.voronoiDiagramList.add(diagram);
+	}
+	
+	public PowerDiagram getVoronoiDiagramAtLevel(int level)
+	{
+		if(level < voronoiDiagramList.size())
+			return voronoiDiagramList.get(level);
+		return null;
 	}
 	
 	public ScenarioFactory getScenarioFactory(){
@@ -220,9 +236,9 @@ public class SimManager extends SimEntity {
 					if(node.isMoving())
 					{
 					//Update positions
-						Pair<Double, Double> currentLoc = node.getLocation();
-						if(currentLoc.getKey() + node.getVector().getKey() > MAX_WIDTH) node.setVector(new Pair<Double, Double>(node.getVector().getKey() * -1, node.getVector().getValue()));
-						if(currentLoc.getValue() + node.getVector().getValue() > MAX_HEIGHT) node.setVector(new Pair<Double, Double>(node.getVector().getKey(), node.getVector().getValue() * -1));
+						Location currentLoc = node.getLocation();
+						if(currentLoc.getXPos() + node.getVector().getXPos() > MAX_WIDTH) node.setVector(new Location(node.getVector().getXPos() * -1, node.getVector().getYPos()));
+						if(currentLoc.getYPos() + node.getVector().getYPos() > MAX_HEIGHT) node.setVector(new Location(node.getVector().getXPos(), node.getVector().getYPos() * -1));
 
 						//Change links
 						for(Link link : links)
@@ -230,32 +246,32 @@ public class SimManager extends SimEntity {
 							if(link.getLeftLink().equals(currentLoc))
 							{
 								//Sets that location to what it will be in a bit
-								link.setLeftLink(new Pair<Double, Double>(currentLoc.getKey() + node.getVector().getKey(), currentLoc.getValue() + node.getVector().getValue()));
+								link.setLeftLink(new Location(currentLoc.getXPos() + node.getVector().getXPos(), currentLoc.getYPos() + node.getVector().getYPos()));
 								//SimLogger.printLine("Left Link changed");
 							}
 							else if(link.getRightLink().equals(currentLoc))
 							{
 								//Sets that location to what it will be in a bit
-								link.setRightLink(new Pair<Double, Double>(currentLoc.getKey() + node.getVector().getKey(), currentLoc.getValue() + node.getVector().getValue()));
+								link.setRightLink(new Location(currentLoc.getXPos() + node.getVector().getXPos(), currentLoc.getYPos() + node.getVector().getYPos()));
 								//SimLogger.printLine("Right Link changed");
 							}
 							
 						}
 						//Change nodes
-						moving = EdgeServerManager.getInstance().findHostByLoc(node.getLocation().getKey(), node.getLocation().getValue());
-						node.setLocation(new Pair<Double, Double>(currentLoc.getKey() + node.getVector().getKey(), currentLoc.getValue() + node.getVector().getValue()));
-						moving.setPlace(new Location(node.getWlanId(), node.getLocation().getKey(), node.getLocation().getValue()));
+						moving = EdgeServerManager.getInstance().findHostByLoc(node.getLocation().getXPos(), node.getLocation().getYPos());
+						node.setLocation(new Location(currentLoc.getXPos() + node.getVector().getXPos(), currentLoc.getYPos() + node.getVector().getYPos()));
+						moving.setPlace(new Location(node.getWlanId(), node.getLocation().getXPos(), node.getLocation().getYPos()));
 						movingNodes.add(moving);
 						/*if(node.getWlanId() == 300) {
 							SimLogger.printLine(node.toString());
 							for (Link link : node.getEdges()) {
-								SimLogger.print(link.getLeftLink().getKey() + ", " + link.getLeftLink().getValue() + " ");
-								SimLogger.printLine(link.getRightLink().getKey() + ", " + link.getRightLink().getValue());
+								SimLogger.print(link.getLeftLink().getXPos() + ", " + link.getLeftLink().getYPos() + " ");
+								SimLogger.printLine(link.getRightLink().getXPos() + ", " + link.getRightLink().getYPos());
 							}
 						}*/
-						/*int x1 = node.getLocation().getKey();
+						/*int x1 = node.getLocation().getXPos();
 						int x2 = moving.getLocation().getXPos();
-						int y1 = node.getLocation().getValue();
+						int y1 = node.getLocation().getYPos();
 						int y2 = moving.getLocation().getYPos();*/
 						//SimLogger.printLine("Node location updated");
 					}

@@ -25,6 +25,11 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.diagram.PowerDiagram;
+//import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d.PolygonSimple;
+import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d.Site;
+import edu.auburn.pFogSim.netsim.ESBModel;
+import edu.auburn.pFogSim.netsim.NetworkTopology;
 import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
 import edu.boun.edgecloudsim.utils.Location;
@@ -36,6 +41,8 @@ public class NomadicMobility extends MobilityModel {
 	private List<TreeMap<Double, Location>> treeMapArray;
 	private int MAX_WIDTH;
 	private int MAX_HEIGHT;
+	private NetworkTopology network = ((ESBModel) SimManager.getInstance().getNetworkModel()).getNetworkTopology();
+
 	
 	public NomadicMobility(int _numberOfMobileDevices, double _simulationTime) {
 		super(_numberOfMobileDevices, _simulationTime);
@@ -74,7 +81,7 @@ public class NomadicMobility extends MobilityModel {
 				//The pairs' value = Pair<Boolean, Pair<Integer, Integer>>
 					//Where the Boolean is whether the node is moving or not and the second pair describes the vector at which it moves
 					// 	with dx as the key and dy as the value
-		ArrayList<Pair<Pair<Integer, Pair<Double, Double>>, Pair<Boolean, Pair<Double, Double>>>> accessPoints = new ArrayList<Pair<Pair<Integer, Pair<Double, Double>>, Pair<Boolean, Pair<Double, Double>>>>();
+		ArrayList<Pair<Pair<Integer, Location>, Pair<Boolean, Location>>> accessPoints = new ArrayList<Pair<Pair<Integer, Location>, Pair<Boolean, Location>>>();
 		for(int i = 0; i < datacenterList.getLength(); i++)
 		{
 			Node datacenterNode = datacenterList.item(i);
@@ -93,13 +100,13 @@ public class NomadicMobility extends MobilityModel {
 					dx = Integer.parseInt(location.getElementsByTagName("dx").item(0).getTextContent());
 					dy = Integer.parseInt(location.getElementsByTagName("dy").item(0).getTextContent());
 				}
-				Pair<Double, Double> loc = new Pair<Double, Double>(x_pos, y_pos);
-				Pair<Integer, Pair<Double, Double>> key = new Pair<Integer, Pair<Double, Double>>(wlan_id, loc);
+				Location loc = new Location(x_pos, y_pos);
+				Pair<Integer, Location> key = new Pair<Integer, Location>(wlan_id, loc);
 				
-				Pair<Double, Double> vector = new Pair<Double, Double>(dx, dy);
-				Pair<Boolean, Pair<Double, Double>> value = new Pair<Boolean, Pair<Double, Double>>(moving, vector);
+				Location vector = new Location(dx, dy);
+				Pair<Boolean, Location> value = new Pair<Boolean, Location>(moving, vector);
 				
-				Pair<Pair<Integer, Pair<Double, Double>>, Pair<Boolean, Pair<Double, Double>>> info = new Pair<Pair<Integer, Pair<Double, Double>>, Pair<Boolean, Pair<Double, Double>>>(key, value);
+				Pair<Pair<Integer, Location>, Pair<Boolean, Location>> info = new Pair<Pair<Integer, Location>, Pair<Boolean, Location>>(key, value);
 				
 				accessPoints.add(info);
 			}
@@ -113,8 +120,8 @@ public class NomadicMobility extends MobilityModel {
 			//Picks a random wireless access point to start at
 			int randDatacenterId = SimUtils.getRandomNumber(0, accessPoints.size()-1);
 			int wlan_id = accessPoints.get(randDatacenterId).getKey().getKey();
-			double x_pos = accessPoints.get(randDatacenterId).getKey().getValue().getKey();
-			double y_pos = accessPoints.get(randDatacenterId).getKey().getValue().getValue();
+			double x_pos = accessPoints.get(randDatacenterId).getKey().getValue().getXPos();
+			double y_pos = accessPoints.get(randDatacenterId).getKey().getValue().getYPos();
 			
 			//start locating user from 10th seconds
 			treeMapArray.get(i).put((double)10, new Location(wlan_id, x_pos, y_pos));
@@ -135,11 +142,11 @@ public class NomadicMobility extends MobilityModel {
 				  
 				if(x_pos + right > this.MAX_WIDTH / 2.0) right = right * -1;
 				if(y_pos + up > this.MAX_HEIGHT / 2.0) up = up * -1;
-				double minDistance = this.MAX_HEIGHT * this.MAX_WIDTH;
+				//double minDistance = this.MAX_HEIGHT * this.MAX_WIDTH;
 
 				//Calculate which wlan_id you get
 				
-				double distance = 1000;
+			/*	double distance = 1000;
 				for(int a = 0; a < accessPoints.size(); a++)
 				{	
 					if(accessPoints.get(a).getKey().getKey() == wlan_id)
@@ -162,9 +169,24 @@ public class NomadicMobility extends MobilityModel {
 						distance = Math.sqrt(Math.pow(x_pos - nodeX + right, 2) + Math.pow(y_pos - nodeY + up, 2));
 						break;
 					}
+				}*/
+				
+				//If we are still in the same polygon, don't change
+				PowerDiagram diagram = SimManager.getInstance().getVoronoiDiagramAtLevel(1);
+
+				
+				for(Site site : diagram.getSites())
+				{
+					if(site.getPolygon().contains(x_pos, y_pos))
+					{
+						//We know that the site.getX and Y pos is location of WAP
+						//Find wlan id to assign
+						wlan_id = (network.findNode(new Location(site.getX(), site.getY()), true)).getWlanId();
+					}
 				}
 				
-				//If the previous node is going to be further than 10 or more away, find the next closest
+				
+				/*//If the previous node is going to be further than 10 or more away, find the next closest
 				if(distance > 10)
 				{
 				double nodeX, nodeY;
@@ -193,7 +215,7 @@ public class NomadicMobility extends MobilityModel {
 							wlan_id = accessPoints.get(z).getKey().getKey();
 						}
 					}
-				}
+				}*/
 				//This first argument kind of dictates the speed at which the device moves, higher it is, slower the devices are
 				//	smaller value in there, the more it updates
 				//As it is now, allows devices to change wlan_ids around 600 times in an hour

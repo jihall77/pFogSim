@@ -10,10 +10,9 @@ import edu.boun.edgecloudsim.edge_client.Task;
 import edu.boun.edgecloudsim.edge_server.EdgeHost;
 import edu.boun.edgecloudsim.edge_server.EdgeVM;
 import edu.boun.edgecloudsim.utils.Location;
-import javafx.util.Pair;
 import edu.auburn.pFogSim.Radix.DistRadix;
 import java.util.LinkedList;
-import org.cloudbus.cloudsim.Vm;
+//import org.cloudbus.cloudsim.Vm;
 import org.cloudbus.cloudsim.core.CloudSim;
 /**
  * @author Jacob I Hall
@@ -227,7 +226,7 @@ public class Puddle {
 	 * @param pair
 	 * @return
 	 */
-	public LinkedList<EdgeHost> getClosestNodes(Pair<Double, Double> pair) {
+	public LinkedList<EdgeHost> getClosestNodes(Location pair) {
 		DistRadix rad = new DistRadix(members, pair);
 		LinkedList<EdgeHost> nodes = rad.sortPuddleNodes();
 		return nodes;
@@ -237,9 +236,9 @@ public class Puddle {
 	 * @param ref
 	 * @return
 	 */
-	public LinkedList<EdgeHost> getClosestNodes(Location ref) {
-		return getClosestNodes(new Pair<Double, Double>(ref.getXPos(), ref.getYPos()));
-	}
+	/*public LinkedList<EdgeHost> getClosestNodes(Location ref) {
+		return getClosestNodes(new Location(ref.getXPos(), ref.getYPos()));
+	}*/
 	/**
 	 * set the level of this puddle
 	 * @param lvl

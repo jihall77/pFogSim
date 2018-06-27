@@ -29,6 +29,15 @@ public class Location {
 		yPos = _yPos;
 	}
 	
+	public Location(double _xPos, double _yPos) {
+		xPos = _xPos;
+		yPos = _yPos;
+	}
+
+	public Location() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public boolean equals(Object other){
 		boolean result = false;

@@ -24,12 +24,14 @@ import java.util.Map;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 
+import org.cloudbus.cloudsim.core.CloudSim;
+
 import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
-import edu.boun.edgecloudsim.edge_server.EdgeHost;
-import edu.boun.edgecloudsim.utils.*;
-import edu.auburn.pFogSim.Puddle.Puddle;
-import edu.auburn.pFogSim.netsim.*;
+//import edu.boun.edgecloudsim.edge_server.EdgeHost;
+//import edu.boun.edgecloudsim.utils.*;
+//import edu.auburn.pFogSim.Puddle.Puddle;
+//import edu.auburn.pFogSim.netsim.*;
 
 
 
@@ -155,6 +157,10 @@ public class SimLogger {
 		FileWriter successFW = null, failFW = null, vmLoadFW = null, locationFW = null;
 		BufferedWriter successBW = null, failBW = null, vmLoadBW = null, locationBW = null;
 
+		File[] vmLoadFileClay = new File[numOfAppTypes]; 
+		FileWriter[] vmLoadFWClay = new FileWriter[numOfAppTypes];
+		BufferedWriter[] vmLoadBWClay = new BufferedWriter[numOfAppTypes];
+		
 		// Save generic results to file for each app type. last index is average
 		// of all app types
 		File[] genericFiles = new File[numOfAppTypes + 1];
@@ -213,7 +219,14 @@ public class SimLogger {
 			locationFile = new File(outputFolder, filePrefix + "_LOCATION.log");
 			locationFW = new FileWriter(locationFile, true);
 			locationBW = new BufferedWriter(locationFW);
-
+			
+			for(int i = 0; i < numOfAppTypes; i++)
+			{
+				vmLoadFileClay[i] = new File(outputFolder, "CLAYSTESTFILE" + "_" + i + ".log");
+				vmLoadFWClay[i] = new FileWriter(vmLoadFileClay[i], true);
+				vmLoadBWClay[i] = new BufferedWriter(vmLoadFWClay[i]);
+				appendToFile(vmLoadBWClay[i], "#network delay\tsimulation time");
+			}
 			for (int i = 0; i < numOfAppTypes + 1; i++) {
 				String fileName = "ALL_APPS_GENERIC.log";
 
@@ -270,6 +283,10 @@ public class SimLogger {
 				cost[value.getTaskType()] += value.getCost();
 				serviceTime[value.getTaskType()] += value.getServiceTime();
 				networkDelay[value.getTaskType()] += value.getNetworkDelay();
+				
+				//Make a file that saves all of the network delays and current time info
+				appendToFile(vmLoadBWClay[value.getTaskType()], value.getNetworkDelay() + "\t" + CloudSim.clock());
+				
 				processingTime[value.getTaskType()] += (value.getServiceTime() - value.getNetworkDelay());
 
 				if (value.getVmType() == SimSettings.VM_TYPES.CLOUD_VM.ordinal()) {

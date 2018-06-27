@@ -35,11 +35,10 @@ import org.w3c.dom.NodeList;
 
 import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
-import edu.boun.edgecloudsim.utils.LinesComponent;
+//import edu.boun.edgecloudsim.utils.LinesComponent;
 import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
 import edu.boun.edgecloudsim.utils.SimUtils;
-import javafx.util.Pair;
 import edu.auburn.pFogSim.Puddle.Puddle;
 import edu.auburn.pFogSim.clustering.*;
 import edu.auburn.pFogSim.netsim.*;
@@ -100,14 +99,14 @@ public class EdgeServerManager {
 			Element leftLinkss = (Element)leftLinks;
 			double x_pos1 = Double.parseDouble(leftLinkss.getElementsByTagName("x_pos").item(0).getTextContent());
 			double y_pos1 = Double.parseDouble(leftLinkss.getElementsByTagName("y_pos").item(0).getTextContent());
-			Pair<Double, Double> leftCoor = new Pair<Double, Double>(x_pos1, y_pos1);
+			Location leftCoor = new Location(x_pos1, y_pos1);
 			
 			NodeList rightLinksList = linkElement.getElementsByTagName("right");
 			Node rightLinks = rightLinksList.item(0);
 			Element rightLinkss = (Element)rightLinks;
 			double x_pos2 = Double.parseDouble(rightLinkss.getElementsByTagName("x_pos").item(0).getTextContent());
 			double y_pos2 = Double.parseDouble(rightLinkss.getElementsByTagName("y_pos").item(0).getTextContent());
-			Pair<Double, Double> rightCoor = new Pair<Double, Double>(x_pos2, y_pos2);
+			Location rightCoor = new Location(x_pos2, y_pos2);
 			
 			double left_lat = Double.parseDouble(linkElement.getElementsByTagName("left_latency").item(0).getTextContent());
 			double right_lat = Double.parseDouble(linkElement.getElementsByTagName("right_latency").item(0).getTextContent());
@@ -292,7 +291,7 @@ public class EdgeServerManager {
 			NodeSim newNode;
 			if(moving)
 			{
-				newNode = new NodeSim(x_pos, y_pos, level, wlan_id, wap, moving, new Pair<Double, Double>(dx, dy));
+				newNode = new NodeSim(x_pos, y_pos, level, wlan_id, wap, moving, new Location(dx, dy));
 			}
 			else 
 			{

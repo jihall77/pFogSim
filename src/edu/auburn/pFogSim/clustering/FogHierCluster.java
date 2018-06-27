@@ -1,12 +1,13 @@
 package edu.auburn.pFogSim.clustering;
 
-import edu.boun.edgecloudsim.utils.*;
+//import edu.boun.edgecloudsim.utils.*;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import edu.auburn.pFogSim.netsim.*;
+import edu.boun.edgecloudsim.utils.Location;
 
 public class FogHierCluster {
 	private ArrayList<FogCluster> clusterList = new ArrayList<FogCluster>();
@@ -14,19 +15,19 @@ public class FogHierCluster {
 	
 	public FogHierCluster(ArrayList<NodeSim> nodes) {
 		
-		HashMap<Integer, ArrayList<Pair<Double, Double>>> levelMap = new HashMap<Integer, ArrayList<Pair<Double, Double>>>();
+		HashMap<Integer, ArrayList<Location>> levelMap = new HashMap<Integer, ArrayList<Location>>();
 		int level = 1000;
 		double x_pos = -1.0, y_pos = -1.0;
-		ArrayList<Pair<Double, Double>> tempList;
+		//ArrayList<Location> tempList;
 		for(int r = 0; r < 20; r++)
-			levelMap.put(r, new ArrayList<Pair<Double, Double>>());
+			levelMap.put(r, new ArrayList<Location>());
 		//Add all nodes to levelMap based on their level values
 		for(NodeSim node : nodes)
 		{
 			level = node.getLevel();
-			x_pos = node.getLocation().getKey();
-			y_pos = node.getLocation().getValue();
-			Pair<Double, Double> pair = new Pair<Double, Double>(x_pos, y_pos);
+			x_pos = node.getLocation().getXPos();
+			y_pos = node.getLocation().getYPos();
+			Location pair = new Location(x_pos, y_pos);
 			levelMap.get(level).add(pair);
 			//SimLogger.printLine("node added!");
 			/*if(levelMap.size() != 0)

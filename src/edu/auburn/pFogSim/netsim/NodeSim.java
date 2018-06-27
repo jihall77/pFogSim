@@ -7,6 +7,7 @@ package edu.auburn.pFogSim.netsim;
 import java.util.ArrayList;
 import java.util.List;
 import edu.auburn.pFogSim.netsim.Link;
+import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
 import edu.auburn.pFogSim.Exceptions.BadLinkException;
 import javafx.util.Pair;
@@ -14,18 +15,18 @@ import javafx.util.Pair;
 public class NodeSim {
 	
 	private ArrayList<Link> edges;
-	private Pair<Double, Double> myLocation;
+	private Location myLocation;
 	private int level;
 	private boolean wifiAccess;
 	private boolean moving;
-	private Pair<Double, Double> vector;
+	private Location vector;
 	private int wlan_id;
 	/**
 	 * Constructor
 	 * @param inputEdges
 	 * @param coord
 	 */
-	public NodeSim (List<Link> inputEdges, Pair<Double, Double> coord) {
+	public NodeSim (List<Link> inputEdges, Location coord) {
 		myLocation = coord;
 		for (Link edge : inputEdges) {
 			addLink(edge);
@@ -33,17 +34,17 @@ public class NodeSim {
 	}
 	public NodeSim() {
 		edges = new ArrayList<Link>();
-		myLocation = new Pair<Double, Double>(null, null);
+		myLocation = new Location();
 	}
 	public NodeSim(double xin, double yin) {
 		edges = new ArrayList<Link>();
-		myLocation = new Pair<Double, Double>(xin, yin);
+		myLocation = new Location(xin, yin);
 	}
 	
 	public NodeSim(double xin, double yin, int level, int id, boolean isAccessPoint) {
 		wlan_id = id;
 		edges = new ArrayList<Link>();
-		myLocation = new Pair<Double, Double>(xin, yin);
+		myLocation = new Location(xin, yin);
 		this.level = level;
 		this.wifiAccess = isAccessPoint;
 	}
@@ -51,19 +52,19 @@ public class NodeSim {
 	public NodeSim(double xin, double yin, int level, int id, boolean isAccessPoint, boolean isMoving) {
 		wlan_id = id;
 		edges = new ArrayList<Link>();
-		myLocation = new Pair<Double, Double>(xin, yin);
+		myLocation = new Location(xin, yin);
 		this.level = level;
 		this.wifiAccess = isAccessPoint;
 		if(isMoving == true)
 			throw new IllegalArgumentException("Please use the correct NodeSim constructor for a moving object. This one assumes the FOG Device is stationary");
 		this.moving = isMoving;
-		this.vector = new Pair<Double, Double>(0.0,0.0);
+		this.vector = new Location(0.0,0.0);
 	}
 	
-	public NodeSim(double xin, double yin, int level, int id, boolean isAccessPoint, boolean isMoving, Pair<Double, Double> _vector) {
+	public NodeSim(double xin, double yin, int level, int id, boolean isAccessPoint, boolean isMoving, Location _vector) {
 		wlan_id = id;
 		edges = new ArrayList<Link>();
-		myLocation = new Pair<Double, Double>(xin, yin);
+		myLocation = new Location(xin, yin);
 		this.level = level;
 		this.wifiAccess = isAccessPoint;
 		//There is a way better way of doing this construction but I will return to fix it later
@@ -93,20 +94,20 @@ public class NodeSim {
 	 * @param yin
 	 */
 	public void setLocation(double xin, double yin) {
-		myLocation = new Pair<Double, Double>(xin, yin);
+		myLocation = new Location(xin, yin);
 	}
 	/**
 	 * set myLocation by designating a coordinate
 	 * @param in
 	 */
-	public void setLocation(Pair<Double, Double> in) {
+	public void setLocation(Location in) {
 		myLocation = in;
 	}
 	/**
 	 * get the coordinate for this node
 	 * @return
 	 */
-	public Pair<Double, Double> getLocation() {
+	public Location getLocation() {
 		return myLocation;
 	}
 	/**
@@ -145,7 +146,7 @@ public class NodeSim {
 		for (Link edge : edges) {
 			if (edge.equals(victim)) {
 				edges.remove(victim);
-				SimLogger.printLine(victim.getLeftLink().getKey() + ", " + victim.getLeftLink().getValue() + " " + victim.getRightLink().getKey() + ", " + victim.getRightLink().getValue());
+				SimLogger.printLine(victim.getLeftLink().getXPos() + ", " + victim.getLeftLink().getYPos() + " " + victim.getRightLink().getXPos() + ", " + victim.getRightLink().getYPos());
 				//SimLogger.printLine("removeLink return true");
 				return true;
 			}
@@ -243,7 +244,7 @@ public class NodeSim {
 	 * set the motion vector for this device, if it is mobile
 	 * @param _vector
 	 */
-	public void setVector(Pair<Double, Double> _vector)
+	public void setVector(Location _vector)
 	{
 		this.vector = _vector;
 	}
@@ -251,7 +252,7 @@ public class NodeSim {
 	 * get the motion vector for this device, if it is mobile
 	 * @return
 	 */
-	public Pair<Double, Double> getVector() 
+	public Location getVector() 
 	{
 		return this.vector;
 	}
@@ -282,6 +283,6 @@ public class NodeSim {
 	 * toString() for node returns the x and y coordinate of the node as a string of the form "x, y"
 	 */
 	public String toString() {
-		return getLocation().getKey() + ", " + getLocation().getValue();
+		return getLocation().getXPos() + ", " + getLocation().getYPos();
 	}
 }

@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.HashMap;
-import javafx.util.Pair;
 import java.util.LinkedList;
 import edu.boun.edgecloudsim.edge_server.EdgeHost;
+import edu.boun.edgecloudsim.utils.Location;
 /**
  * Class for implementing Radix sort for find the closest nodes
  * @author Jacob I Hall jih0007@auburn.edu
@@ -14,10 +14,10 @@ import edu.boun.edgecloudsim.edge_server.EdgeHost;
 public class DistRadix {
 	
 	private ArrayList<EdgeHost> input;
-	private HashMap<Pair<Double, Double>, EdgeHost> coordMap;
-	private HashMap<Double, Pair<Double, Double>> distMap;
-	private Pair<Double, Double> ref;
-	private ArrayList<Pair<Double, Double>> coords;
+	private HashMap<Location, EdgeHost> coordMap;
+	private HashMap<Double, Location> distMap;
+	private Location ref;
+	private ArrayList<Location> coords;
 	private ArrayList<Integer> distances;
 	private int[] arrgs;
 	/**
@@ -25,11 +25,11 @@ public class DistRadix {
 	 * @param in
 	 * @param pair
 	 */
-	public DistRadix(List<EdgeHost> in, Pair<Double, Double> pair) {
+	public DistRadix(List<EdgeHost> in, Location pair) {
 		input = new ArrayList<EdgeHost>();
-		coordMap = new HashMap<Pair<Double, Double>, EdgeHost>();
-		distMap = new HashMap<Double, Pair<Double, Double>>();
-		coords = new ArrayList<Pair<Double, Double>>();
+		coordMap = new HashMap<Location, EdgeHost>();
+		distMap = new HashMap<Double, Location>();
+		coords = new ArrayList<Location>();
 		distances = new ArrayList<Integer>();
 		for (EdgeHost node : in) {
 			input.add(node);
@@ -41,8 +41,8 @@ public class DistRadix {
 	 */
 	private void buildCoords() {
 		for(EdgeHost node : input) {
-			coordMap.put(new Pair<Double, Double>(node.getLocation().getXPos(), node.getLocation().getYPos()), node);
-			coords.add(new Pair<Double, Double>(node.getLocation().getXPos(), node.getLocation().getYPos()));
+			coordMap.put(new Location(node.getLocation().getXPos(), node.getLocation().getYPos()), node);
+			coords.add(new Location(node.getLocation().getXPos(), node.getLocation().getYPos()));
 		}
 	}
 	/**
@@ -50,8 +50,8 @@ public class DistRadix {
 	 */
 	private void buildDist() {
 		double dist = 0;
-		for (Pair<Double, Double> loc : coords) {
-			dist = Math.sqrt((Math.pow(ref.getKey() - loc.getKey(), 2) + Math.pow(ref.getValue() - loc.getValue(), 2)));
+		for (Location loc : coords) {
+			dist = Math.sqrt((Math.pow(ref.getXPos() - loc.getXPos(), 2) + Math.pow(ref.getYPos() - loc.getYPos(), 2)));
 			dist = Math.floor(dist);
 			while(distMap.keySet().contains(dist)) {
 				dist += 0.001;
@@ -128,7 +128,7 @@ public class DistRadix {
 	private LinkedList<EdgeHost> getList() {
 		LinkedList<EdgeHost> output = new LinkedList<EdgeHost>();
 		double dist = 0.0;
-		Pair<Double, Double> loc;
+		Location loc;
 		EdgeHost node;
 		for (int i = 0; i < arrgs.length; i++) {
 			dist = arrgs[i]/1000;
