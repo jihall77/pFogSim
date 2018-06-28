@@ -89,7 +89,7 @@ public class SimManager extends SimEntity {
 		
 		//Generate edge orchestrator
 		edgeOrchestrator = scenarioFactory.getEdgeOrchestrator();
-		edgeOrchestrator.initialize();
+		//edgeOrchestrator.initialize();
 		
 		//Create Physical Servers
 		edgeServerManager = new EdgeServerManager();
@@ -97,7 +97,7 @@ public class SimManager extends SimEntity {
 		//Create Client Manager
 		mobileDeviceManager = new MobileDeviceManager();
 		
-		
+		wapIdList = new int [numOfMobileDevice];
 		instance = this;
 	}
 	
@@ -115,7 +115,7 @@ public class SimManager extends SimEntity {
 		//Start Edge Servers & Generate VMs
 		edgeServerManager.startDatacenters();
 		edgeServerManager.createVmList(mobileDeviceManager.getId());
-
+		edgeOrchestrator.initialize();
 		SimLogger.print("Creating device locations...");
 		mobilityModel = scenarioFactory.getMobilityModel();
 		mobilityModel.initialize();

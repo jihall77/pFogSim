@@ -228,7 +228,7 @@ public class Puddle {
 	 */
 	public LinkedList<EdgeHost> getClosestNodes(Location pair) {
 		DistRadix rad = new DistRadix(members, pair);
-		LinkedList<EdgeHost> nodes = rad.sortPuddleNodes();
+		LinkedList<EdgeHost> nodes = rad.sortNodes();
 		return nodes;
 	}
 	/**

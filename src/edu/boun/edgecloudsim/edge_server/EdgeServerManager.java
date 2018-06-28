@@ -42,6 +42,7 @@ import edu.boun.edgecloudsim.utils.SimUtils;
 import edu.auburn.pFogSim.Puddle.Puddle;
 import edu.auburn.pFogSim.clustering.*;
 import edu.auburn.pFogSim.netsim.*;
+import edu.auburn.pFogSim.orchestrator.PuddleOrchestrator;
 
 public class EdgeServerManager {
 	private List<Datacenter> localDatacenters;
@@ -114,26 +115,19 @@ public class EdgeServerManager {
 			Link newLink = new Link(rightCoor,leftCoor, right_lat, left_lat);
 			linksForTopography.add(newLink);
 		}
-		SimLogger.print("\n\tMaking Cluster Object...");
-		FogHierCluster clusterObject = new FogHierCluster((ArrayList<NodeSim>)nodesForTopography);
-		SimLogger.printLine("Done,");
 		networkTopology = new NetworkTopology(nodesForTopography, linksForTopography);
-		if(!networkTopology.cleanNodes())
-		{
+		if(!networkTopology.cleanNodes()) {
 			SimLogger.printLine("Topology is not valid");
 			System.exit(0);
 		}
-		//Sets network topology and uses it to make the Puddle Objects
 		((ESBModel) SimManager.getInstance().getNetworkModel()).setNetworkTopology(networkTopology);
-		networkTopology.setPuddles(makePuddles(clusterObject));
-		
-		//LinesComponent networkTopologyDrawing = new LinesComponent();
-		//networkTopologyDrawing.drawNetworkTopology(1);		
-		//networkTopologyDrawing.drawNetworkTopology(2);
-		//networkTopologyDrawing.drawNetworkTopology(3);
-		//networkTopologyDrawing.drawNetworkTopology(4);
-		//networkTopologyDrawing.drawNetworkTopology(5);
-
+		if (SimManager.getInstance().getEdgeOrchestrator() instanceof PuddleOrchestrator) {
+			SimLogger.print("\n\tMaking Cluster Object...");
+			FogHierCluster clusterObject = new FogHierCluster((ArrayList<NodeSim>)nodesForTopography);
+			SimLogger.printLine("Done,");
+			//Sets network topology and uses it to make the Puddle Objects
+			networkTopology.setPuddles(makePuddles(clusterObject));
+		}
 	}
 
 	public void createVmList(int brockerId){
@@ -362,9 +356,7 @@ public class EdgeServerManager {
 		for (int k = 0; k < puds.length - 1; k++) {//for each layer
 			for (int i = 0; i < puds[k].length; i++) {//for each puddle in the layer
 				for (int j = 0; j < puds[k+1].length; j++) {//search the next layer up for the closest puddle (by latency)
-					temp = Router.findRoute(networkTopology, networkTopology.findNode(puds[k][i].getHead().getLocation().getXPos(),
-							puds[k][i].getHead().getLocation().getYPos(), false), networkTopology.findNode(puds[k+1][j].getHead().getLocation().getXPos(),
-							puds[k+1][j].getHead().getLocation().getYPos(), false));
+					temp = Router.findRoute(networkTopology, networkTopology.findNode(puds[k][i].getHead().getLocation(), false), networkTopology.findNode(puds[k+1][j].getHead().getLocation(), false));
 					/*if you are trying to debug this line shit has gone horribly horribly wrong...
 					 *that being said, lets figure out what's going on...
 					 *

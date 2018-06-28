@@ -82,17 +82,7 @@ public class PuddleOrchestrator extends EdgeOrchestrator {
 		}
 		return puddle;
 	}
-	/**
-	 * is the host capable of servicing the task
-	 * @param host
-	 * @param task
-	 * @return
-	 */
-	private boolean goodHost(EdgeHost host, Task task) {
-		double hostCap = 100.0 - host.getVmList().get(0).getCloudletScheduler().getTotalUtilizationOfCpu(CloudSim.clock());
-		double taskCap = ((CpuUtilizationModel_Custom)task.getUtilizationModelCpu()).predictUtilization(((EdgeVM) host.getVmList().get(0)).getVmType());
-		return hostCap >= taskCap;
-	}
+	
 	/**
 	 * find a proper host to place the task
 	 * @param task
@@ -137,7 +127,7 @@ public class PuddleOrchestrator extends EdgeOrchestrator {
 			hosts.addAll(pud.getMembers());//get all of the nodes from those puddles
 		}
 		radix = new DistRadix(hosts, new Location(task.getSubmittedLocation().getXPos(), task.getSubmittedLocation().getYPos()));
-		candidates = radix.sortPuddleNodes();//sort those nodes by distance
+		candidates = radix.sortNodes();//sort those nodes by distance
 		host = candidates.poll();
 		while(!goodHost(host, task)) {
 			host = candidates.poll();//find the closest node capable of handling the task

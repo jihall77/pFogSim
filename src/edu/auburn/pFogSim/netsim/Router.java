@@ -18,6 +18,7 @@ import javafx.util.Pair;
 import java.util.PriorityQueue;
 import java.util.Comparator;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class Router {
 	private HashMap<String, LinkedList<NodeSim>> database;
@@ -113,7 +114,7 @@ public class Router {
 	private class Dijkstra {
 		private HashMap<Pair<NodeSim, Pair<Double, NodeSim>>, ArrayList<Pair<Double, NodeSim>>> verts;
 		private HashMap<NodeSim, Pair<NodeSim, Pair<Double, NodeSim>>> getMap;
-		private HashMap<Location, NodeSim> index;
+		private TreeMap<Location, NodeSim> index;
 		private PriorityQueue<Pair<NodeSim, Pair<Double, NodeSim>>> queue;
 		private HashSet<Pair<NodeSim, Pair<Double, NodeSim>>> completed;
 		private NodeSim src;
@@ -123,7 +124,7 @@ public class Router {
 		public Dijkstra() {
 			verts = new HashMap<Pair<NodeSim, Pair<Double, NodeSim>>, ArrayList<Pair<Double, NodeSim>>>();
 			getMap = new HashMap<NodeSim, Pair<NodeSim, Pair<Double, NodeSim>>>();
-			index = new HashMap<Location, NodeSim>();
+			index = new TreeMap<Location, NodeSim>();
 			queue = new PriorityQueue<Pair<NodeSim, Pair<Double, NodeSim>>>(25, new dijkstrasComparator());
 			completed = new HashSet<Pair<NodeSim, Pair<Double, NodeSim>>>();
 		}

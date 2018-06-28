@@ -30,6 +30,7 @@ import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.diagram.PowerDiagram
 import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d.Site;
 import edu.auburn.pFogSim.netsim.ESBModel;
 import edu.auburn.pFogSim.netsim.NetworkTopology;
+import edu.auburn.pFogSim.orchestrator.PuddleOrchestrator;
 import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
 import edu.boun.edgecloudsim.utils.Location;
@@ -174,17 +175,17 @@ public class NomadicMobility extends MobilityModel {
 				//If we are still in the same polygon, don't change
 				PowerDiagram diagram = SimManager.getInstance().getVoronoiDiagramAtLevel(1);
 
-				
-				for(Site site : diagram.getSites())
-				{
-					if(site.getPolygon().contains(x_pos, y_pos))
+				if (SimManager.getInstance().getEdgeOrchestrator() instanceof PuddleOrchestrator) {
+					for(Site site : diagram.getSites())
 					{
-						//We know that the site.getX and Y pos is location of WAP
-						//Find wlan id to assign
-						wlan_id = (network.findNode(new Location(site.getX(), site.getY()), true)).getWlanId();
+						if(site.getPolygon().contains(x_pos, y_pos))
+						{
+							//We know that the site.getX and Y pos is location of WAP
+							//Find wlan id to assign
+							wlan_id = (network.findNode(new Location(site.getX(), site.getY()), true)).getWlanId();
+						}
 					}
 				}
-				
 				
 				/*//If the previous node is going to be further than 10 or more away, find the next closest
 				if(distance > 10)

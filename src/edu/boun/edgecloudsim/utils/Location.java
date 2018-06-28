@@ -11,7 +11,7 @@ package edu.boun.edgecloudsim.utils;
 
 import edu.boun.edgecloudsim.core.SimSettings;
 
-public class Location {
+public class Location implements Comparable {
 	private double xPos;
 	private double yPos;
 	private int servingWlanId;
@@ -41,14 +41,17 @@ public class Location {
 	@Override
 	public boolean equals(Object other){
 		boolean result = false;
-	    if (other == null) return false;
-	    if (!(other instanceof Location))return false;
-	    if (other == this) return true;
+	    if (other == null || !(other instanceof Location)) {
+	    	return false;
+	    }
+	    if (other == this) {
+	    	return true;
+	    }
 	    
 	    Location otherLocation = (Location)other;
-	    if(this.xPos == otherLocation.xPos && this.yPos == otherLocation.yPos)
+	    if(xPos == otherLocation.getXPos() && yPos == otherLocation.getYPos()) {
 	    	result = true;
-
+	    }
 	    return result;
 	}
 
@@ -66,5 +69,16 @@ public class Location {
 	
 	public double getYPos(){
 		return yPos;
+	}
+	
+	public int compareTo(Object _in) {
+		Location in = (Location) _in;
+		if (xPos == in.getXPos() && yPos == in.getYPos()) {
+			return 0;
+		}
+		else if (xPos > in.getXPos()) {
+			return 1;
+		}
+		else return -1;
 	}
 }

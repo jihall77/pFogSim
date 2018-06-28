@@ -12,12 +12,14 @@ import edu.auburn.pFogSim.Puddle.Puddle;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.TreeSet;
+
 import javafx.util.Pair;
 
 public class NetworkTopology {
 	private HashSet<Link> links;
 	private HashSet<NodeSim> nodes;
-	private HashSet<Location> coords;
+	private TreeSet<Location> coords;
 	private ArrayList<Puddle> pond;
 	/**
 	 * Constructor
@@ -27,7 +29,7 @@ public class NetworkTopology {
 	public NetworkTopology(List<NodeSim> inNodes, List<Link> inLinks) {
 		links = new HashSet<Link>();
 		nodes = new HashSet<NodeSim>();
-		coords = new HashSet<Location>();
+		coords = new TreeSet<Location>();
 		for (NodeSim node : inNodes) {
 			addNode(node);
 		}
@@ -92,6 +94,16 @@ public class NetworkTopology {
 					SimLogger.printLine(node.getVector().getXPos() + ", " + node.getVector().getYPos());
 					return false;
 				}
+			}
+			//int i = 0;
+			for (Link link : links) {
+				for(Location coord : coords) {
+					if (coord.equals(link.getRightLink())) {
+						//SimLogger.printLine("TEST " + i);
+					}
+					//i++;
+				}
+				break;
 			}
 			for (Link link : links) {
 				if (!coords.contains(link.getRightLink()) || !coords.contains(link.getLeftLink()) 

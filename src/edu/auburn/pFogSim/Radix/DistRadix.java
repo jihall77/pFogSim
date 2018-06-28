@@ -3,6 +3,7 @@ package edu.auburn.pFogSim.Radix;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.TreeMap;
 import java.util.HashMap;
 import java.util.LinkedList;
 import edu.boun.edgecloudsim.edge_server.EdgeHost;
@@ -14,7 +15,7 @@ import edu.boun.edgecloudsim.utils.Location;
 public class DistRadix {
 	
 	private ArrayList<EdgeHost> input;
-	private HashMap<Location, EdgeHost> coordMap;
+	private TreeMap<Location, EdgeHost> coordMap;
 	private HashMap<Double, Location> distMap;
 	private Location ref;
 	private ArrayList<Location> coords;
@@ -27,7 +28,7 @@ public class DistRadix {
 	 */
 	public DistRadix(List<EdgeHost> in, Location pair) {
 		input = new ArrayList<EdgeHost>();
-		coordMap = new HashMap<Location, EdgeHost>();
+		coordMap = new TreeMap<Location, EdgeHost>();
 		distMap = new HashMap<Double, Location>();
 		coords = new ArrayList<Location>();
 		distances = new ArrayList<Integer>();
@@ -142,7 +143,7 @@ public class DistRadix {
 	 * public facing method to get the list of sorted nodes
 	 * @return
 	 */
-	public LinkedList<EdgeHost> sortPuddleNodes() {
+	public LinkedList<EdgeHost> sortNodes() {
 		buildCoords();
 		buildDist();
 		setArrgs();
