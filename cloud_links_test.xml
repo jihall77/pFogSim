@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<links>
+<link>
+		<name>L0_C</name>
+		<left>
+			<x_pos>416.7241726320453</x_pos>
+			<y_pos>556.2122452344883</y_pos>
+		</left>
+		<right>
+			<x_pos>1.0</x_pos>
+			<y_pos>1.0</y_pos>
+		</right>
+		<left_latency>2.0</left_latency>
+		<right_latency>2.0</right_latency>
+	</link>
+<link>
+		<name>L1_C</name>
+		<left>
+			<x_pos>33.882375537194534</x_pos>
+			<y_pos>698.331322424005</y_pos>
+		</left>
+		<right>
+			<x_pos>1.0</x_pos>
+			<y_pos>1.0</y_pos>
+		</right>
+		<left_latency>2.0</left_latency>
+		<right_latency>2.0</right_latency>
+	</link>
+<link>
+		<name>L2_C</name>
+		<left>
+			<x_pos>918.135466993426</x_pos>
+			<y_pos>324.51374447226635</y_pos>
+		</left>
+		<right>
+			<x_pos>1.0</x_pos>
+			<y_pos>1.0</y_pos>
+		</right>
+		<left_latency>2.0</left_latency>
+		<right_latency>2.0</right_latency>
+	</link>
+</links>
