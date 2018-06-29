@@ -412,7 +412,7 @@ public class EdgeServerManager {
 	 * find a given host by id<br>
 	 * added by pFogSim
 	 * @param id
-	 * @return
+	 * @return EdgeHost
 	 */
 	public EdgeHost findHostById(int id) {
 		for (Datacenter node : SimManager.getInstance().getLocalServerManager().getDatacenterList()) {

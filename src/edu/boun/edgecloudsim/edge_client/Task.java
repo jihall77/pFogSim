@@ -75,4 +75,8 @@ public class Task extends Cloudlet {
 	public double getMaxDelay() {
 		return maxDelay;
 	}
+	
+	public void setMaxDelay(double in) {
+		maxDelay = in;
+	}
 }

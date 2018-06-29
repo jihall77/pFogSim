@@ -209,7 +209,7 @@ public class SimManager extends SimEntity {
 			case CHECK_ALL_VM:
 				//SimLogger.printLine("CHECK_ALL_VM reached");
 				int totalNumOfVm = SimSettings.getInstance().getNumOfEdgeVMs();
-				if(VmAllocationPolicy_Custom.getCreatedVmNum() != totalNumOfVm){
+				if(VmAllocationPolicy_Custom.getCreatedVmNum() != totalNumOfVm) {
 					SimLogger.printLine("Total # of Vms : " + totalNumOfVm);
 					SimLogger.printLine("Vms Made : " + VmAllocationPolicy_Custom.getCreatedVmNum());
 					SimLogger.printLine("All VMs cannot be created! Terminating simulation...");
@@ -231,26 +231,21 @@ public class SimManager extends SimEntity {
 				ArrayList<NodeSim> newNodes = new ArrayList<NodeSim>();
 				ArrayList<EdgeHost> movingNodes = new ArrayList<EdgeHost>();
 				EdgeHost moving = null;
-				for(NodeSim node : nodes)
-				{
-					if(node.isMoving())
-					{
+				for(NodeSim node : nodes) {
+					if(node.isMoving()) {
 					//Update positions
 						Location currentLoc = node.getLocation();
 						if(currentLoc.getXPos() + node.getVector().getXPos() > MAX_WIDTH) node.setVector(new Location(node.getVector().getXPos() * -1, node.getVector().getYPos()));
 						if(currentLoc.getYPos() + node.getVector().getYPos() > MAX_HEIGHT) node.setVector(new Location(node.getVector().getXPos(), node.getVector().getYPos() * -1));
 
 						//Change links
-						for(Link link : links)
-						{
-							if(link.getLeftLink().equals(currentLoc))
-							{
+						for(Link link : links) {
+							if(link.getLeftLink().equals(currentLoc)) {
 								//Sets that location to what it will be in a bit
 								link.setLeftLink(new Location(currentLoc.getXPos() + node.getVector().getXPos(), currentLoc.getYPos() + node.getVector().getYPos()));
 								//SimLogger.printLine("Left Link changed");
 							}
-							else if(link.getRightLink().equals(currentLoc))
-							{
+							else if(link.getRightLink().equals(currentLoc)) {
 								//Sets that location to what it will be in a bit
 								link.setRightLink(new Location(currentLoc.getXPos() + node.getVector().getXPos(), currentLoc.getYPos() + node.getVector().getYPos()));
 								//SimLogger.printLine("Right Link changed");
@@ -278,15 +273,13 @@ public class SimManager extends SimEntity {
 
 					newNodes.add(node);
 				}
-				for(Link link : links)
-				{
+				for(Link link : links) {
 					newLinks.add(link);
 				}
 				//Rerun clustering and puddles
 				FogHierCluster clusterObject = new FogHierCluster(newNodes);
 				networkTopology = new NetworkTopology(newNodes, newLinks);
-				if(!networkTopology.cleanNodes())
-				{
+				if(!networkTopology.cleanNodes()) {
 					SimLogger.printLine("Topology is not valid");
 					System.exit(0);
 				}
@@ -298,11 +291,9 @@ public class SimManager extends SimEntity {
 				//Goes through all devices and checks to see if WAP ids have changed
 				//	Currently checks devices every 12 seconds in simulation (which runs for 20mins {Duration: 0.333.. hrs})
 				double time = CloudSim.clock();
-				for(int q = 0; q < mobilityModel.getSize(); q++)
-				{
+				for(int q = 0; q < mobilityModel.getSize(); q++) {
 					//If the id has changed, update the value in our list and move the cloudlet to a more appropriate VM
-					if(wapIdList[q] != mobilityModel.getWlanId(q, time))
-					{
+					if(wapIdList[q] != mobilityModel.getWlanId(q, time)) {
 						wapIdList[q] = mobilityModel.getWlanId(q, time);
 						if (mobileDeviceManager.getCloudletList().size() > q) {
 							Task task = (Task) mobileDeviceManager.getCloudletList().get(q);

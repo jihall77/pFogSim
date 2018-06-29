@@ -150,6 +150,10 @@ public class SimLogger {
 		taskMap.get(taskId).setDistance(dist);
 	}
 	
+	public void addHops(int taskId, int hops) {
+		taskMap.get(taskId).setHops(hops);
+	}
+	
 	private int[] levelCloudletCount = {0, 0, 0, 0, 0, 0, 0, 0};
 	public void addCloudletToLevel(int level) {this.levelCloudletCount[level]++;}
 	
@@ -584,6 +588,7 @@ class LogItem {
 	private int taskLenght;
 	private int taskInputType;
 	private int taskOutputSize;
+	private int numberOfHops;
 	private double taskStartTime;
 	private double taskEndTime;
 	private double networkDelay;
@@ -720,6 +725,14 @@ class LogItem {
 	
 	public void setDistance(double in) {
 		distanceToHost = in;
+	}
+	
+	public int getHops() {
+		return numberOfHops;
+	}
+	
+	public void setHops(int in) {
+		numberOfHops = in;
 	}
 
 

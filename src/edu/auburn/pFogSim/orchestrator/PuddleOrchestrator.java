@@ -9,6 +9,7 @@ import edu.boun.edgecloudsim.edge_server.EdgeVM;
 import edu.auburn.pFogSim.netsim.NetworkTopology;
 import edu.auburn.pFogSim.netsim.ESBModel;
 import edu.boun.edgecloudsim.utils.Location;
+import edu.boun.edgecloudsim.utils.SimLogger;
 //import edu.boun.edgecloudsim.utils.SimLogger;
 import javafx.util.Pair;
 import edu.auburn.pFogSim.Puddle.Puddle;
@@ -45,7 +46,10 @@ public class PuddleOrchestrator extends EdgeOrchestrator {
 	 */
 	@Override
 	public int getDeviceToOffload(Task task) {
-		return getHost(task).getId();
+		EdgeHost host = getHost(task);
+		double dist = Math.sqrt(Math.pow(host.getLocation().getXPos() - task.getSubmittedLocation().getXPos(), 2) + Math.pow(host.getLocation().getYPos() - task.getSubmittedLocation().getYPos(), 2));
+		SimLogger.getInstance().addHostDistanceLog(task.getCloudletId(), dist);
+		return host.getId();
 	}
 	/**
 	 * get the VM to place the task on

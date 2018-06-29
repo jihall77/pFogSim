@@ -10,6 +10,7 @@ import org.cloudbus.cloudsim.core.CloudSim;
 
 import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
+import edu.boun.edgecloudsim.edge_client.Task;
 import edu.boun.edgecloudsim.network.NetworkModel;
 import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
@@ -72,19 +73,17 @@ public class ESBModel extends NetworkModel {
 		router = new Router();
 	}
 
-    /**
-    * source device is always mobile device in our simulation scenarios!
-    */
+
 	@Override
 	public double getUploadDelay(int sourceDeviceId, int destDeviceId, double dataSize, boolean wifiSrc, boolean wifiDest) {
 		double delay = 0;
 		Location accessPointLocation = null;
 		Location destPointLocation = null;
 		/*changed by pFogSim--
-		 * ok... so this looks really stupid, but its not... mostly
+		 * OK... so this looks really stupid, but its not... mostly
 		 * unfortunately mobile devices and host devices use the same range of id's
 		 * and this is far too deep to go through the process of separating them
-		 * as such, anytime that a host device is sent into this method it is multiplied by -1
+		 * as such, any time that a host device is sent into this method it is multiplied by -1
 		 * this will cause and index out of bounds exception when searching for a mobile location
 		 * when you get such exception, flip the sign of the id and search it as a host
 		 */
@@ -126,7 +125,7 @@ public class ESBModel extends NetworkModel {
 		}
 	    path = router.findPath(networkTopology, src, dest);
 		delay += getWlanUploadDelay(accessPointLocation, CloudSim.clock());
-		SimLogger.getInstance().addHostDistanceLog(sourceDeviceId, Math.sqrt((Math.pow(src.getLocation().getXPos() - dest.getLocation().getXPos(), 2) + Math.pow(src.getLocation().getYPos() - dest.getLocation().getYPos(), 2))));
+		
 		//SimLogger.printLine("Number of hops: " + path.size());
 		while (!path.isEmpty()) {
 			current = path.poll();
@@ -221,5 +220,11 @@ public class ESBModel extends NetworkModel {
 	public void downloadFinished(Location accessPointLocation, int sourceDeviceId) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public int getHops(Task task, int hostID) {
+		NodeSim dest = networkTopology.findNode(SimManager.getInstance().getLocalServerManager().findHostById(hostID).getLocation(), false);
+		NodeSim src = networkTopology.findNode(SimManager.getInstance().getMobilityModel().getLocation(task.getMobileDeviceId(),CloudSim.clock()), false);
+		return router.findPath(networkTopology, src, dest).size();
 	}
 }
