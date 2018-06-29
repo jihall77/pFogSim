@@ -48,7 +48,7 @@ public class mainApp {
 		    links.println("<links>");
 		    
 		    //Make a the cloud
-		    node.println("<datacenter arch=\"x86\" os=\"Linux\" vmm=\"Xen\">\n");
+		    node.println("<datacenter arch=\"CLOUD\" os=\"Linux\" vmm=\"Xen\">\n");
 		    node.println("<costPerBw>0.1</costPerBw>\n" + 
 		    		"		<costPerSec>3.0</costPerSec>\n" + 
 		    		"		<costPerMem>0.05</costPerMem>\n" + 
@@ -81,7 +81,7 @@ public class mainApp {
 		    		"	</datacenter>");
 		    
 		    int level;
-		    /*for(int i = 0; i < 4; i++)
+		    for(int i = 0; i < 4; i++)
 		    {
 		    	level = 5;
 		    	double x = Math.random()* 1000;
@@ -106,16 +106,16 @@ public class mainApp {
 			    		"		</location>");
 			    node.println("<hosts>\n" + 
 			    		"			<host>\n" + 
-			    		"				<core>0</core>\n" + 
-			    		"				<mips>0</mips>\n" + 
-			    		"				<ram>0</ram>\n" + 
-			    		"				<storage>0</storage>\n" + 
+			    		"				<core>1</core>\n" + 
+			    		"				<mips>1</mips>\n" + 
+			    		"				<ram>1</ram>\n" + 
+			    		"				<storage>1</storage>\n" + 
 			    		"				<VMs>\n" + 
 			    		"					<VM vmm=\"Xen\">\n" + 
-			    		"						<core>0</core>\n" + 
-			    		"						<mips>0</mips>\n" + 
-			    		"						<ram>0</ram>\n" + 
-			    		"						<storage>0</storage>\n" + 
+			    		"						<core>1</core>\n" + 
+			    		"						<mips>1</mips>\n" + 
+			    		"						<ram>1</ram>\n" + 
+			    		"						<storage>1</storage>\n" + 
 			    		"					</VM>\n" + 
 			    		"				</VMs>\n" + 
 			    		"			</host>\n" + 
@@ -160,16 +160,16 @@ public class mainApp {
 				    		"		</location>");
 				    node.println("<hosts>\n" + 
 				    		"			<host>\n" + 
-				    		"				<core>0</core>\n" + 
-				    		"				<mips>0</mips>\n" + 
-				    		"				<ram>0</ram>\n" + 
-				    		"				<storage>0</storage>\n" + 
+				    		"				<core>1</core>\n" + 
+				    		"				<mips>1</mips>\n" + 
+				    		"				<ram>1</ram>\n" + 
+				    		"				<storage>1</storage>\n" + 
 				    		"				<VMs>\n" + 
 				    		"					<VM vmm=\"Xen\">\n" + 
-				    		"						<core>0</core>\n" + 
-				    		"						<mips>0</mips>\n" + 
-				    		"						<ram>0</ram>\n" + 
-				    		"						<storage>0</storage>\n" + 
+				    		"						<core>1</core>\n" + 
+				    		"						<mips>1</mips>\n" + 
+				    		"						<ram>1</ram>\n" + 
+				    		"						<storage>1</storage>\n" + 
 				    		"					</VM>\n" + 
 				    		"				</VMs>\n" + 
 				    		"			</host>\n" + 
@@ -214,16 +214,16 @@ public class mainApp {
 					    		"		</location>");
 					    node.println("<hosts>\n" + 
 					    		"			<host>\n" + 
-					    		"				<core>0</core>\n" + 
-					    		"				<mips>0</mips>\n" + 
-					    		"				<ram>0</ram>\n" + 
-					    		"				<storage>0</storage>\n" + 
+					    		"				<core>1</core>\n" + 
+					    		"				<mips>1</mips>\n" + 
+					    		"				<ram>1</ram>\n" + 
+					    		"				<storage>1</storage>\n" + 
 					    		"				<VMs>\n" + 
 					    		"					<VM vmm=\"Xen\">\n" + 
-					    		"						<core>0</core>\n" + 
-					    		"						<mips>0</mips>\n" + 
-					    		"						<ram>0</ram>\n" + 
-					    		"						<storage>0</storage>\n" + 
+					    		"						<core>1</core>\n" + 
+					    		"						<mips>1</mips>\n" + 
+					    		"						<ram>1</ram>\n" + 
+					    		"						<storage>1</storage>\n" + 
 					    		"					</VM>\n" + 
 					    		"				</VMs>\n" + 
 					    		"			</host>\n" + 
@@ -268,16 +268,16 @@ public class mainApp {
 						    		"		</location>");
 						    node.println("<hosts>\n" + 
 						    		"			<host>\n" + 
-						    		"				<core>0</core>\n" + 
-						    		"				<mips>0</mips>\n" + 
-						    		"				<ram>0</ram>\n" + 
-						    		"				<storage>0</storage>\n" + 
+						    		"				<core>1</core>\n" + 
+						    		"				<mips>1</mips>\n" + 
+						    		"				<ram>1</ram>\n" + 
+						    		"				<storage>1</storage>\n" + 
 						    		"				<VMs>\n" + 
 						    		"					<VM vmm=\"Xen\">\n" + 
-						    		"						<core>0</core>\n" + 
-						    		"						<mips>0</mips>\n" + 
-						    		"						<ram>0</ram>\n" + 
-						    		"						<storage>0</storage>\n" + 
+						    		"						<core>1</core>\n" + 
+						    		"						<mips>1</mips>\n" + 
+						    		"						<ram>1</ram>\n" + 
+						    		"						<storage>1</storage>\n" + 
 						    		"					</VM>\n" + 
 						    		"				</VMs>\n" + 
 						    		"			</host>\n" + 
@@ -298,8 +298,8 @@ public class mainApp {
 						    		"		<right_latency>0.5</right_latency>\n" + 
 						    		"	</link>");
 						    //Add subnodes
-					    	counter++;*/
-					    	for(int v = 0; v < 3; v++)
+					    	counter++;
+					    	for(int v = 0; v < 300; v++)
 				    		{
 				    			level = 1;
 						    	double x5 = Math.random()* 1000;
@@ -318,7 +318,7 @@ public class mainApp {
 							    		"			<level>" + level + "</level>\n" +
 							    		"			<attractiveness>3</attractiveness>\n" + 
 							    		"			<wap>true</wap>\n" +  
-		    							"			<moving>true</moving>\n" + 
+		    							"			<moving>false</moving>\n" + 
 		    							"			<dx>1</dx>\n" + 
 		    							"			<dy>1</dy>\n" + 
 							    		"		</location>");
@@ -347,19 +347,19 @@ public class mainApp {
 							    		"			<y_pos>" + y5 + "</y_pos>\n" + 
 							    		"		</left>\n" + 
 							    		"		<right>\n" + 
-							    		"			<x_pos>1.0</x_pos>\n" + 
-							    		"			<y_pos>1.0</y_pos>\n" + 
+							    		"			<x_pos>" + x4 + "</x_pos>\n" + 
+							    		"			<y_pos>" + y4 + "</y_pos>\n" + 
 							    		"		</right>\n" + 
-							    		"		<left_latency>2.0</left_latency>\n" + 
-							    		"		<right_latency>2.0</right_latency>\n" + 
+							    		"		<left_latency>0.5</left_latency>\n" + 
+							    		"		<right_latency>0.5</right_latency>\n" + 
 							    		"	</link>");
 						    	counter++;
 				    		}
 					    	
-			    		//}
-	//		    	}
-	//		    }
-	//	    }
+			    		}
+		    	}
+			    }
+		    }
 		    
 		    
 		    
