@@ -125,7 +125,6 @@ public class ESBModel extends NetworkModel {
 		}
 	    path = router.findPath(networkTopology, src, dest);
 		delay += getWlanUploadDelay(accessPointLocation, CloudSim.clock());
-		
 		//SimLogger.printLine("Number of hops: " + path.size());
 		while (!path.isEmpty()) {
 			current = path.poll();
