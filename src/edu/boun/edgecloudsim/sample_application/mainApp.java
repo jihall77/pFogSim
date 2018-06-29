@@ -38,8 +38,8 @@ public class mainApp {
 		 */
 		
 		try{
-		    PrintWriter node = new PrintWriter("large_node_test.xml", "UTF-8");
-		    PrintWriter links = new PrintWriter("large_links_test.xml", "UTF-8");
+		    PrintWriter node = new PrintWriter("cloud_node_test.xml", "UTF-8");
+		    PrintWriter links = new PrintWriter("cloud_links_test.xml", "UTF-8");
 		    node.println("<?xml version=\"1.0\"?>");
 		    links.println("<?xml version=\"1.0\"?>");
 		    int counter = 1;
@@ -56,7 +56,7 @@ public class mainApp {
 		    node.println("<location>\n" + 
 		    		"			<x_pos>1.0</x_pos>\n" + 
 		    		"			<y_pos>1.0</y_pos>\n" + 
-		    		"			<level>6</level>" +
+		    		"			<level>2</level>" +
 		    		"			<wlan_id>0</wlan_id>\n" + 
 		    		"			<attractiveness>1</attractiveness>\n" + 
 		    		"			<wap>false</wap>\n" + 
@@ -81,7 +81,7 @@ public class mainApp {
 		    		"	</datacenter>");
 		    
 		    int level;
-		    for(int i = 0; i < 4; i++)
+		    /*for(int i = 0; i < 4; i++)
 		    {
 		    	level = 5;
 		    	double x = Math.random()* 1000;
@@ -106,16 +106,16 @@ public class mainApp {
 			    		"		</location>");
 			    node.println("<hosts>\n" + 
 			    		"			<host>\n" + 
-			    		"				<core>16</core>\n" + 
-			    		"				<mips>100000</mips>\n" + 
-			    		"				<ram>200000</ram>\n" + 
-			    		"				<storage>500000</storage>\n" + 
+			    		"				<core>0</core>\n" + 
+			    		"				<mips>0</mips>\n" + 
+			    		"				<ram>0</ram>\n" + 
+			    		"				<storage>0</storage>\n" + 
 			    		"				<VMs>\n" + 
 			    		"					<VM vmm=\"Xen\">\n" + 
-			    		"						<core>8</core>\n" + 
-			    		"						<mips>10000</mips>\n" + 
-			    		"						<ram>20000</ram>\n" + 
-			    		"						<storage>50000</storage>\n" + 
+			    		"						<core>0</core>\n" + 
+			    		"						<mips>0</mips>\n" + 
+			    		"						<ram>0</ram>\n" + 
+			    		"						<storage>0</storage>\n" + 
 			    		"					</VM>\n" + 
 			    		"				</VMs>\n" + 
 			    		"			</host>\n" + 
@@ -160,16 +160,16 @@ public class mainApp {
 				    		"		</location>");
 				    node.println("<hosts>\n" + 
 				    		"			<host>\n" + 
-				    		"				<core>8</core>\n" + 
-				    		"				<mips>40000</mips>\n" + 
-				    		"				<ram>400000</ram>\n" + 
-				    		"				<storage>2000000</storage>\n" + 
+				    		"				<core>0</core>\n" + 
+				    		"				<mips>0</mips>\n" + 
+				    		"				<ram>0</ram>\n" + 
+				    		"				<storage>0</storage>\n" + 
 				    		"				<VMs>\n" + 
 				    		"					<VM vmm=\"Xen\">\n" + 
-				    		"						<core>4</core>\n" + 
-				    		"						<mips>40000</mips>\n" + 
-				    		"						<ram>40000</ram>\n" + 
-				    		"						<storage>200000</storage>\n" + 
+				    		"						<core>0</core>\n" + 
+				    		"						<mips>0</mips>\n" + 
+				    		"						<ram>0</ram>\n" + 
+				    		"						<storage>0</storage>\n" + 
 				    		"					</VM>\n" + 
 				    		"				</VMs>\n" + 
 				    		"			</host>\n" + 
@@ -214,16 +214,16 @@ public class mainApp {
 					    		"		</location>");
 					    node.println("<hosts>\n" + 
 					    		"			<host>\n" + 
-					    		"				<core>2</core>\n" + 
-					    		"				<mips>5000</mips>\n" + 
-					    		"				<ram>20000</ram>\n" + 
-					    		"				<storage>200000</storage>\n" + 
+					    		"				<core>0</core>\n" + 
+					    		"				<mips>0</mips>\n" + 
+					    		"				<ram>0</ram>\n" + 
+					    		"				<storage>0</storage>\n" + 
 					    		"				<VMs>\n" + 
 					    		"					<VM vmm=\"Xen\">\n" + 
-					    		"						<core>2</core>\n" + 
-					    		"						<mips>5000</mips>\n" + 
-					    		"						<ram>20000</ram>\n" + 
-					    		"						<storage>20000</storage>\n" + 
+					    		"						<core>0</core>\n" + 
+					    		"						<mips>0</mips>\n" + 
+					    		"						<ram>0</ram>\n" + 
+					    		"						<storage>0</storage>\n" + 
 					    		"					</VM>\n" + 
 					    		"				</VMs>\n" + 
 					    		"			</host>\n" + 
@@ -268,16 +268,16 @@ public class mainApp {
 						    		"		</location>");
 						    node.println("<hosts>\n" + 
 						    		"			<host>\n" + 
-						    		"				<core>2</core>\n" + 
-						    		"				<mips>1000</mips>\n" + 
-						    		"				<ram>2000</ram>\n" + 
-						    		"				<storage>2000</storage>\n" + 
+						    		"				<core>0</core>\n" + 
+						    		"				<mips>0</mips>\n" + 
+						    		"				<ram>0</ram>\n" + 
+						    		"				<storage>0</storage>\n" + 
 						    		"				<VMs>\n" + 
 						    		"					<VM vmm=\"Xen\">\n" + 
-						    		"						<core>2</core>\n" + 
-						    		"						<mips>1000</mips>\n" + 
-						    		"						<ram>2000</ram>\n" + 
-						    		"						<storage>2000</storage>\n" + 
+						    		"						<core>0</core>\n" + 
+						    		"						<mips>0</mips>\n" + 
+						    		"						<ram>0</ram>\n" + 
+						    		"						<storage>0</storage>\n" + 
 						    		"					</VM>\n" + 
 						    		"				</VMs>\n" + 
 						    		"			</host>\n" + 
@@ -298,7 +298,7 @@ public class mainApp {
 						    		"		<right_latency>0.5</right_latency>\n" + 
 						    		"	</link>");
 						    //Add subnodes
-					    	counter++;
+					    	counter++;*/
 					    	for(int v = 0; v < 3; v++)
 				    		{
 				    			level = 1;
@@ -325,15 +325,15 @@ public class mainApp {
 							    node.println("<hosts>\n" + 
 							    		"			<host>\n" + 
 							    		"				<core>1</core>\n" + 
-							    		"				<mips>100</mips>\n" + 
-							    		"				<ram>256</ram>\n" + 
-							    		"				<storage>512</storage>\n" + 
+							    		"				<mips>1</mips>\n" + 
+							    		"				<ram>1</ram>\n" + 
+							    		"				<storage>1</storage>\n" + 
 							    		"				<VMs>\n" + 
 							    		"					<VM vmm=\"Xen\">\n" + 
 							    		"						<core>1</core>\n" + 
-							    		"						<mips>100</mips>\n" + 
-							    		"						<ram>256</ram>\n" + 
-							    		"						<storage>512</storage>\n" + 
+							    		"						<mips>1</mips>\n" + 
+							    		"						<ram>1</ram>\n" + 
+							    		"						<storage>1</storage>\n" + 
 							    		"					</VM>\n" + 
 							    		"				</VMs>\n" + 
 							    		"			</host>\n" + 
@@ -341,25 +341,25 @@ public class mainApp {
 							    		"	</datacenter>");
 				    			//Add link to parent
 							    links.println("<link>\n" + 
-							    		"		<name>L" + v + "_" + z + "</name>\n" + 
+							    		"		<name>L" + v + "_C</name>\n" + 
 							    		"		<left>\n" + 
 							    		"			<x_pos>" + x5 + "</x_pos>\n" + 
 							    		"			<y_pos>" + y5 + "</y_pos>\n" + 
 							    		"		</left>\n" + 
 							    		"		<right>\n" + 
-							    		"			<x_pos>" + x4 + "</x_pos>\n" + 
-							    		"			<y_pos>" + y4 + "</y_pos>\n" + 
+							    		"			<x_pos>1.0</x_pos>\n" + 
+							    		"			<y_pos>1.0</y_pos>\n" + 
 							    		"		</right>\n" + 
-							    		"		<left_latency>0.5</left_latency>\n" + 
-							    		"		<right_latency>0.5</right_latency>\n" + 
+							    		"		<left_latency>2.0</left_latency>\n" + 
+							    		"		<right_latency>2.0</right_latency>\n" + 
 							    		"	</link>");
 						    	counter++;
 				    		}
 					    	
-			    		}
-			    	}
-			    }
-		    }
+			    		//}
+	//		    	}
+	//		    }
+	//	    }
 		    
 		    
 		    
@@ -393,7 +393,7 @@ public class mainApp {
 		String edgeDevicesFile = "";
 		String applicationsFile = "";
 		//String linksFile = "scripts/sample_application/config/links_test.xml";
-		String linksFile = "large_links_test.xml";
+		String linksFile = "cloud_links_test.xml";
 		//String linksFile = "small_link_test.xml";
 		if (args.length == 5){
 			configFile = args[0];
@@ -407,7 +407,7 @@ public class mainApp {
 			configFile = "scripts/sample_application/config/default_config.properties";
 			applicationsFile = "scripts/sample_application/config/applications.xml";
 			//edgeDevicesFile = "scripts/sample_application/config/edge_devices_test.xml";
-			edgeDevicesFile = "large_node_test.xml";
+			edgeDevicesFile = "cloud_node_test.xml";
 			//edgeDevicesFile = "small_node_test.xml";
 			outputFolder = "sim_results/ite" + iterationNumber;
 		}

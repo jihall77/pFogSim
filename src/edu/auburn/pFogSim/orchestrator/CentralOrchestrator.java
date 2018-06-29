@@ -9,6 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.cloudbus.cloudsim.Datacenter;
+import org.cloudbus.cloudsim.Vm;
 
 import edu.auburn.pFogSim.Radix.DistRadix;
 import edu.boun.edgecloudsim.core.SimManager;
@@ -16,6 +17,7 @@ import edu.boun.edgecloudsim.edge_client.Task;
 import edu.boun.edgecloudsim.edge_orchestrator.EdgeOrchestrator;
 import edu.boun.edgecloudsim.edge_server.EdgeHost;
 import edu.boun.edgecloudsim.edge_server.EdgeVM;
+import edu.boun.edgecloudsim.utils.Location;
 
 public class CentralOrchestrator extends EdgeOrchestrator {
 
@@ -58,8 +60,15 @@ public class CentralOrchestrator extends EdgeOrchestrator {
 		DistRadix sort = new DistRadix(hosts, task.getSubmittedLocation());//use radix sort based on distance from task
 		LinkedList<EdgeHost> nodes = sort.sortNodes();
 		EdgeHost host = nodes.poll();
-		while(!goodHost(host, task)) {
-			host = nodes.poll();//find the closest node capable of handling the task
+		try {
+			while(!goodHost(host, task)) {
+				host = nodes.poll();//find the closest node capable of handling the task
+			}
+		} catch (NullPointerException e)
+		{
+			//If there are no nodes in the list that can take the task, send to the cloud
+			host = SimManager.getInstance().getLocalServerManager().findHostById(0);
+			
 		}
 		return host;
 	}

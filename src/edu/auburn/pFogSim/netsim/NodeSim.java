@@ -44,7 +44,7 @@ public class NodeSim {
 	public NodeSim(double xin, double yin, int level, int id, boolean isAccessPoint) {
 		wlan_id = id;
 		edges = new ArrayList<Link>();
-		myLocation = new Location(xin, yin);
+		myLocation = new Location(id, xin, yin);
 		this.level = level;
 		this.wifiAccess = isAccessPoint;
 	}
