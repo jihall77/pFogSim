@@ -30,6 +30,7 @@ import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.diagram.PowerDiagram
 import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d.Site;
 import edu.auburn.pFogSim.netsim.ESBModel;
 import edu.auburn.pFogSim.netsim.NetworkTopology;
+import edu.auburn.pFogSim.netsim.NodeSim;
 import edu.auburn.pFogSim.orchestrator.PuddleOrchestrator;
 import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
@@ -82,10 +83,14 @@ public class NomadicMobility extends MobilityModel {
 				//The pairs' value = Pair<Boolean, Pair<Integer, Integer>>
 					//Where the Boolean is whether the node is moving or not and the second pair describes the vector at which it moves
 					// 	with dx as the key and dy as the value
-		ArrayList<Pair<Pair<Integer, Location>, Pair<Boolean, Location>>> accessPoints = new ArrayList<Pair<Pair<Integer, Location>, Pair<Boolean, Location>>>();
-		for(int i = 0; i < datacenterList.getLength(); i++)
+		//ArrayList<Pair<Pair<Integer, Location>, Pair<Boolean, Location>>> accessPoints = new ArrayList<Pair<Pair<Integer, Location>, Pair<Boolean, Location>>>();
+		ArrayList<NodeSim> accessPoints = new ArrayList<NodeSim>();
+		for(NodeSim node : network.getNodes())
 		{
-			Node datacenterNode = datacenterList.item(i);
+			if(node.isWifiAcc()) 
+				accessPoints.add(node);
+			
+			/*Node datacenterNode = datacenterList.item(i);
 			Element datacenterElement = (Element) datacenterNode;
 			Element location = (Element)datacenterElement.getElementsByTagName("location").item(0);
 			boolean wap = Boolean.parseBoolean(location.getElementsByTagName("wap").item(0).getTextContent());
@@ -110,7 +115,7 @@ public class NomadicMobility extends MobilityModel {
 				Pair<Pair<Integer, Location>, Pair<Boolean, Location>> info = new Pair<Pair<Integer, Location>, Pair<Boolean, Location>>(key, value);
 				
 				accessPoints.add(info);
-			}
+			}*/
 		}
 			
 		
@@ -120,9 +125,9 @@ public class NomadicMobility extends MobilityModel {
 			
 			//Picks a random wireless access point to start at
 			int randDatacenterId = SimUtils.getRandomNumber(0, accessPoints.size()-1);
-			int wlan_id = accessPoints.get(randDatacenterId).getKey().getKey();
-			double x_pos = accessPoints.get(randDatacenterId).getKey().getValue().getXPos();
-			double y_pos = accessPoints.get(randDatacenterId).getKey().getValue().getYPos();
+			int wlan_id = accessPoints.get(randDatacenterId).getWlanId();
+			double x_pos = accessPoints.get(randDatacenterId).getLocation().getXPos();
+			double y_pos = accessPoints.get(randDatacenterId).getLocation().getYPos();
 			
 			//start locating user from 10th seconds
 			treeMapArray.get(i).put((double)10, new Location(wlan_id, x_pos, y_pos));

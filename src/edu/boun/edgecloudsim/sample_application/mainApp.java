@@ -37,7 +37,7 @@ public class mainApp {
 		 * 
 		 */
 		
-		try{
+		/*try{
 		    PrintWriter node = new PrintWriter("cloud_node_test.xml", "UTF-8");
 		    PrintWriter links = new PrintWriter("cloud_links_test.xml", "UTF-8");
 		    node.println("<?xml version=\"1.0\"?>");
@@ -299,7 +299,7 @@ public class mainApp {
 						    		"	</link>");
 						    //Add subnodes
 					    	counter++;
-					    	for(int v = 0; v < 300; v++)
+					    	for(int v = 0; v < 3; v++)
 				    		{
 				    			level = 1;
 						    	double x5 = Math.random()* 1000;
@@ -370,7 +370,7 @@ public class mainApp {
 		    node.close();
 		} catch (Exception e) {
 		   System.out.println("Files were not able to be made");
-		}
+		}*/
 		
 		
 		/*
@@ -393,8 +393,10 @@ public class mainApp {
 		String edgeDevicesFile = "";
 		String applicationsFile = "";
 		//String linksFile = "scripts/sample_application/config/links_test.xml";
-		String linksFile = "cloud_links_test.xml";
+		//String linksFile = "cloud_links_test.xml";
 		//String linksFile = "small_link_test.xml";
+		String linksFile = "large_links_test.xml";
+
 		if (args.length == 5){
 			configFile = args[0];
 			edgeDevicesFile = args[1];
@@ -407,8 +409,9 @@ public class mainApp {
 			configFile = "scripts/sample_application/config/default_config.properties";
 			applicationsFile = "scripts/sample_application/config/applications.xml";
 			//edgeDevicesFile = "scripts/sample_application/config/edge_devices_test.xml";
-			edgeDevicesFile = "cloud_node_test.xml";
+			//edgeDevicesFile = "cloud_node_test.xml";
 			//edgeDevicesFile = "small_node_test.xml";
+			edgeDevicesFile = "large_node_test.xml";
 			outputFolder = "sim_results/ite" + iterationNumber;
 		}
 
