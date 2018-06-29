@@ -7,6 +7,7 @@
 package edu.auburn.pFogSim.netsim;
 
 import edu.boun.edgecloudsim.utils.Location;
+import edu.boun.edgecloudsim.utils.SimLogger;
 import javafx.util.Pair;
 
 
@@ -203,6 +204,7 @@ public class Link {
 	 */
 	public boolean validateCoords() {
 		try {
+			//SimLogger.printLine(leftCoord.getXPos() + "\t" + rightCoord.getXPos());
 			return !leftCoord.equals(rightCoord);
 		}
 		catch (NullPointerException e) {

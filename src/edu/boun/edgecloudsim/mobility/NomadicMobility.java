@@ -173,7 +173,7 @@ public class NomadicMobility extends MobilityModel {
 				}*/
 				
 				//If we are still in the same polygon, don't change
-				PowerDiagram diagram = SimManager.getInstance().getVoronoiDiagramAtLevel(1);
+				PowerDiagram diagram = SimManager.getInstance().getVoronoiDiagramAtLevel(0);
 
 				if (SimManager.getInstance().getEdgeOrchestrator() instanceof PuddleOrchestrator) {
 					for(Site site : diagram.getSites())

@@ -3,8 +3,8 @@
 <link>
 		<name>L0_C</name>
 		<left>
-			<x_pos>416.7241726320453</x_pos>
-			<y_pos>556.2122452344883</y_pos>
+			<x_pos>806.0463016498608</x_pos>
+			<y_pos>512.4562138453335</y_pos>
 		</left>
 		<right>
 			<x_pos>1.0</x_pos>
@@ -16,8 +16,8 @@
 <link>
 		<name>L1_C</name>
 		<left>
-			<x_pos>33.882375537194534</x_pos>
-			<y_pos>698.331322424005</y_pos>
+			<x_pos>905.6519301167865</x_pos>
+			<y_pos>962.2262164529644</y_pos>
 		</left>
 		<right>
 			<x_pos>1.0</x_pos>
@@ -29,8 +29,8 @@
 <link>
 		<name>L2_C</name>
 		<left>
-			<x_pos>918.135466993426</x_pos>
-			<y_pos>324.51374447226635</y_pos>
+			<x_pos>831.8219677560359</x_pos>
+			<y_pos>482.47082587223156</y_pos>
 		</left>
 		<right>
 			<x_pos>1.0</x_pos>

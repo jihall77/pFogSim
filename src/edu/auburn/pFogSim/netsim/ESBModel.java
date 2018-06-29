@@ -126,7 +126,7 @@ public class ESBModel extends NetworkModel {
 		}
 	    path = router.findPath(networkTopology, src, dest);
 		delay += getWlanUploadDelay(accessPointLocation, CloudSim.clock());
-		SimLogger.getInstance().addHostDistanceLog(sourceDeviceId, Math.sqrt((Math.pow(src.getLocation().getXPos() - dest.getLocation().getXPos(), 2) + Math.pow(src.getLocation().getYPos() - dest.getLocation().getYPos(), 2))));
+		//SimLogger.getInstance().addHostDistanceLog(sourceDeviceId, Math.sqrt((Math.pow(src.getLocation().getXPos() - dest.getLocation().getXPos(), 2) + Math.pow(src.getLocation().getYPos() - dest.getLocation().getYPos(), 2))));
 		//SimLogger.printLine("Number of hops: " + path.size());
 		while (!path.isEmpty()) {
 			current = path.poll();
