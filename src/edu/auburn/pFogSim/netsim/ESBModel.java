@@ -1,6 +1,7 @@
-/*
+/**
  * Equal Share Bandwidth Model
  * Considers that each device receives an equal share of a location's available bandwidth
+ * @author jih0007@auburn.edu
  */
 
 package edu.auburn.pFogSim.netsim;
@@ -9,12 +10,10 @@ import org.cloudbus.cloudsim.core.CloudSim;
 
 import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
-//import edu.boun.edgecloudsim.edge_server.EdgeHost;
 import edu.boun.edgecloudsim.network.NetworkModel;
 import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
 import java.util.LinkedList;
-//import edu.auburn.pFogSim.netsim.*;
 
 public class ESBModel extends NetworkModel {
 	private double WlanPoissonMean; //seconds
@@ -67,8 +66,6 @@ public class ESBModel extends NetworkModel {
 				numOfTaskType++;
 			}
 		}
-
-		//networkTopology.cleanNodes();
 		WlanPoissonMean = WlanPoissonMean/numOfTaskType;
 		avgTaskInputSize = avgTaskInputSize/numOfTaskType;
 		avgTaskOutputSize = avgTaskOutputSize/numOfTaskType;
@@ -129,6 +126,7 @@ public class ESBModel extends NetworkModel {
 		}
 	    path = router.findPath(networkTopology, src, dest);
 		delay += getWlanUploadDelay(accessPointLocation, CloudSim.clock());
+		SimLogger.getInstance().addHostDistanceLog(sourceDeviceId, Math.sqrt((Math.pow(src.getLocation().getXPos() - dest.getLocation().getXPos(), 2) + Math.pow(src.getLocation().getYPos() - dest.getLocation().getYPos(), 2))));
 		//SimLogger.printLine("Number of hops: " + path.size());
 		while (!path.isEmpty()) {
 			current = path.poll();
@@ -143,25 +141,6 @@ public class ESBModel extends NetworkModel {
 			}
 			delay += current.traverse(nextHop);
 		}
-		
-		/*
-		//mobile device to cloud server
-		if(destDeviceId == SimSettings.CLOUD_DATACENTER_ID){
-			double wlanDelay = getWlanUploadDelay(accessPointLocation, CloudSim.clock());
-			double wanDelay = getWanUploadDelay(accessPointLocation, CloudSim.clock() + wlanDelay);
-			if(wlanDelay > 0 && wanDelay >0)
-				delay = wlanDelay + wanDelay;
-		}
-		//mobile device to edge orchestrator
-		else if(destDeviceId == SimSettings.EDGE_ORCHESTRATOR_ID){
-			delay = getWlanUploadDelay(accessPointLocation, CloudSim.clock()) +
-					SimSettings.getInstance().getInternalLanDelay();
-		}
-		//mobile device to edge device (wifi access point)
-		else if (destDeviceId == SimSettings.GENERIC_EDGE_DEVICE_ID) {
-			delay = getWlanUploadDelay(accessPointLocation, CloudSim.clock());
-		}
-		*/
 		return delay;
 	}
 
@@ -170,39 +149,6 @@ public class ESBModel extends NetworkModel {
     */
 	@Override
 	public double getDownloadDelay(int sourceDeviceId, int destDeviceId, double dataSize, boolean wifiSrc, boolean wifiDest) {
-		/*
-		//Special Case -> edge orchestrator to edge device
-		if(sourceDeviceId == SimSettings.EDGE_ORCHESTRATOR_ID &&
-				destDeviceId == SimSettings.GENERIC_EDGE_DEVICE_ID){
-			return SimSettings.getInstance().getInternalLanDelay();
-		}
-
-		double delay = 0;
-		Location accessPointLocation = SimManager.getInstance().getMobilityModel().getLocation(destDeviceId,CloudSim.clock());
-		
-		//cloud server to mobile device
-		if(sourceDeviceId == SimSettings.CLOUD_DATACENTER_ID){
-			double wlanDelay = getWlanDownloadDelay(accessPointLocation, CloudSim.clock());
-			double wanDelay = getWanDownloadDelay(accessPointLocation, CloudSim.clock() + wlanDelay);
-			if(wlanDelay > 0 && wanDelay >0)
-				delay = wlanDelay + wanDelay;
-		}
-		//edge device (wifi access point) to mobile device
-		else{
-			delay = getWlanDownloadDelay(accessPointLocation, CloudSim.clock());
-			
-			EdgeHost host = (EdgeHost)(SimManager.
-					getInstance().
-					getLocalServerManager().
-					getDatacenterList().get(sourceDeviceId).
-					getHostList().get(0));
-			
-			//if source device id is the edge server which is located in another location, add internal lan delay
-			//in our scenasrio, serving wlan ID is equal to the host id, because there is only one host in one place
-			if(host.getLocation().getServingWlanId() != accessPointLocation.getServingWlanId())
-				delay += (SimSettings.getInstance().getInternalLanDelay() * 2);
-		}
-		*/
 		return getUploadDelay(sourceDeviceId, destDeviceId, dataSize, wifiSrc, wifiDest);//getUploadDelay has been made bi-directional
 	}
 	
@@ -226,49 +172,21 @@ public class ESBModel extends NetworkModel {
 		return deviceCount;
 	}
 	
-	private double calculateMM1(double propogationDelay, int bandwidth /*Kbps*/, double PoissonMean, double avgTaskSize /*KB*/, int deviceCount){
-		double Bps=0, mu=0, lamda=0;
+	private double calculateESB(double propogationDelay, int bandwidth /*Kbps*/, double PoissonMean, double avgTaskSize /*KB*/, int deviceCount){
+		double Bps=0;
 		
 		avgTaskSize = avgTaskSize * (double)1000; //convert from KB to Byte
 		
 		Bps = bandwidth * (double)1000 / (double)8; //convert from Kbps to Byte per seconds
-        //lamda = ((double)1/(double)PoissonMean); //task per seconds
-		//mu = Bps / avgTaskSize ; //task per seconds
 		double result = (avgTaskSize * deviceCount) / Bps;
-		
 		result += propogationDelay;
-		//SimLogger.printLine("Delay: " + result);
 		return result;
 	}
 	
-	private double getWlanDownloadDelay(Location accessPointLocation, double time) {
-		return calculateMM1(0,
-				SimSettings.getInstance().getWlanBandwidth(),
-				WlanPoissonMean,
-				avgTaskOutputSize,
-				getDeviceCount(accessPointLocation, time));
-	}
-	
 	private double getWlanUploadDelay(Location accessPointLocation, double time) {
-		return calculateMM1(0,
+		return calculateESB(0,
 				SimSettings.getInstance().getWlanBandwidth(),
 				WlanPoissonMean,
-				avgTaskInputSize,
-				getDeviceCount(accessPointLocation, time));
-	}
-	
-	private double getWanDownloadDelay(Location accessPointLocation, double time) {
-		return calculateMM1(SimSettings.getInstance().getWanPropogationDelay(),
-				SimSettings.getInstance().getWanBandwidth(),
-				WanPoissonMean,
-				avgTaskOutputSize,
-				getDeviceCount(accessPointLocation, time));
-	}
-	
-	private double getWanUploadDelay(Location accessPointLocation, double time) {
-		return calculateMM1(SimSettings.getInstance().getWanPropogationDelay(),
-				SimSettings.getInstance().getWanBandwidth(),
-				WanPoissonMean,
 				avgTaskInputSize,
 				getDeviceCount(accessPointLocation, time));
 	}

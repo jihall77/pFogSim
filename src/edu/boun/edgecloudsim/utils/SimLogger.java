@@ -146,6 +146,10 @@ public class SimLogger {
 		vmLoadList.add(new VmLoadLogItem(time, load));
 	}
 	
+	public void addHostDistanceLog(int taskId, double dist) {
+		taskMap.get(taskId).setDistance(dist);
+	}
+	
 	private int[] levelCloudletCount = {0, 0, 0, 0, 0, 0, 0, 0};
 	public void addCloudletToLevel(int level) {this.levelCloudletCount[level]++;}
 	
@@ -587,6 +591,7 @@ class LogItem {
 	private double cpuCost;
 	private boolean isInWarmUpPeriod;
 	private double taskCost = 0;
+	private double distanceToHost;
 	
 	LogItem(double _taskStartTime, int _taskType, int _taskLenght, int _taskInputType, int _taskOutputSize) {
 		taskStartTime = _taskStartTime;
@@ -707,6 +712,14 @@ class LogItem {
 		else
 			result += "0"; // default failure reason
 		return result;
+	}
+	
+	public double getHostDist() {
+		return distanceToHost;
+	}
+	
+	public void setDistance(double in) {
+		distanceToHost = in;
 	}
 
 

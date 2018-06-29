@@ -1,3 +1,7 @@
+/**
+ * Centralized Orchestrator for comparison against Puddle algorithm
+ * @author jih0007@auburn.edu
+ */
 package edu.auburn.pFogSim.orchestrator;
 
 import java.util.ArrayList;
@@ -20,7 +24,9 @@ public class CentralOrchestrator extends EdgeOrchestrator {
 	public CentralOrchestrator(String _policy, String _simScenario) {
 		super(_policy, _simScenario);
 	}
-	
+	/**
+	 * get all the hosts in the network into one list
+	 */
 	@Override
 	public void initialize() {
 		hosts = new ArrayList<EdgeHost>();
@@ -29,19 +35,27 @@ public class CentralOrchestrator extends EdgeOrchestrator {
 		}
 
 	}
-
+	/**
+	 * get the id of the appropriate host
+	 */
 	@Override
 	public int getDeviceToOffload(Task task) {
 		return getHost(task).getId();
 	}
-
+	/**
+	 * the the appropriate VM to run on
+	 */
 	@Override
 	public EdgeVM getVmToOffload(Task task) {
 		return ((EdgeVM) getHost(task).getVmList().get(0));
 	}
-	
+	/**
+	 * find the host
+	 * @param task
+	 * @return
+	 */
 	private EdgeHost getHost(Task task) {
-		DistRadix sort = new DistRadix(hosts, task.getSubmittedLocation());
+		DistRadix sort = new DistRadix(hosts, task.getSubmittedLocation());//use radix sort based on distance from task
 		LinkedList<EdgeHost> nodes = sort.sortNodes();
 		EdgeHost host = nodes.poll();
 		while(!goodHost(host, task)) {

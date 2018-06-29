@@ -232,14 +232,6 @@ public class Puddle {
 		return nodes;
 	}
 	/**
-	 * get the list nodes sorted by distance from the reference point
-	 * @param ref
-	 * @return
-	 */
-	/*public LinkedList<EdgeHost> getClosestNodes(Location ref) {
-		return getClosestNodes(new Location(ref.getXPos(), ref.getYPos()));
-	}*/
-	/**
 	 * set the level of this puddle
 	 * @param lvl
 	 */

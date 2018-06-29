@@ -76,14 +76,13 @@ public class MobileDeviceManager extends DatacenterBroker {
 		//{
 			//SimLogger.printLine(CloudSim.clock() + ": " + getName() + ": Cloudlet " + task.getCloudletId() + " received");
 			double WlanDelay = networkModel.getDownloadDelay(task.getAssociatedHostId() * -1, task.getMobileDeviceId(), task.getCloudletOutputSize(), false, task.wifi);
-			if(WlanDelay >= 0 && WlanDelay <= task.getMaxDelay())
-			{
+			
+			if(WlanDelay >= 0 && WlanDelay <= task.getMaxDelay()) {
 				networkModel.downloadStarted(currentLocation, SimSettings.GENERIC_EDGE_DEVICE_ID);
 				schedule(getId(), WlanDelay, RESPONSE_RECEIVED_BY_MOBILE_DEVICE, task);
 				SimLogger.getInstance().downloadStarted(task.getCloudletId(), WlanDelay);
 			}
-			else
-			{
+			else {
 				SimLogger.getInstance().failedDueToBandwidth(task.getCloudletId(), CloudSim.clock());
 			}
 		/*}
@@ -227,13 +226,7 @@ public class MobileDeviceManager extends DatacenterBroker {
 			//SimLogger.printLine(CloudSim.clock() + ": Cloudlet#" + task.getCloudletId() + " is submitted to VM#" + task.getVmId());
 			schedule(getVmsToDatacentersMap().get(task.getVmId()), delay, CloudSimTags.CLOUDLET_SUBMIT, task);
 			SimLogger.getInstance().addCloudletToLevel(((EdgeHost) selectedVM.getHost()).getLevel());
-			//Goes through the list of nodes on the network and adds to the task counter for that level
-			//for(NodeSim node : ((MM1Queue)SimManager.getInstance().getNetworkModel()).getNetworkTopology().getNodes()) 
-				/*if(selectedVM.getId() == node.getWlanId()) {
-					SimLogger.getInstance().addCloudletToLevel(node.getLevel());
-				}*/
-				SimLogger.getInstance().uploaded(task.getCloudletId(),
-					selectedVM.getHost().getDatacenter().getId(),
+			SimLogger.getInstance().uploaded(task.getCloudletId(), selectedVM.getHost().getDatacenter().getId(),
 					selectedVM.getHost().getId(),
 					selectedVM.getId(),
 					selectedVM.getVmType().ordinal());
