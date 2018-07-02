@@ -26,15 +26,11 @@ import edu.boun.edgecloudsim.utils.SimUtils;
 
 public class mainApp {
 	
-	/**
-	 * Creates main() to run this example
-	 */
-	public static void main(String[] args) {
-		/*disable console output of cloudsim library
-		 *
+	public void createXMLFile() 
+	{
+		/*
 		 * @author CJ
-		 * trying to output the test files we want
-		 * 
+		 * output the test files we want 
 		 */
 		
 		try{
@@ -372,13 +368,17 @@ public class mainApp {
 		   System.out.println("Files were not able to be made");
 		}
 		
-		
+	}
+	/**
+	 * Creates main() to run this example
+	 */
+	public static void main(String[] args) {
 		/*
 		 * Try to get FogHierClust.java to run
 		 * 
 		 */
 		
-		
+		//createXMLFile();
 		
 		Log.disable();
 		//enable console output and file output of this application
@@ -393,8 +393,9 @@ public class mainApp {
 		String edgeDevicesFile = "";
 		String applicationsFile = "";
 		//String linksFile = "scripts/sample_application/config/links_test.xml";
-		String linksFile = "large_links_test.xml";
 		//String linksFile = "small_link_test.xml";
+		String linksFile = "large_links_test.xml";
+
 		if (args.length == 5){
 			configFile = args[0];
 			edgeDevicesFile = args[1];
@@ -407,8 +408,8 @@ public class mainApp {
 			configFile = "scripts/sample_application/config/default_config.properties";
 			applicationsFile = "scripts/sample_application/config/applications.xml";
 			//edgeDevicesFile = "scripts/sample_application/config/edge_devices_test.xml";
-			edgeDevicesFile = "large_node_test.xml";
 			//edgeDevicesFile = "small_node_test.xml";
+			edgeDevicesFile = "large_node_test.xml";
 			outputFolder = "sim_results/ite" + iterationNumber;
 		}
 
