@@ -77,6 +77,10 @@ public class MobileDeviceManager extends DatacenterBroker {
 			//SimLogger.printLine(CloudSim.clock() + ": " + getName() + ": Cloudlet " + task.getCloudletId() + " received");
 			double WlanDelay = networkModel.getDownloadDelay(task.getAssociatedHostId() * -1, task.getMobileDeviceId(), task.getCloudletOutputSize(), false, task.wifi);
 			SimLogger.getInstance().addHops(task.getCloudletId(), ((ESBModel) networkModel).getHops(task, task.getAssociatedHostId()));
+			/*if (((ESBModel) networkModel).getHops(task, task.getAssociatedHostId()) == 0) {
+				((ESBModel) networkModel).getHops(task, task.getAssociatedHostId());
+				networkModel.getDownloadDelay(task.getAssociatedHostId() * -1, task.getMobileDeviceId(), task.getCloudletOutputSize(), false, task.wifi);
+			}*/
 			if(WlanDelay >= 0 && WlanDelay <= task.getMaxDelay()) {
 				networkModel.downloadStarted(currentLocation, SimSettings.GENERIC_EDGE_DEVICE_ID);
 				schedule(getId(), WlanDelay, RESPONSE_RECEIVED_BY_MOBILE_DEVICE, task);

@@ -35,27 +35,28 @@ public class Router {
 	 */
 	public LinkedList<NodeSim> findPath(NetworkTopology network, NodeSim src, NodeSim dest ) {
 		LinkedList<NodeSim> travelQueue;
-		LinkedList<NodeSim> path;
+		LinkedList<NodeSim> path = new LinkedList<NodeSim>();
 		String route;
 		if (src.equals(dest)) {
 			return new LinkedList<NodeSim>();
 		}
 		route = src.toString() + "->" + dest.toString();
-		if(database.containsKey(route)) {
+		/*if(database.containsKey(route)) {
 			//SimLogger.printLine("Found Faster Path");
+			LinkedList<NodeSim> better = database.get(route);
 			return database.get(route);
-		}
+		}*/
 		Dijkstra router = Router.getAPathFinder();
 		router.runDijkstra((Set<NodeSim>) network.getNodes(), src);
 		travelQueue = router.getPath(dest);
-		path = travelQueue;
-		database.put(route, path);
+		/*path.addAll(travelQueue);
+		database.put(route, new LinkedList<NodeSim>(path));
 		path.pollLast();
 		while(!path.isEmpty()) {
 			route = src.toString() + "->" + path.peekLast().toString();
-			database.put(route, path);
+			database.put(route, new LinkedList<NodeSim>(path));
 			path.pollLast();
-		}
+		}*/
 		return travelQueue;
 		//return router.getLatency(dest);
 	}
@@ -228,7 +229,7 @@ public class Router {
 			current = dest;
 			while (!current.equals(src)) {
 				for (Pair<NodeSim, Pair<Double, NodeSim>> node : completed) {
-					if (node.getKey() == current) {
+					if (node.getKey().equals(current)) {
 						current = node.getValue().getValue();
 						reversed.add(current);
 						temp = node;

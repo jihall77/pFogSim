@@ -42,6 +42,7 @@ import edu.boun.edgecloudsim.utils.SimUtils;
 import edu.auburn.pFogSim.Puddle.Puddle;
 import edu.auburn.pFogSim.clustering.*;
 import edu.auburn.pFogSim.netsim.*;
+import edu.auburn.pFogSim.orchestrator.CloudOnlyOrchestrator;
 import edu.auburn.pFogSim.orchestrator.PuddleOrchestrator;
 
 public class EdgeServerManager {
@@ -60,7 +61,8 @@ public class EdgeServerManager {
 	public EdgeServerManager() {
 		localDatacenters=new ArrayList<Datacenter>();
 		vmList = new ArrayList<List<EdgeVM>>();
-		hostIdCounter = 0;
+		vmList.add(new ArrayList<EdgeVM>());
+		hostIdCounter = 1;
 		instance = this;
 	}
 	
@@ -231,7 +233,11 @@ public class EdgeServerManager {
 	
 		VmAllocationPolicy vm_policy = SimManager.getInstance().getScenarioFactory().getVmAllocationPolicy(hostList,index);
 		datacenter = new Datacenter(name, characteristics, vm_policy, storageList, 0);
-		
+		if (SimManager.getInstance().getEdgeOrchestrator() instanceof CloudOnlyOrchestrator) {
+			if (arch.equals("CLOUD")) {
+				((CloudOnlyOrchestrator) SimManager.getInstance().getEdgeOrchestrator()).setCloud(datacenter);
+			}
+		}
 		return datacenter;
 	}
 	

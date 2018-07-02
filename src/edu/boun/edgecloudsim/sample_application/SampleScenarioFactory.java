@@ -17,6 +17,7 @@ import org.cloudbus.cloudsim.UtilizationModel;
 import org.cloudbus.cloudsim.VmAllocationPolicy;
 
 import edu.auburn.pFogSim.orchestrator.CentralOrchestrator;
+import edu.auburn.pFogSim.orchestrator.CloudOnlyOrchestrator;
 import edu.auburn.pFogSim.orchestrator.PuddleOrchestrator;
 import edu.boun.edgecloudsim.core.ScenarioFactory;
 import edu.boun.edgecloudsim.core.SimSettings.APP_TYPES;
@@ -59,6 +60,9 @@ public class SampleScenarioFactory implements ScenarioFactory {
 		}
 		else if (simScenario.equals("CENTRALIZED_ORCHESTRATOR")) {
 			return new CentralOrchestrator(orchestratorPolicy, simScenario);
+		}
+		else if (simScenario.equals("CLOUD_ONLY")) {
+			return new CloudOnlyOrchestrator(orchestratorPolicy, simScenario);
 		}
 		return null;
 	}

@@ -81,4 +81,8 @@ public class Location implements Comparable {
 		}
 		else return -1;
 	}
+	
+	public String toString() {
+		return xPos + ", " + yPos;
+	}
 }

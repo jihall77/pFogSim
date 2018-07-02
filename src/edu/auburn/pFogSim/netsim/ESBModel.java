@@ -93,9 +93,11 @@ public class ESBModel extends NetworkModel {
 		catch (IndexOutOfBoundsException e) {
 			sourceDeviceId *= -1;
 			accessPointLocation = SimManager.getInstance().getLocalServerManager().findHostById(sourceDeviceId).getLocation();
+			//SimLogger.printLine(accessPointLocation.toString());
 		}
 		try {
 			destPointLocation = SimManager.getInstance().getMobilityModel().getLocation(destDeviceId,CloudSim.clock());
+			//SimLogger.printLine(destPointLocation.toString());
 		}
 		catch (IndexOutOfBoundsException e) {
 			destDeviceId *= -1;
@@ -116,6 +118,7 @@ public class ESBModel extends NetworkModel {
 		}
 		else {
 			src = networkTopology.findNode(source, false);
+			//SimLogger.printLine(src.toString());
 		}
 		if(wifiDest) {
 			dest = networkTopology.findNode(destination, true);
@@ -123,7 +126,9 @@ public class ESBModel extends NetworkModel {
 		else {
 			dest = networkTopology.findNode(destination, false);
 		}
+		//SimLogger.printLine(src.toString() + " " + dest.toString());
 	    path = router.findPath(networkTopology, src, dest);
+	   // SimLogger.printLine(path.size() + "");
 		delay += getWlanUploadDelay(accessPointLocation, CloudSim.clock());
 		while (!path.isEmpty()) {
 			current = path.poll();
@@ -219,7 +224,12 @@ public class ESBModel extends NetworkModel {
 		// TODO Auto-generated method stub
 		
 	}
-	
+	/**
+	 * get the number of hops from task to the machine it is running on
+	 * @param task
+	 * @param hostID
+	 * @return
+	 */
 	public int getHops(Task task, int hostID) {
 		NodeSim dest = networkTopology.findNode(SimManager.getInstance().getLocalServerManager().findHostById(hostID).getLocation(), false);
 		NodeSim src = networkTopology.findNode(SimManager.getInstance().getMobilityModel().getLocation(task.getMobileDeviceId(),CloudSim.clock()), false);

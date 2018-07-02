@@ -40,7 +40,7 @@ public class Task extends Cloudlet {
 		wifi = _wifi;
     	sens =  _sens;
     	act = _act;
-    	maxDelay = 0.020; 
+    	maxDelay = 0.600; 
 	}
 
 	
@@ -71,11 +71,17 @@ public class Task extends Cloudlet {
 	public SimSettings.APP_TYPES getTaskType(){
 		return type;
 	}
-	
+	/**
+	 * get the maximum latency that this task will tolerate in seconds. default value is 0.600 seconds (600 miliseconds)
+	 * @return
+	 */
 	public double getMaxDelay() {
 		return maxDelay;
 	}
-	
+	/**
+	 * set the maximum latency that this task will tolerate
+	 * @param in
+	 */
 	public void setMaxDelay(double in) {
 		maxDelay = in;
 	}

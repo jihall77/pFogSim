@@ -60,12 +60,12 @@ public class CentralOrchestrator extends EdgeOrchestrator {
 		DistRadix sort = new DistRadix(hosts, task.getSubmittedLocation());//use radix sort based on distance from task
 		LinkedList<EdgeHost> nodes = sort.sortNodes();
 		EdgeHost host = nodes.poll();
-		try {
+		try {//PULL THE LEVER!!!!!!!!!!
 			while(!goodHost(host, task)) {
 				host = nodes.poll();//find the closest node capable of handling the task
 			}
 		} catch (NullPointerException e)
-		{
+		{//THE OTHER LEVER!!!!!!!!!!
 			//If there are no nodes in the list that can take the task, send to the cloud
 			host = SimManager.getInstance().getLocalServerManager().findHostById(0);
 			

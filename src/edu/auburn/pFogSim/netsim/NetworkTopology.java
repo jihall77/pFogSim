@@ -12,6 +12,7 @@ import edu.auburn.pFogSim.Puddle.Puddle;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.TreeSet;
 
 import javafx.util.Pair;
@@ -19,6 +20,7 @@ import javafx.util.Pair;
 public class NetworkTopology {
 	private HashSet<Link> links;
 	private HashSet<NodeSim> nodes;
+	private HashSet<NodeSim> mobileNodes;
 	private TreeSet<Location> coords;
 	private ArrayList<Puddle> pond;
 	/**
@@ -30,6 +32,7 @@ public class NetworkTopology {
 		links = new HashSet<Link>();
 		nodes = new HashSet<NodeSim>();
 		coords = new TreeSet<Location>();
+		mobileNodes = new HashSet<NodeSim>();
 		for (NodeSim node : inNodes) {
 			addNode(node);
 		}
@@ -46,7 +49,12 @@ public class NetworkTopology {
 		if (in == null) {
 			throw new IllegalArgumentException();
 		}
-		nodes.add(in);
+		if (!in.isMoving()){
+			nodes.add(in);
+		}
+		else {
+			mobileNodes.add(in);
+		}
 		coords.add(in.getLocation());
 	}
 	/**
@@ -202,5 +210,17 @@ public class NetworkTopology {
 	 */
 	public List<Puddle> getPuddles() {
 		return (List<Puddle>) pond;
+	}
+	/**
+	 * get the set of mobile fog nodes
+	 * @return
+	 */
+	public Set<NodeSim> getMobileNodes() {
+		return mobileNodes;
+	}
+	
+	public void setMobileNode(Set<NodeSim> in) {
+		mobileNodes = new HashSet<NodeSim>();
+		mobileNodes.addAll(in);
 	}
 }
