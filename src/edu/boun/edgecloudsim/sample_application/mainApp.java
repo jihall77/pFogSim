@@ -26,18 +26,14 @@ import edu.boun.edgecloudsim.utils.SimUtils;
 
 public class mainApp {
 	
-	/**
-	 * Creates main() to run this example
-	 */
-	public static void main(String[] args) {
-		/*disable console output of cloudsim library
-		 *
+	public void createXMLFile() 
+	{
+		/*
 		 * @author CJ
-		 * trying to output the test files we want
-		 * 
+		 * output the test files we want 
 		 */
 		
-		/*try{
+		try{
 		    PrintWriter node = new PrintWriter("cloud_node_test.xml", "UTF-8");
 		    PrintWriter links = new PrintWriter("cloud_links_test.xml", "UTF-8");
 		    node.println("<?xml version=\"1.0\"?>");
@@ -370,15 +366,19 @@ public class mainApp {
 		    node.close();
 		} catch (Exception e) {
 		   System.out.println("Files were not able to be made");
-		}*/
+		}
 		
-		
+	}
+	/**
+	 * Creates main() to run this example
+	 */
+	public static void main(String[] args) {
 		/*
 		 * Try to get FogHierClust.java to run
 		 * 
 		 */
 		
-		
+		//createXMLFile();
 		
 		Log.disable();
 		//enable console output and file output of this application
