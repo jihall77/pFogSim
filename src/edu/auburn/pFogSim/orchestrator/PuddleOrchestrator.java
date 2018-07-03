@@ -18,6 +18,7 @@ import edu.auburn.pFogSim.Radix.DistRadix;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+import org.cloudbus.cloudsim.Datacenter;
 //import org.cloudbus.cloudsim.CloudletSchedulerTimeShared;
 import org.cloudbus.cloudsim.core.CloudSim;
 /**
@@ -32,6 +33,8 @@ public class PuddleOrchestrator extends EdgeOrchestrator {
 	 * @param _policy
 	 * @param _simScenario
 	 */
+	
+	
 	public PuddleOrchestrator(String _policy, String _simScenario) {
 		super(_policy, _simScenario);
 	}
@@ -133,8 +136,13 @@ public class PuddleOrchestrator extends EdgeOrchestrator {
 		radix = new DistRadix(hosts, new Location(task.getSubmittedLocation().getXPos(), task.getSubmittedLocation().getYPos()));
 		candidates = radix.sortNodes();//sort those nodes by distance
 		host = candidates.poll();
-		while(!goodHost(host, task)) {
-			host = candidates.poll();//find the closest node capable of handling the task
+		try {
+			while(!goodHost(host, task)) {
+				host = candidates.poll();//find the closest node capable of handling the task
+			}
+		}
+		catch (NullPointerException e) {
+			host = (EdgeHost) cloud.getHostList().get(0);
 		}
 		/*if (host.getLevel() == 4) {
 			SimLogger.printLine("lvl 4 assigned");
@@ -171,5 +179,6 @@ public class PuddleOrchestrator extends EdgeOrchestrator {
 		}
 		return puddle;
 	}
+	
 
 }

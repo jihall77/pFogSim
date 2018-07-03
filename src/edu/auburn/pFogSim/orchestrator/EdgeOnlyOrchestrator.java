@@ -1,5 +1,7 @@
 /**
  * Centralized Orchestrator for comparison against Puddle algorithm
+ * 
+ * This orchestrator uses the centralized approach to selecting a VM but never associates a task to the cloud
  * @author jih0007@auburn.edu
  */
 package edu.auburn.pFogSim.orchestrator;
@@ -10,6 +12,7 @@ import java.util.List;
 
 import org.cloudbus.cloudsim.Datacenter;
 import org.cloudbus.cloudsim.Vm;
+import org.cloudbus.cloudsim.core.CloudSim;
 
 import edu.auburn.pFogSim.Radix.DistRadix;
 import edu.boun.edgecloudsim.core.SimManager;
@@ -18,12 +21,13 @@ import edu.boun.edgecloudsim.edge_orchestrator.EdgeOrchestrator;
 import edu.boun.edgecloudsim.edge_server.EdgeHost;
 import edu.boun.edgecloudsim.edge_server.EdgeVM;
 import edu.boun.edgecloudsim.utils.Location;
+import edu.boun.edgecloudsim.utils.SimLogger;
 
-public class CentralOrchestrator extends EdgeOrchestrator {
+public class EdgeOnlyOrchestrator extends EdgeOrchestrator {
 
 	ArrayList<EdgeHost> hosts;
 	
-	public CentralOrchestrator(String _policy, String _simScenario) {
+	public EdgeOnlyOrchestrator(String _policy, String _simScenario) {
 		super(_policy, _simScenario);
 	}
 	/**
@@ -42,14 +46,24 @@ public class CentralOrchestrator extends EdgeOrchestrator {
 	 */
 	@Override
 	public int getDeviceToOffload(Task task) {
-		return getHost(task).getId();
+		try {
+			return getHost(task).getId();
+		}
+		catch (NullPointerException e) {
+			return -1;
+		}
 	}
 	/**
 	 * the the appropriate VM to run on
 	 */
 	@Override
 	public EdgeVM getVmToOffload(Task task) {
-		return ((EdgeVM) getHost(task).getVmList().get(0));
+		try {
+			return ((EdgeVM) getHost(task).getVmList().get(0));
+		}
+		catch (NullPointerException e) {
+			return null;
+		}
 	}
 	/**
 	 * find the host
@@ -60,15 +74,8 @@ public class CentralOrchestrator extends EdgeOrchestrator {
 		DistRadix sort = new DistRadix(hosts, task.getSubmittedLocation());//use radix sort based on distance from task
 		LinkedList<EdgeHost> nodes = sort.sortNodes();
 		EdgeHost host = nodes.poll();
-		try {//PULL THE LEVER!!!!!!!!!!
-			while(!goodHost(host, task)) {
-				host = nodes.poll();//find the closest node capable of handling the task
-			}
-		} 
-		catch (NullPointerException e){//THE OTHER LEVER!!!!!!!!!!
-			//If there are no nodes in the list that can take the task, send to the cloud
-			host = (EdgeHost) cloud.getHostList().get(0);
-			
+		while(!goodHost(host, task)) {
+			host = nodes.poll();//find the closest node capable of handling the task
 		}
 		return host;
 	}

@@ -262,6 +262,10 @@ public class MobileDeviceManager extends DatacenterBroker {
 				(int)task.getCloudletOutputSize());
 
 		int nextHopId = SimManager.getInstance().getEdgeOrchestrator().getDeviceToOffload(task);
+		if (nextHopId < 0) {
+			SimLogger.getInstance().rejectedDueToVMCapacity(task.getCloudletId(), CloudSim.clock());
+			return;
+		}
 		
 		if(nextHopId == SimSettings.CLOUD_DATACENTER_ID){
 			

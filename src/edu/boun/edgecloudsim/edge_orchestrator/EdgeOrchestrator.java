@@ -16,6 +16,7 @@ package edu.boun.edgecloudsim.edge_orchestrator;
 import edu.boun.edgecloudsim.edge_server.EdgeHost;
 import edu.boun.edgecloudsim.edge_server.EdgeVM;
 
+import org.cloudbus.cloudsim.Datacenter;
 import org.cloudbus.cloudsim.core.CloudSim;
 
 import edu.boun.edgecloudsim.edge_client.CpuUtilizationModel_Custom;
@@ -24,6 +25,7 @@ import edu.boun.edgecloudsim.edge_client.Task;
 public abstract class EdgeOrchestrator {
 	protected String policy;
 	protected String simScenario;
+	protected Datacenter cloud;
 	
 	public EdgeOrchestrator(String _policy, String _simScenario){
 		policy = _policy;
@@ -55,5 +57,9 @@ public abstract class EdgeOrchestrator {
 		double hostCap = 100.0 - host.getVmList().get(0).getCloudletScheduler().getTotalUtilizationOfCpu(CloudSim.clock());
 		double taskCap = ((CpuUtilizationModel_Custom)task.getUtilizationModelCpu()).predictUtilization(((EdgeVM) host.getVmList().get(0)).getVmType());
 		return hostCap >= taskCap;
+	}
+	
+	public void setCloud(Datacenter _cloud ) {
+		cloud = _cloud;
 	}
 }

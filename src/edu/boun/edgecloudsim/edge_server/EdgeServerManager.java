@@ -233,11 +233,9 @@ public class EdgeServerManager {
 	
 		VmAllocationPolicy vm_policy = SimManager.getInstance().getScenarioFactory().getVmAllocationPolicy(hostList,index);
 		datacenter = new Datacenter(name, characteristics, vm_policy, storageList, 0);
-		if (SimManager.getInstance().getEdgeOrchestrator() instanceof CloudOnlyOrchestrator) {
-			if (arch.equals("CLOUD")) {
-				((CloudOnlyOrchestrator) SimManager.getInstance().getEdgeOrchestrator()).setCloud(datacenter);
-			}
-		}
+		
+		SimManager.getInstance().getEdgeOrchestrator().setCloud(datacenter);
+
 		return datacenter;
 	}
 	

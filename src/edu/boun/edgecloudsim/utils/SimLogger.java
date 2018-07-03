@@ -37,7 +37,7 @@ import edu.boun.edgecloudsim.core.SimSettings;
 
 public class SimLogger {
 	public static enum TASK_STATUS {
-		CREATED, UPLOADING, PROCESSING, DOWNLOADING, COMLETED, REJECTED_DUE_TO_VM_CAPACITY, REJECTED_DUE_TO_BANDWIDTH, UNFINISHED_DUE_TO_BANDWIDTH, UNFINISHED_DUE_TO_MOBILITY
+		CREATED, UPLOADING, PROCESSING, DOWNLOADING, COMPLETED, REJECTED_DUE_TO_VM_CAPACITY, REJECTED_DUE_TO_BANDWIDTH, UNFINISHED_DUE_TO_BANDWIDTH, UNFINISHED_DUE_TO_MOBILITY
 	}
 
 	private static boolean fileLogEnabled;
@@ -228,13 +228,13 @@ public class SimLogger {
 			locationFW = new FileWriter(locationFile, true);
 			locationBW = new BufferedWriter(locationFW);
 			
-			for(int i = 0; i < numOfAppTypes; i++)
+			/*for(int i = 0; i < numOfAppTypes; i++)
 			{
 				vmLoadFileClay[i] = new File(outputFolder, "CLAYSTESTFILE" + "_" + i + ".log");
 				vmLoadFWClay[i] = new FileWriter(vmLoadFileClay[i], true);
 				vmLoadBWClay[i] = new BufferedWriter(vmLoadFWClay[i]);
 				appendToFile(vmLoadBWClay[i], "#network delay\tsimulation time");
-			}
+			}*/
 			for (int i = 0; i < numOfAppTypes + 1; i++) {
 				String fileName = "ALL_APPS_GENERIC.log";
 
@@ -270,7 +270,7 @@ public class SimLogger {
 			if (value.isInWarmUpPeriod())
 				continue;
 
-			if (value.getStatus() == SimLogger.TASK_STATUS.COMLETED) {
+			if (value.getStatus() == SimLogger.TASK_STATUS.COMPLETED) {
 				completedTask[value.getTaskType()]++;
 
 				if (value.getVmType() == SimSettings.VM_TYPES.CLOUD_VM.ordinal())
@@ -286,7 +286,7 @@ public class SimLogger {
 					failedTaskOnCloudlet[value.getTaskType()]++;
 			}
 
-			if (value.getStatus() == SimLogger.TASK_STATUS.COMLETED) {
+			if (value.getStatus() == SimLogger.TASK_STATUS.COMPLETED) {
 				//value.se
 				cost[value.getTaskType()] += value.getCost();
 				serviceTime[value.getTaskType()] += value.getServiceTime();
@@ -633,13 +633,13 @@ class LogItem {
 
 	public void taskDownloaded(double _taskEndTime) {
 		taskEndTime = _taskEndTime;
-		status = SimLogger.TASK_STATUS.COMLETED;
+		status = SimLogger.TASK_STATUS.COMPLETED;
 	}
 	
 	public void taskDownloaded(double _taskEndTime, double cost) {
 		taskEndTime = _taskEndTime;
 		taskCost = cost;
-		status = SimLogger.TASK_STATUS.COMLETED;
+		status = SimLogger.TASK_STATUS.COMPLETED;
 	}
 
 	public void taskRejectedDueToVMCapacity(double _taskRejectTime) {
@@ -704,7 +704,7 @@ class LogItem {
 				+ taskOutputSize + SimSettings.DELIMITER + taskStartTime + SimSettings.DELIMITER + taskEndTime
 				+ SimSettings.DELIMITER;
 
-		if (status == SimLogger.TASK_STATUS.COMLETED)
+		if (status == SimLogger.TASK_STATUS.COMPLETED)
 			result += networkDelay;
 		else if (status == SimLogger.TASK_STATUS.REJECTED_DUE_TO_VM_CAPACITY)
 			result += "1"; // failure reason 1

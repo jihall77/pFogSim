@@ -1,3 +1,9 @@
+/**
+ * alternate orchestrator for comparison against the puddle orchestrator
+ * 
+ * this orchestrator only assigns tasks to the cloud
+ */
+
 package edu.auburn.pFogSim.orchestrator;
 
 import org.cloudbus.cloudsim.Datacenter;
@@ -9,7 +15,6 @@ import edu.boun.edgecloudsim.edge_server.EdgeVM;
 
 public class CloudOnlyOrchestrator extends EdgeOrchestrator {
 
-	private Datacenter cloud;
 	
 	public CloudOnlyOrchestrator(String _policy, String _simScenario) {
 		super(_policy, _simScenario);
@@ -30,8 +35,4 @@ public class CloudOnlyOrchestrator extends EdgeOrchestrator {
 		return ((EdgeVM) cloud.getHostList().get(0).getVmList().get(0));
 	}
 	
-	public void setCloud(Datacenter _cloud ) {
-		cloud = _cloud;
-	}
-
 }
