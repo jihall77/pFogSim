@@ -24,6 +24,8 @@ import edu.boun.edgecloudsim.core.SimSettings;
 import edu.boun.edgecloudsim.utils.SimLogger;
 import edu.boun.edgecloudsim.utils.SimUtils;
 
+import edu.auburn.pFogSim.util;
+
 public class mainApp {
 	
 	public void createXMLFile() 
@@ -54,6 +56,7 @@ public class mainApp {
 		    		"			<y_pos>1.0</y_pos>\n" + 
 		    		"			<level>2</level>" +
 		    		"			<wlan_id>0</wlan_id>\n" + 
+		    		"			<attractiveness>1</attractiveness>\n" + 
 		    		"			<wap>false</wap>\n" + 
 		    		"			<moving>false</moving>\n" + 
 		    		"		</location>");
@@ -95,6 +98,7 @@ public class mainApp {
 			    		"			<y_pos>" + y + "</y_pos>\n" + 
 			    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 			    		"			<level>" + level + "</level>" +
+			    		"			<attractiveness>1</attractiveness>\n" + 
 			    		"			<wap>true</wap>\n" + 
 		    			"			<moving>false</moving>\n" +
 			    		"		</location>");
@@ -148,6 +152,7 @@ public class mainApp {
 				    		"			<y_pos>" + y2 + "</y_pos>\n" + 
 				    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 				    		"			<level>" + level + "</level>" +
+				    		"			<attractiveness>1</attractiveness>\n" + 
 				    		"			<wap>false</wap>\n" + 
 		    				"			<moving>false</moving>\n" + 
 				    		"		</location>");
@@ -201,6 +206,7 @@ public class mainApp {
 					    		"			<y_pos>" + y3 + "</y_pos>\n" + 
 					    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 					    		"			<level>" + level + "</level>" +
+					    		"			<attractiveness>1</attractiveness>\n" + 
 					    		"			<wap>false</wap>\n" +  
 		    					"			<moving>false</moving>\n" + 
 					    		"		</location>");
@@ -254,6 +260,7 @@ public class mainApp {
 						    		"			<y_pos>" + y4 + "</y_pos>\n" + 
 						    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 						    		"			<level>" + level + "</level>" +
+						    		"			<attractiveness>1</attractiveness>\n" + 
 						    		"			<wap>false</wap>\n" +  
 		    						"			<moving>false</moving>\n" + 
 						    		"		</location>");
@@ -307,6 +314,7 @@ public class mainApp {
 							    		"			<y_pos>" + y5 + "</y_pos>\n" + 
 							    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 							    		"			<level>" + level + "</level>\n" +
+							    		"			<attractiveness>3</attractiveness>\n" + 
 							    		"			<wap>true</wap>\n" +  
 		    							"			<moving>false</moving>\n" + 
 		    							"			<dx>1</dx>\n" + 
@@ -452,13 +460,13 @@ public class mainApp {
 				
 						// Initialize the CloudSim library
 						CloudSim.init(num_user, calendar, trace_flag, 0.01);
-						//SimLogger.printLine("CloudSim.init reached");
+						SimLogger.printLine("CloudSim.init reached");
 						// Generate EdgeCloudsim Scenario Factory
 						ScenarioFactory sampleFactory = new SampleScenarioFactory(j,SS.getSimulationTime(), orchestratorPolicy, simScenario);
-						//SimLogger.printLine("ScenarioFactory reached");
+						SimLogger.printLine("ScenarioFactory reached");
 						// Generate EdgeCloudSim Simulation Manager
 						SimManager manager = new SimManager(sampleFactory, j, simScenario);
-						//SimLogger.printLine("SimManager reached");
+						SimLogger.printLine("SimManager reached");
 						// Start simulation
 						manager.startSimulation();
 					}
