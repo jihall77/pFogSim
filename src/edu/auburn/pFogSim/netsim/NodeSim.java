@@ -41,41 +41,41 @@ public class NodeSim {
 		myLocation = new Location(xin, yin);
 	}
 	
-	public NodeSim(double xin, double yin, int level, int id, boolean isAccessPoint) {
+	public NodeSim(double xin, double yin, int _level, int id, boolean isAccessPoint) {
 		wlan_id = id;
 		edges = new ArrayList<Link>();
 		myLocation = new Location(id, xin, yin);
-		this.level = level;
-		this.wifiAccess = isAccessPoint;
+		level = _level;
+		wifiAccess = isAccessPoint;
 	}
 	
-	public NodeSim(double xin, double yin, int level, int id, boolean isAccessPoint, boolean isMoving) {
+	public NodeSim(double xin, double yin, int _level, int id, boolean isAccessPoint, boolean isMoving) {
 		wlan_id = id;
 		edges = new ArrayList<Link>();
 		myLocation = new Location(xin, yin);
-		this.level = level;
-		this.wifiAccess = isAccessPoint;
-		if(isMoving == true)
-			throw new IllegalArgumentException("Please use the correct NodeSim constructor for a moving object. This one assumes the FOG Device is stationary");
-		this.moving = isMoving;
-		this.vector = new Location(0.0,0.0);
+		level = _level;
+		wifiAccess = isAccessPoint;
+		moving = isMoving;
+		vector = new Location(0.0,0.0);
 	}
 	
-	public NodeSim(double xin, double yin, int level, int id, boolean isAccessPoint, boolean isMoving, Location _vector) {
+	public NodeSim(double xin, double yin, int _level, int id, boolean isAccessPoint, boolean isMoving, Location _vector) {
 		wlan_id = id;
 		edges = new ArrayList<Link>();
 		myLocation = new Location(xin, yin);
-		this.level = level;
-		this.wifiAccess = isAccessPoint;
-		//There is a way better way of doing this construction but I will return to fix it later
-		if(isMoving == false)
-			throw new IllegalArgumentException("Please use the correct NodeSim constructor for a moving object. This one assumes the FOG Device is moving and needs the vector.");
-		this.moving = isMoving;
-		this.vector = _vector;
+		level = _level;
+		wifiAccess = isAccessPoint;
+		moving = isMoving;
+		if(!isMoving) {
+			vector = new Location(0.0,0.0);
+		}
+		else {
+			vector = _vector;
+		}
 	}
 	
 	/**
-	 * tests to make sure that at least on of the endpoints for the given link is at this node
+	 * tests to make sure that at least one of the end-points for the given link is at this node
 	 * @param in
 	 * @return true/false
 	 */

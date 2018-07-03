@@ -8,6 +8,7 @@ package edu.auburn.pFogSim.netsim;
 import edu.auburn.pFogSim.netsim.NodeSim;
 //import edu.boun.edgecloudsim.utils.SimLogger;
 import edu.boun.edgecloudsim.utils.Location;
+import edu.boun.edgecloudsim.utils.SimLogger;
 
 import java.util.LinkedList;
 import java.util.HashMap;
@@ -25,6 +26,9 @@ public class Router {
 	
 	public Router() {
 		database = new HashMap<String, LinkedList<NodeSim>>();
+		if(SimLogger.isFileLogEnabled()) {
+			SimLogger.printLine("Router Created");
+		}
 	}
 	/**
 	 * return a path from the src to destination as a linked list
