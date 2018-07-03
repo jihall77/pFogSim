@@ -161,13 +161,13 @@ public class SimLogger {
 	public void simStopped() throws IOException {
 		int numOfAppTypes = SimSettings.getInstance().getTaskLookUpTable().length;
 
-		File successFile = null, failFile = null, vmLoadFile = null, locationFile = null;
-		FileWriter successFW = null, failFW = null, vmLoadFW = null, locationFW = null;
-		BufferedWriter successBW = null, failBW = null, vmLoadBW = null, locationBW = null;
+		File successFile = null, failFile = null, vmLoadFile = null, locationFile = null, distFile = null, hopFile = null;
+		FileWriter successFW = null, failFW = null, vmLoadFW = null, locationFW = null, distFW = null, hopFW = null;
+		BufferedWriter successBW = null, failBW = null, vmLoadBW = null, locationBW = null, distBW = null, hopBW = null;
 
-		File[] vmLoadFileClay = new File[numOfAppTypes]; 
+		/*File[] vmLoadFileClay = new File[numOfAppTypes]; 
 		FileWriter[] vmLoadFWClay = new FileWriter[numOfAppTypes];
-		BufferedWriter[] vmLoadBWClay = new BufferedWriter[numOfAppTypes];
+		BufferedWriter[] vmLoadBWClay = new BufferedWriter[numOfAppTypes];*/
 		
 		// Save generic results to file for each app type. last index is average
 		// of all app types
@@ -207,6 +207,10 @@ public class SimLogger {
 		int[] failedTaskDuetoWanBw = new int[numOfAppTypes + 1];
 		int[] failedTaskDuetoMobility = new int[numOfAppTypes + 1];
 		int[] rejectedTaskDoToVmCapacity = new int[numOfAppTypes + 1];
+		
+		double[] totalDist = new double[numOfAppTypes + 1];
+		int[] totalHops = new int[numOfAppTypes + 1];
+		int[] numberOfAppTypes = new int[numOfAppTypes + 1];
 
 		// open all files and prepare them for write
 		if (fileLogEnabled) {
@@ -227,6 +231,14 @@ public class SimLogger {
 			locationFile = new File(outputFolder, filePrefix + "_LOCATION.log");
 			locationFW = new FileWriter(locationFile, true);
 			locationBW = new BufferedWriter(locationFW);
+			
+			distFile = new File(outputFolder, filePrefix + "_DISTANCES.log");
+			distFW = new FileWriter(distFile, true);
+			distBW = new BufferedWriter(distFW);
+			
+			hopFile = new File(outputFolder, filePrefix + "_HOPS.log");
+			hopFW = new FileWriter(hopFile, true);
+			hopBW = new BufferedWriter(hopFW);
 			
 			/*for(int i = 0; i < numOfAppTypes; i++)
 			{
@@ -260,13 +272,20 @@ public class SimLogger {
 
 			appendToFile(vmLoadBW, "#auto generated file!");
 			appendToFile(locationBW, "#auto generated file!");
+			appendToFile(distBW, "#auto generated file!");
+			appendToFile(hopBW, "#auto generated file!");
 		}
 
 		// extract the result of each task and write it to the file if required
 		for (Map.Entry<Integer, LogItem> entry : taskMap.entrySet()) {
 			Integer key = entry.getKey();
 			LogItem value = entry.getValue();
-
+			totalDist[value.getTaskType()] += value.getHostDist();
+			distBW.write(value.getHostDist() + ",");
+			totalHops[value.getTaskType()] += value.getHops();
+			hopBW.write(value.getHops() + ",");
+			numberOfAppTypes[value.getTaskType()]++;
+			
 			if (value.isInWarmUpPeriod())
 				continue;
 
@@ -293,7 +312,7 @@ public class SimLogger {
 				networkDelay[value.getTaskType()] += value.getNetworkDelay();
 				
 				//Make a file that saves all of the network delays and current time info
-				appendToFile(vmLoadBWClay[value.getTaskType()], value.getNetworkDelay() + "\t" + CloudSim.clock());
+				//appendToFile(vmLoadBWClay[value.getTaskType()], value.getNetworkDelay() + "\t" + CloudSim.clock());
 				
 				processingTime[value.getTaskType()] += (value.getServiceTime() - value.getNetworkDelay());
 
@@ -301,7 +320,8 @@ public class SimLogger {
 					wanDelay[value.getTaskType()] += value.getNetworkDelay();
 					serviceTimeOnCloud[value.getTaskType()] += value.getServiceTime();
 					processingTimeOnCloud[value.getTaskType()] += (value.getServiceTime() - value.getNetworkDelay());
-				} else {
+				} 
+				else {
 					lanDelay[value.getTaskType()] += value.getNetworkDelay();
 					serviceTimeOnCloudlet[value.getTaskType()] += value.getServiceTime();
 					processingTimeOnCloudlet[value.getTaskType()] += (value.getServiceTime() - value.getNetworkDelay());
@@ -368,6 +388,10 @@ public class SimLogger {
 		failedTaskDuetoLanBw[numOfAppTypes] = IntStream.of(failedTaskDuetoLanBw).sum();
 		failedTaskDuetoMobility[numOfAppTypes] = IntStream.of(failedTaskDuetoMobility).sum();
 		rejectedTaskDoToVmCapacity[numOfAppTypes] = IntStream.of(rejectedTaskDoToVmCapacity).sum();
+		
+		totalDist[numOfAppTypes] = DoubleStream.of(totalDist).sum();
+		totalHops[numOfAppTypes] = IntStream.of(totalHops).sum();
+		numberOfAppTypes[numOfAppTypes] = taskMap.size();
 
 		// calculate server load
 		double totalVmLoad = 0;
@@ -417,6 +441,8 @@ public class SimLogger {
 				double _processingTime = (completedTask[i] == 0) ? 0.0 : (processingTime[i] / (double) completedTask[i]);
 				double _vmLoad = (vmLoadList.size() == 0) ? 0.0 : (totalVmLoad / (double) vmLoadList.size());
 				double _cost = (completedTask[i] == 0) ? 0.0 : (cost[i] / (double) completedTask[i]);
+				double dist = (numberOfAppTypes[i] == 0) ? 0.0 : (totalDist[i] / (double) numberOfAppTypes[i]);
+				double hops = (numberOfAppTypes[i] == 0) ? 0.0 : ((double) totalHops[i] / (double) numberOfAppTypes[i]);
 
 				// write generic results
 				String genericResult1 = Integer.toString(completedTask[i]) + SimSettings.DELIMITER
@@ -462,10 +488,13 @@ public class SimLogger {
 						+ Double.toString(_serviceTimeOnCloud) + SimSettings.DELIMITER
 						+ Double.toString(_processingTimeOnCloud) + SimSettings.DELIMITER 
 						+ Double.toString(_wanDelay);
+				
+				String genericResult4 = Double.toString(dist) + SimSettings.DELIMITER + Double.toString(hops);
 
 				appendToFile(genericBWs[i], genericResult1);
 				appendToFile(genericBWs[i], genericResult2);
 				appendToFile(genericBWs[i], genericResult3);
+				appendToFile(genericBWs[i], genericResult4);
 			}
 
 			// close open files
@@ -551,7 +580,8 @@ public class SimLogger {
 		printLine("average cost: $" + String.format("%.2f", processingTime[numOfAppTypes] / (double) completedTask[numOfAppTypes]));
 		printLine("ProcessingTime: " + processingTime[numOfAppTypes]);
 		printLine("CompletedTask: " + completedTask[numOfAppTypes]);
-
+		printLine("Average Distance from task to host: " + String.format("%.2f", totalDist[numOfAppTypes]/((double) taskMap.size())));
+		printLine("Average number of hops from task to host: " + String.format("%.2f",((double) totalHops[numOfAppTypes])/((double) taskMap.size())));
 		
 		// clear related collections (map list etc.)
 		taskMap.clear();
