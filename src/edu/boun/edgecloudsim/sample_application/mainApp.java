@@ -80,14 +80,14 @@ public class mainApp {
 		    for(int i = 0; i < 4; i++)
 		    {
 		    	level = 5;
-		    	double x = Math.random()* 1000;
-		    	double y = Math.random()* 1000;
+		    	double x = (Math.random()* 1000) - 500;
+		    	double y = (Math.random()* 1000) - 500;
 
 		    	//Generate random x and y
 		    	
 		    	//Add node
 		    	node.println("<datacenter arch=\"x86\" os=\"Linux\" vmm=\"Xen\">\n");
-			    node.println("<costPerBw>0.1</costPerBw>\n" + 
+			    node.println("<costPerBw>0.15</costPerBw>\n" + 
 			    		"		<costPerSec>3.0</costPerSec>\n" + 
 			    		"		<costPerMem>0.05</costPerMem>\n" + 
 			    		"		<costPerStorage>0.1</costPerStorage>");
@@ -102,16 +102,16 @@ public class mainApp {
 			    		"		</location>");
 			    node.println("<hosts>\n" + 
 			    		"			<host>\n" + 
-			    		"				<core>1</core>\n" + 
-			    		"				<mips>1</mips>\n" + 
-			    		"				<ram>1</ram>\n" + 
-			    		"				<storage>1</storage>\n" + 
+			    		"				<core>2</core>\n" + 
+			    		"				<mips>5520</mips>\n" + 
+			    		"				<ram>2000</ram>\n" + 
+			    		"				<storage>512</storage>\n" + 
 			    		"				<VMs>\n" + 
 			    		"					<VM vmm=\"Xen\">\n" + 
-			    		"						<core>1</core>\n" + 
-			    		"						<mips>1</mips>\n" + 
-			    		"						<ram>1</ram>\n" + 
-			    		"						<storage>1</storage>\n" + 
+			    		"						<core>2</core>\n" + 
+			    		"						<mips>5520</mips>\n" + 
+			    		"						<ram>2000</ram>\n" + 
+			    		"						<storage>512</storage>\n" + 
 			    		"					</VM>\n" + 
 			    		"				</VMs>\n" + 
 			    		"			</host>\n" + 
@@ -136,12 +136,12 @@ public class mainApp {
 			    for(int j = 0; j < 3; j++)
 			    {
 			    	level = 4;
-			    	double x2 = Math.random()* 1000;
-			    	double y2 = Math.random()* 1000;
+			    	double x2 = (Math.random()* 1000) - 500;
+			    	double y2 = (Math.random()* 1000) - 500;
 
 			    	//Add node
 			    	node.println("<datacenter arch=\"x86\" os=\"Linux\" vmm=\"Xen\">\n");
-				    node.println("<costPerBw>0.1</costPerBw>\n" + 
+				    node.println("<costPerBw>0.15</costPerBw>\n" + 
 				    		"		<costPerSec>3.0</costPerSec>\n" + 
 				    		"		<costPerMem>0.05</costPerMem>\n" + 
 				    		"		<costPerStorage>0.1</costPerStorage>");
@@ -156,16 +156,16 @@ public class mainApp {
 				    		"		</location>");
 				    node.println("<hosts>\n" + 
 				    		"			<host>\n" + 
-				    		"				<core>1</core>\n" + 
-				    		"				<mips>1</mips>\n" + 
-				    		"				<ram>1</ram>\n" + 
-				    		"				<storage>1</storage>\n" + 
+				    		"				<core>2</core>\n" + 
+				    		"				<mips>5520</mips>\n" + 
+				    		"				<ram>1000</ram>\n" + 
+				    		"				<storage>256</storage>\n" + 
 				    		"				<VMs>\n" + 
 				    		"					<VM vmm=\"Xen\">\n" + 
-				    		"						<core>1</core>\n" + 
-				    		"						<mips>1</mips>\n" + 
-				    		"						<ram>1</ram>\n" + 
-				    		"						<storage>1</storage>\n" + 
+				    		"						<core>2</core>\n" + 
+				    		"						<mips>5520</mips>\n" + 
+				    		"						<ram>1000</ram>\n" + 
+				    		"						<storage>256</storage>\n" + 
 				    		"					</VM>\n" + 
 				    		"				</VMs>\n" + 
 				    		"			</host>\n" + 
@@ -190,12 +190,12 @@ public class mainApp {
 			    	for(int k = 0; k < 2; k++)
 			    	{
 			    		level = 3;
-				    	double x3 = Math.random()* 1000;
-				    	double y3 = Math.random()* 1000;
+				    	double x3 = (Math.random()* 1000) - 500;
+				    	double y3 = (Math.random()* 1000) - 500;
 
 			    		//Add node
 				    	node.println("<datacenter arch=\"x86\" os=\"Linux\" vmm=\"Xen\">\n");
-					    node.println("<costPerBw>0.1</costPerBw>\n" + 
+					    node.println("<costPerBw>0.15</costPerBw>\n" + 
 					    		"		<costPerSec>3.0</costPerSec>\n" + 
 					    		"		<costPerMem>0.05</costPerMem>\n" + 
 					    		"		<costPerStorage>0.1</costPerStorage>");
@@ -210,16 +210,16 @@ public class mainApp {
 					    		"		</location>");
 					    node.println("<hosts>\n" + 
 					    		"			<host>\n" + 
-					    		"				<core>1</core>\n" + 
-					    		"				<mips>1</mips>\n" + 
-					    		"				<ram>1</ram>\n" + 
-					    		"				<storage>1</storage>\n" + 
+					    		"				<core>2</core>\n" + 
+					    		"				<mips>5520</mips>\n" + 
+					    		"				<ram>1000</ram>\n" + 
+					    		"				<storage>128</storage>\n" + 
 					    		"				<VMs>\n" + 
 					    		"					<VM vmm=\"Xen\">\n" + 
-					    		"						<core>1</core>\n" + 
-					    		"						<mips>1</mips>\n" + 
-					    		"						<ram>1</ram>\n" + 
-					    		"						<storage>1</storage>\n" + 
+					    		"						<core>2</core>\n" + 
+					    		"						<mips>5520</mips>\n" + 
+					    		"						<ram>1000</ram>\n" + 
+					    		"						<storage>128</storage>\n" + 
 					    		"					</VM>\n" + 
 					    		"				</VMs>\n" + 
 					    		"			</host>\n" + 
@@ -244,12 +244,12 @@ public class mainApp {
 			    		for(int z = 0; z < 3; z++)
 			    		{
 			    			level =2;
-					    	double x4 = Math.random()* 1000;
-					    	double y4 = Math.random()* 1000;
+					    	double x4 = (Math.random()* 1000) - 500;
+					    	double y4 = (Math.random()* 1000) - 500;
 
 			    			//Add node 
 					    	node.println("<datacenter arch=\"x86\" os=\"Linux\" vmm=\"Xen\">\n");
-						    node.println("<costPerBw>0.1</costPerBw>\n" + 
+						    node.println("<costPerBw>0.15</costPerBw>\n" + 
 						    		"		<costPerSec>3.0</costPerSec>\n" + 
 						    		"		<costPerMem>0.05</costPerMem>\n" + 
 						    		"		<costPerStorage>0.1</costPerStorage>");
@@ -264,16 +264,16 @@ public class mainApp {
 						    		"		</location>");
 						    node.println("<hosts>\n" + 
 						    		"			<host>\n" + 
-						    		"				<core>1</core>\n" + 
-						    		"				<mips>1</mips>\n" + 
-						    		"				<ram>1</ram>\n" + 
-						    		"				<storage>1</storage>\n" + 
+						    		"				<core>2</core>\n" + 
+						    		"				<mips>5520</mips>\n" + 
+						    		"				<ram>128</ram>\n" + 
+						    		"				<storage>64</storage>\n" + 
 						    		"				<VMs>\n" + 
 						    		"					<VM vmm=\"Xen\">\n" + 
-						    		"						<core>1</core>\n" + 
-						    		"						<mips>1</mips>\n" + 
-						    		"						<ram>1</ram>\n" + 
-						    		"						<storage>1</storage>\n" + 
+						    		"						<core>2</core>\n" + 
+						    		"						<mips>5520</mips>\n" + 
+						    		"						<ram>128</ram>\n" + 
+						    		"						<storage>64</storage>\n" + 
 						    		"					</VM>\n" + 
 						    		"				</VMs>\n" + 
 						    		"			</host>\n" + 
@@ -298,12 +298,12 @@ public class mainApp {
 					    	for(int v = 0; v < 3; v++)
 				    		{
 				    			level = 1;
-						    	double x5 = Math.random()* 1000;
-						    	double y5 = Math.random()* 1000;
+						    	double x5 = (Math.random()* 1000) - 500;
+						    	double y5 = (Math.random()* 1000) - 500;
 
 				    			//Add node 
 						    	node.println("<datacenter arch=\"x86\" os=\"Linux\" vmm=\"Xen\">\n");
-							    node.println("<costPerBw>0.1</costPerBw>\n" + 
+							    node.println("<costPerBw>0.15</costPerBw>\n" + 
 							    		"		<costPerSec>3.0</costPerSec>\n" + 
 							    		"		<costPerMem>0.05</costPerMem>\n" + 
 							    		"		<costPerStorage>0.1</costPerStorage>");
@@ -320,16 +320,16 @@ public class mainApp {
 							    		"		</location>");
 							    node.println("<hosts>\n" + 
 							    		"			<host>\n" + 
-							    		"				<core>1</core>\n" + 
-							    		"				<mips>1</mips>\n" + 
-							    		"				<ram>1</ram>\n" + 
-							    		"				<storage>1</storage>\n" + 
+							    		"				<core>2</core>\n" + 
+							    		"				<mips>5520</mips>\n" + 
+							    		"				<ram>256</ram>\n" + 
+							    		"				<storage>64</storage>\n" + 
 							    		"				<VMs>\n" + 
 							    		"					<VM vmm=\"Xen\">\n" + 
-							    		"						<core>1</core>\n" + 
-							    		"						<mips>1</mips>\n" + 
-							    		"						<ram>1</ram>\n" + 
-							    		"						<storage>1</storage>\n" + 
+							    		"						<core>2</core>\n" + 
+							    		"						<mips>5520</mips>\n" + 
+							    		"						<ram>256</ram>\n" + 
+							    		"						<storage>64</storage>\n" + 
 							    		"					</VM>\n" + 
 							    		"				</VMs>\n" + 
 							    		"			</host>\n" + 
