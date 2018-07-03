@@ -452,13 +452,13 @@ public class mainApp {
 				
 						// Initialize the CloudSim library
 						CloudSim.init(num_user, calendar, trace_flag, 0.01);
-						SimLogger.printLine("CloudSim.init reached");
+						//SimLogger.printLine("CloudSim.init reached");
 						// Generate EdgeCloudsim Scenario Factory
 						ScenarioFactory sampleFactory = new SampleScenarioFactory(j,SS.getSimulationTime(), orchestratorPolicy, simScenario);
-						SimLogger.printLine("ScenarioFactory reached");
+						//SimLogger.printLine("ScenarioFactory reached");
 						// Generate EdgeCloudSim Simulation Manager
 						SimManager manager = new SimManager(sampleFactory, j, simScenario);
-						SimLogger.printLine("SimManager reached");
+						//SimLogger.printLine("SimManager reached");
 						// Start simulation
 						manager.startSimulation();
 					}

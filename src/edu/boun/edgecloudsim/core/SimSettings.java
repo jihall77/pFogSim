@@ -545,8 +545,6 @@ public class SimSettings {
 			SimLogger.printLine("Links XML cannot be parsed! Terminating simulation...");
 			e.printStackTrace();
 			System.exit(0);
-		}
-		SimLogger.printLine("Hey! We at least go this far without any issues!");
-		
+		}		
 	}
 }
