@@ -1,5 +1,5 @@
 /*
- * Title:        pFogSim derived from EdgeCloudSim NomadicMobility Model
+ * Title:        pFogSim derived from EdgeCloudSim VectorMobility Model
  * 
  * Description: 
  * Simulates where the lowest-level devices (such as mobile devices) will be in the simulation space
@@ -7,12 +7,12 @@
  * negative coordinates to resemble GPS coordinates as much as possible.
  * Devices are placed at a random Wireless Access Point (WAP) and given a random vector to move in.
  * It updates which access point a device is connected to by using the Voronoi Diagram to organize
- * the simulation space
+ * the simulation space.
  * 
  * License:      GPL - http://www.gnu.org/copyleft/gpl.html
  */
 
-package edu.boun.edgecloudsim.mobility;
+package edu.auburn.pFogSim.mobility;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,15 +31,14 @@ import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
 import edu.boun.edgecloudsim.utils.SimUtils;
 
-
-public class NomadicMobility extends MobilityModel {
+public class VectorMobility extends MobilityModel {
 	private List<TreeMap<Double, Location>> treeMapArray;
 	private int MAX_WIDTH;
 	private int MAX_HEIGHT;
 	private NetworkTopology network = ((ESBModel) SimManager.getInstance().getNetworkModel()).getNetworkTopology();
 
 	
-	public NomadicMobility(int _numberOfMobileDevices, double _simulationTime) {
+	public VectorMobility(int _numberOfMobileDevices, double _simulationTime) {
 		super(_numberOfMobileDevices, _simulationTime);
 		// TODO Auto-generated constructor stub
 	}
@@ -135,7 +134,13 @@ public class NomadicMobility extends MobilityModel {
 			
 			Entry<Double, Location> e = treeMap.floorEntry(time);
 			
-			wlan_id = e.getValue().getServingWlanId();
+			try {
+				wlan_id = e.getValue().getServingWlanId();
+			} catch (NullPointerException exce)
+			{
+				SimLogger.printLine("NullPointerException at time : " + time + "\n\tFor Device #: " + deviceId);
+				throw new NullPointerException();
+			}
 		}
 		else throw new IllegalArgumentException();
 		return wlan_id;

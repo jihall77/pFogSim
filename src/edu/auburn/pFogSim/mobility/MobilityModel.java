@@ -11,7 +11,7 @@
  * Copyright (c) 2017, Bogazici University, Istanbul, Turkey
  */
 
-package edu.boun.edgecloudsim.mobility;
+package edu.auburn.pFogSim.mobility; //This line was the only changed by Auburn
 
 import edu.boun.edgecloudsim.utils.Location;
 

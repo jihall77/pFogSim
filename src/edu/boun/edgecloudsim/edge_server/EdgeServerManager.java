@@ -248,7 +248,7 @@ public class EdgeServerManager {
 		
 		
 		Element location = (Element)datacenterElement.getElementsByTagName("location").item(0);
-		String attractiveness = location.getElementsByTagName("attractiveness").item(0).getTextContent();
+		//String attractiveness = location.getElementsByTagName("attractiveness").item(0).getTextContent();
 		int wlan_id = Integer.parseInt(location.getElementsByTagName("wlan_id").item(0).getTextContent());
 		double x_pos = Double.parseDouble(location.getElementsByTagName("x_pos").item(0).getTextContent());
 		double y_pos = Double.parseDouble(location.getElementsByTagName("y_pos").item(0).getTextContent());
@@ -261,7 +261,7 @@ public class EdgeServerManager {
 			dx = Double.parseDouble(location.getElementsByTagName("dx").item(0).getTextContent());
 			dy = Double.parseDouble(location.getElementsByTagName("dy").item(0).getTextContent());
 		}
-		SimSettings.PLACE_TYPES placeType = SimUtils.stringToPlace(attractiveness);
+		//SimSettings.PLACE_TYPES placeType = SimUtils.stringToPlace(attractiveness);
 
 		NodeList hostNodeList = datacenterElement.getElementsByTagName("host");
 		for (int j = 0; j < hostNodeList.getLength(); j++) {
@@ -308,7 +308,7 @@ public class EdgeServerManager {
 					new VmSchedulerSpaceShared(peList)
 				);
 			
-			host.setPlace(new Location(placeType, wlan_id, x_pos, y_pos));
+			host.setPlace(new Location(wlan_id, x_pos, y_pos));
 			host.setLevel(level);
 			hostList.add(host);
 			hostIdCounter++;

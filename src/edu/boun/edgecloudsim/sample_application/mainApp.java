@@ -54,7 +54,6 @@ public class mainApp {
 		    		"			<y_pos>1.0</y_pos>\n" + 
 		    		"			<level>2</level>" +
 		    		"			<wlan_id>0</wlan_id>\n" + 
-		    		"			<attractiveness>1</attractiveness>\n" + 
 		    		"			<wap>false</wap>\n" + 
 		    		"			<moving>false</moving>\n" + 
 		    		"		</location>");
@@ -96,7 +95,6 @@ public class mainApp {
 			    		"			<y_pos>" + y + "</y_pos>\n" + 
 			    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 			    		"			<level>" + level + "</level>" +
-			    		"			<attractiveness>1</attractiveness>\n" + 
 			    		"			<wap>true</wap>\n" + 
 		    			"			<moving>false</moving>\n" +
 			    		"		</location>");
@@ -150,7 +148,6 @@ public class mainApp {
 				    		"			<y_pos>" + y2 + "</y_pos>\n" + 
 				    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 				    		"			<level>" + level + "</level>" +
-				    		"			<attractiveness>1</attractiveness>\n" + 
 				    		"			<wap>false</wap>\n" + 
 		    				"			<moving>false</moving>\n" + 
 				    		"		</location>");
@@ -204,7 +201,6 @@ public class mainApp {
 					    		"			<y_pos>" + y3 + "</y_pos>\n" + 
 					    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 					    		"			<level>" + level + "</level>" +
-					    		"			<attractiveness>1</attractiveness>\n" + 
 					    		"			<wap>false</wap>\n" +  
 		    					"			<moving>false</moving>\n" + 
 					    		"		</location>");
@@ -258,7 +254,6 @@ public class mainApp {
 						    		"			<y_pos>" + y4 + "</y_pos>\n" + 
 						    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 						    		"			<level>" + level + "</level>" +
-						    		"			<attractiveness>1</attractiveness>\n" + 
 						    		"			<wap>false</wap>\n" +  
 		    						"			<moving>false</moving>\n" + 
 						    		"		</location>");
@@ -312,7 +307,6 @@ public class mainApp {
 							    		"			<y_pos>" + y5 + "</y_pos>\n" + 
 							    		"			<wlan_id>" + counter + "</wlan_id>\n" + 
 							    		"			<level>" + level + "</level>\n" +
-							    		"			<attractiveness>3</attractiveness>\n" + 
 							    		"			<wap>true</wap>\n" +  
 		    							"			<moving>false</moving>\n" + 
 		    							"			<dx>1</dx>\n" + 

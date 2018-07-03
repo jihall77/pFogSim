@@ -20,7 +20,7 @@ import org.cloudbus.cloudsim.UtilizationModel;
 import org.cloudbus.cloudsim.VmAllocationPolicy;
 
 import edu.boun.edgecloudsim.edge_orchestrator.EdgeOrchestrator;
-import edu.boun.edgecloudsim.mobility.MobilityModel;
+import edu.auburn.pFogSim.mobility.MobilityModel;
 import edu.boun.edgecloudsim.task_generator.LoadGeneratorModel;
 import edu.boun.edgecloudsim.network.NetworkModel;
 

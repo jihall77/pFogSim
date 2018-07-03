@@ -42,7 +42,7 @@ import edu.auburn.pFogSim.netsim.NodeSim;
 import edu.auburn.pFogSim.netsim.ESBModel;
 import edu.boun.edgecloudsim.edge_client.MobileDeviceManager;
 import edu.boun.edgecloudsim.edge_client.Task;
-import edu.boun.edgecloudsim.mobility.MobilityModel;
+import edu.auburn.pFogSim.mobility.MobilityModel;
 import edu.boun.edgecloudsim.task_generator.LoadGeneratorModel;
 import edu.boun.edgecloudsim.network.NetworkModel;
 import edu.boun.edgecloudsim.utils.EdgeTask;

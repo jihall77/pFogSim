@@ -15,23 +15,22 @@ import java.util.List;
 import org.cloudbus.cloudsim.Host;
 import org.cloudbus.cloudsim.UtilizationModel;
 import org.cloudbus.cloudsim.VmAllocationPolicy;
-
+import edu.auburn.pFogSim.mobility.VectorMobility;
+import edu.auburn.pFogSim.mobility.MobilityModel;
+import edu.auburn.pFogSim.netsim.ESBModel;
 import edu.auburn.pFogSim.orchestrator.CentralOrchestrator;
 import edu.auburn.pFogSim.orchestrator.CloudOnlyOrchestrator;
 import edu.auburn.pFogSim.orchestrator.EdgeOnlyOrchestrator;
 import edu.auburn.pFogSim.orchestrator.PuddleOrchestrator;
 import edu.boun.edgecloudsim.core.ScenarioFactory;
 import edu.boun.edgecloudsim.core.SimSettings.APP_TYPES;
+import edu.boun.edgecloudsim.edge_client.CpuUtilizationModel_Custom;
 //import edu.boun.edgecloudsim.edge_orchestrator.BasicEdgeOrchestrator;
 import edu.boun.edgecloudsim.edge_orchestrator.EdgeOrchestrator;
 import edu.boun.edgecloudsim.edge_server.VmAllocationPolicy_Custom;
-import edu.boun.edgecloudsim.edge_client.CpuUtilizationModel_Custom;
-import edu.boun.edgecloudsim.mobility.MobilityModel;
-import edu.boun.edgecloudsim.mobility.NomadicMobility;
+import edu.boun.edgecloudsim.network.NetworkModel;
 import edu.boun.edgecloudsim.task_generator.IdleActiveLoadGenerator;
 import edu.boun.edgecloudsim.task_generator.LoadGeneratorModel;
-import edu.auburn.pFogSim.netsim.ESBModel;
-import edu.boun.edgecloudsim.network.NetworkModel;
 
 public class SampleScenarioFactory implements ScenarioFactory {
 	private int numOfMobileDevice;
@@ -73,7 +72,7 @@ public class SampleScenarioFactory implements ScenarioFactory {
 
 	@Override
 	public MobilityModel getMobilityModel() {
-		return new NomadicMobility(numOfMobileDevice,simulationTime);
+		return new VectorMobility(numOfMobileDevice,simulationTime);
 	}
 
 	@Override
