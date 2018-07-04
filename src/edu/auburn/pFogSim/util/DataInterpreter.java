@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,39 +16,132 @@ import edu.boun.edgecloudsim.utils.SimLogger;
 
 public class DataInterpreter {
 	private static int MAX_LEVELS = 7;
+	private static String[] files= {
+			"Google_Cloud_DC.csv", 
+			"Chicago_CityHall.csv", 
+			"Chicago_Universities.csv", 
+			"Chicago_Wards.csv", 
+			"Chicago_Libraries.csv", 
+			"Chicago_Connect.csv", 
+			"Chicago_Schools.csv"};
 	private static String[][] nodeSpecs = new String[MAX_LEVELS][13];// the specs for all layers of the fog devices
+	private static ArrayList<Double[]> nodeList = new ArrayList<Double[]>();
+	private static ArrayList<Double[]> tempList;
+
 	private File xmlFile = null;
 	private FileWriter xmlFW = null;
 	private BufferedWriter xmlBR = null;
 	
-	public static void readFile(String inputfile, String outputfile, int level) throws IOException {
-		File dataFile = new File(inputfile);
+	
+	public static void readFile() throws IOException {
 		FileReader dataFR = null;
 		BufferedReader dataBR = null;
+		PrintWriter node = new PrintWriter("cloud_node_test.xml", "UTF-8");
+	    PrintWriter links = new PrintWriter("cloud_links_test.xml", "UTF-8");
 		
-		
-		
+	    node.println("<?xml version=\"1.0\"?>");
+	    links.println("<?xml version=\"1.0\"?>");
+	    node.println("<edge_devices>");
+	    links.println("<links>");
+	    
 		String rawNode = null;
 		String[] nodeLoc = new String[3];
-		
-		try {
-			dataFR = new FileReader(dataFile);
-			dataBR = new BufferedReader(dataFR);
-		}
-		catch (FileNotFoundException e) {
-			SimLogger.printLine("Bad File Name");
-		}
-		dataBR.readLine();
-		while(dataBR.ready()) {
-			rawNode = dataBR.readLine();
-			nodeLoc = rawNode.split(",");
+		Double[] temp = new Double[3];
+		double counter = 0;
+		double prevCounter = 0;
+		for(int i = 0; i < MAX_LEVELS; i++)
+		{
+			tempList = new ArrayList<Double[]>();
+			
+			try {
+				dataFR = new FileReader(files[i]);
+				dataBR = new BufferedReader(dataFR);
+			}
+			catch (FileNotFoundException e) {
+				SimLogger.printLine("Bad File Name");
+			}
+			dataBR.readLine(); //Gets rid of title data
+			while(dataBR.ready()) {
+				//SimLogger.printLine("Importing " + files[i]);
+				rawNode = dataBR.readLine();
+				nodeLoc = rawNode.split(",");
+				temp[0] = counter; //ID
+				temp[1] = Double.parseDouble(nodeLoc[1]); //X Coord
+				temp[2] = Double.parseDouble(nodeLoc[2]); //Y Coord
+				
+				//Add to output file		    
+			    node.println(String.format("<datacenter arch=\"%s\" os=\"%s\" vmm=\"%s\">\n", nodeSpecs[MAX_LEVELS - i - 1][0], nodeSpecs[MAX_LEVELS - i - 1][1], nodeSpecs[MAX_LEVELS - i - 1][2]));
+			    node.println(String.format("<costPerBw>%s</costPerBw>\n\t<costPerSec>%s</costPerSec>\n\t<costPerMem>%s</costPerMem>\n\t<costPerStorage>%s</costPerStorage>", nodeSpecs[MAX_LEVELS - i - 1][3], nodeSpecs[MAX_LEVELS - i - 1][4], nodeSpecs[MAX_LEVELS - i - 1][5], nodeSpecs[MAX_LEVELS - i - 1][6]));
+			    node.println(String.format("<location>\n\t<x_pos>%s</x_pos>\n\t<y_pos>%s</y_pos>\n\t<level>%s</level>\t<wlan_id>%s</wlan_id>\n\t<wap>%s</wap>\n\t<moving>%s</moving>\n\t</location>", nodeLoc[1], nodeLoc[2], MAX_LEVELS - i - 1, counter, nodeSpecs[MAX_LEVELS - i - 1][7], nodeSpecs[MAX_LEVELS - i - 1][8]));
+			    node.println(String.format("<hosts>\n\t<host>\n\t<core>%s</core>\n\t<mips>%s</mips>\n\t<ram>%s</ram>\n\t<storage>%s</storage>\n", nodeSpecs[MAX_LEVELS - i - 1][9], nodeSpecs[MAX_LEVELS - i - 1][10], nodeSpecs[MAX_LEVELS - i - 1][11], nodeSpecs[MAX_LEVELS - i - 1][12]));
+			    node.println(String.format("\t<VMs>\n\t\t<VM vmm=\"%s\">\n\t\t\t<core>%s</core>\n\t\t\t<mips>%s</mips>\n\t\t\t<ram>%s</ram>\n\t\t\t<storage>%s</storage>\n\t\t</VM>\n\t</VMs>\n</host></hosts>\n</datacenter>", nodeSpecs[MAX_LEVELS - i - 1][2], nodeSpecs[MAX_LEVELS - i - 1][9], nodeSpecs[MAX_LEVELS - i - 1][10], nodeSpecs[MAX_LEVELS - i - 1][11], nodeSpecs[MAX_LEVELS - i - 1][12]));
+	
+				
+			    
+				//Make link to previous closest node on higher level
+				if(i >= 0)
+				{
+					double minDistance = 1000000;
+					int index = -1;
+					double distance = 60;
+					//Go through all nodes one level up and find the closest
+					for(int j = 0; j < nodeList.size(); j++)
+					{
+						//SimLogger.printLine("nodeList.size = " + nodeList.size());
 
+						distance = Math.sqrt(Math.pow(nodeList.get(j)[1] - temp[1], 2) + Math.pow(nodeList.get(j)[2] - temp[2], 2));
+						if(distance < minDistance)
+						{
+							minDistance = distance;
+							index = j;
+						}
+					}
+					if(index >= 0)
+					{
+						links.println("<link>\n" + 
+					    		"		<name>L" + nodeList.get(index)[0] + "_" + temp[0] + "</name>\n" + 
+					    		"		<left>\n" + 
+					    		"			<x_pos>" + temp[1] + "</x_pos>\n" + 
+					    		"			<y_pos>" + temp[2] + "</y_pos>\n" + 
+					    		"		</left>\n" + 
+					    		"		<right>\n" + 
+					    		"			<x_pos>" + nodeList.get(index)[1] + "</x_pos>\n" + 
+					    		"			<y_pos>" + nodeList.get(index)[2] + "</y_pos>\n" + 
+					    		"		</right>\n" + 
+					    		"		<left_latency>0.5</left_latency>\n" + 
+					    		"		<right_latency>0.5</right_latency>\n" + 
+					    		"	</link>");
+					}
+				}
+				
+				tempList.add(temp);
+				counter++;
+			}
+			
+			SimLogger.printLine("Level : " + i + "\n\t" + prevCounter + " -> " + counter);
+			prevCounter = counter;
+			SimLogger.printLine("nodeList size : " + nodeList.size());
+
+			//move tempList to nodeList
+			nodeList = tempList;
+			SimLogger.printLine("tempList size : " + tempList.size());
+			tempList = new ArrayList<Double[]>();
+			SimLogger.printLine("tempList size : " + tempList.size());
+			SimLogger.printLine("nodeList size : " + nodeList.size());
+
+			SimLogger.printLine("Lists replaced");
 		}
+		
+		node.println("</edge_devices>");
+		links.println("</links>");
+		node.close();
+		links.close();
 		return;
 	}
 	
-	public static void main(String[] args) throws IOException {
-		readFile("scripts/sample_application/config/Chicago_Schools.csv", "schoolNode.xml", 1);
+	public DataInterpreter() throws IOException {
+		initialize();
+		readFile();
 	}
 	/**
 	 * the great beast...<br><br>

@@ -26,9 +26,6 @@ public class Router {
 	
 	public Router() {
 		database = new HashMap<String, LinkedList<NodeSim>>();
-		if(SimLogger.isFileLogEnabled()) {
-			SimLogger.printLine("Router Created");
-		}
 	}
 	/**
 	 * return a path from the src to destination as a linked list

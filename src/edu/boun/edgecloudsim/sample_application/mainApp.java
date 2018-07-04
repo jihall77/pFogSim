@@ -9,6 +9,7 @@
 
 package edu.boun.edgecloudsim.sample_application;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -18,24 +19,32 @@ import java.util.Date;
 import org.cloudbus.cloudsim.Log;
 import org.cloudbus.cloudsim.core.CloudSim;
 
+import com.sun.xml.internal.bind.v2.runtime.output.SAXOutput;
+
 import edu.boun.edgecloudsim.core.ScenarioFactory;
 import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
 import edu.boun.edgecloudsim.utils.SimLogger;
 import edu.boun.edgecloudsim.utils.SimUtils;
 
-import edu.auburn.pFogSim.util;
+import edu.auburn.pFogSim.util.*;
 
 public class mainApp {
 	
-	public void createXMLFile() 
+	public static void createXMLFile() 
 	{
 		/*
 		 * @author CJ
 		 * output the test files we want 
 		 */
-		
-		try{
+		DataInterpreter.initialize();
+		try {
+			DataInterpreter.readFile();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		/*try{
 		    PrintWriter node = new PrintWriter("cloud_node_test.xml", "UTF-8");
 		    PrintWriter links = new PrintWriter("cloud_links_test.xml", "UTF-8");
 		    node.println("<?xml version=\"1.0\"?>");
@@ -368,7 +377,7 @@ public class mainApp {
 		    node.close();
 		} catch (Exception e) {
 		   System.out.println("Files were not able to be made");
-		}
+		}*/
 		
 	}
 	/**
@@ -379,14 +388,12 @@ public class mainApp {
 		 * Try to get FogHierClust.java to run
 		 * 
 		 */
-		
-		//createXMLFile();
-		
 		Log.disable();
 		//enable console output and file output of this application
 		SimLogger.enablePrintLog();
+		createXMLFile();
 		
-
+		
 		//CJ added linksFile to supply the link xml file, had to adjust all constructors that
 		//	use these file to seamlessly use it
 		int iterationNumber = 1;
@@ -432,6 +439,7 @@ public class mainApp {
 		Date SimulationStartDate = Calendar.getInstance().getTime();
 		String now = df.format(SimulationStartDate);
 		SimLogger.printLine("Simulation started at " + now);
+		SimLogger.printLine("Test!");
 		SimLogger.printLine("----------------------------------------------------------------------");
 
 		for(int j=SS.getMinNumOfMobileDev(); j<=SS.getMaxNumOfMobileDev(); j+=SS.getMobileDevCounterSize())
