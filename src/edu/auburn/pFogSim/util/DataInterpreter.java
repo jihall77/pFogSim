@@ -14,6 +14,8 @@ import java.util.List;
 import edu.auburn.pFogSim.netsim.NodeSim;
 import edu.boun.edgecloudsim.utils.SimLogger;
 
+
+
 public class DataInterpreter {
 	private static int MAX_LEVELS = 7;
 	private static String[] files= {
@@ -26,12 +28,22 @@ public class DataInterpreter {
 			"Chicago_Schools.csv"};
 	private static String[][] nodeSpecs = new String[MAX_LEVELS][13];// the specs for all layers of the fog devices
 	private static ArrayList<Double[]> nodeList = new ArrayList<Double[]>();
-	private static ArrayList<Double[]> tempList;
+	private static ArrayList<Float[]> tempList = new ArrayList<Float[]>();
 
 	private File xmlFile = null;
 	private FileWriter xmlFW = null;
 	private BufferedWriter xmlBR = null;
 	
+	private static double measure(double lat1, double lon1, double lat2, double lon2){  // generally used geo measurement function
+	    double R = 6378.137; // Radius of earth in KM
+	    double dLat = lat2 * Math.PI / 180 - lat1 * Math.PI / 180;
+	    double dLon = lon2 * Math.PI / 180 - lon1 * Math.PI / 180;
+	    //Haversine Formula
+	    double a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLon/2) * Math.sin(dLon/2);
+	    double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+	    double d = R * c;
+	    return d * 1000; // meters
+	}
 	
 	public static void readFile() throws IOException {
 		FileReader dataFR = null;
@@ -46,12 +58,11 @@ public class DataInterpreter {
 	    
 		String rawNode = null;
 		String[] nodeLoc = new String[3];
-		Double[] temp = new Double[3];
-		double counter = 0;
-		double prevCounter = 0;
+		Float[] temp = new Float[3];
+		int counter = 0;
+		int prevCounter = 0;
 		for(int i = 0; i < MAX_LEVELS; i++)
 		{
-			tempList = new ArrayList<Double[]>();
 			
 			try {
 				dataFR = new FileReader(files[i]);
@@ -62,12 +73,13 @@ public class DataInterpreter {
 			}
 			dataBR.readLine(); //Gets rid of title data
 			while(dataBR.ready()) {
+
 				//SimLogger.printLine("Importing " + files[i]);
 				rawNode = dataBR.readLine();
 				nodeLoc = rawNode.split(",");
-				temp[0] = counter; //ID
-				temp[1] = Double.parseDouble(nodeLoc[1]); //X Coord
-				temp[2] = Double.parseDouble(nodeLoc[2]); //Y Coord
+				temp[0] = (float)counter; //ID
+				temp[1] = Float.parseFloat(nodeLoc[1]); //X Coord
+				temp[2] = Float.parseFloat(nodeLoc[2]); //Y Coord
 				
 				//Add to output file		    
 			    node.println(String.format("<datacenter arch=\"%s\" os=\"%s\" vmm=\"%s\">\n", nodeSpecs[MAX_LEVELS - i - 1][0], nodeSpecs[MAX_LEVELS - i - 1][1], nodeSpecs[MAX_LEVELS - i - 1][2]));
@@ -79,17 +91,17 @@ public class DataInterpreter {
 				
 			    
 				//Make link to previous closest node on higher level
-				if(i >= 0)
+				if(!nodeList.isEmpty())
 				{
 					double minDistance = 1000000;
 					int index = -1;
-					double distance = 60;
+					double distance = 0;
 					//Go through all nodes one level up and find the closest
 					for(int j = 0; j < nodeList.size(); j++)
 					{
 						//SimLogger.printLine("nodeList.size = " + nodeList.size());
 
-						distance = Math.sqrt(Math.pow(nodeList.get(j)[1] - temp[1], 2) + Math.pow(nodeList.get(j)[2] - temp[2], 2));
+						distance = measure(nodeList.get(j)[1], nodeList.get(j)[2], temp[1], temp[2]);
 						if(distance < minDistance)
 						{
 							minDistance = distance;
@@ -98,11 +110,16 @@ public class DataInterpreter {
 					}
 					if(index >= 0)
 					{
+						if(nodeList.get(index).equals(temp)) 
+						{
+							SimLogger.printLine("Yep, they're the same thing");
+							System.exit(0);
+						}
 						links.println("<link>\n" + 
 					    		"		<name>L" + nodeList.get(index)[0] + "_" + temp[0] + "</name>\n" + 
 					    		"		<left>\n" + 
-					    		"			<x_pos>" + temp[1] + "</x_pos>\n" + 
-					    		"			<y_pos>" + temp[2] + "</y_pos>\n" + 
+					    		"			<x_pos>" + (double)temp[1] + "</x_pos>\n" + 
+					    		"			<y_pos>" + (double)temp[2] + "</y_pos>\n" + 
 					    		"		</left>\n" + 
 					    		"		<right>\n" + 
 					    		"			<x_pos>" + nodeList.get(index)[1] + "</x_pos>\n" + 
@@ -120,16 +137,19 @@ public class DataInterpreter {
 			
 			SimLogger.printLine("Level : " + i + "\n\t" + prevCounter + " -> " + counter);
 			prevCounter = counter;
-			SimLogger.printLine("nodeList size : " + nodeList.size());
-
+			SimLogger.printLine("nodeList" + nodeList.toString());
+			SimLogger.printLine("tempList" + tempList.toString());
 			//move tempList to nodeList
-			nodeList = tempList;
-			SimLogger.printLine("tempList size : " + tempList.size());
-			tempList = new ArrayList<Double[]>();
-			SimLogger.printLine("tempList size : " + tempList.size());
-			SimLogger.printLine("nodeList size : " + nodeList.size());
-
-			SimLogger.printLine("Lists replaced");
+			nodeList.clear();
+			//nodeList.addAll(tempList);
+			for(Float[] input : tempList)
+			{
+				nodeList.add(new Double[] {(double)input[0], (double)input[1], (double)input[2]});
+			}
+			tempList.clear();
+			
+			SimLogger.printLine("nodeList" + nodeList.toString());
+			SimLogger.printLine("tempList" + tempList.toString());
 		}
 		
 		node.println("</edge_devices>");
