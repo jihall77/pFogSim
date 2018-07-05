@@ -228,7 +228,7 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 2][4] = "3.0";
 		nodeSpecs[MAX_LEVELS - 2][5] = "0.05";
 		nodeSpecs[MAX_LEVELS - 2][6] = "0.1";
-		nodeSpecs[MAX_LEVELS - 2][7] = "true";
+		nodeSpecs[MAX_LEVELS - 2][7] = "false";
 		nodeSpecs[MAX_LEVELS - 2][8] = "false";
 		nodeSpecs[MAX_LEVELS - 2][9] = "2";
 		nodeSpecs[MAX_LEVELS - 2][10] = "5520";
@@ -267,7 +267,7 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 5][4] = "3.0";
 		nodeSpecs[MAX_LEVELS - 5][5] = "0.05";
 		nodeSpecs[MAX_LEVELS - 5][6] = "0.1";
-		nodeSpecs[MAX_LEVELS - 5][7] = "true";
+		nodeSpecs[MAX_LEVELS - 5][7] = "false";
 		nodeSpecs[MAX_LEVELS - 5][8] = "false";
 		nodeSpecs[MAX_LEVELS - 5][9] = "2";
 		nodeSpecs[MAX_LEVELS - 5][10] = "5520";
@@ -280,7 +280,7 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 6][4] = "3.0";
 		nodeSpecs[MAX_LEVELS - 6][5] = "0.05";
 		nodeSpecs[MAX_LEVELS - 6][6] = "0.1";
-		nodeSpecs[MAX_LEVELS - 6][7] = "true";
+		nodeSpecs[MAX_LEVELS - 6][7] = "false";
 		nodeSpecs[MAX_LEVELS - 6][8] = "false";
 		nodeSpecs[MAX_LEVELS - 6][9] = "2";
 		nodeSpecs[MAX_LEVELS - 6][10] = "5520";

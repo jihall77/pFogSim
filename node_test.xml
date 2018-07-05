@@ -40,7 +40,7 @@
 	<x_pos>-87.631631</x_pos>
 	<y_pos>41.88386</y_pos>
 	<level>5</level>	<wlan_id>1</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -1870,7 +1870,7 @@
 	<x_pos>-87.71409</x_pos>
 	<y_pos>41.975456</y_pos>
 	<level>2</level>	<wlan_id>62</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -1900,7 +1900,7 @@
 	<x_pos>-87.60223026</x_pos>
 	<y_pos>41.65473022</y_pos>
 	<level>2</level>	<wlan_id>63</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -1930,7 +1930,7 @@
 	<x_pos>-87.72649071</x_pos>
 	<y_pos>41.80121366</y_pos>
 	<level>2</level>	<wlan_id>64</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -1960,7 +1960,7 @@
 	<x_pos>-87.76571187</x_pos>
 	<y_pos>41.88927215</y_pos>
 	<level>2</level>	<wlan_id>65</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -1990,7 +1990,7 @@
 	<x_pos>-87.77938682</x_pos>
 	<y_pos>41.9531739</y_pos>
 	<level>2</level>	<wlan_id>66</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2020,7 +2020,7 @@
 	<x_pos>-87.58539659</x_pos>
 	<y_pos>41.74671722</y_pos>
 	<level>2</level>	<wlan_id>67</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2050,7 +2050,7 @@
 	<x_pos>-87.67756964</x_pos>
 	<y_pos>41.80838442</y_pos>
 	<level>2</level>	<wlan_id>68</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2080,7 +2080,7 @@
 	<x_pos>-87.67194646</x_pos>
 	<y_pos>41.72118051</y_pos>
 	<level>2</level>	<wlan_id>69</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2110,7 +2110,7 @@
 	<x_pos>-87.66073027</x_pos>
 	<y_pos>41.97168195</y_pos>
 	<level>2</level>	<wlan_id>70</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2140,7 +2140,7 @@
 	<x_pos>-87.58934182</x_pos>
 	<y_pos>41.80584031</y_pos>
 	<level>2</level>	<wlan_id>71</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2170,7 +2170,7 @@
 	<x_pos>-87.65723452</x_pos>
 	<y_pos>41.73231676</y_pos>
 	<level>2</level>	<wlan_id>72</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2200,7 +2200,7 @@
 	<x_pos>-87.70265432</x_pos>
 	<y_pos>41.81513879</y_pos>
 	<level>2</level>	<wlan_id>73</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2230,7 +2230,7 @@
 	<x_pos>-87.6805873</x_pos>
 	<y_pos>41.9127224</y_pos>
 	<level>2</level>	<wlan_id>74</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2260,7 +2260,7 @@
 	<x_pos>-87.69773449</x_pos>
 	<y_pos>41.98457226</y_pos>
 	<level>2</level>	<wlan_id>75</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2290,7 +2290,7 @@
 	<x_pos>-87.64250101</x_pos>
 	<y_pos>41.81550568</y_pos>
 	<level>2</level>	<wlan_id>76</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2320,7 +2320,7 @@
 	<x_pos>-87.62640222</x_pos>
 	<y_pos>41.82842687</y_pos>
 	<level>2</level>	<wlan_id>77</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2350,7 +2350,7 @@
 	<x_pos>-87.70326162</x_pos>
 	<y_pos>41.78180788</y_pos>
 	<level>2</level>	<wlan_id>78</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2380,7 +2380,7 @@
 	<x_pos>-87.63195792</x_pos>
 	<y_pos>41.85412074</y_pos>
 	<level>2</level>	<wlan_id>79</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2410,7 +2410,7 @@
 	<x_pos>-87.78181979</x_pos>
 	<y_pos>41.77678206</y_pos>
 	<level>2</level>	<wlan_id>80</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2440,7 +2440,7 @@
 	<x_pos>-87.60715724</x_pos>
 	<y_pos>41.78037301</y_pos>
 	<level>2</level>	<wlan_id>81</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2470,7 +2470,7 @@
 	<x_pos>-87.64648501</x_pos>
 	<y_pos>41.83228703</y_pos>
 	<level>2</level>	<wlan_id>82</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2500,7 +2500,7 @@
 	<x_pos>-87.7064607</x_pos>
 	<y_pos>41.8943707</y_pos>
 	<level>2</level>	<wlan_id>83</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2530,7 +2530,7 @@
 	<x_pos>-87.70968549</x_pos>
 	<y_pos>41.86450076</y_pos>
 	<level>2</level>	<wlan_id>84</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2560,7 +2560,7 @@
 	<x_pos>-87.817497</x_pos>
 	<y_pos>41.943308</y_pos>
 	<level>2</level>	<wlan_id>85</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2590,7 +2590,7 @@
 	<x_pos>-87.76204789</x_pos>
 	<y_pos>41.99697088</y_pos>
 	<level>2</level>	<wlan_id>86</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2620,7 +2620,7 @@
 	<x_pos>-87.660757</x_pos>
 	<y_pos>41.990996</y_pos>
 	<level>2</level>	<wlan_id>87</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2650,7 +2650,7 @@
 	<x_pos>-87.69404645</x_pos>
 	<y_pos>41.79369723</y_pos>
 	<level>2</level>	<wlan_id>88</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2680,7 +2680,7 @@
 	<x_pos>-87.79724102</x_pos>
 	<y_pos>41.92111472</y_pos>
 	<level>2</level>	<wlan_id>89</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2710,7 +2710,7 @@
 	<x_pos>-87.78013326</x_pos>
 	<y_pos>41.79298666</y_pos>
 	<level>2</level>	<wlan_id>90</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2740,7 +2740,7 @@
 	<x_pos>-87.6005</x_pos>
 	<y_pos>41.7623</y_pos>
 	<level>2</level>	<wlan_id>91</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2770,7 +2770,7 @@
 	<x_pos>-87.62273982</x_pos>
 	<y_pos>41.80743298</y_pos>
 	<level>2</level>	<wlan_id>92</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2800,7 +2800,7 @@
 	<x_pos>-87.6281928</x_pos>
 	<y_pos>41.87629985</y_pos>
 	<level>2</level>	<wlan_id>93</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2830,7 +2830,7 @@
 	<x_pos>-87.54824133</x_pos>
 	<y_pos>41.65917887</y_pos>
 	<level>2</level>	<wlan_id>94</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2860,7 +2860,7 @@
 	<x_pos>-87.705427</x_pos>
 	<y_pos>41.910328</y_pos>
 	<level>2</level>	<wlan_id>95</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2890,7 +2890,7 @@
 	<x_pos>-87.71694255</x_pos>
 	<y_pos>41.95390372</y_pos>
 	<level>2</level>	<wlan_id>96</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2920,7 +2920,7 @@
 	<x_pos>-87.76155426</x_pos>
 	<y_pos>41.96759739</y_pos>
 	<level>2</level>	<wlan_id>97</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2950,7 +2950,7 @@
 	<x_pos>-87.56549207</x_pos>
 	<y_pos>41.71326176</y_pos>
 	<level>2</level>	<wlan_id>98</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -2980,7 +2980,7 @@
 	<x_pos>-87.63740787</x_pos>
 	<y_pos>41.78217163</y_pos>
 	<level>2</level>	<wlan_id>99</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3010,7 +3010,7 @@
 	<x_pos>-87.61776067</x_pos>
 	<y_pos>41.8318014</y_pos>
 	<level>2</level>	<wlan_id>100</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3040,7 +3040,7 @@
 	<x_pos>-87.72556035</x_pos>
 	<y_pos>41.87933866</y_pos>
 	<level>2</level>	<wlan_id>101</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3070,7 +3070,7 @@
 	<x_pos>-87.67075771</x_pos>
 	<y_pos>41.9403136</y_pos>
 	<level>2</level>	<wlan_id>102</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3100,7 +3100,7 @@
 	<x_pos>-87.65811325</x_pos>
 	<y_pos>41.92559169</y_pos>
 	<level>2</level>	<wlan_id>103</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3130,7 +3130,7 @@
 	<x_pos>-87.7051215</x_pos>
 	<y_pos>41.8495331</y_pos>
 	<level>2</level>	<wlan_id>104</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3160,7 +3160,7 @@
 	<x_pos>-87.70339411</x_pos>
 	<y_pos>41.9250521</y_pos>
 	<level>2</level>	<wlan_id>105</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3190,7 +3190,7 @@
 	<x_pos>-87.66093712</x_pos>
 	<y_pos>41.85752201</y_pos>
 	<level>2</level>	<wlan_id>106</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3220,7 +3220,7 @@
 	<x_pos>-87.67914211</x_pos>
 	<y_pos>41.8811857</y_pos>
 	<level>2</level>	<wlan_id>107</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3250,7 +3250,7 @@
 	<x_pos>-87.7381619</x_pos>
 	<y_pos>41.96835446</y_pos>
 	<level>2</level>	<wlan_id>108</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3280,7 +3280,7 @@
 	<x_pos>-87.67339165</x_pos>
 	<y_pos>41.8304475</y_pos>
 	<level>2</level>	<wlan_id>109</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3310,7 +3310,7 @@
 	<x_pos>-87.64614323</x_pos>
 	<y_pos>41.94008421</y_pos>
 	<level>2</level>	<wlan_id>110</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3340,7 +3340,7 @@
 	<x_pos>-87.70103789</x_pos>
 	<y_pos>41.6929191</y_pos>
 	<level>2</level>	<wlan_id>111</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3370,7 +3370,7 @@
 	<x_pos>-87.6364898</x_pos>
 	<y_pos>41.90386939</y_pos>
 	<level>2</level>	<wlan_id>112</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3400,7 +3400,7 @@
 	<x_pos>-87.76879899</x_pos>
 	<y_pos>41.9094292</y_pos>
 	<level>2</level>	<wlan_id>113</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3430,7 +3430,7 @@
 	<x_pos>-87.73392609</x_pos>
 	<y_pos>41.91004242</y_pos>
 	<level>2</level>	<wlan_id>114</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3460,7 +3460,7 @@
 	<x_pos>-87.69965005</x_pos>
 	<y_pos>41.99833903</y_pos>
 	<level>2</level>	<wlan_id>115</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3490,7 +3490,7 @@
 	<x_pos>-87.81320911</x_pos>
 	<y_pos>41.97796114</y_pos>
 	<level>2</level>	<wlan_id>116</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3520,7 +3520,7 @@
 	<x_pos>-87.75449294</x_pos>
 	<y_pos>41.93877675</y_pos>
 	<level>2</level>	<wlan_id>117</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3550,7 +3550,7 @@
 	<x_pos>-87.61826066</x_pos>
 	<y_pos>41.69440641</y_pos>
 	<level>2</level>	<wlan_id>118</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3580,7 +3580,7 @@
 	<x_pos>-87.7983019</x_pos>
 	<y_pos>41.99191752</y_pos>
 	<level>2</level>	<wlan_id>119</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3610,7 +3610,7 @@
 	<x_pos>-87.67340767</x_pos>
 	<y_pos>42.00670764</y_pos>
 	<level>2</level>	<wlan_id>120</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3640,7 +3640,7 @@
 	<x_pos>-87.65447998</x_pos>
 	<y_pos>41.86927615</y_pos>
 	<level>2</level>	<wlan_id>121</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3670,7 +3670,7 @@
 	<x_pos>-87.72439558</x_pos>
 	<y_pos>41.74936168</y_pos>
 	<level>2</level>	<wlan_id>122</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3700,7 +3700,7 @@
 	<x_pos>-87.65492072</x_pos>
 	<y_pos>41.79527942</y_pos>
 	<level>2</level>	<wlan_id>123</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3730,7 +3730,7 @@
 	<x_pos>-87.54980694</x_pos>
 	<y_pos>41.73057483</y_pos>
 	<level>2</level>	<wlan_id>124</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3760,7 +3760,7 @@
 	<x_pos>-87.56208364</x_pos>
 	<y_pos>41.76155536</y_pos>
 	<level>2</level>	<wlan_id>125</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3790,7 +3790,7 @@
 	<x_pos>-87.68441685</x_pos>
 	<y_pos>41.96240358</y_pos>
 	<level>2</level>	<wlan_id>126</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3820,7 +3820,7 @@
 	<x_pos>-87.65398155</x_pos>
 	<y_pos>41.75780175</y_pos>
 	<level>2</level>	<wlan_id>127</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3850,7 +3850,7 @@
 	<x_pos>-87.72496884</x_pos>
 	<y_pos>41.84205367</y_pos>
 	<level>2</level>	<wlan_id>128</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3880,7 +3880,7 @@
 	<x_pos>-87.65351012</x_pos>
 	<y_pos>41.95844521</y_pos>
 	<level>2</level>	<wlan_id>129</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3910,7 +3910,7 @@
 	<x_pos>-87.53350318</x_pos>
 	<y_pos>41.70302748</y_pos>
 	<level>2</level>	<wlan_id>130</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3940,7 +3940,7 @@
 	<x_pos>-87.67413287</x_pos>
 	<y_pos>41.69244169</y_pos>
 	<level>2</level>	<wlan_id>131</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -3970,7 +3970,7 @@
 	<x_pos>-87.62314877</x_pos>
 	<y_pos>41.89758435</y_pos>
 	<level>2</level>	<wlan_id>132</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4000,7 +4000,7 @@
 	<x_pos>-87.78589145</x_pos>
 	<y_pos>41.93666212</y_pos>
 	<level>2</level>	<wlan_id>133</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4030,7 +4030,7 @@
 	<x_pos>-87.74732954</x_pos>
 	<y_pos>41.89504651</y_pos>
 	<level>2</level>	<wlan_id>134</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4060,7 +4060,7 @@
 	<x_pos>-87.66812159</x_pos>
 	<y_pos>41.77933436</y_pos>
 	<level>2</level>	<wlan_id>135</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4090,7 +4090,7 @@
 	<x_pos>-87.72353857</x_pos>
 	<y_pos>41.77866222</y_pos>
 	<level>2</level>	<wlan_id>136</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4120,7 +4120,7 @@
 	<x_pos>-87.64299968</x_pos>
 	<y_pos>41.67785087</y_pos>
 	<level>2</level>	<wlan_id>137</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4150,7 +4150,7 @@
 	<x_pos>-87.66826659</x_pos>
 	<y_pos>41.89575219</y_pos>
 	<level>2</level>	<wlan_id>138</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4180,7 +4180,7 @@
 	<x_pos>-87.61495065</x_pos>
 	<y_pos>41.75106361</y_pos>
 	<level>2</level>	<wlan_id>139</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4210,7 +4210,7 @@
 	<x_pos>-87.64309395</x_pos>
 	<y_pos>41.72093481</y_pos>
 	<level>2</level>	<wlan_id>140</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4240,7 +4240,7 @@
 	<x_pos>-87.70213011</x_pos>
 	<y_pos>41.738324</y_pos>
 	<level>2</level>	<wlan_id>141</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4270,7 +4270,7 @@
 	<x_pos>-87.6222322</x_pos>
 	<y_pos>41.7216776</y_pos>
 	<level>1</level>	<wlan_id>142</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4300,7 +4300,7 @@
 	<x_pos>-87.635009</x_pos>
 	<y_pos>41.7563478</y_pos>
 	<level>1</level>	<wlan_id>143</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4330,7 +4330,7 @@
 	<x_pos>-87.713159</x_pos>
 	<y_pos>41.974624</y_pos>
 	<level>1</level>	<wlan_id>144</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4360,7 +4360,7 @@
 	<x_pos>-87.7137735</x_pos>
 	<y_pos>41.9755882</y_pos>
 	<level>1</level>	<wlan_id>145</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4390,7 +4390,7 @@
 	<x_pos>-87.6552449</x_pos>
 	<y_pos>41.968167</y_pos>
 	<level>1</level>	<wlan_id>146</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4420,7 +4420,7 @@
 	<x_pos>-87.5965854</x_pos>
 	<y_pos>41.6589714</y_pos>
 	<level>1</level>	<wlan_id>147</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4450,7 +4450,7 @@
 	<x_pos>-87.6026209</x_pos>
 	<y_pos>41.7840956</y_pos>
 	<level>1</level>	<wlan_id>148</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4480,7 +4480,7 @@
 	<x_pos>-87.6022572</x_pos>
 	<y_pos>41.6547286</y_pos>
 	<level>1</level>	<wlan_id>149</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4510,7 +4510,7 @@
 	<x_pos>-87.7266121</x_pos>
 	<y_pos>41.8008995</y_pos>
 	<level>1</level>	<wlan_id>150</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4540,7 +4540,7 @@
 	<x_pos>-87.6538101</x_pos>
 	<y_pos>41.7522957</y_pos>
 	<level>1</level>	<wlan_id>151</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4570,7 +4570,7 @@
 	<x_pos>-87.6672752</x_pos>
 	<y_pos>41.8829897</y_pos>
 	<level>1</level>	<wlan_id>152</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4600,7 +4600,7 @@
 	<x_pos>-87.6854531</x_pos>
 	<y_pos>41.8410641</y_pos>
 	<level>1</level>	<wlan_id>153</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4630,7 +4630,7 @@
 	<x_pos>-87.699636</x_pos>
 	<y_pos>41.937491</y_pos>
 	<level>1</level>	<wlan_id>154</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4660,7 +4660,7 @@
 	<x_pos>-87.6599255</x_pos>
 	<y_pos>41.9696981</y_pos>
 	<level>1</level>	<wlan_id>155</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4690,7 +4690,7 @@
 	<x_pos>-87.700837</x_pos>
 	<y_pos>41.990699</y_pos>
 	<level>1</level>	<wlan_id>156</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4720,7 +4720,7 @@
 	<x_pos>-87.7067781</x_pos>
 	<y_pos>41.9018592</y_pos>
 	<level>1</level>	<wlan_id>157</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4750,7 +4750,7 @@
 	<x_pos>-87.6505195</x_pos>
 	<y_pos>41.7506721</y_pos>
 	<level>1</level>	<wlan_id>158</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4780,7 +4780,7 @@
 	<x_pos>-87.696534</x_pos>
 	<y_pos>41.9058599</y_pos>
 	<level>1</level>	<wlan_id>159</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4810,7 +4810,7 @@
 	<x_pos>-87.748979</x_pos>
 	<y_pos>41.877384</y_pos>
 	<level>1</level>	<wlan_id>160</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4840,7 +4840,7 @@
 	<x_pos>-87.779458</x_pos>
 	<y_pos>41.953279</y_pos>
 	<level>1</level>	<wlan_id>161</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4870,7 +4870,7 @@
 	<x_pos>-87.766925</x_pos>
 	<y_pos>41.889135</y_pos>
 	<level>1</level>	<wlan_id>162</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4900,7 +4900,7 @@
 	<x_pos>-87.7520945</x_pos>
 	<y_pos>41.873958</y_pos>
 	<level>1</level>	<wlan_id>163</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4930,7 +4930,7 @@
 	<x_pos>-87.58621</x_pos>
 	<y_pos>41.746338</y_pos>
 	<level>1</level>	<wlan_id>164</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4960,7 +4960,7 @@
 	<x_pos>-87.669383</x_pos>
 	<y_pos>41.808302</y_pos>
 	<level>1</level>	<wlan_id>165</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -4990,7 +4990,7 @@
 	<x_pos>-87.6756459</x_pos>
 	<y_pos>41.7209725</y_pos>
 	<level>1</level>	<wlan_id>166</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5020,7 +5020,7 @@
 	<x_pos>-87.6609184</x_pos>
 	<y_pos>41.9714518</y_pos>
 	<level>1</level>	<wlan_id>167</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5050,7 +5050,7 @@
 	<x_pos>-87.5903089</x_pos>
 	<y_pos>41.8058315</y_pos>
 	<level>1</level>	<wlan_id>168</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5080,7 +5080,7 @@
 	<x_pos>-87.6576514</x_pos>
 	<y_pos>41.7323361</y_pos>
 	<level>1</level>	<wlan_id>169</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5110,7 +5110,7 @@
 	<x_pos>-87.6590399</x_pos>
 	<y_pos>41.8412923</y_pos>
 	<level>1</level>	<wlan_id>170</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5140,7 +5140,7 @@
 	<x_pos>-87.709805</x_pos>
 	<y_pos>41.8874852</y_pos>
 	<level>1</level>	<wlan_id>171</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5170,7 +5170,7 @@
 	<x_pos>-87.7027338</x_pos>
 	<y_pos>41.8150354</y_pos>
 	<level>1</level>	<wlan_id>172</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5200,7 +5200,7 @@
 	<x_pos>-87.6803408</x_pos>
 	<y_pos>41.9123993</y_pos>
 	<level>1</level>	<wlan_id>173</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5230,7 +5230,7 @@
 	<x_pos>-87.6961305</x_pos>
 	<y_pos>41.9837114</y_pos>
 	<level>1</level>	<wlan_id>174</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5260,7 +5260,7 @@
 	<x_pos>-87.64262</x_pos>
 	<y_pos>41.8164872</y_pos>
 	<level>1</level>	<wlan_id>175</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5290,7 +5290,7 @@
 	<x_pos>-87.603826</x_pos>
 	<y_pos>41.820267</y_pos>
 	<level>1</level>	<wlan_id>176</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5320,7 +5320,7 @@
 	<x_pos>-87.6537187</x_pos>
 	<y_pos>41.7503287</y_pos>
 	<level>1</level>	<wlan_id>177</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5350,7 +5350,7 @@
 	<x_pos>-87.7044287</x_pos>
 	<y_pos>41.9172364</y_pos>
 	<level>1</level>	<wlan_id>178</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5380,7 +5380,7 @@
 	<x_pos>-87.636105</x_pos>
 	<y_pos>41.85111</y_pos>
 	<level>1</level>	<wlan_id>179</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5410,7 +5410,7 @@
 	<x_pos>-87.648208</x_pos>
 	<y_pos>41.864058</y_pos>
 	<level>1</level>	<wlan_id>180</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5440,7 +5440,7 @@
 	<x_pos>-87.6372633</x_pos>
 	<y_pos>41.7693978</y_pos>
 	<level>1</level>	<wlan_id>181</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5470,7 +5470,7 @@
 	<x_pos>-87.651872</x_pos>
 	<y_pos>41.9633759</y_pos>
 	<level>1</level>	<wlan_id>182</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5500,7 +5500,7 @@
 	<x_pos>-87.54584</x_pos>
 	<y_pos>41.7368067</y_pos>
 	<level>1</level>	<wlan_id>183</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5530,7 +5530,7 @@
 	<x_pos>-87.6106167</x_pos>
 	<y_pos>41.8312243</y_pos>
 	<level>1</level>	<wlan_id>184</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5560,7 +5560,7 @@
 	<x_pos>-87.6106167</x_pos>
 	<y_pos>41.8312243</y_pos>
 	<level>1</level>	<wlan_id>185</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5590,7 +5590,7 @@
 	<x_pos>-87.6226729</x_pos>
 	<y_pos>41.8628797</y_pos>
 	<level>1</level>	<wlan_id>186</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5620,7 +5620,7 @@
 	<x_pos>-87.6609895</x_pos>
 	<y_pos>41.9623528</y_pos>
 	<level>1</level>	<wlan_id>187</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5650,7 +5650,7 @@
 	<x_pos>-87.5744957</x_pos>
 	<y_pos>41.7680281</y_pos>
 	<level>1</level>	<wlan_id>188</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5680,7 +5680,7 @@
 	<x_pos>-87.6535169</x_pos>
 	<y_pos>41.965072</y_pos>
 	<level>1</level>	<wlan_id>189</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5710,7 +5710,7 @@
 	<x_pos>-87.6498011</x_pos>
 	<y_pos>41.9488772</y_pos>
 	<level>1</level>	<wlan_id>190</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5740,7 +5740,7 @@
 	<x_pos>-87.678899</x_pos>
 	<y_pos>41.870543</y_pos>
 	<level>1</level>	<wlan_id>191</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5770,7 +5770,7 @@
 	<x_pos>-87.6704061</x_pos>
 	<y_pos>41.9949726</y_pos>
 	<level>1</level>	<wlan_id>192</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5800,7 +5800,7 @@
 	<x_pos>-87.623105</x_pos>
 	<y_pos>41.8848378</y_pos>
 	<level>1</level>	<wlan_id>193</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5830,7 +5830,7 @@
 	<x_pos>-87.6242497</x_pos>
 	<y_pos>41.8056646</y_pos>
 	<level>1</level>	<wlan_id>194</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5860,7 +5860,7 @@
 	<x_pos>-87.6052442</x_pos>
 	<y_pos>41.7531082</y_pos>
 	<level>1</level>	<wlan_id>195</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5890,7 +5890,7 @@
 	<x_pos>-87.605588</x_pos>
 	<y_pos>41.743501</y_pos>
 	<level>1</level>	<wlan_id>196</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5920,7 +5920,7 @@
 	<x_pos>-87.6260439</x_pos>
 	<y_pos>41.828158</y_pos>
 	<level>1</level>	<wlan_id>197</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5950,7 +5950,7 @@
 	<x_pos>-87.6557077</x_pos>
 	<y_pos>41.9733066</y_pos>
 	<level>1</level>	<wlan_id>198</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -5980,7 +5980,7 @@
 	<x_pos>-87.713077</x_pos>
 	<y_pos>41.895228</y_pos>
 	<level>1</level>	<wlan_id>199</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6010,7 +6010,7 @@
 	<x_pos>-87.6319129</x_pos>
 	<y_pos>41.8844834</y_pos>
 	<level>1</level>	<wlan_id>200</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6040,7 +6040,7 @@
 	<x_pos>-87.703538</x_pos>
 	<y_pos>41.781961</y_pos>
 	<level>1</level>	<wlan_id>201</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6070,7 +6070,7 @@
 	<x_pos>-87.6319417</x_pos>
 	<y_pos>41.8499993</y_pos>
 	<level>1</level>	<wlan_id>202</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6100,7 +6100,7 @@
 	<x_pos>-87.6358044</x_pos>
 	<y_pos>41.854485</y_pos>
 	<level>1</level>	<wlan_id>203</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6130,7 +6130,7 @@
 	<x_pos>-87.6626443</x_pos>
 	<y_pos>41.7232595</y_pos>
 	<level>1</level>	<wlan_id>204</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6160,7 +6160,7 @@
 	<x_pos>-87.7821114</x_pos>
 	<y_pos>41.7767661</y_pos>
 	<level>1</level>	<wlan_id>205</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6190,7 +6190,7 @@
 	<x_pos>-87.6071767</x_pos>
 	<y_pos>41.7803638</y_pos>
 	<level>1</level>	<wlan_id>206</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6220,7 +6220,7 @@
 	<x_pos>-87.641645</x_pos>
 	<y_pos>41.681142</y_pos>
 	<level>1</level>	<wlan_id>207</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6250,7 +6250,7 @@
 	<x_pos>-87.678216</x_pos>
 	<y_pos>41.886512</y_pos>
 	<level>1</level>	<wlan_id>208</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6280,7 +6280,7 @@
 	<x_pos>-87.635009</x_pos>
 	<y_pos>41.7563478</y_pos>
 	<level>1</level>	<wlan_id>209</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6310,7 +6310,7 @@
 	<x_pos>-87.6881374</x_pos>
 	<y_pos>41.9146382</y_pos>
 	<level>1</level>	<wlan_id>210</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6340,7 +6340,7 @@
 	<x_pos>-87.6578387</x_pos>
 	<y_pos>41.7560068</y_pos>
 	<level>1</level>	<wlan_id>211</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6370,7 +6370,7 @@
 	<x_pos>-87.745178</x_pos>
 	<y_pos>41.8815536</y_pos>
 	<level>1</level>	<wlan_id>212</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6400,7 +6400,7 @@
 	<x_pos>-87.6262275</x_pos>
 	<y_pos>41.8235415</y_pos>
 	<level>1</level>	<wlan_id>213</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6430,7 +6430,7 @@
 	<x_pos>-87.6280554</x_pos>
 	<y_pos>41.8420674</y_pos>
 	<level>1</level>	<wlan_id>214</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6460,7 +6460,7 @@
 	<x_pos>-87.7096584</x_pos>
 	<y_pos>41.8645095</y_pos>
 	<level>1</level>	<wlan_id>215</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6490,7 +6490,7 @@
 	<x_pos>-87.6498011</x_pos>
 	<y_pos>41.9488772</y_pos>
 	<level>1</level>	<wlan_id>216</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6520,7 +6520,7 @@
 	<x_pos>-87.8138536</x_pos>
 	<y_pos>41.9431859</y_pos>
 	<level>1</level>	<wlan_id>217</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6550,7 +6550,7 @@
 	<x_pos>-87.6925692</x_pos>
 	<y_pos>41.9028318</y_pos>
 	<level>1</level>	<wlan_id>218</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6580,7 +6580,7 @@
 	<x_pos>-87.7622019</x_pos>
 	<y_pos>41.9969867</y_pos>
 	<level>1</level>	<wlan_id>219</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6610,7 +6610,7 @@
 	<x_pos>-87.6607731</x_pos>
 	<y_pos>41.9909171</y_pos>
 	<level>1</level>	<wlan_id>220</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6640,7 +6640,7 @@
 	<x_pos>-87.6600553</x_pos>
 	<y_pos>41.9896066</y_pos>
 	<level>1</level>	<wlan_id>221</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6670,7 +6670,7 @@
 	<x_pos>-87.6530146</x_pos>
 	<y_pos>41.7506407</y_pos>
 	<level>1</level>	<wlan_id>222</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6700,7 +6700,7 @@
 	<x_pos>-87.642197</x_pos>
 	<y_pos>41.7795429</y_pos>
 	<level>1</level>	<wlan_id>223</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6730,7 +6730,7 @@
 	<x_pos>-87.7304195</x_pos>
 	<y_pos>41.8459775</y_pos>
 	<level>1</level>	<wlan_id>224</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6760,7 +6760,7 @@
 	<x_pos>-87.696534</x_pos>
 	<y_pos>41.910547</y_pos>
 	<level>1</level>	<wlan_id>225</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6790,7 +6790,7 @@
 	<x_pos>-87.6610539</x_pos>
 	<y_pos>41.89317</y_pos>
 	<level>1</level>	<wlan_id>226</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6820,7 +6820,7 @@
 	<x_pos>-87.6610539</x_pos>
 	<y_pos>41.89317</y_pos>
 	<level>1</level>	<wlan_id>227</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6850,7 +6850,7 @@
 	<x_pos>-87.642583</x_pos>
 	<y_pos>41.713539</y_pos>
 	<level>1</level>	<wlan_id>228</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6880,7 +6880,7 @@
 	<x_pos>-87.569185</x_pos>
 	<y_pos>41.7587029</y_pos>
 	<level>1</level>	<wlan_id>229</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6910,7 +6910,7 @@
 	<x_pos>-87.6191149</x_pos>
 	<y_pos>41.758544</y_pos>
 	<level>1</level>	<wlan_id>230</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6940,7 +6940,7 @@
 	<x_pos>-87.694126</x_pos>
 	<y_pos>41.793424</y_pos>
 	<level>1</level>	<wlan_id>231</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -6970,7 +6970,7 @@
 	<x_pos>-87.780138</x_pos>
 	<y_pos>41.7930119</y_pos>
 	<level>1</level>	<wlan_id>232</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7000,7 +7000,7 @@
 	<x_pos>-87.7528304</x_pos>
 	<y_pos>41.7974995</y_pos>
 	<level>1</level>	<wlan_id>233</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7030,7 +7030,7 @@
 	<x_pos>-87.7061056</x_pos>
 	<y_pos>41.8808503</y_pos>
 	<level>1</level>	<wlan_id>234</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7060,7 +7060,7 @@
 	<x_pos>-87.6851616</x_pos>
 	<y_pos>41.7791448</y_pos>
 	<level>1</level>	<wlan_id>235</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7090,7 +7090,7 @@
 	<x_pos>-87.6839492</x_pos>
 	<y_pos>41.7831076</y_pos>
 	<level>1</level>	<wlan_id>236</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7120,7 +7120,7 @@
 	<x_pos>-87.62541</x_pos>
 	<y_pos>41.871285</y_pos>
 	<level>1</level>	<wlan_id>237</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7150,7 +7150,7 @@
 	<x_pos>-87.6535498</x_pos>
 	<y_pos>41.7504189</y_pos>
 	<level>1</level>	<wlan_id>238</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7180,7 +7180,7 @@
 	<x_pos>-87.6004879</x_pos>
 	<y_pos>41.7622942</y_pos>
 	<level>1</level>	<wlan_id>239</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7210,7 +7210,7 @@
 	<x_pos>-87.688728</x_pos>
 	<y_pos>41.778888</y_pos>
 	<level>1</level>	<wlan_id>240</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7240,7 +7240,7 @@
 	<x_pos>-87.6555939</x_pos>
 	<y_pos>41.895987</y_pos>
 	<level>1</level>	<wlan_id>241</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7270,7 +7270,7 @@
 	<x_pos>-87.722443</x_pos>
 	<y_pos>41.780784</y_pos>
 	<level>1</level>	<wlan_id>242</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7300,7 +7300,7 @@
 	<x_pos>-87.6227727</x_pos>
 	<y_pos>41.8074458</y_pos>
 	<level>1</level>	<wlan_id>243</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7330,7 +7330,7 @@
 	<x_pos>-87.6282726</x_pos>
 	<y_pos>41.8762169</y_pos>
 	<level>1</level>	<wlan_id>244</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7360,7 +7360,7 @@
 	<x_pos>-87.6590226</x_pos>
 	<y_pos>41.9650863</y_pos>
 	<level>1</level>	<wlan_id>245</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7390,7 +7390,7 @@
 	<x_pos>-87.6173487</x_pos>
 	<y_pos>41.8323135</y_pos>
 	<level>1</level>	<wlan_id>246</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7420,7 +7420,7 @@
 	<x_pos>-87.5488831</x_pos>
 	<y_pos>41.659276</y_pos>
 	<level>1</level>	<wlan_id>247</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7450,7 +7450,7 @@
 	<x_pos>-87.6791072</x_pos>
 	<y_pos>41.8835551</y_pos>
 	<level>1</level>	<wlan_id>248</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7480,7 +7480,7 @@
 	<x_pos>-87.6718115</x_pos>
 	<y_pos>42.0193531</y_pos>
 	<level>1</level>	<wlan_id>249</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7510,7 +7510,7 @@
 	<x_pos>-87.7052918</x_pos>
 	<y_pos>41.9104786</y_pos>
 	<level>1</level>	<wlan_id>250</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7540,7 +7540,7 @@
 	<x_pos>-87.696675</x_pos>
 	<y_pos>41.9117075</y_pos>
 	<level>1</level>	<wlan_id>251</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7570,7 +7570,7 @@
 	<x_pos>-87.6927863</x_pos>
 	<y_pos>41.7792569</y_pos>
 	<level>1</level>	<wlan_id>252</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7600,7 +7600,7 @@
 	<x_pos>-87.7174661</x_pos>
 	<y_pos>41.9539814</y_pos>
 	<level>1</level>	<wlan_id>253</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7630,7 +7630,7 @@
 	<x_pos>-87.699945</x_pos>
 	<y_pos>41.996635</y_pos>
 	<level>1</level>	<wlan_id>254</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7660,7 +7660,7 @@
 	<x_pos>-87.678011</x_pos>
 	<y_pos>41.887057</y_pos>
 	<level>1</level>	<wlan_id>255</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7690,7 +7690,7 @@
 	<x_pos>-87.6573372</x_pos>
 	<y_pos>41.9648454</y_pos>
 	<level>1</level>	<wlan_id>256</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7720,7 +7720,7 @@
 	<x_pos>-87.6841139</x_pos>
 	<y_pos>41.845649</y_pos>
 	<level>1</level>	<wlan_id>257</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7750,7 +7750,7 @@
 	<x_pos>-87.683703</x_pos>
 	<y_pos>41.847261</y_pos>
 	<level>1</level>	<wlan_id>258</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7780,7 +7780,7 @@
 	<x_pos>-87.6702229</x_pos>
 	<y_pos>41.8102159</y_pos>
 	<level>1</level>	<wlan_id>259</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7810,7 +7810,7 @@
 	<x_pos>-87.6855535</x_pos>
 	<y_pos>41.8457168</y_pos>
 	<level>1</level>	<wlan_id>260</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7840,7 +7840,7 @@
 	<x_pos>-87.7012123</x_pos>
 	<y_pos>41.9869243</y_pos>
 	<level>1</level>	<wlan_id>261</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7870,7 +7870,7 @@
 	<x_pos>-87.6748284</x_pos>
 	<y_pos>41.9626902</y_pos>
 	<level>1</level>	<wlan_id>262</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7900,7 +7900,7 @@
 	<x_pos>-87.7611999</x_pos>
 	<y_pos>41.9681586</y_pos>
 	<level>1</level>	<wlan_id>263</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7930,7 +7930,7 @@
 	<x_pos>-87.5657795</x_pos>
 	<y_pos>41.7134852</y_pos>
 	<level>1</level>	<wlan_id>264</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7960,7 +7960,7 @@
 	<x_pos>-87.668496</x_pos>
 	<y_pos>41.895745</y_pos>
 	<level>1</level>	<wlan_id>265</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -7990,7 +7990,7 @@
 	<x_pos>-87.6997273</x_pos>
 	<y_pos>42.0002408</y_pos>
 	<level>1</level>	<wlan_id>266</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8020,7 +8020,7 @@
 	<x_pos>-87.7215669</x_pos>
 	<y_pos>41.896088</y_pos>
 	<level>1</level>	<wlan_id>267</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8050,7 +8050,7 @@
 	<x_pos>-87.6375226</x_pos>
 	<y_pos>41.7823511</y_pos>
 	<level>1</level>	<wlan_id>268</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8080,7 +8080,7 @@
 	<x_pos>-87.746111</x_pos>
 	<y_pos>41.930039</y_pos>
 	<level>1</level>	<wlan_id>269</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8110,7 +8110,7 @@
 	<x_pos>-87.6445241</x_pos>
 	<y_pos>41.7801327</y_pos>
 	<level>1</level>	<wlan_id>270</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8140,7 +8140,7 @@
 	<x_pos>-87.5391099</x_pos>
 	<y_pos>41.7024789</y_pos>
 	<level>1</level>	<wlan_id>271</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8170,7 +8170,7 @@
 	<x_pos>-87.6005152</x_pos>
 	<y_pos>41.8170701</y_pos>
 	<level>1</level>	<wlan_id>272</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8200,7 +8200,7 @@
 	<x_pos>-87.698748</x_pos>
 	<y_pos>41.9595429</y_pos>
 	<level>1</level>	<wlan_id>273</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8230,7 +8230,7 @@
 	<x_pos>-87.7157608</x_pos>
 	<y_pos>41.9096915</y_pos>
 	<level>1</level>	<wlan_id>274</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8260,7 +8260,7 @@
 	<x_pos>-87.601821</x_pos>
 	<y_pos>41.822958</y_pos>
 	<level>1</level>	<wlan_id>275</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8290,7 +8290,7 @@
 	<x_pos>-87.72142</x_pos>
 	<y_pos>41.851878</y_pos>
 	<level>1</level>	<wlan_id>276</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8320,7 +8320,7 @@
 	<x_pos>-87.6946598</x_pos>
 	<y_pos>41.8457052</y_pos>
 	<level>1</level>	<wlan_id>277</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8350,7 +8350,7 @@
 	<x_pos>-87.7255892</x_pos>
 	<y_pos>41.8791862</y_pos>
 	<level>1</level>	<wlan_id>278</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8380,7 +8380,7 @@
 	<x_pos>-87.6708138</x_pos>
 	<y_pos>41.9405646</y_pos>
 	<level>1</level>	<wlan_id>279</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8410,7 +8410,7 @@
 	<x_pos>-87.6580836</x_pos>
 	<y_pos>41.9254616</y_pos>
 	<level>1</level>	<wlan_id>280</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8440,7 +8440,7 @@
 	<x_pos>-87.5994991</x_pos>
 	<y_pos>41.8096104</y_pos>
 	<level>1</level>	<wlan_id>281</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8470,7 +8470,7 @@
 	<x_pos>-87.7049711</x_pos>
 	<y_pos>41.8495518</y_pos>
 	<level>1</level>	<wlan_id>282</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8500,7 +8500,7 @@
 	<x_pos>-87.7034385</x_pos>
 	<y_pos>41.925073</y_pos>
 	<level>1</level>	<wlan_id>283</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8530,7 +8530,7 @@
 	<x_pos>-87.737158</x_pos>
 	<y_pos>41.7201045</y_pos>
 	<level>1</level>	<wlan_id>284</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8560,7 +8560,7 @@
 	<x_pos>-87.660933</x_pos>
 	<y_pos>41.8576229</y_pos>
 	<level>1</level>	<wlan_id>285</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8590,7 +8590,7 @@
 	<x_pos>-87.674108</x_pos>
 	<y_pos>41.9672462</y_pos>
 	<level>1</level>	<wlan_id>286</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8620,7 +8620,7 @@
 	<x_pos>-87.6295485</x_pos>
 	<y_pos>41.8766478</y_pos>
 	<level>1</level>	<wlan_id>287</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8650,7 +8650,7 @@
 	<x_pos>-87.6742175</x_pos>
 	<y_pos>41.8762451</y_pos>
 	<level>1</level>	<wlan_id>288</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8680,7 +8680,7 @@
 	<x_pos>-87.6793361</x_pos>
 	<y_pos>41.881136</y_pos>
 	<level>1</level>	<wlan_id>289</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8710,7 +8710,7 @@
 	<x_pos>-87.6230591</x_pos>
 	<y_pos>41.7435859</y_pos>
 	<level>1</level>	<wlan_id>290</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8740,7 +8740,7 @@
 	<x_pos>-87.7340379</x_pos>
 	<y_pos>41.9101167</y_pos>
 	<level>1</level>	<wlan_id>291</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8770,7 +8770,7 @@
 	<x_pos>-87.7665165</x_pos>
 	<y_pos>41.9395382</y_pos>
 	<level>1</level>	<wlan_id>292</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8800,7 +8800,7 @@
 	<x_pos>-87.805999</x_pos>
 	<y_pos>41.98113</y_pos>
 	<level>1</level>	<wlan_id>293</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8830,7 +8830,7 @@
 	<x_pos>-87.7378923</x_pos>
 	<y_pos>41.9681483</y_pos>
 	<level>1</level>	<wlan_id>294</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8860,7 +8860,7 @@
 	<x_pos>-87.673438</x_pos>
 	<y_pos>41.830142</y_pos>
 	<level>1</level>	<wlan_id>295</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8890,7 +8890,7 @@
 	<x_pos>-87.6549438</x_pos>
 	<y_pos>41.9730854</y_pos>
 	<level>1</level>	<wlan_id>296</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8920,7 +8920,7 @@
 	<x_pos>-87.647441</x_pos>
 	<y_pos>41.779452</y_pos>
 	<level>1</level>	<wlan_id>297</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8950,7 +8950,7 @@
 	<x_pos>-87.6255589</x_pos>
 	<y_pos>41.8612535</y_pos>
 	<level>1</level>	<wlan_id>298</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -8980,7 +8980,7 @@
 	<x_pos>-87.646062</x_pos>
 	<y_pos>41.940347</y_pos>
 	<level>1</level>	<wlan_id>299</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9010,7 +9010,7 @@
 	<x_pos>-87.6443547</x_pos>
 	<y_pos>41.7794943</y_pos>
 	<level>1</level>	<wlan_id>300</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9040,7 +9040,7 @@
 	<x_pos>-87.607065</x_pos>
 	<y_pos>41.8162639</y_pos>
 	<level>1</level>	<wlan_id>301</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9070,7 +9070,7 @@
 	<x_pos>-87.700987</x_pos>
 	<y_pos>41.883256</y_pos>
 	<level>1</level>	<wlan_id>302</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9100,7 +9100,7 @@
 	<x_pos>-87.701221</x_pos>
 	<y_pos>41.692987</y_pos>
 	<level>1</level>	<wlan_id>303</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9130,7 +9130,7 @@
 	<x_pos>-87.6690819</x_pos>
 	<y_pos>41.8578567</y_pos>
 	<level>1</level>	<wlan_id>304</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9160,7 +9160,7 @@
 	<x_pos>-87.6754885</x_pos>
 	<y_pos>41.8230779</y_pos>
 	<level>1</level>	<wlan_id>305</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9190,7 +9190,7 @@
 	<x_pos>-87.6366889</x_pos>
 	<y_pos>41.9039929</y_pos>
 	<level>1</level>	<wlan_id>306</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9220,7 +9220,7 @@
 	<x_pos>-87.741359</x_pos>
 	<y_pos>41.882258</y_pos>
 	<level>1</level>	<wlan_id>307</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9250,7 +9250,7 @@
 	<x_pos>-87.7553462</x_pos>
 	<y_pos>41.8854815</y_pos>
 	<level>1</level>	<wlan_id>308</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9280,7 +9280,7 @@
 	<x_pos>-87.654829</x_pos>
 	<y_pos>41.9681365</y_pos>
 	<level>1</level>	<wlan_id>309</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9310,7 +9310,7 @@
 	<x_pos>-87.7686666</x_pos>
 	<y_pos>41.9094902</y_pos>
 	<level>1</level>	<wlan_id>310</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9340,7 +9340,7 @@
 	<x_pos>-87.657874</x_pos>
 	<y_pos>41.915912</y_pos>
 	<level>1</level>	<wlan_id>311</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9370,7 +9370,7 @@
 	<x_pos>-87.686089</x_pos>
 	<y_pos>41.9554054</y_pos>
 	<level>1</level>	<wlan_id>312</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9400,7 +9400,7 @@
 	<x_pos>-87.6799586</x_pos>
 	<y_pos>41.9687272</y_pos>
 	<level>1</level>	<wlan_id>313</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9430,7 +9430,7 @@
 	<x_pos>-87.6994789</x_pos>
 	<y_pos>41.9988295</y_pos>
 	<level>1</level>	<wlan_id>314</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9460,7 +9460,7 @@
 	<x_pos>-87.6645798</x_pos>
 	<y_pos>41.9078093</y_pos>
 	<level>1</level>	<wlan_id>315</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9490,7 +9490,7 @@
 	<x_pos>-87.7225466</x_pos>
 	<y_pos>41.938154</y_pos>
 	<level>1</level>	<wlan_id>316</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9520,7 +9520,7 @@
 	<x_pos>-87.7940875</x_pos>
 	<y_pos>41.9864894</y_pos>
 	<level>1</level>	<wlan_id>317</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9550,7 +9550,7 @@
 	<x_pos>-87.6265773</x_pos>
 	<y_pos>41.8856276</y_pos>
 	<level>1</level>	<wlan_id>318</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9580,7 +9580,7 @@
 	<x_pos>-87.698055</x_pos>
 	<y_pos>41.808484</y_pos>
 	<level>1</level>	<wlan_id>319</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9610,7 +9610,7 @@
 	<x_pos>-87.5903737</x_pos>
 	<y_pos>41.7141036</y_pos>
 	<level>1</level>	<wlan_id>320</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9640,7 +9640,7 @@
 	<x_pos>-87.762323</x_pos>
 	<y_pos>41.931073</y_pos>
 	<level>1</level>	<wlan_id>321</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9670,7 +9670,7 @@
 	<x_pos>-87.8132945</x_pos>
 	<y_pos>41.9780232</y_pos>
 	<level>1</level>	<wlan_id>322</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9700,7 +9700,7 @@
 	<x_pos>-87.7512388</x_pos>
 	<y_pos>41.8805999</y_pos>
 	<level>1</level>	<wlan_id>323</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9730,7 +9730,7 @@
 	<x_pos>-87.65216</x_pos>
 	<y_pos>41.684479</y_pos>
 	<level>1</level>	<wlan_id>324</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9760,7 +9760,7 @@
 	<x_pos>-87.6514557</x_pos>
 	<y_pos>41.8549731</y_pos>
 	<level>1</level>	<wlan_id>325</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9790,7 +9790,7 @@
 	<x_pos>-87.6575431</x_pos>
 	<y_pos>41.8586643</y_pos>
 	<level>1</level>	<wlan_id>326</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9820,7 +9820,7 @@
 	<x_pos>-87.7470834</x_pos>
 	<y_pos>41.9503142</y_pos>
 	<level>1</level>	<wlan_id>327</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9850,7 +9850,7 @@
 	<x_pos>-87.7777673</x_pos>
 	<y_pos>41.7934136</y_pos>
 	<level>1</level>	<wlan_id>328</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9880,7 +9880,7 @@
 	<x_pos>-87.7549204</x_pos>
 	<y_pos>41.9388245</y_pos>
 	<level>1</level>	<wlan_id>329</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9910,7 +9910,7 @@
 	<x_pos>-87.7635893</x_pos>
 	<y_pos>41.955369</y_pos>
 	<level>1</level>	<wlan_id>330</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9940,7 +9940,7 @@
 	<x_pos>-87.7609555</x_pos>
 	<y_pos>41.920236</y_pos>
 	<level>1</level>	<wlan_id>331</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -9970,7 +9970,7 @@
 	<x_pos>-87.6320533</x_pos>
 	<y_pos>41.8523645</y_pos>
 	<level>1</level>	<wlan_id>332</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10000,7 +10000,7 @@
 	<x_pos>-87.6182666</x_pos>
 	<y_pos>41.6944309</y_pos>
 	<level>1</level>	<wlan_id>333</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10030,7 +10030,7 @@
 	<x_pos>-87.665162</x_pos>
 	<y_pos>41.93753</y_pos>
 	<level>1</level>	<wlan_id>334</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10060,7 +10060,7 @@
 	<x_pos>-87.6162308</x_pos>
 	<y_pos>41.8097203</y_pos>
 	<level>1</level>	<wlan_id>335</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10090,7 +10090,7 @@
 	<x_pos>-87.659241</x_pos>
 	<y_pos>41.968817</y_pos>
 	<level>1</level>	<wlan_id>336</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10120,7 +10120,7 @@
 	<x_pos>-87.6250434</x_pos>
 	<y_pos>41.8836686</y_pos>
 	<level>1</level>	<wlan_id>337</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10150,7 +10150,7 @@
 	<x_pos>-87.628359</x_pos>
 	<y_pos>41.723749</y_pos>
 	<level>1</level>	<wlan_id>338</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10180,7 +10180,7 @@
 	<x_pos>-87.7238989</x_pos>
 	<y_pos>41.7561784</y_pos>
 	<level>1</level>	<wlan_id>339</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10210,7 +10210,7 @@
 	<x_pos>-87.6464745</x_pos>
 	<y_pos>41.8325552</y_pos>
 	<level>1</level>	<wlan_id>340</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10240,7 +10240,7 @@
 	<x_pos>-87.7061905</x_pos>
 	<y_pos>41.894691</y_pos>
 	<level>1</level>	<wlan_id>341</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10270,7 +10270,7 @@
 	<x_pos>-87.7982427</x_pos>
 	<y_pos>41.9919012</y_pos>
 	<level>1</level>	<wlan_id>342</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10300,7 +10300,7 @@
 	<x_pos>-87.6733461</x_pos>
 	<y_pos>42.0067662</y_pos>
 	<level>1</level>	<wlan_id>343</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10330,7 +10330,7 @@
 	<x_pos>-87.6544375</x_pos>
 	<y_pos>41.8692521</y_pos>
 	<level>1</level>	<wlan_id>344</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10360,7 +10360,7 @@
 	<x_pos>-87.621149</x_pos>
 	<y_pos>41.704555</y_pos>
 	<level>1</level>	<wlan_id>345</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10390,7 +10390,7 @@
 	<x_pos>-87.6939437</x_pos>
 	<y_pos>41.7993986</y_pos>
 	<level>1</level>	<wlan_id>346</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10420,7 +10420,7 @@
 	<x_pos>-87.64222</x_pos>
 	<y_pos>41.877837</y_pos>
 	<level>1</level>	<wlan_id>347</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10450,7 +10450,7 @@
 	<x_pos>-87.724307</x_pos>
 	<y_pos>41.7493885</y_pos>
 	<level>1</level>	<wlan_id>348</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10480,7 +10480,7 @@
 	<x_pos>-87.6255869</x_pos>
 	<y_pos>41.8866252</y_pos>
 	<level>1</level>	<wlan_id>349</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10510,7 +10510,7 @@
 	<x_pos>-87.723828</x_pos>
 	<y_pos>41.844634</y_pos>
 	<level>1</level>	<wlan_id>350</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10540,7 +10540,7 @@
 	<x_pos>-87.6548825</x_pos>
 	<y_pos>41.7942194</y_pos>
 	<level>1</level>	<wlan_id>351</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10570,7 +10570,7 @@
 	<x_pos>-87.6928013</x_pos>
 	<y_pos>41.8621374</y_pos>
 	<level>1</level>	<wlan_id>352</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10600,7 +10600,7 @@
 	<x_pos>-87.6001448</x_pos>
 	<y_pos>41.7435182</y_pos>
 	<level>1</level>	<wlan_id>353</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10630,7 +10630,7 @@
 	<x_pos>-87.5514627</x_pos>
 	<y_pos>41.7378296</y_pos>
 	<level>1</level>	<wlan_id>354</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10660,7 +10660,7 @@
 	<x_pos>-87.549122</x_pos>
 	<y_pos>41.727986</y_pos>
 	<level>1</level>	<wlan_id>355</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10690,7 +10690,7 @@
 	<x_pos>-87.549862</x_pos>
 	<y_pos>41.7305075</y_pos>
 	<level>1</level>	<wlan_id>356</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10720,7 +10720,7 @@
 	<x_pos>-87.545567</x_pos>
 	<y_pos>41.7276926</y_pos>
 	<level>1</level>	<wlan_id>357</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10750,7 +10750,7 @@
 	<x_pos>-87.5810614</x_pos>
 	<y_pos>41.751518</y_pos>
 	<level>1</level>	<wlan_id>358</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10780,7 +10780,7 @@
 	<x_pos>-87.5637698</x_pos>
 	<y_pos>41.762536</y_pos>
 	<level>1</level>	<wlan_id>359</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10810,7 +10810,7 @@
 	<x_pos>-87.702849</x_pos>
 	<y_pos>41.7820279</y_pos>
 	<level>1</level>	<wlan_id>360</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10840,7 +10840,7 @@
 	<x_pos>-87.7238989</x_pos>
 	<y_pos>41.7561784</y_pos>
 	<level>1</level>	<wlan_id>361</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10870,7 +10870,7 @@
 	<x_pos>-87.726868</x_pos>
 	<y_pos>41.916117</y_pos>
 	<level>1</level>	<wlan_id>362</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10900,7 +10900,7 @@
 	<x_pos>-87.6627605</x_pos>
 	<y_pos>41.8555635</y_pos>
 	<level>1</level>	<wlan_id>363</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10930,7 +10930,7 @@
 	<x_pos>-87.55165</x_pos>
 	<y_pos>41.731456</y_pos>
 	<level>1</level>	<wlan_id>364</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10960,7 +10960,7 @@
 	<x_pos>-87.7030765</x_pos>
 	<y_pos>41.8625227</y_pos>
 	<level>1</level>	<wlan_id>365</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -10990,7 +10990,7 @@
 	<x_pos>-87.667323</x_pos>
 	<y_pos>41.911744</y_pos>
 	<level>1</level>	<wlan_id>366</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11020,7 +11020,7 @@
 	<x_pos>-87.6842925</x_pos>
 	<y_pos>41.9625911</y_pos>
 	<level>1</level>	<wlan_id>367</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11050,7 +11050,7 @@
 	<x_pos>-87.6129055</x_pos>
 	<y_pos>41.7841018</y_pos>
 	<level>1</level>	<wlan_id>368</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11080,7 +11080,7 @@
 	<x_pos>-87.645529</x_pos>
 	<y_pos>41.779397</y_pos>
 	<level>1</level>	<wlan_id>369</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11110,7 +11110,7 @@
 	<x_pos>-87.6447758</x_pos>
 	<y_pos>41.8804357</y_pos>
 	<level>1</level>	<wlan_id>370</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11140,7 +11140,7 @@
 	<x_pos>-87.6246491</x_pos>
 	<y_pos>41.8256226</y_pos>
 	<level>1</level>	<wlan_id>371</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11170,7 +11170,7 @@
 	<x_pos>-87.6246493</x_pos>
 	<y_pos>41.8256232</y_pos>
 	<level>1</level>	<wlan_id>372</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11200,7 +11200,7 @@
 	<x_pos>-87.617222</x_pos>
 	<y_pos>41.798666</y_pos>
 	<level>1</level>	<wlan_id>373</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11230,7 +11230,7 @@
 	<x_pos>-87.623127</x_pos>
 	<y_pos>41.8253438</y_pos>
 	<level>1</level>	<wlan_id>374</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11260,7 +11260,7 @@
 	<x_pos>-87.6539338</x_pos>
 	<y_pos>41.7575973</y_pos>
 	<level>1</level>	<wlan_id>375</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11290,7 +11290,7 @@
 	<x_pos>-87.724832</x_pos>
 	<y_pos>41.842065</y_pos>
 	<level>1</level>	<wlan_id>376</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11320,7 +11320,7 @@
 	<x_pos>-87.6541599</x_pos>
 	<y_pos>41.9583386</y_pos>
 	<level>1</level>	<wlan_id>377</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11350,7 +11350,7 @@
 	<x_pos>-87.731004</x_pos>
 	<y_pos>41.808059</y_pos>
 	<level>1</level>	<wlan_id>378</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11380,7 +11380,7 @@
 	<x_pos>-87.533518</x_pos>
 	<y_pos>41.703003</y_pos>
 	<level>1</level>	<wlan_id>379</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11410,7 +11410,7 @@
 	<x_pos>-87.6682019</x_pos>
 	<y_pos>41.779098</y_pos>
 	<level>1</level>	<wlan_id>380</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11440,7 +11440,7 @@
 	<x_pos>-87.6740839</x_pos>
 	<y_pos>41.6920669</y_pos>
 	<level>1</level>	<wlan_id>381</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11470,7 +11470,7 @@
 	<x_pos>-87.623225</x_pos>
 	<y_pos>41.897207</y_pos>
 	<level>1</level>	<wlan_id>382</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11500,7 +11500,7 @@
 	<x_pos>-87.6313471</x_pos>
 	<y_pos>41.8258243</y_pos>
 	<level>1</level>	<wlan_id>383</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11530,7 +11530,7 @@
 	<x_pos>-87.7858839</x_pos>
 	<y_pos>41.9366209</y_pos>
 	<level>1</level>	<wlan_id>384</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11560,7 +11560,7 @@
 	<x_pos>-87.7477015</x_pos>
 	<y_pos>41.8949932</y_pos>
 	<level>1</level>	<wlan_id>385</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11590,7 +11590,7 @@
 	<x_pos>-87.717197</x_pos>
 	<y_pos>41.895736</y_pos>
 	<level>1</level>	<wlan_id>386</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11620,7 +11620,7 @@
 	<x_pos>-87.7238269</x_pos>
 	<y_pos>41.7786534</y_pos>
 	<level>1</level>	<wlan_id>387</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11650,7 +11650,7 @@
 	<x_pos>-87.6431997</x_pos>
 	<y_pos>41.6777914</y_pos>
 	<level>1</level>	<wlan_id>388</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11680,7 +11680,7 @@
 	<x_pos>-87.746162</x_pos>
 	<y_pos>41.895251</y_pos>
 	<level>1</level>	<wlan_id>389</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11710,7 +11710,7 @@
 	<x_pos>-87.7403821</x_pos>
 	<y_pos>41.880568</y_pos>
 	<level>1</level>	<wlan_id>390</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11740,7 +11740,7 @@
 	<x_pos>-87.731066</x_pos>
 	<y_pos>41.880336</y_pos>
 	<level>1</level>	<wlan_id>391</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11770,7 +11770,7 @@
 	<x_pos>-87.667921</x_pos>
 	<y_pos>41.895741</y_pos>
 	<level>1</level>	<wlan_id>392</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11800,7 +11800,7 @@
 	<x_pos>-87.762404</x_pos>
 	<y_pos>41.901916</y_pos>
 	<level>1</level>	<wlan_id>393</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11830,7 +11830,7 @@
 	<x_pos>-87.6149593</x_pos>
 	<y_pos>41.7510929</y_pos>
 	<level>1</level>	<wlan_id>394</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11860,7 +11860,7 @@
 	<x_pos>-87.788787</x_pos>
 	<y_pos>41.958826</y_pos>
 	<level>1</level>	<wlan_id>395</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11890,7 +11890,7 @@
 	<x_pos>-87.804292</x_pos>
 	<y_pos>41.879925</y_pos>
 	<level>1</level>	<wlan_id>396</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11920,7 +11920,7 @@
 	<x_pos>-87.6429995</x_pos>
 	<y_pos>41.7207984</y_pos>
 	<level>1</level>	<wlan_id>397</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11950,7 +11950,7 @@
 	<x_pos>-87.6926311</x_pos>
 	<y_pos>41.9103207</y_pos>
 	<level>1</level>	<wlan_id>398</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -11980,7 +11980,7 @@
 	<x_pos>-87.7022748</x_pos>
 	<y_pos>41.7375841</y_pos>
 	<level>1</level>	<wlan_id>399</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>
@@ -12010,7 +12010,7 @@
 	<x_pos>-87.606204</x_pos>
 	<y_pos>41.774736</y_pos>
 	<level>1</level>	<wlan_id>400</wlan_id>
-	<wap>true</wap>
+	<wap>false</wap>
 	<moving>false</moving>
 	</location>
 <hosts>

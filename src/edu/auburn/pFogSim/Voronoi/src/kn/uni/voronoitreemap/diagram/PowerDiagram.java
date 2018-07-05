@@ -30,6 +30,7 @@ import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.debuge.ImageFrame;
 import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d.Point2D;
 import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d.PolygonSimple;
 import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.j2d.Site;
+import edu.boun.edgecloudsim.core.SimSettings;
 import edu.boun.edgecloudsim.utils.Location;
 import javafx.util.Pair;
 
@@ -330,12 +331,12 @@ public class PowerDiagram {
 		// here it is just a rectangle.
 
 		PolygonSimple rootPolygon = new PolygonSimple();
-		int width = 1000;
-		int height = 1000;
-		rootPolygon.add(0, 0);
-		rootPolygon.add(width, 0);
-		rootPolygon.add(width, height);
-		rootPolygon.add(0, height);
+		double[] space = SimSettings.getInstance().getSimulationSpace();
+		//{MIN_LONG, MAX_LONG, MIN_LAT, MAX_LAT}
+		rootPolygon.add(space[2], space[0]);	
+		rootPolygon.add(space[2], space[1]);
+		rootPolygon.add(space[3], space[0]);
+		rootPolygon.add(space[3], space[1]);
 		
 		/*// create 100 points (sites) and set random positions in the rectangle defined above.
 		for (int i = 0; i < 100; i++) {
@@ -374,7 +375,7 @@ public class PowerDiagram {
 	public void showDiagram() {
 		initDebug();
 
-		graphics.clearRect(0, 0, 1600, 800);
+		graphics.clearRect(0, 0, 100,100);
 		graphics.setColor(Color.blue);
 		// graphics.scale(1/10.0, 1/10.0);
 

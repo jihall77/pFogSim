@@ -340,4 +340,9 @@ public class SimManager extends SimEntity {
 		edgeServerManager.terminateDatacenters();
 	}
 
+	public ArrayList<PowerDiagram> getVoronoiDiagram() {
+		// TODO Auto-generated method stub
+		return this.voronoiDiagramList;
+	}
+
 }

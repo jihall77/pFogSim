@@ -25,6 +25,7 @@ import edu.auburn.pFogSim.netsim.ESBModel;
 import edu.auburn.pFogSim.netsim.NetworkTopology;
 import edu.auburn.pFogSim.netsim.NodeSim;
 import edu.auburn.pFogSim.orchestrator.PuddleOrchestrator;
+import edu.auburn.pFogSim.util.DataInterpreter;
 import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
 import edu.boun.edgecloudsim.utils.Location;
@@ -82,9 +83,9 @@ public class VectorMobility extends MobilityModel {
 		for(int i=0; i<numberOfMobileDevices; i++) {
 			TreeMap<Double, Location> treeMap = treeMapArray.get(i);
 			//Make random numbers to make the vectors
-			double up = 5 * (Math.random() - 0.5) * 0.000001; //Approximates movement of 5 meters * (random constant < 1)
-			double right = 5 * (Math.random() - 0.5) * 0.000001; //Same for right
-
+			//double up = 5 * (Math.random() - 0.5) * 0.000001; //Approximates movement of 5 meters * (random constant < 1)
+			//double right = 5 * (Math.random() - 0.5) * 0.000001; //Same for right
+			double up = 0, right = 0;
 			while(treeMap.lastKey() < SimSettings.getInstance().getSimulationTime()) {		
 				
 				
@@ -94,21 +95,39 @@ public class VectorMobility extends MobilityModel {
 				  
 				if(x_pos + right > this.MAX_LAT || x_pos + right < this.MIN_LAT) right = right * -1;
 				if(y_pos + up > this.MAX_LONG || y_pos + up < this.MIN_LONG) up = up * -1;
+				double distance = 0, minDistance = Double.MAX_VALUE;
+				NodeSim closestNode = new NodeSim();
+				for(NodeSim node : accessPoints)
+				{
+					distance = DataInterpreter.measure(node.getLocation().getYPos(), node.getLocation().getXPos(), y_pos, x_pos);
+					if (distance < minDistance) 
+					{
+						minDistance = distance;
+						closestNode = node;
+					}
+				}
+				wlan_id = closestNode.getWlanId();
+/*				//If we are still in the same polygon, don't change (We haven't moved out of range of the wap)
+				int levelNum = SimManager.getInstance().getVoronoiDiagram().size();
+				//SimLogger.printLine("Size of voronoidiagram list : " + levelNum);
+				PowerDiagram diagram = SimManager.getInstance().getVoronoiDiagramAtLevel(levelNum - 1);
+				diagram.showDiagram();
 				
-				//If we are still in the same polygon, don't change (We haven't moved out of range of the wap)
-				PowerDiagram diagram = SimManager.getInstance().getVoronoiDiagramAtLevel(0);
-
 				if (SimManager.getInstance().getEdgeOrchestrator() instanceof PuddleOrchestrator) {
 					for(Site site : diagram.getSites())
 					{
+						SimLogger.printLine("\ndiagram.getSites.size() : " + diagram.getSites().size);
+						SimLogger.printLine("x_pos : " + x_pos + "\ny_pos : " + y_pos);
+						SimLogger.printLine("" + site.getPolygon());
+						//if(site.getPolygon() != null && site.getPolygon().contains(x_pos, y_pos))
 						if(site.getPolygon().contains(x_pos, y_pos))
-						{
+						{ 
 							//We know that the site.getX and Y pos is location of WAP
 							//Find wlan id to assign
 							wlan_id = (network.findNode(new Location(site.getX(), site.getY()), true)).getWlanId();
 						}
 					}
-				}
+				}*/
 				//This first argument kind of dictates the speed at which the device moves, higher it is, slower the devices are
 				//	smaller value in there, the more it updates
 				//As it is now, allows devices to change wlan_ids around 600 times in an hour
