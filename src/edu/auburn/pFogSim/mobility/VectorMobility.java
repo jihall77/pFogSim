@@ -82,8 +82,8 @@ public class VectorMobility extends MobilityModel {
 		for(int i=0; i<numberOfMobileDevices; i++) {
 			TreeMap<Double, Location> treeMap = treeMapArray.get(i);
 			//Make random numbers to make the vectors
-			double up = 5 * (Math.random() - 0.5);
-			double right = 5 * (Math.random() - 0.5);
+			double up = 5 * (Math.random() - 0.5) * 0.00001; //Approximates movement of 5 meters * (random constant < 1)
+			double right = 5 * (Math.random() - 0.5) * 0.00001; //Same for right
 
 			while(treeMap.lastKey() < SimSettings.getInstance().getSimulationTime()) {		
 				
@@ -112,7 +112,8 @@ public class VectorMobility extends MobilityModel {
 				//This first argument kind of dictates the speed at which the device moves, higher it is, slower the devices are
 				//	smaller value in there, the more it updates
 				//As it is now, allows devices to change wlan_ids around 600 times in an hour
-				treeMap.put(treeMap.lastKey() + 50.0, new Location(wlan_id, x_pos + right, y_pos + up));		
+				treeMap.put(treeMap.lastKey()+1, new Location(wlan_id, x_pos + right, y_pos + up));		
+				//SimLogger.printLine("Length = " + treeMap.size());
 			}
 		}
 	}
@@ -171,5 +172,11 @@ public class VectorMobility extends MobilityModel {
 	public int getSize()
 	{
 		return treeMapArray.size();
+		//return treeMapArray.get(1).size();
+	}
+	
+	public int getTreeMapSize() 
+	{
+		return treeMapArray.get(1).size();
 	}
 }

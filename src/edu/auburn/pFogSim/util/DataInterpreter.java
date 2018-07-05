@@ -156,6 +156,7 @@ public class DataInterpreter {
 		links.println("</links>");
 		node.close();
 		links.close();
+		SimLogger.printLine("Distance b/t : 41.975456,-87.71409\t and \t41.985456,-87.72409\n === " + measure(-87.71409,41.975456, -87.71408, 41.975446));
 		return;
 	}
 	
