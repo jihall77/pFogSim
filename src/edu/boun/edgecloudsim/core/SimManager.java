@@ -181,6 +181,8 @@ public class SimManager extends SimEntity {
 		}
 		
 		//Get all of the initial wireless access points ids for all the mobile devices
+		//SimLogger.printLine("treeMap.size() = " + mobilityModel.getSize());
+
 		for(int i = 0; i < mobilityModel.getSize(); i++)
 		{
 			wapIdList[i] = mobilityModel.getWlanId(i);
@@ -191,7 +193,7 @@ public class SimManager extends SimEntity {
 		schedule(getId(), SimSettings.getInstance().getSimulationTime()/100, PRINT_PROGRESS);
 		schedule(getId(), SimSettings.getInstance().getVmLoadLogInterval(), GET_LOAD_LOG);
 		schedule(getId(), SimSettings.getInstance().getSimulationTime(), STOP_SIMULATION);
-		
+		SimLogger.printLine("treeMap.size() = " + mobilityModel.getTreeMapSize());
 		SimLogger.printLine("Done.");
 	}
 

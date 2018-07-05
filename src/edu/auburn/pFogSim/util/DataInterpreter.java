@@ -135,10 +135,10 @@ public class DataInterpreter {
 				counter++;
 			}
 			
-			SimLogger.printLine("Level : " + i + "\n\t" + prevCounter + " -> " + counter);
+			//SimLogger.printLine("Level : " + i + "\n\t" + prevCounter + " -> " + counter);
 			prevCounter = counter;
-			SimLogger.printLine("nodeList" + nodeList.toString());
-			SimLogger.printLine("tempList" + tempList.toString());
+			//SimLogger.printLine("nodeList" + nodeList.toString());
+			//SimLogger.printLine("tempList" + tempList.toString());
 			//move tempList to nodeList
 			nodeList.clear();
 			//nodeList.addAll(tempList);
@@ -148,14 +148,15 @@ public class DataInterpreter {
 			}
 			tempList.clear();
 			
-			SimLogger.printLine("nodeList" + nodeList.toString());
-			SimLogger.printLine("tempList" + tempList.toString());
+			//SimLogger.printLine("nodeList" + nodeList.toString());
+			//SimLogger.printLine("tempList" + tempList.toString());
 		}
 		
 		node.println("</edge_devices>");
 		links.println("</links>");
 		node.close();
 		links.close();
+		SimLogger.printLine("Distance b/t : 41.975456,-87.71409\t and \t41.985456,-87.72409\n === " + measure(-87.71409,41.975456, -87.71408, 41.975446));
 		return;
 	}
 	

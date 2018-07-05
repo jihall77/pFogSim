@@ -35,6 +35,7 @@ import org.w3c.dom.NodeList;
 
 import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
+import edu.boun.edgecloudsim.utils.LinesComponent;
 //import edu.boun.edgecloudsim.utils.LinesComponent;
 import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
@@ -129,6 +130,11 @@ public class EdgeServerManager {
 			SimLogger.printLine("Done,");
 			//Sets network topology and uses it to make the Puddle Objects
 			networkTopology.setPuddles(makePuddles(clusterObject));
+			/*LinesComponent comp = new LinesComponent();
+			comp.drawNetworkTopology(5);
+			comp.drawNetworkTopology(4);
+			comp.drawNetworkTopology(3);*/
+
 		}
 	}
 

@@ -36,4 +36,5 @@ public abstract class MobilityModel {
 	public abstract int getWlanId(int deviceId, double time);
 	public abstract int getWlanId(int deviceId);
 	public abstract int getSize();
+	public abstract int getTreeMapSize();
 }
