@@ -34,7 +34,7 @@ public class DataInterpreter {
 	private FileWriter xmlFW = null;
 	private BufferedWriter xmlBR = null;
 	
-	private static double measure(double lat1, double lon1, double lat2, double lon2){  // generally used geo measurement function
+	public static double measure(double lat1, double lon1, double lat2, double lon2){  // generally used geo measurement function
 	    double R = 6378.137; // Radius of earth in KM
 	    double dLat = lat2 * Math.PI / 180 - lat1 * Math.PI / 180;
 	    double dLon = lon2 * Math.PI / 180 - lon1 * Math.PI / 180;
@@ -78,8 +78,8 @@ public class DataInterpreter {
 				rawNode = dataBR.readLine();
 				nodeLoc = rawNode.split(",");
 				temp[0] = (float)counter; //ID
-				temp[1] = Float.parseFloat(nodeLoc[1]); //X Coord
-				temp[2] = Float.parseFloat(nodeLoc[2]); //Y Coord
+				temp[2] = Float.parseFloat(nodeLoc[1]); //Y Coord
+				temp[1] = Float.parseFloat(nodeLoc[2]); //X Coord
 				
 				//Add to output file		    
 			    node.println(String.format("<datacenter arch=\"%s\" os=\"%s\" vmm=\"%s\">\n", nodeSpecs[MAX_LEVELS - i - 1][0], nodeSpecs[MAX_LEVELS - i - 1][1], nodeSpecs[MAX_LEVELS - i - 1][2]));
@@ -101,7 +101,7 @@ public class DataInterpreter {
 					{
 						//SimLogger.printLine("nodeList.size = " + nodeList.size());
 
-						distance = measure(nodeList.get(j)[1], nodeList.get(j)[2], temp[1], temp[2]);
+						distance = measure(nodeList.get(j)[2], nodeList.get(j)[1], temp[2], temp[1]);
 						if(distance < minDistance)
 						{
 							minDistance = distance;
@@ -135,10 +135,10 @@ public class DataInterpreter {
 				counter++;
 			}
 			
-			SimLogger.printLine("Level : " + i + "\n\t" + prevCounter + " -> " + counter);
+			//SimLogger.printLine("Level : " + i + "\n\t" + prevCounter + " -> " + counter);
 			prevCounter = counter;
-			SimLogger.printLine("nodeList" + nodeList.toString());
-			SimLogger.printLine("tempList" + tempList.toString());
+			//SimLogger.printLine("nodeList" + nodeList.toString());
+			//SimLogger.printLine("tempList" + tempList.toString());
 			//move tempList to nodeList
 			nodeList.clear();
 			//nodeList.addAll(tempList);
@@ -148,8 +148,8 @@ public class DataInterpreter {
 			}
 			tempList.clear();
 			
-			SimLogger.printLine("nodeList" + nodeList.toString());
-			SimLogger.printLine("tempList" + tempList.toString());
+			//SimLogger.printLine("nodeList" + nodeList.toString());
+			//SimLogger.printLine("tempList" + tempList.toString());
 		}
 		
 		node.println("</edge_devices>");

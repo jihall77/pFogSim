@@ -88,16 +88,17 @@ public class SimSettings {
     private double[] mobilityLookUpTable;
     
     // following values are stored for each applications defined in applications.xml
-    // [0] usage percentage (%)
-    // [1] prob. of selecting cloud (%)
-    // [2] poisson mean (sec)
-    // [3] active period (sec)
-    // [4] idle period (sec)
-    // [5] avg data upload (KB)
-    // [6] avg data download (KB)
-    // [7] avg task length (MI)
-    // [8] required # of cores
-    // [9] vm utilization (%)
+    // [00] usage percentage (%)
+    // [01] prob. of selecting cloud (%)
+    // [02] poisson mean (sec)
+    // [03] active period (sec)
+    // [04] idle period (sec)
+    // [05] avg data upload (KB)
+    // [06] avg data download (KB)
+    // [07] avg task length (MI)
+    // [08] required # of cores
+    // [09] vm utilization (%)
+    // [10] max latency (milliseconds)
     private double[][] taskLookUpTable = new double[APP_TYPES.values().length][11];
 
 	private SimSettings() {
@@ -366,16 +367,17 @@ public class SimSettings {
 	/**
 	 * returns application characteristic within two dimensional array
 	 * the result includes the following values for each application type
-	 * [0] usage percentage (%)
-	 * [1] prob. of selecting cloud (%)
-	 * [2] poisson mean (sec)
-	 * [3] active period (sec)
-	 * [4] idle period (sec)
-	 * [5] avg data upload (KB)
-	 * [6] avg data download (KB)
-	 * [7] avg task length (MI)
-	 * [8] required # of cores
-	 * [9] vm utilization (%)
+	 *  [0] usage percentage (%)
+	 *  [1] prob. of selecting cloud (%)
+	 *  [2] poisson mean (sec)
+	 *  [3] active period (sec)
+	 *  [4] idle period (sec)
+	 *  [5] avg data upload (KB)
+	 *  [6] avg data download (KB)
+	 *  [7] avg task length (MI)
+	 *  [8] required # of cores
+	 *  [9] vm utilization (%)
+	 * [10] max latency (milliseconds)
 	 */ 
 	public double[][] getTaskLookUpTable()
 	{
@@ -426,6 +428,7 @@ public class SimSettings {
 				isElementPresent(appElement, "task_length");
 				isElementPresent(appElement, "required_core");
 				isElementPresent(appElement, "vm_utilization");
+				isElementPresent(appElement, "delay_sensitivity");
 
 				String appName = appElement.getAttribute("name");
 				SimSettings.APP_TYPES appType = APP_TYPES.valueOf(appName);
@@ -451,7 +454,7 @@ public class SimSettings {
 			    taskLookUpTable[appType.ordinal()][7] = task_length; //avg task length (MI)
 			    taskLookUpTable[appType.ordinal()][8] = required_core; //required # of core
 			    taskLookUpTable[appType.ordinal()][9] = vm_utilization; //vm utilization [0-100]
-			    taskLookUpTable[appType.ordinal()][10] = delay_sensitivity; //delay_sensitivity [0-1]
+			    taskLookUpTable[appType.ordinal()][10] = delay_sensitivity; //delay_sensitivity (milliseconds)
 			    
 			}
 	

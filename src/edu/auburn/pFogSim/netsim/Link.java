@@ -6,6 +6,7 @@
 
 package edu.auburn.pFogSim.netsim;
 
+import edu.auburn.pFogSim.util.DataInterpreter;
 import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
 import javafx.util.Pair;
@@ -29,7 +30,8 @@ public class Link {
 	public Link(Location rLink, Location lLink, double rLat, double lLat) {
 		rightCoord = rLink;
 		leftCoord = lLink;
-		double dist = Math.sqrt(Math.pow(rLink.getXPos() - lLink.getXPos(), 2) + Math.pow(rLink.getYPos() - lLink.getYPos(), 2));
+		//double dist = Math.sqrt(Math.pow(rLink.getXPos() - lLink.getXPos(), 2) + Math.pow(rLink.getYPos() - lLink.getYPos(), 2));
+		double dist = DataInterpreter.measure(rLink.getYPos(), rLink.getXPos(), lLink.getYPos(), lLink.getXPos());
 		rightLatency = dist * LATENCY_MULTIPLIER;
 		leftLatency = dist * LATENCY_MULTIPLIER;
 		/*rightLatency = rLat;

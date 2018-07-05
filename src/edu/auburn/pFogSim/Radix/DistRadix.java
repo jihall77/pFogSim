@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.TreeMap;
 import java.util.HashMap;
 import java.util.LinkedList;
+
+import edu.auburn.pFogSim.util.DataInterpreter;
 import edu.boun.edgecloudsim.edge_server.EdgeHost;
 import edu.boun.edgecloudsim.utils.Location;
 /**
@@ -23,7 +25,7 @@ public class DistRadix {
 	private int[] arrgs;
 	/**
 	 * constructor
-	 * @param in
+	 * @param in  
 	 * @param pair
 	 */
 	public DistRadix(List<EdgeHost> in, Location pair) {
@@ -52,7 +54,8 @@ public class DistRadix {
 	private void buildDist() {
 		double dist = 0;
 		for (Location loc : coords) {
-			dist = Math.sqrt((Math.pow(ref.getXPos() - loc.getXPos(), 2) + Math.pow(ref.getYPos() - loc.getYPos(), 2)));
+			//dist = Math.sqrt((Math.pow(ref.getXPos() - loc.getXPos(), 2) + Math.pow(ref.getYPos() - loc.getYPos(), 2)));
+			dist = DataInterpreter.measure(ref.getYPos(), ref.getXPos(), loc.getYPos(), loc.getXPos());
 			dist = Math.floor(dist);
 			while(distMap.keySet().contains(dist)) {
 				dist += 0.001;

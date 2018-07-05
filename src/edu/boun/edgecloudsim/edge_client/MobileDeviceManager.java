@@ -333,6 +333,7 @@ public class MobileDeviceManager extends DatacenterBroker {
 		//set the owner of this task
 		task.setUserId(this.getId());
 		task.setTaskType(edgeTask.taskType);
+		task.setMaxDelay(SimSettings.getInstance().getTaskLookUpTable()[task.getTaskType().ordinal()][10]);
 		
 		return task;
 	}
