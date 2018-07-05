@@ -87,6 +87,7 @@ public class SimSettings {
     // mean waiting time (minute) is stored for each place types
     private double[] mobilityLookUpTable;
     
+    private double[] simulationSpace;
     // following values are stored for each applications defined in applications.xml
     // [00] usage percentage (%)
     // [01] prob. of selecting cloud (%)
@@ -549,5 +550,15 @@ public class SimSettings {
 			e.printStackTrace();
 			System.exit(0);
 		}		
+	}
+
+	public void setSimulationSpace(double[] _simulationSpace) {
+		// TODO Auto-generated method stub
+		this.simulationSpace = _simulationSpace;
+	}
+
+	public double[] getSimulationSpace() {
+		// TODO Auto-generated method stub
+		return this.simulationSpace;
 	}
 }

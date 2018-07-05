@@ -37,13 +37,7 @@ public class mainApp {
 		 * @author CJ
 		 * output the test files we want 
 		 */
-		DataInterpreter.initialize();
-		try {
-			DataInterpreter.readFile();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		/*try{
 		    PrintWriter node = new PrintWriter("cloud_node_test.xml", "UTF-8");
 		    PrintWriter links = new PrintWriter("cloud_links_test.xml", "UTF-8");
@@ -391,8 +385,14 @@ public class mainApp {
 		Log.disable();
 		//enable console output and file output of this application
 		SimLogger.enablePrintLog();
-		createXMLFile();
-		
+		//createXMLFile();
+		DataInterpreter.initialize();
+		try {
+			DataInterpreter.readFile();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		//CJ added linksFile to supply the link xml file, had to adjust all constructors that
 		//	use these file to seamlessly use it
@@ -433,7 +433,7 @@ public class mainApp {
 			SimLogger.enableFileLog();
 			SimUtils.cleanOutputFolder(outputFolder);
 		}
-
+		SS.setSimulationSpace(DataInterpreter.getSimulationSpace());
 		
 		DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		Date SimulationStartDate = Calendar.getInstance().getTime();
