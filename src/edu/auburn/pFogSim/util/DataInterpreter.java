@@ -28,7 +28,7 @@ public class DataInterpreter {
 			"Chicago_Schools.csv"};
 	private static String[][] nodeSpecs = new String[MAX_LEVELS][13];// the specs for all layers of the fog devices
 	private static ArrayList<Double[]> nodeList = new ArrayList<Double[]>();
-	private static ArrayList<Float[]> tempList = new ArrayList<Float[]>();
+	private static ArrayList<Double[]> tempList = new ArrayList<Double[]>();
 	private static double MIN_LAT = -100000, MAX_LAT = -100000, MIN_LONG = -100000, MAX_LONG = -100000; //Just instantiated so the first gps coord sets these
 	
 
@@ -60,7 +60,7 @@ public class DataInterpreter {
 	    
 		String rawNode = null;
 		String[] nodeLoc = new String[3];
-		Float[] temp = new Float[3];
+		Double[] temp = new Double[3];
 		int counter = 0;
 		int prevCounter = 0;
 		for(int i = 0; i < MAX_LEVELS; i++)
@@ -79,9 +79,9 @@ public class DataInterpreter {
 				//SimLogger.printLine("Importing " + files[i]);
 				rawNode = dataBR.readLine();
 				nodeLoc = rawNode.split(",");
-				temp[0] = (float)counter; //ID
-				temp[2] = Float.parseFloat(nodeLoc[1]) * 100000; //Y Coord
-				temp[1] = Float.parseFloat(nodeLoc[2]) * 100000; //X Coord
+				temp[0] = (double)counter; //ID
+				temp[2] = Double.parseDouble(nodeLoc[1]); //Y Coord
+				temp[1] = Double.parseDouble(nodeLoc[2]); //X Coord
 				if(MAX_LONG == -100000 || temp[1] > MAX_LONG)	MAX_LONG = temp[1];		
 				if(MIN_LONG == -100000 || temp[1] < MIN_LONG)	MIN_LONG = temp[1];	
 				if(MAX_LAT == -100000 || temp[2] > MAX_LAT)	MAX_LAT = temp[2];	
@@ -90,16 +90,18 @@ public class DataInterpreter {
 				//Add to output file		    
 			    node.println(String.format("<datacenter arch=\"%s\" os=\"%s\" vmm=\"%s\">\n", nodeSpecs[MAX_LEVELS - i - 1][0], nodeSpecs[MAX_LEVELS - i - 1][1], nodeSpecs[MAX_LEVELS - i - 1][2]));
 			    node.println(String.format("<costPerBw>%s</costPerBw>\n\t<costPerSec>%s</costPerSec>\n\t<costPerMem>%s</costPerMem>\n\t<costPerStorage>%s</costPerStorage>", nodeSpecs[MAX_LEVELS - i - 1][3], nodeSpecs[MAX_LEVELS - i - 1][4], nodeSpecs[MAX_LEVELS - i - 1][5], nodeSpecs[MAX_LEVELS - i - 1][6]));
-			    node.println(String.format("<location>\n\t<x_pos>%s</x_pos>\n\t<y_pos>%s</y_pos>\n\t<level>%s</level>\t<wlan_id>%s</wlan_id>\n\t<wap>%s</wap>\n\t<moving>%s</moving>\n\t</location>", nodeLoc[1], nodeLoc[2], MAX_LEVELS - i - 1, counter, nodeSpecs[MAX_LEVELS - i - 1][7], nodeSpecs[MAX_LEVELS - i - 1][8]));
+			    node.println(String.format("<location>\n\t<x_pos>%s</x_pos>\n\t<y_pos>%s</y_pos>\n\t<level>%s</level>\t<wlan_id>%s</wlan_id>\n\t<wap>%s</wap>\n\t<moving>%s</moving>\n\t</location>", nodeLoc[2], nodeLoc[1], MAX_LEVELS - i - 1, counter, nodeSpecs[MAX_LEVELS - i - 1][7], nodeSpecs[MAX_LEVELS - i - 1][8]));
 			    node.println(String.format("<hosts>\n\t<host>\n\t<core>%s</core>\n\t<mips>%s</mips>\n\t<ram>%s</ram>\n\t<storage>%s</storage>\n", nodeSpecs[MAX_LEVELS - i - 1][9], nodeSpecs[MAX_LEVELS - i - 1][10], nodeSpecs[MAX_LEVELS - i - 1][11], nodeSpecs[MAX_LEVELS - i - 1][12]));
 			    node.println(String.format("\t<VMs>\n\t\t<VM vmm=\"%s\">\n\t\t\t<core>%s</core>\n\t\t\t<mips>%s</mips>\n\t\t\t<ram>%s</ram>\n\t\t\t<storage>%s</storage>\n\t\t</VM>\n\t</VMs>\n</host></hosts>\n</datacenter>", nodeSpecs[MAX_LEVELS - i - 1][2], nodeSpecs[MAX_LEVELS - i - 1][9], nodeSpecs[MAX_LEVELS - i - 1][10], nodeSpecs[MAX_LEVELS - i - 1][11], nodeSpecs[MAX_LEVELS - i - 1][12]));
 	
 				
-			    
+			    if (counter == 643) {
+			    	SimLogger.print("");
+			    }
 				//Make link to previous closest node on higher level
 				if(!nodeList.isEmpty())
 				{
-					double minDistance = 1000000;
+					double minDistance = Double.MAX_VALUE;
 					int index = -1;
 					double distance = 0;
 					//Go through all nodes one level up and find the closest
@@ -114,6 +116,7 @@ public class DataInterpreter {
 							index = j;
 						}
 					}
+					minDistance = Double.MAX_VALUE;
 					if(index >= 0)
 					{
 						if(nodeList.get(index).equals(temp)) 
@@ -124,8 +127,8 @@ public class DataInterpreter {
 						links.println("<link>\n" + 
 					    		"		<name>L" + nodeList.get(index)[0] + "_" + temp[0] + "</name>\n" + 
 					    		"		<left>\n" + 
-					    		"			<x_pos>" + (double)temp[1] + "</x_pos>\n" + 
-					    		"			<y_pos>" + (double)temp[2] + "</y_pos>\n" + 
+					    		"			<x_pos>" + temp[1] + "</x_pos>\n" + 
+					    		"			<y_pos>" + temp[2] + "</y_pos>\n" + 
 					    		"		</left>\n" + 
 					    		"		<right>\n" + 
 					    		"			<x_pos>" + nodeList.get(index)[1] + "</x_pos>\n" + 
@@ -148,7 +151,7 @@ public class DataInterpreter {
 			//move tempList to nodeList
 			nodeList.clear();
 			//nodeList.addAll(tempList);
-			for(Float[] input : tempList)
+			for(Double[] input : tempList)
 			{
 				nodeList.add(new Double[] {(double)input[0], (double)input[1], (double)input[2]});
 			}
@@ -162,7 +165,7 @@ public class DataInterpreter {
 		links.println("</links>");
 		node.close();
 		links.close();
-		SimLogger.printLine("Distance b/t : 41.975456,-87.71409\t and \t41.985456,-87.72409\n === " + measure(-87.71409,41.975456, -87.71408, 41.975446));
+		SimLogger.printLine("Distance b/t : 41.975456,-87.71409\t and \t41.985456,-87.71409\n === " + measure(-87.71409,41.975456, -87.71408, 41.975446));
 		
 		SimLogger.printLine("Min Long : " + MIN_LONG);
 		SimLogger.printLine("Max Long : " + MAX_LONG);

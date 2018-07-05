@@ -99,7 +99,7 @@ public class NetworkTopology {
 				    SimLogger.printLine("WlanId = " + node.getWlanId());	
 					SimLogger.printLine("false 2");
 					SimLogger.printLine(node.toString());
-					SimLogger.printLine(node.getVector().getXPos() + ", " + node.getVector().getYPos());
+					//SimLogger.printLine(node.getVector().getXPos() + ", " + node.getVector().getYPos());
 					return false;
 				}
 			}
