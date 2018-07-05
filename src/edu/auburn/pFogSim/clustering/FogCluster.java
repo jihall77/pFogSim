@@ -9,6 +9,7 @@ import javafx.util.Pair;
 import edu.boun.edgecloudsim.core.SimManager;
 //import edu.boun.edgecloudsim.utils.*;
 import edu.boun.edgecloudsim.utils.Location;
+import edu.boun.edgecloudsim.utils.SimLogger;
 import edu.auburn.pFogSim.Voronoi.src.kn.uni.voronoitreemap.diagram.*;
 
 public class FogCluster {
@@ -237,7 +238,7 @@ public class FogCluster {
 		
 		//Make the voronoi diagram for that level and add it to the list
 		//PowerDiagram voronoi = new PowerDiagram(arrayList);
-		
+		//SimLogger.printLine("ArrayList : " + arrayList);
 		SimManager.getInstance().addToVoronoiDiagramList(PowerDiagram.makeVoronoiDiagram(arrayList));
 		
 	}

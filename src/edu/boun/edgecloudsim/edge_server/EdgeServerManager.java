@@ -123,13 +123,14 @@ public class EdgeServerManager {
 			SimLogger.printLine("Topology is not valid");
 			System.exit(0);
 		}
+		
 		((ESBModel) SimManager.getInstance().getNetworkModel()).setNetworkTopology(networkTopology);
 		if (SimManager.getInstance().getEdgeOrchestrator() instanceof PuddleOrchestrator) {
 			SimLogger.print("\n\tMaking Cluster Object...");
 			FogHierCluster clusterObject = new FogHierCluster((ArrayList<NodeSim>)nodesForTopography);
-			SimLogger.printLine("Done,");
 			//Sets network topology and uses it to make the Puddle Objects
 			networkTopology.setPuddles(makePuddles(clusterObject));
+			SimLogger.printLine("Done,");
 			/*LinesComponent comp = new LinesComponent();
 			comp.drawNetworkTopology(5);
 			comp.drawNetworkTopology(4);
