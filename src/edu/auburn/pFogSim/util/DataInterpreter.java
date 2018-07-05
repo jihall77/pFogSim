@@ -29,6 +29,8 @@ public class DataInterpreter {
 	private static String[][] nodeSpecs = new String[MAX_LEVELS][13];// the specs for all layers of the fog devices
 	private static ArrayList<Double[]> nodeList = new ArrayList<Double[]>();
 	private static ArrayList<Float[]> tempList = new ArrayList<Float[]>();
+	private static double MIN_LAT = -100000, MAX_LAT = -100000, MIN_LONG = -100000, MAX_LONG = -100000; //Just instantiated so the first gps coord sets these
+	
 
 	private File xmlFile = null;
 	private FileWriter xmlFW = null;
@@ -78,8 +80,12 @@ public class DataInterpreter {
 				rawNode = dataBR.readLine();
 				nodeLoc = rawNode.split(",");
 				temp[0] = (float)counter; //ID
-				temp[2] = Float.parseFloat(nodeLoc[1]); //Y Coord
-				temp[1] = Float.parseFloat(nodeLoc[2]); //X Coord
+				temp[2] = Float.parseFloat(nodeLoc[1]) * 100000; //Y Coord
+				temp[1] = Float.parseFloat(nodeLoc[2]) * 100000; //X Coord
+				if(MAX_LONG == -100000 || temp[1] > MAX_LONG)	MAX_LONG = temp[1];		
+				if(MIN_LONG == -100000 || temp[1] < MIN_LONG)	MIN_LONG = temp[1];	
+				if(MAX_LAT == -100000 || temp[2] > MAX_LAT)	MAX_LAT = temp[2];	
+				if(MIN_LAT == -100000 || temp[2] < MIN_LAT)	MIN_LAT = temp[2];	
 				
 				//Add to output file		    
 			    node.println(String.format("<datacenter arch=\"%s\" os=\"%s\" vmm=\"%s\">\n", nodeSpecs[MAX_LEVELS - i - 1][0], nodeSpecs[MAX_LEVELS - i - 1][1], nodeSpecs[MAX_LEVELS - i - 1][2]));
@@ -157,12 +163,24 @@ public class DataInterpreter {
 		node.close();
 		links.close();
 		SimLogger.printLine("Distance b/t : 41.975456,-87.71409\t and \t41.985456,-87.72409\n === " + measure(-87.71409,41.975456, -87.71408, 41.975446));
+		
+		SimLogger.printLine("Min Long : " + MIN_LONG);
+		SimLogger.printLine("Max Long : " + MAX_LONG);
+		SimLogger.printLine("Min Lat : " + MIN_LAT);
+		SimLogger.printLine("Max Lat : " + MAX_LAT);
+		//SimManager.getInstance().setSimulationSpace(MIN_LONG, MAX_LONG, MIN_LAT, MAX_LAT);
+		
 		return;
 	}
 	
 	public DataInterpreter() throws IOException {
 		initialize();
 		readFile();
+	}
+	
+	public static double[] getSimulationSpace()
+	{
+		return new double[] {MIN_LONG, MAX_LONG, MIN_LAT, MAX_LAT};
 	}
 	/**
 	 * the great beast...<br><br>

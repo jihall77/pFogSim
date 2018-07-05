@@ -3,7 +3,7 @@
  * 
  * Description: 
  * Simulates where the lowest-level devices (such as mobile devices) will be in the simulation space
- * which extends from (-1 * (MAX_WIDTH / 2) to MAX_WIDTH / 2 to make it MAX_WIDTH wide and permit
+ * which extends from (-1 * (MAX_LAT / 2) to MAX_LAT / 2 to make it MAX_LAT wide and permit
  * negative coordinates to resemble GPS coordinates as much as possible.
  * Devices are placed at a random Wireless Access Point (WAP) and given a random vector to move in.
  * It updates which access point a device is connected to by using the Voronoi Diagram to organize
@@ -33,10 +33,10 @@ import edu.boun.edgecloudsim.utils.SimUtils;
 
 public class VectorMobility extends MobilityModel {
 	private List<TreeMap<Double, Location>> treeMapArray;
-	private double MAX_WIDTH;
-	private double MIN_WIDTH;
-	private double MAX_HEIGHT;
-	private double MIN_HEIGHT;
+	private double MAX_LAT;
+	private double MIN_LAT;
+	private double MAX_LONG;
+	private double MIN_LONG;
 	private NetworkTopology network = ((ESBModel) SimManager.getInstance().getNetworkModel()).getNetworkTopology();
 
 	
@@ -47,13 +47,13 @@ public class VectorMobility extends MobilityModel {
 	
 	@Override
 	public void initialize() {
-		//this.MAX_HEIGHT = SimManager.MAX_HEIGHT;
-		//this.MAX_WIDTH = SimManager.MAX_WIDTH;
-		
-		this.MAX_HEIGHT = 42.1;
-		this.MIN_HEIGHT = 41;
-		this.MAX_WIDTH = 88.0;
-		this.MIN_WIDTH = 87.0;
+		//this.MAX_LONG = SimManager.MAX_LONG;
+		//this.MAX_LAT = SimManager.MAX_LAT;
+		double[] simSpace = SimSettings.getInstance().getSimulationSpace();
+		this.MIN_LONG = simSpace[0];
+		this.MAX_LONG = simSpace[1];
+		this.MIN_LAT = simSpace[2];
+		this.MAX_LAT = simSpace[3];
 		
 		treeMapArray = new ArrayList<TreeMap<Double, Location>>();
 				
@@ -82,8 +82,8 @@ public class VectorMobility extends MobilityModel {
 		for(int i=0; i<numberOfMobileDevices; i++) {
 			TreeMap<Double, Location> treeMap = treeMapArray.get(i);
 			//Make random numbers to make the vectors
-			double up = 5 * (Math.random() - 0.5) * 0.00001; //Approximates movement of 5 meters * (random constant < 1)
-			double right = 5 * (Math.random() - 0.5) * 0.00001; //Same for right
+			double up = 5 * (Math.random() - 0.5); //Approximates movement of 5 meters * (random constant < 1)
+			double right = 5 * (Math.random() - 0.5); //Same for right
 
 			while(treeMap.lastKey() < SimSettings.getInstance().getSimulationTime()) {		
 				
@@ -92,8 +92,8 @@ public class VectorMobility extends MobilityModel {
 				double y_pos = treeMap.lastEntry().getValue().getYPos();				
 				int wlan_id = treeMap.lastEntry().getValue().getServingWlanId();
 				  
-				if(x_pos + right > this.MAX_WIDTH || x_pos + right < this.MIN_WIDTH) right = right * -1;
-				if(y_pos + up > this.MAX_HEIGHT || y_pos + up < this.MIN_HEIGHT) up = up * -1;
+				if(x_pos + right > this.MAX_LAT || x_pos + right < this.MIN_LAT) right = right * -1;
+				if(y_pos + up > this.MAX_LONG || y_pos + up < this.MIN_LONG) up = up * -1;
 				
 				//If we are still in the same polygon, don't change (We haven't moved out of range of the wap)
 				PowerDiagram diagram = SimManager.getInstance().getVoronoiDiagramAtLevel(0);

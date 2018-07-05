@@ -339,4 +339,5 @@ public class SimManager extends SimEntity {
 	public void shutdownEntity() {
 		edgeServerManager.terminateDatacenters();
 	}
+
 }
