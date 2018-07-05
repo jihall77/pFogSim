@@ -82,8 +82,8 @@ public class VectorMobility extends MobilityModel {
 		for(int i=0; i<numberOfMobileDevices; i++) {
 			TreeMap<Double, Location> treeMap = treeMapArray.get(i);
 			//Make random numbers to make the vectors
-			double up = 5 * (Math.random() - 0.5); //Approximates movement of 5 meters * (random constant < 1)
-			double right = 5 * (Math.random() - 0.5); //Same for right
+			double up = 5 * (Math.random() - 0.5) * 0.000001; //Approximates movement of 5 meters * (random constant < 1)
+			double right = 5 * (Math.random() - 0.5) * 0.000001; //Same for right
 
 			while(treeMap.lastKey() < SimSettings.getInstance().getSimulationTime()) {		
 				
