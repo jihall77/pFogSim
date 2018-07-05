@@ -268,15 +268,15 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 7][0] = "Mobile Device";
 		nodeSpecs[MAX_LEVELS - 7][1] = "Mobile Device";
 		nodeSpecs[MAX_LEVELS - 7][2] = "Mobile Device";
-		nodeSpecs[MAX_LEVELS - 7][3] = "0";
-		nodeSpecs[MAX_LEVELS - 7][4] = "0";
-		nodeSpecs[MAX_LEVELS - 7][5] = "0";
-		nodeSpecs[MAX_LEVELS - 7][6] = "0";
-		nodeSpecs[MAX_LEVELS - 7][7] = "false";
-		nodeSpecs[MAX_LEVELS - 7][8] = "true";
-		nodeSpecs[MAX_LEVELS - 7][9] = "0";
-		nodeSpecs[MAX_LEVELS - 7][10] = "0";
-		nodeSpecs[MAX_LEVELS - 7][11] = "0";
-		nodeSpecs[MAX_LEVELS - 7][12] = "0";
+		nodeSpecs[MAX_LEVELS - 7][3] = "1";
+		nodeSpecs[MAX_LEVELS - 7][4] = "1";
+		nodeSpecs[MAX_LEVELS - 7][5] = "1";
+		nodeSpecs[MAX_LEVELS - 7][6] = "1";
+		nodeSpecs[MAX_LEVELS - 7][7] = "true";
+		nodeSpecs[MAX_LEVELS - 7][8] = "false";
+		nodeSpecs[MAX_LEVELS - 7][9] = "1";
+		nodeSpecs[MAX_LEVELS - 7][10] = "1";
+		nodeSpecs[MAX_LEVELS - 7][11] = "1";
+		nodeSpecs[MAX_LEVELS - 7][12] = "1";
 	}
 }

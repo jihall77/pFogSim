@@ -403,7 +403,7 @@ public class mainApp {
 		String applicationsFile = "";
 		//String linksFile = "scripts/sample_application/config/links_test.xml";
 		//String linksFile = "small_link_test.xml";
-		String linksFile = "large_links_test.xml";
+		String linksFile = "links_test.xml";
 
 		if (args.length == 5){
 			configFile = args[0];
@@ -418,7 +418,7 @@ public class mainApp {
 			applicationsFile = "scripts/sample_application/config/applications.xml";
 			//edgeDevicesFile = "scripts/sample_application/config/edge_devices_test.xml";
 			//edgeDevicesFile = "small_node_test.xml";
-			edgeDevicesFile = "large_node_test.xml";
+			edgeDevicesFile = "node_test.xml";
 			outputFolder = "sim_results/ite" + iterationNumber;
 		}
 

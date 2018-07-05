@@ -489,7 +489,7 @@ public class SimSettings {
 				isElementPresent(datacenterElement, "costPerStorage");
 
 				Element location = (Element)datacenterElement.getElementsByTagName("location").item(0);
-				isElementPresent(location, "attractiveness");
+				//isElementPresent(location, "attractiveness");
 				isElementPresent(location, "wlan_id");
 				isElementPresent(location, "x_pos");
 				isElementPresent(location, "y_pos");
