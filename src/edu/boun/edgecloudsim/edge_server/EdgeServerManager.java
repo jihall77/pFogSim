@@ -166,13 +166,13 @@ public class EdgeServerManager {
 					
 					int numOfCores = Integer.parseInt(vmElement.getElementsByTagName("core").item(0).getTextContent());
 					double mips = Double.parseDouble(vmElement.getElementsByTagName("mips").item(0).getTextContent());
-					int ram = Integer.parseInt(vmElement.getElementsByTagName("ram").item(0).getTextContent());
+					double ram = Double.parseDouble(vmElement.getElementsByTagName("ram").item(0).getTextContent());
 					long storage = Long.parseLong(vmElement.getElementsByTagName("storage").item(0).getTextContent());
 					long bandwidth = SimSettings.getInstance().getWlanBandwidth() / (hostNodeList.getLength()+vmNodeList.getLength());
 					
 					
 					//VM Parameters		
-					EdgeVM vm = new EdgeVM(vmCounter, brockerId, mips, numOfCores, ram, bandwidth, storage, vmm, new CloudletSchedulerTimeShared());
+					EdgeVM vm = new EdgeVM(vmCounter, brockerId, mips, numOfCores, (int) ram, bandwidth, storage, vmm, new CloudletSchedulerTimeShared());
 					vm.setVmType(SimSettings.VM_TYPES.EDGE_VM);
 					vmList.get(hostCounter).add(vm);
 					vmCounter++;
@@ -276,7 +276,7 @@ public class EdgeServerManager {
 			Element hostElement = (Element) hostNode;
 			int numOfCores = Integer.parseInt(hostElement.getElementsByTagName("core").item(0).getTextContent());
 			double mips = Double.parseDouble(hostElement.getElementsByTagName("mips").item(0).getTextContent());
-			int ram = Integer.parseInt(hostElement.getElementsByTagName("ram").item(0).getTextContent());
+			double ram = Double.parseDouble(hostElement.getElementsByTagName("ram").item(0).getTextContent());
 			long storage = Long.parseLong(hostElement.getElementsByTagName("storage").item(0).getTextContent());
 			long bandwidth = (long) SimSettings.getInstance().getWlanBandwidth() / hostNodeList.getLength();
 			
@@ -307,7 +307,7 @@ public class EdgeServerManager {
 			//4. Create Hosts with its id and list of PEs and add them to the list of machines
 			EdgeHost host = new EdgeHost(
 					hostIdCounter,
-					new RamProvisionerSimple(ram),
+					new RamProvisionerSimple((int) ram),
 					new BwProvisionerSimple(bandwidth), //kbps
 					storage,
 					peList,
