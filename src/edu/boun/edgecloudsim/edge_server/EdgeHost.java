@@ -46,4 +46,6 @@ public class EdgeHost extends Host {
 	public void setLevel(int _level) {
 		level = _level;
 	}
+	
+	
 }

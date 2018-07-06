@@ -177,20 +177,16 @@ public class ESBModel extends NetworkModel {
 	private double calculateESB(double propogationDelay, int bandwidth /*Kbps*/, double PoissonMean, double avgTaskSize /*KB*/, int deviceCount){
 		double Bps=0;
 		
-		avgTaskSize = avgTaskSize * (double)1000; //convert from KB to Byte
+		avgTaskSize = avgTaskSize * (double)1024; //convert from KB to Byte
 		
-		Bps = bandwidth * (double)1000 / (double)8; //convert from Kbps to Byte per seconds
+		Bps = bandwidth * (double)1024 / (double)8; //convert from Kbps to Byte per seconds
 		double result = (avgTaskSize * deviceCount) / Bps;
 		result += propogationDelay;
 		return result;
 	}
 	
-	private double getWlanUploadDelay(Location accessPointLocation, double time) {
-		return calculateESB(0,
-				SimSettings.getInstance().getWlanBandwidth(),
-				WlanPoissonMean,
-				avgTaskInputSize,
-				getDeviceCount(accessPointLocation, time));
+	private double getWlanUploadDelay(Location loc, double time) {
+		return calculateESB(0, loc.getBW(), WlanPoissonMean, avgTaskInputSize, getDeviceCount(loc, time));
 	}
 	
 	public void setNetworkTopology(NetworkTopology _networkTopology) {

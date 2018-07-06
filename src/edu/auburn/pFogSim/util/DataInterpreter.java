@@ -26,7 +26,7 @@ public class DataInterpreter {
 			"Chicago_Libraries.csv", 
 			"Chicago_Connect.csv", 
 			"Chicago_Schools.csv"};
-	private static String[][] nodeSpecs = new String[MAX_LEVELS][13];// the specs for all layers of the fog devices
+	private static String[][] nodeSpecs = new String[MAX_LEVELS][14];// the specs for all layers of the fog devices
 	private static ArrayList<Double[]> nodeList = new ArrayList<Double[]>();
 	private static ArrayList<Double[]> tempList = new ArrayList<Double[]>();
 	private static double MIN_LAT = -100000, MAX_LAT = -100000, MIN_LONG = -100000, MAX_LONG = -100000; //Just instantiated so the first gps coord sets these
@@ -91,7 +91,7 @@ public class DataInterpreter {
 				//Add to output file		    
 			    node.println(String.format("<datacenter arch=\"%s\" os=\"%s\" vmm=\"%s\">\n", nodeSpecs[MAX_LEVELS - i - 1][0], nodeSpecs[MAX_LEVELS - i - 1][1], nodeSpecs[MAX_LEVELS - i - 1][2]));
 			    node.println(String.format("<costPerBw>%s</costPerBw>\n\t<costPerSec>%s</costPerSec>\n\t<costPerMem>%s</costPerMem>\n\t<costPerStorage>%s</costPerStorage>", nodeSpecs[MAX_LEVELS - i - 1][3], nodeSpecs[MAX_LEVELS - i - 1][4], nodeSpecs[MAX_LEVELS - i - 1][5], nodeSpecs[MAX_LEVELS - i - 1][6]));
-			    node.println(String.format("<location>\n\t<x_pos>%s</x_pos>\n\t<y_pos>%s</y_pos>\n\t<level>%s</level>\t<wlan_id>%s</wlan_id>\n\t<wap>%s</wap>\n\t<moving>%s</moving>\n\t</location>", nodeLoc[2], nodeLoc[1], MAX_LEVELS - i - 1, counter, nodeSpecs[MAX_LEVELS - i - 1][7], nodeSpecs[MAX_LEVELS - i - 1][8]));
+			    node.println(String.format("<location>\n\t<x_pos>%s</x_pos>\n\t<y_pos>%s</y_pos>\n\t<level>%s</level>\t<wlan_id>%s</wlan_id>\n\t<wap>%s</wap>\n\t<moving>%s</moving>\n\t<bandwidth>%s</bandwidth>/n</location>", nodeLoc[2], nodeLoc[1], MAX_LEVELS - i - 1, counter, nodeSpecs[MAX_LEVELS - i - 1][7], nodeSpecs[MAX_LEVELS - i - 1][8], nodeSpecs[MAX_LEVELS - i - 1][13]));
 			    node.println(String.format("<hosts>\n\t<host>\n\t<core>%s</core>\n\t<mips>%s</mips>\n\t<ram>%s</ram>\n\t<storage>%s</storage>\n", nodeSpecs[MAX_LEVELS - i - 1][9], nodeSpecs[MAX_LEVELS - i - 1][10], nodeSpecs[MAX_LEVELS - i - 1][11], nodeSpecs[MAX_LEVELS - i - 1][12]));
 			    node.println(String.format("\t<VMs>\n\t\t<VM vmm=\"%s\">\n\t\t\t<core>%s</core>\n\t\t\t<mips>%s</mips>\n\t\t\t<ram>%s</ram>\n\t\t\t<storage>%s</storage>\n\t\t</VM>\n\t</VMs>\n</host></hosts>\n</datacenter>", nodeSpecs[MAX_LEVELS - i - 1][2], nodeSpecs[MAX_LEVELS - i - 1][9], nodeSpecs[MAX_LEVELS - i - 1][10], nodeSpecs[MAX_LEVELS - i - 1][11], nodeSpecs[MAX_LEVELS - i - 1][12]));
 	
@@ -282,14 +282,19 @@ public class DataInterpreter {
 	 *   9 - number of cores for the machine<br>
 	 *  10 - million instructions per second (mips)<br>
 	 *  11 - ram<br>
-	 *  12 - storage 
+	 *  12 - storage
+	 *  13 - bandwidth - Kbps
 	 */
 	public static void initialize() {
+		double tenGbRouterCost = 151.67/2692915200.0; // $/Mb numbers taken from cisco ASR 901 10G router at $151.67 per month
+		double oneGbRouterCost = 88.23/269291520.0; // $/Mb numbers taken from cisco ASR 901 1G router at $88.23 per month
+		double hundredGbRouterCost = 646.51/26929152000.0; // $/Mb numbers taken from cisco ASR 1013 100G router at $646.51 per month
+		
 		nodeSpecs[MAX_LEVELS - 1][0] = "Cloud";
 		nodeSpecs[MAX_LEVELS - 1][1] = "Linux";
 		nodeSpecs[MAX_LEVELS - 1][2] = "Xen";
-		nodeSpecs[MAX_LEVELS - 1][3] = "0.1";
-		nodeSpecs[MAX_LEVELS - 1][4] = "3.0";
+		nodeSpecs[MAX_LEVELS - 1][3] = hundredGbRouterCost + "";
+		nodeSpecs[MAX_LEVELS - 1][4] = "0.000014";
 		nodeSpecs[MAX_LEVELS - 1][5] = "0.05";
 		nodeSpecs[MAX_LEVELS - 1][6] = "0.1";
 		nodeSpecs[MAX_LEVELS - 1][7] = "true";
@@ -298,12 +303,13 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 1][10] = "4874240000";
 		nodeSpecs[MAX_LEVELS - 1][11] = "164926744166400";
 		nodeSpecs[MAX_LEVELS - 1][12] = "1046898278400";
+		nodeSpecs[MAX_LEVELS - 1][13] = "104857600";
 		
-		nodeSpecs[MAX_LEVELS - 2][0] = "x86";
+		nodeSpecs[MAX_LEVELS - 2][0] = "City Hall";
 		nodeSpecs[MAX_LEVELS - 2][1] = "Linux";
 		nodeSpecs[MAX_LEVELS - 2][2] = "Xen";
-		nodeSpecs[MAX_LEVELS - 2][3] = "0.15";
-		nodeSpecs[MAX_LEVELS - 2][4] = "3.0";
+		nodeSpecs[MAX_LEVELS - 2][3] = hundredGbRouterCost + "";
+		nodeSpecs[MAX_LEVELS - 2][4] = "0.037";
 		nodeSpecs[MAX_LEVELS - 2][5] = "0.05";
 		nodeSpecs[MAX_LEVELS - 2][6] = "0.1";
 		nodeSpecs[MAX_LEVELS - 2][7] = "true";
@@ -312,12 +318,13 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 2][10] = "48742400";
 		nodeSpecs[MAX_LEVELS - 2][11] = "1649267441664";
 		nodeSpecs[MAX_LEVELS - 2][12] = "10468982784";
+		nodeSpecs[MAX_LEVELS - 2][13] = "104857600";
 		
-		nodeSpecs[MAX_LEVELS - 3][0] = "x86";
+		nodeSpecs[MAX_LEVELS - 3][0] = "University";
 		nodeSpecs[MAX_LEVELS - 3][1] = "Linux";
 		nodeSpecs[MAX_LEVELS - 3][2] = "Xen";
-		nodeSpecs[MAX_LEVELS - 3][3] = "0.15";
-		nodeSpecs[MAX_LEVELS - 3][4] = "3.0";
+		nodeSpecs[MAX_LEVELS - 3][3] = tenGbRouterCost + "";
+		nodeSpecs[MAX_LEVELS - 3][4] = "0.0093";
 		nodeSpecs[MAX_LEVELS - 3][5] = "0.05";
 		nodeSpecs[MAX_LEVELS - 3][6] = "0.1";
 		nodeSpecs[MAX_LEVELS - 3][7] = "true";
@@ -326,12 +333,13 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 3][10] = "12185600";
 		nodeSpecs[MAX_LEVELS - 3][11] = "412316860416";
 		nodeSpecs[MAX_LEVELS - 3][12] = "2617245696";
+		nodeSpecs[MAX_LEVELS - 3][13] = "10485760";
 		
-		nodeSpecs[MAX_LEVELS - 4][0] = "x86";
+		nodeSpecs[MAX_LEVELS - 4][0] = "Ward";
 		nodeSpecs[MAX_LEVELS - 4][1] = "Linux";
 		nodeSpecs[MAX_LEVELS - 4][2] = "Xen";
-		nodeSpecs[MAX_LEVELS - 4][3] = "0.15";
-		nodeSpecs[MAX_LEVELS - 4][4] = "3.0";
+		nodeSpecs[MAX_LEVELS - 4][3] = tenGbRouterCost + "";
+		nodeSpecs[MAX_LEVELS - 4][4] = "0.0336";
 		nodeSpecs[MAX_LEVELS - 4][5] = "0.05";
 		nodeSpecs[MAX_LEVELS - 4][6] = "0.1";
 		nodeSpecs[MAX_LEVELS - 4][7] = "true";
@@ -340,12 +348,13 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 4][10] = "1305600";
 		nodeSpecs[MAX_LEVELS - 4][11] = "100663296";
 		nodeSpecs[MAX_LEVELS - 4][12] = "1677721600";
+		nodeSpecs[MAX_LEVELS - 4][13] = "10485760";
 		
-		nodeSpecs[MAX_LEVELS - 5][0] = "x86";
+		nodeSpecs[MAX_LEVELS - 5][0] = "Library";
 		nodeSpecs[MAX_LEVELS - 5][1] = "Linux";
 		nodeSpecs[MAX_LEVELS - 5][2] = "Xen";
-		nodeSpecs[MAX_LEVELS - 5][3] = "0.15";
-		nodeSpecs[MAX_LEVELS - 5][4] = "3.0";
+		nodeSpecs[MAX_LEVELS - 5][3] = tenGbRouterCost + "";
+		nodeSpecs[MAX_LEVELS - 5][4] = "0.00016";
 		nodeSpecs[MAX_LEVELS - 5][5] = "0.05";
 		nodeSpecs[MAX_LEVELS - 5][6] = "0.1";
 		nodeSpecs[MAX_LEVELS - 5][7] = "true";
@@ -354,12 +363,13 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 5][10] = "326400";
 		nodeSpecs[MAX_LEVELS - 5][11] = "25165824";
 		nodeSpecs[MAX_LEVELS - 5][12] = "167772160";
+		nodeSpecs[MAX_LEVELS - 5][13] = "10485760";
 		
-		nodeSpecs[MAX_LEVELS - 6][0] = "x86";
+		nodeSpecs[MAX_LEVELS - 6][0] = "Community Center";
 		nodeSpecs[MAX_LEVELS - 6][1] = "Linux";
 		nodeSpecs[MAX_LEVELS - 6][2] = "Xen";
-		nodeSpecs[MAX_LEVELS - 6][3] = "0.15";
-		nodeSpecs[MAX_LEVELS - 6][4] = "3.0";
+		nodeSpecs[MAX_LEVELS - 6][3] = oneGbRouterCost + "";
+		nodeSpecs[MAX_LEVELS - 6][4] = "0.0012";
 		nodeSpecs[MAX_LEVELS - 6][5] = "0.05";
 		nodeSpecs[MAX_LEVELS - 6][6] = "0.1";
 		nodeSpecs[MAX_LEVELS - 6][7] = "true";
@@ -368,12 +378,13 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 6][10] = "217600";
 		nodeSpecs[MAX_LEVELS - 6][11] = "16384";
 		nodeSpecs[MAX_LEVELS - 6][12] = "167772160";
+		nodeSpecs[MAX_LEVELS - 6][13] = "1048576";
 		
-		nodeSpecs[MAX_LEVELS - 7][0] = "x86";
+		nodeSpecs[MAX_LEVELS - 7][0] = "School";
 		nodeSpecs[MAX_LEVELS - 7][1] = "Linux";
 		nodeSpecs[MAX_LEVELS - 7][2] = "Xen";
-		nodeSpecs[MAX_LEVELS - 7][3] = "1";
-		nodeSpecs[MAX_LEVELS - 7][4] = "1";
+		nodeSpecs[MAX_LEVELS - 7][3] = oneGbRouterCost + "";
+		nodeSpecs[MAX_LEVELS - 7][4] = "0.0003";
 		nodeSpecs[MAX_LEVELS - 7][5] = "1";
 		nodeSpecs[MAX_LEVELS - 7][6] = "1";
 		nodeSpecs[MAX_LEVELS - 7][7] = "true";
@@ -382,5 +393,6 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 7][10] = "54400";
 		nodeSpecs[MAX_LEVELS - 7][11] = "4096";
 		nodeSpecs[MAX_LEVELS - 7][12] = "41943040";
+		nodeSpecs[MAX_LEVELS - 7][13] = "1048576";
 	}
 }

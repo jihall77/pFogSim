@@ -21,6 +21,7 @@ public class NodeSim {
 	private boolean moving;
 	private Location vector;
 	private int wlan_id;
+	//private int bandwidth;
 	/**
 	 * Constructor
 	 * @param inputEdges
@@ -285,4 +286,5 @@ public class NodeSim {
 	public String toString() {
 		return getLocation().getXPos() + ", " + getLocation().getYPos();
 	}
+	
 }

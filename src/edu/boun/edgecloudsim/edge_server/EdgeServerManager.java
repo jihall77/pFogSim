@@ -262,6 +262,7 @@ public class EdgeServerManager {
 		int level =Integer.parseInt(location.getElementsByTagName("level").item(0).getTextContent());
 		boolean wap = Boolean.parseBoolean(location.getElementsByTagName("wap").item(0).getTextContent());
 		boolean moving = Boolean.parseBoolean(location.getElementsByTagName("moving").item(0).getTextContent());
+		int bw = Integer.parseInt(location.getElementsByTagName("bandwidth").item(0).getTextContent());
 		double dx = 0.0, dy = 0.0;
 		if(moving)
 		{
@@ -314,8 +315,9 @@ public class EdgeServerManager {
 					peList,
 					new VmSchedulerSpaceShared(peList)
 				);
-			
-			host.setPlace(new Location(wlan_id, x_pos, y_pos));
+			Location loc = new Location(wlan_id, x_pos, y_pos);
+			loc.setBW(bw);
+			host.setPlace(loc);
 			host.setLevel(level);
 			hostList.add(host);
 			hostIdCounter++;
