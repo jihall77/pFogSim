@@ -193,8 +193,8 @@ public class SimManager extends SimEntity {
 		schedule(getId(), SimSettings.getInstance().getSimulationTime()/100, PRINT_PROGRESS);
 		schedule(getId(), SimSettings.getInstance().getVmLoadLogInterval(), GET_LOAD_LOG);
 		schedule(getId(), SimSettings.getInstance().getSimulationTime(), STOP_SIMULATION);
-		SimLogger.printLine("treeMap.size() = " + mobilityModel.getTreeMapSize());
 		SimLogger.printLine("Done.");
+		SimLogger.print("Executing");
 	}
 
 	@Override

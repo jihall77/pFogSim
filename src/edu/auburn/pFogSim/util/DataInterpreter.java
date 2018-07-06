@@ -30,7 +30,8 @@ public class DataInterpreter {
 	private static ArrayList<Double[]> nodeList = new ArrayList<Double[]>();
 	private static ArrayList<Double[]> tempList = new ArrayList<Double[]>();
 	private static double MIN_LAT = -100000, MAX_LAT = -100000, MIN_LONG = -100000, MAX_LONG = -100000; //Just instantiated so the first gps coord sets these
-	
+	private static boolean universitiesYet = false;
+	private static boolean universitiesLinked = false;
 
 	private File xmlFile = null;
 	private FileWriter xmlFW = null;
@@ -65,18 +66,18 @@ public class DataInterpreter {
 		int prevCounter = 0;
 		for(int i = 0; i < MAX_LEVELS; i++)
 		{
-			
+			if(files[i].equals("Chicago_Universities.csv")) universitiesYet = true;
 			try {
 				dataFR = new FileReader(files[i]);
 				dataBR = new BufferedReader(dataFR);
 			}
 			catch (FileNotFoundException e) {
-				SimLogger.printLine("Bad File Name");
+				//SimLogger.printLine("Bad File Name");
 			}
 			dataBR.readLine(); //Gets rid of title data
 			while(dataBR.ready()) {
 
-				//SimLogger.printLine("Importing " + files[i]);
+				////SimLogger.printLine("Importing " + files[i]);
 				rawNode = dataBR.readLine();
 				nodeLoc = rawNode.split(",");
 				temp[0] = (double)counter; //ID
@@ -96,7 +97,7 @@ public class DataInterpreter {
 	
 				
 			    if (counter == 643) {
-			    	SimLogger.print("");
+			    	//SimLogger.print("");
 			    }
 				//Make link to previous closest node on higher level
 				if(!nodeList.isEmpty())
@@ -107,7 +108,7 @@ public class DataInterpreter {
 					//Go through all nodes one level up and find the closest
 					for(int j = 0; j < nodeList.size(); j++)
 					{
-						//SimLogger.printLine("nodeList.size = " + nodeList.size());
+						////SimLogger.printLine("nodeList.size = " + nodeList.size());
 
 						distance = measure(nodeList.get(j)[2], nodeList.get(j)[1], temp[2], temp[1]);
 						if(distance < minDistance)
@@ -121,7 +122,7 @@ public class DataInterpreter {
 					{
 						if(nodeList.get(index).equals(temp)) 
 						{
-							SimLogger.printLine("Yep, they're the same thing");
+							//SimLogger.printLine("Yep, they're the same thing");
 							System.exit(0);
 						}
 						links.println("<link>\n" + 
@@ -144,33 +145,109 @@ public class DataInterpreter {
 				counter++;
 			}
 			
-			//SimLogger.printLine("Level : " + i + "\n\t" + prevCounter + " -> " + counter);
+			////SimLogger.printLine("Level : " + i + "\n\t" + prevCounter + " -> " + counter);
 			prevCounter = counter;
-			//SimLogger.printLine("nodeList" + nodeList.toString());
-			//SimLogger.printLine("tempList" + tempList.toString());
+			////SimLogger.printLine("nodeList" + nodeList.toString());
+			////SimLogger.printLine("tempList" + tempList.toString());
 			//move tempList to nodeList
-			nodeList.clear();
-			//nodeList.addAll(tempList);
-			for(Double[] input : tempList)
+			if(!universitiesYet)
 			{
-				nodeList.add(new Double[] {(double)input[0], (double)input[1], (double)input[2]});
+				nodeList.clear();
+				//nodeList.addAll(tempList);
+				for(Double[] input : tempList)
+				{
+					nodeList.add(new Double[] {(double)input[0], (double)input[1], (double)input[2]});
+				}
+			}
+			if(!universitiesLinked)
+			{
+				for(Double[] input : nodeList)
+				{
+					double minDistance = Double.MAX_VALUE;
+					double secondminDistance = Double.MAX_VALUE;
+					int index1 = -1, index2 = -1;
+					double distance = 0;
+					//Go through all nodes one level up and find the closest
+					for(int j = 0; j < nodeList.size(); j++)
+					{
+						////SimLogger.printLine("nodeList.size = " + nodeList.size());
+		
+						distance = measure(nodeList.get(j)[2], nodeList.get(j)[1], input[2], input[1]);
+						if(distance < secondminDistance && distance != 0)
+						{
+							secondminDistance = distance;
+							index2 = j;
+						}
+						if(distance < minDistance && distance != 0)
+						{
+							secondminDistance = minDistance;
+							index2 = index1;
+							minDistance = distance;
+							index1 = j;
+						}
+					}
+					minDistance = Double.MAX_VALUE;
+					secondminDistance = Double.MAX_VALUE;
+					if(index1 >= 0)
+					{
+						if(nodeList.get(index1).equals(temp)) 
+						{
+							//SimLogger.printLine("Yep, they're the same thing");
+							System.exit(0);
+						}
+						links.println("<link>\n" + 
+					    		"		<name>L" + nodeList.get(index1)[0] + "_" + input[0] + "</name>\n" + 
+						   		"		<left>\n" + 
+					    		"			<x_pos>" + input[1] + "</x_pos>\n" + 
+						   		"			<y_pos>" + input[2] + "</y_pos>\n" + 
+						   		"		</left>\n" + 
+						   		"		<right>\n" + 
+						    	"			<x_pos>" + nodeList.get(index1)[1] + "</x_pos>\n" + 
+						   		"			<y_pos>" + nodeList.get(index1)[2] + "</y_pos>\n" + 
+						   		"		</right>\n" + 
+						   		"		<left_latency>0.5</left_latency>\n" + 
+						   		"		<right_latency>0.5</right_latency>\n" + 
+						   		"	</link>");
+						}
+					if(index2 >= 0)
+					{
+						if(nodeList.get(index2).equals(temp)) 
+						{
+							//SimLogger.printLine("Yep, they're the same thing");
+							System.exit(0);
+						}
+						links.println("<link>\n" + 
+					    		"		<name>L" + nodeList.get(index2)[0] + "_" + input[0] + "</name>\n" + 
+						   		"		<left>\n" + 
+					    		"			<x_pos>" + input[1] + "</x_pos>\n" + 
+						   		"			<y_pos>" + input[2] + "</y_pos>\n" + 
+						   		"		</left>\n" + 
+						   		"		<right>\n" + 
+						    	"			<x_pos>" + nodeList.get(index2)[1] + "</x_pos>\n" + 
+						   		"			<y_pos>" + nodeList.get(index2)[2] + "</y_pos>\n" + 
+						   		"		</right>\n" + 
+						   		"		<left_latency>0.5</left_latency>\n" + 
+						   		"		<right_latency>0.5</right_latency>\n" + 
+						   		"	</link>");
+						}
+				}
 			}
 			tempList.clear();
 			
-			//SimLogger.printLine("nodeList" + nodeList.toString());
-			//SimLogger.printLine("tempList" + tempList.toString());
+			////SimLogger.printLine("nodeList" + nodeList.toString());
+			////SimLogger.printLine("tempList" + tempList.toString());
 		}
 		
 		node.println("</edge_devices>");
 		links.println("</links>");
 		node.close();
 		links.close();
-		SimLogger.printLine("Distance b/t : 41.975456,-87.71409\t and \t41.985456,-87.71409\n === " + measure(-87.71409,41.975456, -87.71408, 41.975446));
+		//SimLogger.printLine("Distance b/t : 41.975456,-87.71409\t and \t41.985456,-87.71409\n === " + measure(-87.71409,41.975456, -87.71408, 41.975446));
 		
-		SimLogger.printLine("Min Long : " + MIN_LONG);
-		SimLogger.printLine("Max Long : " + MAX_LONG);
-		SimLogger.printLine("Min Lat : " + MIN_LAT);
-		SimLogger.printLine("Max Lat : " + MAX_LAT);
+		//SimLogger.printLine("Min Long : " + MIN_LONG);
+		//SimLogger.printLine("Max Long : " + MAX_LONG);
+		//SimLogger.printLine("Min Lat : " + MIN_LAT);
+		//SimLogger.printLine("Max Lat : " + MAX_LAT);
 		//SimManager.getInstance().setSimulationSpace(MIN_LONG, MAX_LONG, MIN_LAT, MAX_LAT);
 		
 		return;
@@ -215,12 +292,13 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 1][4] = "3.0";
 		nodeSpecs[MAX_LEVELS - 1][5] = "0.05";
 		nodeSpecs[MAX_LEVELS - 1][6] = "0.1";
-		nodeSpecs[MAX_LEVELS - 1][7] = "false";
+		nodeSpecs[MAX_LEVELS - 1][7] = "true";
 		nodeSpecs[MAX_LEVELS - 1][8] = "false";
 		nodeSpecs[MAX_LEVELS - 1][9] = "2867200";
 		nodeSpecs[MAX_LEVELS - 1][10] = "4874240000";
 		nodeSpecs[MAX_LEVELS - 1][11] = "164926744166400";
 		nodeSpecs[MAX_LEVELS - 1][12] = "1046898278400";
+		
 		nodeSpecs[MAX_LEVELS - 2][0] = "x86";
 		nodeSpecs[MAX_LEVELS - 2][1] = "Linux";
 		nodeSpecs[MAX_LEVELS - 2][2] = "Xen";
@@ -228,12 +306,13 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 2][4] = "3.0";
 		nodeSpecs[MAX_LEVELS - 2][5] = "0.05";
 		nodeSpecs[MAX_LEVELS - 2][6] = "0.1";
-		nodeSpecs[MAX_LEVELS - 2][7] = "false";
+		nodeSpecs[MAX_LEVELS - 2][7] = "true";
 		nodeSpecs[MAX_LEVELS - 2][8] = "false";
 		nodeSpecs[MAX_LEVELS - 2][9] = "28672";
 		nodeSpecs[MAX_LEVELS - 2][10] = "48742400";
 		nodeSpecs[MAX_LEVELS - 2][11] = "1649267441664";
 		nodeSpecs[MAX_LEVELS - 2][12] = "10468982784";
+		
 		nodeSpecs[MAX_LEVELS - 3][0] = "x86";
 		nodeSpecs[MAX_LEVELS - 3][1] = "Linux";
 		nodeSpecs[MAX_LEVELS - 3][2] = "Xen";
@@ -241,12 +320,13 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 3][4] = "3.0";
 		nodeSpecs[MAX_LEVELS - 3][5] = "0.05";
 		nodeSpecs[MAX_LEVELS - 3][6] = "0.1";
-		nodeSpecs[MAX_LEVELS - 3][7] = "false";
+		nodeSpecs[MAX_LEVELS - 3][7] = "true";
 		nodeSpecs[MAX_LEVELS - 3][8] = "false";
 		nodeSpecs[MAX_LEVELS - 3][9] = "7168";
 		nodeSpecs[MAX_LEVELS - 3][10] = "12185600";
 		nodeSpecs[MAX_LEVELS - 3][11] = "412316860416";
 		nodeSpecs[MAX_LEVELS - 3][12] = "2617245696";
+		
 		nodeSpecs[MAX_LEVELS - 4][0] = "x86";
 		nodeSpecs[MAX_LEVELS - 4][1] = "Linux";
 		nodeSpecs[MAX_LEVELS - 4][2] = "Xen";
@@ -254,12 +334,13 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 4][4] = "3.0";
 		nodeSpecs[MAX_LEVELS - 4][5] = "0.05";
 		nodeSpecs[MAX_LEVELS - 4][6] = "0.1";
-		nodeSpecs[MAX_LEVELS - 4][7] = "false";
+		nodeSpecs[MAX_LEVELS - 4][7] = "true";
 		nodeSpecs[MAX_LEVELS - 4][8] = "false";
 		nodeSpecs[MAX_LEVELS - 4][9] = "768";
 		nodeSpecs[MAX_LEVELS - 4][10] = "1305600";
 		nodeSpecs[MAX_LEVELS - 4][11] = "100663296";
 		nodeSpecs[MAX_LEVELS - 4][12] = "1677721600";
+		
 		nodeSpecs[MAX_LEVELS - 5][0] = "x86";
 		nodeSpecs[MAX_LEVELS - 5][1] = "Linux";
 		nodeSpecs[MAX_LEVELS - 5][2] = "Xen";
@@ -267,12 +348,13 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 5][4] = "3.0";
 		nodeSpecs[MAX_LEVELS - 5][5] = "0.05";
 		nodeSpecs[MAX_LEVELS - 5][6] = "0.1";
-		nodeSpecs[MAX_LEVELS - 5][7] = "false";
+		nodeSpecs[MAX_LEVELS - 5][7] = "true";
 		nodeSpecs[MAX_LEVELS - 5][8] = "false";
 		nodeSpecs[MAX_LEVELS - 5][9] = "192";
 		nodeSpecs[MAX_LEVELS - 5][10] = "326400";
 		nodeSpecs[MAX_LEVELS - 5][11] = "25165824";
 		nodeSpecs[MAX_LEVELS - 5][12] = "167772160";
+		
 		nodeSpecs[MAX_LEVELS - 6][0] = "x86";
 		nodeSpecs[MAX_LEVELS - 6][1] = "Linux";
 		nodeSpecs[MAX_LEVELS - 6][2] = "Xen";
@@ -280,12 +362,13 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 6][4] = "3.0";
 		nodeSpecs[MAX_LEVELS - 6][5] = "0.05";
 		nodeSpecs[MAX_LEVELS - 6][6] = "0.1";
-		nodeSpecs[MAX_LEVELS - 6][7] = "false";
+		nodeSpecs[MAX_LEVELS - 6][7] = "true";
 		nodeSpecs[MAX_LEVELS - 6][8] = "false";
 		nodeSpecs[MAX_LEVELS - 6][9] = "128";
 		nodeSpecs[MAX_LEVELS - 6][10] = "217600";
 		nodeSpecs[MAX_LEVELS - 6][11] = "16384";
 		nodeSpecs[MAX_LEVELS - 6][12] = "167772160";
+		
 		nodeSpecs[MAX_LEVELS - 7][0] = "x86";
 		nodeSpecs[MAX_LEVELS - 7][1] = "Linux";
 		nodeSpecs[MAX_LEVELS - 7][2] = "Xen";
