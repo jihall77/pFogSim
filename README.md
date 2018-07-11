@@ -13,8 +13,8 @@ This is still a work in progress as of 7/11/2018
 
 ## **Quick Summary**
  - General Outline of Classes
-[Class Diagram]()
- - Details given below
+![Class Diagram](https://github.com/jihall77/pFogSim/blob/master/class_diagram.png)
+ - This may not appear to be straight-forward, however it will make more sense down below
 
 ## **How to Run** 
 (May have to change some of the files mentioned to tailor for your stuff)
