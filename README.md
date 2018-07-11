@@ -28,9 +28,26 @@ This is still a work in progress as of 7/11/2018
 		./run_scenarios.sh 1 1
 		```
 		- The numbers passed into the script are the number of cores and iterations desired, respectively
+		- When these are run, they will create directories inside of the output file in the linked directory. A sample run may look like the following:
+		```
+		~$ ./run_scenarios 4 10
+		~$ tail -f /pFogSim/scripts/sample_application/output/11-07-2018_11-52/default_config/ite1.log
+		Simulation setting file, output folder and iteration number are not provided! Using default ones...
+		Simulation started at 11/07/2018 11:52:21
+		----------------------------------------------------------------------
+		Scenario started at 11/07/2018 11:52:21
+		Scenario: PUDDLE_ORCHESTRATOR - Policy: NEXT_FIT - #iteration: 1
+		Duration: 0.5 hour(s) - Poisson: 5.0 - #devices: 500
+		CloudSim.init reached
+		ScenarioFactory reached
+		Creating tasks...Done, 
+		SimManager reached
+		SimManager is starting...
+		```
 	- [mainApp.java](https://github.com/jihall77/pFogSim/tree/master/src/edu/boun/edgecloudsim/sample_application) (IDEs, we used Eclipse but any will work)
 		- Will output to console
-		- Same file given by EdgeCloudSim with some additions
+		- It is the same file given by EdgeCloudSim with some additions
+		- pFogSim/sim_results/ite(#) directory should exist at time of run (or run with appropriate permissions)
  - What you should have:
 	- Customizable Files:
 		- Network Topology (Node/Link XML Files)
