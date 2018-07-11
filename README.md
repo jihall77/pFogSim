@@ -13,7 +13,7 @@ This is still a work in progress as of 7/11/2018
 
 ## **Quick Summary**
  - General Outline of Classes
- 	- Insert Image here
+[Class Diagram]()
  - Details given below
 
 ## **How to Run** 
