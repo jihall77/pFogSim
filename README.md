@@ -48,41 +48,44 @@ This is still a work in progress as of 7/11/2018
 		- Will output to console
 		- It is the same file given by EdgeCloudSim with some additions
 		- pFogSim/sim_results/ite(#) directory should exist at time of run (or run with appropriate permissions)
- - What you should have:
-	- Customizable Files:
-		- Network Topology (Node/Link XML Files)
-			- I hope you have scripts or something available to make it faster for you
-		- Applications
-		- General Config files
-
-## **General Outline**: 
+## **Creating Custom Scenarios**
+ - Customizable Files: 
+ 	- Change DataInterpreter to fit data sets into XML formats
+	- All files that may need to be customized if desired:
+		- node_test.xml, link_test.xml
+		- [config files](https://github.com/jihall77/pFogSim/tree/master/scripts/sample_application/config)
+		- Everything will run appropriately
+## **General Outline + Comments**: 
 There are a ton of function calls not mentioned here that are necessary for the simulator to function, however are unnecessary to discuss in the context of the simulator as a whole.
 In honor of proper coding etiquette:
 ```
 less is more
 ```
+And with that said, here is everything on pFogSim. Most of the follow can be gathered from the code and attempts have been made to consistently document files, however documentation appears to be inadequate when using other simulators. If there needs to be further documentation, please let us know and it will be added quickly.
 
-### DataInterpreter → EdgeServerManager → VectorMobility → NetworkTopology → Clustering → Puddles → SimManager → SimLogger
+### **The Flow**
+
+#### [DataInterpreter](#datainterpreter) → [EdgeServerManager](#edgeservermanager) → [VectorMobility](#vectormobility) → [NetworkTopology](#networktopology) → [Clustering](#clustering) → [Puddles](#puddles) → [SimManager](#simmanager) → [SimLogger](#simlogger)
 
 
-DataInterpreter:
+### DataInterpreter:
  - Hard-coded
  - Made to take CSV files from City of Chicago and translate to XML 
  - Need to change if want to make any large files
  - Defines the MIN/MAX space of simulation (So mobile devices don't leave the simulation space)
  - Describe our network
   
-EdgeServerManager:
+### EdgeServerManager:
  - Reads links and nodes XML files -> Creates respective objects
  - Constructs network topology 
  
-VectorMobility:
+### VectorMobility:
  - Creates each mobile device starting at a random wireless access point (WAP)
  - Moves them according to random vectors that have been approximated to be around walking speed of 5km/hr
  - Creates all of the mobile devices and all of their positions throughout the entire simulator
  - Also updates which WAP connected to based on proximity
 
-NetworkTopology:
+### NetworkTopology:
  - Defines network and has all static links in network
  - Links don't actually have to be static:
  - FogNodes may move
@@ -90,21 +93,21 @@ NetworkTopology:
 	- All will update in SimManager
  - Lets clustering be created
  
-Clustering:
+### Clustering:
  - Goes through each level and clusters local nodes together to allow for local nodes to share puddles
  - Hierarchical Clustering Algorithm
  - Creates ability for Puddles
  
-Puddles:
+### Puddles:
  - Takes local puddles and attaches pieces to each other
  
-SimManager: 
+### SimManager: 
  - Creates all the tasks
  - Schedules the tasks that are waiting
  - Can update network topology -> clustering -> puddles if changes occur
 	- Moving FogNodes or FogNode removal can be implemented here
  - Schedules end of simulation -> Lots -> SimLogger
  
-SimLogger: 
+### SimLogger: 
  - Prints all of the information to output files/console
  - Info gets stored here throughout simulation and gets executed here
