@@ -18,21 +18,35 @@ This is still a work in progress as of 7/11/2018
 
 ## **How to Run** 
 (May have to change some of the files mentioned to tailor for your stuff)
- - 2 ways: 
-	- Scripts (Linux stuff) (Not too different from EdgeCloudSim)
-		- tail output files
-	- mainApp (IDEs)
+ - Two ways: 
+	- [Scripts](https://github.com/jihall77/pFogSim/tree/master/scripts/sample_application) (Not too different from EdgeCloudSim)
+		- May require changes in bash scripts to point at your desired files
+		- Compile with compile.sh
+		- Run single scenario with scenario_runner.sh
+		- Run multiple scenarios with run_scenarios.sh
+		```
+		./run_scenarios.sh 1 1
+		```
+		- The numbers passed into the script are the number of cores and iterations desired, respectively
+	- [mainApp.java](https://github.com/jihall77/pFogSim/tree/master/src/edu/boun/edgecloudsim/sample_application) (IDEs, we used Eclipse but any will work)
+		- Will output to console
+		- Same file given by EdgeCloudSim with some additions
  - What you should have:
-	- Customization Files:
+	- Customizable Files:
 		- Network Topology (Node/Link XML Files)
 			- I hope you have scripts or something available to make it faster for you
 		- Applications
 		- General Config files
 
-General: 
-Link to main
+## **General Outline**: 
+There are a ton of function calls not mentioned here that are necessary for the simulator to function, however are unnecessary to discuss in the context of the simulator as a whole.
+In honor of proper coding etiquette:
+```
+less is more
+```
 
-DataInterpreter -> EdgeServerManager -> VectorMobility -> NetworkTopology -> Clustering -> Puddles -> SimManager -> SimLogger
+### DataInterpreter → EdgeServerManager → VectorMobility → NetworkTopology → Clustering → Puddles → SimManager → SimLogger
+
 
 DataInterpreter:
  - Hard-coded
