@@ -1,12 +1,19 @@
-# pFogSim
-This is not the code you are looking for.
-What is pFogSim?
- - What it's made for
- - What it can do
- - Where it will go
+# pFogSim : A Simulator For Evaluating Dynamic and Layered Fog-Computing Environments
+This is still a work in progress as of 7/11/2018
 
-Quick/Dirty Summary
+**What is pFogSim?**
+
+ - pFogSim (/p/-fôg-/sɪm/) is a play off iFogSim (another popular simulator built on CloudSim)
+	- **p** is for **P**uddles, the HAFA (Hierarchical Autonomous Fog Architecture) representation of Fog Networks found here (insert link)
+	- **Fog** is from i**Fog**Sim (insert link) since it provided a lot of inspiration for this project
+	- **Sim** is from EdgeCloud**Sim** (insert link) since it provides a significant back-bone to make the project off of
+	- All of these are from the popular CloudSim (insert link)
+ - A simulator made to handle large-scale FOG networks with the HAFA Puddle Strategy to help evaluate the potential advantages/disadvantages within user-customizable scenarios
+ - Simulator is still in progress but what is seen here should already be present and tested in the simulator
+
+**Quick Summary**
  - General Outline of Classes
+ 	- Insert Image here
  - Details given below
 
 How to Run (May have to change some of the files mentioned to tailor for your stuff)
