@@ -67,7 +67,7 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
 
 #### [DataInterpreter](#datainterpreter) → [EdgeServerManager](#edgeservermanager) → [VectorMobility](#vectormobility) → [NetworkTopology](#networktopology) → [Clustering](#clustering) → [Puddles](#puddles) → [SimManager](#simmanager) → [SimLogger](#simlogger)
 
-
+#### Note: When I say mobile devices, I mean mobile devices, sensors, actuators; anything that is on the lowest level of the network and is interacting with the network.
 ### DataInterpreter:
  - Hard-coded
  - Made to take CSV files from City of Chicago and translate to XML 
@@ -83,7 +83,7 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
 ### VectorMobility:
  - Creates each mobile device starting at a random wireless access point (WAP)
  - Moves them according to random vectors that have been approximated to be around walking speed of 5km/h
- - Creates all of the mobile devices and all of their positions throughout the entire simulator
+ - Creates all of the mobile devices and all of their positions throughout the entire simulator. 
  - Also updates which WAP connected to based on proximity
 
 ### NetworkTopology:
@@ -117,7 +117,7 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
 
 ### MoreDataIntepreter:
  - We've separated the DataInterpreter from the rest of the code primarily to clean it up a little and allow for easier debugging
-#### Attributes:
+#### Elements:
  - int MAX_LEVELS : The highest number of levels being made in this network
  - String[] files : List of all files being imported to create levels
  - String[][] nodeSpecs : Array for typical FogNode specifications on each level
@@ -141,6 +141,7 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
 		- Each device at specified locations (imported from our files) is added to the *node* XML file with its respective level hardware specifications.
 		- Each device is then **linked** with the closest device on the level above it using nodeList. In the case of Universities, they connect to the two closest Universities as well. All devices below Universities will also connect to the closest University as their primary connection to the network.
 		- Once everything is run, you should have MIN/MAXES determined (these will be used by the MobilityModel later on) and the input files for the simulator are ready.
+ - void initialize() : Initializes all the hardware specifications for the network. This is fairly network-specific and should be changed when one is creating their own simulations to test.
  
 ### MoreEdgeServerManager:
  - EdgeServerManager should be fairly straight-forward in that if there is an error showing up here, it is most likely having to do with errors in the input files.
@@ -157,7 +158,29 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
   	- Takes in Cluster object and creates the HAFA Puddles
 
 ### MoreVectorMobility:
-
+ - VectorMobility is a little strange but is in charge of all the mobile devices/sensors/actuators
+ #### Elements:
+  - List<TreeMap<Double, Location>> treeMapArray : Contains all of the positions and information for all mobile devices over the entire time duration of the simulator. This is accessed outside through other methods for the rest of the simulator to have access to.
+  - MIN/MAX_LAT/LONG : Information passed from DataInterpreter to SimSettings and finally to here where it creates the boundaries for the mobile devices. 
+  - NetworkTopology network : Holds the network topology and gives needed information on the system to the methods.
+ #### Methods:
+  - void initialize() : Essentially does everything, all other methods are to be "getters". 
+  	- A list of access points is created for the system to keep track of which nodes can connect wirelessly with the mobile devices.
+		- This is insanely helpful when the network grows with few access points.
+	- All mobile devices are given random starting wireless access points with which they are connected.
+	- All devices are given random vectors that change for every entry into the large array.
+	- All device positions are then updated for the next moment in time for the simulator and WAPs are updated to connect to the closest nearby. Voronoi implementations should exist here to follow along with the HAFA structure however there have been issues with our implementation of the code. (Insert link here for Voronoi stuffs)
+ - Quick note on the treeMapArray:
+ 	- This structure was made to hold all of the positions of all the mobile devices for all time *t* in the simulator.
+	- Let's take a look at a specific line of code in the initialization function:
+	```
+	treeMap.put(treeMap.lastKey()+1, new Location(wlan_id, x_pos + right, y_pos + up));
+	```
+		where wlan_id, x_pos + right, y_pos + up are the values to be entered for the next section.
+	- This section of code is a bit strange and here's why:
+		- treeMap.lastKey()+1 is to serve as the index in which we put the new Location stuff. How this works is placement within this map is relative to the previous time. What will happen in this line is that there will be a new updated position for these mobile devices for every second in the simulation. 
+		- Ex. A simulation runs for 1hr => 60mins => 3600sec so treeMap.size() = 3600 when all is said and done.
+		- This is helpful because now we have some frame of reference to make our *right/up* vectors. We can change either *right* and *up* or the *t* in treeMap.lastKey()+*t* to change how large the magnitude of the mobility vector is.
 ### MoreNetworkTopology:
 
 ### MoreClustering:
