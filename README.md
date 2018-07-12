@@ -74,7 +74,7 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
  - Need to change if want to make any large files
  - Defines the MIN/MAX space of simulation (So mobile devices don't leave the simulation space)
  - Customizable adapter for anything you want
- - [More Below](#moredatainterpreter)
+ - [More Below](#moredataintepreter)
   
 ### EdgeServerManager:
  - Reads links and nodes XML files -> Creates respective objects
@@ -82,7 +82,7 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
  
 ### VectorMobility:
  - Creates each mobile device starting at a random wireless access point (WAP)
- - Moves them according to random vectors that have been approximated to be around walking speed of 5km/hr
+ - Moves them according to random vectors that have been approximated to be around walking speed of 5km/h
  - Creates all of the mobile devices and all of their positions throughout the entire simulator
  - Also updates which WAP connected to based on proximity
 
@@ -124,13 +124,13 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
  	- It's assumed that an organization setting this network up would desire as much homogeneity within the network for simplicity reasons
  - ArrayList<Double[]> nodeList : When importing levels, this will hold all the nodes from the previous list (Or the list of nodes the imported list should connect to)
  - ArrayList<Double[]> tempList : When importing levels, this will be used to store the current list of nodes such that no level is lost. This is later copied over to nodeList if that is what our topology dictates
- - MIN/MAX_LAT/LONG : Hold the boundary restrictions for the simulation space. This is updated to contain all of the nodes added such that none exceed the boundary of the simulated city
- - universitiesYet : Completely for the base test built-in. Used to see if universities have been imported yet (This will make more sense later, I swear)
- - universitiesLinked : Essentially serves the same purpose as the aforementioned universitiesYet but is used for determining whether universities have been linked into the network yet.
- - xmlFile/FW/BR : Importing files, (link to Java page with these)
+ - double MIN/MAX_LAT/LONG : Hold the boundary restrictions for the simulation space. This is updated to contain all of the nodes added such that none exceed the boundary of the simulated city
+ - boolean universitiesYet : Completely for the base test built-in. Used to see if universities have been imported yet (This will make more sense later, I swear)
+ - boolean universitiesLinked : Essentially serves the same purpose as the aforementioned universitiesYet but is used for determining whether universities have been linked into the network yet.
+ - File, FileWriter, BufferWriterxmlFile/FW/BR : Importing files, (link to Java page with these)
 #### Methods:
  - double measure : Takes pair of lat/long coordinates and determines distance between them using Haversine Formula. This is due to the fact that we aren't using rectangular coordinates to define the surface of a spherical object like the Earth.
- - readFile() : Throws IO Exception since we are reading and writing files
+ - void readFile() : Throws IO Exception since we are reading and writing files
  	- Variables:
 		- PrintWriter node : the XML-converted file containing all nodes and respective information
 		- PrintWriter links : the XML-converted file containing all links and respective information
@@ -140,6 +140,30 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
 		- The levels in *files* are read from the Cloud (Level #6) down to the sensor/actuator/mobile device level (Level #0). This seeks to minimize the amount of information we must keep track of while importing additional files.
 		- Each device at specified locations (imported from our files) is added to the *node* XML file with its respective level hardware specifications.
 		- Each device is then **linked** with the closest device on the level above it using nodeList. In the case of Universities, they connect to the two closest Universities as well. All devices below Universities will also connect to the closest University as their primary connection to the network.
+		- Once everything is run, you should have MIN/MAXES determined (these will be used by the MobilityModel later on) and the input files for the simulator are ready.
  
-### EdgeServerManager:
- - More stuff here
+### MoreEdgeServerManager:
+ - EdgeServerManager should be fairly straight-forward in that if there is an error showing up here, it is most likely having to do with errors in the input files.
+ #### What it does when it imports...:
+  - Nodes:
+  	- Creates DataCenters and Hosts for EdgeCloudSim/CloudSim to work with later. 
+	- Creates NodeSim objects and collects them into a list (*nodesForTopography*)
+		- Construction of NodeSim objects varies slightly based on certain attributes the FogNodes have.
+  - Links:
+  	- Creates Link objects and adds them to a list (*linksForTopography*)
+  - Cluster:
+  	- *nodesForTopography* is passed to FogHierCluster to create the clusters for each level which is passed to...
+  - Puddles: 
+  	- Takes in Cluster object and creates the HAFA Puddles
+
+### MoreVectorMobility:
+
+### MoreNetworkTopology:
+
+### MoreClustering:
+
+### MorePuddles:
+
+### MoreSimManager:
+
+### MoreSimLogger:
