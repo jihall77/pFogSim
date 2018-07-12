@@ -149,6 +149,7 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
 		- Each device is then **linked** with the closest device on the level above it using nodeList. In the case of Universities, they connect to the two closest Universities as well. All devices below Universities will also connect to the closest University as their primary connection to the network.
 		- Once everything is run, you should have MIN/MAXES determined (these will be used by the MobilityModel later on) and the input files for the simulator are ready.
  - void initialize() : Initializes all the hardware specifications for the network. This is fairly network-specific and should be changed when one is creating their own simulations to test.
+ ---
  
 ### EdgeServerManager Details:
  - EdgeServerManager should be fairly straight-forward in that if there is an error showing up here, it is most likely having to do with errors in the input files.
@@ -163,6 +164,7 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
   	- *nodesForTopography* is passed to FogHierCluster to create the clusters for each level which is passed to...
   - Puddles: 
   	- Takes in Cluster object and creates the HAFA Puddles
+---
 
 ### VectorMobility Details:
  - VectorMobility is a little strange but is in charge of all the mobile devices/sensors/actuators
@@ -188,6 +190,7 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
 		- treeMap.lastKey()+1 is to serve as the index in which we put the new Location stuff. How this works is placement within this map is relative to the previous time. What will happen in this line is that there will be a new updated position for these mobile devices for every second in the simulation. 
 		- Ex. A simulation runs for 1hr => 60mins => 3600sec so treeMap.size() = 3600 when all is said and done.
 		- This is helpful because now we have some frame of reference to make our *right/up* vectors. We can change either *right* and *up* or the *t* in treeMap.lastKey()+*t* to change how large the magnitude of the mobility vector is.
+---		
 		
 ### NetworkTopology Details:
  - iFogSim-esque Network Topology is used to help construct the Puddles and allow for a more-realistic simulation of real-life networks.
@@ -201,6 +204,7 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
  #### Methods:
   - boolean validateTopology() : Ensures there are no dangling references (links with only one connection) or islands (nodes with no connections to the rest of network)
   - NodeSim findNode() : Locates the closest node to the given location. One can request specifically a wireless access point if desired.
+---	
 	
 ### Clustering Details:
  - This code was ported over from other work done at Auburn regarding HAFA Puddles and thus was plugged in minimally. 
@@ -209,9 +213,14 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
   - *FogHierCluster* object is made in *EdgeServerManager* and is passed the list of all nodes within the network. 
   - *FogHierCluster* creates a *FogCluster object* and passes it each layer of nodes. Clusters are made at each level based on their proximity to other nodes. The ending result for each layer is a bunch of connected nodes that are group in accordance to their location. Each cluster has a varying number of nodes within it, but this is expected because if there were constraints some strange and unintuitive designs may arise.
   - This section of the code is in need of cleaning to make sure there are no vestigial files laying around.
+---  
   
 ### Puddles Details:
  - The Puddle objects exist
+--- 
+ 
 ### SimManager Details:
+
+---
 
 ### SimLogger Details:
