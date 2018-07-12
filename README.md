@@ -79,28 +79,33 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
 ### EdgeServerManager:
  - Reads links and nodes XML files -> Creates respective objects
  - Constructs network topology 
+ - [More Below](#moreedgeservermanager)
  
 ### VectorMobility:
  - Creates each mobile device starting at a random wireless access point (WAP)
  - Moves them according to random vectors that have been approximated to be around walking speed of 5km/h
  - Creates all of the mobile devices and all of their positions throughout the entire simulator. 
  - Also updates which WAP connected to based on proximity
+ - [More Below](#morevectormobility)
 
 ### NetworkTopology:
  - Defines network and has all static links in network
- - Links don't actually have to be static:
+ - Links don't actually have to be static
  - FogNodes may move
  	- FogNodes may be removed
 	- All will update in SimManager
  - Lets clustering be created
+ - [More Below](#morenetworktopology)
  
 ### Clustering:
  - Goes through each level and clusters local nodes together to allow for local nodes to share puddles
  - Hierarchical Clustering Algorithm
  - Creates ability for Puddles
+ - [More Below](#moreclustering)
  
 ### Puddles:
  - Takes local puddles and attaches pieces to each other
+ - [More Below](#morepuddles)
  
 ### SimManager: 
  - Creates all the tasks
@@ -108,10 +113,12 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
  - Can update network topology -> clustering -> puddles if changes occur
 	- Moving FogNodes or FogNode removal can be implemented here
  - Schedules end of simulation -> Lots -> SimLogger
+ - [More Below](#moresimmanager)
  
 ### SimLogger: 
  - Prints all of the information to output files/console
  - Info gets stored here throughout simulation and gets executed here
+ - [More Below](#moresimlogger)
 
 ## **Classes in Detail**:
 
@@ -176,13 +183,25 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
 	```
 	treeMap.put(treeMap.lastKey()+1, new Location(wlan_id, x_pos + right, y_pos + up));
 	```
-		where wlan_id, x_pos + right, y_pos + up are the values to be entered for the next section.
+	- where wlan_id, x_pos + right, y_pos + up are the values to be entered for the next section.
 	- This section of code is a bit strange and here's why:
 		- treeMap.lastKey()+1 is to serve as the index in which we put the new Location stuff. How this works is placement within this map is relative to the previous time. What will happen in this line is that there will be a new updated position for these mobile devices for every second in the simulation. 
 		- Ex. A simulation runs for 1hr => 60mins => 3600sec so treeMap.size() = 3600 when all is said and done.
 		- This is helpful because now we have some frame of reference to make our *right/up* vectors. We can change either *right* and *up* or the *t* in treeMap.lastKey()+*t* to change how large the magnitude of the mobility vector is.
+		
 ### MoreNetworkTopology:
-
+ - iFogSim-esque Network Topology is used to help construct the Puddles and allow for a more-realistic simulation of real-life networks.
+ #### Elements:
+  - HashSet<Link> links : All of the Link objects in the network.
+  - HashSet<NodeSim> nodes : All of the NodeSim objects in the network.
+  - HashSet<NodeSim> mobileNodes : All of the NodeSim objects in the network that have the ability to move.
+  - TreeSet<Location> coords : All of the locations in the network where there is an object.
+  - ArrayList<Puddle> pond : A cute name for a grouping of Puddles in the network.
+	
+ #### Methods:
+  - boolean validateTopology() : Ensures there are no dangling references (links with only one connection) or islands (nodes with no connections to the rest of network)
+  - NodeSim findNode() : Locates the closest node to the given location. One can request specifically a wireless access point if desired.
+	
 ### MoreClustering:
 
 ### MorePuddles:
