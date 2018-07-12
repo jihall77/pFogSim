@@ -74,19 +74,19 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
  - Need to change if want to make any large files
  - Defines the MIN/MAX space of simulation (So mobile devices don't leave the simulation space)
  - Customizable adapter for anything you want
- - [More Below](#moredataintepreter)
+ - [More Below](#dataintepreter-details)
   
 ### EdgeServerManager:
  - Reads links and nodes XML files -> Creates respective objects
  - Constructs network topology 
- - [More Below](#moreedgeservermanager)
+ - [More Below](#edgeservermanager-details)
  
 ### VectorMobility:
  - Creates each mobile device starting at a random wireless access point (WAP)
  - Moves them according to random vectors that have been approximated to be around walking speed of 5km/h
  - Creates all of the mobile devices and all of their positions throughout the entire simulator. 
  - Also updates which WAP connected to based on proximity
- - [More Below](#morevectormobility)
+ - [More Below](#vectormobility-details)
 
 ### NetworkTopology:
  - Defines network and has all static links in network
@@ -95,17 +95,17 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
  	- FogNodes may be removed
 	- All will update in SimManager
  - Lets clustering be created
- - [More Below](#morenetworktopology)
+ - [More Below](#networktopology-details)
  
 ### Clustering:
  - Goes through each level and clusters local nodes together to allow for local nodes to share puddles
  - Hierarchical Clustering Algorithm
  - Creates ability for Puddles
- - [More Below](#moreclustering)
+ - [More Below](#clustering-details)
  
 ### Puddles:
  - Takes local puddles and attaches pieces to each other
- - [More Below](#morepuddles)
+ - [More Below](#puddles-details)
  
 ### SimManager: 
  - Creates all the tasks
@@ -113,16 +113,16 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
  - Can update network topology -> clustering -> puddles if changes occur
 	- Moving FogNodes or FogNode removal can be implemented here
  - Schedules end of simulation -> Lots -> SimLogger
- - [More Below](#moresimmanager)
+ - [More Below](#simmanager-details)
  
 ### SimLogger: 
  - Prints all of the information to output files/console
  - Info gets stored here throughout simulation and gets executed here
- - [More Below](#moresimlogger)
+ - [More Below](#simlogger-details)
 
 ## **Classes in Detail**:
 
-### MoreDataIntepreter:
+### DataIntepreter Details:
  - We've separated the DataInterpreter from the rest of the code primarily to clean it up a little and allow for easier debugging
 #### Elements:
  - int MAX_LEVELS : The highest number of levels being made in this network
@@ -150,7 +150,7 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
 		- Once everything is run, you should have MIN/MAXES determined (these will be used by the MobilityModel later on) and the input files for the simulator are ready.
  - void initialize() : Initializes all the hardware specifications for the network. This is fairly network-specific and should be changed when one is creating their own simulations to test.
  
-### MoreEdgeServerManager:
+### EdgeServerManager Details:
  - EdgeServerManager should be fairly straight-forward in that if there is an error showing up here, it is most likely having to do with errors in the input files.
  #### What it does when it imports...:
   - Nodes:
@@ -164,7 +164,7 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
   - Puddles: 
   	- Takes in Cluster object and creates the HAFA Puddles
 
-### MoreVectorMobility:
+### VectorMobility Details:
  - VectorMobility is a little strange but is in charge of all the mobile devices/sensors/actuators
  #### Elements:
   - List<TreeMap<Double, Location>> treeMapArray : Contains all of the positions and information for all mobile devices over the entire time duration of the simulator. This is accessed outside through other methods for the rest of the simulator to have access to.
@@ -189,7 +189,7 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
 		- Ex. A simulation runs for 1hr => 60mins => 3600sec so treeMap.size() = 3600 when all is said and done.
 		- This is helpful because now we have some frame of reference to make our *right/up* vectors. We can change either *right* and *up* or the *t* in treeMap.lastKey()+*t* to change how large the magnitude of the mobility vector is.
 		
-### MoreNetworkTopology:
+### NetworkTopology Details:
  - iFogSim-esque Network Topology is used to help construct the Puddles and allow for a more-realistic simulation of real-life networks.
  #### Elements:
   - HashSet<Link> links : All of the Link objects in the network.
@@ -202,10 +202,16 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
   - boolean validateTopology() : Ensures there are no dangling references (links with only one connection) or islands (nodes with no connections to the rest of network)
   - NodeSim findNode() : Locates the closest node to the given location. One can request specifically a wireless access point if desired.
 	
-### MoreClustering:
+### Clustering Details:
+ - This code was ported over from other work done at Auburn regarding HAFA Puddles and thus was plugged in minimally. 
+ 
+ #### Order of Operations:
+  - *FogHierCluster* object is made in *EdgeServerManager* and is passed the list of all nodes within the network. 
+  - *FogHierCluster* creates a *FogCluster object* and passes it each layer of nodes. Clusters are made at each level based on their proximity to other nodes. The ending result for each layer is a bunch of connected nodes that are group in accordance to their location. Each cluster has a varying number of nodes within it, but this is expected because if there were constraints some strange and unintuitive designs may arise.
+  - This section of the code is in need of cleaning to make sure there are no vestigial files laying around.
+  
+### Puddles Details:
+ - The Puddle objects exist
+### SimManager Details:
 
-### MorePuddles:
-
-### MoreSimManager:
-
-### MoreSimLogger:
+### SimLogger Details:
