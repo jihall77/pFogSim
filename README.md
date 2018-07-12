@@ -73,7 +73,8 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
  - Made to take CSV files from City of Chicago and translate to XML 
  - Need to change if want to make any large files
  - Defines the MIN/MAX space of simulation (So mobile devices don't leave the simulation space)
- - Describe our network
+ - Customizable adapter for anything you want
+ - [More Below](#moredatainterpreter)
   
 ### EdgeServerManager:
  - Reads links and nodes XML files -> Creates respective objects
@@ -111,3 +112,34 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
 ### SimLogger: 
  - Prints all of the information to output files/console
  - Info gets stored here throughout simulation and gets executed here
+
+## **Classes in Detail**:
+
+### MoreDataIntepreter:
+ - We've separated the DataInterpreter from the rest of the code primarily to clean it up a little and allow for easier debugging
+#### Attributes:
+ - int MAX_LEVELS : The highest number of levels being made in this network
+ - String[] files : List of all files being imported to create levels
+ - String[][] nodeSpecs : Array for typical FogNode specifications on each level
+ 	- It's assumed that an organization setting this network up would desire as much homogeneity within the network for simplicity reasons
+ - ArrayList<Double[]> nodeList : When importing levels, this will hold all the nodes from the previous list (Or the list of nodes the imported list should connect to)
+ - ArrayList<Double[]> tempList : When importing levels, this will be used to store the current list of nodes such that no level is lost. This is later copied over to nodeList if that is what our topology dictates
+ - MIN/MAX_LAT/LONG : Hold the boundary restrictions for the simulation space. This is updated to contain all of the nodes added such that none exceed the boundary of the simulated city
+ - universitiesYet : Completely for the base test built-in. Used to see if universities have been imported yet (This will make more sense later, I swear)
+ - universitiesLinked : Essentially serves the same purpose as the aforementioned universitiesYet but is used for determining whether universities have been linked into the network yet.
+ - xmlFile/FW/BR : Importing files, (link to Java page with these)
+#### Methods:
+ - double measure : Takes pair of lat/long coordinates and determines distance between them using Haversine Formula. This is due to the fact that we aren't using rectangular coordinates to define the surface of a spherical object like the Earth.
+ - readFile() : Throws IO Exception since we are reading and writing files
+ 	- Variables:
+		- PrintWriter node : the XML-converted file containing all nodes and respective information
+		- PrintWriter links : the XML-converted file containing all links and respective information
+		- String[] nodeLoc + Double[] temp : Temporary variables to hold input line containing information (Note that we don't care about the first value since they are rather arbitrary and will have no meaning in the simulator. For this, it has been replaced with **counter**.
+		- int counter : Keeps track of how many FogNodes have been created and also functions as an ID for all nodes.
+	- Functionality:
+		- The levels in *files* are read from the Cloud (Level #6) down to the sensor/actuator/mobile device level (Level #0). This seeks to minimize the amount of information we must keep track of while importing additional files.
+		- Each device at specified locations (imported from our files) is added to the *node* XML file with its respective level hardware specifications.
+		- Each device is then **linked** with the closest device on the level above it using nodeList. In the case of Universities, they connect to the two closest Universities as well. All devices below Universities will also connect to the closest University as their primary connection to the network.
+ 
+### EdgeServerManager:
+ - More stuff here
