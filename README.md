@@ -218,7 +218,8 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
 ### Puddles Details:
  - The simulator is meant to be tested with the HAFA Puddle Structure proposed by Sanjeev Baskiyar and Shehenaz Shaik at Auburn University. The simulator is made to test the usability of Puddles in these Fog Architectures, however may be extended to various other task-placement strategies such as Cloud-only or Edge-only (both of which are also built into this simulator). 
  - The following image should demonstrate how Puddles are supposed to work:
- ![Puddle Diagram](https://github.com/jihall77/pFogSim/blob/master/class_diagram.png)
+ ![Puddle Diagram](https://github.com/jihall77/pFogSim/blob/master/puddlelayout.jpg)
+ 
 --- 
  
 ### SimManager Details:
