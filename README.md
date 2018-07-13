@@ -4,7 +4,7 @@ Last Edit by Clayton Johnson on 7/12/2018
 ## **What is pFogSim?**
 
  - pFogSim (/p/-fôg-/sɪm/) is a play off iFogSim (another popular simulator built on CloudSim)
-	- **p** is for **P**uddles, the HAFA (Hierarchical Autonomous Fog Architecture) representation of Fog Networks found here (insert link)
+	- **p** is for **P**uddles, the HAFA (Hierarchical Autonomous Fog Architecture) representation of Fog Networks found here (insert link for paper when it comes out)
 	- **Fog** is from i**Fog**Sim ([found here](https://github.com/Cloudslab/iFogSim)) since it provided a lot of inspiration for this project
 	- **Sim** is from EdgeCloud**Sim** ([found here](https://github.com/CagataySonmez/EdgeCloudSim)) since it provides a significant back-bone to make the project off of
 	- All of these are from the popular CloudSim ([found here](https://github.com/Cloudslab/cloudsim))
