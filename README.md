@@ -5,9 +5,9 @@ Last Edit by Clayton Johnson on 7/12/2018
 
  - pFogSim (/p/-fôg-/sɪm/) is a play off iFogSim (another popular simulator built on CloudSim)
 	- **p** is for **P**uddles, the HAFA (Hierarchical Autonomous Fog Architecture) representation of Fog Networks found here (insert link)
-	- **Fog** is from i**Fog**Sim (insert link) since it provided a lot of inspiration for this project
-	- **Sim** is from EdgeCloud**Sim** (insert link) since it provides a significant back-bone to make the project off of
-	- All of these are from the popular CloudSim (insert link)
+	- **Fog** is from i**Fog**Sim ([found here](https://github.com/Cloudslab/iFogSim)) since it provided a lot of inspiration for this project
+	- **Sim** is from EdgeCloud**Sim** ([found here](https://github.com/CagataySonmez/EdgeCloudSim)) since it provides a significant back-bone to make the project off of
+	- All of these are from the popular CloudSim ([found here](https://github.com/Cloudslab/cloudsim))
  - A simulator made to handle large-scale FOG networks with the HAFA Puddle Strategy to help evaluate the potential advantages/disadvantages within user-customizable scenarios
  - Simulator is still in progress but what is seen here should already be present and tested in the simulator
 
@@ -266,7 +266,6 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
 	}
 	((ESBModel) SimManager.getInstance().getNetworkModel()).getNetworkTopology().setMobileNode(nodes);
 	//Goes through all devices and checks to see if WAP ids have changed
-	//Currently checks devices every 12 seconds in simulation (which runs for 20mins {Duration: 0.333.. hrs})
 	double time = CloudSim.clock();
 	for(int q = 0; q < mobilityModel.getSize(); q++) {
 		//If the id has changed, update the value in our list and move the cloudlet to a more appropriate VM
@@ -296,3 +295,5 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
 ---
 
 ### SimLogger Details:
+ - SimLogger accumulates details on the simulator and how it is running throughout execution. Many of the variables are output only once per simulation when *simStopped* is invoked at the end. The metrics here may easily be changed as that all of the information needed is made available in SimLogger.
+ - This section of the code is fairly straight-forward and exists purely to output information to the output files and console.
