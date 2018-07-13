@@ -233,6 +233,7 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
   - Once everything is up and running, the simulation's task scheduling is in charge. In order for something to occur in the simulation, tasks must be submitted to CloudSim where they will be either processed or passed to other sections of the simulator.
   - One section of the code that is seen frequently is the following section:
   ```
+  //If the scheduled task has an id of PRINT_PROGRESS
   case PRINT_PROGRESS:
 	//Updates the positions of FOG Devices if necessary
 	HashSet<Link> links = ((ESBModel)SimManager.getInstance().getNetworkModel()).getNetworkTopology().getLinks();
@@ -248,83 +249,50 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
 		if(currentLoc.getYPos() + node.getVector().getYPos() > MAX_HEIGHT) 
 			node.setVector(new Location(node.getVector().getXPos(), node.getVector().getYPos() * -1));
 			
-	//Change links
-					for(Link link : links) {
-						if(link.getLeftLink().equals(currentLoc)) {
-							//Sets that location to what it will be in a bit
-							link.setLeftLink(new Location(currentLoc.getXPos() + node.getVector().getXPos(), currentLoc.getYPos() + node.getVector().getYPos()));
-							//SimLogger.printLine("Left Link changed");
-						}
-						else if(link.getRightLink().equals(currentLoc)) {
-							//Sets that location to what it will be in a bit
-							link.setRightLink(new Location(currentLoc.getXPos() + node.getVector().getXPos(), currentLoc.getYPos() + node.getVector().getYPos()));
-							//SimLogger.printLine("Right Link changed");
-						}
-							
-					//Change nodes
-					//moving = EdgeServerManager.getInstance().findHostByLoc(node.getLocation().getXPos(), node.getLocation().getYPos());
-					
-					//moving.setPlace(new Location(node.getWlanId(), node.getLocation().getXPos(), node.getLocation().getYPos()));
-					//movingNodes.add(moving);
-					/*if(node.getWlanId() == 300) {
-						SimLogger.printLine(node.toString());
-						for (Link link : node.getEdges()) {
-							SimLogger.print(link.getLeftLink().getXPos() + ", " + link.getLeftLink().getYPos() + " ");
-							SimLogger.printLine(link.getRightLink().getXPos() + ", " + link.getRightLink().getYPos());
-						}
-					}*/
-					//int x1 = node.getLocation().getXPos();
-					//int x2 = moving.getLocation().getXPos();
-					//int y1 = node.getLocation().getYPos();
-					//int y2 = moving.getLocation().getYPos();
-					//SimLogger.printLine("Node location updated");
-					}
-					node.setLocation(new Location(currentLoc.getXPos() + node.getVector().getXPos(), currentLoc.getYPos() + node.getVector().getYPos()));
-					//newNodes.add(node);
-				}
-				/*for(Link link : links) {
-					newLinks.add(link);
-				}*/
-				((ESBModel) SimManager.getInstance().getNetworkModel()).getNetworkTopology().setMobileNode(nodes);
-				//Rerun clustering and puddles
-				//FogHierCluster clusterObject = new FogHierCluster(newNodes);
-				//List<Puddle> puds = networkTopology.getPuddles();
-				//networkTopology = new NetworkTopology(newNodes, newLinks);
-				/*if(!((ESBModel) SimManager.getInstance().getNetworkModel()).getNetworkTopology().cleanNodes()) {
-					SimLogger.printLine("Topology is not valid");
-					System.exit(0);
-				}*/
-				//networkTopology.setPuddles(puds);
-				//edgeServerManager.setHosts(movingNodes);
-				//Sets network topology and uses it to make the Puddle Objects
-				//((ESBModel) SimManager.getInstance().getNetworkModel()).setNetworkTopology(networkTopology);
-				//networkTopology.setPuddles(edgeServerManager.makePuddles(clusterObject));
-				
-				//Goes through all devices and checks to see if WAP ids have changed
-				//	Currently checks devices every 12 seconds in simulation (which runs for 20mins {Duration: 0.333.. hrs})
-				double time = CloudSim.clock();
-				for(int q = 0; q < mobilityModel.getSize(); q++) {
-					//If the id has changed, update the value in our list and move the cloudlet to a more appropriate VM
-					if(wapIdList[q] != mobilityModel.getWlanId(q, time)) {
-						wapIdList[q] = mobilityModel.getWlanId(q, time);
-						if (mobileDeviceManager.getCloudletList().size() > q) {
-							Task task = (Task) mobileDeviceManager.getCloudletList().get(q);
-							task.setSubmittedLocation(mobilityModel.getLocation(q, time));
-							//SimLogger.printLine("MIGRATION!!!!!!!!!!!!!!!!!!");
-							mobileDeviceManager.migrateTask(task);
-						}
-					}
-				}
-				//Prints progress
-				int progress = (int)((CloudSim.clock()*100)/SimSettings.getInstance().getSimulationTime());
-				if(progress % 10 == 0)
-					SimLogger.print(Integer.toString(progress));
-				else
-					SimLogger.print(".");
-				if(CloudSim.clock() < SimSettings.getInstance().getSimulationTime())
-					schedule(getId(), SimSettings.getInstance().getSimulationTime()/100, PRINT_PROGRESS);
-				break;
+		//Change links
+		for(Link link : links) {
+			if(link.getLeftLink().equals(currentLoc)) {
+				//Sets that location to what it will be in a bit
+				link.setLeftLink(new Location(currentLoc.getXPos() + node.getVector().getXPos(), currentLoc.getYPos() + node.getVector().getYPos()));
+				//SimLogger.printLine("Left Link changed");
+			}
+			else if(link.getRightLink().equals(currentLoc)) {
+				//Sets that location to what it will be in a bit
+				link.setRightLink(new Location(currentLoc.getXPos() + node.getVector().getXPos(), currentLoc.getYPos() + node.getVector().getYPos()));
+				//SimLogger.printLine("Right Link changed");
+			}
+		}
+		node.setLocation(new Location(currentLoc.getXPos() + node.getVector().getXPos(), currentLoc.getYPos() + node.getVector().getYPos()));
+	}
+	((ESBModel) SimManager.getInstance().getNetworkModel()).getNetworkTopology().setMobileNode(nodes);
+	//Goes through all devices and checks to see if WAP ids have changed
+	//Currently checks devices every 12 seconds in simulation (which runs for 20mins {Duration: 0.333.. hrs})
+	double time = CloudSim.clock();
+	for(int q = 0; q < mobilityModel.getSize(); q++) {
+		//If the id has changed, update the value in our list and move the cloudlet to a more appropriate VM
+		if(wapIdList[q] != mobilityModel.getWlanId(q, time)) {
+			wapIdList[q] = mobilityModel.getWlanId(q, time);
+			if (mobileDeviceManager.getCloudletList().size() > q) {
+				Task task = (Task) mobileDeviceManager.getCloudletList().get(q);
+				task.setSubmittedLocation(mobilityModel.getLocation(q, time));
+				mobileDeviceManager.migrateTask(task);
+			}
+		}
+	}
+	//Prints progress
+	int progress = (int)((CloudSim.clock()*100)/SimSettings.getInstance().getSimulationTime());
+	if(progress % 10 == 0)
+		SimLogger.print(Integer.toString(progress));
+	else
+		SimLogger.print(".");
+	if(CloudSim.clock() < SimSettings.getInstance().getSimulationTime())
+		schedule(getId(), SimSettings.getInstance().getSimulationTime()/100, PRINT_PROGRESS);
+	break;
   ```
+  - This section of the code has two purposes: migrating services in the event of users/mobile devices relocating during the time of the simulation and printing the progress of the simulator to the output file (or console) to improve usability and user experience.
+  - The first section checks if any mobile devices have changed WAPs and, if so, moves the location of the task being executed for said device. Upon migration, data transfer cost and bandwidth is accounted for to perform as realistically as possible.
+  	- This service migration is meant to be similar to changing access points on a mobile device such as a phone. If phone-service data is used to download a webpage that requires consistent data input/output such as streaming, when this device changes to a Wi-Fi connection in the middle of the stream, the network will change the packet routes to account for the transfer. This service migration is an essential step in accounting for realistic networks in which heavy transfer rates combined with heavy data transfers are necessary. 
+	- Service migration would most likely benefit from working on an id-based network instead of that of a location-based due to various complications that may arise. However, considering that having multiple wireless access points within a space of less than 10cm would be strange and potentially degrading to the signal strength due to excess noise in the system, there is little to no need to change over to id-based until this issue is arisen.
 ---
 
 ### SimLogger Details:
