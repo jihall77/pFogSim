@@ -30,7 +30,7 @@ Last Edit by Clayton Johnson on 7/12/2018
 		- The numbers passed into the script are the number of cores and iterations desired, respectively
 		- When these are run, they will create directories inside of the output file in the linked directory. A sample run may look like the following:
 		```
-		~$ ./run_scenarios 4 10
+		~$ ./run_scenarios 1 1
 		~$ tail -f /pFogSim/scripts/sample_application/output/11-07-2018_11-52/default_config/ite1.log
 		Simulation setting file, output folder and iteration number are not provided! Using default ones...
 		Simulation started at 11/07/2018 11:52:21
