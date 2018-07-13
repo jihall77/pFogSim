@@ -101,10 +101,10 @@ public class mainApp {
 		{
 			for(int k=0; k<SS.getSimulationScenarios().length; k++)
 			{
-				for(int i=0; i<SS.getOrchestratorPolicies().length; i++)
+				for(int i=0; i<1; i++)
 				{
 					String simScenario = SS.getSimulationScenarios()[k];
-					String orchestratorPolicy = SS.getOrchestratorPolicies()[i];
+					String orchestratorPolicy = SS.getOrchestratorPolicies()[iterationNumber - 1];
 					Date ScenarioStartDate = Calendar.getInstance().getTime();
 					now = df.format(ScenarioStartDate);
 					

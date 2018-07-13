@@ -21,6 +21,7 @@ import edu.auburn.pFogSim.netsim.ESBModel;
 import edu.auburn.pFogSim.orchestrator.CentralOrchestrator;
 import edu.auburn.pFogSim.orchestrator.CloudOnlyOrchestrator;
 import edu.auburn.pFogSim.orchestrator.EdgeOnlyOrchestrator;
+import edu.auburn.pFogSim.orchestrator.LocalOnlyOrchestrator;
 import edu.auburn.pFogSim.orchestrator.PuddleOrchestrator;
 import edu.boun.edgecloudsim.core.ScenarioFactory;
 import edu.boun.edgecloudsim.core.SimSettings.APP_TYPES;
@@ -66,6 +67,9 @@ public class SampleScenarioFactory implements ScenarioFactory {
 		}
 		else if (simScenario.equals("EDGE_ONLY")) {
 			return new EdgeOnlyOrchestrator(orchestratorPolicy, simScenario);
+		}
+		else if (simScenario.equals("LOCAL")) {
+			return new LocalOnlyOrchestrator(orchestratorPolicy, simScenario);
 		}
 		return null;
 	}

@@ -23,11 +23,11 @@ import edu.boun.edgecloudsim.edge_server.EdgeVM;
 import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
 
-public class EdgeOnlyOrchestrator extends EdgeOrchestrator {
+public class LocalOnlyOrchestrator extends EdgeOrchestrator {
 
 	ArrayList<EdgeHost> hosts;
 	
-	public EdgeOnlyOrchestrator(String _policy, String _simScenario) {
+	public LocalOnlyOrchestrator(String _policy, String _simScenario) {
 		super(_policy, _simScenario);
 	}
 	/**
@@ -76,10 +76,10 @@ public class EdgeOnlyOrchestrator extends EdgeOrchestrator {
 		DistRadix sort = new DistRadix(hosts, task.getSubmittedLocation());//use radix sort based on distance from task
 		LinkedList<EdgeHost> nodes = sort.sortNodes();
 		EdgeHost host = nodes.poll();
-		while(!goodHost(host, task)) {
-			host = nodes.poll();//find the closest node capable of handling the task
+		if(goodHost(host, task)) {
+			return host;
 		}
-		return host;
+		return null;
 	}
 
 }
