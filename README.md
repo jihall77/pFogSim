@@ -167,7 +167,7 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
 ---
 
 ### VectorMobility Details:
- - VectorMobility is a little strange but is in charge of all the mobile devices/sensors/actuators
+ - VectorMobility is a little strange but is in charge of all the mobile devices. This one deserves significant detail.
  #### Elements:
   - List<TreeMap<Double, Location>> treeMapArray : Contains all of the positions and information for all mobile devices over the entire time duration of the simulator. This is accessed outside through other methods for the rest of the simulator to have access to.
   - MIN/MAX_LAT/LONG : Information passed from DataInterpreter to SimSettings and finally to here where it creates the boundaries for the mobile devices. 
@@ -219,11 +219,15 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
  - The simulator is meant to be tested with the HAFA Puddle Structure proposed by Sanjeev Baskiyar and Shehenaz Shaik at Auburn University. The simulator is made to test the usability of Puddles in these Fog Architectures, however may be extended to various other task-placement strategies such as Cloud-only or Edge-only (both of which are also built into this simulator). 
  - The following image should demonstrate how Puddles are supposed to work:
  ![Puddle Diagram](https://github.com/jihall77/pFogSim/blob/master/puddlelayout.jpg)
- 
+ - All of these Puddles and groups are logical units and don't require a change in the physical network. The overall goal of Puddles in the Fog Architecture is to shorten the physcial distance a task must travel to be executed. This is especially during execution of latency-sensative applications.
+ #### Structure:
+  - Each Puddle has a Puddle Head (denoted PH in the image) which keeps track of the local resource information. Every Puddle has one link going upwards in the network, or moving closer to the Cloud, and at least one link downward, closer to the mobile devices/users. This obviously excludes the Cloud (as it is the analogous to the root of a tree) and the bottom-level nodes (which are at the edge of the tree). Additionally, the Puddles may connect with other local Puddles sharing the same parent, allowing for improved service migration that maintains execution of tasks a short distance away from the user.
+  ###### Definitely Read the Paper introducing this idea if you want to understand this idea in depth linked here (insert link)
 --- 
  
 ### SimManager Details:
-
+ - SimManager is essentially the 2nd main function in this program since it is the central command center for just about everything in this program.
+ 
 ---
 
 ### SimLogger Details:
