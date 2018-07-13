@@ -227,7 +227,104 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
  
 ### SimManager Details:
  - SimManager is essentially the 2nd main function in this program since it is the central command center for just about everything in this program.
- 
+ #### Order of Operations:
+  - When constructed, SimManager creates the loadGeneratorModel and scenarioFactory (both of which are essential to create the simulation as per design).
+  - When the *startSimulation* method is called, all of these values are ordered to initialize all of their respective parts and fully build the simulation. This later passes the order to *CloudSim* to start as well.
+  - Once everything is up and running, the simulation's task scheduling is in charge. In order for something to occur in the simulation, tasks must be submitted to CloudSim where they will be either processed or passed to other sections of the simulator.
+  - One section of the code that is seen frequently is the following section:
+  ```
+  case PRINT_PROGRESS:
+	//Updates the positions of FOG Devices if necessary
+	HashSet<Link> links = ((ESBModel)SimManager.getInstance().getNetworkModel()).getNetworkTopology().getLinks();
+	Set<NodeSim> nodes = ((ESBModel)SimManager.getInstance().getNetworkModel()).getNetworkTopology().getMobileNodes();
+				
+	ArrayList<Link> newLinks = new ArrayList<Link>();
+	ArrayList<NodeSim> newNodes = new ArrayList<NodeSim>();
+	for(NodeSim node : nodes) {
+		//Update positions
+		Location currentLoc = node.getLocation();
+		if(currentLoc.getXPos() + node.getVector().getXPos() > MAX_WIDTH) 
+			node.setVector(new Location(node.getVector().getXPos() * -1, node.getVector().getYPos()));
+		if(currentLoc.getYPos() + node.getVector().getYPos() > MAX_HEIGHT) 
+			node.setVector(new Location(node.getVector().getXPos(), node.getVector().getYPos() * -1));
+			
+	//Change links
+					for(Link link : links) {
+						if(link.getLeftLink().equals(currentLoc)) {
+							//Sets that location to what it will be in a bit
+							link.setLeftLink(new Location(currentLoc.getXPos() + node.getVector().getXPos(), currentLoc.getYPos() + node.getVector().getYPos()));
+							//SimLogger.printLine("Left Link changed");
+						}
+						else if(link.getRightLink().equals(currentLoc)) {
+							//Sets that location to what it will be in a bit
+							link.setRightLink(new Location(currentLoc.getXPos() + node.getVector().getXPos(), currentLoc.getYPos() + node.getVector().getYPos()));
+							//SimLogger.printLine("Right Link changed");
+						}
+							
+					//Change nodes
+					//moving = EdgeServerManager.getInstance().findHostByLoc(node.getLocation().getXPos(), node.getLocation().getYPos());
+					
+					//moving.setPlace(new Location(node.getWlanId(), node.getLocation().getXPos(), node.getLocation().getYPos()));
+					//movingNodes.add(moving);
+					/*if(node.getWlanId() == 300) {
+						SimLogger.printLine(node.toString());
+						for (Link link : node.getEdges()) {
+							SimLogger.print(link.getLeftLink().getXPos() + ", " + link.getLeftLink().getYPos() + " ");
+							SimLogger.printLine(link.getRightLink().getXPos() + ", " + link.getRightLink().getYPos());
+						}
+					}*/
+					//int x1 = node.getLocation().getXPos();
+					//int x2 = moving.getLocation().getXPos();
+					//int y1 = node.getLocation().getYPos();
+					//int y2 = moving.getLocation().getYPos();
+					//SimLogger.printLine("Node location updated");
+					}
+					node.setLocation(new Location(currentLoc.getXPos() + node.getVector().getXPos(), currentLoc.getYPos() + node.getVector().getYPos()));
+					//newNodes.add(node);
+				}
+				/*for(Link link : links) {
+					newLinks.add(link);
+				}*/
+				((ESBModel) SimManager.getInstance().getNetworkModel()).getNetworkTopology().setMobileNode(nodes);
+				//Rerun clustering and puddles
+				//FogHierCluster clusterObject = new FogHierCluster(newNodes);
+				//List<Puddle> puds = networkTopology.getPuddles();
+				//networkTopology = new NetworkTopology(newNodes, newLinks);
+				/*if(!((ESBModel) SimManager.getInstance().getNetworkModel()).getNetworkTopology().cleanNodes()) {
+					SimLogger.printLine("Topology is not valid");
+					System.exit(0);
+				}*/
+				//networkTopology.setPuddles(puds);
+				//edgeServerManager.setHosts(movingNodes);
+				//Sets network topology and uses it to make the Puddle Objects
+				//((ESBModel) SimManager.getInstance().getNetworkModel()).setNetworkTopology(networkTopology);
+				//networkTopology.setPuddles(edgeServerManager.makePuddles(clusterObject));
+				
+				//Goes through all devices and checks to see if WAP ids have changed
+				//	Currently checks devices every 12 seconds in simulation (which runs for 20mins {Duration: 0.333.. hrs})
+				double time = CloudSim.clock();
+				for(int q = 0; q < mobilityModel.getSize(); q++) {
+					//If the id has changed, update the value in our list and move the cloudlet to a more appropriate VM
+					if(wapIdList[q] != mobilityModel.getWlanId(q, time)) {
+						wapIdList[q] = mobilityModel.getWlanId(q, time);
+						if (mobileDeviceManager.getCloudletList().size() > q) {
+							Task task = (Task) mobileDeviceManager.getCloudletList().get(q);
+							task.setSubmittedLocation(mobilityModel.getLocation(q, time));
+							//SimLogger.printLine("MIGRATION!!!!!!!!!!!!!!!!!!");
+							mobileDeviceManager.migrateTask(task);
+						}
+					}
+				}
+				//Prints progress
+				int progress = (int)((CloudSim.clock()*100)/SimSettings.getInstance().getSimulationTime());
+				if(progress % 10 == 0)
+					SimLogger.print(Integer.toString(progress));
+				else
+					SimLogger.print(".");
+				if(CloudSim.clock() < SimSettings.getInstance().getSimulationTime())
+					schedule(getId(), SimSettings.getInstance().getSimulationTime()/100, PRINT_PROGRESS);
+				break;
+  ```
 ---
 
 ### SimLogger Details:
