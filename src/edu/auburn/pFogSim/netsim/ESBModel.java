@@ -129,12 +129,10 @@ public class ESBModel extends NetworkModel {
 		//SimLogger.printLine(src.toString() + " " + dest.toString());
 	    path = router.findPath(networkTopology, src, dest);
 	   // SimLogger.printLine(path.size() + "");
-		delay += getWlanUploadDelay(accessPointLocation, CloudSim.clock());
+		delay += getWlanUploadDelay(src.getLocation(), CloudSim.clock());
 		while (!path.isEmpty()) {
 			current = path.poll();
 			nextHop = path.peek();
-			accessPointLocation = new Location(null, 0, current.getLocation().getXPos(), current.getLocation().getYPos());//we only care about the x-y position, the other details are irrelevant here
-			delay += getWlanUploadDelay(accessPointLocation, CloudSim.clock() + delay);
 			if (nextHop == null) {
 				break;
 			}
@@ -142,6 +140,8 @@ public class ESBModel extends NetworkModel {
 				SimLogger.printLine("not adjacent");
 			}
 			delay += current.traverse(nextHop);
+			delay += getWlanUploadDelay(nextHop.getLocation(), CloudSim.clock() + delay);
+			
 		}
 		return delay;
 	}
@@ -174,7 +174,7 @@ public class ESBModel extends NetworkModel {
 		return deviceCount;
 	}
 	
-	private double calculateESB(double propogationDelay, int bandwidth /*Kbps*/, double PoissonMean, double avgTaskSize /*KB*/, int deviceCount){
+	private double calculateESB(double propogationDelay, double bandwidth /*Kbps*/, double PoissonMean, double avgTaskSize /*KB*/, int deviceCount){
 		double Bps=0;
 		
 		avgTaskSize = avgTaskSize * (double)1024; //convert from KB to Byte

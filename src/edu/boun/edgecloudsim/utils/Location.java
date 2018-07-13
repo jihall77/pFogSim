@@ -15,7 +15,7 @@ public class Location implements Comparable {
 	private double xPos;
 	private double yPos;
 	private int servingWlanId;
-	private int bandwidth;
+	private double bandwidth;
 	SimSettings.PLACE_TYPES placeType;
 	public Location(SimSettings.PLACE_TYPES _placeType, int _servingWlanId, double _xPos, double _yPos){
 		servingWlanId = _servingWlanId;
@@ -87,11 +87,11 @@ public class Location implements Comparable {
 		return xPos + ", " + yPos;
 	}
 	
-	public void setBW(int bw) {
+	public void setBW(double bw) {
 		bandwidth = bw;
 	}
 	
-	public int getBW() {
+	public double getBW() {
 		return bandwidth;
 	}
 }

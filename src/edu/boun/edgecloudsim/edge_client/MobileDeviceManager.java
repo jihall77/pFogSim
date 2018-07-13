@@ -313,6 +313,7 @@ public class MobileDeviceManager extends DatacenterBroker {
 						task.getCloudletId(),
 						CloudSim.clock(),
 						SimSettings.VM_TYPES.EDGE_VM.ordinal());
+				//double WlanDelay2 = networkModel.getUploadDelay(task.getMobileDeviceId(), nextHopId * -1, task.getCloudletFileSize(), task.wifi, false);
 			}
 		}
 		/*else {

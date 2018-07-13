@@ -92,8 +92,8 @@ public class DataInterpreter {
 			    node.println(String.format("<datacenter arch=\"%s\" os=\"%s\" vmm=\"%s\">\n", nodeSpecs[MAX_LEVELS - i - 1][0], nodeSpecs[MAX_LEVELS - i - 1][1], nodeSpecs[MAX_LEVELS - i - 1][2]));
 			    node.println(String.format("<costPerBw>%s</costPerBw>\n\t<costPerSec>%s</costPerSec>\n\t<costPerMem>%s</costPerMem>\n\t<costPerStorage>%s</costPerStorage>", nodeSpecs[MAX_LEVELS - i - 1][3], nodeSpecs[MAX_LEVELS - i - 1][4], nodeSpecs[MAX_LEVELS - i - 1][5], nodeSpecs[MAX_LEVELS - i - 1][6]));
 			    node.println(String.format("<location>\n\t<x_pos>%s</x_pos>\n\t<y_pos>%s</y_pos>\n\t<level>%s</level>\t<wlan_id>%s</wlan_id>\n\t<wap>%s</wap>\n\t<moving>%s</moving>\n\t<bandwidth>%s</bandwidth>/n</location>", nodeLoc[2], nodeLoc[1], MAX_LEVELS - i - 1, counter, nodeSpecs[MAX_LEVELS - i - 1][7], nodeSpecs[MAX_LEVELS - i - 1][8], nodeSpecs[MAX_LEVELS - i - 1][13]));
-			    node.println(String.format("<hosts>\n\t<host>\n\t<core>%s</core>\n\t<mips>%s</mips>\n\t<ram>%s</ram>\n\t<storage>%s</storage>\n", nodeSpecs[MAX_LEVELS - i - 1][9], nodeSpecs[MAX_LEVELS - i - 1][10], nodeSpecs[MAX_LEVELS - i - 1][11], nodeSpecs[MAX_LEVELS - i - 1][12]));
-			    node.println(String.format("\t<VMs>\n\t\t<VM vmm=\"%s\">\n\t\t\t<core>%s</core>\n\t\t\t<mips>%s</mips>\n\t\t\t<ram>%s</ram>\n\t\t\t<storage>%s</storage>\n\t\t</VM>\n\t</VMs>\n</host></hosts>\n</datacenter>", nodeSpecs[MAX_LEVELS - i - 1][2], nodeSpecs[MAX_LEVELS - i - 1][9], nodeSpecs[MAX_LEVELS - i - 1][10], nodeSpecs[MAX_LEVELS - i - 1][11], nodeSpecs[MAX_LEVELS - i - 1][12]));
+			    node.println(String.format("<host>\n\t<core>%s</core>\n\t<mips>%s</mips>\n\t<ram>%s</ram>\n\t<storage>%s</storage>\n", nodeSpecs[MAX_LEVELS - i - 1][9], nodeSpecs[MAX_LEVELS - i - 1][10], nodeSpecs[MAX_LEVELS - i - 1][11], nodeSpecs[MAX_LEVELS - i - 1][12]));
+			    node.println(String.format("\t<VM vmm=\"%s\">\n\t\t\t<core>%s</core>\n\t\t\t<mips>%s</mips>\n\t\t\t<ram>%s</ram>\n\t\t\t<storage>%s</storage>\n\t\t</VM>\n\t</host>\n</datacenter>", nodeSpecs[MAX_LEVELS - i - 1][2], nodeSpecs[MAX_LEVELS - i - 1][9], nodeSpecs[MAX_LEVELS - i - 1][10], nodeSpecs[MAX_LEVELS - i - 1][11], nodeSpecs[MAX_LEVELS - i - 1][12]));
 	
 				
 			    if (counter == 643) {
@@ -275,8 +275,8 @@ public class DataInterpreter {
 	 *   2 - virtual machine manager<br>
 	 *   3 - cost per Bandwidth<br>
 	 *   4 - cost per second<br>
-	 *   5 - cost per memory<br>
-	 *   6 - cost per storage<br>
+	 *   5 - cost per memory -- we don't actually use this<br> 
+	 *   6 - cost per storage -- we don't actually use this<br> 
 	 *   7 - is node a wifi access point<br>
 	 *   8 - is fog node moving<br>
 	 *   9 - number of cores for the machine<br>
@@ -299,9 +299,11 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 1][6] = "0.1";
 		nodeSpecs[MAX_LEVELS - 1][7] = "true";
 		nodeSpecs[MAX_LEVELS - 1][8] = "false";
-		nodeSpecs[MAX_LEVELS - 1][9] = "2867200";
+		//nodeSpecs[MAX_LEVELS - 1][9] = "2867200";
+		nodeSpecs[MAX_LEVELS - 1][9] = "500";
 		nodeSpecs[MAX_LEVELS - 1][10] = "4874240000";
 		nodeSpecs[MAX_LEVELS - 1][11] = "164926744166400";
+		//nodeSpecs[MAX_LEVELS - 1][11] = "1500";
 		nodeSpecs[MAX_LEVELS - 1][12] = "1046898278400";
 		nodeSpecs[MAX_LEVELS - 1][13] = "104857600";
 		
@@ -314,9 +316,11 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 2][6] = "0.1";
 		nodeSpecs[MAX_LEVELS - 2][7] = "true";
 		nodeSpecs[MAX_LEVELS - 2][8] = "false";
-		nodeSpecs[MAX_LEVELS - 2][9] = "28672";
+		//nodeSpecs[MAX_LEVELS - 2][9] = "28672";
+		nodeSpecs[MAX_LEVELS - 2][9] = "500";
 		nodeSpecs[MAX_LEVELS - 2][10] = "48742400";
 		nodeSpecs[MAX_LEVELS - 2][11] = "1649267441664";
+		//nodeSpecs[MAX_LEVELS - 2][11] = "1500";
 		nodeSpecs[MAX_LEVELS - 2][12] = "10468982784";
 		nodeSpecs[MAX_LEVELS - 2][13] = "104857600";
 		
@@ -329,9 +333,11 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 3][6] = "0.1";
 		nodeSpecs[MAX_LEVELS - 3][7] = "true";
 		nodeSpecs[MAX_LEVELS - 3][8] = "false";
-		nodeSpecs[MAX_LEVELS - 3][9] = "7168";
+		//nodeSpecs[MAX_LEVELS - 3][9] = "7168";
+		nodeSpecs[MAX_LEVELS - 3][9] = "500";
 		nodeSpecs[MAX_LEVELS - 3][10] = "12185600";
 		nodeSpecs[MAX_LEVELS - 3][11] = "412316860416";
+		//nodeSpecs[MAX_LEVELS - 3][11] = "1500";
 		nodeSpecs[MAX_LEVELS - 3][12] = "2617245696";
 		nodeSpecs[MAX_LEVELS - 3][13] = "10485760";
 		
@@ -347,6 +353,7 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 4][9] = "768";
 		nodeSpecs[MAX_LEVELS - 4][10] = "1305600";
 		nodeSpecs[MAX_LEVELS - 4][11] = "100663296";
+		//nodeSpecs[MAX_LEVELS - 4][11] = "1500";
 		nodeSpecs[MAX_LEVELS - 4][12] = "1677721600";
 		nodeSpecs[MAX_LEVELS - 4][13] = "10485760";
 		
@@ -362,6 +369,7 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 5][9] = "192";
 		nodeSpecs[MAX_LEVELS - 5][10] = "326400";
 		nodeSpecs[MAX_LEVELS - 5][11] = "25165824";
+		//nodeSpecs[MAX_LEVELS - 5][11] = "1500";
 		nodeSpecs[MAX_LEVELS - 5][12] = "167772160";
 		nodeSpecs[MAX_LEVELS - 5][13] = "10485760";
 		

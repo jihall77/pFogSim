@@ -49,13 +49,21 @@ public class NetworkTopology {
 		if (in == null) {
 			throw new IllegalArgumentException();
 		}
+		if (!coords.add(in.getLocation())) {
+			for (NodeSim node : nodes) {
+				if (node.getLocation().equals(in.getLocation())) {
+					node.combine(in);
+					return;
+				}
+			}
+		}
 		if (!in.isMoving()){
 			nodes.add(in);
 		}
 		else {
 			mobileNodes.add(in);
 		}
-		coords.add(in.getLocation());
+		
 	}
 	/**
 	 * add a link<br>

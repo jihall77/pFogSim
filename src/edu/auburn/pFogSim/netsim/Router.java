@@ -48,6 +48,7 @@ public class Router {
 			return database.get(route);
 		}*/
 		Dijkstra router = Router.getAPathFinder();
+		router._dest = dest; 
 		router.runDijkstra((Set<NodeSim>) network.getNodes(), src);
 		travelQueue = router.getPath(dest);
 		/*path.addAll(travelQueue);
@@ -102,6 +103,7 @@ public class Router {
 	//used for early testing only, we want the router to just provide the path not calculate latency
 	public static double findRoute(NetworkTopology network, NodeSim src, NodeSim dest ) {
 		Dijkstra router = getAPathFinder();
+		router._dest = dest;
 		router.runDijkstra((Set<NodeSim>) network.getNodes(), src);
 		//travelQueue = router.getPath(dest);
 		return router.getLatency(dest);
@@ -120,6 +122,7 @@ public class Router {
 		private PriorityQueue<Pair<NodeSim, Pair<Double, NodeSim>>> queue;
 		private HashSet<Pair<NodeSim, Pair<Double, NodeSim>>> completed;
 		private NodeSim src;
+		private NodeSim _dest;
 		/**
 		 * constructor
 		 */
@@ -175,7 +178,7 @@ public class Router {
 				queue.add(temp);
 				queue.remove(v);
 				getMap.put(temp.getKey(), temp);
-				getMap.remove(v);
+				//getMap.remove(v);
 				verts.put(temp, verts.get(v));
 				verts.remove(v);
 			}
@@ -195,6 +198,9 @@ public class Router {
 			}
 			while (!queue.isEmpty()) {
 				u = queue.poll();
+				/*if (u.getKey().getWlanId() == 184 && u.getKey().equals(_dest)) {
+					SimLogger.printLine("this one");
+				}*/
 				completed.add(u);
 				w = new ArrayList<Double>();
 				adj = new ArrayList<Pair<NodeSim, Pair<Double, NodeSim>>>();
@@ -232,11 +238,15 @@ public class Router {
 				for (Pair<NodeSim, Pair<Double, NodeSim>> node : completed) {
 					if (node.getKey().equals(current)) {
 						current = node.getValue().getValue();
+						if (current == null) {
+							SimLogger.printLine("THIS IS IT!");
+						}
 						reversed.add(current);
 						temp = node;
 						break;
 					}
 				}
+				
 				completed.remove(temp);
 			}
 			

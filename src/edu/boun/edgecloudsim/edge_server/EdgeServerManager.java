@@ -72,6 +72,10 @@ public class EdgeServerManager {
 		return instance;
 	}
 
+	public List<List<EdgeVM>> getVMS() {
+		return vmList;
+	}
+	
 	public List<EdgeVM> getVmList(int hostId){
 		return vmList.get(hostId);
 	}
@@ -151,6 +155,7 @@ public class EdgeServerManager {
 		for (int i = 0; i < datacenterList.getLength(); i++) {
 			Node datacenterNode = datacenterList.item(i);
 			Element datacenterElement = (Element) datacenterNode;
+			String arch = datacenterElement.getAttribute("arch");
 			NodeList hostNodeList = datacenterElement.getElementsByTagName("host");
 			for (int j = 0; j < hostNodeList.getLength(); j++) {
 				
@@ -175,6 +180,7 @@ public class EdgeServerManager {
 					//VM Parameters		
 					EdgeVM vm = new EdgeVM(vmCounter, brockerId, mips, numOfCores, (int) ram, bandwidth, storage, vmm, new CloudletSchedulerTimeShared());
 					vm.setVmType(SimSettings.VM_TYPES.EDGE_VM);
+					vm.setArch(arch);
 					vmList.get(hostCounter).add(vm);
 					vmCounter++;
 				}
@@ -262,7 +268,7 @@ public class EdgeServerManager {
 		int level =Integer.parseInt(location.getElementsByTagName("level").item(0).getTextContent());
 		boolean wap = Boolean.parseBoolean(location.getElementsByTagName("wap").item(0).getTextContent());
 		boolean moving = Boolean.parseBoolean(location.getElementsByTagName("moving").item(0).getTextContent());
-		int bw = Integer.parseInt(location.getElementsByTagName("bandwidth").item(0).getTextContent());
+		double bw = Double.parseDouble(location.getElementsByTagName("bandwidth").item(0).getTextContent());
 		double dx = 0.0, dy = 0.0;
 		if(moving)
 		{
@@ -303,6 +309,7 @@ public class EdgeServerManager {
 			{
 				newNode = new NodeSim(x_pos, y_pos, level, wlan_id, wap);
 			}
+			newNode.getLocation().setBW(bw);
 			nodesForTopography.add(newNode);
 			
 			

@@ -28,6 +28,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import edu.boun.edgecloudsim.core.SimSettings;
+import edu.boun.edgecloudsim.utils.SimLogger;
 
 /*
  * Same as VmAllocationPolicySimple.
@@ -37,19 +38,20 @@ public class VmAllocationPolicy_Custom extends VmAllocationPolicy {
 	private Map<String, Host> vmTable;
 	private static int createdVmNum;
 	private int DataCenterIndex;
-	
+	private static int vmtotNUM;
 	public VmAllocationPolicy_Custom(List<? extends Host> list, int _DataCenterIndex) {
 		super(list);
 		
 		setVmTable(new HashMap<String, Host>());
 		DataCenterIndex=_DataCenterIndex;
 		createdVmNum = 0;
+		vmtotNUM = 0;
 	}
 
 	@Override
 	public boolean allocateHostForVm(Vm vm) {
 		boolean result = false;
-
+		//SimLogger.printLine("VM id: " + vm.getId());
 		if (!getVmTable().containsKey(vm.getUid())) { // if this vm was not created
 			boolean vmFound = false;
 			int vmCounter = 0;
@@ -59,6 +61,7 @@ public class VmAllocationPolicy_Custom extends VmAllocationPolicy {
 			//find proper datacenter id and host id for this VM
 			Document doc = SimSettings.getInstance().getEdgeDevicesDocument();
 			NodeList datacenterList = doc.getElementsByTagName("datacenter");
+			//SimLogger.printLine("Datacenter List: " + datacenterList.getLength());
 			for (int i = 0; (!vmFound && i < datacenterList.getLength()); i++) {
 				Node datacenterNode = datacenterList.item(i);
 				Element datacenterElement = (Element) datacenterNode;
@@ -79,16 +82,23 @@ public class VmAllocationPolicy_Custom extends VmAllocationPolicy {
 					}
 				}
 			}
-
+			//SimLogger.printLine("vm counter: " + vmCounter);
+			/*SimLogger.printLine("Datacenter number: " + dataCenterIndex);
+			SimLogger.printLine("VM id " + vm.getId());
+			SimLogger.printLine("VM found: " + vmFound);*/
 			if(vmFound && dataCenterIndex == DataCenterIndex && hostIndex < getHostList().size()){
 				Host host = getHostList().get(hostIndex);
 				result = host.vmCreate(vm);
-	
 				if (result) { // if vm were succesfully created in the host
+					//SimLogger.printLine("vm index: " + vmtotNUM + " Datacenter: " + dataCenterIndex);
+					//vmtotNUM++;
 					getVmTable().put(vm.getUid(), host);
 					createdVmNum++;
 					Log.formatLine("%.2f: VM #" + vm.getId() + " has been allocated to the host #" + host.getId(),CloudSim.clock());
 					result = true;
+				}
+				if (!result) {
+					//SimLogger.printLine("VM BAD");
 				}
 			}
 		}
@@ -98,7 +108,7 @@ public class VmAllocationPolicy_Custom extends VmAllocationPolicy {
 
 	@Override
 	public boolean allocateHostForVm(Vm vm, Host host) {
-		if (host.vmCreate(vm)) { // if vm has been succesfully created in the host
+		if (host.vmCreate(vm)) { // if vm has been successfully created in the host
 			getVmTable().put(vm.getUid(), host);
 			createdVmNum++;
 			
@@ -110,8 +120,7 @@ public class VmAllocationPolicy_Custom extends VmAllocationPolicy {
 	}
 
 	@Override
-	public List<Map<String, Object>> optimizeAllocation(
-			List<? extends Vm> vmList) {
+	public List<Map<String, Object>> optimizeAllocation(List<? extends Vm> vmList) {
 		// TODO Auto-generated method stub
 		return null;
 	}

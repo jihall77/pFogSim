@@ -28,6 +28,7 @@ import org.cloudbus.cloudsim.core.SimEvent;
 import edu.boun.edgecloudsim.edge_orchestrator.EdgeOrchestrator;
 import edu.boun.edgecloudsim.edge_server.EdgeHost;
 import edu.boun.edgecloudsim.edge_server.EdgeServerManager;
+import edu.boun.edgecloudsim.edge_server.EdgeVM;
 //import edu.boun.edgecloudsim.edge_server.EdgeVM;
 import edu.boun.edgecloudsim.edge_server.VmAllocationPolicy_Custom;
 import edu.auburn.pFogSim.Puddle.Puddle;
@@ -194,7 +195,7 @@ public class SimManager extends SimEntity {
 		schedule(getId(), SimSettings.getInstance().getVmLoadLogInterval(), GET_LOAD_LOG);
 		schedule(getId(), SimSettings.getInstance().getSimulationTime(), STOP_SIMULATION);
 		SimLogger.printLine("Done.");
-		SimLogger.print("Executing");
+		SimLogger.printLine("Executing");
 	}
 
 	@Override
@@ -215,8 +216,17 @@ public class SimManager extends SimEntity {
 				//SimLogger.printLine("CHECK_ALL_VM reached");
 				int totalNumOfVm = SimSettings.getInstance().getNumOfEdgeVMs();
 				if(VmAllocationPolicy_Custom.getCreatedVmNum() != totalNumOfVm) {
+					int vms = 0;
+					for (List<EdgeVM> host: edgeServerManager.getVMS()) {
+						for (EdgeVM vm : host) {
+							if (vm.getHost() != null) {
+								vms++;
+							}
+						}
+					}
 					SimLogger.printLine("Total # of Vms : " + totalNumOfVm);
 					SimLogger.printLine("Vms Made : " + VmAllocationPolicy_Custom.getCreatedVmNum());
+					SimLogger.printLine("Real VMs : " + vms);
 					SimLogger.printLine("All VMs cannot be created! Terminating simulation...");
 					System.exit(0);
 				}

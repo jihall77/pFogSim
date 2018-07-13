@@ -287,4 +287,13 @@ public class NodeSim {
 		return getLocation().getXPos() + ", " + getLocation().getYPos();
 	}
 	
+	public void combine(NodeSim in) {
+		if (!in.getLocation().equals(this.getLocation())) {
+			throw new IllegalArgumentException();
+		}
+		for (Link link: in.getEdges()) {
+			this.addLink(link);
+		}
+	}
+	
 }
