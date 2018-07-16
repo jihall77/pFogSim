@@ -101,7 +101,9 @@ public class SimSettings {
     // [09] vm utilization (%)
     // [10] max latency (milliseconds)
     private double[][] taskLookUpTable = new double[APP_TYPES.values().length][11];
-
+    private int MAX_LEVELS;
+    private String inputType;
+    
 	private SimSettings() {
 	}
 	
@@ -560,5 +562,21 @@ public class SimSettings {
 	public double[] getSimulationSpace() {
 		// TODO Auto-generated method stub
 		return this.simulationSpace;
+	}
+	
+	public int getMaxLevels() {
+		return MAX_LEVELS;
+	}
+	
+	public void setMaxLevels(int _MAX_LEVELS) {
+		this.MAX_LEVELS = _MAX_LEVELS;
+	}
+	
+	public void setInputType(String _inputType) {
+		this.inputType = _inputType;
+	}
+	
+	public String getInputType() {
+		return this.inputType;
 	}
 }

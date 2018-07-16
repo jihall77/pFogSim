@@ -573,7 +573,8 @@ public class SimLogger {
 		printLine("average server utilization: " 
 				+ String.format("%.6f", totalVmLoad / (double) vmLoadList.size()) + "%");
 		printLine("Cloudlets Per Level");
-		for(int i = 0; i < 7; i++) printLine(String.format("\tLevel %d:\t%d", i, levelCloudletCount[i]));
+		for(int i = 1; i <= SimSettings.getInstance().getMaxLevels(); i++) //From 1 to MAX_LEVELS because there won't be network apps running on mobile devices at level 0
+			printLine(String.format("\tLevel %d:\t%d", i, levelCloudletCount[i]));
 		
 		//Clayton changed this so it would output a value based on the average cost per time I was seeing in the XML files
 		//	this value may mean absolutely nothing so we should look into it more if we want to use it

@@ -32,7 +32,8 @@ public class DataInterpreter {
 	private static double MIN_LAT = -100000, MAX_LAT = -100000, MIN_LONG = -100000, MAX_LONG = -100000; //Just instantiated so the first gps coord sets these
 	private static boolean universitiesYet = false;
 	private static boolean universitiesLinked = false;
-
+    private static String inputType = "gps";
+	
 	private File xmlFile = null;
 	private FileWriter xmlFW = null;
 	private BufferedWriter xmlBR = null;
@@ -261,6 +262,14 @@ public class DataInterpreter {
 	public static double[] getSimulationSpace()
 	{
 		return new double[] {MIN_LONG, MAX_LONG, MIN_LAT, MAX_LAT};
+	}
+	
+	public static int getMaxLevels() {
+		return MAX_LEVELS;
+	}
+	
+	public static String getInputType() {
+		return inputType;
 	}
 	/**
 	 * the great beast...<br><br>

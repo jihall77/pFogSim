@@ -1,5 +1,5 @@
 /*
- * Title:        pFogSim derived from EdgeCloudSim VectorMobility Model
+ * Title:        pFogSim derived from EdgeCloudSim GPSVectorMobility Model
  * 
  * Description: 
  * Simulates where the lowest-level devices (such as mobile devices) will be in the simulation space
@@ -32,7 +32,7 @@ import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
 import edu.boun.edgecloudsim.utils.SimUtils;
 
-public class VectorMobility extends MobilityModel {
+public class GPSVectorMobility extends MobilityModel {
 	private List<TreeMap<Double, Location>> treeMapArray;
 	private double MAX_LAT;
 	private double MIN_LAT;
@@ -41,7 +41,7 @@ public class VectorMobility extends MobilityModel {
 	private NetworkTopology network = ((ESBModel) SimManager.getInstance().getNetworkModel()).getNetworkTopology();
 
 	
-	public VectorMobility(int _numberOfMobileDevices, double _simulationTime) {
+	public GPSVectorMobility(int _numberOfMobileDevices, double _simulationTime) {
 		super(_numberOfMobileDevices, _simulationTime);
 		// TODO Auto-generated constructor stub
 	}
@@ -83,9 +83,9 @@ public class VectorMobility extends MobilityModel {
 		for(int i=0; i<numberOfMobileDevices; i++) {
 			TreeMap<Double, Location> treeMap = treeMapArray.get(i);
 			//Make random numbers to make the vectors
-			//double up = 5 * (Math.random() - 0.5) * 0.000001; //Approximates movement of 5 meters * (random constant < 1)
-			//double right = 5 * (Math.random() - 0.5) * 0.000001; //Same for right
-			double up = 0, right = 0;
+			double up = 5 * (Math.random() - 0.5) * 0.000001; //Approximates movement of 5 meters * (random constant < 1)
+			double right = 5 * (Math.random() - 0.5) * 0.000001; //Same for right
+			//double up = 0, right = 0;
 			while(treeMap.lastKey() < SimSettings.getInstance().getSimulationTime()) {		
 				
 				

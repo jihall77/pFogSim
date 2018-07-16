@@ -65,7 +65,7 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
 
 ### **The Flow**
 
-#### [DataInterpreter](#datainterpreter) → [EdgeServerManager](#edgeservermanager) → [VectorMobility](#vectormobility) → [NetworkTopology](#networktopology) → [Clustering](#clustering) → [Puddles](#puddles) → [SimManager](#simmanager) → [SimLogger](#simlogger)
+#### [DataInterpreter](#datainterpreter) → [EdgeServerManager](#edgeservermanager) → [GPSVectorMobility](#GPSVectorMobility) → [NetworkTopology](#networktopology) → [Clustering](#clustering) → [Puddles](#puddles) → [SimManager](#simmanager) → [SimLogger](#simlogger)
 
 #### Note: When I say mobile devices, I mean mobile devices, sensors, actuators; anything that is on the lowest level of the network and is interacting with the network.
 ### DataInterpreter:
@@ -81,12 +81,12 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
  - Constructs network topology 
  - [More Below](#edgeservermanager-details)
  
-### VectorMobility:
+### GPSVectorMobility:
  - Creates each mobile device starting at a random wireless access point (WAP)
  - Moves them according to random vectors that have been approximated to be around walking speed of 5km/h
  - Creates all of the mobile devices and all of their positions throughout the entire simulator. 
  - Also updates which WAP connected to based on proximity
- - [More Below](#vectormobility-details)
+ - [More Below](#GPSVectorMobility-details)
 
 ### NetworkTopology:
  - Defines network and has all static links in network
@@ -166,8 +166,8 @@ And with that said, here is everything on pFogSim. Most of the follow can be gat
   	- Takes in Cluster object and creates the HAFA Puddles
 ---
 
-### VectorMobility Details:
- - VectorMobility is a little strange but is in charge of all the mobile devices. This one deserves significant detail.
+### GPSVectorMobility Details:
+ - GPSVectorMobility is a little strange but is in charge of all the mobile devices. This one deserves significant detail.
  #### Elements:
   - List<TreeMap<Double, Location>> treeMapArray : Contains all of the positions and information for all mobile devices over the entire time duration of the simulator. This is accessed outside through other methods for the rest of the simulator to have access to.
   - MIN/MAX_LAT/LONG : Information passed from DataInterpreter to SimSettings and finally to here where it creates the boundaries for the mobile devices. 
