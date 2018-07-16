@@ -52,7 +52,7 @@ public class mainApp {
 		
 		//CJ added linksFile to supply the link xml file, had to adjust all constructors that
 		//	use these file to seamlessly use it
-		int iterationNumber = 1;
+		int iterationNumber = 2;
 		String configFile = "";
 		String outputFolder = "";
 		String edgeDevicesFile = "";
@@ -99,12 +99,12 @@ public class mainApp {
 
 		for(int j=SS.getMinNumOfMobileDev(); j<=SS.getMaxNumOfMobileDev(); j+=SS.getMobileDevCounterSize())
 		{
-			for(int k=0; k<SS.getSimulationScenarios().length; k++)
+			for(int k=0; k<1; k++)
 			{
 				for(int i=0; i<1; i++)
 				{
-					String simScenario = SS.getSimulationScenarios()[k];
-					String orchestratorPolicy = SS.getOrchestratorPolicies()[iterationNumber - 1];
+					String simScenario = SS.getSimulationScenarios()[iterationNumber - 1];
+					String orchestratorPolicy = SS.getOrchestratorPolicies()[i];
 					Date ScenarioStartDate = Calendar.getInstance().getTime();
 					now = df.format(ScenarioStartDate);
 					

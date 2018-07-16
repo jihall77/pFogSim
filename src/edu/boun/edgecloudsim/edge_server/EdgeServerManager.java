@@ -49,7 +49,7 @@ import edu.auburn.pFogSim.orchestrator.PuddleOrchestrator;
 public class EdgeServerManager {
 	private List<Datacenter> localDatacenters;
 	private List<List<EdgeVM>> vmList;
-	private List<EdgeHost> hostList;
+	private List<EdgeHost> hostList;// we use this for mobile fog nodes, this is NOT a  list of all edgehosts in the network
 	private int hostIdCounter;
 	private NetworkTopology networkTopology;
 	private static EdgeServerManager instance = null;
@@ -445,5 +445,23 @@ public class EdgeServerManager {
 	
 	public void setHosts(List<EdgeHost> hosts) {
 		hostList.addAll(hosts);
+	}
+	
+	public boolean checkUniqueDC() {
+		for (int i = 0; i < localDatacenters.size(); i++) {
+			for (int j = 0; j < localDatacenters.size(); j++) {
+				if (((EdgeHost) localDatacenters.get(i).getHostList().get(0)).getLocation().equals(((EdgeHost) localDatacenters.get(j).getHostList().get(0)).getLocation())) {
+					if (localDatacenters.get(i) != localDatacenters.get(j)) {
+						if (((EdgeHost) localDatacenters.get(i).getHostList().get(0)).getLevel() < ((EdgeHost) localDatacenters.get(j).getHostList().get(0)).getLevel()) {
+							localDatacenters.remove(i);
+						}
+						else {
+							localDatacenters.remove(j);
+						}
+					}
+				}
+			}
+		}
+		return true;
 	}
 }
