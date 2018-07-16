@@ -514,7 +514,7 @@ public class SimLogger {
 				genericBWs[i].close();
 			}
 		}
-
+		printLine("Mobile Devices Moving? : " + SimSettings.getInstance().areMobileDevicesMoving());
 		// printout important results
 		printLine("# of tasks (Cloudlet/Cloud): "
 				+ (failedTask[numOfAppTypes] + completedTask[numOfAppTypes]) + "("

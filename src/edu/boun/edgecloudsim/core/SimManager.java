@@ -249,6 +249,7 @@ public class SimManager extends SimEntity {
 				for(NodeSim node : nodes) {
 					//Update positions
 					Location currentLoc = node.getLocation();
+					//This is testing to see if any mobile fog nodes are moving past the edge of the simulation space
 					if(currentLoc.getXPos() + node.getVector().getXPos() > MAX_WIDTH) node.setVector(new Location(node.getVector().getXPos() * -1, node.getVector().getYPos()));
 					if(currentLoc.getYPos() + node.getVector().getYPos() > MAX_HEIGHT) node.setVector(new Location(node.getVector().getXPos(), node.getVector().getYPos() * -1));
 
