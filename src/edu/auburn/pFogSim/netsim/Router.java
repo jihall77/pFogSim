@@ -5,6 +5,7 @@
 
 package edu.auburn.pFogSim.netsim;
 
+import edu.auburn.pFogSim.Exceptions.BlackHoleException;
 import edu.auburn.pFogSim.netsim.NodeSim;
 //import edu.boun.edgecloudsim.utils.SimLogger;
 import edu.boun.edgecloudsim.utils.Location;
@@ -239,7 +240,7 @@ public class Router {
 					if (node.getKey().equals(current)) {
 						current = node.getValue().getValue();
 						if (current == null) {
-							SimLogger.printLine("THIS IS IT!");
+							throw new BlackHoleException(src, current);
 						}
 						reversed.add(current);
 						temp = node;

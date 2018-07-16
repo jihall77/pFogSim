@@ -129,6 +129,7 @@ public class EdgeServerManager {
 		}
 		
 		((ESBModel) SimManager.getInstance().getNetworkModel()).setNetworkTopology(networkTopology);
+		((ESBModel) SimManager.getInstance().getNetworkModel()).gravityWell();
 		if (SimManager.getInstance().getEdgeOrchestrator() instanceof PuddleOrchestrator) {
 			SimLogger.print("\n\tMaking Cluster Object...");
 			FogHierCluster clusterObject = new FogHierCluster((ArrayList<NodeSim>)nodesForTopography);
@@ -141,7 +142,7 @@ public class EdgeServerManager {
 			comp.drawNetworkTopology(3);*/
 
 		}
-		//checkUniqueDC();
+		checkUniqueDC();
 	}
 
 	public void createVmList(int brockerId){

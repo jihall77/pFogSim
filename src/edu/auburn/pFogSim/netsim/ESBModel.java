@@ -8,13 +8,18 @@ package edu.auburn.pFogSim.netsim;
 
 import org.cloudbus.cloudsim.core.CloudSim;
 
+import edu.auburn.pFogSim.Exceptions.BlackHoleException;
+import edu.auburn.pFogSim.util.DataInterpreter;
 import edu.boun.edgecloudsim.core.SimManager;
 import edu.boun.edgecloudsim.core.SimSettings;
 import edu.boun.edgecloudsim.edge_client.Task;
 import edu.boun.edgecloudsim.network.NetworkModel;
 import edu.boun.edgecloudsim.utils.Location;
 import edu.boun.edgecloudsim.utils.SimLogger;
+
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class ESBModel extends NetworkModel {
 	private double WlanPoissonMean; //seconds
@@ -230,5 +235,51 @@ public class ESBModel extends NetworkModel {
 		NodeSim dest = networkTopology.findNode(SimManager.getInstance().getLocalServerManager().findHostById(hostID).getLocation(), false);
 		NodeSim src = networkTopology.findNode(SimManager.getInstance().getMobilityModel().getLocation(task.getMobileDeviceId(),CloudSim.clock()), false);
 		return router.findPath(networkTopology, src, dest).size();
+	}
+	
+	public void gravityWell() {
+		int errors = 0;
+		List<NodeSim> univs = findUniv();
+		NodeSim connect;
+		Link link;
+		for (NodeSim src : networkTopology.getNodes()) {
+			for (NodeSim dest : networkTopology.getNodes()) {
+				try {
+					router.findPath(networkTopology, src, dest);
+				}
+				catch (BlackHoleException e) {
+					errors++;
+					connect = closest(univs, e.dest);
+					link = new Link(connect.getLocation(), e.dest.getLocation(), 0.5, 0.5);
+					e.dest.addLink(link);
+				}
+			}
+		}
+		if (errors > 0) {
+			gravityWell();
+		}
+	}
+	
+	private List<NodeSim> findUniv() {
+		List<NodeSim> result = new ArrayList<NodeSim>();
+		for (NodeSim node : networkTopology.getNodes()) {
+			if (node.getLevel() == 4) {
+				result.add(node);
+			}
+		}
+		return result;
+	}
+	
+	private NodeSim closest(List<NodeSim> list, NodeSim src) {
+		NodeSim result = list.get(0);
+		double dist = DataInterpreter.measure(src.getLocation().getYPos(), src.getLocation().getXPos(), result.getLocation().getYPos(), result.getLocation().getXPos());
+		double temp;
+		for (int i = 1; i < list.size(); i++) {
+			temp = DataInterpreter.measure(src.getLocation().getYPos(), src.getLocation().getXPos(), list.get(i).getLocation().getYPos(), list.get(i).getLocation().getXPos());
+			if (temp < dist) {
+				result = list.get(i);
+			}
+		}
+		return result;
 	}
 }
