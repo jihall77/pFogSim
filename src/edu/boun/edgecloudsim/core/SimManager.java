@@ -120,10 +120,10 @@ public class SimManager extends SimEntity {
 		edgeServerManager.startDatacenters();
 		edgeServerManager.createVmList(mobileDeviceManager.getId());
 		edgeOrchestrator.initialize();
-		SimLogger.print("\tCreating device locations...");
+		SimLogger.print("\n\tCreating device locations...");
 		mobilityModel = scenarioFactory.getMobilityModel();
 		mobilityModel.initialize();
-		SimLogger.printLine("Done.");
+		SimLogger.printLine("Done,");
 
 		
 		CloudSim.startSimulation();
@@ -237,13 +237,10 @@ public class SimManager extends SimEntity {
 				schedule(getId(), SimSettings.getInstance().getVmLoadLogInterval(), GET_LOAD_LOG);
 				break;
 			case PRINT_PROGRESS:
-				//SimLogger.printLine("PrintProgress reached");
 				//Updates the positions of FOG Devices if necessary
-				HashSet<Link> links = ((ESBModel)SimManager.getInstance().getNetworkModel()).getNetworkTopology().getLinks();
+				/*HashSet<Link> links = ((ESBModel)SimManager.getInstance().getNetworkModel()).getNetworkTopology().getLinks();
 				Set<NodeSim> nodes = ((ESBModel)SimManager.getInstance().getNetworkModel()).getNetworkTopology().getMobileNodes();
 				
-				ArrayList<Link> newLinks = new ArrayList<Link>();
-				ArrayList<NodeSim> newNodes = new ArrayList<NodeSim>();
 				//ArrayList<EdgeHost> movingNodes = new ArrayList<EdgeHost>();
 				//EdgeHost moving = null;
 				for(NodeSim node : nodes) {
@@ -271,27 +268,17 @@ public class SimManager extends SimEntity {
 					
 					//moving.setPlace(new Location(node.getWlanId(), node.getLocation().getXPos(), node.getLocation().getYPos()));
 					//movingNodes.add(moving);
-					/*if(node.getWlanId() == 300) {
-						SimLogger.printLine(node.toString());
-						for (Link link : node.getEdges()) {
-							SimLogger.print(link.getLeftLink().getXPos() + ", " + link.getLeftLink().getYPos() + " ");
-							SimLogger.printLine(link.getRightLink().getXPos() + ", " + link.getRightLink().getYPos());
-						}
-					}*/
-					//int x1 = node.getLocation().getXPos();
-					//int x2 = moving.getLocation().getXPos();
-					//int y1 = node.getLocation().getYPos();
-					//int y2 = moving.getLocation().getYPos();
-					//SimLogger.printLine("Node location updated");
 					}
 					node.setLocation(new Location(currentLoc.getXPos() + node.getVector().getXPos(), currentLoc.getYPos() + node.getVector().getYPos()));
 					//newNodes.add(node);
 				}
-				/*for(Link link : links) {
+				for(Link link : links) {
 					newLinks.add(link);
-				}*/
-				((ESBModel) SimManager.getInstance().getNetworkModel()).getNetworkTopology().setMobileNode(nodes);
-				//Rerun clustering and puddles
+				}
+				((ESBModel) SimManager.getInstance().getNetworkModel()).getNetworkTopology().setMobileNode(nodes);*/
+				
+				//-----------------Rerun clustering and puddles only if there are mobile FogNodes------------------------------
+				
 				//FogHierCluster clusterObject = new FogHierCluster(newNodes);
 				//List<Puddle> puds = networkTopology.getPuddles();
 				//networkTopology = new NetworkTopology(newNodes, newLinks);
@@ -306,7 +293,7 @@ public class SimManager extends SimEntity {
 				//networkTopology.setPuddles(edgeServerManager.makePuddles(clusterObject));
 				
 				//Goes through all devices and checks to see if WAP ids have changed
-				//	Currently checks devices every 12 seconds in simulation (which runs for 20mins {Duration: 0.333.. hrs})
+				//	Currently checks devices every percentage of progress, dt changes based on how large your simulation time is
 				double time = CloudSim.clock();
 				for(int q = 0; q < mobilityModel.getSize(); q++) {
 					//If the id has changed, update the value in our list and move the cloudlet to a more appropriate VM
@@ -315,7 +302,6 @@ public class SimManager extends SimEntity {
 						if (mobileDeviceManager.getCloudletList().size() > q) {
 							Task task = (Task) mobileDeviceManager.getCloudletList().get(q);
 							task.setSubmittedLocation(mobilityModel.getLocation(q, time));
-							//SimLogger.printLine("MIGRATION!!!!!!!!!!!!!!!!!!");
 							mobileDeviceManager.migrateTask(task);
 						}
 					}
