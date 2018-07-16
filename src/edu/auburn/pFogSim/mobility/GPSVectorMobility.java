@@ -95,51 +95,56 @@ public class GPSVectorMobility extends MobilityModel {
 			}
 			while(treeMap.lastKey() < SimSettings.getInstance().getSimulationTime()) {		
 				
-				
-				double x_pos = treeMap.lastEntry().getValue().getXPos();
-				double y_pos = treeMap.lastEntry().getValue().getYPos();				
-				int wlan_id = treeMap.lastEntry().getValue().getServingWlanId();
-				  
-				if(x_pos + right > this.MAX_LONG || x_pos + right < this.MIN_LONG) right = right * -1;
-				if(y_pos + up > this.MAX_LAT || y_pos + up < this.MIN_LAT) up = up * -1;
-				double distance = 0, minDistance = Double.MAX_VALUE;
-				NodeSim closestNode = new NodeSim();
-				for(NodeSim node : accessPoints)
+				if(movingDevices) 
 				{
-					distance = DataInterpreter.measure(node.getLocation().getYPos(), node.getLocation().getXPos(), y_pos, x_pos);
-					if (distance < minDistance) 
+					double x_pos = treeMap.lastEntry().getValue().getXPos();
+					double y_pos = treeMap.lastEntry().getValue().getYPos();				
+					int wlan_id = treeMap.lastEntry().getValue().getServingWlanId();
+					  
+					if(x_pos + right > this.MAX_LONG || x_pos + right < this.MIN_LONG) right = right * -1;
+					if(y_pos + up > this.MAX_LAT || y_pos + up < this.MIN_LAT) up = up * -1;
+					double distance = 0, minDistance = Double.MAX_VALUE;
+					NodeSim closestNode = new NodeSim();
+					for(NodeSim node : accessPoints)
 					{
-						minDistance = distance;
-						closestNode = node;
-					}
-				}
-				wlan_id = closestNode.getWlanId();
-/*				//If we are still in the same polygon, don't change (We haven't moved out of range of the wap)
-				int levelNum = SimManager.getInstance().getVoronoiDiagram().size();
-				//SimLogger.printLine("Size of voronoidiagram list : " + levelNum);
-				PowerDiagram diagram = SimManager.getInstance().getVoronoiDiagramAtLevel(levelNum - 1);
-				diagram.showDiagram();
-				
-				if (SimManager.getInstance().getEdgeOrchestrator() instanceof PuddleOrchestrator) {
-					for(Site site : diagram.getSites())
-					{
-						SimLogger.printLine("\ndiagram.getSites.size() : " + diagram.getSites().size);
-						SimLogger.printLine("x_pos : " + x_pos + "\ny_pos : " + y_pos);
-						SimLogger.printLine("" + site.getPolygon());
-						//if(site.getPolygon() != null && site.getPolygon().contains(x_pos, y_pos))
-						if(site.getPolygon().contains(x_pos, y_pos))
-						{ 
-							//We know that the site.getX and Y pos is location of WAP
-							//Find wlan id to assign
-							wlan_id = (network.findNode(new Location(site.getX(), site.getY()), true)).getWlanId();
+						distance = DataInterpreter.measure(node.getLocation().getYPos(), node.getLocation().getXPos(), y_pos, x_pos);
+						if (distance < minDistance) 
+						{
+							minDistance = distance;
+							closestNode = node;
 						}
 					}
-				}*/
-				//This first argument kind of dictates the speed at which the device moves, higher it is, slower the devices are
-				//	smaller value in there, the more it updates
-				//As it is now, allows devices to change wlan_ids around 600 times in an hour
-				treeMap.put(treeMap.lastKey()+1, new Location(wlan_id, x_pos + right, y_pos + up));		
-				//SimLogger.printLine("Length = " + treeMap.size());
+					wlan_id = closestNode.getWlanId();
+	/*				//If we are still in the same polygon, don't change (We haven't moved out of range of the wap)
+					int levelNum = SimManager.getInstance().getVoronoiDiagram().size();
+					//SimLogger.printLine("Size of voronoidiagram list : " + levelNum);
+					PowerDiagram diagram = SimManager.getInstance().getVoronoiDiagramAtLevel(levelNum - 1);
+					diagram.showDiagram();
+					
+					if (SimManager.getInstance().getEdgeOrchestrator() instanceof PuddleOrchestrator) {
+						for(Site site : diagram.getSites())
+						{
+							SimLogger.printLine("\ndiagram.getSites.size() : " + diagram.getSites().size);
+							SimLogger.printLine("x_pos : " + x_pos + "\ny_pos : " + y_pos);
+							SimLogger.printLine("" + site.getPolygon());
+							//if(site.getPolygon() != null && site.getPolygon().contains(x_pos, y_pos))
+							if(site.getPolygon().contains(x_pos, y_pos))
+							{ 
+								//We know that the site.getX and Y pos is location of WAP
+								//Find wlan id to assign
+								wlan_id = (network.findNode(new Location(site.getX(), site.getY()), true)).getWlanId();
+							}
+						}
+					}*/
+					//This first argument kind of dictates the speed at which the device moves, higher it is, slower the devices are
+					//	smaller value in there, the more it updates
+					//As it is now, allows devices to change wlan_ids around 600 times in an hour
+					treeMap.put(treeMap.lastKey()+1, new Location(wlan_id, x_pos + right, y_pos + up));		
+					//SimLogger.printLine("Length = " + treeMap.size());
+				}
+				else {
+					treeMap.put(treeMap.lastKey() + 1,  treeMap.lastEntry().getValue());
+				}
 			}
 		}
 	}
