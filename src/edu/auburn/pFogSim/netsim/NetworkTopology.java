@@ -49,6 +49,9 @@ public class NetworkTopology {
 		if (in == null) {
 			throw new IllegalArgumentException();
 		}
+		if (in.getLocation().getYPos() == 41.9058599) {
+			SimLogger.printLine("test");
+		}
 		if (!coords.add(in.getLocation())) {
 			for (NodeSim node : nodes) {
 				if (node.getLocation().equals(in.getLocation())) {
@@ -98,40 +101,24 @@ public class NetworkTopology {
 	 */
 	public boolean validateTopology() {
 		if (nodes == null || links == null) {
-			SimLogger.printLine("false 1");
 			return false;
 		}
 		try {
 			for (NodeSim node : nodes) {
 				if (node.getEdges().size() == 0) {
-				    SimLogger.printLine("WlanId = " + node.getWlanId());	
-					SimLogger.printLine("false 2");
-					SimLogger.printLine(node.toString());
-					//SimLogger.printLine(node.getVector().getXPos() + ", " + node.getVector().getYPos());
 					return false;
 				}
 			}
-			//int i = 0;
 			for (Link link : links) {
-				for(Location coord : coords) {
-					if (coord.equals(link.getRightLink())) {
-						//SimLogger.printLine("TEST " + i);
-					}
-					//i++;
-				}
-				break;
-			}
-			for (Link link : links) {
-				if (!coords.contains(link.getRightLink()) || !coords.contains(link.getLeftLink()) 
+				if (!coords.contains(link.getRightLink()) || !coords.contains(link.getLeftLink())
 						|| !link.validateCoords() || !link.validateLat()) {
-					SimLogger.printLine("false 3");
+					coords.add(link.getLeftLink());
 					return false;
 				}
 			}
 			return true;
 		}
 		catch (NullPointerException e) {
-			SimLogger.printLine("false 4");
 			return false;
 		}
 	}

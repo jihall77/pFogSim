@@ -92,7 +92,7 @@ public class mainApp {
 		SS.setSimulationSpace(DataInterpreter.getSimulationSpace());
 		SS.setMaxLevels(DataInterpreter.getMaxLevels());
 		SS.setInputType(DataInterpreter.getInputType());
-		SS.setMobileDevicesMoving(DataInterpreter.areMobileDevicesMoving());
+		SS.setMobileDevicesMoving(iterationNumber > 5);
 		
 		DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		Date SimulationStartDate = Calendar.getInstance().getTime();
@@ -106,7 +106,7 @@ public class mainApp {
 			{
 				for(int i=0; i<1; i++)
 				{
-					String simScenario = SS.getSimulationScenarios()[iterationNumber - 1];
+					String simScenario = SS.getSimulationScenarios()[iterationNumber%5];
 					String orchestratorPolicy = SS.getOrchestratorPolicies()[i];
 					Date ScenarioStartDate = Calendar.getInstance().getTime();
 					now = df.format(ScenarioStartDate);

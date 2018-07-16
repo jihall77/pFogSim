@@ -141,6 +141,7 @@ public class EdgeServerManager {
 			comp.drawNetworkTopology(3);*/
 
 		}
+		//checkUniqueDC();
 	}
 
 	public void createVmList(int brockerId){
