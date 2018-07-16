@@ -103,6 +103,7 @@ public class SimSettings {
     private double[][] taskLookUpTable = new double[APP_TYPES.values().length][11];
     private int MAX_LEVELS;
     private String inputType;
+    private boolean mobileDevicesMoving;
     
 	private SimSettings() {
 	}
@@ -578,5 +579,13 @@ public class SimSettings {
 	
 	public String getInputType() {
 		return this.inputType;
+	}
+	
+	public void setMobileDevicesMoving(boolean _moving) {
+		this.mobileDevicesMoving = _moving;
+	}
+	
+	public boolean areMobileDevicesMoving() {
+		return this.mobileDevicesMoving;
 	}
 }

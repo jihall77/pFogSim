@@ -55,7 +55,7 @@ public class GPSVectorMobility extends MobilityModel {
 		this.MAX_LONG = simSpace[1];
 		this.MIN_LAT = simSpace[2];
 		this.MAX_LAT = simSpace[3];
-		
+		boolean movingDevices = SimSettings.getInstance().areMobileDevicesMoving();
 		treeMapArray = new ArrayList<TreeMap<Double, Location>>();
 				
 		//Go through network's list of nodes and pick out just the wireless access points
@@ -83,9 +83,16 @@ public class GPSVectorMobility extends MobilityModel {
 		for(int i=0; i<numberOfMobileDevices; i++) {
 			TreeMap<Double, Location> treeMap = treeMapArray.get(i);
 			//Make random numbers to make the vectors
-			double up = 5 * (Math.random() - 0.5) * 0.000001; //Approximates movement of 5 meters * (random constant < 1)
-			double right = 5 * (Math.random() - 0.5) * 0.000001; //Same for right
-			//double up = 0, right = 0;
+			double up, right;
+			if(movingDevices)
+			{
+				up = 5 * (Math.random() - 0.5) * 0.000001; //Approximates movement of 5 meters * (random constant < 1)
+				right = 5 * (Math.random() - 0.5) * 0.000001; //Same for right
+			}
+			else {
+				up = 0;
+				right = 0;
+			}
 			while(treeMap.lastKey() < SimSettings.getInstance().getSimulationTime()) {		
 				
 				
@@ -93,8 +100,8 @@ public class GPSVectorMobility extends MobilityModel {
 				double y_pos = treeMap.lastEntry().getValue().getYPos();				
 				int wlan_id = treeMap.lastEntry().getValue().getServingWlanId();
 				  
-				if(x_pos + right > this.MAX_LAT || x_pos + right < this.MIN_LAT) right = right * -1;
-				if(y_pos + up > this.MAX_LONG || y_pos + up < this.MIN_LONG) up = up * -1;
+				if(x_pos + right > this.MAX_LONG || x_pos + right < this.MIN_LONG) right = right * -1;
+				if(y_pos + up > this.MAX_LAT || y_pos + up < this.MIN_LAT) up = up * -1;
 				double distance = 0, minDistance = Double.MAX_VALUE;
 				NodeSim closestNode = new NodeSim();
 				for(NodeSim node : accessPoints)

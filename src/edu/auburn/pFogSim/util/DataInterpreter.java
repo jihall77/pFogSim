@@ -29,10 +29,14 @@ public class DataInterpreter {
 	private static String[][] nodeSpecs = new String[MAX_LEVELS][14];// the specs for all layers of the fog devices
 	private static ArrayList<Double[]> nodeList = new ArrayList<Double[]>();
 	private static ArrayList<Double[]> tempList = new ArrayList<Double[]>();
+	
+	//This will return as height/y is LAT and width/x is LONG
 	private static double MIN_LAT = -100000, MAX_LAT = -100000, MIN_LONG = -100000, MAX_LONG = -100000; //Just instantiated so the first gps coord sets these
+	
 	private static boolean universitiesYet = false;
 	private static boolean universitiesLinked = false;
     private static String inputType = "gps";
+    private static boolean movingMobileDevices = false;
 	
 	private File xmlFile = null;
 	private FileWriter xmlFW = null;
@@ -261,7 +265,7 @@ public class DataInterpreter {
 	
 	public static double[] getSimulationSpace()
 	{
-		return new double[] {MIN_LONG, MAX_LONG, MIN_LAT, MAX_LAT};
+		return new double[] {MIN_LONG, MAX_LONG, MIN_LAT, MAX_LAT}; 
 	}
 	
 	public static int getMaxLevels() {
@@ -270,6 +274,10 @@ public class DataInterpreter {
 	
 	public static String getInputType() {
 		return inputType;
+	}
+	
+	public static boolean areMobileDevicesMoving() {
+		return movingMobileDevices;
 	}
 	/**
 	 * the great beast...<br><br>

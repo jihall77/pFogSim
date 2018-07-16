@@ -92,6 +92,7 @@ public class mainApp {
 		SS.setSimulationSpace(DataInterpreter.getSimulationSpace());
 		SS.setMaxLevels(DataInterpreter.getMaxLevels());
 		SS.setInputType(DataInterpreter.getInputType());
+		SS.setMobileDevicesMoving(DataInterpreter.areMobileDevicesMoving());
 		
 		DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		Date SimulationStartDate = Calendar.getInstance().getTime();

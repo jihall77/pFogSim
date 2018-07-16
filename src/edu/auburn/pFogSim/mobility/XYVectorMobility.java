@@ -51,10 +51,12 @@ public class XYVectorMobility extends MobilityModel {
 		//this.MAX_LONG = SimManager.MAX_LONG;
 		//this.MAX_LAT = SimManager.MAX_LAT;
 		double[] simSpace = SimSettings.getInstance().getSimulationSpace();
-		this.MIN_HEIGHT = simSpace[0];
-		this.MAX_HEIGHT = simSpace[1];
-		this.MIN_WIDTH = simSpace[2];
-		this.MAX_WIDTH = simSpace[3];
+		this.MIN_WIDTH = simSpace[0];
+		this.MAX_WIDTH = simSpace[1];
+		this.MIN_HEIGHT = simSpace[2];
+		this.MAX_HEIGHT = simSpace[3];
+		boolean movingDevices = SimSettings.getInstance().areMobileDevicesMoving();
+
 		
 		treeMapArray = new ArrayList<TreeMap<Double, Location>>();
 				
@@ -83,8 +85,16 @@ public class XYVectorMobility extends MobilityModel {
 		for(int i=0; i<numberOfMobileDevices; i++) {
 			TreeMap<Double, Location> treeMap = treeMapArray.get(i);
 			//Make random numbers to make the vectors
-			double up = 5 * (Math.random() - 0.5); //Approximates movement of 5 meters * (random constant < 1)
-			double right = 5 * (Math.random() - 0.5); //Same for right
+			double up, right;
+			if(movingDevices)
+			{
+				up = 5 * (Math.random() - 0.5) * 0.000001; //Approximates movement of 5 meters * (random constant < 1)
+				right = 5 * (Math.random() - 0.5) * 0.000001; //Same for right
+			}
+			else {
+				up = 0;
+				right = 0;
+			}
 			//double up = 0, right = 0;
 			while(treeMap.lastKey() < SimSettings.getInstance().getSimulationTime()) {		
 				
