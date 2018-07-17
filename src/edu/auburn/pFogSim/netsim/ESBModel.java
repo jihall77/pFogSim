@@ -236,7 +236,16 @@ public class ESBModel extends NetworkModel {
 		NodeSim src = networkTopology.findNode(SimManager.getInstance().getMobilityModel().getLocation(task.getMobileDeviceId(),CloudSim.clock()), false);
 		return router.findPath(networkTopology, src, dest).size();
 	}
-	
+	/**
+	 * The gravity well is where we search for and find black holes. For a description <br>
+	 * of black holes and what they are see BlackHoleException. Here we will search every <br>
+	 * possible route on the network to find black holes, once you find the black hole <br>
+	 * (usually its one node in particular that causes problems) you can do whatever you <br> 
+	 * want with it (I prefer just deleting the node from the data set) if you are looking <br>
+	 * for black holes, this method should be run once as soon as the network topology has <br>
+	 * been passed to the network model. There is a commented call in EdgeServerManager line 132<br>
+	 * just uncomment that call and debug when needed.
+	 */
 	public void gravityWell() {
 		int errors = 0;
 		for (NodeSim src : networkTopology.getNodes()) {

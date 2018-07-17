@@ -1,5 +1,23 @@
 package edu.auburn.pFogSim.Radix;
-
+/*
+ * For those who come after...
+ * 
+ * If you are here to change the puddle orchestrator to the true HAFA architecture, (i.e. change it from optimized 
+ * on distance to optimized on cost) then this is where the changes are needed. In order to make the true HAFA 
+ * architecture DistRadix needs to sort on cpu cost + network cost instead distance. Fortunately, all the required 
+ * information is in the EdgeHost so it should be easy to calculate and can be swapped out for distance. Unfortunately,
+ * we are using this for distance in some other places. So there are two reasonable courses of action:
+ * 
+ * A. (not recommended) Find all places other than puddles that uses DistRadix and rewrite them. Then change radix 
+ * 		to work on cost.
+ * 
+ * B. Add the ability to sort off of cost or distance and give option to choose your "comparator". Then adjust the method calls
+ * 		to use the appropriate sorting metric.
+ * 
+ * Whatever you decide, the methods that make distance the metric are buildCoords() and buildDist(). I would
+ * suggest studying these methods to understand what they do in order to implement cost as the sorting metric.
+ * @jih0007 
+ */
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

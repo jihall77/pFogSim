@@ -56,7 +56,7 @@ public class DataInterpreter {
 	public static void readFile() throws IOException {
 		FileReader dataFR = null;
 		BufferedReader dataBR = null;
-		PrintWriter node = new PrintWriter("config/node_test.xml", "UTF-8");
+		PrintWriter node = new PrintWriter("node_test.xml", "UTF-8");
 	    PrintWriter links = new PrintWriter("links_test.xml", "UTF-8");
 		
 	    node.println("<?xml version=\"1.0\"?>");
