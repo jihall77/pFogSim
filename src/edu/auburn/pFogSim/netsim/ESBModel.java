@@ -239,9 +239,6 @@ public class ESBModel extends NetworkModel {
 	
 	public void gravityWell() {
 		int errors = 0;
-		List<NodeSim> univs = findUniv();
-		NodeSim connect;
-		Link link;
 		for (NodeSim src : networkTopology.getNodes()) {
 			for (NodeSim dest : networkTopology.getNodes()) {
 				try {
@@ -249,37 +246,15 @@ public class ESBModel extends NetworkModel {
 				}
 				catch (BlackHoleException e) {
 					errors++;
-					connect = closest(univs, e.dest);
-					link = new Link(connect.getLocation(), e.dest.getLocation(), 0.5, 0.5);
-					e.dest.addLink(link);
+					SimLogger.printLine(src.toString() + ", " + dest.toString());
+					//router.findPath(networkTopology, src, dest);
 				}
 			}
 		}
 		if (errors > 0) {
+			SimLogger.printLine("Errors: " + errors);
 			gravityWell();
 		}
 	}
 	
-	private List<NodeSim> findUniv() {
-		List<NodeSim> result = new ArrayList<NodeSim>();
-		for (NodeSim node : networkTopology.getNodes()) {
-			if (node.getLevel() == 4) {
-				result.add(node);
-			}
-		}
-		return result;
-	}
-	
-	private NodeSim closest(List<NodeSim> list, NodeSim src) {
-		NodeSim result = list.get(0);
-		double dist = DataInterpreter.measure(src.getLocation().getYPos(), src.getLocation().getXPos(), result.getLocation().getYPos(), result.getLocation().getXPos());
-		double temp;
-		for (int i = 1; i < list.size(); i++) {
-			temp = DataInterpreter.measure(src.getLocation().getYPos(), src.getLocation().getXPos(), list.get(i).getLocation().getYPos(), list.get(i).getLocation().getXPos());
-			if (temp < dist) {
-				result = list.get(i);
-			}
-		}
-		return result;
-	}
 }
