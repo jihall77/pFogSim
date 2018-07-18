@@ -46,6 +46,10 @@ public class XYVectorMobility extends MobilityModel {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public double measure(double y1, double x1, double y2, double x2) {
+		return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+	}
+	
 	@Override
 	public void initialize() {
 		//this.MAX_LONG = SimManager.MAX_LONG;
@@ -110,7 +114,7 @@ public class XYVectorMobility extends MobilityModel {
 					NodeSim closestNode = new NodeSim();
 					for(NodeSim node : accessPoints)
 					{
-						distance = DataInterpreter.measure(node.getLocation().getYPos(), node.getLocation().getXPos(), y_pos, x_pos);
+						distance = measure(node.getLocation().getYPos(), node.getLocation().getXPos(), y_pos, x_pos);
 						if (distance < minDistance) 
 						{
 							minDistance = distance;
