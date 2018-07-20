@@ -316,8 +316,8 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 1][6] = "0.1";
 		nodeSpecs[MAX_LEVELS - 1][7] = "true";
 		nodeSpecs[MAX_LEVELS - 1][8] = "false";
-		//nodeSpecs[MAX_LEVELS - 1][9] = "2867200";
-		nodeSpecs[MAX_LEVELS - 1][9] = "500";
+		nodeSpecs[MAX_LEVELS - 1][9] = "2867200";
+		//nodeSpecs[MAX_LEVELS - 1][9] = "500";
 		nodeSpecs[MAX_LEVELS - 1][10] = "4874240000";
 		nodeSpecs[MAX_LEVELS - 1][11] = "164926744166400";
 		//nodeSpecs[MAX_LEVELS - 1][11] = "1500";
@@ -333,8 +333,8 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 2][6] = "0.1";
 		nodeSpecs[MAX_LEVELS - 2][7] = "true";
 		nodeSpecs[MAX_LEVELS - 2][8] = "false";
-		//nodeSpecs[MAX_LEVELS - 2][9] = "28672";
-		nodeSpecs[MAX_LEVELS - 2][9] = "500";
+		nodeSpecs[MAX_LEVELS - 2][9] = "28672";
+		//nodeSpecs[MAX_LEVELS - 2][9] = "500";
 		nodeSpecs[MAX_LEVELS - 2][10] = "48742400";
 		nodeSpecs[MAX_LEVELS - 2][11] = "1649267441664";
 		//nodeSpecs[MAX_LEVELS - 2][11] = "1500";
@@ -350,8 +350,8 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 3][6] = "0.1";
 		nodeSpecs[MAX_LEVELS - 3][7] = "true";
 		nodeSpecs[MAX_LEVELS - 3][8] = "false";
-		//nodeSpecs[MAX_LEVELS - 3][9] = "7168";
-		nodeSpecs[MAX_LEVELS - 3][9] = "500";
+		nodeSpecs[MAX_LEVELS - 3][9] = "7168";
+		//nodeSpecs[MAX_LEVELS - 3][9] = "500";
 		nodeSpecs[MAX_LEVELS - 3][10] = "12185600";
 		nodeSpecs[MAX_LEVELS - 3][11] = "412316860416";
 		//nodeSpecs[MAX_LEVELS - 3][11] = "1500";

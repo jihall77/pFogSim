@@ -19,7 +19,7 @@ import java.util.Date;
 import org.cloudbus.cloudsim.Log;
 import org.cloudbus.cloudsim.core.CloudSim;
 
-import com.sun.xml.internal.bind.v2.runtime.output.SAXOutput;
+//import com.sun.xml.internal.bind.v2.runtime.output.SAXOutput;
 
 import edu.boun.edgecloudsim.core.ScenarioFactory;
 import edu.boun.edgecloudsim.core.SimManager;
@@ -52,7 +52,7 @@ public class mainApp {
 		
 		//CJ added linksFile to supply the link xml file, had to adjust all constructors that
 		//	use these file to seamlessly use it
-		int iterationNumber = 3;
+		int iterationNumber = 8;
 		String configFile = "";
 		String outputFolder = "";
 		String edgeDevicesFile = "";
