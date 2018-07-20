@@ -4,7 +4,7 @@ package edu.auburn.pFogSim.orchestrator;
  * 
  * If you are here to change the puddle orchestrator to the true HAFA architecture, (i.e. change it from optimized 
  * on distance to optimized on cost) then the only changes that need to be made are in DistRadix. The only thing 
- * that needs to be changed is the metric upon which we sort and select nodes. See DistRadix for mor info.
+ * that needs to be changed is the metric upon which we sort and select nodes. See DistRadix for more info.
  * @jih0007
  */
 import edu.boun.edgecloudsim.core.SimManager;
