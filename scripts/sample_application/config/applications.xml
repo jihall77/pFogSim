@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <applications>
 	<application name="AUGMENTED_REALITY">
-		<usage_percentage>10</usage_percentage>
+		<usage_percentage>100</usage_percentage>
 		<prob_cloud_selection>20</prob_cloud_selection>
 		<poisson_interarrival>5</poisson_interarrival>
 		<delay_sensitivity>0.450</delay_sensitivity>
@@ -14,7 +14,7 @@
 		<vm_utilization>20</vm_utilization>
 	</application>
 	<application name="HEALTH_APP">
-		<usage_percentage>20</usage_percentage>
+		<usage_percentage>0</usage_percentage>
 		<prob_cloud_selection>20</prob_cloud_selection>
 		<poisson_interarrival>30</poisson_interarrival>
 		<delay_sensitivity>0.050</delay_sensitivity>
@@ -27,7 +27,7 @@
 		<vm_utilization>5</vm_utilization>
 	</application>
 	<application name="HEAVY_COMP_APP">
-		<usage_percentage>50</usage_percentage>
+		<usage_percentage>0</usage_percentage>
 		<prob_cloud_selection>40</prob_cloud_selection>
 		<poisson_interarrival>60</poisson_interarrival>
 		<delay_sensitivity>0.500</delay_sensitivity>
@@ -40,7 +40,7 @@
 		<vm_utilization>30</vm_utilization>
 	</application>
 	<application name="INFOTAINMENT_APP">
-		<usage_percentage>20</usage_percentage>
+		<usage_percentage>0</usage_percentage>
 		<prob_cloud_selection>15</prob_cloud_selection>
 		<poisson_interarrival>7</poisson_interarrival>
 		<delay_sensitivity>0.250</delay_sensitivity>

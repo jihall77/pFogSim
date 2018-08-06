@@ -71,7 +71,9 @@ public class GPSVectorMobility extends MobilityModel {
 			treeMapArray.add(i, new TreeMap<Double, Location>());
 			
 			//Picks a random wireless access point to start at
-			int randDatacenterId = SimUtils.getRandomNumber(0, accessPoints.size()-1);
+			//Shaik modified - to set all mobile devices to same host Fog node - int randDatacenterId = SimUtils.getRandomNumber(0, accessPoints.size()-1);
+			int randDatacenterId = 1071;
+			SimLogger.printLine("Mobile Device id: "+i+"    Host id: "+randDatacenterId);
 			int wlan_id = accessPoints.get(randDatacenterId).getWlanId();
 			double x_pos = accessPoints.get(randDatacenterId).getLocation().getXPos();
 			double y_pos = accessPoints.get(randDatacenterId).getLocation().getYPos();

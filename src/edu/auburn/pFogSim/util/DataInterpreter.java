@@ -303,15 +303,16 @@ public class DataInterpreter {
 	 *  13 - bandwidth - Kbps
 	 */
 	public static void initialize() {
-		double tenGbRouterCost = 151.67/2692915200.0; // $/Mb numbers taken from cisco ASR 901 10G router at $151.67 per month
-		double oneGbRouterCost = 88.23/269291520.0; // $/Mb numbers taken from cisco ASR 901 1G router at $88.23 per month
-		double hundredGbRouterCost = 646.51/26929152000.0; // $/Mb numbers taken from cisco ASR 1013 100G router at $646.51 per month
+		double tenGbRouterCost = 151.67/2692915200.0 * 1000; // $/Mb numbers taken from cisco ASR 901 10G router at $151.67 per month
+		double oneGbRouterCost = 88.23/269291520.0 * 1000; // $/Mb numbers taken from cisco ASR 901 1G router at $88.23 per month
+		double hundredGbRouterCost = 646.51/26929152000.0 * 1000; // $/Mb numbers taken from cisco ASR 1013 100G router at $646.51 per month
+		// Shaik modified - Multiplied above three costs for routers' data transfer by 1000 to reflect the service provider costs & profit, in addition to router monthly lease fee. 
 		
 		nodeSpecs[MAX_LEVELS - 1][0] = "Cloud";
 		nodeSpecs[MAX_LEVELS - 1][1] = "Linux";
 		nodeSpecs[MAX_LEVELS - 1][2] = "Xen";
 		nodeSpecs[MAX_LEVELS - 1][3] = hundredGbRouterCost + "";
-		nodeSpecs[MAX_LEVELS - 1][4] = "0.000014";
+		nodeSpecs[MAX_LEVELS - 1][4] = "0.014"; // Shaik modified - prev = "0.000014"
 		nodeSpecs[MAX_LEVELS - 1][5] = "0.05";
 		nodeSpecs[MAX_LEVELS - 1][6] = "0.1";
 		nodeSpecs[MAX_LEVELS - 1][7] = "true";
@@ -328,7 +329,7 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 2][1] = "Linux";
 		nodeSpecs[MAX_LEVELS - 2][2] = "Xen";
 		nodeSpecs[MAX_LEVELS - 2][3] = hundredGbRouterCost + "";
-		nodeSpecs[MAX_LEVELS - 2][4] = "0.037";
+		nodeSpecs[MAX_LEVELS - 2][4] = "0.014"; // Shaik modified - prev = "0.037"
 		nodeSpecs[MAX_LEVELS - 2][5] = "0.05";
 		nodeSpecs[MAX_LEVELS - 2][6] = "0.1";
 		nodeSpecs[MAX_LEVELS - 2][7] = "true";
@@ -345,7 +346,7 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 3][1] = "Linux";
 		nodeSpecs[MAX_LEVELS - 3][2] = "Xen";
 		nodeSpecs[MAX_LEVELS - 3][3] = tenGbRouterCost + "";
-		nodeSpecs[MAX_LEVELS - 3][4] = "0.0093";
+		nodeSpecs[MAX_LEVELS - 3][4] = "0.014"; // Shaik modified - prev = "0.0093"
 		nodeSpecs[MAX_LEVELS - 3][5] = "0.05";
 		nodeSpecs[MAX_LEVELS - 3][6] = "0.1";
 		nodeSpecs[MAX_LEVELS - 3][7] = "true";
@@ -362,7 +363,7 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 4][1] = "Linux";
 		nodeSpecs[MAX_LEVELS - 4][2] = "Xen";
 		nodeSpecs[MAX_LEVELS - 4][3] = tenGbRouterCost + "";
-		nodeSpecs[MAX_LEVELS - 4][4] = "0.0336";
+		nodeSpecs[MAX_LEVELS - 4][4] = "0.014"; // Shaik modified - prev = "0.0336"
 		nodeSpecs[MAX_LEVELS - 4][5] = "0.05";
 		nodeSpecs[MAX_LEVELS - 4][6] = "0.1";
 		nodeSpecs[MAX_LEVELS - 4][7] = "true";
@@ -378,7 +379,7 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 5][1] = "Linux";
 		nodeSpecs[MAX_LEVELS - 5][2] = "Xen";
 		nodeSpecs[MAX_LEVELS - 5][3] = tenGbRouterCost + "";
-		nodeSpecs[MAX_LEVELS - 5][4] = "0.00016";
+		nodeSpecs[MAX_LEVELS - 5][4] = "0.014"; // Shaik modified - prev = "0.00016"
 		nodeSpecs[MAX_LEVELS - 5][5] = "0.05";
 		nodeSpecs[MAX_LEVELS - 5][6] = "0.1";
 		nodeSpecs[MAX_LEVELS - 5][7] = "true";
@@ -394,7 +395,7 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 6][1] = "Linux";
 		nodeSpecs[MAX_LEVELS - 6][2] = "Xen";
 		nodeSpecs[MAX_LEVELS - 6][3] = oneGbRouterCost + "";
-		nodeSpecs[MAX_LEVELS - 6][4] = "0.0012";
+		nodeSpecs[MAX_LEVELS - 6][4] = "0.014"; // Shaik modified - prev = "0.0012"
 		nodeSpecs[MAX_LEVELS - 6][5] = "0.05";
 		nodeSpecs[MAX_LEVELS - 6][6] = "0.1";
 		nodeSpecs[MAX_LEVELS - 6][7] = "true";
@@ -409,7 +410,7 @@ public class DataInterpreter {
 		nodeSpecs[MAX_LEVELS - 7][1] = "Linux";
 		nodeSpecs[MAX_LEVELS - 7][2] = "Xen";
 		nodeSpecs[MAX_LEVELS - 7][3] = oneGbRouterCost + "";
-		nodeSpecs[MAX_LEVELS - 7][4] = "0.0003";
+		nodeSpecs[MAX_LEVELS - 7][4] = "0.014"; // Shaik modified - prev = "0.0003"
 		nodeSpecs[MAX_LEVELS - 7][5] = "1";
 		nodeSpecs[MAX_LEVELS - 7][6] = "1";
 		nodeSpecs[MAX_LEVELS - 7][7] = "true";
